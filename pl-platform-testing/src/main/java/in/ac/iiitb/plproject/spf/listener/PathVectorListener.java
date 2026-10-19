@@ -63,6 +63,21 @@ public class PathVectorListener extends PropertyListenerAdapter {
     public void stateAdvanced(Search search) {
         if (!search.isEndState()) return;
 
+        // An end state that is a property violation (an uncaught exception, here)
+        // is not a completed run of the sequence — solving its path condition can
+        // still succeed (the PC up to the violation is whatever it is), but
+        // printing it as a feasible path would offer a @Test that calls the
+        // library with inputs SPF itself flagged as crashing it along some
+        // execution, which is a different kind of finding than "this path
+        // completes and its postconditions hold". Recorded separately so the
+        // generator can at least count how many such states were seen; not
+        // reported as a usable path.
+        if (search.getCurrentError() != null) {
+            out.println("{\"event\":\"error\",\"detail\":" + jsonString(search.getCurrentError().getDescription()) + "}");
+            out.flush();
+            return;
+        }
+
         pathId++;
         VM vm = search.getVM();
         ChoiceGenerator<?> cg = vm.getChoiceGenerator();

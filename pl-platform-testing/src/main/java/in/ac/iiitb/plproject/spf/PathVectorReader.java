@@ -49,6 +49,8 @@ public final class PathVectorReader {
             return PathVector.path(pathId, sat, vars);
         } else if ("searchConstraintHit".equals(event)) {
             return PathVector.constraintHit((String) obj.get("detail"));
+        } else if ("error".equals(event)) {
+            return PathVector.error((String) obj.get("detail"));
         } else if ("searchFinished".equals(event)) {
             return PathVector.finished(((Number) obj.get("paths")).intValue());
         }

@@ -180,7 +180,8 @@ public final class IrBuilder {
         String type = param.getTypeName();
         String poolReason = null;
         ParamKind kind;
-        if (hashKeyTypes.contains(type.trim()) && TypeSupport.isSymbolicallySolvable(type)) {
+        boolean isHashKeyType = !java.util.Collections.disjoint(hashKeyTypes, TypeSupport.withBoxedEquivalent(type));
+        if (isHashKeyType && TypeSupport.isSymbolicallySolvable(type)) {
             kind = ParamKind.POOLED;
             poolReason = "used as a Set/Map key — a fully symbolic " + type
                     + " breaks both configured solvers' hashCode() handling";

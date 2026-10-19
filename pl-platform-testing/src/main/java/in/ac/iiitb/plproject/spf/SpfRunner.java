@@ -43,9 +43,13 @@ public class SpfRunner {
                     false, null, null, full.elapsedMillis);
         }
 
-        // Zero feasible paths, no cutoff: genuinely infeasible. Find the first call
-        // whose precondition cannot be met by re-running shrinking prefixes.
+        // Zero feasible paths, no cutoff: either genuinely infeasible (no call's
+        // precondition can be met) or SPF cannot execute some call at all (every
+        // explored end state is a property violation — see executionErrorDetail's
+        // doc). Re-run shrinking prefixes to find the first call where either
+        // happens; the two are reported distinctly (rule 10).
         Integer failingCallIndex = null;
+        String executionErrorDetail = null;
         long extraMillis = 0;
         for (int k = 1; k <= plan.getCallBlocks().size(); k++) {
             TestPlan prefix = new TestPlan(plan.getLibraryKey(), plan.getSpecFile(), plan.getTestsFile(),
@@ -55,14 +59,27 @@ public class SpfRunner {
             extraMillis += r.elapsedMillis;
             if (r.compileFailed) break;
             boolean feasible = !ValueExtractor.extractAll(prefix, r.paths).isEmpty();
-            if (!feasible && !r.depthLimitHit && !r.timedOut) {
+            if (feasible) continue;
+            if (r.depthLimitHit || r.timedOut) break;
+            String firstError = firstErrorDetail(r.paths);
+            if (firstError != null) {
                 failingCallIndex = k - 1;
-                break;
+                executionErrorDetail = firstError;
+            } else {
+                failingCallIndex = k - 1;
             }
+            break;
         }
 
         return new SpfRunResult(plan, full.paths, vectors, full.depthLimitHit, full.timedOut,
-                false, null, failingCallIndex, full.elapsedMillis + extraMillis);
+                false, null, failingCallIndex, executionErrorDetail, full.elapsedMillis + extraMillis);
+    }
+
+    private static String firstErrorDetail(List<PathVector> paths) {
+        for (PathVector p : paths) {
+            if (p.getEvent() == PathVector.Event.ERROR) return p.getDetail();
+        }
+        return null;
     }
 
     private static class SingleRun {
@@ -147,21 +164,21 @@ public class SpfRunner {
         // against instead — see SpfHome's class comment).
         StringBuilder nativeCp = new StringBuilder();
         nativeCp.append(new File(jpfCore, "build/jpf.jar").getAbsolutePath());
-        nativeCp.append(File.pathSeparator).append(new File(jpfCore, "build/jpf-annotations.jar").getAbsolutePath());
-        nativeCp.append(File.pathSeparator).append(new File(jpfSymbc, "build/jpf-symbc.jar").getAbsolutePath());
+        nativeCp.append(",").append(new File(jpfCore, "build/jpf-annotations.jar").getAbsolutePath());
+        nativeCp.append(",").append(new File(jpfSymbc, "build/jpf-symbc.jar").getAbsolutePath());
         File libDir = new File(jpfSymbc, "lib");
         File[] libJars = libDir.listFiles((dir, name) -> name.endsWith(".jar"));
         if (libJars != null) {
-            for (File jar : libJars) nativeCp.append(File.pathSeparator).append(jar.getAbsolutePath());
+            for (File jar : libJars) nativeCp.append(",").append(jar.getAbsolutePath());
         }
-        nativeCp.append(File.pathSeparator).append(listenerClasspath);
+        nativeCp.append(",").append(listenerClasspath);
 
         // The modeled/target-side classpath: the compiled driver + Helper, plus the
         // same jpf-classes.jar/jpf-symbc-classes.jar they were compiled against, so
         // the modeled JVM can resolve Verify/Debug as ordinary classes.
         StringBuilder sb = new StringBuilder();
         sb.append("target = ").append(TestPlan.GENERATED_PACKAGE).append('.').append(TestPlan.SYMBOLIC_CLASS).append('\n');
-        sb.append("classpath = ").append(classesDir.getAbsolutePath()).append(File.pathSeparator)
+        sb.append("classpath = ").append(classesDir.getAbsolutePath()).append(",")
           .append(SpfHome.resolveDriverCompileClasspath()).append('\n');
         sb.append("native_classpath = ").append(nativeCp).append('\n');
         sb.append("vm.insn_factory.class = gov.nasa.jpf.symbc.SymbolicInstructionFactory\n");

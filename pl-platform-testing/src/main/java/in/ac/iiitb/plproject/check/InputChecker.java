@@ -138,7 +138,7 @@ public final class InputChecker {
                                               String fnName, String clauseKind,
                                               List<String> problems) {
         for (String id : ClauseText.freeIdentifiers(text)) {
-            if (id.equals("true") || id.equals("false")) continue;
+            if (id.equals("true") || id.equals("false") || id.equals("null")) continue;
             if (!allowed.contains(id)) {
                 problems.add(where + ": " + fnName + " " + clauseKind + ": '" + id
                         + "' is not a parameter, a state variable, or \\result (or its alias) — "
