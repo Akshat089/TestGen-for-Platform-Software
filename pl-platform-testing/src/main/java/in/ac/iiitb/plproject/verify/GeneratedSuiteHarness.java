@@ -60,8 +60,14 @@ public class GeneratedSuiteHarness {
 
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
         List<String> sources = new ArrayList<String>();
+        // GeneratedATCs.java (the symbolic driver) is kept alongside the JUnit class
+        // for transparency — it shows exactly what SPF ran — but it imports
+        // gov.nasa.jpf.* and must never be compiled onto this classpath (rule 11).
+        String symbolicDriverFile = in.ac.iiitb.plproject.ir.TestPlan.SYMBOLIC_CLASS + ".java";
         for (File f : generatedDir.listFiles()) {
-            if (f.getName().endsWith(".java")) sources.add(f.getAbsolutePath());
+            if (f.getName().endsWith(".java") && !f.getName().equals(symbolicDriverFile)) {
+                sources.add(f.getAbsolutePath());
+            }
         }
         StringBuilder cp = new StringBuilder();
         for (File jar : junitJars) {

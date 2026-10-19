@@ -129,7 +129,17 @@ public class GenatcMain {
         }
 
         if (!result.hasUsablePaths()) {
-            if (result.getInfeasibleAtCallIndex() != null) {
+            if (result.getInfeasibleAtCallIndex() != null && result.getExecutionErrorDetail() != null) {
+                outcome.status = "EXECUTION_ERROR";
+                CallBlock failing = plan.getCallBlocks().get(result.getInfeasibleAtCallIndex());
+                outcome.detail = "SPF could not execute call " + failing.getIndex() + " ("
+                        + failing.getOperationName() + ") at all — every explored end state was a"
+                        + " property violation rather than a normal completion: "
+                        + result.getExecutionErrorDetail()
+                        + ". This is a tool limitation (see IMPLEMENTATION_NOTES.md), not an"
+                        + " unsatisfiable precondition.";
+                System.out.println("EXECUTION ERROR: " + outcome.detail);
+            } else if (result.getInfeasibleAtCallIndex() != null) {
                 outcome.status = "INFEASIBLE";
                 CallBlock failing = plan.getCallBlocks().get(result.getInfeasibleAtCallIndex());
                 StringBuilder sb = new StringBuilder();
@@ -165,14 +175,30 @@ public class GenatcMain {
         if (result.isTimedOut()) {
             System.out.println("NOTE: SPF timed out — exploration may be incomplete.");
         }
+        if (result.errorStatesFound() > 0) {
+            System.out.println("NOTE: SPF found " + result.errorStatesFound()
+                    + " end state(s) that are a property violation (uncaught exception) along some"
+                    + " execution; excluded from the delivered suite, not presented as a passing path.");
+        }
 
         List<InputVector> vectors = result.getInputVectors();
-        outcome.testsGenerated = vectors.size();
         System.out.println("paths explored: " + outcome.pathsExplored + ", feasible: " + vectors.size()
                 + ", SPF time: " + outcome.spfMillis + "ms");
         if (!unsolved.isEmpty()) {
             System.out.println("NOT solved for (pooled instead): " + unsolved);
         }
+        // Delivering every feasible path as a @Test method is impractical once a
+        // sequence has several pooled parameters (StringSet/Graph/LruCache's pool
+        // combinations multiply out quickly) — capped here, not in SPF's own
+        // exploration, so the report can still say how many paths SPF actually
+        // found versus how many became tests.
+        int maxTests = Integer.getInteger("genatc.maxTestsPerClass", 60);
+        if (vectors.size() > maxTests) {
+            System.out.println("NOTE: capping generated tests at " + maxTests + " of " + vectors.size()
+                    + " feasible paths (set -Dgenatc.maxTestsPerClass to change).");
+            vectors = vectors.subList(0, maxTests);
+        }
+        outcome.testsGenerated = vectors.size();
 
         String driverSource = SymbolicDriverPrinter.print(plan);
         Files.write(new File(genDir, TestPlan.SYMBOLIC_CLASS + ".java").toPath(),

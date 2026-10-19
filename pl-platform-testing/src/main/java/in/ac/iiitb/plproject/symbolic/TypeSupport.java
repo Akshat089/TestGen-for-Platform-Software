@@ -82,6 +82,33 @@ public final class TypeSupport {
         return type != null && BOXED.contains(type.trim());
     }
 
+    private static final Map<String, String> PRIMITIVE_TO_BOXED = new HashMap<String, String>();
+    static {
+        PRIMITIVE_TO_BOXED.put("int", "Integer");
+        PRIMITIVE_TO_BOXED.put("long", "Long");
+        PRIMITIVE_TO_BOXED.put("short", "Short");
+        PRIMITIVE_TO_BOXED.put("byte", "Byte");
+        PRIMITIVE_TO_BOXED.put("double", "Double");
+        PRIMITIVE_TO_BOXED.put("boolean", "Boolean");
+        PRIMITIVE_TO_BOXED.put("char", "Character");
+    }
+
+    /**
+     * {@code type} itself, plus its boxed form if it's a primitive — a generic
+     * type argument such as {@code Set<Integer>} is always written boxed even
+     * when the parameter using that same logical type is declared as the
+     * primitive {@code int}, so a check against "every type used as a Set/Map
+     * key" has to look at both spellings.
+     */
+    public static java.util.Set<String> withBoxedEquivalent(String type) {
+        String t = trim(type);
+        java.util.Set<String> out = new java.util.LinkedHashSet<String>();
+        out.add(t);
+        String boxed = PRIMITIVE_TO_BOXED.get(t);
+        if (boxed != null) out.add(boxed);
+        return out;
+    }
+
     /** The {@code Debug.makeSymbolic*} factory call for a numeric/boolean type. */
     public static String symbolicFactory(String type) {
         String f = SYMBOLIC_FACTORY.get(trim(type));

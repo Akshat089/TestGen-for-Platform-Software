@@ -7,7 +7,7 @@ import java.util.Map;
 /** One line of {@link in.ac.iiitb.plproject.spf.listener.PathVectorListener}'s output. */
 public class PathVector {
 
-    public enum Event { PATH, SEARCH_CONSTRAINT_HIT, SEARCH_FINISHED }
+    public enum Event { PATH, SEARCH_CONSTRAINT_HIT, SEARCH_FINISHED, ERROR }
 
     private final Event event;
     private final int pathId;
@@ -30,6 +30,10 @@ public class PathVector {
     public static PathVector constraintHit(String detail) {
         return new PathVector(Event.SEARCH_CONSTRAINT_HIT, -1, false,
                 new LinkedHashMap<String, String>(), detail);
+    }
+
+    public static PathVector error(String detail) {
+        return new PathVector(Event.ERROR, -1, false, new LinkedHashMap<String, String>(), detail);
     }
 
     public static PathVector finished(int totalPaths) {
