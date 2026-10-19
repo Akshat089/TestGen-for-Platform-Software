@@ -1,38 +1,38 @@
 package in.ac.iiitb.plproject.parser.ast;
 
-import in.ac.iiitb.plproject.atc.ConcreteInput;
-
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
- * Represents a test string - a sequence of function calls to test.
- * Example: ["push", "push", "pop", "peek"]
+ * A test string: an ORDERED LIST OF OPERATION NAMES, nothing else.
  *
- * <p>A test string may also carry a name and a set of {@link ConcreteInput}
- * bindings.  With bindings it describes a SINGULAR CASE: one concrete execution
- * of the sequence whose preconditions and postconditions can be checked against
- * the real library.  Without them it is just the call order, which is all the
- * symbolic pipeline needs.
+ * <p>Earlier revisions let a {@code .tests} file also pin a concrete value to
+ * every parameter via an {@code inputs { ... }} block, turning the sequence
+ * into one hand-picked "singular case". The new design has no such thing —
+ * every argument of every call is chosen by SPF — so a sequence carries no
+ * values at all (rule 4). An {@code inputs { ... }} block in an existing file
+ * is still parsed so old files don't fail outright, but it is ignored and
+ * {@link in.ac.iiitb.plproject.parser.TestStringParser} prints exactly one
+ * warning when it does.
  */
 public class TestStringAst {
 
     private final List<String> calls;
     private final String name;
-    private final List<ConcreteInput> concreteInputs;
+    private String sourceFile;
+    /** 1-based line of the {@code sequence:} clause, or -1 if built in code. */
+    private int sequenceLineNumber = -1;
+    /** 1-based line of an ignored {@code inputs { ... }} block, or -1 if absent. */
+    private int ignoredInputsLineNumber = -1;
 
     public TestStringAst(List<String> calls) {
-        this(null, calls, null);
+        this(null, calls);
     }
 
-    public TestStringAst(String name, List<String> calls, List<ConcreteInput> concreteInputs) {
+    public TestStringAst(String name, List<String> calls) {
         this.calls = (calls != null) ? new ArrayList<String>(calls) : new ArrayList<String>();
         this.name = name;
-        this.concreteInputs = (concreteInputs != null)
-                ? new ArrayList<ConcreteInput>(concreteInputs) : new ArrayList<ConcreteInput>();
     }
 
     public List<String> getCalls() {
@@ -44,32 +44,21 @@ public class TestStringAst {
         return name;
     }
 
-    /** True when this test string pins down every value needed for one concrete run. */
-    public boolean isSingularCase() {
-        return !concreteInputs.isEmpty();
-    }
+    public void setSourceFile(String sourceFile) { this.sourceFile = sourceFile; }
+    public String getSourceFile() { return sourceFile; }
 
-    public List<ConcreteInput> getConcreteInputs() {
-        return Collections.unmodifiableList(concreteInputs);
-    }
+    public void setSequenceLineNumber(int line) { this.sequenceLineNumber = line; }
+    public int getSequenceLineNumber() { return sequenceLineNumber; }
 
-    /** Concrete inputs of one block, keyed by parameter name. */
-    public Map<String, ConcreteInput> inputsForBlock(int blockIndex) {
-        Map<String, ConcreteInput> byParam = new LinkedHashMap<String, ConcreteInput>();
-        for (ConcreteInput input : concreteInputs) {
-            if (input.getBlockIndex() == blockIndex) {
-                byParam.put(input.getParamName(), input);
-            }
-        }
-        return byParam;
-    }
+    public void setIgnoredInputsLineNumber(int line) { this.ignoredInputsLineNumber = line; }
+    /** Line of a now-ignored {@code inputs { ... }} block, or -1 if this file had none. */
+    public int getIgnoredInputsLineNumber() { return ignoredInputsLineNumber; }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         if (name != null) sb.append(name).append(": ");
         sb.append(String.join(" -> ", calls));
-        if (isSingularCase()) sb.append(" ").append(concreteInputs);
         return sb.toString();
     }
 }

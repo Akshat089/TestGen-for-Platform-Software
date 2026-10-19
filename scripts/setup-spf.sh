@@ -89,8 +89,15 @@ echo "== building jpf-symbc (ant build) =="
 ( cd "$SYMBC_DIR" && ant -q ${JPF_CORE_PROP:+-Djpf-core="$CORE_DIR"} build )
 
 echo "== installing jars into the local Maven repository =="
+# jpf-core's build produces two jars with disjoint class sets: build/jpf-classes.jar
+# holds only the small set of annotation/model classes visible to a MODELED (target)
+# program, while build/jpf.jar is the actual host-side engine — Config, JPF,
+# PropertyListenerAdapter, Search, VM, ChoiceGenerator, all of which the generator's
+# own JPF listener (compiled against this `provided` dependency) needs. The
+# generated DRIVER's own compile step (javac, run by SpfRunner, not Maven) uses
+# jpf-classes.jar directly from this checkout instead — see SpfHome.java.
 mvn -q install:install-file \
-    -Dfile="$CORE_DIR/build/jpf-classes.jar" \
+    -Dfile="$CORE_DIR/build/jpf.jar" \
     -DgroupId=gov.nasa.jpf -DartifactId=jpf-core -Dversion="$MVN_JPF_CORE_VERSION" \
     -Dpackaging=jar
 mvn -q install:install-file \
@@ -101,8 +108,10 @@ mvn -q install:install-file \
 cat <<EOF
 
 == done ==
-jpf-core  : $CORE_DIR  (jpf.jar at build/jpf-classes.jar, runner at build/RunJPF.jar)
-jpf-symbc : $SYMBC_DIR (build/jpf-symbc.jar)
+jpf-core  : $CORE_DIR  (engine jar at build/jpf.jar, runner at build/RunJPF.jar,
+            target-side classes at build/jpf-classes.jar)
+jpf-symbc : $SYMBC_DIR (engine jar at build/jpf-symbc.jar,
+            target-side Debug class at build/jpf-symbc-classes.jar)
 
 Installed into ~/.m2 as:
   gov.nasa.jpf:jpf-core:$MVN_JPF_CORE_VERSION

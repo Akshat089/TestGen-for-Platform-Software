@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>in.ac.iiitb.plproject</groupId>
+    <artifactId>genatc-mutation</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>GENATC mutation testing</name>
+    <description>
+        Mutation testing, decoupled from the generator: seeds one fault into a
+        private copy of a library, asks pl-platform-testing's own entry point
+        to regenerate and verify the JUnit suite against it, and classifies
+        the mutant as killed or survived. Depends on pl-platform-testing
+        (installed to the local repo by the parent build) — the generator
+        itself has no dependency the other way, and `mvn test` on
+        pl-platform-testing alone never runs a mutant.
+    </description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <junit.version>4.13.1</junit.version>
+        <jpf-core.version>8.0-f70927c</jpf-core.version>
+        <jpf-symbc.version>1.0-3bedf0b</jpf-symbc.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>in.ac.iiitb.plproject</groupId>
+            <artifactId>pl-platform-testing</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <!-- `provided` scope on a dependency never propagates transitively (by Maven's
+             own scope rules), so even though this module imports nothing from
+             gov.nasa.jpf itself, it needs its own copy of this declaration at the
+             default (compile+runtime) scope: calling into pl-platform-testing's
+             SpfRunner still has to link
+             in.ac.iiitb.plproject.spf.listener.PathVectorListener, whose superclass
+             is gov.nasa.jpf.PropertyListenerAdapter. This module produces no
+             artifact anyone else depends on, so there is no "don't bundle it"
+             concern here the way there is in pl-platform-testing. -->
+        <dependency>
+            <groupId>gov.nasa.jpf</groupId>
+            <artifactId>jpf-core</artifactId>
+            <version>${jpf-core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>gov.nasa.jpf</groupId>
+            <artifactId>jpf-symbc</artifactId>
+            <version>${jpf-symbc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
+        <outputDirectory>target/classes</outputDirectory>
+        <testOutputDirectory>target/test-classes</testOutputDirectory>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M7</version>
+                <configuration>
+                    <workingDirectory>${project.basedir}</workingDirectory>
+                    <trimStackTrace>false</trimStackTrace>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>in.ac.iiitb.plproject.mutation.MutationRunner</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

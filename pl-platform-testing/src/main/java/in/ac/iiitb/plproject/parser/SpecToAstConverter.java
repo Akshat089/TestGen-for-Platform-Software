@@ -13,19 +13,39 @@ import java.util.regex.*;
 public class SpecToAstConverter {
     
     public static JmlSpecAst convertSpecToAst(String specText) {
+        return convertSpecToAst(specText, null);
+    }
+
+    /**
+     * Same conversion, but every {@link JmlFunctionSpec} also records
+     * {@code sourceFile} and its 1-based line number, so later checks (rule 13)
+     * can report "reject X in FILE:LINE" rather than just "reject X".
+     */
+    public static JmlSpecAst convertSpecToAst(String specText, String sourceFile) {
         List<JmlFunctionSpec> specs = new ArrayList<>();
-        
+
         // Step 1: Extract individual spec blocks
         List<SpecBlock> blocks = extractSpecBlocks(specText);
-        
+
         // Step 2: For each block, build its AST
         for (SpecBlock block : blocks) {
             JmlFunctionSpec spec = buildSpecAst(block);
+            spec.setSourceInfo(sourceFile, block.lineNumber, block.requiresText, block.ensuresText);
             specs.add(spec);
         }
-        
+
         // Step 3: Pick up the optional global-state declaration block
         return new JmlSpecAst(specs, extractStateVars(specText));
+    }
+
+    /** 1-based line number of the given 0-based character offset into {@code text}. */
+    static int lineOf(String text, int offset) {
+        int line = 1;
+        int limit = Math.min(offset, text.length());
+        for (int i = 0; i < limit; i++) {
+            if (text.charAt(i) == '\n') line++;
+        }
+        return line;
     }
     
     // ──────────────────────────────────────────────────────────
@@ -83,34 +103,38 @@ public class SpecToAstConverter {
     // ──────────────────────────────────────────────────────────
     static List<SpecBlock> extractSpecBlocks(String specText) {
         List<SpecBlock> blocks = new ArrayList<>();
-        
+
         Pattern specPattern = Pattern.compile(
             "spec\\s+(\\w+)\\s*\\{([^}]+)\\}",
             Pattern.DOTALL
         );
         Matcher m = specPattern.matcher(specText);
-        
+
         while (m.find()) {
             String name = m.group(1);
             String body = m.group(2);
-            blocks.add(new SpecBlock(name, body));
+            SpecBlock block = new SpecBlock(name, body);
+            block.lineNumber = lineOf(specText, m.start());
+            block.requiresText = extractClause(body, "requires");
+            block.ensuresText = extractClause(body, "ensures");
+            blocks.add(block);
         }
-        
+
         return blocks;
     }
-    
+
     // ──────────────────────────────────────────────────────────
     // Step 2: Build AST for one spec block
     // ──────────────────────────────────────────────────────────
     static JmlFunctionSpec buildSpecAst(SpecBlock block) {
         String sigLine = extractClause(block.body, "signature");
-        String reqLine = extractClause(block.body, "requires");
-        String ensLine = extractClause(block.body, "ensures");
-        
+        String reqLine = block.requiresText;
+        String ensLine = block.ensuresText;
+
         FunctionSignature sig = parseSignature(sigLine);
         Expr precond = parseConditionToExpr(reqLine);
         Expr postcond = parseConditionToExpr(ensLine);
-        
+
         return new JmlFunctionSpec(block.name, sig, precond, postcond);
     }
     
@@ -250,7 +274,7 @@ public class SpecToAstConverter {
     // Helper utilities
     // ──────────────────────────────────────────────────────────
     
-    static String extractClause(String body, String clause) {
+    public static String extractClause(String body, String clause) {
         Pattern p = Pattern.compile(clause + ":\\s*([^;]+);");
         Matcher m = p.matcher(body);
         if (m.find()) {
@@ -259,7 +283,7 @@ public class SpecToAstConverter {
         return "";
     }
     
-    static boolean containsAtTopLevel(String text, String op) {
+    public static boolean containsAtTopLevel(String text, String op) {
         int parenDepth = 0;
         int idx = text.indexOf(op);
         while (idx != -1) {
@@ -274,7 +298,7 @@ public class SpecToAstConverter {
         return false;
     }
     
-    static String[] splitByTopLevel(String text, String op) {
+    public static String[] splitByTopLevel(String text, String op) {
         int parenDepth = 0;
         int idx = text.indexOf(op);
         while (idx != -1) {
@@ -309,6 +333,9 @@ public class SpecToAstConverter {
     static class SpecBlock {
         String name;
         String body;
+        int lineNumber;
+        String requiresText = "";
+        String ensuresText = "";
         SpecBlock(String name, String body) {
             this.name = name;
             this.body = body;
