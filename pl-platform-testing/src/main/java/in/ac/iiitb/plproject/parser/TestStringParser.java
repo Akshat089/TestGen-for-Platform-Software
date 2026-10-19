@@ -1,6 +1,5 @@
 package in.ac.iiitb.plproject.parser;
 
-import in.ac.iiitb.plproject.atc.ConcreteInput;
 import in.ac.iiitb.plproject.parser.ast.TestStringAst;
 
 import java.util.ArrayList;
@@ -9,42 +8,27 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Parses a {@code .tests} file into a {@link TestStringAst}.
- *
- * <p>This is the {@code TestStringParser -> TestStringAst} stage the README's
- * parsing layer describes.  Until now a test string could only be written as a
- * hardcoded {@code Arrays.asList("push", "push", ...)} in Java; making it a file
- * means the sequence can be edited, validated and version-controlled alongside
- * the {@code .spec} it runs against.
+ * Parses a {@code .tests} file into a {@link TestStringAst}: an ordered list
+ * of operation names, nothing else (rule 4).
  *
  * <h3>Format</h3>
  *
  * <pre>
  * test StackDryRun {
  *     sequence: push -&gt; push -&gt; pop -&gt; peek;
- *
- *     inputs {
- *         push[0].elem = "alpha";
- *         push[1].elem = "beta";
- *     }
  * }
  * </pre>
  *
- * <p>{@code sequence} is the test string itself: the blocks, in order.  Blocks may
- * be separated by {@code ->}, {@code ,} or whitespace.
- *
- * <p>{@code inputs} is optional and is what turns a test string into a SINGULAR
- * CASE.  Each line binds one CLIENT_INPUT of one block, addressed as
- * {@code function[blockIndex].param}, to a Java literal.  The block index is a
- * position in the sequence, 0-based, and the function name is checked against
- * the sequence so a binding cannot silently drift onto the wrong block.
- *
- * <p>SERVER_OUTPUT values must NOT be bound here — the caller cannot know them in
- * advance; they come from the call and are threaded forward by the propagation
- * scan.  {@link TestStringValidator} rejects an attempt to bind one.
+ * <p>{@code sequence} is the test string itself: the blocks, in order. Blocks
+ * may be separated by {@code ->}, {@code ,} or whitespace.
  *
  * <p>A bare sequence with no wrapper is also accepted, for a quick one-liner:
  * <pre>push -&gt; push -&gt; pop -&gt; peek</pre>
+ *
+ * <p>An older-style file may still carry an {@code inputs { ... }} block that
+ * pinned concrete values to every parameter. That block is parsed just enough
+ * to be skipped over without failing the file, and {@link #parse} prints one
+ * warning naming its line — it is never used to build the {@link TestStringAst}.
  */
 public class TestStringParser {
 
@@ -57,10 +41,6 @@ public class TestStringParser {
     private static final Pattern INPUTS_BLOCK = Pattern.compile(
             "inputs\\s*\\{([^}]*)\\}", Pattern.DOTALL);
 
-    /** {@code push[0].elem = "alpha"} */
-    private static final Pattern INPUT_BINDING = Pattern.compile(
-            "(\\w+)\\s*\\[\\s*(\\d+)\\s*\\]\\s*\\.\\s*(\\w+)\\s*=\\s*(.+)");
-
     /** Raised when the file cannot be read as a test string at all. */
     public static class TestStringSyntaxException extends RuntimeException {
         public TestStringSyntaxException(String message) {
@@ -69,18 +49,27 @@ public class TestStringParser {
     }
 
     public static TestStringAst parse(String text) {
+        return parse(text, null);
+    }
+
+    /** Same parse, but every diagnostic names {@code sourceFile}. */
+    public static TestStringAst parse(String text, String sourceFile) {
         String stripped = stripComments(text);
+        String label = sourceFile != null ? sourceFile : "<test string>";
 
         Matcher block = TEST_BLOCK.matcher(stripped);
         if (!block.find()) {
             // Bare form: the whole file is just the sequence.
             List<String> calls = parseSequence(stripped);
             if (calls.isEmpty()) {
-                throw new TestStringSyntaxException(
-                        "no test string found: expected `test <Name> { sequence: a -> b; }`"
+                throw new TestStringSyntaxException(label
+                      + ": no test string found: expected `test <Name> { sequence: a -> b; }`"
                       + " or a bare sequence such as `push -> push -> pop`");
             }
-            return new TestStringAst(null, calls, null);
+            TestStringAst ast = new TestStringAst(null, calls);
+            ast.setSourceFile(sourceFile);
+            warnIfInputsBlockPresent(stripped, label, ast);
+            return ast;
         }
 
         String name = block.group(1);
@@ -88,16 +77,31 @@ public class TestStringParser {
 
         Matcher sequence = SEQUENCE_CLAUSE.matcher(body);
         if (!sequence.find()) {
-            throw new TestStringSyntaxException(
-                    "test " + name + " has no `sequence:` clause");
+            throw new TestStringSyntaxException(label + ": test " + name
+                    + " has no `sequence:` clause");
         }
         List<String> calls = parseSequence(sequence.group(1));
         if (calls.isEmpty()) {
-            throw new TestStringSyntaxException(
-                    "test " + name + " has an empty sequence");
+            throw new TestStringSyntaxException(label + ": test " + name
+                    + " has an empty sequence");
         }
 
-        return new TestStringAst(name, calls, parseInputs(name, body, calls));
+        TestStringAst ast = new TestStringAst(name, calls);
+        ast.setSourceFile(sourceFile);
+        ast.setSequenceLineNumber(SpecToAstConverter.lineOf(stripped, block.start() + sequence.start()));
+        warnIfInputsBlockPresent(body, label, ast);
+        return ast;
+    }
+
+    private static void warnIfInputsBlockPresent(String body, String label, TestStringAst ast) {
+        Matcher inputsBlock = INPUTS_BLOCK.matcher(body);
+        if (!inputsBlock.find()) return;
+
+        int line = SpecToAstConverter.lineOf(body, inputsBlock.start());
+        ast.setIgnoredInputsLineNumber(line);
+        System.out.println("[WARN] " + label + ":" + line
+                + ": `inputs { ... }` block is ignored — sequences carry no values"
+                + " in this design; every argument is chosen by SPF.");
     }
 
     private static List<String> parseSequence(String text) {
@@ -107,31 +111,6 @@ public class TestStringParser {
             if (!call.isEmpty()) calls.add(call);
         }
         return calls;
-    }
-
-    private static List<ConcreteInput> parseInputs(String testName, String body, List<String> calls) {
-        List<ConcreteInput> inputs = new ArrayList<ConcreteInput>();
-
-        Matcher inputsBlock = INPUTS_BLOCK.matcher(body);
-        if (!inputsBlock.find()) return inputs;
-
-        for (String line : inputsBlock.group(1).split(";")) {
-            String binding = line.trim();
-            if (binding.isEmpty()) continue;
-
-            Matcher matcher = INPUT_BINDING.matcher(binding);
-            if (!matcher.matches()) {
-                throw new TestStringSyntaxException(
-                        "test " + testName + ": cannot read input binding `" + binding
-                      + "`, expected `function[blockIndex].param = <literal>`");
-            }
-            inputs.add(new ConcreteInput(
-                    Integer.parseInt(matcher.group(2)),
-                    matcher.group(1),
-                    matcher.group(3),
-                    matcher.group(4).trim()));
-        }
-        return inputs;
     }
 
     /** Drops block and line comments, matching the .spec file conventions. */

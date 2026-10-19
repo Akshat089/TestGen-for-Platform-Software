@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -11,21 +11,52 @@
     <packaging>jar</packaging>
 
     <name>PL Platform Testing</name>
-    <description>Test generation algorithm platform</description>
+    <description>Test generation algorithm platform (GENATC): spec + sequence -&gt; IR -&gt; real SPF -&gt; JUnit</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <!-- jpf-core/jpf-symbc (installed by ../scripts/setup-spf.sh) are built and run
+             under JDK 11; this module targets the same JDK throughout for one fixed
+             point rather than two. -->
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <!-- Rule 11: one JUnit version everywhere — the generated test classes, this
+             module's own tests, and verify-generated.sh all use JUnit 4. -->
+        <junit.version>4.13.1</junit.version>
+        <hamcrest.version>1.3</hamcrest.version>
+        <!-- Pinned by scripts/setup-spf.sh; see IMPLEMENTATION_NOTES.md for the exact
+             commits these coordinates were installed from. -->
+        <jpf-core.version>8.0-f70927c</jpf-core.version>
+        <jpf-symbc.version>1.0-3bedf0b</jpf-symbc.version>
     </properties>
 
     <dependencies>
-        <!-- Test-only: drives the regression tests for the library dry runs. -->
+        <!-- Real JUnit 4: both this module's own tests and the generated JUnit classes
+             run on it (rule 11). -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.9.2</version>
-            <scope>test</scope>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+
+        <!-- jpf-core / jpf-symbc: `provided` scope only. The generator's own compiled
+             code needs them for exactly one class, the JPF path-vector listener
+             (in.ac.iiitb.plproject.spf.listener.PathVectorListener) — everything else,
+             including every generated JUnit class, imports nothing from gov.nasa.jpf
+             (rule 11). Not on Maven Central; installed locally by
+             ../scripts/setup-spf.sh, which this module's build therefore depends on
+             having been run at least once. -->
+        <dependency>
+            <groupId>gov.nasa.jpf</groupId>
+            <artifactId>jpf-core</artifactId>
+            <version>${jpf-core.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>gov.nasa.jpf</groupId>
+            <artifactId>jpf-symbc</artifactId>
+            <version>${jpf-symbc.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -34,15 +65,20 @@
         <testSourceDirectory>src/test/java</testSourceDirectory>
         <outputDirectory>target/classes</outputDirectory>
         <testOutputDirectory>target/test-classes</testOutputDirectory>
-        
+
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>11</source>
+                    <target>11</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
@@ -51,31 +87,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M7</version>
                 <configuration>
-                    <!-- The generated ATCs use plain `assert`, so the regression
-                         tests need assertions enabled in the forked JVM. -->
-                    <argLine>-ea</argLine>
                     <workingDirectory>${project.basedir}</workingDirectory>
                     <trimStackTrace>false</trimStackTrace>
-
-                    <!-- The test cases in specs/*.tests reach JUnit as dynamic tests,
-                         one per generated pre/postcondition, and the mutants reach it
-                         one per seeded fault.  Without these reporters the XML and
-                         console reports name only the @TestFactory method, so every
-                         one of them shows up as an indistinguishable "testCases".
-                         Phrased names put the real display name in the report. -->
-                    <statelessTestsetReporter
-                            implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter">
-                        <usePhrasedFileName>false</usePhrasedFileName>
-                        <usePhrasedTestSuiteClassName>true</usePhrasedTestSuiteClassName>
-                        <usePhrasedTestCaseClassName>true</usePhrasedTestCaseClassName>
-                        <usePhrasedTestCaseMethodName>true</usePhrasedTestCaseMethodName>
-                    </statelessTestsetReporter>
-                    <statelessTestsetInfoReporter
-                            implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5StatelessTestsetInfoReporter">
-                        <usePhrasedFileName>false</usePhrasedFileName>
-                        <usePhrasedClassNameInRunning>true</usePhrasedClassNameInRunning>
-                        <usePhrasedClassNameInTestCaseSummary>true</usePhrasedClassNameInTestCaseSummary>
-                    </statelessTestsetInfoReporter>
                 </configuration>
             </plugin>
             <plugin>
@@ -83,7 +96,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <mainClass>in.ac.iiitb.plproject.atc.IncrementalTestExample</mainClass>
+                    <mainClass>in.ac.iiitb.plproject.atc.GenatcMain</mainClass>
                 </configuration>
             </plugin>
         </plugins>

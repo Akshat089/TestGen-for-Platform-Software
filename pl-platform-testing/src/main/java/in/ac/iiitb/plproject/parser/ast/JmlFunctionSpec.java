@@ -57,6 +57,37 @@ public class JmlFunctionSpec {
     // ── END NEW ───────────────────────────────────────────────────────────────
 
     /**
+     * Where this spec block's {@code requires}/{@code ensures} text and 1-based
+     * line number came from, for error messages (rule 13: "reject ... with the
+     * input file and line"). Set once by {@link in.ac.iiitb.plproject.parser.SpecToAstConverter}
+     * right after construction; {@code null}/{@code -1} only for a spec built
+     * directly in code (tests) rather than parsed from a file.
+     */
+    private String sourceFile;
+    private int lineNumber = -1;
+    private String requiresText = "";
+    private String ensuresText = "";
+
+    /** Records where this block came from in its {@code .spec} file. */
+    public void setSourceInfo(String sourceFile, int lineNumber, String requiresText, String ensuresText) {
+        this.sourceFile = sourceFile;
+        this.lineNumber = lineNumber;
+        this.requiresText = requiresText != null ? requiresText : "";
+        this.ensuresText = ensuresText != null ? ensuresText : "";
+    }
+
+    public String getSourceFile() { return sourceFile; }
+
+    /** 1-based line of the {@code spec <name> {} block's opening, or -1 if unknown. */
+    public int getLineNumber() { return lineNumber; }
+
+    /** The original, unparsed {@code requires:} text (no trailing `;`). */
+    public String getRequiresText() { return requiresText; }
+
+    /** The original, unparsed {@code ensures:} text (no trailing `;`). */
+    public String getEnsuresText() { return ensuresText; }
+
+    /**
      * Constructor that takes individual requires and ensures clauses.
      * They will be combined with AND operations.
      */

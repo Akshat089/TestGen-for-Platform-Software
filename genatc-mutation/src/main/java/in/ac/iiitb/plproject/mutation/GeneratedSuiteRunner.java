@@ -1,11 +1,7 @@
 package in.ac.iiitb.plproject.mutation;
 
-import in.ac.iiitb.plproject.atc.LibraryDryRunExamples;
-import in.ac.iiitb.plproject.parser.SpecToAstConverter;
-import in.ac.iiitb.plproject.parser.TestStringParser;
-import in.ac.iiitb.plproject.parser.ast.JmlSpecAst;
-import in.ac.iiitb.plproject.parser.ast.TestStringAst;
-import in.ac.iiitb.plproject.verify.GeneratedSuiteHarness;
+import in.ac.iiitb.plproject.atc.GenatcMain;
+import in.ac.iiitb.plproject.atc.LibraryRegistry;
 
 import java.io.IOException;
 import java.io.PrintStream;
@@ -25,11 +21,12 @@ import java.util.Map;
  * <p>Three phases, in order, each answering a different question:
  *
  * <ol>
- *   <li><b>test strings</b> — generate a few hundred sequences per library and run
- *       each one against the real library. Each run is a test: it either satisfies
- *       every pre- and postcondition it reaches, or it stops because the sequence
- *       stepped outside the library's contract, or it fails a postcondition, which
- *       would be a genuine finding against the library.</li>
+ *   <li><b>test strings</b> — generate a few hundred sequences per library, run
+ *       each one through the real pipeline (real SPF, then the generated JUnit
+ *       class against the real library). Each run either produces a suite that
+ *       passes in full, a sequence SPF finds no feasible path through (stopped
+ *       at a precondition, rule 10), or — a genuine finding against the library
+ *       itself — a suite with a failing assertion.</li>
  *   <li><b>mutants</b> — generate the operator mutants and run each against the
  *       library's own checked-in test string. This is the per-operator score: what
  *       fraction of each KIND of fault does one hand-written sequence catch?</li>
@@ -40,23 +37,30 @@ import java.util.Map;
  *       test string, with no change to the spec"; this measures how many.</li>
  * </ol>
  *
+ * <p><b>Adapted for the new pipeline</b>: phase 1 used to run a generated test
+ * string's {@code SingularCase} and classify PASSED/STOPPED/FAILED from its
+ * condition-by-condition report; that artifact is gone. It now asks
+ * {@link GenatcMain#runOne} to run the real pipeline and classifies from its
+ * {@link GenatcMain.LibraryOutcome} instead — PASSED/STOPPED/FAILED mean the
+ * same thing, just read off a different (and, since it runs real SPF rather
+ * than one hand-picked concrete case, strictly more informative) source.
+ *
  * <pre>
  *   ./run-operator-suites.sh                  # every library, all three phases
  *   ./run-operator-suites.sh stack queue      # a subset
  * </pre>
  *
- * <p>It is slow — each of the thousands of runs forks a compiler and two JVMs — so
- * it is a script of its own rather than part of {@code mvn -o test}.
+ * <p>It is slow — thousands of real SPF runs — so it is a script of its own
+ * rather than part of {@code mvn -o test}.
  */
 public class GeneratedSuiteRunner {
 
-    /** Everything this runner writes, relative to the repository root. */
-    private static final Path SUITES      = Paths.get("..", "operator-suites");
+    /** Everything this runner writes, relative to the genatc-mutation working directory. */
+    private static final Path SUITES       = Paths.get("operator-suites");
     private static final Path TEST_STRINGS = SUITES.resolve("teststrings");
-    private static final Path RESULTS     = SUITES.resolve("results");
+    private static final Path RESULTS      = SUITES.resolve("results");
 
-    private static final Path MUTATIONS = Paths.get("..", "mutations");
-    private static final Path STUBS     = Paths.get("..", "verify-stubs");
+    private static final Path MUTATIONS = Paths.get("mutations");
     private static final Path WORK      = Paths.get("target", "operator-suites");
 
     /** How many test strings to generate per library — the brief's 200 to 300. */
@@ -77,11 +81,11 @@ public class GeneratedSuiteRunner {
 
     /** What one generated test string did when it was run. */
     public enum TestStringStatus {
-        /** Every condition it reached holds. */
+        /** Every generated assertion holds. */
         PASSED,
-        /** A precondition failed: the sequence stepped outside the library's contract. */
+        /** SPF found no feasible path: the sequence steps outside the library's contract. */
         STOPPED,
-        /** A postcondition failed — a finding against the library itself. */
+        /** A generated assertion failed — a finding against the library itself. */
         FAILED,
         /** The generated sources did not compile. */
         INVALID
@@ -92,20 +96,20 @@ public class GeneratedSuiteRunner {
         final String name;
         final String sequence;
         final TestStringStatus status;
-        final int conditions;
+        final int testsGenerated;
         final Path path;
 
         TestStringResult(String name, String sequence, TestStringStatus status,
-                         int conditions, Path path) {
+                         int testsGenerated, Path path) {
             this.name = name;
             this.sequence = sequence;
             this.status = status;
-            this.conditions = conditions;
+            this.testsGenerated = testsGenerated;
             this.path = path;
         }
 
         public TestStringStatus getStatus() { return status; }
-        public int getConditions() { return conditions; }
+        public int getTestsGenerated() { return testsGenerated; }
         public Path getPath() { return path; }
     }
 
@@ -155,37 +159,41 @@ public class GeneratedSuiteRunner {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        List<LibraryDryRunExamples.Example> selected = new ArrayList<LibraryDryRunExamples.Example>();
+    public static void main(String[] args) throws Exception {
+        List<LibraryRegistry.Entry> selected = new ArrayList<LibraryRegistry.Entry>();
         for (String arg : args) {
-            LibraryDryRunExamples.Example example = LibraryDryRunExamples.byKey(arg);
-            if (example == null) {
+            LibraryRegistry.Entry entry = LibraryRegistry.byKey(arg);
+            if (entry == null) {
                 System.err.println("Unknown library: " + arg
-                        + " (expected one of " + LibraryDryRunExamples.keys() + ")");
+                        + " (expected one of " + LibraryRegistry.keys() + ")");
                 System.exit(2);
             }
-            selected.add(example);
+            selected.add(entry);
         }
-        if (selected.isEmpty()) selected.addAll(LibraryDryRunExamples.ALL);
+        if (selected.isEmpty()) {
+            for (LibraryRegistry.Entry e : LibraryRegistry.ALL) if (e.isSupported()) selected.add(e);
+        }
 
         Files.createDirectories(SUITES);
         Files.createDirectories(TEST_STRINGS);
         Files.createDirectories(RESULTS);
 
-        MutationRunner runner = new MutationRunner(MUTATIONS, STUBS, WORK);
-        GeneratedSuiteHarness harness = new GeneratedSuiteHarness(STUBS, WORK.resolve("classes"));
+        MutationRunner runner = new MutationRunner(MUTATIONS, WORK);
         Map<String, LibraryReport> reports = new LinkedHashMap<String, LibraryReport>();
 
-        for (LibraryDryRunExamples.Example example : selected) {
+        for (LibraryRegistry.Entry entry : selected) {
+            if (!entry.isSupported()) {
+                System.out.println("skipping " + entry.key + " (unsupported: " + entry.unsupportedReason + ")");
+                continue;
+            }
             System.out.println();
-            System.out.println("══ " + example.key + " "
-                    + dashes(58 - example.key.length()));
-            LibraryReport report = new LibraryReport(example.key);
-            reports.put(example.key, report);
+            System.out.println("══ " + entry.key + " " + dashes(58 - entry.key.length()));
+            LibraryReport report = new LibraryReport(entry.key);
+            reports.put(entry.key, report);
 
-            runTestStrings(example, harness, report);
-            runMutants(example, runner, report);
-            crossFamilyAgainstSurvivors(example, runner, report);
+            runTestStrings(entry, report);
+            runMutants(entry, runner, report);
+            crossFamilyAgainstSurvivors(entry, runner, report);
 
             writeTestStringResults(report);
             writeMutantResults(report);
@@ -199,21 +207,21 @@ public class GeneratedSuiteRunner {
     // phase 1 — the generated test suite
     // ─────────────────────────────────────────────────────────────────────────
 
-    private static void runTestStrings(LibraryDryRunExamples.Example example,
-                                       GeneratedSuiteHarness harness,
-                                       LibraryReport report) throws IOException {
-        JmlSpecAst spec = SpecToAstConverter.convertSpecToAst(read(example.specPath));
-        TestStringAst seed = TestStringParser.parse(read(example.testStringPath));
+    private static void runTestStrings(LibraryRegistry.Entry entry, LibraryReport report)
+            throws IOException {
+        in.ac.iiitb.plproject.parser.ast.JmlSpecAst spec =
+                in.ac.iiitb.plproject.parser.SpecToAstConverter.convertSpecToAst(read(entry.specPath));
+        in.ac.iiitb.plproject.parser.ast.TestStringAst seed =
+                in.ac.iiitb.plproject.parser.TestStringParser.parse(read(entry.testsPath));
 
         // The seed is the library key, so a family is the same on every machine and
         // in every run: a suite that changed between runs could not be a baseline.
-        TestStringGenerator generator = new TestStringGenerator(spec, seed,
-                example.key.hashCode());
-        List<String> texts = generator.generate(
-                capitalise(example.key) + "Generated", TEST_STRINGS_PER_LIBRARY);
+        TestStringGenerator generator = new TestStringGenerator(spec, seed, entry.key.hashCode());
+        List<String> texts = generator.generate(capitalise(entry.key) + "Generated",
+                TEST_STRINGS_PER_LIBRARY);
 
-        Path libraryDir = TEST_STRINGS.resolve(example.key);
-        deleteDirectory(libraryDir);
+        Path libraryDir = TEST_STRINGS.resolve(entry.key);
+        MutationRunner.deleteRecursively(libraryDir);
         Files.createDirectories(libraryDir);
 
         System.out.println("  phase 1 — " + texts.size() + " generated test strings");
@@ -221,37 +229,38 @@ public class GeneratedSuiteRunner {
 
         for (int index = 0; index < texts.size(); index++) {
             String text = texts.get(index);
-            String name = String.format("%s-%03d", example.key, index + 1);
-            Path testStringPath = libraryDir.resolve(name + ".tests");
-            Files.write(testStringPath, text.getBytes(StandardCharsets.UTF_8));
+            String name = String.format("%s-%03d", entry.key, index + 1);
+            Path testsPath = libraryDir.resolve(name + ".tests");
+            Files.write(testsPath, text.getBytes(StandardCharsets.UTF_8));
 
-            Path outputDir = WORK.resolve("teststrings").resolve(example.key).resolve(name);
-            LibraryDryRunExamples.Example variant = LibraryDryRunExamples.variantOf(
-                    example, example.librarySourcePaths, testStringPath.toString(),
-                    outputDir.toString());
+            Path outputDir = WORK.resolve("teststrings").resolve(entry.key).resolve(name);
+            LibraryRegistry.Entry variant = LibraryRegistry.variantOf(
+                    entry, entry.librarySourcePaths, testsPath.toString(), outputDir.toString());
 
             TestStringStatus status;
-            int conditions = 0;
+            int testsGenerated = 0;
             try {
-                LibraryDryRunExamples.run(variant, false);
-                GeneratedSuiteHarness.Outcome outcome = harness.verify(
-                        outputDir.resolve("in/ac/iiitb/plproject/atc/generated"),
-                        "teststring-" + name);
-                conditions = outcome.getConditions().size();
-                if (!outcome.compiled()) {
-                    status = TestStringStatus.INVALID;
-                } else {
-                    GeneratedSuiteHarness.Condition failure = outcome.firstFailure();
-                    if (failure == null) status = TestStringStatus.PASSED;
-                    else if (failure.isPrecondition()) status = TestStringStatus.STOPPED;
-                    else status = TestStringStatus.FAILED;
+                GenatcMain.LibraryOutcome outcome = GenatcMain.runOne(variant);
+                testsGenerated = outcome.testsGenerated;
+                switch (outcome.status) {
+                    case "GENERATED":
+                        if (!outcome.junitCompiled) status = TestStringStatus.INVALID;
+                        else if (outcome.junitFailures.isEmpty()) status = TestStringStatus.PASSED;
+                        else status = TestStringStatus.FAILED;
+                        break;
+                    case "INFEASIBLE": case "CUT_OFF_DEPTH": case "CUT_OFF_TIMEOUT":
+                        status = TestStringStatus.STOPPED;
+                        break;
+                    default:
+                        status = TestStringStatus.INVALID;
+                        break;
                 }
-            } catch (RuntimeException | IOException problem) {
+            } catch (Exception problem) {
                 status = TestStringStatus.INVALID;
             }
 
             report.testStrings.add(new TestStringResult(
-                    name, sequenceOf(text), status, conditions, testStringPath));
+                    name, sequenceOf(text), status, testsGenerated, testsPath));
         }
         report.testStringSeconds = (System.currentTimeMillis() - startedAt) / 1000;
 
@@ -268,14 +277,13 @@ public class GeneratedSuiteRunner {
     // phase 2 — the generated mutation suite, against the checked-in sequence
     // ─────────────────────────────────────────────────────────────────────────
 
-    private static void runMutants(LibraryDryRunExamples.Example example,
-                                   MutationRunner runner,
-                                   LibraryReport report) throws IOException {
+    private static void runMutants(LibraryRegistry.Entry entry, MutationRunner runner,
+                                   LibraryReport report) throws Exception {
         List<Mutant> mutants = OperatorMutantGenerator.generate(
-                example.key, example.librarySourcePaths, MUTANTS_PER_LIBRARY);
+                entry.key, entry.librarySourcePaths, MUTANTS_PER_LIBRARY);
 
-        Files.write(SUITES.resolve(example.key + ".mutants"),
-                OperatorMutantGenerator.render(example.key, example.librarySourcePaths, mutants)
+        Files.write(SUITES.resolve(entry.key + ".mutants"),
+                OperatorMutantGenerator.render(entry.key, entry.librarySourcePaths, mutants)
                         .getBytes(StandardCharsets.UTF_8));
 
         System.out.println("  phase 2 — " + mutants.size() + " generated mutants");
@@ -296,9 +304,9 @@ public class GeneratedSuiteRunner {
     // phase 3 — the survivors, against the family
     // ─────────────────────────────────────────────────────────────────────────
 
-    private static void crossFamilyAgainstSurvivors(LibraryDryRunExamples.Example example,
+    private static void crossFamilyAgainstSurvivors(LibraryRegistry.Entry entry,
                                                     MutationRunner runner,
-                                                    LibraryReport report) throws IOException {
+                                                    LibraryReport report) throws Exception {
         // Only a sequence that passes against the healthy library is usable as an
         // oracle: one that stops at a precondition proves nothing about a mutant,
         // because it proves nothing about the library either.
@@ -343,10 +351,10 @@ public class GeneratedSuiteRunner {
     private static void writeTestStringResults(LibraryReport report) throws IOException {
         StringBuilder out = new StringBuilder();
         out.append("# generated test strings — ").append(report.getKey()).append('\n');
-        out.append("# name\tstatus\tconditions\tsequence\n");
+        out.append("# name\tstatus\ttests_generated\tsequence\n");
         for (TestStringResult result : report.testStrings) {
             out.append(result.name).append('\t').append(result.status).append('\t')
-               .append(result.conditions).append('\t').append(result.sequence).append('\n');
+               .append(result.testsGenerated).append('\t').append(result.sequence).append('\n');
         }
         Files.write(RESULTS.resolve(report.getKey() + ".teststrings.tsv"),
                     out.toString().getBytes(StandardCharsets.UTF_8));
@@ -494,10 +502,6 @@ public class GeneratedSuiteRunner {
 
     private static String capitalise(String key) {
         return Character.toUpperCase(key.charAt(0)) + key.substring(1);
-    }
-
-    private static void deleteDirectory(Path directory) throws IOException {
-        GeneratedSuiteHarness.deleteRecursively(directory);
     }
 
     private static String dashes(int count) {
