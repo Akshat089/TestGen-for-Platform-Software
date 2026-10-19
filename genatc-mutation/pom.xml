@@ -55,12 +55,11 @@
             <artifactId>jpf-symbc</artifactId>
             <version>${jpf-symbc.version}</version>
         </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
+        <!-- junit itself comes transitively from pl-platform-testing (compile scope
+             there, since GeneratedSuiteHarness needs org.junit.runner.* at
+             runtime) — not redeclared here, since redeclaring it at `test` scope
+             would shadow and narrow that transitive compile-scope dependency
+             (Maven's nearest-wins mediation), breaking `exec:java`. -->
     </dependencies>
 
     <build>
