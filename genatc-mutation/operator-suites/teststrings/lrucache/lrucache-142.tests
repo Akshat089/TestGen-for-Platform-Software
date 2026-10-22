@@ -1,0 +1,3 @@
+test LrucacheGenerated142 {
+    sequence: put -> put -> get -> get -> get -> put;
+}

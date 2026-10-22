@@ -1,8 +1,0 @@
-test StackGenerated238 {
-    sequence: pop -> push -> push -> pop;
-
-    inputs {
-        push[1].elem = "beta";
-        push[2].elem = "beta";
-    }
-}

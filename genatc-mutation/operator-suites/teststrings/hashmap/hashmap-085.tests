@@ -1,9 +1,3 @@
 test HashmapGenerated85 {
-    sequence: getOldValue -> remove -> getOldValue;
-
-    inputs {
-        getOldValue[0].key = "beta";
-        remove[1].key = "beta";
-        getOldValue[2].key = "session";
-    }
+    sequence: remove -> getOldValue -> put -> remove -> getOldValue;
 }

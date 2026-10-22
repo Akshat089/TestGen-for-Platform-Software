@@ -1,0 +1,3 @@
+test GraphGenerated39 {
+    sequence: degree -> degree;
+}

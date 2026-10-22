@@ -1,0 +1,70 @@
+# generated mutants — lrucache
+# id	status	operator	method	file	killed-by-family	detail
+LRUCACHE_GEN_SDL_1	INVALID	statement-deletion	-	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LRUCACHE_GEN_SDL_1/run/in/ac/iiitb/plproject/atc/generated/GeneratedATCsTest.java:31: error: cannot find symbol
+LRUCACHE_GEN_SEI_2	INVALID	side-effect-insertion	-	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LRUCACHE_GEN_SEI_2/run/in/ac/iiitb/plproject/atc/generated/Helper.java:38: error: <identifier> expected
+LRUCACHE_GEN_SDL_3	INVALID	statement-deletion	-	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LRUCACHE_GEN_SDL_3/run/in/ac/iiitb/plproject/atc/generated/Helper.java:55: error: cannot find symbol
+LRUCACHE_GEN_SEI_4	INVALID	side-effect-insertion	-	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LRUCACHE_GEN_SEI_4/run/in/ac/iiitb/plproject/atc/generated/Helper.java:39: error: <identifier> expected
+LRUCACHE_GEN_CRP_5	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+LRUCACHE_GEN_CRP_6	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+LRUCACHE_GEN_CRP_7	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+LRUCACHE_GEN_CRP_8	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+LRUCACHE_GEN_CRP_9	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+LRUCACHE_GEN_CRP_10	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+LRUCACHE_GEN_ROR_11	KILLED	relational-operator-replacement	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): Index 0 out of bounds for length 0
+LRUCACHE_GEN_ROR_12	SURVIVED	relational-operator-replacement	put	Helper.java	-	every generated assertion still holds
+LRUCACHE_GEN_ROR_13	KILLED	relational-operator-replacement	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): Index 0 out of bounds for length 0
+LRUCACHE_GEN_ROR_14	KILLED	relational-operator-replacement	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): Index 0 out of bounds for length 0
+LRUCACHE_GEN_ROR_15	KILLED	relational-operator-replacement	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST restore: size <= capacity
+LRUCACHE_GEN_COR_16	KILLED	conditional-operator-replacement	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): Index 0 out of bounds for length 0
+LRUCACHE_GEN_COI_17	KILLED	conditional-operator-insertion	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): Index 0 out of bounds for length 0
+LRUCACHE_GEN_UOI_18	KILLED	unary-operator-insertion	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): PRE get: C.containsKey(key)
+LRUCACHE_GEN_CTC_19	KILLED	condition-to-constant	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): Index 0 out of bounds for length 0
+LRUCACHE_GEN_CTC_20	KILLED	condition-to-constant	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST restore: size <= capacity
+LRUCACHE_GEN_ARP_21	KILLED	argument-replacement	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): PRE get: C.containsKey(key)
+LRUCACHE_GEN_ARP_22	INVALID	argument-replacement	put	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LRUCACHE_GEN_ARP_22/run/in/ac/iiitb/plproject/atc/generated/Helper.java:54: error: bad operand types for binary operator '-'
+LRUCACHE_GEN_MCR_23	KILLED	method-call-replacement	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): PRE get: C.containsKey(key)
+LRUCACHE_GEN_MCR_24	KILLED	method-call-replacement	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST restore: size <= capacity
+LRUCACHE_GEN_VRO_25	KILLED	variable-replacement	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): Index 0 out of bounds for length 0
+LRUCACHE_GEN_CRP_26	KILLED	constant-replacement	put	Helper.java	-	killed by: run3(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): PRE restore: !C.containsKey(evictedKey)
+LRUCACHE_GEN_CRP_27	KILLED	constant-replacement	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): Index -1 out of bounds for length 2
+LRUCACHE_GEN_SDL_28	KILLED	statement-deletion	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST restore: size <= capacity
+LRUCACHE_GEN_ARP_29	KILLED	argument-replacement	put	Helper.java	-	killed by: run3(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): PRE restore: !C.containsKey(evictedKey)
+LRUCACHE_GEN_ARP_30	KILLED	argument-replacement	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): Index -1 out of bounds for length 2
+LRUCACHE_GEN_MCR_31	KILLED	method-call-replacement	put	Helper.java	-	killed by: run3(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST restore: size <= capacity
+LRUCACHE_GEN_SEI_32	SURVIVED	side-effect-insertion	put	Helper.java	lrucache-002: put -> put -> get -> put -> restore -> restore	every generated assertion still holds
+LRUCACHE_GEN_SDL_33	KILLED	statement-deletion	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST restore: size <= capacity
+LRUCACHE_GEN_STR_34	SURVIVED	statement-replacement	put	Helper.java	-	every generated assertion still holds
+LRUCACHE_GEN_ARP_35	KILLED	argument-replacement	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST restore: size <= capacity
+LRUCACHE_GEN_ARP_36	INVALID	argument-replacement	put	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LRUCACHE_GEN_ARP_36/run/in/ac/iiitb/plproject/atc/generated/Helper.java:56: error: bad operand types for binary operator '-'
+LRUCACHE_GEN_MCR_37	KILLED	method-call-replacement	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST restore: size <= capacity
+LRUCACHE_GEN_SEI_38	SURVIVED	side-effect-insertion	put	Helper.java	lrucache-002: put -> put -> get -> put -> restore -> restore	every generated assertion still holds
+LRUCACHE_GEN_SDL_39	KILLED	statement-deletion	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST put: C.get(key) == value
+LRUCACHE_GEN_STR_40	SURVIVED	statement-replacement	put	Helper.java	-	every generated assertion still holds
+LRUCACHE_GEN_ARP_41	KILLED	argument-replacement	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST put: C.get(key) == value
+LRUCACHE_GEN_MCR_42	KILLED	method-call-replacement	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST put: C.get(key) == value
+LRUCACHE_GEN_SEI_43	KILLED	side-effect-insertion	put	Helper.java	-	killed by: run3(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): PRE restore: !C.containsKey(evictedKey)
+LRUCACHE_GEN_SDL_44	KILLED	statement-deletion	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST put: mostRecent == key
+LRUCACHE_GEN_SEI_45	KILLED	side-effect-insertion	put	Helper.java	-	killed by: run3(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): PRE restore: !C.containsKey(evictedKey)
+LRUCACHE_GEN_SDL_46	KILLED	statement-deletion	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST put: mostRecent == key
+LRUCACHE_GEN_SEI_47	KILLED	side-effect-insertion	put	Helper.java	-	killed by: run3(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): PRE restore: !C.containsKey(evictedKey)
+LRUCACHE_GEN_RVR_48	SURVIVED	return-value-replacement	put	Helper.java	-	every generated assertion still holds
+LRUCACHE_GEN_SEI_49	KILLED	side-effect-insertion	put	Helper.java	-	killed by: run3(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): PRE restore: !C.containsKey(evictedKey)
+LRUCACHE_GEN_ARP_50	KILLED	argument-replacement	get	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST get: cachedValue == C.get(key)
+LRUCACHE_GEN_ARP_51	INVALID	argument-replacement	get	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LRUCACHE_GEN_ARP_51/run/in/ac/iiitb/plproject/atc/generated/Helper.java:71: error: bad operand types for binary operator '-'
+LRUCACHE_GEN_MCR_52	KILLED	method-call-replacement	get	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST get: cachedValue == C.get(key)
+LRUCACHE_GEN_RVR_53	KILLED	return-value-replacement	get	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST get: cachedValue == C.get(key)
+LRUCACHE_GEN_SEI_54	SURVIVED	side-effect-insertion	get	Helper.java	lrucache-002: put -> put -> get -> put -> restore -> restore	every generated assertion still holds
+LRUCACHE_GEN_SDL_55	KILLED	statement-deletion	restore	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST restore: C.containsKey(evictedKey)
+LRUCACHE_GEN_SEI_56	SURVIVED	side-effect-insertion	restore	Helper.java	lrucache-010: restore -> restore -> get -> restore -> restore	every generated assertion still holds
+LRUCACHE_GEN_SDL_57	SURVIVED	statement-deletion	touch	Helper.java	lrucache-002: put -> put -> get -> put -> restore -> restore	every generated assertion still holds
+LRUCACHE_GEN_STR_58	SURVIVED	statement-replacement	touch	Helper.java	-	every generated assertion still holds
+LRUCACHE_GEN_ARP_59	SURVIVED	argument-replacement	touch	Helper.java	lrucache-002: put -> put -> get -> put -> restore -> restore	every generated assertion still holds
+LRUCACHE_GEN_ARP_60	INVALID	argument-replacement	touch	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LRUCACHE_GEN_ARP_60/run/in/ac/iiitb/plproject/atc/generated/Helper.java:90: error: bad operand types for binary operator '-'
+LRUCACHE_GEN_MCR_61	INVALID	method-call-replacement	touch	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LRUCACHE_GEN_MCR_61/run/in/ac/iiitb/plproject/atc/generated/Helper.java:90: error: incompatible types: String cannot be converted to int
+LRUCACHE_GEN_SEI_62	KILLED	side-effect-insertion	touch	Helper.java	-	killed by: run3(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): PRE restore: !C.containsKey(evictedKey)
+LRUCACHE_GEN_SDL_63	KILLED	statement-deletion	touch	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST put: mostRecent == key
+LRUCACHE_GEN_STR_64	KILLED	statement-replacement	touch	Helper.java	-	killed by: run3(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST restore: size <= capacity
+LRUCACHE_GEN_ARP_65	KILLED	argument-replacement	touch	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST put: mostRecent == key
+LRUCACHE_GEN_ARP_66	INVALID	argument-replacement	touch	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LRUCACHE_GEN_ARP_66/run/in/ac/iiitb/plproject/atc/generated/Helper.java:91: error: bad operand types for binary operator '-'
+LRUCACHE_GEN_MCR_67	KILLED	method-call-replacement	touch	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST put: mostRecent == key
+LRUCACHE_GEN_SEI_68	KILLED	side-effect-insertion	touch	Helper.java	-	killed by: run3(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): PRE restore: !C.containsKey(evictedKey)

@@ -1,7 +1,3 @@
 test LinkedlistGenerated200 {
-    sequence: removeFirst -> indexOf;
-
-    inputs {
-        indexOf[1].value = 20;
-    }
+    sequence: addLast -> addFirst -> indexOf;
 }

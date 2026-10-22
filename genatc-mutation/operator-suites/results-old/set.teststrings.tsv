@@ -1,0 +1,262 @@
+# generated test strings — set
+# name	status	tests_generated	sequence
+set-001	PASSED	10	add -> add -> remove
+set-002	PASSED	10	contains -> add -> contains -> contains -> remove
+set-003	STOPPED	0	add -> remove -> contains -> remove -> remove -> add -> add
+set-004	PASSED	10	add -> add -> add -> remove -> contains
+set-005	STOPPED	0	remove -> add -> add -> add -> contains -> remove
+set-006	STOPPED	0	remove -> add -> add -> add
+set-007	STOPPED	0	remove -> contains -> remove
+set-008	STOPPED	0	add -> remove -> contains -> remove -> add
+set-009	PASSED	10	add -> remove -> contains -> add -> add
+set-010	PASSED	10	add -> remove -> add -> add -> contains -> add
+set-011	PASSED	3	add -> remove
+set-012	PASSED	10	add -> add -> remove -> contains
+set-013	STOPPED	0	remove -> contains -> add -> add -> add
+set-014	PASSED	10	add -> add -> remove -> contains -> remove
+set-015	PASSED	10	add -> add -> contains -> contains -> remove
+set-016	PASSED	10	add -> add -> add -> contains -> remove -> remove
+set-017	PASSED	10	add -> remove -> add -> add -> contains
+set-018	PASSED	10	add -> add -> add -> remove -> remove
+set-019	PASSED	9	add -> contains -> remove
+set-020	STOPPED	0	add -> remove -> remove -> contains -> add
+set-021	PASSED	10	add -> contains -> contains -> contains -> add -> add
+set-022	STOPPED	0	remove -> contains -> contains -> add
+set-023	STOPPED	0	add -> remove -> remove
+set-024	PASSED	10	add -> add -> contains -> add -> remove
+set-025	PASSED	10	add -> add -> contains -> remove
+set-026	PASSED	10	add -> add -> add -> add -> contains -> remove
+set-027	PASSED	9	contains -> contains
+set-028	PASSED	10	add -> remove -> add -> contains -> remove
+set-029	STOPPED	0	remove -> add -> remove -> contains -> remove -> add -> remove
+set-030	PASSED	10	add -> add -> contains
+set-031	PASSED	10	add -> remove -> contains -> add
+set-032	PASSED	10	add -> add -> remove -> add
+set-033	PASSED	10	add -> add -> add -> remove
+set-034	PASSED	10	add -> add -> add -> contains -> remove
+set-035	STOPPED	0	remove -> add -> add
+set-036	PASSED	10	add -> add -> contains -> contains -> contains -> remove
+set-037	PASSED	9	contains -> add -> remove
+set-038	PASSED	9	add -> contains
+set-039	STOPPED	0	remove -> remove -> add -> remove -> add -> add
+set-040	STOPPED	0	add -> remove -> contains -> remove
+set-041	STOPPED	0	remove -> add -> add -> add -> remove
+set-042	PASSED	10	add -> add -> add -> contains
+set-043	STOPPED	0	contains -> remove -> remove
+set-044	PASSED	10	add -> remove -> contains -> add -> remove
+set-045	STOPPED	0	remove -> remove
+set-046	PASSED	10	contains -> add -> add -> add -> remove
+set-047	PASSED	10	contains -> add -> remove -> add -> add
+set-048	STOPPED	0	remove -> add -> add -> add -> contains
+set-049	PASSED	10	add -> contains -> contains -> add -> remove
+set-050	STOPPED	0	remove -> add -> contains -> add -> add
+set-051	PASSED	10	add -> add -> contains -> remove -> remove
+set-052	PASSED	10	add -> contains -> add -> contains -> remove
+set-053	PASSED	9	contains -> add
+set-054	PASSED	10	add -> add -> contains -> remove -> contains -> contains
+set-055	PASSED	10	add -> remove -> add -> add -> contains -> remove
+set-056	PASSED	10	add -> contains -> add -> add -> remove
+set-057	PASSED	10	add -> contains -> add -> remove
+set-058	STOPPED	0	add -> remove -> remove -> contains
+set-059	PASSED	10	add -> contains -> contains -> contains -> add -> remove
+set-060	PASSED	9	add -> add
+set-061	STOPPED	0	add -> remove -> remove -> contains -> remove -> add
+set-062	STOPPED	0	remove -> add -> add -> remove
+set-063	STOPPED	0	remove -> add -> contains -> contains
+set-064	PASSED	10	contains -> add -> add -> remove -> contains -> add
+set-065	STOPPED	0	contains -> remove
+set-066	PASSED	10	add -> add -> add -> remove -> contains -> remove
+set-067	STOPPED	0	remove -> add -> contains -> add
+set-068	PASSED	10	add -> contains -> add -> remove -> remove -> contains
+set-069	STOPPED	0	contains -> remove -> contains -> add -> contains -> remove -> add
+set-070	PASSED	10	add -> add -> add -> contains -> contains -> remove -> remove
+set-071	PASSED	10	add -> add -> add -> remove -> contains -> remove -> remove
+set-072	STOPPED	0	contains -> add -> remove -> remove
+set-073	STOPPED	0	remove -> remove -> contains -> add -> contains -> remove
+set-074	PASSED	10	contains -> add -> remove -> contains
+set-075	STOPPED	0	remove -> add -> contains -> contains -> add
+set-076	STOPPED	0	remove -> contains -> remove -> remove -> contains -> contains
+set-077	STOPPED	0	remove -> remove -> contains -> contains
+set-078	PASSED	10	add -> remove -> add -> contains
+set-079	PASSED	10	contains -> contains -> add -> contains -> remove -> contains
+set-080	STOPPED	0	remove -> add -> contains -> contains -> remove
+set-081	STOPPED	0	remove -> contains -> add -> add -> remove -> add -> add
+set-082	STOPPED	0	remove -> contains -> contains -> contains -> contains -> remove -> contains
+set-083	PASSED	10	add -> add -> add -> contains -> contains -> remove
+set-084	STOPPED	0	add -> contains -> remove -> remove
+set-085	PASSED	10	add -> add -> contains -> remove -> contains -> remove
+set-086	STOPPED	0	remove -> contains
+set-087	PASSED	10	add -> add -> contains -> contains
+set-088	STOPPED	0	remove -> add -> add -> contains
+set-089	PASSED	10	contains -> add -> add
+set-090	STOPPED	0	remove -> remove -> remove -> add -> contains -> add -> contains
+set-091	STOPPED	0	add -> remove -> remove -> add -> add -> contains -> add
+set-092	PASSED	10	add -> contains -> add -> contains -> remove -> remove
+set-093	STOPPED	0	remove -> contains -> remove -> add -> add -> remove -> remove
+set-094	PASSED	10	add -> contains -> contains -> remove
+set-095	STOPPED	0	remove -> add
+set-096	PASSED	10	add -> add -> contains -> add -> contains -> remove -> remove
+set-097	PASSED	10	contains -> add -> remove -> add
+set-098	PASSED	10	add -> add -> remove -> remove -> contains -> add
+set-099	PASSED	10	add -> add -> contains -> add -> add -> add
+set-100	PASSED	10	add -> add -> remove -> contains -> contains
+set-101	STOPPED	0	remove -> contains -> contains -> contains -> add -> add
+set-102	STOPPED	0	remove -> remove -> contains -> remove
+set-103	PASSED	10	contains -> add -> add -> contains -> contains
+set-104	PASSED	10	contains -> add -> add -> remove -> add
+set-105	STOPPED	0	remove -> contains -> add -> add -> remove
+set-106	STOPPED	0	add -> contains -> remove -> add -> contains -> remove -> remove
+set-107	PASSED	10	add -> add -> contains -> contains -> add -> remove
+set-108	PASSED	10	add -> add -> add -> add -> remove -> contains
+set-109	STOPPED	0	remove -> contains -> add -> contains -> add
+set-110	STOPPED	0	remove -> add -> add -> remove -> remove -> contains
+set-111	PASSED	10	add -> contains -> add
+set-112	STOPPED	0	contains -> contains -> remove -> remove
+set-113	STOPPED	0	remove -> remove -> add
+set-114	PASSED	10	add -> remove -> contains -> contains -> add
+set-115	PASSED	10	contains -> add -> add -> remove
+set-116	PASSED	10	add -> contains -> add -> add -> contains -> remove
+set-117	STOPPED	0	remove -> contains -> contains -> add -> contains
+set-118	PASSED	10	add -> add -> contains -> add -> add -> remove
+set-119	STOPPED	0	remove -> remove -> add -> remove -> remove
+set-120	PASSED	10	contains -> add -> add -> remove -> add -> remove
+set-121	PASSED	10	add -> add -> contains -> add -> add
+set-122	PASSED	10	add -> add -> remove -> remove
+set-123	STOPPED	0	add -> add -> remove -> contains -> remove -> remove
+set-124	PASSED	9	add -> remove -> add
+set-125	STOPPED	0	remove -> add -> remove -> add -> remove -> remove
+set-126	STOPPED	0	remove -> contains -> add -> add -> contains
+set-127	PASSED	10	contains -> contains -> contains
+set-128	PASSED	10	add -> add -> contains -> contains -> add -> remove -> remove
+set-129	PASSED	10	add -> contains -> contains -> remove -> add -> contains -> contains
+set-130	PASSED	9	add -> remove -> contains
+set-131	PASSED	10	add -> add -> add -> add -> contains
+set-132	STOPPED	0	remove -> add -> add -> remove -> remove -> contains -> contains
+set-133	STOPPED	0	remove -> add -> add -> remove -> remove -> remove -> contains
+set-134	PASSED	10	contains -> add -> contains -> add -> remove
+set-135	STOPPED	0	remove -> contains -> add -> add -> contains -> add -> contains
+set-136	STOPPED	0	remove -> remove -> remove -> contains
+set-137	PASSED	10	contains -> add -> add -> add -> add
+set-138	PASSED	10	contains -> contains -> contains -> add -> contains -> remove
+set-139	STOPPED	0	contains -> remove -> remove -> contains -> remove -> remove
+set-140	STOPPED	0	remove -> add -> contains -> remove -> remove
+set-141	PASSED	10	add -> contains -> contains -> remove -> contains
+set-142	STOPPED	0	add -> contains -> remove -> add -> remove -> remove
+set-143	PASSED	10	add -> contains -> add -> remove -> add -> contains -> remove
+set-144	STOPPED	0	remove -> add -> add -> contains -> remove
+set-145	STOPPED	0	remove -> contains -> add
+set-146	PASSED	10	add -> contains -> add -> contains
+set-147	STOPPED	0	remove -> contains -> contains -> remove -> contains
+set-148	STOPPED	0	contains -> remove -> add -> remove -> remove -> remove
+set-149	STOPPED	0	remove -> add -> contains -> remove -> remove -> add -> contains
+set-150	STOPPED	0	contains -> remove -> contains -> add -> add
+set-151	STOPPED	0	contains -> add -> remove -> remove -> remove -> remove
+set-152	PASSED	10	add -> contains -> add -> remove -> contains
+set-153	PASSED	10	add -> contains -> add -> add -> add -> contains -> remove
+set-154	STOPPED	0	contains -> add -> remove -> contains -> remove -> remove
+set-155	PASSED	10	add -> add -> add -> add -> contains -> remove -> remove
+set-156	STOPPED	0	remove -> add -> add -> add -> add
+set-157	PASSED	10	contains -> add -> contains -> contains -> add -> remove
+set-158	STOPPED	0	remove -> remove -> contains
+set-159	PASSED	10	add -> contains -> contains
+set-160	PASSED	10	add -> contains -> contains -> contains -> contains
+set-161	STOPPED	0	remove -> contains -> remove -> add -> add -> remove -> add
+set-162	STOPPED	0	remove -> remove -> remove -> remove -> add
+set-163	PASSED	10	add -> add -> add -> add -> add -> add
+set-164	PASSED	10	add -> add -> contains -> contains -> remove -> remove
+set-165	PASSED	10	contains -> add -> add -> add
+set-166	PASSED	10	add -> add -> contains -> add
+set-167	PASSED	10	add -> add -> contains -> add -> contains -> remove
+set-168	STOPPED	0	remove -> remove -> add -> contains -> add -> contains -> add
+set-169	STOPPED	0	contains -> add -> remove -> remove -> remove -> remove -> add
+set-170	STOPPED	0	remove -> contains -> contains
+set-171	PASSED	10	contains -> add -> add -> contains -> remove
+set-172	STOPPED	0	add -> contains -> contains -> remove -> remove
+set-173	STOPPED	0	remove -> add -> contains -> add -> remove
+set-174	STOPPED	0	remove -> remove -> add -> contains
+set-175	STOPPED	0	contains -> remove -> contains -> remove
+set-176	STOPPED	0	remove -> add -> add -> contains -> contains
+set-177	PASSED	10	contains -> add -> remove -> add -> add -> add
+set-178	STOPPED	0	remove -> add -> add -> contains -> contains -> remove
+set-179	STOPPED	0	remove -> remove -> add -> add -> add -> contains -> remove
+set-180	PASSED	10	add -> add -> add
+set-181	PASSED	10	add -> remove -> add -> contains -> contains
+set-182	STOPPED	0	add -> add -> contains -> remove -> remove -> remove
+set-183	STOPPED	0	contains -> remove -> contains -> add
+set-184	STOPPED	0	remove -> remove -> add -> contains -> add
+set-185	STOPPED	0	add -> remove -> add -> remove -> remove
+set-186	PASSED	10	add -> add -> contains -> remove -> add -> remove
+set-187	STOPPED	0	contains -> contains -> contains -> remove -> contains -> remove -> remove
+set-188	STOPPED	0	remove -> add -> contains -> remove
+set-189	PASSED	10	add -> contains -> add -> contains -> remove -> add -> remove
+set-190	PASSED	10	add -> add -> add -> contains -> add
+set-191	STOPPED	0	contains -> remove -> contains -> add -> contains
+set-192	STOPPED	0	remove -> contains -> add -> add
+set-193	PASSED	10	add -> add -> remove -> add -> contains -> remove
+set-194	PASSED	10	add -> add -> add -> contains -> add -> remove
+set-195	PASSED	10	contains -> add -> contains -> add
+set-196	PASSED	10	add -> contains -> remove -> contains -> add -> contains -> contains
+set-197	STOPPED	0	remove -> contains -> add -> remove -> add -> contains
+set-198	PASSED	10	contains -> add -> contains -> remove
+set-199	STOPPED	0	contains -> contains -> remove -> add -> add -> remove
+set-200	PASSED	10	add -> remove -> add -> contains -> contains -> remove
+set-201	PASSED	10	contains -> contains -> add -> contains -> add -> remove
+set-202	STOPPED	0	contains -> remove -> add -> contains
+set-203	STOPPED	0	remove -> contains -> contains -> add -> add
+set-204	PASSED	10	contains -> add -> contains -> add -> add
+set-205	STOPPED	0	add -> contains -> remove -> remove -> contains -> remove -> remove
+set-206	PASSED	10	add -> add -> add -> add -> remove
+set-207	STOPPED	0	remove -> contains -> remove -> add -> add -> add -> contains
+set-208	STOPPED	0	add -> contains -> remove -> remove -> remove
+set-209	PASSED	10	contains -> contains -> add -> add -> remove
+set-210	STOPPED	0	add -> add -> remove -> remove -> contains -> remove
+set-211	PASSED	10	add -> add -> remove -> contains -> add
+set-212	PASSED	10	add -> contains -> add -> add
+set-213	PASSED	10	add -> contains -> remove -> add -> remove -> contains
+set-214	STOPPED	0	contains -> contains -> remove
+set-215	STOPPED	0	remove -> add -> remove
+set-216	STOPPED	0	contains -> remove -> add -> contains -> add
+set-217	PASSED	10	contains -> add -> add -> add -> contains -> remove
+set-218	PASSED	10	add -> contains -> contains -> add -> add -> remove -> contains
+set-219	STOPPED	0	contains -> remove -> contains
+set-220	PASSED	10	add -> remove -> add -> contains -> add -> add
+set-221	STOPPED	0	remove -> add -> contains
+set-222	STOPPED	0	remove -> remove -> add -> remove -> add -> remove
+set-223	STOPPED	0	contains -> contains -> contains -> contains -> remove -> add -> add
+set-224	STOPPED	0	contains -> contains -> remove -> contains -> remove -> contains -> contains
+set-225	PASSED	10	add -> contains -> contains -> add -> contains -> remove
+set-226	STOPPED	0	remove -> contains -> remove -> contains -> add -> contains -> add
+set-227	PASSED	10	add -> contains -> contains -> contains
+set-228	STOPPED	0	remove -> add -> remove -> contains
+set-229	STOPPED	0	remove -> remove -> remove
+set-230	STOPPED	0	add -> add -> contains -> remove -> contains -> remove -> remove
+set-231	PASSED	10	add -> add -> add -> contains -> contains
+set-232	PASSED	10	add -> add -> add -> contains -> remove -> remove -> remove
+set-233	STOPPED	0	contains -> remove -> add -> add
+set-234	PASSED	10	contains -> add -> add -> contains -> remove -> remove
+set-235	PASSED	10	add -> add -> remove -> add -> add -> add
+set-236	STOPPED	0	contains -> remove -> add -> add -> contains -> remove
+set-237	STOPPED	0	remove -> contains -> add -> remove -> remove -> remove -> remove
+set-238	STOPPED	0	remove -> add -> contains -> remove -> contains
+set-239	PASSED	10	add -> add -> add -> remove -> add -> add -> contains
+set-240	PASSED	10	add -> contains -> add -> contains -> contains
+set-241	PASSED	10	add -> add -> contains -> contains -> remove -> contains -> add
+set-242	PASSED	10	add -> contains -> add -> add -> remove -> remove -> contains
+set-243	STOPPED	0	contains -> remove -> contains -> contains
+set-244	STOPPED	0	remove -> remove -> contains -> contains -> add
+set-245	STOPPED	0	remove -> add -> add -> remove -> contains
+set-246	STOPPED	0	remove -> remove -> add -> add -> remove
+set-247	PASSED	10	add -> contains -> add -> remove -> remove
+set-248	PASSED	10	add -> contains -> add -> add -> add -> contains -> contains
+set-249	STOPPED	0	remove -> remove -> add -> remove
+set-250	PASSED	10	contains -> add -> add -> contains -> add -> contains -> remove
+set-251	PASSED	10	add -> contains -> contains -> add -> contains
+set-252	STOPPED	0	remove -> contains -> remove -> remove -> contains -> remove -> contains
+set-253	PASSED	10	add -> remove -> contains -> contains
+set-254	STOPPED	0	remove -> add -> remove -> contains -> add -> add
+set-255	STOPPED	0	remove -> contains -> contains -> contains
+set-256	STOPPED	0	contains -> add -> contains -> remove -> remove -> contains
+set-257	PASSED	10	contains -> contains -> contains -> add -> contains -> contains
+set-258	STOPPED	0	remove -> contains -> remove -> remove -> add
+set-259	PASSED	10	add -> add -> remove -> contains -> add -> remove -> remove
+set-260	PASSED	10	add -> add -> add -> add -> add -> contains

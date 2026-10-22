@@ -1,9 +1,3 @@
 test ArraylibGenerated134 {
-    sequence: get -> indexOf -> get -> sum;
-
-    inputs {
-        get[0].index = 3;
-        indexOf[1].value = 2;
-        get[2].index = 3;
-    }
+    sequence: set -> get;
 }

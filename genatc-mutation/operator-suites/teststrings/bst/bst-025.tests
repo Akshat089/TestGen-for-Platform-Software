@@ -1,8 +1,3 @@
 test BstGenerated25 {
-    sequence: insert -> contains;
-
-    inputs {
-        insert[0].key = 0;
-        contains[1].key = 3;
-    }
+    sequence: insert -> insert -> insert -> contains -> min -> delete -> delete;
 }

@@ -1,8 +1,3 @@
 test LinkedlistGenerated80 {
-    sequence: addLast -> indexOf;
-
-    inputs {
-        addLast[0].value = 20;
-        indexOf[1].value = 7;
-    }
+    sequence: addFirst -> removeFirst -> addLast -> addFirst -> indexOf;
 }

@@ -1,0 +1,3 @@
+test GraphGenerated151 {
+    sequence: hasEdge -> degree;
+}

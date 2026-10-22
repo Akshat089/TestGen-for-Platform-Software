@@ -1,7 +1,0 @@
-test QueueGenerated215 {
-    sequence: dequeue -> dequeue -> enqueue -> dequeue -> isEmpty -> isEmpty;
-
-    inputs {
-        enqueue[2].elem = "alpha";
-    }
-}

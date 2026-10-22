@@ -1,7 +1,0 @@
-test QueueGenerated214 {
-    sequence: front -> enqueue;
-
-    inputs {
-        enqueue[1].elem = "alpha";
-    }
-}

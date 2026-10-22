@@ -1,0 +1,262 @@
+# generated test strings — queue
+# name	status	tests_generated	sequence
+queue-001	PASSED	10	enqueue -> enqueue -> enqueue -> dequeue -> front
+queue-002	STOPPED	0	dequeue -> front -> isEmpty -> dequeue -> enqueue -> enqueue -> isEmpty
+queue-003	STOPPED	0	dequeue -> enqueue -> front -> enqueue -> isEmpty
+queue-004	STOPPED	0	enqueue -> dequeue -> enqueue -> dequeue -> front -> enqueue -> isEmpty
+queue-005	STOPPED	0	front -> enqueue -> dequeue -> isEmpty -> enqueue
+queue-006	PASSED	9	enqueue -> enqueue -> dequeue -> front
+queue-007	PASSED	9	enqueue -> enqueue -> dequeue -> front -> isEmpty -> front
+queue-008	PASSED	9	enqueue -> enqueue -> dequeue -> front -> isEmpty
+queue-009	STOPPED	0	enqueue -> dequeue -> front -> front -> dequeue -> front
+queue-010	STOPPED	0	enqueue -> enqueue -> dequeue -> dequeue -> dequeue -> front -> isEmpty
+queue-011	STOPPED	0	dequeue -> isEmpty -> enqueue -> isEmpty -> front
+queue-012	STOPPED	0	enqueue -> enqueue -> dequeue -> dequeue -> front -> front -> isEmpty
+queue-013	INVALID	0	isEmpty -> enqueue -> enqueue -> front -> front -> front
+queue-014	STOPPED	0	enqueue -> enqueue -> dequeue -> dequeue -> front -> isEmpty
+queue-015	PASSED	9	enqueue -> enqueue -> dequeue -> front -> isEmpty -> isEmpty
+queue-016	INVALID	0	isEmpty -> enqueue -> isEmpty -> dequeue -> front -> enqueue
+queue-017	INVALID	0	isEmpty -> dequeue -> enqueue -> dequeue -> dequeue -> isEmpty
+queue-018	PASSED	9	enqueue -> front -> enqueue -> dequeue -> front -> front
+queue-019	PASSED	9	enqueue -> isEmpty -> enqueue -> dequeue -> front
+queue-020	STOPPED	0	enqueue -> isEmpty -> dequeue -> dequeue -> front -> enqueue
+queue-021	INVALID	0	isEmpty -> enqueue -> dequeue -> enqueue -> front -> dequeue
+queue-022	PASSED	9	enqueue -> enqueue -> front -> isEmpty
+queue-023	PASSED	9	enqueue -> isEmpty -> enqueue -> dequeue -> isEmpty
+queue-024	PASSED	10	enqueue -> enqueue -> enqueue -> front -> dequeue -> enqueue -> isEmpty
+queue-025	PASSED	10	enqueue -> enqueue -> dequeue -> enqueue -> dequeue -> front -> isEmpty
+queue-026	PASSED	9	enqueue -> enqueue -> dequeue
+queue-027	PASSED	10	enqueue -> front -> isEmpty -> enqueue -> enqueue -> dequeue
+queue-028	PASSED	9	enqueue -> enqueue -> dequeue -> isEmpty -> front -> isEmpty
+queue-029	INVALID	0	isEmpty -> enqueue -> dequeue -> dequeue -> front -> enqueue
+queue-030	STOPPED	0	front -> enqueue -> dequeue -> enqueue -> isEmpty
+queue-031	PASSED	9	enqueue -> enqueue -> dequeue -> isEmpty
+queue-032	STOPPED	0	dequeue -> dequeue -> front -> isEmpty -> dequeue -> isEmpty
+queue-033	STOPPED	0	front -> enqueue
+queue-034	PASSED	9	enqueue -> isEmpty -> dequeue -> enqueue
+queue-035	PASSED	3	enqueue -> front -> isEmpty
+queue-036	PASSED	9	enqueue -> front -> dequeue -> enqueue -> isEmpty
+queue-037	PASSED	9	enqueue -> enqueue
+queue-038	PASSED	10	enqueue -> enqueue -> enqueue -> dequeue -> front -> front -> isEmpty
+queue-039	STOPPED	0	enqueue -> isEmpty -> dequeue -> front
+queue-040	INVALID	0	isEmpty -> front -> enqueue -> enqueue
+queue-041	STOPPED	0	dequeue -> enqueue -> dequeue -> enqueue -> dequeue -> isEmpty
+queue-042	STOPPED	0	front -> front -> front
+queue-043	STOPPED	0	dequeue -> enqueue -> enqueue -> front -> isEmpty
+queue-044	PASSED	10	enqueue -> enqueue -> enqueue -> dequeue -> dequeue -> front -> isEmpty
+queue-045	STOPPED	0	enqueue -> dequeue -> front -> isEmpty
+queue-046	STOPPED	0	dequeue -> enqueue -> dequeue -> front -> isEmpty
+queue-047	PASSED	9	enqueue -> enqueue -> front -> isEmpty -> dequeue -> front -> isEmpty
+queue-048	STOPPED	0	enqueue -> dequeue -> dequeue -> front -> isEmpty
+queue-049	PASSED	9	enqueue -> enqueue -> dequeue -> isEmpty -> isEmpty
+queue-050	PASSED	10	enqueue -> enqueue -> enqueue
+queue-051	PASSED	3	enqueue -> front
+queue-052	PASSED	3	enqueue -> dequeue
+queue-053	STOPPED	0	dequeue -> isEmpty
+queue-054	INVALID	0	isEmpty -> enqueue -> isEmpty
+queue-055	STOPPED	0	dequeue -> enqueue -> isEmpty -> front -> isEmpty
+queue-056	STOPPED	0	front -> enqueue -> enqueue -> isEmpty
+queue-057	INVALID	0	isEmpty -> enqueue
+queue-058	INVALID	0	enqueue -> enqueue -> dequeue -> dequeue -> isEmpty -> isEmpty
+queue-059	STOPPED	0	dequeue -> isEmpty -> enqueue -> enqueue -> front -> isEmpty -> isEmpty
+queue-060	PASSED	9	enqueue -> front -> dequeue -> enqueue -> front -> isEmpty
+queue-061	STOPPED	0	enqueue -> isEmpty -> dequeue -> front -> front -> isEmpty
+queue-062	STOPPED	0	dequeue -> enqueue -> dequeue -> front
+queue-063	PASSED	10	enqueue -> isEmpty -> front -> enqueue -> enqueue
+queue-064	PASSED	10	enqueue -> enqueue -> enqueue -> dequeue -> front -> isEmpty
+queue-065	STOPPED	0	dequeue -> front -> enqueue -> isEmpty
+queue-066	STOPPED	0	dequeue -> front -> dequeue -> isEmpty -> front -> enqueue
+queue-067	STOPPED	0	dequeue -> enqueue -> enqueue -> enqueue -> dequeue -> front -> isEmpty
+queue-068	STOPPED	0	dequeue -> enqueue -> enqueue -> dequeue -> front -> isEmpty
+queue-069	PASSED	9	enqueue -> enqueue -> dequeue -> front -> front -> isEmpty
+queue-070	STOPPED	0	front -> front -> front -> front -> isEmpty -> front -> front
+queue-071	INVALID	0	enqueue -> front -> front -> front -> dequeue -> isEmpty
+queue-072	STOPPED	0	dequeue -> isEmpty -> enqueue -> dequeue -> isEmpty
+queue-073	STOPPED	0	dequeue -> enqueue
+queue-074	STOPPED	0	front -> front
+queue-075	PASSED	9	enqueue -> enqueue -> front -> dequeue -> front -> isEmpty
+queue-076	STOPPED	0	front -> isEmpty -> enqueue -> enqueue -> enqueue -> isEmpty
+queue-077	STOPPED	0	dequeue -> isEmpty -> isEmpty -> isEmpty -> enqueue -> front
+queue-078	INVALID	0	isEmpty -> isEmpty -> isEmpty -> isEmpty -> isEmpty
+queue-079	PASSED	10	enqueue -> front -> enqueue -> enqueue -> isEmpty -> isEmpty
+queue-080	PASSED	10	enqueue -> enqueue -> enqueue -> dequeue -> isEmpty
+queue-081	PASSED	10	enqueue -> enqueue -> enqueue -> enqueue -> dequeue -> front -> isEmpty
+queue-082	PASSED	10	enqueue -> enqueue -> enqueue -> enqueue -> dequeue -> front
+queue-083	PASSED	10	enqueue -> enqueue -> enqueue -> dequeue -> front -> enqueue -> isEmpty
+queue-084	STOPPED	0	enqueue -> dequeue -> enqueue -> dequeue -> front -> isEmpty
+queue-085	STOPPED	0	dequeue -> isEmpty -> dequeue
+queue-086	STOPPED	0	dequeue -> enqueue -> enqueue -> enqueue -> front
+queue-087	PASSED	9	enqueue -> enqueue -> front -> front -> dequeue -> isEmpty
+queue-088	PASSED	10	enqueue -> enqueue -> dequeue -> enqueue -> front -> isEmpty
+queue-089	STOPPED	0	front -> enqueue -> enqueue -> dequeue -> enqueue -> enqueue
+queue-090	STOPPED	0	dequeue -> isEmpty -> front -> isEmpty -> dequeue
+queue-091	STOPPED	0	front -> isEmpty -> dequeue -> enqueue
+queue-092	INVALID	0	isEmpty -> dequeue -> isEmpty -> dequeue -> enqueue
+queue-093	PASSED	9	enqueue -> enqueue -> dequeue -> isEmpty -> isEmpty -> front
+queue-094	PASSED	9	enqueue -> dequeue -> enqueue -> front -> front -> isEmpty
+queue-095	STOPPED	0	dequeue -> isEmpty -> front -> dequeue -> enqueue -> isEmpty -> dequeue
+queue-096	INVALID	0	isEmpty -> isEmpty -> enqueue -> enqueue -> dequeue -> front -> isEmpty
+queue-097	INVALID	0	enqueue -> dequeue -> isEmpty -> front
+queue-098	STOPPED	0	dequeue -> enqueue -> front
+queue-099	PASSED	10	enqueue -> enqueue -> enqueue -> dequeue -> front -> isEmpty -> isEmpty
+queue-100	STOPPED	0	dequeue -> dequeue -> dequeue
+queue-101	INVALID	0	enqueue -> dequeue -> isEmpty -> isEmpty
+queue-102	STOPPED	0	dequeue -> front -> isEmpty
+queue-103	STOPPED	0	dequeue -> enqueue -> dequeue
+queue-104	STOPPED	0	dequeue -> isEmpty -> enqueue -> enqueue -> dequeue -> front -> isEmpty
+queue-105	STOPPED	0	front -> front -> dequeue -> isEmpty -> dequeue -> enqueue
+queue-106	PASSED	9	enqueue -> enqueue -> dequeue -> isEmpty -> front
+queue-107	PASSED	10	enqueue -> dequeue -> enqueue -> front -> front -> enqueue -> dequeue
+queue-108	PASSED	9	enqueue -> enqueue -> front -> front -> dequeue -> isEmpty -> isEmpty
+queue-109	INVALID	0	isEmpty -> enqueue -> enqueue
+queue-110	PASSED	10	enqueue -> enqueue -> enqueue -> front -> isEmpty -> isEmpty
+queue-111	PASSED	9	enqueue -> enqueue -> dequeue -> front -> front -> isEmpty -> isEmpty
+queue-112	PASSED	9	enqueue -> enqueue -> isEmpty -> front -> dequeue
+queue-113	STOPPED	0	front -> dequeue
+queue-114	INVALID	0	isEmpty -> enqueue -> dequeue -> front -> enqueue
+queue-115	PASSED	9	enqueue -> isEmpty -> enqueue -> dequeue -> front -> isEmpty
+queue-116	STOPPED	0	dequeue -> front -> front -> enqueue
+queue-117	PASSED	9	enqueue -> enqueue -> front -> front -> isEmpty
+queue-118	PASSED	10	enqueue -> enqueue -> enqueue -> isEmpty -> front -> dequeue
+queue-119	STOPPED	0	front -> front -> enqueue -> enqueue -> front -> enqueue -> dequeue
+queue-120	PASSED	9	enqueue -> dequeue -> enqueue
+queue-121	INVALID	0	enqueue -> front -> dequeue -> isEmpty
+queue-122	INVALID	0	isEmpty -> dequeue -> front -> front -> enqueue
+queue-123	INVALID	0	isEmpty -> front -> isEmpty
+queue-124	STOPPED	0	enqueue -> enqueue -> dequeue -> dequeue -> front -> isEmpty -> isEmpty
+queue-125	STOPPED	0	dequeue -> dequeue -> front -> isEmpty
+queue-126	STOPPED	0	front -> enqueue -> dequeue -> front
+queue-127	INVALID	0	isEmpty -> enqueue -> enqueue -> dequeue -> dequeue -> front
+queue-128	INVALID	0	isEmpty -> enqueue -> dequeue -> isEmpty -> isEmpty -> front -> front
+queue-129	STOPPED	0	front -> enqueue -> enqueue -> dequeue -> front -> front -> isEmpty
+queue-130	PASSED	3	enqueue -> isEmpty
+queue-131	INVALID	0	isEmpty -> dequeue -> isEmpty -> dequeue -> dequeue -> dequeue
+queue-132	STOPPED	0	front -> enqueue -> isEmpty -> enqueue
+queue-133	INVALID	0	isEmpty -> enqueue -> enqueue -> dequeue -> front -> enqueue
+queue-134	INVALID	0	isEmpty -> front -> enqueue -> isEmpty -> isEmpty -> enqueue
+queue-135	PASSED	9	enqueue -> enqueue -> front -> isEmpty -> isEmpty
+queue-136	PASSED	9	enqueue -> front -> enqueue -> dequeue -> front -> isEmpty
+queue-137	INVALID	0	isEmpty -> dequeue
+queue-138	STOPPED	0	front -> isEmpty -> isEmpty
+queue-139	STOPPED	0	dequeue -> isEmpty -> enqueue -> isEmpty -> enqueue -> isEmpty -> front
+queue-140	STOPPED	0	dequeue -> isEmpty -> isEmpty -> isEmpty -> front
+queue-141	PASSED	9	enqueue -> enqueue -> front -> dequeue -> isEmpty
+queue-142	STOPPED	0	dequeue -> isEmpty -> dequeue -> dequeue -> isEmpty -> front
+queue-143	PASSED	9	enqueue -> front -> enqueue -> isEmpty -> dequeue -> front -> isEmpty
+queue-144	STOPPED	0	dequeue -> dequeue
+queue-145	STOPPED	0	dequeue -> front -> isEmpty -> dequeue -> enqueue -> dequeue -> dequeue
+queue-146	INVALID	0	enqueue -> front -> dequeue -> isEmpty -> isEmpty
+queue-147	STOPPED	0	front -> isEmpty -> enqueue
+queue-148	PASSED	10	enqueue -> enqueue -> enqueue -> isEmpty -> dequeue -> front -> isEmpty
+queue-149	STOPPED	0	dequeue -> front
+queue-150	PASSED	10	enqueue -> enqueue -> dequeue -> enqueue -> front -> front -> isEmpty
+queue-151	STOPPED	0	enqueue -> dequeue -> front -> isEmpty -> front
+queue-152	INVALID	0	isEmpty -> isEmpty -> front -> isEmpty -> front -> isEmpty
+queue-153	INVALID	0	isEmpty -> enqueue -> dequeue -> isEmpty -> isEmpty -> isEmpty
+queue-154	INVALID	0	enqueue -> enqueue -> dequeue -> dequeue -> isEmpty -> dequeue
+queue-155	PASSED	10	enqueue -> enqueue -> enqueue -> dequeue -> isEmpty -> isEmpty
+queue-156	STOPPED	0	front -> enqueue -> enqueue -> enqueue -> dequeue -> enqueue -> isEmpty
+queue-157	PASSED	9	enqueue -> enqueue -> front -> front -> front -> dequeue -> isEmpty
+queue-158	PASSED	10	enqueue -> front -> enqueue -> dequeue -> enqueue -> isEmpty
+queue-159	INVALID	0	isEmpty -> front -> front -> front -> enqueue -> isEmpty
+queue-160	INVALID	0	isEmpty -> enqueue -> enqueue -> dequeue -> front -> isEmpty
+queue-161	STOPPED	0	front -> enqueue -> enqueue -> dequeue -> dequeue -> front -> isEmpty
+queue-162	STOPPED	0	dequeue -> front -> front -> enqueue -> front -> front -> enqueue
+queue-163	INVALID	0	enqueue -> dequeue -> isEmpty -> dequeue -> front
+queue-164	STOPPED	0	enqueue -> dequeue -> dequeue -> front -> enqueue
+queue-165	STOPPED	0	front -> enqueue -> enqueue -> dequeue -> isEmpty
+queue-166	INVALID	0	isEmpty -> dequeue -> enqueue -> isEmpty
+queue-167	STOPPED	0	enqueue -> enqueue -> dequeue -> dequeue -> front -> dequeue -> isEmpty
+queue-168	STOPPED	0	front -> dequeue -> isEmpty -> front
+queue-169	STOPPED	0	front -> front -> dequeue -> dequeue -> front -> enqueue -> front
+queue-170	INVALID	0	isEmpty -> enqueue -> dequeue -> front -> front -> enqueue
+queue-171	STOPPED	0	front -> enqueue -> enqueue -> dequeue -> front -> isEmpty
+queue-172	STOPPED	0	front -> dequeue -> enqueue -> isEmpty -> isEmpty -> dequeue
+queue-173	INVALID	0	enqueue -> dequeue -> isEmpty
+queue-174	STOPPED	0	front -> dequeue -> enqueue -> enqueue -> isEmpty
+queue-175	STOPPED	0	enqueue -> dequeue -> dequeue -> isEmpty -> front -> enqueue
+queue-176	PASSED	10	enqueue -> enqueue -> dequeue -> front -> isEmpty -> enqueue -> isEmpty
+queue-177	STOPPED	0	dequeue -> front -> front -> isEmpty
+queue-178	STOPPED	0	enqueue -> isEmpty -> dequeue -> front -> front -> enqueue
+queue-179	INVALID	0	isEmpty -> front
+queue-180	INVALID	0	isEmpty -> dequeue -> front -> enqueue
+queue-181	STOPPED	0	front -> enqueue -> dequeue -> front -> isEmpty
+queue-182	INVALID	0	enqueue -> dequeue -> isEmpty -> front -> enqueue
+queue-183	PASSED	10	enqueue -> enqueue -> dequeue -> front -> enqueue -> front -> isEmpty
+queue-184	PASSED	9	enqueue -> enqueue -> isEmpty
+queue-185	STOPPED	0	enqueue -> dequeue -> front -> front -> front -> isEmpty
+queue-186	PASSED	10	enqueue -> enqueue -> enqueue -> dequeue -> isEmpty -> front -> isEmpty
+queue-187	PASSED	9	enqueue -> isEmpty -> enqueue -> dequeue -> dequeue
+queue-188	INVALID	0	isEmpty -> isEmpty -> front -> front
+queue-189	STOPPED	0	enqueue -> front -> dequeue -> front -> front -> isEmpty
+queue-190	PASSED	9	enqueue -> front -> dequeue -> enqueue -> isEmpty -> front
+queue-191	STOPPED	0	enqueue -> isEmpty -> dequeue -> front -> isEmpty
+queue-192	STOPPED	0	front -> isEmpty
+queue-193	INVALID	0	isEmpty -> enqueue -> enqueue -> front -> dequeue -> isEmpty
+queue-194	PASSED	9	enqueue -> front -> enqueue -> front -> isEmpty
+queue-195	PASSED	10	enqueue -> front -> enqueue -> enqueue -> dequeue -> isEmpty
+queue-196	STOPPED	0	dequeue -> dequeue -> isEmpty -> front -> front
+queue-197	PASSED	10	enqueue -> enqueue -> enqueue -> front -> dequeue -> front -> isEmpty
+queue-198	INVALID	0	enqueue -> enqueue -> isEmpty -> dequeue -> dequeue -> isEmpty
+queue-199	PASSED	9	enqueue -> front -> dequeue -> enqueue
+queue-200	PASSED	10	enqueue -> enqueue -> dequeue -> enqueue -> front
+queue-201	STOPPED	0	dequeue -> front -> isEmpty -> front
+queue-202	STOPPED	0	enqueue -> enqueue -> dequeue -> dequeue -> front
+queue-203	PASSED	10	enqueue -> enqueue -> enqueue -> dequeue -> dequeue -> isEmpty
+queue-204	PASSED	9	enqueue -> enqueue -> front -> dequeue -> front -> isEmpty -> isEmpty
+queue-205	INVALID	0	isEmpty -> front -> front -> isEmpty -> dequeue
+queue-206	PASSED	10	enqueue -> enqueue -> enqueue -> dequeue -> front -> front
+queue-207	STOPPED	0	dequeue -> dequeue -> isEmpty -> front -> dequeue
+queue-208	PASSED	9	enqueue -> dequeue -> enqueue -> front -> isEmpty
+queue-209	PASSED	10	enqueue -> enqueue -> front -> enqueue -> dequeue -> front -> isEmpty
+queue-210	PASSED	9	enqueue -> enqueue -> dequeue -> front -> isEmpty -> isEmpty -> isEmpty
+queue-211	STOPPED	0	front -> dequeue -> dequeue -> front -> enqueue -> dequeue -> dequeue
+queue-212	INVALID	0	isEmpty -> enqueue -> enqueue -> dequeue -> front -> front -> isEmpty
+queue-213	PASSED	10	enqueue -> enqueue -> front -> dequeue -> enqueue -> isEmpty
+queue-214	PASSED	10	enqueue -> enqueue -> enqueue -> front -> isEmpty
+queue-215	STOPPED	0	dequeue -> dequeue -> front
+queue-216	STOPPED	0	front -> isEmpty -> front
+queue-217	STOPPED	0	dequeue -> dequeue -> enqueue -> dequeue -> front -> isEmpty
+queue-218	STOPPED	0	front -> dequeue -> dequeue -> isEmpty -> dequeue
+queue-219	PASSED	3	enqueue -> isEmpty -> dequeue
+queue-220	STOPPED	0	front -> dequeue -> enqueue -> enqueue -> front -> isEmpty
+queue-221	PASSED	3	enqueue -> isEmpty -> front -> dequeue
+queue-222	INVALID	0	enqueue -> enqueue -> dequeue -> dequeue -> isEmpty
+queue-223	STOPPED	0	dequeue -> isEmpty -> isEmpty -> enqueue
+queue-224	INVALID	0	enqueue -> enqueue -> front -> dequeue -> dequeue -> isEmpty -> isEmpty
+queue-225	STOPPED	0	enqueue -> dequeue -> front -> enqueue
+queue-226	PASSED	10	enqueue -> enqueue -> dequeue -> enqueue -> front -> isEmpty -> isEmpty
+queue-227	PASSED	10	enqueue -> enqueue -> dequeue -> enqueue
+queue-228	PASSED	9	enqueue -> enqueue -> dequeue -> front -> front
+queue-229	STOPPED	0	front -> enqueue -> enqueue -> front -> isEmpty -> isEmpty
+queue-230	PASSED	9	enqueue -> enqueue -> isEmpty -> front -> dequeue -> front -> isEmpty
+queue-231	STOPPED	0	enqueue -> dequeue -> front -> isEmpty -> isEmpty
+queue-232	INVALID	0	isEmpty -> front -> dequeue -> isEmpty -> enqueue -> dequeue
+queue-233	INVALID	0	isEmpty -> enqueue -> front -> isEmpty -> dequeue -> dequeue -> isEmpty
+queue-234	PASSED	9	enqueue -> enqueue -> isEmpty -> dequeue -> isEmpty
+queue-235	PASSED	10	enqueue -> enqueue -> enqueue -> front -> dequeue -> enqueue
+queue-236	STOPPED	0	front -> enqueue -> dequeue -> isEmpty -> isEmpty -> enqueue
+queue-237	STOPPED	0	dequeue -> front -> isEmpty -> enqueue -> enqueue
+queue-238	INVALID	0	isEmpty -> front -> dequeue
+queue-239	STOPPED	0	enqueue -> dequeue -> front -> enqueue -> isEmpty
+queue-240	STOPPED	0	dequeue -> enqueue -> enqueue -> front -> front -> front -> isEmpty
+queue-241	PASSED	9	enqueue -> front -> enqueue -> dequeue -> isEmpty
+queue-242	PASSED	9	enqueue -> front -> enqueue -> front -> dequeue -> isEmpty
+queue-243	STOPPED	0	enqueue -> dequeue -> front
+queue-244	STOPPED	0	dequeue -> enqueue -> isEmpty -> dequeue -> dequeue -> enqueue
+queue-245	PASSED	3	enqueue -> isEmpty -> front
+queue-246	STOPPED	0	dequeue -> enqueue -> enqueue -> front
+queue-247	STOPPED	0	dequeue -> enqueue -> front -> dequeue -> isEmpty -> isEmpty
+queue-248	PASSED	10	enqueue -> enqueue -> enqueue -> enqueue -> isEmpty -> front -> dequeue
+queue-249	PASSED	9	enqueue -> enqueue -> isEmpty -> dequeue -> front -> isEmpty
+queue-250	PASSED	10	enqueue -> enqueue -> front -> isEmpty -> enqueue
+queue-251	STOPPED	0	dequeue -> dequeue -> front -> front
+queue-252	INVALID	0	isEmpty -> enqueue -> isEmpty -> front -> dequeue -> front -> dequeue
+queue-253	STOPPED	0	front -> enqueue -> enqueue -> dequeue -> front -> isEmpty -> isEmpty
+queue-254	PASSED	9	enqueue -> isEmpty -> enqueue -> front -> dequeue
+queue-255	STOPPED	0	dequeue -> dequeue -> enqueue -> enqueue -> enqueue -> front -> isEmpty
+queue-256	INVALID	0	isEmpty -> dequeue -> front
+queue-257	STOPPED	0	dequeue -> isEmpty -> isEmpty -> isEmpty -> enqueue
+queue-258	STOPPED	0	dequeue -> front -> dequeue -> isEmpty -> front -> isEmpty -> dequeue
+queue-259	STOPPED	0	enqueue -> front -> dequeue -> front -> enqueue -> isEmpty
+queue-260	STOPPED	0	front -> front -> isEmpty -> isEmpty -> dequeue -> dequeue -> enqueue

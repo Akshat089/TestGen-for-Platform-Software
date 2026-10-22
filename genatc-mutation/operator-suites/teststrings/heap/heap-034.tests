@@ -1,0 +1,3 @@
+test HeapGenerated34 {
+    sequence: insert -> insert -> insert;
+}

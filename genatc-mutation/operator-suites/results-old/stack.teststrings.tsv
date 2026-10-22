@@ -1,0 +1,262 @@
+# generated test strings — stack
+# name	status	tests_generated	sequence
+stack-001	STOPPED	0	push -> pop -> pop -> pop -> push -> peek
+stack-002	STOPPED	0	push -> pop -> peek -> peek
+stack-003	STOPPED	0	pop -> peek -> pop -> push -> push -> pop -> peek
+stack-004	STOPPED	0	peek -> pop -> push -> push
+stack-005	STOPPED	0	push -> pop -> peek
+stack-006	PASSED	10	push -> push -> push -> pop -> peek
+stack-007	STOPPED	0	peek -> push -> push -> pop -> peek -> peek
+stack-008	PASSED	10	push -> push -> pop -> peek -> push -> peek
+stack-009	STOPPED	0	push -> pop -> push -> pop -> pop -> peek
+stack-010	PASSED	9	push -> push -> pop -> peek -> peek
+stack-011	STOPPED	0	peek -> push -> peek -> pop -> push
+stack-012	STOPPED	0	peek -> push -> push -> pop -> pop -> peek
+stack-013	PASSED	9	push -> push -> pop
+stack-014	PASSED	9	push -> push -> peek
+stack-015	STOPPED	0	pop -> push -> peek
+stack-016	PASSED	10	push -> push -> push -> peek
+stack-017	PASSED	9	push -> push -> pop -> peek
+stack-018	PASSED	9	push -> push -> pop -> peek -> peek -> peek -> peek
+stack-019	STOPPED	0	push -> push -> pop -> pop -> peek
+stack-020	STOPPED	0	pop -> push
+stack-021	PASSED	9	push -> push
+stack-022	STOPPED	0	peek -> push -> peek
+stack-023	STOPPED	0	peek -> pop -> push
+stack-024	PASSED	9	push -> push -> peek -> pop
+stack-025	STOPPED	0	pop -> pop -> push
+stack-026	PASSED	10	push -> peek -> push -> push -> push -> pop -> peek
+stack-027	PASSED	3	push -> peek
+stack-028	STOPPED	0	pop -> peek -> peek -> push -> pop -> peek -> pop
+stack-029	STOPPED	0	peek -> push
+stack-030	STOPPED	0	peek -> push -> peek -> push -> pop -> peek
+stack-031	PASSED	10	push -> push -> push -> pop -> push -> peek
+stack-032	STOPPED	0	push -> push -> pop -> pop -> pop -> peek
+stack-033	STOPPED	0	peek -> push -> push -> pop -> peek
+stack-034	STOPPED	0	pop -> push -> push -> push -> peek
+stack-035	STOPPED	0	peek -> peek -> push -> pop
+stack-036	STOPPED	0	pop -> peek -> pop
+stack-037	STOPPED	0	pop -> pop -> pop -> push -> push -> peek
+stack-038	STOPPED	0	peek -> peek -> push -> peek -> pop -> peek -> pop
+stack-039	STOPPED	0	push -> pop -> pop -> peek
+stack-040	STOPPED	0	peek -> push -> pop -> push
+stack-041	STOPPED	0	peek -> push -> pop -> pop -> push -> peek
+stack-042	STOPPED	0	pop -> push -> push -> pop -> peek
+stack-043	PASSED	10	push -> pop -> push -> push -> peek
+stack-044	STOPPED	0	push -> pop -> pop
+stack-045	PASSED	10	push -> push -> push -> push -> peek
+stack-046	PASSED	10	push -> push -> push
+stack-047	PASSED	9	push -> peek -> pop -> push
+stack-048	PASSED	10	push -> push -> push -> push -> pop -> push
+stack-049	STOPPED	0	pop -> push -> push -> peek
+stack-050	STOPPED	0	peek -> peek -> push
+stack-051	PASSED	9	push -> pop -> push -> peek
+stack-052	PASSED	3	push -> peek -> pop
+stack-053	STOPPED	0	pop -> peek
+stack-054	STOPPED	0	pop -> peek -> push -> pop -> push -> peek
+stack-055	STOPPED	0	push -> peek -> pop -> peek
+stack-056	STOPPED	0	pop -> push -> push -> peek -> peek -> peek
+stack-057	STOPPED	0	push -> pop -> peek -> pop -> push
+stack-058	PASSED	10	push -> push -> push -> push -> pop -> peek
+stack-059	PASSED	10	push -> push -> push -> pop -> pop -> peek
+stack-060	PASSED	9	push -> peek -> push -> pop -> peek
+stack-061	PASSED	3	push -> peek -> peek -> peek
+stack-062	STOPPED	0	push -> pop -> pop -> push -> peek
+stack-063	PASSED	10	push -> peek -> push -> push -> pop -> peek
+stack-064	PASSED	10	push -> push -> push -> pop
+stack-065	STOPPED	0	pop -> pop -> peek -> pop -> pop -> push -> peek
+stack-066	STOPPED	0	peek -> push -> pop -> push -> push -> push -> peek
+stack-067	PASSED	10	push -> push -> push -> pop -> peek -> peek -> peek
+stack-068	PASSED	10	push -> push -> peek -> push -> pop
+stack-069	PASSED	9	push -> push -> peek -> pop -> peek
+stack-070	PASSED	10	push -> pop -> push -> push -> pop -> peek
+stack-071	PASSED	9	push -> push -> peek -> peek -> pop -> peek -> peek
+stack-072	PASSED	10	push -> peek -> push -> peek -> push -> peek
+stack-073	STOPPED	0	push -> pop -> peek -> push
+stack-074	STOPPED	0	peek -> pop -> push -> push -> pop -> pop -> peek
+stack-075	STOPPED	0	pop -> pop
+stack-076	PASSED	10	push -> pop -> push -> push
+stack-077	STOPPED	0	peek -> pop -> push -> pop -> peek -> push -> push
+stack-078	PASSED	9	push -> peek -> peek -> peek -> pop -> push
+stack-079	PASSED	10	push -> push -> push -> pop -> peek -> pop -> peek
+stack-080	STOPPED	0	pop -> push -> peek -> push -> pop -> peek
+stack-081	STOPPED	0	pop -> pop -> peek
+stack-082	STOPPED	0	push -> push -> pop -> pop -> peek -> peek
+stack-083	STOPPED	0	push -> pop -> peek -> pop -> pop -> peek
+stack-084	STOPPED	0	pop -> push -> pop -> peek
+stack-085	PASSED	9	push -> push -> pop -> pop
+stack-086	STOPPED	0	peek -> peek -> push -> peek
+stack-087	STOPPED	0	peek -> push -> pop
+stack-088	STOPPED	0	peek -> pop -> peek -> push -> push
+stack-089	STOPPED	0	peek -> peek -> peek -> pop -> pop -> push
+stack-090	STOPPED	0	pop -> push -> push -> push -> pop -> peek
+stack-091	PASSED	10	push -> push -> push -> pop -> pop
+stack-092	STOPPED	0	peek -> peek -> pop -> peek -> peek -> peek
+stack-093	STOPPED	0	pop -> push -> pop -> push -> pop -> peek
+stack-094	STOPPED	0	push -> peek -> pop -> pop -> pop -> pop
+stack-095	PASSED	9	push -> pop -> push -> peek -> pop
+stack-096	STOPPED	0	peek -> push -> pop -> pop -> peek
+stack-097	STOPPED	0	push -> pop -> pop -> peek -> pop -> push
+stack-098	PASSED	3	push -> peek -> peek
+stack-099	PASSED	10	push -> pop -> push -> push -> push
+stack-100	STOPPED	0	peek -> push -> push
+stack-101	PASSED	10	push -> push -> peek -> peek -> pop -> push
+stack-102	STOPPED	0	pop -> push -> pop
+stack-103	STOPPED	0	pop -> pop -> peek -> peek -> pop
+stack-104	STOPPED	0	push -> pop -> push -> pop -> peek
+stack-105	PASSED	10	push -> push -> peek -> pop -> push
+stack-106	STOPPED	0	pop -> peek -> push -> pop -> push
+stack-107	PASSED	10	push -> push -> push -> pop -> peek -> peek
+stack-108	PASSED	9	push -> push -> pop -> peek -> peek -> peek
+stack-109	PASSED	10	push -> push -> pop -> push
+stack-110	STOPPED	0	peek -> pop -> peek -> push -> pop -> push -> push
+stack-111	STOPPED	0	peek -> pop
+stack-112	STOPPED	0	pop -> push -> pop -> push -> peek
+stack-113	STOPPED	0	peek -> push -> peek -> push -> peek -> peek
+stack-114	STOPPED	0	peek -> pop -> push -> peek -> pop -> pop
+stack-115	PASSED	9	push -> push -> peek -> peek
+stack-116	STOPPED	0	push -> peek -> pop -> peek -> push
+stack-117	STOPPED	0	push -> pop -> pop -> push -> push -> peek -> peek
+stack-118	STOPPED	0	peek -> push -> pop -> peek
+stack-119	STOPPED	0	pop -> pop -> peek -> push -> pop -> push -> pop
+stack-120	STOPPED	0	pop -> push -> pop -> push -> push
+stack-121	PASSED	10	push -> push -> pop -> push -> peek
+stack-122	PASSED	9	push -> push -> pop -> peek -> peek -> pop
+stack-123	STOPPED	0	peek -> peek -> pop -> pop -> push -> peek
+stack-124	STOPPED	0	peek -> peek
+stack-125	STOPPED	0	pop -> push -> peek -> peek
+stack-126	STOPPED	0	pop -> push -> push
+stack-127	PASSED	10	push -> peek -> pop -> push -> peek -> push
+stack-128	STOPPED	0	push -> peek -> pop -> peek -> peek -> push -> pop
+stack-129	STOPPED	0	pop -> push -> push -> pop
+stack-130	STOPPED	0	push -> pop -> peek -> push -> pop -> peek
+stack-131	STOPPED	0	pop -> pop -> push -> peek -> peek -> push
+stack-132	STOPPED	0	peek -> peek -> pop -> pop
+stack-133	STOPPED	0	pop -> pop -> pop
+stack-134	STOPPED	0	pop -> pop -> peek -> push -> pop -> peek -> push
+stack-135	STOPPED	0	pop -> pop -> push -> pop -> push -> pop -> peek
+stack-136	STOPPED	0	push -> peek -> push -> pop -> pop -> peek
+stack-137	PASSED	10	push -> push -> peek -> push
+stack-138	STOPPED	0	pop -> pop -> pop -> peek
+stack-139	STOPPED	0	pop -> peek -> push -> peek
+stack-140	STOPPED	0	peek -> peek -> push -> peek -> push
+stack-141	STOPPED	0	peek -> pop -> push -> pop -> pop -> pop -> peek
+stack-142	PASSED	3	push -> peek -> peek -> pop
+stack-143	STOPPED	0	push -> push -> pop -> pop -> peek -> pop
+stack-144	STOPPED	0	peek -> push -> push -> peek -> peek
+stack-145	PASSED	10	push -> push -> push -> peek -> pop
+stack-146	STOPPED	0	peek -> pop -> push -> push -> pop -> push
+stack-147	STOPPED	0	peek -> peek -> push -> pop -> pop -> pop -> pop
+stack-148	PASSED	10	push -> push -> push -> peek -> peek -> pop
+stack-149	STOPPED	0	peek -> push -> pop -> peek -> peek -> peek
+stack-150	PASSED	10	push -> peek -> push -> push -> pop -> push
+stack-151	STOPPED	0	pop -> peek -> peek -> pop
+stack-152	STOPPED	0	push -> push -> peek -> peek -> pop -> pop -> pop
+stack-153	STOPPED	0	peek -> push -> pop -> push -> pop -> pop
+stack-154	STOPPED	0	pop -> pop -> peek -> pop -> push -> push
+stack-155	STOPPED	0	pop -> peek -> pop -> push
+stack-156	STOPPED	0	peek -> pop -> pop -> peek
+stack-157	PASSED	10	push -> push -> peek -> push -> push -> pop -> peek
+stack-158	STOPPED	0	push -> pop -> peek -> peek -> peek
+stack-159	PASSED	9	push -> pop -> push
+stack-160	PASSED	3	push -> pop
+stack-161	PASSED	9	push -> peek -> push -> pop
+stack-162	STOPPED	0	pop -> peek -> peek -> pop -> peek -> pop
+stack-163	STOPPED	0	pop -> push -> peek -> pop
+stack-164	STOPPED	0	peek -> push -> pop -> push -> peek
+stack-165	PASSED	9	push -> peek -> pop -> push -> peek
+stack-166	STOPPED	0	pop -> peek -> peek -> push -> pop -> pop
+stack-167	STOPPED	0	peek -> peek -> push -> pop -> peek
+stack-168	STOPPED	0	pop -> peek -> peek
+stack-169	STOPPED	0	peek -> push -> push -> peek -> push -> pop -> peek
+stack-170	STOPPED	0	push -> peek -> pop -> pop -> push
+stack-171	STOPPED	0	peek -> pop -> peek
+stack-172	STOPPED	0	pop -> push -> pop -> peek -> push
+stack-173	STOPPED	0	pop -> pop -> push -> push -> peek
+stack-174	PASSED	10	push -> push -> push -> push -> pop -> pop -> peek
+stack-175	STOPPED	0	peek -> peek -> peek -> push -> pop -> push
+stack-176	STOPPED	0	pop -> pop -> peek -> peek -> pop -> peek
+stack-177	STOPPED	0	peek -> push -> peek -> peek -> push -> push
+stack-178	STOPPED	0	peek -> pop -> push -> pop -> push -> push
+stack-179	STOPPED	0	pop -> peek -> push
+stack-180	STOPPED	0	pop -> peek -> push -> peek -> push
+stack-181	STOPPED	0	pop -> push -> push -> push
+stack-182	PASSED	9	push -> peek -> push
+stack-183	STOPPED	0	pop -> peek -> push -> push -> peek
+stack-184	STOPPED	0	pop -> push -> pop -> peek -> pop -> peek -> peek
+stack-185	STOPPED	0	peek -> peek -> push -> push -> pop -> peek -> pop
+stack-186	STOPPED	0	peek -> peek -> peek -> push -> peek -> peek
+stack-187	STOPPED	0	pop -> pop -> peek -> pop -> peek -> push -> push
+stack-188	STOPPED	0	push -> pop -> pop -> push -> pop -> pop -> pop
+stack-189	PASSED	10	push -> peek -> pop -> push -> push
+stack-190	STOPPED	0	push -> pop -> peek -> push -> pop
+stack-191	PASSED	10	push -> push -> peek -> push -> peek -> pop
+stack-192	STOPPED	0	peek -> push -> push -> push -> peek -> pop
+stack-193	STOPPED	0	peek -> peek -> push -> push
+stack-194	STOPPED	0	push -> peek -> pop -> pop -> pop -> push
+stack-195	PASSED	10	push -> push -> push -> peek -> pop -> pop
+stack-196	STOPPED	0	peek -> pop -> pop
+stack-197	STOPPED	0	peek -> push -> peek -> pop
+stack-198	STOPPED	0	peek -> peek -> push -> push -> pop -> peek -> peek
+stack-199	STOPPED	0	peek -> peek -> pop -> peek
+stack-200	PASSED	10	push -> push -> pop -> pop -> push -> peek
+stack-201	STOPPED	0	peek -> peek -> push -> peek -> peek -> peek -> peek
+stack-202	STOPPED	0	push -> pop -> peek -> push -> peek
+stack-203	STOPPED	0	peek -> push -> pop -> pop -> pop -> push
+stack-204	STOPPED	0	peek -> peek -> push -> pop -> push
+stack-205	STOPPED	0	push -> pop -> peek -> pop -> peek -> push
+stack-206	STOPPED	0	push -> pop -> pop -> pop -> peek
+stack-207	STOPPED	0	peek -> push -> pop -> peek -> peek
+stack-208	STOPPED	0	pop -> pop -> peek -> pop -> peek -> peek -> pop
+stack-209	STOPPED	0	peek -> push -> push -> push -> pop
+stack-210	PASSED	9	push -> peek -> pop -> push -> pop
+stack-211	STOPPED	0	push -> peek -> pop -> pop -> peek -> pop -> peek
+stack-212	STOPPED	0	peek -> push -> peek -> pop -> pop
+stack-213	PASSED	10	push -> push -> push -> push -> peek -> pop
+stack-214	STOPPED	0	peek -> peek -> pop -> pop -> pop -> push
+stack-215	STOPPED	0	push -> push -> pop -> peek -> pop -> pop -> peek
+stack-216	STOPPED	0	pop -> push -> push -> peek -> pop -> push
+stack-217	STOPPED	0	peek -> push -> push -> peek
+stack-218	STOPPED	0	peek -> push -> push -> peek -> peek -> peek
+stack-219	STOPPED	0	push -> pop -> pop -> push -> peek -> peek
+stack-220	STOPPED	0	pop -> peek -> peek -> push -> pop
+stack-221	STOPPED	0	peek -> push -> push -> pop -> pop
+stack-222	STOPPED	0	push -> pop -> push -> peek -> pop -> peek -> peek
+stack-223	STOPPED	0	peek -> pop -> push -> peek
+stack-224	STOPPED	0	peek -> peek -> push -> push -> pop -> pop -> peek
+stack-225	STOPPED	0	pop -> peek -> peek -> push -> peek -> peek -> pop
+stack-226	PASSED	10	push -> pop -> push -> peek -> push -> peek
+stack-227	STOPPED	0	pop -> peek -> peek -> push
+stack-228	PASSED	10	push -> peek -> push -> peek -> pop -> push
+stack-229	STOPPED	0	peek -> pop -> peek -> push -> peek -> peek -> peek
+stack-230	STOPPED	0	peek -> push -> pop -> push -> peek -> pop
+stack-231	PASSED	10	push -> push -> pop -> push -> pop -> peek
+stack-232	STOPPED	0	pop -> push -> peek -> push
+stack-233	PASSED	10	push -> push -> push -> peek -> peek
+stack-234	STOPPED	0	peek -> peek -> pop -> pop -> peek -> pop
+stack-235	STOPPED	0	peek -> push -> push -> push -> pop -> peek
+stack-236	STOPPED	0	pop -> pop -> push -> push -> pop -> peek
+stack-237	STOPPED	0	pop -> peek -> peek -> push -> push -> pop
+stack-238	STOPPED	0	peek -> push -> pop -> pop -> push
+stack-239	PASSED	10	push -> peek -> push -> pop -> push
+stack-240	STOPPED	0	peek -> peek -> pop -> push -> push -> pop -> peek
+stack-241	PASSED	10	push -> push -> pop -> peek -> push -> pop -> peek
+stack-242	STOPPED	0	pop -> peek -> peek -> peek -> push -> push
+stack-243	PASSED	10	push -> peek -> push -> push -> pop
+stack-244	STOPPED	0	pop -> push -> peek -> peek -> push -> pop -> pop
+stack-245	PASSED	10	push -> push -> push -> peek -> pop -> push -> peek
+stack-246	PASSED	10	push -> push -> push -> push -> pop -> push -> push
+stack-247	PASSED	9	push -> pop -> push -> pop
+stack-248	STOPPED	0	push -> push -> pop -> peek -> pop -> peek
+stack-249	STOPPED	0	peek -> pop -> pop -> pop -> peek
+stack-250	STOPPED	0	pop -> push -> push -> peek -> pop
+stack-251	PASSED	10	push -> pop -> push -> push -> push -> peek
+stack-252	STOPPED	0	push -> pop -> pop -> push -> pop -> peek -> peek
+stack-253	STOPPED	0	push -> push -> pop -> pop -> pop -> peek -> peek
+stack-254	STOPPED	0	peek -> pop -> peek -> peek
+stack-255	STOPPED	0	pop -> push -> push -> peek -> peek
+stack-256	STOPPED	0	peek -> push -> peek -> push -> push -> push -> peek
+stack-257	STOPPED	0	peek -> peek -> peek
+stack-258	STOPPED	0	push -> peek -> pop -> pop -> peek
+stack-259	STOPPED	0	peek -> push -> push -> pop -> push -> peek
+stack-260	STOPPED	0	push -> pop -> pop -> push -> push -> peek

@@ -1,0 +1,86 @@
+# generated mutants — linkedlist
+# id	status	operator	method	file	killed-by-family	detail
+LINKEDLIST_GEN_SDL_1	INVALID	statement-deletion	-	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_SDL_1/run/in/ac/iiitb/plproject/atc/generated/Helper.java:32: error: cannot find symbol
+LINKEDLIST_GEN_SEI_2	INVALID	side-effect-insertion	-	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_SEI_2/run/in/ac/iiitb/plproject/atc/generated/Helper.java:30: error: <identifier> expected
+LINKEDLIST_GEN_SDL_3	INVALID	statement-deletion	-	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_SDL_3/run/in/ac/iiitb/plproject/atc/generated/Helper.java:45: error: cannot find symbol
+LINKEDLIST_GEN_SEI_4	INVALID	side-effect-insertion	-	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_SEI_4/run/in/ac/iiitb/plproject/atc/generated/Helper.java:31: error: <identifier> expected
+LINKEDLIST_GEN_SDL_5	INVALID	statement-deletion	-	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_SDL_5/run/in/ac/iiitb/plproject/atc/generated/GeneratedATCsTest.java:30: error: cannot find symbol
+LINKEDLIST_GEN_SEI_6	INVALID	side-effect-insertion	-	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_SEI_6/run/in/ac/iiitb/plproject/atc/generated/Helper.java:37: error: <identifier> expected
+LINKEDLIST_GEN_CRP_7	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_CRP_8	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_SDL_9	SURVIVED	statement-deletion	addFirst	Helper.java	linkedlist-011: addFirst -> addFirst -> addLast -> removeFirst -> indexOf	every generated assertion still holds
+LINKEDLIST_GEN_SEI_10	SURVIVED	side-effect-insertion	addFirst	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_SDL_11	KILLED	statement-deletion	addFirst	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addFirst: head == value
+LINKEDLIST_GEN_SEI_12	SURVIVED	side-effect-insertion	addFirst	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_SDL_13	KILLED	statement-deletion	addFirst	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addFirst: head == value
+LINKEDLIST_GEN_SEI_14	KILLED	side-effect-insertion	addFirst	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addFirst: size == \old(size) + 1
+LINKEDLIST_GEN_ROR_15	INVALID	relational-operator-replacement	addLast	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_ROR_15/run/in/ac/iiitb/plproject/atc/generated/Helper.java:53: error: bad operand types for binary operator '<='
+LINKEDLIST_GEN_ROR_16	INVALID	relational-operator-replacement	addLast	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_ROR_16/run/in/ac/iiitb/plproject/atc/generated/Helper.java:53: error: bad operand types for binary operator '>='
+LINKEDLIST_GEN_ROR_17	KILLED	relational-operator-replacement	addLast	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addLast: size == \old(size) + 1
+LINKEDLIST_GEN_ROR_18	INVALID	relational-operator-replacement	addLast	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_ROR_18/run/in/ac/iiitb/plproject/atc/generated/Helper.java:53: error: bad operand types for binary operator '<'
+LINKEDLIST_GEN_ROR_19	INVALID	relational-operator-replacement	addLast	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_ROR_19/run/in/ac/iiitb/plproject/atc/generated/Helper.java:53: error: bad operand types for binary operator '>'
+LINKEDLIST_GEN_COI_20	KILLED	conditional-operator-insertion	addLast	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addLast: size == \old(size) + 1
+LINKEDLIST_GEN_CTC_21	KILLED	condition-to-constant	addLast	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addLast: size == \old(size) + 1
+LINKEDLIST_GEN_CTC_22	SURVIVED	condition-to-constant	addLast	Helper.java	linkedlist-014: addLast -> addFirst -> removeFirst -> indexOf	every generated assertion still holds
+LINKEDLIST_GEN_ROR_23	INVALID	relational-operator-replacement	addLast	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_ROR_23/run/in/ac/iiitb/plproject/atc/generated/Helper.java:57: error: bad operand types for binary operator '<='
+LINKEDLIST_GEN_ROR_24	INVALID	relational-operator-replacement	addLast	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_ROR_24/run/in/ac/iiitb/plproject/atc/generated/Helper.java:57: error: bad operand types for binary operator '>='
+LINKEDLIST_GEN_ROR_25	KILLED	relational-operator-replacement	addLast	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): null
+LINKEDLIST_GEN_ROR_26	INVALID	relational-operator-replacement	addLast	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_ROR_26/run/in/ac/iiitb/plproject/atc/generated/Helper.java:57: error: bad operand types for binary operator '<'
+LINKEDLIST_GEN_ROR_27	INVALID	relational-operator-replacement	addLast	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_ROR_27/run/in/ac/iiitb/plproject/atc/generated/Helper.java:57: error: bad operand types for binary operator '>'
+LINKEDLIST_GEN_COI_28	KILLED	conditional-operator-insertion	addLast	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): null
+LINKEDLIST_GEN_SDL_29	SURVIVED	statement-deletion	addLast	Helper.java	linkedlist-003: addFirst -> addLast -> addLast -> removeFirst -> indexOf	every generated assertion still holds
+LINKEDLIST_GEN_SEI_30	SURVIVED	side-effect-insertion	addLast	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_SDL_31	KILLED	statement-deletion	addLast	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addLast: tail == value
+LINKEDLIST_GEN_SEI_32	SURVIVED	side-effect-insertion	addLast	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_SDL_33	KILLED	statement-deletion	removeFirst	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST removeFirst: size == \old(size) - 1
+LINKEDLIST_GEN_SEI_34	SURVIVED	side-effect-insertion	removeFirst	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_UOI_35	KILLED	unary-operator-insertion	removeFirst	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST removeFirst: removedValue == \old(head)
+LINKEDLIST_GEN_ABS_36	KILLED	absolute-value-insertion	removeFirst	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST removeFirst: removedValue == \old(head)
+LINKEDLIST_GEN_RVR_37	KILLED	return-value-replacement	removeFirst	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST removeFirst: removedValue == \old(head)
+LINKEDLIST_GEN_RVR_38	KILLED	return-value-replacement	removeFirst	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST removeFirst: removedValue == \old(head)
+LINKEDLIST_GEN_RVR_39	KILLED	return-value-replacement	removeFirst	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST removeFirst: removedValue == \old(head)
+LINKEDLIST_GEN_SEI_40	KILLED	side-effect-insertion	removeFirst	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST removeFirst: size == \old(size) - 1
+LINKEDLIST_GEN_CRP_41	SURVIVED	constant-replacement	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_CRP_42	SURVIVED	constant-replacement	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_ROR_43	INVALID	relational-operator-replacement	indexOf	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_ROR_43/run/in/ac/iiitb/plproject/atc/generated/Helper.java:82: error: bad operand types for binary operator '<='
+LINKEDLIST_GEN_ROR_44	INVALID	relational-operator-replacement	indexOf	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_ROR_44/run/in/ac/iiitb/plproject/atc/generated/Helper.java:82: error: bad operand types for binary operator '>='
+LINKEDLIST_GEN_ROR_45	SURVIVED	relational-operator-replacement	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_ROR_46	INVALID	relational-operator-replacement	indexOf	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_ROR_46/run/in/ac/iiitb/plproject/atc/generated/Helper.java:82: error: bad operand types for binary operator '<'
+LINKEDLIST_GEN_ROR_47	INVALID	relational-operator-replacement	indexOf	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_ROR_47/run/in/ac/iiitb/plproject/atc/generated/Helper.java:82: error: bad operand types for binary operator '>'
+LINKEDLIST_GEN_COI_48	SURVIVED	conditional-operator-insertion	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_COI_49	SURVIVED	conditional-operator-insertion	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_CTC_50	SURVIVED	condition-to-constant	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_CTC_51	SURVIVED	condition-to-constant	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_ARP_52	SURVIVED	argument-replacement	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_ARP_53	SURVIVED	argument-replacement	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_UOI_54	SURVIVED	unary-operator-insertion	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_ABS_55	SURVIVED	absolute-value-insertion	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_RVR_56	SURVIVED	return-value-replacement	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_RVR_57	SURVIVED	return-value-replacement	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_RVR_58	SURVIVED	return-value-replacement	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_SEI_59	SURVIVED	side-effect-insertion	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_AOR_60	SURVIVED	arithmetic-operator-replacement	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_AOR_61	SURVIVED	arithmetic-operator-replacement	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_AOR_62	SURVIVED	arithmetic-operator-replacement	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_AOR_63	SURVIVED	arithmetic-operator-replacement	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_AOI_64	SURVIVED	arithmetic-operator-insertion	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_AOI_65	SURVIVED	arithmetic-operator-insertion	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_UOI_66	SURVIVED	unary-operator-insertion	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_ABS_67	SURVIVED	absolute-value-insertion	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_CRP_68	SURVIVED	constant-replacement	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_CRP_69	SURVIVED	constant-replacement	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_CRP_70	SURVIVED	constant-replacement	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_SDL_71	SURVIVED	statement-deletion	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_SEI_72	SURVIVED	side-effect-insertion	indexOf	Helper.java	linkedlist-008: addFirst -> indexOf -> addLast -> removeFirst	every generated assertion still holds
+LINKEDLIST_GEN_AOR_73	KILLED	arithmetic-operator-replacement	indexOf	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST indexOf: position < size
+LINKEDLIST_GEN_AOR_74	INVALID	arithmetic-operator-replacement	indexOf	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_AOR_74/run/in/ac/iiitb/plproject/atc/generated/Helper.java:89: error: illegal start of expression
+LINKEDLIST_GEN_AOR_75	INVALID	arithmetic-operator-replacement	indexOf	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_AOR_75/run/in/ac/iiitb/plproject/atc/generated/Helper.java:89: error: illegal start of expression
+LINKEDLIST_GEN_AOR_76	INVALID	arithmetic-operator-replacement	indexOf	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_AOR_76/run/in/ac/iiitb/plproject/atc/generated/Helper.java:89: error: illegal start of expression
+LINKEDLIST_GEN_UOI_77	KILLED	unary-operator-insertion	indexOf	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST indexOf: position < size
+LINKEDLIST_GEN_ABS_78	SURVIVED	absolute-value-insertion	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_CRP_79	SURVIVED	constant-replacement	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_CRP_80	INVALID	constant-replacement	indexOf	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/LINKEDLIST_GEN_CRP_80/run/in/ac/iiitb/plproject/atc/generated/Helper.java:89: error: unexpected type
+LINKEDLIST_GEN_CRP_81	KILLED	constant-replacement	indexOf	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST indexOf: position >= -1
+LINKEDLIST_GEN_RVR_82	SURVIVED	return-value-replacement	indexOf	Helper.java	-	every generated assertion still holds
+LINKEDLIST_GEN_RVR_83	KILLED	return-value-replacement	indexOf	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST indexOf: position < size
+LINKEDLIST_GEN_SEI_84	SURVIVED	side-effect-insertion	indexOf	Helper.java	linkedlist-008: addFirst -> indexOf -> addLast -> removeFirst	every generated assertion still holds

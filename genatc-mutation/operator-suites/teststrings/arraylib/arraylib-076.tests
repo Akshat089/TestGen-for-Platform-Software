@@ -1,11 +1,3 @@
 test ArraylibGenerated76 {
-    sequence: set -> set -> get -> sum;
-
-    inputs {
-        set[0].index = 2;
-        set[0].value = 2;
-        set[1].index = 1;
-        set[1].value = 7;
-        get[2].index = 7;
-    }
+    sequence: sum -> sum -> get -> get -> set -> set -> get;
 }

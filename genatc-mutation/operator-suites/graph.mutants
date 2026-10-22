@@ -1,0 +1,644 @@
+/*
+ * GENERATED MUTATION SUITE — graph
+ *
+ * Produced by OperatorMutantGenerator from:
+ *   ../libraries/graph/Helper.java
+ *
+ * DO NOT EDIT. Regenerate with ./run-operator-suites.sh graph
+ *
+ * Every operator in MutationOperator is applied to every line of the library
+ * that admits it, so this file is what the specification is measured against
+ * when nobody is choosing the faults. It is the counterpart of the
+ * hand-written set in mutations/graph.mutants:
+ * that one asks whether the suite catches the faults we thought of, this one
+ * asks what fraction of all faults of each KIND it catches.
+ *
+ * `expect` is absent throughout: a generated mutant carries no prediction,
+ * and some of these are equivalent to the original and cannot be killed by
+ * anyone. The run measures; it does not check a declaration.
+ */
+
+mutant GRAPH_GEN_SDL_1 {
+    description: the statement is removed, in Helper.java
+    operator:    statement-deletion
+    file:        Helper.java
+    find:        public static Set<String> V = new LinkedHashSet<String>();
+    replace:     
+}
+
+mutant GRAPH_GEN_SEI_2 {
+    description: a write to edgeCount is inserted after the statement, in Helper.java
+    operator:    side-effect-insertion
+    file:        Helper.java
+    find:        public static Set<String> V = new LinkedHashSet<String>();
+    replace:     public static Set<String> V = new LinkedHashSet<String>(); edgeCount = edgeCount + 1;
+}
+
+mutant GRAPH_GEN_SDL_3 {
+    description: the statement is removed, in Helper.java
+    operator:    statement-deletion
+    file:        Helper.java
+    find:        public static Map<String, List<String>> Adj = new LinkedHashMap<String, List<String>>();
+    replace:     
+}
+
+mutant GRAPH_GEN_SEI_4 {
+    description: a write to edgeCount is inserted after the statement, in Helper.java
+    operator:    side-effect-insertion
+    file:        Helper.java
+    find:        public static Map<String, List<String>> Adj = new LinkedHashMap<String, List<String>>();
+    replace:     public static Map<String, List<String>> Adj = new LinkedHashMap<String, List<String>>(); edgeCount = edgeCount + 1;
+}
+
+mutant GRAPH_GEN_CRP_5 {
+    description: the literal 0 becomes 1, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int edgeCount = 0;
+    replace:     public static int edgeCount = 1;
+}
+
+mutant GRAPH_GEN_CRP_6 {
+    description: the literal 0 becomes -1, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int edgeCount = 0;
+    replace:     public static int edgeCount = -1;
+}
+
+mutant GRAPH_GEN_COI_7 {
+    description: the guard is negated, in addVertex()
+    operator:    conditional-operator-insertion
+    in:          addVertex
+    file:        Helper.java
+    find:        if (!V.contains(name)) {
+    replace:     if (!(!V.contains(name))) {
+}
+
+mutant GRAPH_GEN_UOI_8 {
+    description: a negation is dropped, in addVertex()
+    operator:    unary-operator-insertion
+    in:          addVertex
+    file:        Helper.java
+    find:        if (!V.contains(name)) {
+    replace:     if (V.contains(name)) {
+}
+
+mutant GRAPH_GEN_CTC_9 {
+    description: the branch is always taken, in addVertex()
+    operator:    condition-to-constant
+    in:          addVertex
+    file:        Helper.java
+    find:        if (!V.contains(name)) {
+    replace:     if (true) {
+}
+
+mutant GRAPH_GEN_CTC_10 {
+    description: the branch is never taken, in addVertex()
+    operator:    condition-to-constant
+    in:          addVertex
+    file:        Helper.java
+    find:        if (!V.contains(name)) {
+    replace:     if (false) {
+}
+
+mutant GRAPH_GEN_ARP_11 {
+    description: the argument to contains() is shifted by + 1, in addVertex()
+    operator:    argument-replacement
+    in:          addVertex
+    file:        Helper.java
+    find:        if (!V.contains(name)) {
+    replace:     if (!V.contains(name + 1)) {
+}
+
+mutant GRAPH_GEN_ARP_12 {
+    description: the argument to contains() is shifted by - 1, in addVertex()
+    operator:    argument-replacement
+    in:          addVertex
+    file:        Helper.java
+    find:        if (!V.contains(name)) {
+    replace:     if (!V.contains(name - 1)) {
+}
+
+mutant GRAPH_GEN_SDL_13 {
+    description: the statement is removed, in addVertex()
+    operator:    statement-deletion
+    in:          addVertex
+    file:        Helper.java
+    find:        V.add(name);
+    replace:     
+}
+
+mutant GRAPH_GEN_STR_14 {
+    description: the statement runs twice, in addVertex()
+    operator:    statement-replacement
+    in:          addVertex
+    file:        Helper.java
+    find:        V.add(name);
+    replace:     V.add(name); V.add(name);
+}
+
+mutant GRAPH_GEN_ARP_15 {
+    description: the argument to add() is shifted by + 1, in addVertex()
+    operator:    argument-replacement
+    in:          addVertex
+    file:        Helper.java
+    find:        V.add(name);
+    replace:     V.add(name + 1);
+}
+
+mutant GRAPH_GEN_ARP_16 {
+    description: the argument to add() is shifted by - 1, in addVertex()
+    operator:    argument-replacement
+    in:          addVertex
+    file:        Helper.java
+    find:        V.add(name);
+    replace:     V.add(name - 1);
+}
+
+mutant GRAPH_GEN_MCR_17 {
+    description: .add( becomes .contains(, in addVertex()
+    operator:    method-call-replacement
+    in:          addVertex
+    file:        Helper.java
+    find:        V.add(name);
+    replace:     V.contains(name);
+}
+
+mutant GRAPH_GEN_SEI_18 {
+    description: a write to edgeCount is inserted after the statement, in addVertex()
+    operator:    side-effect-insertion
+    in:          addVertex
+    file:        Helper.java
+    find:        V.add(name);
+    replace:     V.add(name); edgeCount = edgeCount + 1;
+}
+
+mutant GRAPH_GEN_SDL_19 {
+    description: the statement is removed, in addVertex()
+    operator:    statement-deletion
+    in:          addVertex
+    file:        Helper.java
+    find:        Adj.put(name, new ArrayList<String>());
+    replace:     
+}
+
+mutant GRAPH_GEN_STR_20 {
+    description: the statement runs twice, in addVertex()
+    operator:    statement-replacement
+    in:          addVertex
+    file:        Helper.java
+    find:        Adj.put(name, new ArrayList<String>());
+    replace:     Adj.put(name, new ArrayList<String>()); Adj.put(name, new ArrayList<String>());
+}
+
+mutant GRAPH_GEN_MCR_21 {
+    description: .put( becomes .putIfAbsent(, in addVertex()
+    operator:    method-call-replacement
+    in:          addVertex
+    file:        Helper.java
+    find:        Adj.put(name, new ArrayList<String>());
+    replace:     Adj.putIfAbsent(name, new ArrayList<String>());
+}
+
+mutant GRAPH_GEN_SEI_22 {
+    description: a write to edgeCount is inserted after the statement, in addVertex()
+    operator:    side-effect-insertion
+    in:          addVertex
+    file:        Helper.java
+    find:        Adj.put(name, new ArrayList<String>());
+    replace:     Adj.put(name, new ArrayList<String>()); edgeCount = edgeCount + 1;
+}
+
+mutant GRAPH_GEN_SDL_23 {
+    description: the statement is removed, in addEdge()
+    operator:    statement-deletion
+    in:          addEdge
+    file:        Helper.java
+    find:        Adj.get(from).add(to);
+    replace:     
+}
+
+mutant GRAPH_GEN_STR_24 {
+    description: the statement runs twice, in addEdge()
+    operator:    statement-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        Adj.get(from).add(to);
+    replace:     Adj.get(from).add(to); Adj.get(from).add(to);
+}
+
+mutant GRAPH_GEN_ARP_25 {
+    description: the argument to get() is shifted by + 1, in addEdge()
+    operator:    argument-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        Adj.get(from).add(to);
+    replace:     Adj.get(from + 1).add(to);
+}
+
+mutant GRAPH_GEN_ARP_26 {
+    description: the argument to get() is shifted by - 1, in addEdge()
+    operator:    argument-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        Adj.get(from).add(to);
+    replace:     Adj.get(from - 1).add(to);
+}
+
+mutant GRAPH_GEN_ARP_27 {
+    description: the argument to add() is shifted by + 1, in addEdge()
+    operator:    argument-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        Adj.get(from).add(to);
+    replace:     Adj.get(from).add(to + 1);
+}
+
+mutant GRAPH_GEN_ARP_28 {
+    description: the argument to add() is shifted by - 1, in addEdge()
+    operator:    argument-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        Adj.get(from).add(to);
+    replace:     Adj.get(from).add(to - 1);
+}
+
+mutant GRAPH_GEN_MCR_29 {
+    description: .add( becomes .contains(, in addEdge()
+    operator:    method-call-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        Adj.get(from).add(to);
+    replace:     Adj.get(from).contains(to);
+}
+
+mutant GRAPH_GEN_MCR_30 {
+    description: .get( becomes .remove(, in addEdge()
+    operator:    method-call-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        Adj.get(from).add(to);
+    replace:     Adj.remove(from).add(to);
+}
+
+mutant GRAPH_GEN_SEI_31 {
+    description: a write to edgeCount is inserted after the statement, in addEdge()
+    operator:    side-effect-insertion
+    in:          addEdge
+    file:        Helper.java
+    find:        Adj.get(from).add(to);
+    replace:     Adj.get(from).add(to); edgeCount = edgeCount + 1;
+}
+
+mutant GRAPH_GEN_SDL_32 {
+    description: the statement is removed, in addEdge()
+    operator:    statement-deletion
+    in:          addEdge
+    file:        Helper.java
+    find:        Adj.get(to).add(from);
+    replace:     
+}
+
+mutant GRAPH_GEN_STR_33 {
+    description: the statement runs twice, in addEdge()
+    operator:    statement-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        Adj.get(to).add(from);
+    replace:     Adj.get(to).add(from); Adj.get(to).add(from);
+}
+
+mutant GRAPH_GEN_ARP_34 {
+    description: the argument to get() is shifted by + 1, in addEdge()
+    operator:    argument-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        Adj.get(to).add(from);
+    replace:     Adj.get(to + 1).add(from);
+}
+
+mutant GRAPH_GEN_ARP_35 {
+    description: the argument to get() is shifted by - 1, in addEdge()
+    operator:    argument-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        Adj.get(to).add(from);
+    replace:     Adj.get(to - 1).add(from);
+}
+
+mutant GRAPH_GEN_ARP_36 {
+    description: the argument to add() is shifted by + 1, in addEdge()
+    operator:    argument-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        Adj.get(to).add(from);
+    replace:     Adj.get(to).add(from + 1);
+}
+
+mutant GRAPH_GEN_ARP_37 {
+    description: the argument to add() is shifted by - 1, in addEdge()
+    operator:    argument-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        Adj.get(to).add(from);
+    replace:     Adj.get(to).add(from - 1);
+}
+
+mutant GRAPH_GEN_MCR_38 {
+    description: .add( becomes .contains(, in addEdge()
+    operator:    method-call-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        Adj.get(to).add(from);
+    replace:     Adj.get(to).contains(from);
+}
+
+mutant GRAPH_GEN_MCR_39 {
+    description: .get( becomes .remove(, in addEdge()
+    operator:    method-call-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        Adj.get(to).add(from);
+    replace:     Adj.remove(to).add(from);
+}
+
+mutant GRAPH_GEN_SEI_40 {
+    description: a write to edgeCount is inserted after the statement, in addEdge()
+    operator:    side-effect-insertion
+    in:          addEdge
+    file:        Helper.java
+    find:        Adj.get(to).add(from);
+    replace:     Adj.get(to).add(from); edgeCount = edgeCount + 1;
+}
+
+mutant GRAPH_GEN_AOR_41 {
+    description: + becomes -, in addEdge()
+    operator:    arithmetic-operator-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        edgeCount = edgeCount + 1;
+    replace:     edgeCount = edgeCount - 1;
+}
+
+mutant GRAPH_GEN_AOR_42 {
+    description: + becomes *, in addEdge()
+    operator:    arithmetic-operator-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        edgeCount = edgeCount + 1;
+    replace:     edgeCount = edgeCount * 1;
+}
+
+mutant GRAPH_GEN_AOR_43 {
+    description: + becomes /, in addEdge()
+    operator:    arithmetic-operator-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        edgeCount = edgeCount + 1;
+    replace:     edgeCount = edgeCount / 1;
+}
+
+mutant GRAPH_GEN_AOR_44 {
+    description: + becomes %, in addEdge()
+    operator:    arithmetic-operator-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        edgeCount = edgeCount + 1;
+    replace:     edgeCount = edgeCount % 1;
+}
+
+mutant GRAPH_GEN_AOI_45 {
+    description: the value assigned to edgeCount is shifted by + 1, in addEdge()
+    operator:    arithmetic-operator-insertion
+    in:          addEdge
+    file:        Helper.java
+    find:        edgeCount = edgeCount + 1;
+    replace:     edgeCount = edgeCount + 1 + 1;
+}
+
+mutant GRAPH_GEN_AOI_46 {
+    description: the value assigned to edgeCount is shifted by - 1, in addEdge()
+    operator:    arithmetic-operator-insertion
+    in:          addEdge
+    file:        Helper.java
+    find:        edgeCount = edgeCount + 1;
+    replace:     edgeCount = edgeCount + 1 - 1;
+}
+
+mutant GRAPH_GEN_UOI_47 {
+    description: the value assigned to edgeCount is negated, in addEdge()
+    operator:    unary-operator-insertion
+    in:          addEdge
+    file:        Helper.java
+    find:        edgeCount = edgeCount + 1;
+    replace:     edgeCount = -(edgeCount + 1);
+}
+
+mutant GRAPH_GEN_ABS_48 {
+    description: the value assigned to edgeCount is forced negative, in addEdge()
+    operator:    absolute-value-insertion
+    in:          addEdge
+    file:        Helper.java
+    find:        edgeCount = edgeCount + 1;
+    replace:     edgeCount = -Math.abs(edgeCount + 1);
+}
+
+mutant GRAPH_GEN_CRP_49 {
+    description: the literal 1 becomes 0, in addEdge()
+    operator:    constant-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        edgeCount = edgeCount + 1;
+    replace:     edgeCount = edgeCount + 0;
+}
+
+mutant GRAPH_GEN_CRP_50 {
+    description: the literal 1 becomes -1, in addEdge()
+    operator:    constant-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        edgeCount = edgeCount + 1;
+    replace:     edgeCount = edgeCount + -1;
+}
+
+mutant GRAPH_GEN_CRP_51 {
+    description: the literal 1 becomes 2, in addEdge()
+    operator:    constant-replacement
+    in:          addEdge
+    file:        Helper.java
+    find:        edgeCount = edgeCount + 1;
+    replace:     edgeCount = edgeCount + 2;
+}
+
+mutant GRAPH_GEN_SDL_52 {
+    description: the statement is removed, in addEdge()
+    operator:    statement-deletion
+    in:          addEdge
+    file:        Helper.java
+    find:        edgeCount = edgeCount + 1;
+    replace:     
+}
+
+mutant GRAPH_GEN_UOI_53 {
+    description: the returned value is negated, in degree()
+    operator:    unary-operator-insertion
+    in:          degree
+    file:        Helper.java
+    find:        return Adj.get(name).size();
+    replace:     return -(Adj.get(name).size());
+}
+
+mutant GRAPH_GEN_ABS_54 {
+    description: the returned value is forced negative, in degree()
+    operator:    absolute-value-insertion
+    in:          degree
+    file:        Helper.java
+    find:        return Adj.get(name).size();
+    replace:     return -Math.abs(Adj.get(name).size());
+}
+
+mutant GRAPH_GEN_RVR_55 {
+    description: the answer becomes 0, in degree()
+    operator:    return-value-replacement
+    in:          degree
+    file:        Helper.java
+    find:        return Adj.get(name).size();
+    replace:     return 0;
+}
+
+mutant GRAPH_GEN_RVR_56 {
+    description: the answer becomes 1, in degree()
+    operator:    return-value-replacement
+    in:          degree
+    file:        Helper.java
+    find:        return Adj.get(name).size();
+    replace:     return 1;
+}
+
+mutant GRAPH_GEN_RVR_57 {
+    description: the answer becomes -1, in degree()
+    operator:    return-value-replacement
+    in:          degree
+    file:        Helper.java
+    find:        return Adj.get(name).size();
+    replace:     return -1;
+}
+
+mutant GRAPH_GEN_ARP_58 {
+    description: the argument to get() is shifted by + 1, in degree()
+    operator:    argument-replacement
+    in:          degree
+    file:        Helper.java
+    find:        return Adj.get(name).size();
+    replace:     return Adj.get(name + 1).size();
+}
+
+mutant GRAPH_GEN_ARP_59 {
+    description: the argument to get() is shifted by - 1, in degree()
+    operator:    argument-replacement
+    in:          degree
+    file:        Helper.java
+    find:        return Adj.get(name).size();
+    replace:     return Adj.get(name - 1).size();
+}
+
+mutant GRAPH_GEN_MCR_60 {
+    description: .size() becomes .hashCode(), in degree()
+    operator:    method-call-replacement
+    in:          degree
+    file:        Helper.java
+    find:        return Adj.get(name).size();
+    replace:     return Adj.get(name).hashCode();
+}
+
+mutant GRAPH_GEN_MCR_61 {
+    description: .get( becomes .remove(, in degree()
+    operator:    method-call-replacement
+    in:          degree
+    file:        Helper.java
+    find:        return Adj.get(name).size();
+    replace:     return Adj.remove(name).size();
+}
+
+mutant GRAPH_GEN_SEI_62 {
+    description: a write to edgeCount is inserted before the return, in degree()
+    operator:    side-effect-insertion
+    in:          degree
+    file:        Helper.java
+    find:        return Adj.get(name).size();
+    replace:     edgeCount = edgeCount + 1; return Adj.get(name).size();
+}
+
+mutant GRAPH_GEN_RVR_63 {
+    description: the answer is always true, in hasEdge()
+    operator:    return-value-replacement
+    in:          hasEdge
+    file:        Helper.java
+    find:        return Adj.get(from).contains(to);
+    replace:     return true;
+}
+
+mutant GRAPH_GEN_RVR_64 {
+    description: the answer is always false, in hasEdge()
+    operator:    return-value-replacement
+    in:          hasEdge
+    file:        Helper.java
+    find:        return Adj.get(from).contains(to);
+    replace:     return false;
+}
+
+mutant GRAPH_GEN_ARP_65 {
+    description: the argument to get() is shifted by + 1, in hasEdge()
+    operator:    argument-replacement
+    in:          hasEdge
+    file:        Helper.java
+    find:        return Adj.get(from).contains(to);
+    replace:     return Adj.get(from + 1).contains(to);
+}
+
+mutant GRAPH_GEN_ARP_66 {
+    description: the argument to get() is shifted by - 1, in hasEdge()
+    operator:    argument-replacement
+    in:          hasEdge
+    file:        Helper.java
+    find:        return Adj.get(from).contains(to);
+    replace:     return Adj.get(from - 1).contains(to);
+}
+
+mutant GRAPH_GEN_ARP_67 {
+    description: the argument to contains() is shifted by + 1, in hasEdge()
+    operator:    argument-replacement
+    in:          hasEdge
+    file:        Helper.java
+    find:        return Adj.get(from).contains(to);
+    replace:     return Adj.get(from).contains(to + 1);
+}
+
+mutant GRAPH_GEN_ARP_68 {
+    description: the argument to contains() is shifted by - 1, in hasEdge()
+    operator:    argument-replacement
+    in:          hasEdge
+    file:        Helper.java
+    find:        return Adj.get(from).contains(to);
+    replace:     return Adj.get(from).contains(to - 1);
+}
+
+mutant GRAPH_GEN_MCR_69 {
+    description: .get( becomes .remove(, in hasEdge()
+    operator:    method-call-replacement
+    in:          hasEdge
+    file:        Helper.java
+    find:        return Adj.get(from).contains(to);
+    replace:     return Adj.remove(from).contains(to);
+}
+
+mutant GRAPH_GEN_SEI_70 {
+    description: a write to edgeCount is inserted before the return, in hasEdge()
+    operator:    side-effect-insertion
+    in:          hasEdge
+    file:        Helper.java
+    find:        return Adj.get(from).contains(to);
+    replace:     edgeCount = edgeCount + 1; return Adj.get(from).contains(to);
+}
+

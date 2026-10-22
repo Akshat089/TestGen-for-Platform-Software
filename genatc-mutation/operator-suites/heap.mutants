@@ -1,0 +1,1951 @@
+/*
+ * GENERATED MUTATION SUITE — heap
+ *
+ * Produced by OperatorMutantGenerator from:
+ *   ../libraries/heap/Helper.java
+ *
+ * DO NOT EDIT. Regenerate with ./run-operator-suites.sh heap
+ *
+ * Every operator in MutationOperator is applied to every line of the library
+ * that admits it, so this file is what the specification is measured against
+ * when nobody is choosing the faults. It is the counterpart of the
+ * hand-written set in mutations/heap.mutants:
+ * that one asks whether the suite catches the faults we thought of, this one
+ * asks what fraction of all faults of each KIND it catches.
+ *
+ * `expect` is absent throughout: a generated mutant carries no prediction,
+ * and some of these are equivalent to the original and cannot be killed by
+ * anyone. The run measures; it does not check a declaration.
+ */
+
+mutant HEAP_GEN_SDL_1 {
+    description: the statement is removed, in Helper.java
+    operator:    statement-deletion
+    file:        Helper.java
+    find:        public static List<Integer> H = new ArrayList<Integer>();
+    replace:     
+}
+
+mutant HEAP_GEN_SEI_2 {
+    description: a write to size is inserted after the statement, in Helper.java
+    operator:    side-effect-insertion
+    file:        Helper.java
+    find:        public static List<Integer> H = new ArrayList<Integer>();
+    replace:     public static List<Integer> H = new ArrayList<Integer>(); size = size + 1;
+}
+
+mutant HEAP_GEN_CRP_3 {
+    description: the literal 0 becomes 1, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int size = 0;
+    replace:     public static int size = 1;
+}
+
+mutant HEAP_GEN_CRP_4 {
+    description: the literal 0 becomes -1, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int size = 0;
+    replace:     public static int size = -1;
+}
+
+mutant HEAP_GEN_SDL_5 {
+    description: the statement is removed, in insert()
+    operator:    statement-deletion
+    in:          insert
+    file:        Helper.java
+    find:        H.add(value);
+    replace:     
+}
+
+mutant HEAP_GEN_STR_6 {
+    description: the statement runs twice, in insert()
+    operator:    statement-replacement
+    in:          insert
+    file:        Helper.java
+    find:        H.add(value);
+    replace:     H.add(value); H.add(value);
+}
+
+mutant HEAP_GEN_ARP_7 {
+    description: the argument to add() is shifted by + 1, in insert()
+    operator:    argument-replacement
+    in:          insert
+    file:        Helper.java
+    find:        H.add(value);
+    replace:     H.add(value + 1);
+}
+
+mutant HEAP_GEN_ARP_8 {
+    description: the argument to add() is shifted by - 1, in insert()
+    operator:    argument-replacement
+    in:          insert
+    file:        Helper.java
+    find:        H.add(value);
+    replace:     H.add(value - 1);
+}
+
+mutant HEAP_GEN_MCR_9 {
+    description: .add( becomes .contains(, in insert()
+    operator:    method-call-replacement
+    in:          insert
+    file:        Helper.java
+    find:        H.add(value);
+    replace:     H.contains(value);
+}
+
+mutant HEAP_GEN_SEI_10 {
+    description: a write to size is inserted after the statement, in insert()
+    operator:    side-effect-insertion
+    in:          insert
+    file:        Helper.java
+    find:        H.add(value);
+    replace:     H.add(value); size = size + 1;
+}
+
+mutant HEAP_GEN_AOR_11 {
+    description: - becomes +, in insert()
+    operator:    arithmetic-operator-replacement
+    in:          insert
+    file:        Helper.java
+    find:        siftUp(H.size() - 1);
+    replace:     siftUp(H.size() + 1);
+}
+
+mutant HEAP_GEN_AOR_12 {
+    description: - becomes *, in insert()
+    operator:    arithmetic-operator-replacement
+    in:          insert
+    file:        Helper.java
+    find:        siftUp(H.size() - 1);
+    replace:     siftUp(H.size() * 1);
+}
+
+mutant HEAP_GEN_AOR_13 {
+    description: - becomes /, in insert()
+    operator:    arithmetic-operator-replacement
+    in:          insert
+    file:        Helper.java
+    find:        siftUp(H.size() - 1);
+    replace:     siftUp(H.size() / 1);
+}
+
+mutant HEAP_GEN_AOR_14 {
+    description: - becomes %, in insert()
+    operator:    arithmetic-operator-replacement
+    in:          insert
+    file:        Helper.java
+    find:        siftUp(H.size() - 1);
+    replace:     siftUp(H.size() % 1);
+}
+
+mutant HEAP_GEN_CRP_15 {
+    description: the literal 1 becomes 0, in insert()
+    operator:    constant-replacement
+    in:          insert
+    file:        Helper.java
+    find:        siftUp(H.size() - 1);
+    replace:     siftUp(H.size() - 0);
+}
+
+mutant HEAP_GEN_CRP_16 {
+    description: the literal 1 becomes -1, in insert()
+    operator:    constant-replacement
+    in:          insert
+    file:        Helper.java
+    find:        siftUp(H.size() - 1);
+    replace:     siftUp(H.size() - -1);
+}
+
+mutant HEAP_GEN_CRP_17 {
+    description: the literal 1 becomes 2, in insert()
+    operator:    constant-replacement
+    in:          insert
+    file:        Helper.java
+    find:        siftUp(H.size() - 1);
+    replace:     siftUp(H.size() - 2);
+}
+
+mutant HEAP_GEN_SDL_18 {
+    description: the statement is removed, in insert()
+    operator:    statement-deletion
+    in:          insert
+    file:        Helper.java
+    find:        siftUp(H.size() - 1);
+    replace:     
+}
+
+mutant HEAP_GEN_MCR_19 {
+    description: .size() becomes .hashCode(), in insert()
+    operator:    method-call-replacement
+    in:          insert
+    file:        Helper.java
+    find:        siftUp(H.size() - 1);
+    replace:     siftUp(H.hashCode() - 1);
+}
+
+mutant HEAP_GEN_SDL_20 {
+    description: the statement is removed, in insert()
+    operator:    statement-deletion
+    in:          insert
+    file:        Helper.java
+    find:        refresh();
+    replace:     
+}
+
+mutant HEAP_GEN_SEI_21 {
+    description: a write to size is inserted after the statement, in insert()
+    operator:    side-effect-insertion
+    in:          insert
+    file:        Helper.java
+    find:        refresh();
+    replace:     refresh(); size = size + 1;
+}
+
+mutant HEAP_GEN_UOI_22 {
+    description: the returned value is negated, in peekMin()
+    operator:    unary-operator-insertion
+    in:          peekMin
+    file:        Helper.java
+    find:        return H.get(0);
+    replace:     return -(H.get(0));
+}
+
+mutant HEAP_GEN_ABS_23 {
+    description: the returned value is forced negative, in peekMin()
+    operator:    absolute-value-insertion
+    in:          peekMin
+    file:        Helper.java
+    find:        return H.get(0);
+    replace:     return -Math.abs(H.get(0));
+}
+
+mutant HEAP_GEN_CRP_24 {
+    description: the literal 0 becomes 1, in peekMin()
+    operator:    constant-replacement
+    in:          peekMin
+    file:        Helper.java
+    find:        return H.get(0);
+    replace:     return H.get(1);
+}
+
+mutant HEAP_GEN_CRP_25 {
+    description: the literal 0 becomes -1, in peekMin()
+    operator:    constant-replacement
+    in:          peekMin
+    file:        Helper.java
+    find:        return H.get(0);
+    replace:     return H.get(-1);
+}
+
+mutant HEAP_GEN_RVR_26 {
+    description: the answer becomes 0, in peekMin()
+    operator:    return-value-replacement
+    in:          peekMin
+    file:        Helper.java
+    find:        return H.get(0);
+    replace:     return 0;
+}
+
+mutant HEAP_GEN_RVR_27 {
+    description: the answer becomes 1, in peekMin()
+    operator:    return-value-replacement
+    in:          peekMin
+    file:        Helper.java
+    find:        return H.get(0);
+    replace:     return 1;
+}
+
+mutant HEAP_GEN_RVR_28 {
+    description: the answer becomes -1, in peekMin()
+    operator:    return-value-replacement
+    in:          peekMin
+    file:        Helper.java
+    find:        return H.get(0);
+    replace:     return -1;
+}
+
+mutant HEAP_GEN_ARP_29 {
+    description: the argument to get() is shifted by + 1, in peekMin()
+    operator:    argument-replacement
+    in:          peekMin
+    file:        Helper.java
+    find:        return H.get(0);
+    replace:     return H.get(0 + 1);
+}
+
+mutant HEAP_GEN_ARP_30 {
+    description: the argument to get() is shifted by - 1, in peekMin()
+    operator:    argument-replacement
+    in:          peekMin
+    file:        Helper.java
+    find:        return H.get(0);
+    replace:     return H.get(0 - 1);
+}
+
+mutant HEAP_GEN_MCR_31 {
+    description: .get( becomes .remove(, in peekMin()
+    operator:    method-call-replacement
+    in:          peekMin
+    file:        Helper.java
+    find:        return H.get(0);
+    replace:     return H.remove(0);
+}
+
+mutant HEAP_GEN_SEI_32 {
+    description: a write to size is inserted before the return, in peekMin()
+    operator:    side-effect-insertion
+    in:          peekMin
+    file:        Helper.java
+    find:        return H.get(0);
+    replace:     size = size + 1; return H.get(0);
+}
+
+mutant HEAP_GEN_CRP_33 {
+    description: the literal 0 becomes 1, in extractMin()
+    operator:    constant-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        Integer removedMin = H.get(0);
+    replace:     Integer removedMin = H.get(1);
+}
+
+mutant HEAP_GEN_CRP_34 {
+    description: the literal 0 becomes -1, in extractMin()
+    operator:    constant-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        Integer removedMin = H.get(0);
+    replace:     Integer removedMin = H.get(-1);
+}
+
+mutant HEAP_GEN_ARP_35 {
+    description: the argument to get() is shifted by + 1, in extractMin()
+    operator:    argument-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        Integer removedMin = H.get(0);
+    replace:     Integer removedMin = H.get(0 + 1);
+}
+
+mutant HEAP_GEN_ARP_36 {
+    description: the argument to get() is shifted by - 1, in extractMin()
+    operator:    argument-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        Integer removedMin = H.get(0);
+    replace:     Integer removedMin = H.get(0 - 1);
+}
+
+mutant HEAP_GEN_MCR_37 {
+    description: .get( becomes .remove(, in extractMin()
+    operator:    method-call-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        Integer removedMin = H.get(0);
+    replace:     Integer removedMin = H.remove(0);
+}
+
+mutant HEAP_GEN_AOR_38 {
+    description: - becomes +, in extractMin()
+    operator:    arithmetic-operator-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        Integer last = H.remove(H.size() - 1);
+    replace:     Integer last = H.remove(H.size() + 1);
+}
+
+mutant HEAP_GEN_AOR_39 {
+    description: - becomes *, in extractMin()
+    operator:    arithmetic-operator-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        Integer last = H.remove(H.size() - 1);
+    replace:     Integer last = H.remove(H.size() * 1);
+}
+
+mutant HEAP_GEN_AOR_40 {
+    description: - becomes /, in extractMin()
+    operator:    arithmetic-operator-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        Integer last = H.remove(H.size() - 1);
+    replace:     Integer last = H.remove(H.size() / 1);
+}
+
+mutant HEAP_GEN_AOR_41 {
+    description: - becomes %, in extractMin()
+    operator:    arithmetic-operator-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        Integer last = H.remove(H.size() - 1);
+    replace:     Integer last = H.remove(H.size() % 1);
+}
+
+mutant HEAP_GEN_CRP_42 {
+    description: the literal 1 becomes 0, in extractMin()
+    operator:    constant-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        Integer last = H.remove(H.size() - 1);
+    replace:     Integer last = H.remove(H.size() - 0);
+}
+
+mutant HEAP_GEN_CRP_43 {
+    description: the literal 1 becomes -1, in extractMin()
+    operator:    constant-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        Integer last = H.remove(H.size() - 1);
+    replace:     Integer last = H.remove(H.size() - -1);
+}
+
+mutant HEAP_GEN_CRP_44 {
+    description: the literal 1 becomes 2, in extractMin()
+    operator:    constant-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        Integer last = H.remove(H.size() - 1);
+    replace:     Integer last = H.remove(H.size() - 2);
+}
+
+mutant HEAP_GEN_MCR_45 {
+    description: .remove( becomes .get(, in extractMin()
+    operator:    method-call-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        Integer last = H.remove(H.size() - 1);
+    replace:     Integer last = H.get(H.size() - 1);
+}
+
+mutant HEAP_GEN_MCR_46 {
+    description: .size() becomes .hashCode(), in extractMin()
+    operator:    method-call-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        Integer last = H.remove(H.size() - 1);
+    replace:     Integer last = H.remove(H.hashCode() - 1);
+}
+
+mutant HEAP_GEN_COI_47 {
+    description: the guard is negated, in extractMin()
+    operator:    conditional-operator-insertion
+    in:          extractMin
+    file:        Helper.java
+    find:        if (!H.isEmpty()) {
+    replace:     if (!(!H.isEmpty())) {
+}
+
+mutant HEAP_GEN_UOI_48 {
+    description: a negation is dropped, in extractMin()
+    operator:    unary-operator-insertion
+    in:          extractMin
+    file:        Helper.java
+    find:        if (!H.isEmpty()) {
+    replace:     if (H.isEmpty()) {
+}
+
+mutant HEAP_GEN_CTC_49 {
+    description: the branch is always taken, in extractMin()
+    operator:    condition-to-constant
+    in:          extractMin
+    file:        Helper.java
+    find:        if (!H.isEmpty()) {
+    replace:     if (true) {
+}
+
+mutant HEAP_GEN_CTC_50 {
+    description: the branch is never taken, in extractMin()
+    operator:    condition-to-constant
+    in:          extractMin
+    file:        Helper.java
+    find:        if (!H.isEmpty()) {
+    replace:     if (false) {
+}
+
+mutant HEAP_GEN_MCR_51 {
+    description: .isEmpty() becomes .equals(null), in extractMin()
+    operator:    method-call-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        if (!H.isEmpty()) {
+    replace:     if (!H.equals(null)) {
+}
+
+mutant HEAP_GEN_CRP_52 {
+    description: the literal 0 becomes 1, in extractMin()
+    operator:    constant-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        H.set(0, last);
+    replace:     H.set(1, last);
+}
+
+mutant HEAP_GEN_CRP_53 {
+    description: the literal 0 becomes -1, in extractMin()
+    operator:    constant-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        H.set(0, last);
+    replace:     H.set(-1, last);
+}
+
+mutant HEAP_GEN_SDL_54 {
+    description: the statement is removed, in extractMin()
+    operator:    statement-deletion
+    in:          extractMin
+    file:        Helper.java
+    find:        H.set(0, last);
+    replace:     
+}
+
+mutant HEAP_GEN_STR_55 {
+    description: the statement runs twice, in extractMin()
+    operator:    statement-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        H.set(0, last);
+    replace:     H.set(0, last); H.set(0, last);
+}
+
+mutant HEAP_GEN_ARP_56 {
+    description: the two arguments to set() are swapped, in extractMin()
+    operator:    argument-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        H.set(0, last);
+    replace:     H.set(last, 0);
+}
+
+mutant HEAP_GEN_SEI_57 {
+    description: a write to size is inserted after the statement, in extractMin()
+    operator:    side-effect-insertion
+    in:          extractMin
+    file:        Helper.java
+    find:        H.set(0, last);
+    replace:     H.set(0, last); size = size + 1;
+}
+
+mutant HEAP_GEN_CRP_58 {
+    description: the literal 0 becomes 1, in extractMin()
+    operator:    constant-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        siftDown(0);
+    replace:     siftDown(1);
+}
+
+mutant HEAP_GEN_CRP_59 {
+    description: the literal 0 becomes -1, in extractMin()
+    operator:    constant-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        siftDown(0);
+    replace:     siftDown(-1);
+}
+
+mutant HEAP_GEN_SDL_60 {
+    description: the statement is removed, in extractMin()
+    operator:    statement-deletion
+    in:          extractMin
+    file:        Helper.java
+    find:        siftDown(0);
+    replace:     
+}
+
+mutant HEAP_GEN_SEI_61 {
+    description: a write to size is inserted after the statement, in extractMin()
+    operator:    side-effect-insertion
+    in:          extractMin
+    file:        Helper.java
+    find:        siftDown(0);
+    replace:     siftDown(0); size = size + 1;
+}
+
+mutant HEAP_GEN_UOI_62 {
+    description: the returned value is negated, in extractMin()
+    operator:    unary-operator-insertion
+    in:          extractMin
+    file:        Helper.java
+    find:        return removedMin;
+    replace:     return -(removedMin);
+}
+
+mutant HEAP_GEN_ABS_63 {
+    description: the returned value is forced negative, in extractMin()
+    operator:    absolute-value-insertion
+    in:          extractMin
+    file:        Helper.java
+    find:        return removedMin;
+    replace:     return -Math.abs(removedMin);
+}
+
+mutant HEAP_GEN_RVR_64 {
+    description: the answer becomes 0, in extractMin()
+    operator:    return-value-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        return removedMin;
+    replace:     return 0;
+}
+
+mutant HEAP_GEN_RVR_65 {
+    description: the answer becomes 1, in extractMin()
+    operator:    return-value-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        return removedMin;
+    replace:     return 1;
+}
+
+mutant HEAP_GEN_RVR_66 {
+    description: the answer becomes -1, in extractMin()
+    operator:    return-value-replacement
+    in:          extractMin
+    file:        Helper.java
+    find:        return removedMin;
+    replace:     return -1;
+}
+
+mutant HEAP_GEN_SEI_67 {
+    description: a write to size is inserted before the return, in extractMin()
+    operator:    side-effect-insertion
+    in:          extractMin
+    file:        Helper.java
+    find:        return removedMin;
+    replace:     size = size + 1; return removedMin;
+}
+
+mutant HEAP_GEN_ROR_68 {
+    description: > becomes <=, in siftUp()
+    operator:    relational-operator-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        while (child > 0) {
+    replace:     while (child <= 0) {
+}
+
+mutant HEAP_GEN_ROR_69 {
+    description: > becomes >=, in siftUp()
+    operator:    relational-operator-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        while (child > 0) {
+    replace:     while (child >= 0) {
+}
+
+mutant HEAP_GEN_ROR_70 {
+    description: > becomes ==, in siftUp()
+    operator:    relational-operator-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        while (child > 0) {
+    replace:     while (child == 0) {
+}
+
+mutant HEAP_GEN_ROR_71 {
+    description: > becomes !=, in siftUp()
+    operator:    relational-operator-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        while (child > 0) {
+    replace:     while (child != 0) {
+}
+
+mutant HEAP_GEN_ROR_72 {
+    description: > becomes <, in siftUp()
+    operator:    relational-operator-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        while (child > 0) {
+    replace:     while (child < 0) {
+}
+
+mutant HEAP_GEN_COI_73 {
+    description: the guard is negated, in siftUp()
+    operator:    conditional-operator-insertion
+    in:          siftUp
+    file:        Helper.java
+    find:        while (child > 0) {
+    replace:     while (!(child > 0)) {
+}
+
+mutant HEAP_GEN_CRP_74 {
+    description: the literal 0 becomes 1, in siftUp()
+    operator:    constant-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        while (child > 0) {
+    replace:     while (child > 1) {
+}
+
+mutant HEAP_GEN_CRP_75 {
+    description: the literal 0 becomes -1, in siftUp()
+    operator:    constant-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        while (child > 0) {
+    replace:     while (child > -1) {
+}
+
+mutant HEAP_GEN_AOR_76 {
+    description: - becomes +, in siftUp()
+    operator:    arithmetic-operator-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        int parent = (child - 1) / 2;
+    replace:     int parent = (child + 1) / 2;
+}
+
+mutant HEAP_GEN_AOR_77 {
+    description: - becomes *, in siftUp()
+    operator:    arithmetic-operator-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        int parent = (child - 1) / 2;
+    replace:     int parent = (child * 1) / 2;
+}
+
+mutant HEAP_GEN_AOR_78 {
+    description: - becomes /, in siftUp()
+    operator:    arithmetic-operator-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        int parent = (child - 1) / 2;
+    replace:     int parent = (child / 1) / 2;
+}
+
+mutant HEAP_GEN_AOR_79 {
+    description: - becomes %, in siftUp()
+    operator:    arithmetic-operator-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        int parent = (child - 1) / 2;
+    replace:     int parent = (child % 1) / 2;
+}
+
+mutant HEAP_GEN_AOR_80 {
+    description: / becomes +, in siftUp()
+    operator:    arithmetic-operator-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        int parent = (child - 1) / 2;
+    replace:     int parent = (child - 1) + 2;
+}
+
+mutant HEAP_GEN_AOR_81 {
+    description: / becomes -, in siftUp()
+    operator:    arithmetic-operator-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        int parent = (child - 1) / 2;
+    replace:     int parent = (child - 1) - 2;
+}
+
+mutant HEAP_GEN_AOR_82 {
+    description: / becomes *, in siftUp()
+    operator:    arithmetic-operator-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        int parent = (child - 1) / 2;
+    replace:     int parent = (child - 1) * 2;
+}
+
+mutant HEAP_GEN_AOR_83 {
+    description: / becomes %, in siftUp()
+    operator:    arithmetic-operator-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        int parent = (child - 1) / 2;
+    replace:     int parent = (child - 1) % 2;
+}
+
+mutant HEAP_GEN_CRP_84 {
+    description: the literal 1 becomes 0, in siftUp()
+    operator:    constant-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        int parent = (child - 1) / 2;
+    replace:     int parent = (child - 0) / 2;
+}
+
+mutant HEAP_GEN_CRP_85 {
+    description: the literal 1 becomes -1, in siftUp()
+    operator:    constant-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        int parent = (child - 1) / 2;
+    replace:     int parent = (child - -1) / 2;
+}
+
+mutant HEAP_GEN_CRP_86 {
+    description: the literal 1 becomes 2, in siftUp()
+    operator:    constant-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        int parent = (child - 1) / 2;
+    replace:     int parent = (child - 2) / 2;
+}
+
+mutant HEAP_GEN_CRP_87 {
+    description: the literal 2 becomes 0, in siftUp()
+    operator:    constant-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        int parent = (child - 1) / 2;
+    replace:     int parent = (child - 1) / 0;
+}
+
+mutant HEAP_GEN_CRP_88 {
+    description: the literal 2 becomes 1, in siftUp()
+    operator:    constant-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        int parent = (child - 1) / 2;
+    replace:     int parent = (child - 1) / 1;
+}
+
+mutant HEAP_GEN_CRP_89 {
+    description: the literal 2 becomes -1, in siftUp()
+    operator:    constant-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        int parent = (child - 1) / 2;
+    replace:     int parent = (child - 1) / -1;
+}
+
+mutant HEAP_GEN_CRP_90 {
+    description: the literal 2 becomes 3, in siftUp()
+    operator:    constant-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        int parent = (child - 1) / 2;
+    replace:     int parent = (child - 1) / 3;
+}
+
+mutant HEAP_GEN_ROR_91 {
+    description: >= becomes <=, in siftUp()
+    operator:    relational-operator-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        if (H.get(child) >= H.get(parent)) {
+    replace:     if (H.get(child) <= H.get(parent)) {
+}
+
+mutant HEAP_GEN_ROR_92 {
+    description: >= becomes ==, in siftUp()
+    operator:    relational-operator-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        if (H.get(child) >= H.get(parent)) {
+    replace:     if (H.get(child) == H.get(parent)) {
+}
+
+mutant HEAP_GEN_ROR_93 {
+    description: >= becomes !=, in siftUp()
+    operator:    relational-operator-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        if (H.get(child) >= H.get(parent)) {
+    replace:     if (H.get(child) != H.get(parent)) {
+}
+
+mutant HEAP_GEN_ROR_94 {
+    description: >= becomes <, in siftUp()
+    operator:    relational-operator-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        if (H.get(child) >= H.get(parent)) {
+    replace:     if (H.get(child) < H.get(parent)) {
+}
+
+mutant HEAP_GEN_ROR_95 {
+    description: >= becomes >, in siftUp()
+    operator:    relational-operator-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        if (H.get(child) >= H.get(parent)) {
+    replace:     if (H.get(child) > H.get(parent)) {
+}
+
+mutant HEAP_GEN_COI_96 {
+    description: the guard is negated, in siftUp()
+    operator:    conditional-operator-insertion
+    in:          siftUp
+    file:        Helper.java
+    find:        if (H.get(child) >= H.get(parent)) {
+    replace:     if (!(H.get(child) >= H.get(parent))) {
+}
+
+mutant HEAP_GEN_CTC_97 {
+    description: the branch is always taken, in siftUp()
+    operator:    condition-to-constant
+    in:          siftUp
+    file:        Helper.java
+    find:        if (H.get(child) >= H.get(parent)) {
+    replace:     if (true) {
+}
+
+mutant HEAP_GEN_CTC_98 {
+    description: the branch is never taken, in siftUp()
+    operator:    condition-to-constant
+    in:          siftUp
+    file:        Helper.java
+    find:        if (H.get(child) >= H.get(parent)) {
+    replace:     if (false) {
+}
+
+mutant HEAP_GEN_ARP_99 {
+    description: the argument to get() is shifted by + 1, in siftUp()
+    operator:    argument-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        if (H.get(child) >= H.get(parent)) {
+    replace:     if (H.get(child + 1) >= H.get(parent)) {
+}
+
+mutant HEAP_GEN_ARP_100 {
+    description: the argument to get() is shifted by - 1, in siftUp()
+    operator:    argument-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        if (H.get(child) >= H.get(parent)) {
+    replace:     if (H.get(child - 1) >= H.get(parent)) {
+}
+
+mutant HEAP_GEN_ARP_101 {
+    description: the argument to get() is shifted by + 1, in siftUp()
+    operator:    argument-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        if (H.get(child) >= H.get(parent)) {
+    replace:     if (H.get(child) >= H.get(parent + 1)) {
+}
+
+mutant HEAP_GEN_ARP_102 {
+    description: the argument to get() is shifted by - 1, in siftUp()
+    operator:    argument-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        if (H.get(child) >= H.get(parent)) {
+    replace:     if (H.get(child) >= H.get(parent - 1)) {
+}
+
+mutant HEAP_GEN_MCR_103 {
+    description: .get( becomes .remove(, in siftUp()
+    operator:    method-call-replacement
+    in:          siftUp
+    file:        Helper.java
+    find:        if (H.get(child) >= H.get(parent)) {
+    replace:     if (H.remove(child) >= H.get(parent)) {
+}
+
+mutant HEAP_GEN_SDL_104 {
+    description: the statement is removed, in siftUp()
+    operator:    statement-deletion
+    in:          siftUp
+    file:        Helper.java
+    find:        swap(child, parent);
+    replace:     
+}
+
+mutant HEAP_GEN_SEI_105 {
+    description: a write to size is inserted after the statement, in siftUp()
+    operator:    side-effect-insertion
+    in:          siftUp
+    file:        Helper.java
+    find:        swap(child, parent);
+    replace:     swap(child, parent); size = size + 1;
+}
+
+mutant HEAP_GEN_AOI_106 {
+    description: the value assigned to child is shifted by + 1, in siftUp()
+    operator:    arithmetic-operator-insertion
+    in:          siftUp
+    file:        Helper.java
+    find:        child = parent;
+    replace:     child = parent + 1;
+}
+
+mutant HEAP_GEN_AOI_107 {
+    description: the value assigned to child is shifted by - 1, in siftUp()
+    operator:    arithmetic-operator-insertion
+    in:          siftUp
+    file:        Helper.java
+    find:        child = parent;
+    replace:     child = parent - 1;
+}
+
+mutant HEAP_GEN_UOI_108 {
+    description: the value assigned to child is negated, in siftUp()
+    operator:    unary-operator-insertion
+    in:          siftUp
+    file:        Helper.java
+    find:        child = parent;
+    replace:     child = -(parent);
+}
+
+mutant HEAP_GEN_ABS_109 {
+    description: the value assigned to child is forced negative, in siftUp()
+    operator:    absolute-value-insertion
+    in:          siftUp
+    file:        Helper.java
+    find:        child = parent;
+    replace:     child = -Math.abs(parent);
+}
+
+mutant HEAP_GEN_SDL_110 {
+    description: the statement is removed, in siftUp()
+    operator:    statement-deletion
+    in:          siftUp
+    file:        Helper.java
+    find:        child = parent;
+    replace:     
+}
+
+mutant HEAP_GEN_SEI_111 {
+    description: a write to size is inserted after the statement, in siftUp()
+    operator:    side-effect-insertion
+    in:          siftUp
+    file:        Helper.java
+    find:        child = parent;
+    replace:     child = parent; size = size + 1;
+}
+
+mutant HEAP_GEN_COI_112 {
+    description: the guard is negated, in siftDown()
+    operator:    conditional-operator-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        while (true) {
+    replace:     while (!(true)) {
+}
+
+mutant HEAP_GEN_AOR_113 {
+    description: + becomes -, in siftDown()
+    operator:    arithmetic-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int left = 2 * parent + 1;
+    replace:     int left = 2 * parent - 1;
+}
+
+mutant HEAP_GEN_AOR_114 {
+    description: + becomes *, in siftDown()
+    operator:    arithmetic-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int left = 2 * parent + 1;
+    replace:     int left = 2 * parent * 1;
+}
+
+mutant HEAP_GEN_AOR_115 {
+    description: + becomes /, in siftDown()
+    operator:    arithmetic-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int left = 2 * parent + 1;
+    replace:     int left = 2 * parent / 1;
+}
+
+mutant HEAP_GEN_AOR_116 {
+    description: + becomes %, in siftDown()
+    operator:    arithmetic-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int left = 2 * parent + 1;
+    replace:     int left = 2 * parent % 1;
+}
+
+mutant HEAP_GEN_AOR_117 {
+    description: * becomes +, in siftDown()
+    operator:    arithmetic-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int left = 2 * parent + 1;
+    replace:     int left = 2 + parent + 1;
+}
+
+mutant HEAP_GEN_AOR_118 {
+    description: * becomes -, in siftDown()
+    operator:    arithmetic-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int left = 2 * parent + 1;
+    replace:     int left = 2 - parent + 1;
+}
+
+mutant HEAP_GEN_AOR_119 {
+    description: * becomes /, in siftDown()
+    operator:    arithmetic-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int left = 2 * parent + 1;
+    replace:     int left = 2 / parent + 1;
+}
+
+mutant HEAP_GEN_AOR_120 {
+    description: * becomes %, in siftDown()
+    operator:    arithmetic-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int left = 2 * parent + 1;
+    replace:     int left = 2 % parent + 1;
+}
+
+mutant HEAP_GEN_CRP_121 {
+    description: the literal 2 becomes 0, in siftDown()
+    operator:    constant-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int left = 2 * parent + 1;
+    replace:     int left = 0 * parent + 1;
+}
+
+mutant HEAP_GEN_CRP_122 {
+    description: the literal 2 becomes 1, in siftDown()
+    operator:    constant-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int left = 2 * parent + 1;
+    replace:     int left = 1 * parent + 1;
+}
+
+mutant HEAP_GEN_CRP_123 {
+    description: the literal 2 becomes -1, in siftDown()
+    operator:    constant-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int left = 2 * parent + 1;
+    replace:     int left = -1 * parent + 1;
+}
+
+mutant HEAP_GEN_CRP_124 {
+    description: the literal 2 becomes 3, in siftDown()
+    operator:    constant-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int left = 2 * parent + 1;
+    replace:     int left = 3 * parent + 1;
+}
+
+mutant HEAP_GEN_CRP_125 {
+    description: the literal 1 becomes 0, in siftDown()
+    operator:    constant-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int left = 2 * parent + 1;
+    replace:     int left = 2 * parent + 0;
+}
+
+mutant HEAP_GEN_CRP_126 {
+    description: the literal 1 becomes -1, in siftDown()
+    operator:    constant-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int left = 2 * parent + 1;
+    replace:     int left = 2 * parent + -1;
+}
+
+mutant HEAP_GEN_CRP_127 {
+    description: the literal 1 becomes 2, in siftDown()
+    operator:    constant-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int left = 2 * parent + 1;
+    replace:     int left = 2 * parent + 2;
+}
+
+mutant HEAP_GEN_AOR_128 {
+    description: + becomes -, in siftDown()
+    operator:    arithmetic-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int right = left + 1;
+    replace:     int right = left - 1;
+}
+
+mutant HEAP_GEN_AOR_129 {
+    description: + becomes *, in siftDown()
+    operator:    arithmetic-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int right = left + 1;
+    replace:     int right = left * 1;
+}
+
+mutant HEAP_GEN_AOR_130 {
+    description: + becomes /, in siftDown()
+    operator:    arithmetic-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int right = left + 1;
+    replace:     int right = left / 1;
+}
+
+mutant HEAP_GEN_AOR_131 {
+    description: + becomes %, in siftDown()
+    operator:    arithmetic-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int right = left + 1;
+    replace:     int right = left % 1;
+}
+
+mutant HEAP_GEN_CRP_132 {
+    description: the literal 1 becomes 0, in siftDown()
+    operator:    constant-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int right = left + 1;
+    replace:     int right = left + 0;
+}
+
+mutant HEAP_GEN_CRP_133 {
+    description: the literal 1 becomes -1, in siftDown()
+    operator:    constant-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int right = left + 1;
+    replace:     int right = left + -1;
+}
+
+mutant HEAP_GEN_CRP_134 {
+    description: the literal 1 becomes 2, in siftDown()
+    operator:    constant-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        int right = left + 1;
+    replace:     int right = left + 2;
+}
+
+mutant HEAP_GEN_ROR_135 {
+    description: < becomes <=, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (left <= H.size() && H.get(left) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ROR_136 {
+    description: < becomes >=, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (left >= H.size() && H.get(left) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ROR_137 {
+    description: < becomes ==, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (left == H.size() && H.get(left) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ROR_138 {
+    description: < becomes !=, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (left != H.size() && H.get(left) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ROR_139 {
+    description: < becomes >, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (left > H.size() && H.get(left) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ROR_140 {
+    description: < becomes <=, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (left < H.size() && H.get(left) <= H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ROR_141 {
+    description: < becomes >=, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (left < H.size() && H.get(left) >= H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ROR_142 {
+    description: < becomes ==, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (left < H.size() && H.get(left) == H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ROR_143 {
+    description: < becomes !=, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (left < H.size() && H.get(left) != H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ROR_144 {
+    description: < becomes >, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (left < H.size() && H.get(left) > H.get(smallest)) {
+}
+
+mutant HEAP_GEN_COR_145 {
+    description: && becomes ||, in siftDown()
+    operator:    conditional-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (left < H.size() || H.get(left) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_COI_146 {
+    description: the guard is negated, in siftDown()
+    operator:    conditional-operator-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (!(left < H.size() && H.get(left) < H.get(smallest))) {
+}
+
+mutant HEAP_GEN_CTC_147 {
+    description: the branch is always taken, in siftDown()
+    operator:    condition-to-constant
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (true) {
+}
+
+mutant HEAP_GEN_CTC_148 {
+    description: the branch is never taken, in siftDown()
+    operator:    condition-to-constant
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (false) {
+}
+
+mutant HEAP_GEN_ARP_149 {
+    description: the argument to get() is shifted by + 1, in siftDown()
+    operator:    argument-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (left < H.size() && H.get(left + 1) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ARP_150 {
+    description: the argument to get() is shifted by - 1, in siftDown()
+    operator:    argument-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (left < H.size() && H.get(left - 1) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ARP_151 {
+    description: the argument to get() is shifted by + 1, in siftDown()
+    operator:    argument-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (left < H.size() && H.get(left) < H.get(smallest + 1)) {
+}
+
+mutant HEAP_GEN_ARP_152 {
+    description: the argument to get() is shifted by - 1, in siftDown()
+    operator:    argument-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (left < H.size() && H.get(left) < H.get(smallest - 1)) {
+}
+
+mutant HEAP_GEN_MCR_153 {
+    description: .size() becomes .hashCode(), in siftDown()
+    operator:    method-call-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (left < H.hashCode() && H.get(left) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_MCR_154 {
+    description: .get( becomes .remove(, in siftDown()
+    operator:    method-call-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (left < H.size() && H.get(left) < H.get(smallest)) {
+    replace:     if (left < H.size() && H.remove(left) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_AOI_155 {
+    description: the value assigned to smallest is shifted by + 1, in siftDown()
+    operator:    arithmetic-operator-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        smallest = left;
+    replace:     smallest = left + 1;
+}
+
+mutant HEAP_GEN_AOI_156 {
+    description: the value assigned to smallest is shifted by - 1, in siftDown()
+    operator:    arithmetic-operator-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        smallest = left;
+    replace:     smallest = left - 1;
+}
+
+mutant HEAP_GEN_UOI_157 {
+    description: the value assigned to smallest is negated, in siftDown()
+    operator:    unary-operator-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        smallest = left;
+    replace:     smallest = -(left);
+}
+
+mutant HEAP_GEN_ABS_158 {
+    description: the value assigned to smallest is forced negative, in siftDown()
+    operator:    absolute-value-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        smallest = left;
+    replace:     smallest = -Math.abs(left);
+}
+
+mutant HEAP_GEN_SDL_159 {
+    description: the statement is removed, in siftDown()
+    operator:    statement-deletion
+    in:          siftDown
+    file:        Helper.java
+    find:        smallest = left;
+    replace:     
+}
+
+mutant HEAP_GEN_SEI_160 {
+    description: a write to size is inserted after the statement, in siftDown()
+    operator:    side-effect-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        smallest = left;
+    replace:     smallest = left; size = size + 1;
+}
+
+mutant HEAP_GEN_ROR_161 {
+    description: < becomes <=, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (right <= H.size() && H.get(right) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ROR_162 {
+    description: < becomes >=, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (right >= H.size() && H.get(right) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ROR_163 {
+    description: < becomes ==, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (right == H.size() && H.get(right) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ROR_164 {
+    description: < becomes !=, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (right != H.size() && H.get(right) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ROR_165 {
+    description: < becomes >, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (right > H.size() && H.get(right) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ROR_166 {
+    description: < becomes <=, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (right < H.size() && H.get(right) <= H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ROR_167 {
+    description: < becomes >=, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (right < H.size() && H.get(right) >= H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ROR_168 {
+    description: < becomes ==, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (right < H.size() && H.get(right) == H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ROR_169 {
+    description: < becomes !=, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (right < H.size() && H.get(right) != H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ROR_170 {
+    description: < becomes >, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (right < H.size() && H.get(right) > H.get(smallest)) {
+}
+
+mutant HEAP_GEN_COR_171 {
+    description: && becomes ||, in siftDown()
+    operator:    conditional-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (right < H.size() || H.get(right) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_COI_172 {
+    description: the guard is negated, in siftDown()
+    operator:    conditional-operator-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (!(right < H.size() && H.get(right) < H.get(smallest))) {
+}
+
+mutant HEAP_GEN_CTC_173 {
+    description: the branch is always taken, in siftDown()
+    operator:    condition-to-constant
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (true) {
+}
+
+mutant HEAP_GEN_CTC_174 {
+    description: the branch is never taken, in siftDown()
+    operator:    condition-to-constant
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (false) {
+}
+
+mutant HEAP_GEN_ARP_175 {
+    description: the argument to get() is shifted by + 1, in siftDown()
+    operator:    argument-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (right < H.size() && H.get(right + 1) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ARP_176 {
+    description: the argument to get() is shifted by - 1, in siftDown()
+    operator:    argument-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (right < H.size() && H.get(right - 1) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_ARP_177 {
+    description: the argument to get() is shifted by + 1, in siftDown()
+    operator:    argument-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (right < H.size() && H.get(right) < H.get(smallest + 1)) {
+}
+
+mutant HEAP_GEN_ARP_178 {
+    description: the argument to get() is shifted by - 1, in siftDown()
+    operator:    argument-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (right < H.size() && H.get(right) < H.get(smallest - 1)) {
+}
+
+mutant HEAP_GEN_MCR_179 {
+    description: .size() becomes .hashCode(), in siftDown()
+    operator:    method-call-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (right < H.hashCode() && H.get(right) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_MCR_180 {
+    description: .get( becomes .remove(, in siftDown()
+    operator:    method-call-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (right < H.size() && H.get(right) < H.get(smallest)) {
+    replace:     if (right < H.size() && H.remove(right) < H.get(smallest)) {
+}
+
+mutant HEAP_GEN_AOI_181 {
+    description: the value assigned to smallest is shifted by + 1, in siftDown()
+    operator:    arithmetic-operator-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        smallest = right;
+    replace:     smallest = right + 1;
+}
+
+mutant HEAP_GEN_AOI_182 {
+    description: the value assigned to smallest is shifted by - 1, in siftDown()
+    operator:    arithmetic-operator-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        smallest = right;
+    replace:     smallest = right - 1;
+}
+
+mutant HEAP_GEN_UOI_183 {
+    description: the value assigned to smallest is negated, in siftDown()
+    operator:    unary-operator-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        smallest = right;
+    replace:     smallest = -(right);
+}
+
+mutant HEAP_GEN_ABS_184 {
+    description: the value assigned to smallest is forced negative, in siftDown()
+    operator:    absolute-value-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        smallest = right;
+    replace:     smallest = -Math.abs(right);
+}
+
+mutant HEAP_GEN_SDL_185 {
+    description: the statement is removed, in siftDown()
+    operator:    statement-deletion
+    in:          siftDown
+    file:        Helper.java
+    find:        smallest = right;
+    replace:     
+}
+
+mutant HEAP_GEN_SEI_186 {
+    description: a write to size is inserted after the statement, in siftDown()
+    operator:    side-effect-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        smallest = right;
+    replace:     smallest = right; size = size + 1;
+}
+
+mutant HEAP_GEN_ROR_187 {
+    description: == becomes <=, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (smallest == parent) {
+    replace:     if (smallest <= parent) {
+}
+
+mutant HEAP_GEN_ROR_188 {
+    description: == becomes >=, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (smallest == parent) {
+    replace:     if (smallest >= parent) {
+}
+
+mutant HEAP_GEN_ROR_189 {
+    description: == becomes !=, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (smallest == parent) {
+    replace:     if (smallest != parent) {
+}
+
+mutant HEAP_GEN_ROR_190 {
+    description: == becomes <, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (smallest == parent) {
+    replace:     if (smallest < parent) {
+}
+
+mutant HEAP_GEN_ROR_191 {
+    description: == becomes >, in siftDown()
+    operator:    relational-operator-replacement
+    in:          siftDown
+    file:        Helper.java
+    find:        if (smallest == parent) {
+    replace:     if (smallest > parent) {
+}
+
+mutant HEAP_GEN_COI_192 {
+    description: the guard is negated, in siftDown()
+    operator:    conditional-operator-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        if (smallest == parent) {
+    replace:     if (!(smallest == parent)) {
+}
+
+mutant HEAP_GEN_CTC_193 {
+    description: the branch is always taken, in siftDown()
+    operator:    condition-to-constant
+    in:          siftDown
+    file:        Helper.java
+    find:        if (smallest == parent) {
+    replace:     if (true) {
+}
+
+mutant HEAP_GEN_CTC_194 {
+    description: the branch is never taken, in siftDown()
+    operator:    condition-to-constant
+    in:          siftDown
+    file:        Helper.java
+    find:        if (smallest == parent) {
+    replace:     if (false) {
+}
+
+mutant HEAP_GEN_SDL_195 {
+    description: the statement is removed, in siftDown()
+    operator:    statement-deletion
+    in:          siftDown
+    file:        Helper.java
+    find:        swap(parent, smallest);
+    replace:     
+}
+
+mutant HEAP_GEN_SEI_196 {
+    description: a write to size is inserted after the statement, in siftDown()
+    operator:    side-effect-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        swap(parent, smallest);
+    replace:     swap(parent, smallest); size = size + 1;
+}
+
+mutant HEAP_GEN_AOI_197 {
+    description: the value assigned to parent is shifted by + 1, in siftDown()
+    operator:    arithmetic-operator-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        parent = smallest;
+    replace:     parent = smallest + 1;
+}
+
+mutant HEAP_GEN_AOI_198 {
+    description: the value assigned to parent is shifted by - 1, in siftDown()
+    operator:    arithmetic-operator-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        parent = smallest;
+    replace:     parent = smallest - 1;
+}
+
+mutant HEAP_GEN_UOI_199 {
+    description: the value assigned to parent is negated, in siftDown()
+    operator:    unary-operator-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        parent = smallest;
+    replace:     parent = -(smallest);
+}
+
+mutant HEAP_GEN_ABS_200 {
+    description: the value assigned to parent is forced negative, in siftDown()
+    operator:    absolute-value-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        parent = smallest;
+    replace:     parent = -Math.abs(smallest);
+}
+
+mutant HEAP_GEN_SDL_201 {
+    description: the statement is removed, in siftDown()
+    operator:    statement-deletion
+    in:          siftDown
+    file:        Helper.java
+    find:        parent = smallest;
+    replace:     
+}
+
+mutant HEAP_GEN_SEI_202 {
+    description: a write to size is inserted after the statement, in siftDown()
+    operator:    side-effect-insertion
+    in:          siftDown
+    file:        Helper.java
+    find:        parent = smallest;
+    replace:     parent = smallest; size = size + 1;
+}
+
+mutant HEAP_GEN_ARP_203 {
+    description: the argument to get() is shifted by + 1, in swap()
+    operator:    argument-replacement
+    in:          swap
+    file:        Helper.java
+    find:        Integer held = H.get(i);
+    replace:     Integer held = H.get(i + 1);
+}
+
+mutant HEAP_GEN_ARP_204 {
+    description: the argument to get() is shifted by - 1, in swap()
+    operator:    argument-replacement
+    in:          swap
+    file:        Helper.java
+    find:        Integer held = H.get(i);
+    replace:     Integer held = H.get(i - 1);
+}
+
+mutant HEAP_GEN_MCR_205 {
+    description: .get( becomes .remove(, in swap()
+    operator:    method-call-replacement
+    in:          swap
+    file:        Helper.java
+    find:        Integer held = H.get(i);
+    replace:     Integer held = H.remove(i);
+}
+
+mutant HEAP_GEN_SDL_206 {
+    description: the statement is removed, in swap()
+    operator:    statement-deletion
+    in:          swap
+    file:        Helper.java
+    find:        H.set(i, H.get(j));
+    replace:     
+}
+
+mutant HEAP_GEN_STR_207 {
+    description: the statement runs twice, in swap()
+    operator:    statement-replacement
+    in:          swap
+    file:        Helper.java
+    find:        H.set(i, H.get(j));
+    replace:     H.set(i, H.get(j)); H.set(i, H.get(j));
+}
+
+mutant HEAP_GEN_ARP_208 {
+    description: the argument to get() is shifted by + 1, in swap()
+    operator:    argument-replacement
+    in:          swap
+    file:        Helper.java
+    find:        H.set(i, H.get(j));
+    replace:     H.set(i, H.get(j + 1));
+}
+
+mutant HEAP_GEN_ARP_209 {
+    description: the argument to get() is shifted by - 1, in swap()
+    operator:    argument-replacement
+    in:          swap
+    file:        Helper.java
+    find:        H.set(i, H.get(j));
+    replace:     H.set(i, H.get(j - 1));
+}
+
+mutant HEAP_GEN_MCR_210 {
+    description: .get( becomes .remove(, in swap()
+    operator:    method-call-replacement
+    in:          swap
+    file:        Helper.java
+    find:        H.set(i, H.get(j));
+    replace:     H.set(i, H.remove(j));
+}
+
+mutant HEAP_GEN_SEI_211 {
+    description: a write to size is inserted after the statement, in swap()
+    operator:    side-effect-insertion
+    in:          swap
+    file:        Helper.java
+    find:        H.set(i, H.get(j));
+    replace:     H.set(i, H.get(j)); size = size + 1;
+}
+
+mutant HEAP_GEN_SDL_212 {
+    description: the statement is removed, in swap()
+    operator:    statement-deletion
+    in:          swap
+    file:        Helper.java
+    find:        H.set(j, held);
+    replace:     
+}
+
+mutant HEAP_GEN_STR_213 {
+    description: the statement runs twice, in swap()
+    operator:    statement-replacement
+    in:          swap
+    file:        Helper.java
+    find:        H.set(j, held);
+    replace:     H.set(j, held); H.set(j, held);
+}
+
+mutant HEAP_GEN_ARP_214 {
+    description: the two arguments to set() are swapped, in swap()
+    operator:    argument-replacement
+    in:          swap
+    file:        Helper.java
+    find:        H.set(j, held);
+    replace:     H.set(held, j);
+}
+
+mutant HEAP_GEN_SEI_215 {
+    description: a write to size is inserted after the statement, in swap()
+    operator:    side-effect-insertion
+    in:          swap
+    file:        Helper.java
+    find:        H.set(j, held);
+    replace:     H.set(j, held); size = size + 1;
+}
+

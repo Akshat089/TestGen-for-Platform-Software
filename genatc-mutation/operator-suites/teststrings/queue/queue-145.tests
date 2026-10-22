@@ -1,6 +1,3 @@
 test QueueGenerated145 {
-    sequence: front -> front -> dequeue -> isEmpty;
-
-    inputs {
-    }
+    sequence: dequeue -> front -> isEmpty -> dequeue -> enqueue -> dequeue -> dequeue;
 }

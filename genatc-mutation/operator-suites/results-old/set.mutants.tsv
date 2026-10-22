@@ -1,0 +1,29 @@
+# generated mutants — set
+# id	status	operator	method	file	killed-by-family	detail
+SET_GEN_SDL_1	INVALID	statement-deletion	-	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/SET_GEN_SDL_1/run/in/ac/iiitb/plproject/atc/generated/GeneratedATCsTest.java:24: error: cannot find symbol
+SET_GEN_SEI_2	INVALID	side-effect-insertion	-	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/SET_GEN_SEI_2/run/in/ac/iiitb/plproject/atc/generated/Helper.java:24: error: <identifier> expected
+SET_GEN_CRP_3	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+SET_GEN_CRP_4	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+SET_GEN_ARP_5	KILLED	argument-replacement	add	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST add: E.contains(elem)
+SET_GEN_ARP_6	INVALID	argument-replacement	add	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/SET_GEN_ARP_6/run/in/ac/iiitb/plproject/atc/generated/Helper.java:34: error: bad operand types for binary operator '-'
+SET_GEN_MCR_7	KILLED	method-call-replacement	add	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST add: E.contains(elem)
+SET_GEN_AOI_8	KILLED	arithmetic-operator-insertion	add	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: size == \old(size) - 1
+SET_GEN_AOI_9	KILLED	arithmetic-operator-insertion	add	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: size == \old(size) - 1
+SET_GEN_UOI_10	KILLED	unary-operator-insertion	add	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: size == \old(size) - 1
+SET_GEN_ABS_11	KILLED	absolute-value-insertion	add	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: size == \old(size) - 1
+SET_GEN_SDL_12	KILLED	statement-deletion	add	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: size == \old(size) - 1
+SET_GEN_MCR_13	KILLED	method-call-replacement	add	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: size == \old(size) - 1
+SET_GEN_RVR_14	SURVIVED	return-value-replacement	add	Helper.java	-	every generated assertion still holds
+SET_GEN_RVR_15	SURVIVED	return-value-replacement	add	Helper.java	-	every generated assertion still holds
+SET_GEN_SEI_16	KILLED	side-effect-insertion	add	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: size == \old(size) - 1
+SET_GEN_RVR_17	KILLED	return-value-replacement	contains	Helper.java	-	killed by: run2(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST contains: present == E.contains(elem)
+SET_GEN_RVR_18	KILLED	return-value-replacement	contains	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST contains: present == E.contains(elem)
+SET_GEN_ARP_19	KILLED	argument-replacement	contains	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST contains: present == E.contains(elem)
+SET_GEN_ARP_20	INVALID	argument-replacement	contains	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/SET_GEN_ARP_20/run/in/ac/iiitb/plproject/atc/generated/Helper.java:41: error: bad operand types for binary operator '-'
+SET_GEN_SEI_21	KILLED	side-effect-insertion	contains	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST contains: size == \old(size)
+SET_GEN_SDL_22	KILLED	statement-deletion	remove	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: !E.contains(elem)
+SET_GEN_STR_23	SURVIVED	statement-replacement	remove	Helper.java	-	every generated assertion still holds
+SET_GEN_ARP_24	KILLED	argument-replacement	remove	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: !E.contains(elem)
+SET_GEN_ARP_25	INVALID	argument-replacement	remove	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/SET_GEN_ARP_25/run/in/ac/iiitb/plproject/atc/generated/Helper.java:46: error: bad operand types for binary operator '-'
+SET_GEN_MCR_26	INVALID	method-call-replacement	remove	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/SET_GEN_MCR_26/run/in/ac/iiitb/plproject/atc/generated/Helper.java:46: error: cannot find symbol
+SET_GEN_SEI_27	SURVIVED	side-effect-insertion	remove	Helper.java	-	every generated assertion still holds

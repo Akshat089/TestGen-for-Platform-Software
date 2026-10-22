@@ -1,0 +1,94 @@
+# generated mutants — arraylib
+# id	status	operator	method	file	killed-by-family	detail
+ARRAYLIB_GEN_CRP_1	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CRP_2	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CRP_3	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CRP_4	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CRP_5	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CRP_6	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CRP_7	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CRP_8	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CRP_9	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CRP_10	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CRP_11	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CRP_12	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CRP_13	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CRP_14	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CRP_15	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_SDL_16	KILLED	statement-deletion	set	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST set: A[index] == value
+ARRAYLIB_GEN_SEI_17	KILLED	side-effect-insertion	set	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): Index 4 out of bounds for length 4
+ARRAYLIB_GEN_AOR_18	KILLED	arithmetic-operator-replacement	set	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST set: writes == \old(writes) + 1
+ARRAYLIB_GEN_AOR_19	KILLED	arithmetic-operator-replacement	set	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST set: writes == \old(writes) + 1
+ARRAYLIB_GEN_AOR_20	KILLED	arithmetic-operator-replacement	set	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST set: writes == \old(writes) + 1
+ARRAYLIB_GEN_AOR_21	KILLED	arithmetic-operator-replacement	set	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST set: writes == \old(writes) + 1
+ARRAYLIB_GEN_AOI_22	KILLED	arithmetic-operator-insertion	set	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST set: writes == \old(writes) + 1
+ARRAYLIB_GEN_AOI_23	KILLED	arithmetic-operator-insertion	set	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST set: writes == \old(writes) + 1
+ARRAYLIB_GEN_UOI_24	KILLED	unary-operator-insertion	set	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST set: writes == \old(writes) + 1
+ARRAYLIB_GEN_ABS_25	KILLED	absolute-value-insertion	set	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST set: writes == \old(writes) + 1
+ARRAYLIB_GEN_CRP_26	KILLED	constant-replacement	set	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST set: writes == \old(writes) + 1
+ARRAYLIB_GEN_CRP_27	KILLED	constant-replacement	set	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST set: writes == \old(writes) + 1
+ARRAYLIB_GEN_CRP_28	KILLED	constant-replacement	set	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST set: writes == \old(writes) + 1
+ARRAYLIB_GEN_SDL_29	KILLED	statement-deletion	set	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST set: writes == \old(writes) + 1
+ARRAYLIB_GEN_SEI_30	KILLED	side-effect-insertion	set	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): Index 4 out of bounds for length 4
+ARRAYLIB_GEN_VRO_31	KILLED	variable-replacement	set	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST set: writes == \old(writes) + 1
+ARRAYLIB_GEN_VRO_32	KILLED	variable-replacement	set	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST set: writes == \old(writes) + 1
+ARRAYLIB_GEN_UOI_33	KILLED	unary-operator-insertion	get	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST get: elem == A[index]
+ARRAYLIB_GEN_ABS_34	KILLED	absolute-value-insertion	get	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST get: elem == A[index]
+ARRAYLIB_GEN_RVR_35	KILLED	return-value-replacement	get	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST get: elem == A[index]
+ARRAYLIB_GEN_RVR_36	KILLED	return-value-replacement	get	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST get: elem == A[index]
+ARRAYLIB_GEN_RVR_37	KILLED	return-value-replacement	get	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST get: elem == A[index]
+ARRAYLIB_GEN_SEI_38	KILLED	side-effect-insertion	get	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): Index 4 out of bounds for length 4
+ARRAYLIB_GEN_CRP_39	SURVIVED	constant-replacement	sum	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CRP_40	KILLED	constant-replacement	sum	Helper.java	-	killed by: run5(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST sum: total >= 0
+ARRAYLIB_GEN_ROR_41	KILLED	relational-operator-replacement	sum	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): Index 4 out of bounds for length 4
+ARRAYLIB_GEN_ROR_42	SURVIVED	relational-operator-replacement	sum	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_ROR_43	SURVIVED	relational-operator-replacement	sum	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_ROR_44	SURVIVED	relational-operator-replacement	sum	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_ROR_45	SURVIVED	relational-operator-replacement	sum	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CRP_46	SURVIVED	constant-replacement	sum	Helper.java	arraylib-003: set -> set -> set -> get -> sum	every generated assertion still holds
+ARRAYLIB_GEN_CRP_47	KILLED	constant-replacement	sum	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): Index -1 out of bounds for length 4
+ARRAYLIB_GEN_LBR_48	SURVIVED	loop-bound-replacement	sum	Helper.java	arraylib-003: set -> set -> set -> get -> sum	every generated assertion still holds
+ARRAYLIB_GEN_LBR_49	KILLED	loop-bound-replacement	sum	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): Index -1 out of bounds for length 4
+ARRAYLIB_GEN_VRO_50	SURVIVED	variable-replacement	sum	Helper.java	arraylib-003: set -> set -> set -> get -> sum	every generated assertion still holds
+ARRAYLIB_GEN_AOR_51	KILLED	arithmetic-operator-replacement	sum	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST sum: total >= 0
+ARRAYLIB_GEN_AOR_52	SURVIVED	arithmetic-operator-replacement	sum	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_AOR_53	KILLED	arithmetic-operator-replacement	sum	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): / by zero
+ARRAYLIB_GEN_AOR_54	KILLED	arithmetic-operator-replacement	sum	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): / by zero
+ARRAYLIB_GEN_AOI_55	SURVIVED	arithmetic-operator-insertion	sum	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_AOI_56	KILLED	arithmetic-operator-insertion	sum	Helper.java	-	killed by: run5(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST sum: total >= 0
+ARRAYLIB_GEN_UOI_57	KILLED	unary-operator-insertion	sum	Helper.java	-	killed by: run4(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST sum: total >= 0
+ARRAYLIB_GEN_ABS_58	KILLED	absolute-value-insertion	sum	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST sum: total >= 0
+ARRAYLIB_GEN_SDL_59	SURVIVED	statement-deletion	sum	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_SEI_60	KILLED	side-effect-insertion	sum	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): Index 4 out of bounds for length 4
+ARRAYLIB_GEN_UOI_61	KILLED	unary-operator-insertion	sum	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST sum: total >= 0
+ARRAYLIB_GEN_ABS_62	KILLED	absolute-value-insertion	sum	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST sum: total >= 0
+ARRAYLIB_GEN_RVR_63	SURVIVED	return-value-replacement	sum	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_RVR_64	SURVIVED	return-value-replacement	sum	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_RVR_65	KILLED	return-value-replacement	sum	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST sum: total >= 0
+ARRAYLIB_GEN_SEI_66	KILLED	side-effect-insertion	sum	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): Index 4 out of bounds for length 4
+ARRAYLIB_GEN_ROR_67	SURVIVED	relational-operator-replacement	indexOf	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_ROR_68	SURVIVED	relational-operator-replacement	indexOf	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_ROR_69	SURVIVED	relational-operator-replacement	indexOf	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_ROR_70	SURVIVED	relational-operator-replacement	indexOf	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_ROR_71	SURVIVED	relational-operator-replacement	indexOf	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_COI_72	SURVIVED	conditional-operator-insertion	indexOf	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CTC_73	SURVIVED	condition-to-constant	indexOf	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CTC_74	SURVIVED	condition-to-constant	indexOf	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_UOI_75	SURVIVED	unary-operator-insertion	indexOf	Helper.java	arraylib-002: set -> indexOf -> set -> sum -> set -> indexOf	every generated assertion still holds
+ARRAYLIB_GEN_ABS_76	SURVIVED	absolute-value-insertion	indexOf	Helper.java	arraylib-002: set -> indexOf -> set -> sum -> set -> indexOf	every generated assertion still holds
+ARRAYLIB_GEN_RVR_77	SURVIVED	return-value-replacement	indexOf	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_RVR_78	SURVIVED	return-value-replacement	indexOf	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_RVR_79	SURVIVED	return-value-replacement	indexOf	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_SEI_80	SURVIVED	side-effect-insertion	indexOf	Helper.java	arraylib-010: set -> set -> get -> indexOf -> sum -> get -> indexOf	every generated assertion still holds
+ARRAYLIB_GEN_AOR_81	SURVIVED	arithmetic-operator-replacement	indexOf	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_AOR_82	INVALID	arithmetic-operator-replacement	indexOf	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/ARRAYLIB_GEN_AOR_82/run/in/ac/iiitb/plproject/atc/generated/Helper.java:62: error: illegal start of expression
+ARRAYLIB_GEN_AOR_83	INVALID	arithmetic-operator-replacement	indexOf	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/ARRAYLIB_GEN_AOR_83/run/in/ac/iiitb/plproject/atc/generated/Helper.java:62: error: illegal start of expression
+ARRAYLIB_GEN_AOR_84	INVALID	arithmetic-operator-replacement	indexOf	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/ARRAYLIB_GEN_AOR_84/run/in/ac/iiitb/plproject/atc/generated/Helper.java:62: error: illegal start of expression
+ARRAYLIB_GEN_UOI_85	SURVIVED	unary-operator-insertion	indexOf	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_ABS_86	SURVIVED	absolute-value-insertion	indexOf	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CRP_87	SURVIVED	constant-replacement	indexOf	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_CRP_88	INVALID	constant-replacement	indexOf	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/ARRAYLIB_GEN_CRP_88/run/in/ac/iiitb/plproject/atc/generated/Helper.java:62: error: unexpected type
+ARRAYLIB_GEN_CRP_89	KILLED	constant-replacement	indexOf	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST indexOf: position >= -1
+ARRAYLIB_GEN_RVR_90	SURVIVED	return-value-replacement	indexOf	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_RVR_91	SURVIVED	return-value-replacement	indexOf	Helper.java	-	every generated assertion still holds
+ARRAYLIB_GEN_SEI_92	SURVIVED	side-effect-insertion	indexOf	Helper.java	arraylib-002: set -> indexOf -> set -> sum -> set -> indexOf	every generated assertion still holds

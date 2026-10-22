@@ -1,6 +1,0 @@
-test QueueGenerated242 {
-    sequence: dequeue -> dequeue -> front -> dequeue -> dequeue;
-
-    inputs {
-    }
-}

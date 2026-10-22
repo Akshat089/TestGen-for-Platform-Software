@@ -1,0 +1,262 @@
+# generated test strings — lrucache
+# name	status	tests_generated	sequence
+lrucache-001	PASSED	10	put -> put -> put -> get -> restore
+lrucache-002	PASSED	10	put -> put -> get -> put -> restore -> restore
+lrucache-003	PASSED	10	put -> put -> put -> restore
+lrucache-004	PASSED	10	put -> put -> put -> put -> get -> restore
+lrucache-005	STOPPED	0	get -> put -> put -> put -> get -> restore -> restore
+lrucache-006	PASSED	10	put -> restore -> get -> get -> restore
+lrucache-007	PASSED	10	restore -> put -> put -> get -> put
+lrucache-008	PASSED	10	put -> restore -> get -> restore -> get -> get
+lrucache-009	PASSED	10	put -> restore -> get -> put -> put -> get
+lrucache-010	PASSED	10	restore -> restore -> get -> restore -> restore
+lrucache-011	PASSED	10	restore -> put -> put
+lrucache-012	PASSED	10	put -> put -> put -> put -> get -> restore -> restore
+lrucache-013	STOPPED	0	get -> put -> put -> restore
+lrucache-014	PASSED	10	put -> put -> get -> get -> restore
+lrucache-015	PASSED	9	restore -> get -> get
+lrucache-016	PASSED	10	restore -> put -> put -> put -> get -> restore
+lrucache-017	PASSED	10	restore -> put -> put -> put -> get -> put -> put
+lrucache-018	STOPPED	0	get -> put -> restore -> put -> restore -> put -> put
+lrucache-019	PASSED	10	put -> put -> restore -> put
+lrucache-020	PASSED	10	put -> put -> put -> restore -> get -> get -> restore
+lrucache-021	STOPPED	0	get -> get -> restore -> put -> put -> put -> put
+lrucache-022	STOPPED	0	get -> put -> put -> put -> restore -> restore
+lrucache-023	PASSED	10	put -> put -> put -> put -> get -> get -> restore
+lrucache-024	PASSED	10	put -> get -> put -> restore -> restore
+lrucache-025	PASSED	10	put -> put -> get -> restore
+lrucache-026	PASSED	10	put -> put -> get -> restore -> restore
+lrucache-027	PASSED	10	put -> restore -> restore -> put -> get -> put
+lrucache-028	PASSED	10	put -> put
+lrucache-029	PASSED	10	put -> get -> restore -> put
+lrucache-030	PASSED	10	restore -> get -> put -> restore -> put -> put
+lrucache-031	PASSED	10	put -> put -> put -> put -> put -> get -> restore
+lrucache-032	PASSED	10	put -> put -> restore -> put -> get -> restore
+lrucache-033	PASSED	10	put -> put -> put -> get -> get -> restore
+lrucache-034	STOPPED	0	get -> restore -> put -> restore
+lrucache-035	PASSED	10	put -> put -> get -> put -> get -> restore
+lrucache-036	STOPPED	0	get -> restore -> get -> restore -> get -> get -> put
+lrucache-037	PASSED	10	restore -> restore -> put -> put -> get -> put -> put
+lrucache-038	PASSED	10	put -> put -> put -> get -> put -> restore
+lrucache-039	PASSED	10	put -> get -> put -> put -> put
+lrucache-040	STOPPED	0	get -> get -> restore -> put -> get -> get -> put
+lrucache-041	PASSED	10	restore -> get -> put -> restore -> get -> restore -> restore
+lrucache-042	PASSED	10	restore -> put
+lrucache-043	PASSED	10	put -> put -> put -> put -> get
+lrucache-044	PASSED	10	put -> put -> put -> get
+lrucache-045	PASSED	10	put -> restore -> put -> get
+lrucache-046	STOPPED	0	get -> put
+lrucache-047	PASSED	10	put -> put -> get -> put -> restore
+lrucache-048	STOPPED	0	get -> put -> put -> get -> put -> restore -> restore
+lrucache-049	STOPPED	0	get -> restore -> get -> get -> get -> get
+lrucache-050	STOPPED	0	get -> restore
+lrucache-051	PASSED	10	put -> restore -> get -> put -> put -> put
+lrucache-052	PASSED	10	put -> get -> restore -> restore -> get
+lrucache-053	STOPPED	0	get -> put -> put -> put -> get -> restore
+lrucache-054	STOPPED	0	get -> restore -> restore
+lrucache-055	PASSED	10	put -> get -> put -> put -> restore -> get
+lrucache-056	PASSED	10	put -> put -> put -> get -> restore -> restore
+lrucache-057	STOPPED	0	get -> get -> get -> put -> put -> restore
+lrucache-058	PASSED	10	put -> put -> put -> get -> restore -> restore -> restore
+lrucache-059	PASSED	10	put -> get -> get -> restore -> restore
+lrucache-060	PASSED	10	restore -> put -> put -> get
+lrucache-061	PASSED	10	put -> put -> restore -> restore -> get -> put
+lrucache-062	STOPPED	0	get -> restore -> get
+lrucache-063	PASSED	10	put -> put -> put -> put -> restore
+lrucache-064	PASSED	10	restore -> restore -> get
+lrucache-065	PASSED	10	restore -> put -> restore -> get
+lrucache-066	STOPPED	0	get -> restore -> put -> put -> get -> put
+lrucache-067	PASSED	10	restore -> put -> put -> get -> get -> put -> put
+lrucache-068	PASSED	10	put -> restore -> put -> put -> get -> restore
+lrucache-069	PASSED	10	put -> get -> restore
+lrucache-070	PASSED	10	put -> put -> restore -> get
+lrucache-071	PASSED	10	put -> put -> get -> put -> get
+lrucache-072	STOPPED	0	get -> restore -> restore -> get -> put
+lrucache-073	PASSED	10	put -> put -> get -> put -> put -> get -> restore
+lrucache-074	PASSED	10	put -> put -> restore -> get -> restore
+lrucache-075	STOPPED	0	get -> restore -> restore -> restore
+lrucache-076	PASSED	10	put -> put -> restore -> restore -> put -> get -> restore
+lrucache-077	PASSED	10	put -> put -> put -> get -> put -> get -> restore
+lrucache-078	STOPPED	0	get -> restore -> get -> put -> get
+lrucache-079	PASSED	10	put -> restore -> put -> put -> get -> put
+lrucache-080	STOPPED	0	get -> put -> put -> restore -> restore
+lrucache-081	PASSED	10	restore -> put -> put -> put -> get -> put -> restore
+lrucache-082	STOPPED	0	get -> get -> put -> put
+lrucache-083	PASSED	10	put -> put -> put -> put -> put
+lrucache-084	PASSED	10	put -> get -> put -> restore -> put -> restore
+lrucache-085	PASSED	10	restore -> put -> get -> put
+lrucache-086	PASSED	10	put -> restore -> get -> put -> put -> restore -> restore
+lrucache-087	STOPPED	0	get -> restore -> put
+lrucache-088	PASSED	10	put -> put -> get -> put -> get -> restore -> restore
+lrucache-089	PASSED	10	put -> get -> restore -> get -> restore -> get -> get
+lrucache-090	PASSED	10	put -> get -> put -> put -> get -> get -> restore
+lrucache-091	PASSED	10	put -> put -> put -> restore -> get
+lrucache-092	PASSED	10	restore -> get -> restore -> get -> put
+lrucache-093	STOPPED	0	get -> get -> put -> put -> put -> restore
+lrucache-094	PASSED	10	put -> get -> put -> get -> restore
+lrucache-095	PASSED	10	put -> get -> put -> put -> put -> restore
+lrucache-096	STOPPED	0	get -> restore -> restore -> get -> put -> put
+lrucache-097	STOPPED	0	get -> restore -> restore -> restore -> put -> put -> put
+lrucache-098	PASSED	10	put -> restore -> put -> put -> put -> get -> restore
+lrucache-099	PASSED	10	put -> put -> restore -> put -> get -> put
+lrucache-100	STOPPED	0	get -> restore -> put -> get -> restore
+lrucache-101	STOPPED	0	get -> put -> put -> put -> put -> restore
+lrucache-102	PASSED	10	restore -> get -> restore
+lrucache-103	PASSED	10	put -> put -> put -> put
+lrucache-104	PASSED	10	put -> put -> put -> get -> get -> get
+lrucache-105	STOPPED	0	get -> get -> get
+lrucache-106	PASSED	10	put -> put -> put -> get -> get
+lrucache-107	STOPPED	0	get -> get -> restore -> restore -> get
+lrucache-108	PASSED	10	put -> put -> put -> put -> put -> restore
+lrucache-109	STOPPED	0	get -> put -> put -> restore -> put
+lrucache-110	PASSED	9	put -> get
+lrucache-111	STOPPED	0	get -> get -> put -> put -> put -> put -> restore
+lrucache-112	STOPPED	0	get -> get -> restore -> restore
+lrucache-113	PASSED	10	put -> get -> get -> put -> put
+lrucache-114	PASSED	10	put -> put -> get -> get -> get -> put -> restore
+lrucache-115	STOPPED	0	get -> get
+lrucache-116	PASSED	10	put -> restore -> get -> put -> restore
+lrucache-117	PASSED	10	restore -> get -> put -> put -> get -> get
+lrucache-118	STOPPED	0	get -> put -> restore -> put -> restore
+lrucache-119	PASSED	10	restore -> put -> put -> put -> get -> put
+lrucache-120	PASSED	10	put -> restore -> get -> put
+lrucache-121	PASSED	10	put -> put -> get
+lrucache-122	PASSED	10	restore -> get -> get -> restore -> get -> get -> restore
+lrucache-123	STOPPED	0	get -> restore -> get -> put -> restore -> get -> get
+lrucache-124	PASSED	10	put -> restore -> put -> get -> get -> put
+lrucache-125	PASSED	10	put -> put -> put -> restore -> restore -> get -> restore
+lrucache-126	PASSED	10	put -> put -> put -> restore -> restore
+lrucache-127	PASSED	10	put -> get -> put -> put -> restore
+lrucache-128	PASSED	10	put -> restore -> put
+lrucache-129	PASSED	10	put -> put -> restore -> get -> put
+lrucache-130	PASSED	10	put -> restore -> put -> get -> put
+lrucache-131	PASSED	10	put -> restore -> restore -> put -> get -> restore -> put
+lrucache-132	STOPPED	0	get -> put -> put -> restore -> put -> restore
+lrucache-133	PASSED	10	restore -> get -> restore -> put -> put
+lrucache-134	STOPPED	0	get -> put -> put -> put
+lrucache-135	PASSED	10	restore -> restore -> put -> put -> restore
+lrucache-136	PASSED	10	restore -> get -> put -> put
+lrucache-137	PASSED	10	restore -> put -> get -> put -> put -> get -> put
+lrucache-138	STOPPED	0	get -> put -> put
+lrucache-139	PASSED	10	put -> restore -> put -> restore -> get
+lrucache-140	PASSED	10	put -> put -> restore -> restore
+lrucache-141	PASSED	10	put -> restore -> put -> put -> put -> get
+lrucache-142	PASSED	10	put -> put -> get -> get -> get -> put
+lrucache-143	PASSED	10	put -> put -> get -> restore -> put
+lrucache-144	STOPPED	0	get -> put -> get -> put -> put -> get -> restore
+lrucache-145	PASSED	10	put -> put -> restore
+lrucache-146	PASSED	10	restore -> put -> put -> put -> restore
+lrucache-147	PASSED	10	put -> restore -> get -> restore -> put -> put
+lrucache-148	PASSED	10	put -> get -> put -> put -> put -> restore -> restore
+lrucache-149	PASSED	10	restore -> restore -> put -> put -> get -> get -> put
+lrucache-150	STOPPED	0	get -> put -> put -> put -> restore
+lrucache-151	STOPPED	0	get -> put -> get -> get -> restore
+lrucache-152	STOPPED	0	get -> put -> put -> put -> restore -> put -> put
+lrucache-153	PASSED	10	put -> put -> put -> restore -> get -> restore
+lrucache-154	PASSED	10	put -> put -> get -> get
+lrucache-155	PASSED	10	put -> get -> restore -> put -> get
+lrucache-156	PASSED	10	put -> restore -> restore -> put -> put
+lrucache-157	PASSED	9	put -> get -> get
+lrucache-158	PASSED	10	put -> put -> put -> get -> get -> put -> restore
+lrucache-159	PASSED	10	put -> get -> restore -> get -> get -> put
+lrucache-160	PASSED	10	restore -> get -> get -> put -> restore
+lrucache-161	PASSED	10	put -> restore -> put -> put
+lrucache-162	PASSED	10	put -> get -> put -> restore -> get
+lrucache-163	PASSED	10	put -> put -> put -> put -> get -> put -> restore
+lrucache-164	PASSED	10	put -> restore -> put -> get -> get -> put -> put
+lrucache-165	PASSED	10	put -> restore
+lrucache-166	STOPPED	0	get -> restore -> restore -> restore -> restore
+lrucache-167	PASSED	10	restore -> put -> restore -> restore -> put -> get -> put
+lrucache-168	STOPPED	0	get -> put -> put -> restore -> put -> get -> get
+lrucache-169	PASSED	10	put -> restore -> restore -> put
+lrucache-170	PASSED	10	put -> get -> put -> get -> put -> restore
+lrucache-171	PASSED	10	put -> get -> put -> put -> get -> restore
+lrucache-172	PASSED	10	put -> restore -> put -> put -> get -> get
+lrucache-173	STOPPED	0	get -> put -> get
+lrucache-174	STOPPED	0	get -> put -> put -> get -> restore
+lrucache-175	STOPPED	0	get -> restore -> get -> get -> restore -> put
+lrucache-176	PASSED	10	put -> get -> put -> get
+lrucache-177	PASSED	10	restore -> get -> put -> get -> put
+lrucache-178	STOPPED	0	get -> put -> get -> put -> put -> restore
+lrucache-179	STOPPED	0	get -> get -> restore -> get -> restore
+lrucache-180	PASSED	10	put -> put -> put -> get -> get -> get -> restore
+lrucache-181	PASSED	9	restore -> get
+lrucache-182	PASSED	10	put -> put -> put -> put -> restore -> get -> restore
+lrucache-183	PASSED	10	put -> get -> restore -> restore
+lrucache-184	STOPPED	0	get -> put -> get -> get
+lrucache-185	STOPPED	0	get -> get -> get -> get -> restore
+lrucache-186	STOPPED	0	get -> restore -> put -> put -> get -> restore
+lrucache-187	PASSED	10	put -> restore -> put -> get -> restore
+lrucache-188	PASSED	10	put -> put -> put -> get -> restore -> put -> restore
+lrucache-189	PASSED	10	put -> put -> restore -> put -> get -> put -> restore
+lrucache-190	PASSED	10	put -> get -> put -> restore
+lrucache-191	STOPPED	0	get -> restore -> restore -> restore -> restore -> restore -> get
+lrucache-192	PASSED	10	restore -> restore -> restore
+lrucache-193	STOPPED	0	get -> restore -> put -> put -> restore -> restore
+lrucache-194	PASSED	10	put -> get -> restore -> put -> get -> get
+lrucache-195	PASSED	10	restore -> put -> put -> put
+lrucache-196	PASSED	10	put -> put -> put -> get -> get -> restore -> restore
+lrucache-197	PASSED	10	put -> restore -> restore -> restore -> get -> get -> put
+lrucache-198	PASSED	10	put -> put -> put -> put -> restore -> get -> put
+lrucache-199	PASSED	10	put -> get -> put -> put -> put -> get
+lrucache-200	PASSED	10	put -> put -> put -> get -> put
+lrucache-201	PASSED	10	restore -> get -> restore -> put
+lrucache-202	PASSED	10	put -> restore -> get -> restore
+lrucache-203	PASSED	10	put -> get -> put -> put
+lrucache-204	PASSED	10	put -> restore -> put -> put -> get -> restore -> restore
+lrucache-205	PASSED	10	restore -> put -> restore -> put -> get
+lrucache-206	STOPPED	0	get -> put -> put -> get -> put -> get -> get
+lrucache-207	PASSED	10	restore -> put -> restore -> put -> restore -> get -> put
+lrucache-208	STOPPED	0	get -> restore -> restore -> put -> put -> restore
+lrucache-209	PASSED	10	restore -> restore -> restore -> get -> restore
+lrucache-210	STOPPED	0	get -> restore -> put -> put -> put
+lrucache-211	STOPPED	0	get -> get -> put -> put -> restore -> restore -> get
+lrucache-212	PASSED	10	put -> put -> put -> restore -> put -> get -> restore
+lrucache-213	STOPPED	0	get -> get -> restore -> get -> restore -> put -> put
+lrucache-214	STOPPED	0	get -> restore -> put -> restore -> restore
+lrucache-215	PASSED	10	put -> put -> get -> put -> put -> put -> restore
+lrucache-216	PASSED	10	put -> restore -> put -> restore -> put -> get -> restore
+lrucache-217	STOPPED	0	get -> put -> restore
+lrucache-218	PASSED	10	put -> restore -> restore -> put -> restore -> restore -> get
+lrucache-219	PASSED	10	put -> get -> get -> restore -> get
+lrucache-220	PASSED	10	restore -> put -> restore -> put -> get -> put -> get
+lrucache-221	PASSED	10	restore -> restore -> put -> get -> put -> get
+lrucache-222	STOPPED	0	get -> restore -> restore -> get -> put -> put -> restore
+lrucache-223	PASSED	10	put -> restore -> restore -> put -> put -> get
+lrucache-224	STOPPED	0	get -> get -> restore
+lrucache-225	PASSED	10	put -> restore -> put -> get -> get -> restore
+lrucache-226	STOPPED	0	get -> put -> put -> restore -> restore -> put -> restore
+lrucache-227	PASSED	10	put -> restore -> put -> restore -> put -> restore
+lrucache-228	STOPPED	0	get -> get -> restore -> put
+lrucache-229	STOPPED	0	get -> put -> restore -> put
+lrucache-230	PASSED	10	put -> put -> get -> restore -> get -> get
+lrucache-231	PASSED	10	put -> get -> get -> put
+lrucache-232	PASSED	10	put -> put -> restore -> restore -> get -> put -> restore
+lrucache-233	PASSED	10	restore -> restore -> restore -> restore
+lrucache-234	PASSED	10	put -> restore -> put -> put -> put -> get -> put
+lrucache-235	PASSED	10	restore -> restore -> restore -> put -> put -> get
+lrucache-236	PASSED	10	restore -> put -> put -> put -> put -> get -> restore
+lrucache-237	STOPPED	0	get -> put -> get -> restore
+lrucache-238	PASSED	10	restore -> restore -> put -> restore
+lrucache-239	PASSED	10	put -> restore -> restore -> restore -> put -> put
+lrucache-240	PASSED	10	restore -> restore -> get -> restore -> put -> restore -> restore
+lrucache-241	PASSED	10	restore -> restore -> get -> get -> restore
+lrucache-242	PASSED	10	put -> put -> put -> put -> restore -> get
+lrucache-243	PASSED	10	put -> put -> restore -> get -> restore -> put
+lrucache-244	PASSED	10	restore -> put -> get -> put -> restore -> restore
+lrucache-245	PASSED	10	put -> put -> restore -> put -> get -> get -> restore
+lrucache-246	STOPPED	0	get -> restore -> restore -> restore -> get
+lrucache-247	PASSED	10	restore -> put -> get -> put -> restore -> get
+lrucache-248	PASSED	10	put -> restore -> get -> restore -> get -> restore
+lrucache-249	PASSED	10	restore -> put -> put -> put -> get -> get -> restore
+lrucache-250	PASSED	10	restore -> restore -> restore -> get -> restore -> put -> get
+lrucache-251	PASSED	10	put -> get -> put -> get -> get -> put -> restore
+lrucache-252	PASSED	10	restore -> restore -> restore -> put -> put -> put
+lrucache-253	PASSED	10	put -> restore -> get
+lrucache-254	PASSED	10	restore -> put -> restore -> get -> restore -> restore
+lrucache-255	PASSED	10	restore -> restore -> get -> restore -> put -> put
+lrucache-256	PASSED	10	restore -> put -> get -> put -> get -> put
+lrucache-257	STOPPED	0	get -> get -> get -> put -> put -> put
+lrucache-258	PASSED	10	put -> put -> get -> get -> put -> restore -> restore
+lrucache-259	PASSED	10	restore -> get -> restore -> restore -> put -> put -> get
+lrucache-260	STOPPED	0	get -> put -> get -> put -> restore -> get -> get

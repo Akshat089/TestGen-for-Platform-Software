@@ -1,0 +1,3 @@
+test HeapGenerated68 {
+    sequence: insert -> insert -> extractMin -> peekMin -> insert -> extractMin;
+}

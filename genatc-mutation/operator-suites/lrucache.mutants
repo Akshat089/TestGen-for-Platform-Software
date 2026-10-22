@@ -1,0 +1,622 @@
+/*
+ * GENERATED MUTATION SUITE — lrucache
+ *
+ * Produced by OperatorMutantGenerator from:
+ *   ../libraries/lrucache/Helper.java
+ *
+ * DO NOT EDIT. Regenerate with ./run-operator-suites.sh lrucache
+ *
+ * Every operator in MutationOperator is applied to every line of the library
+ * that admits it, so this file is what the specification is measured against
+ * when nobody is choosing the faults. It is the counterpart of the
+ * hand-written set in mutations/lrucache.mutants:
+ * that one asks whether the suite catches the faults we thought of, this one
+ * asks what fraction of all faults of each KIND it catches.
+ *
+ * `expect` is absent throughout: a generated mutant carries no prediction,
+ * and some of these are equivalent to the original and cannot be killed by
+ * anyone. The run measures; it does not check a declaration.
+ */
+
+mutant LRUCACHE_GEN_SDL_1 {
+    description: the statement is removed, in Helper.java
+    operator:    statement-deletion
+    file:        Helper.java
+    find:        public static Map<String, String> C = new LinkedHashMap<String, String>();
+    replace:     
+}
+
+mutant LRUCACHE_GEN_SEI_2 {
+    description: a write to capacity is inserted after the statement, in Helper.java
+    operator:    side-effect-insertion
+    file:        Helper.java
+    find:        public static Map<String, String> C = new LinkedHashMap<String, String>();
+    replace:     public static Map<String, String> C = new LinkedHashMap<String, String>(); capacity = capacity + 1;
+}
+
+mutant LRUCACHE_GEN_SDL_3 {
+    description: the statement is removed, in Helper.java
+    operator:    statement-deletion
+    file:        Helper.java
+    find:        public static List<String> Recency = new ArrayList<String>();
+    replace:     
+}
+
+mutant LRUCACHE_GEN_SEI_4 {
+    description: a write to capacity is inserted after the statement, in Helper.java
+    operator:    side-effect-insertion
+    file:        Helper.java
+    find:        public static List<String> Recency = new ArrayList<String>();
+    replace:     public static List<String> Recency = new ArrayList<String>(); capacity = capacity + 1;
+}
+
+mutant LRUCACHE_GEN_CRP_5 {
+    description: the literal 2 becomes 0, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int capacity = 2;
+    replace:     public static int capacity = 0;
+}
+
+mutant LRUCACHE_GEN_CRP_6 {
+    description: the literal 2 becomes 1, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int capacity = 2;
+    replace:     public static int capacity = 1;
+}
+
+mutant LRUCACHE_GEN_CRP_7 {
+    description: the literal 2 becomes -1, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int capacity = 2;
+    replace:     public static int capacity = -1;
+}
+
+mutant LRUCACHE_GEN_CRP_8 {
+    description: the literal 2 becomes 3, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int capacity = 2;
+    replace:     public static int capacity = 3;
+}
+
+mutant LRUCACHE_GEN_CRP_9 {
+    description: the literal 0 becomes 1, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int size = 0;
+    replace:     public static int size = 1;
+}
+
+mutant LRUCACHE_GEN_CRP_10 {
+    description: the literal 0 becomes -1, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int size = 0;
+    replace:     public static int size = -1;
+}
+
+mutant LRUCACHE_GEN_ROR_11 {
+    description: >= becomes <=, in put()
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Helper.java
+    find:        if (!C.containsKey(key) && C.size() >= capacity) {
+    replace:     if (!C.containsKey(key) && C.size() <= capacity) {
+}
+
+mutant LRUCACHE_GEN_ROR_12 {
+    description: >= becomes ==, in put()
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Helper.java
+    find:        if (!C.containsKey(key) && C.size() >= capacity) {
+    replace:     if (!C.containsKey(key) && C.size() == capacity) {
+}
+
+mutant LRUCACHE_GEN_ROR_13 {
+    description: >= becomes !=, in put()
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Helper.java
+    find:        if (!C.containsKey(key) && C.size() >= capacity) {
+    replace:     if (!C.containsKey(key) && C.size() != capacity) {
+}
+
+mutant LRUCACHE_GEN_ROR_14 {
+    description: >= becomes <, in put()
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Helper.java
+    find:        if (!C.containsKey(key) && C.size() >= capacity) {
+    replace:     if (!C.containsKey(key) && C.size() < capacity) {
+}
+
+mutant LRUCACHE_GEN_ROR_15 {
+    description: >= becomes >, in put()
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Helper.java
+    find:        if (!C.containsKey(key) && C.size() >= capacity) {
+    replace:     if (!C.containsKey(key) && C.size() > capacity) {
+}
+
+mutant LRUCACHE_GEN_COR_16 {
+    description: && becomes ||, in put()
+    operator:    conditional-operator-replacement
+    in:          put
+    file:        Helper.java
+    find:        if (!C.containsKey(key) && C.size() >= capacity) {
+    replace:     if (!C.containsKey(key) || C.size() >= capacity) {
+}
+
+mutant LRUCACHE_GEN_COI_17 {
+    description: the guard is negated, in put()
+    operator:    conditional-operator-insertion
+    in:          put
+    file:        Helper.java
+    find:        if (!C.containsKey(key) && C.size() >= capacity) {
+    replace:     if (!(!C.containsKey(key) && C.size() >= capacity)) {
+}
+
+mutant LRUCACHE_GEN_UOI_18 {
+    description: a negation is dropped, in put()
+    operator:    unary-operator-insertion
+    in:          put
+    file:        Helper.java
+    find:        if (!C.containsKey(key) && C.size() >= capacity) {
+    replace:     if (C.containsKey(key) && C.size() >= capacity) {
+}
+
+mutant LRUCACHE_GEN_CTC_19 {
+    description: the branch is always taken, in put()
+    operator:    condition-to-constant
+    in:          put
+    file:        Helper.java
+    find:        if (!C.containsKey(key) && C.size() >= capacity) {
+    replace:     if (true) {
+}
+
+mutant LRUCACHE_GEN_CTC_20 {
+    description: the branch is never taken, in put()
+    operator:    condition-to-constant
+    in:          put
+    file:        Helper.java
+    find:        if (!C.containsKey(key) && C.size() >= capacity) {
+    replace:     if (false) {
+}
+
+mutant LRUCACHE_GEN_ARP_21 {
+    description: the argument to containsKey() is shifted by + 1, in put()
+    operator:    argument-replacement
+    in:          put
+    file:        Helper.java
+    find:        if (!C.containsKey(key) && C.size() >= capacity) {
+    replace:     if (!C.containsKey(key + 1) && C.size() >= capacity) {
+}
+
+mutant LRUCACHE_GEN_ARP_22 {
+    description: the argument to containsKey() is shifted by - 1, in put()
+    operator:    argument-replacement
+    in:          put
+    file:        Helper.java
+    find:        if (!C.containsKey(key) && C.size() >= capacity) {
+    replace:     if (!C.containsKey(key - 1) && C.size() >= capacity) {
+}
+
+mutant LRUCACHE_GEN_MCR_23 {
+    description: .size() becomes .hashCode(), in put()
+    operator:    method-call-replacement
+    in:          put
+    file:        Helper.java
+    find:        if (!C.containsKey(key) && C.size() >= capacity) {
+    replace:     if (!C.containsKey(key) && C.hashCode() >= capacity) {
+}
+
+mutant LRUCACHE_GEN_MCR_24 {
+    description: .containsKey( becomes .containsValue(, in put()
+    operator:    method-call-replacement
+    in:          put
+    file:        Helper.java
+    find:        if (!C.containsKey(key) && C.size() >= capacity) {
+    replace:     if (!C.containsValue(key) && C.size() >= capacity) {
+}
+
+mutant LRUCACHE_GEN_VRO_25 {
+    description: capacity becomes size, in put()
+    operator:    variable-replacement
+    in:          put
+    file:        Helper.java
+    find:        if (!C.containsKey(key) && C.size() >= capacity) {
+    replace:     if (!C.containsKey(key) && C.size() >= size) {
+}
+
+mutant LRUCACHE_GEN_CRP_26 {
+    description: the literal 0 becomes 1, in put()
+    operator:    constant-replacement
+    in:          put
+    file:        Helper.java
+    find:        evictedKey = Recency.remove(0);
+    replace:     evictedKey = Recency.remove(1);
+}
+
+mutant LRUCACHE_GEN_CRP_27 {
+    description: the literal 0 becomes -1, in put()
+    operator:    constant-replacement
+    in:          put
+    file:        Helper.java
+    find:        evictedKey = Recency.remove(0);
+    replace:     evictedKey = Recency.remove(-1);
+}
+
+mutant LRUCACHE_GEN_SDL_28 {
+    description: the statement is removed, in put()
+    operator:    statement-deletion
+    in:          put
+    file:        Helper.java
+    find:        evictedKey = Recency.remove(0);
+    replace:     
+}
+
+mutant LRUCACHE_GEN_ARP_29 {
+    description: the argument to remove() is shifted by + 1, in put()
+    operator:    argument-replacement
+    in:          put
+    file:        Helper.java
+    find:        evictedKey = Recency.remove(0);
+    replace:     evictedKey = Recency.remove(0 + 1);
+}
+
+mutant LRUCACHE_GEN_ARP_30 {
+    description: the argument to remove() is shifted by - 1, in put()
+    operator:    argument-replacement
+    in:          put
+    file:        Helper.java
+    find:        evictedKey = Recency.remove(0);
+    replace:     evictedKey = Recency.remove(0 - 1);
+}
+
+mutant LRUCACHE_GEN_MCR_31 {
+    description: .remove( becomes .get(, in put()
+    operator:    method-call-replacement
+    in:          put
+    file:        Helper.java
+    find:        evictedKey = Recency.remove(0);
+    replace:     evictedKey = Recency.get(0);
+}
+
+mutant LRUCACHE_GEN_SEI_32 {
+    description: a write to capacity is inserted after the statement, in put()
+    operator:    side-effect-insertion
+    in:          put
+    file:        Helper.java
+    find:        evictedKey = Recency.remove(0);
+    replace:     evictedKey = Recency.remove(0); capacity = capacity + 1;
+}
+
+mutant LRUCACHE_GEN_SDL_33 {
+    description: the statement is removed, in put()
+    operator:    statement-deletion
+    in:          put
+    file:        Helper.java
+    find:        C.remove(evictedKey);
+    replace:     
+}
+
+mutant LRUCACHE_GEN_STR_34 {
+    description: the statement runs twice, in put()
+    operator:    statement-replacement
+    in:          put
+    file:        Helper.java
+    find:        C.remove(evictedKey);
+    replace:     C.remove(evictedKey); C.remove(evictedKey);
+}
+
+mutant LRUCACHE_GEN_ARP_35 {
+    description: the argument to remove() is shifted by + 1, in put()
+    operator:    argument-replacement
+    in:          put
+    file:        Helper.java
+    find:        C.remove(evictedKey);
+    replace:     C.remove(evictedKey + 1);
+}
+
+mutant LRUCACHE_GEN_ARP_36 {
+    description: the argument to remove() is shifted by - 1, in put()
+    operator:    argument-replacement
+    in:          put
+    file:        Helper.java
+    find:        C.remove(evictedKey);
+    replace:     C.remove(evictedKey - 1);
+}
+
+mutant LRUCACHE_GEN_MCR_37 {
+    description: .remove( becomes .get(, in put()
+    operator:    method-call-replacement
+    in:          put
+    file:        Helper.java
+    find:        C.remove(evictedKey);
+    replace:     C.get(evictedKey);
+}
+
+mutant LRUCACHE_GEN_SEI_38 {
+    description: a write to capacity is inserted after the statement, in put()
+    operator:    side-effect-insertion
+    in:          put
+    file:        Helper.java
+    find:        C.remove(evictedKey);
+    replace:     C.remove(evictedKey); capacity = capacity + 1;
+}
+
+mutant LRUCACHE_GEN_SDL_39 {
+    description: the statement is removed, in put()
+    operator:    statement-deletion
+    in:          put
+    file:        Helper.java
+    find:        C.put(key, value);
+    replace:     
+}
+
+mutant LRUCACHE_GEN_STR_40 {
+    description: the statement runs twice, in put()
+    operator:    statement-replacement
+    in:          put
+    file:        Helper.java
+    find:        C.put(key, value);
+    replace:     C.put(key, value); C.put(key, value);
+}
+
+mutant LRUCACHE_GEN_ARP_41 {
+    description: the two arguments to put() are swapped, in put()
+    operator:    argument-replacement
+    in:          put
+    file:        Helper.java
+    find:        C.put(key, value);
+    replace:     C.put(value, key);
+}
+
+mutant LRUCACHE_GEN_MCR_42 {
+    description: .put( becomes .putIfAbsent(, in put()
+    operator:    method-call-replacement
+    in:          put
+    file:        Helper.java
+    find:        C.put(key, value);
+    replace:     C.putIfAbsent(key, value);
+}
+
+mutant LRUCACHE_GEN_SEI_43 {
+    description: a write to capacity is inserted after the statement, in put()
+    operator:    side-effect-insertion
+    in:          put
+    file:        Helper.java
+    find:        C.put(key, value);
+    replace:     C.put(key, value); capacity = capacity + 1;
+}
+
+mutant LRUCACHE_GEN_SDL_44 {
+    description: the statement is removed, in put()
+    operator:    statement-deletion
+    in:          put
+    file:        Helper.java
+    find:        touch(key);
+    replace:     
+}
+
+mutant LRUCACHE_GEN_SEI_45 {
+    description: a write to capacity is inserted after the statement, in put()
+    operator:    side-effect-insertion
+    in:          put
+    file:        Helper.java
+    find:        touch(key);
+    replace:     touch(key); capacity = capacity + 1;
+}
+
+mutant LRUCACHE_GEN_SDL_46 {
+    description: the statement is removed, in put()
+    operator:    statement-deletion
+    in:          put
+    file:        Helper.java
+    find:        refresh();
+    replace:     
+}
+
+mutant LRUCACHE_GEN_SEI_47 {
+    description: a write to capacity is inserted after the statement, in put()
+    operator:    side-effect-insertion
+    in:          put
+    file:        Helper.java
+    find:        refresh();
+    replace:     refresh(); capacity = capacity + 1;
+}
+
+mutant LRUCACHE_GEN_RVR_48 {
+    description: the answer becomes null, in put()
+    operator:    return-value-replacement
+    in:          put
+    file:        Helper.java
+    find:        return evictedKey;
+    replace:     return null;
+}
+
+mutant LRUCACHE_GEN_SEI_49 {
+    description: a write to capacity is inserted before the return, in put()
+    operator:    side-effect-insertion
+    in:          put
+    file:        Helper.java
+    find:        return evictedKey;
+    replace:     capacity = capacity + 1; return evictedKey;
+}
+
+mutant LRUCACHE_GEN_ARP_50 {
+    description: the argument to get() is shifted by + 1, in get()
+    operator:    argument-replacement
+    in:          get
+    file:        Helper.java
+    find:        String cachedValue = C.get(key);
+    replace:     String cachedValue = C.get(key + 1);
+}
+
+mutant LRUCACHE_GEN_ARP_51 {
+    description: the argument to get() is shifted by - 1, in get()
+    operator:    argument-replacement
+    in:          get
+    file:        Helper.java
+    find:        String cachedValue = C.get(key);
+    replace:     String cachedValue = C.get(key - 1);
+}
+
+mutant LRUCACHE_GEN_MCR_52 {
+    description: .get( becomes .remove(, in get()
+    operator:    method-call-replacement
+    in:          get
+    file:        Helper.java
+    find:        String cachedValue = C.get(key);
+    replace:     String cachedValue = C.remove(key);
+}
+
+mutant LRUCACHE_GEN_RVR_53 {
+    description: the answer becomes null, in get()
+    operator:    return-value-replacement
+    in:          get
+    file:        Helper.java
+    find:        return cachedValue;
+    replace:     return null;
+}
+
+mutant LRUCACHE_GEN_SEI_54 {
+    description: a write to capacity is inserted before the return, in get()
+    operator:    side-effect-insertion
+    in:          get
+    file:        Helper.java
+    find:        return cachedValue;
+    replace:     capacity = capacity + 1; return cachedValue;
+}
+
+mutant LRUCACHE_GEN_SDL_55 {
+    description: the statement is removed, in restore()
+    operator:    statement-deletion
+    in:          restore
+    file:        Helper.java
+    find:        put(evictedKey, value);
+    replace:     
+}
+
+mutant LRUCACHE_GEN_SEI_56 {
+    description: a write to capacity is inserted after the statement, in restore()
+    operator:    side-effect-insertion
+    in:          restore
+    file:        Helper.java
+    find:        put(evictedKey, value);
+    replace:     put(evictedKey, value); capacity = capacity + 1;
+}
+
+mutant LRUCACHE_GEN_SDL_57 {
+    description: the statement is removed, in touch()
+    operator:    statement-deletion
+    in:          touch
+    file:        Helper.java
+    find:        Recency.remove(key);
+    replace:     
+}
+
+mutant LRUCACHE_GEN_STR_58 {
+    description: the statement runs twice, in touch()
+    operator:    statement-replacement
+    in:          touch
+    file:        Helper.java
+    find:        Recency.remove(key);
+    replace:     Recency.remove(key); Recency.remove(key);
+}
+
+mutant LRUCACHE_GEN_ARP_59 {
+    description: the argument to remove() is shifted by + 1, in touch()
+    operator:    argument-replacement
+    in:          touch
+    file:        Helper.java
+    find:        Recency.remove(key);
+    replace:     Recency.remove(key + 1);
+}
+
+mutant LRUCACHE_GEN_ARP_60 {
+    description: the argument to remove() is shifted by - 1, in touch()
+    operator:    argument-replacement
+    in:          touch
+    file:        Helper.java
+    find:        Recency.remove(key);
+    replace:     Recency.remove(key - 1);
+}
+
+mutant LRUCACHE_GEN_MCR_61 {
+    description: .remove( becomes .get(, in touch()
+    operator:    method-call-replacement
+    in:          touch
+    file:        Helper.java
+    find:        Recency.remove(key);
+    replace:     Recency.get(key);
+}
+
+mutant LRUCACHE_GEN_SEI_62 {
+    description: a write to capacity is inserted after the statement, in touch()
+    operator:    side-effect-insertion
+    in:          touch
+    file:        Helper.java
+    find:        Recency.remove(key);
+    replace:     Recency.remove(key); capacity = capacity + 1;
+}
+
+mutant LRUCACHE_GEN_SDL_63 {
+    description: the statement is removed, in touch()
+    operator:    statement-deletion
+    in:          touch
+    file:        Helper.java
+    find:        Recency.add(key);
+    replace:     
+}
+
+mutant LRUCACHE_GEN_STR_64 {
+    description: the statement runs twice, in touch()
+    operator:    statement-replacement
+    in:          touch
+    file:        Helper.java
+    find:        Recency.add(key);
+    replace:     Recency.add(key); Recency.add(key);
+}
+
+mutant LRUCACHE_GEN_ARP_65 {
+    description: the argument to add() is shifted by + 1, in touch()
+    operator:    argument-replacement
+    in:          touch
+    file:        Helper.java
+    find:        Recency.add(key);
+    replace:     Recency.add(key + 1);
+}
+
+mutant LRUCACHE_GEN_ARP_66 {
+    description: the argument to add() is shifted by - 1, in touch()
+    operator:    argument-replacement
+    in:          touch
+    file:        Helper.java
+    find:        Recency.add(key);
+    replace:     Recency.add(key - 1);
+}
+
+mutant LRUCACHE_GEN_MCR_67 {
+    description: .add( becomes .contains(, in touch()
+    operator:    method-call-replacement
+    in:          touch
+    file:        Helper.java
+    find:        Recency.add(key);
+    replace:     Recency.contains(key);
+}
+
+mutant LRUCACHE_GEN_SEI_68 {
+    description: a write to capacity is inserted after the statement, in touch()
+    operator:    side-effect-insertion
+    in:          touch
+    file:        Helper.java
+    find:        Recency.add(key);
+    replace:     Recency.add(key); capacity = capacity + 1;
+}
+

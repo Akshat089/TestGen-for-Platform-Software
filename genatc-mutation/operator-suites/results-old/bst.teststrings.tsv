@@ -1,0 +1,262 @@
+# generated test strings — bst
+# name	status	tests_generated	sequence
+bst-001	STOPPED	0	delete -> contains -> delete -> delete -> min
+bst-002	PASSED	10	insert -> contains -> insert -> delete -> min -> insert
+bst-003	STOPPED	0	insert -> insert -> insert -> insert -> contains -> delete
+bst-004	STOPPED	0	delete -> insert -> insert -> insert -> contains -> min -> delete
+bst-005	STOPPED	0	delete -> insert
+bst-006	STOPPED	0	insert -> insert -> insert -> insert -> contains -> min -> delete
+bst-007	PASSED	10	insert -> insert -> contains -> insert -> min -> contains -> delete
+bst-008	STOPPED	0	insert -> delete -> delete -> min -> contains
+bst-009	PASSED	10	insert -> contains -> contains -> delete
+bst-010	STOPPED	0	delete -> delete -> insert
+bst-011	STOPPED	0	delete -> min -> insert -> min -> min
+bst-012	PASSED	3	insert -> delete
+bst-013	STOPPED	0	min -> insert -> insert -> insert -> contains -> min -> delete
+bst-014	STOPPED	0	insert -> insert -> insert -> contains -> insert -> min -> delete
+bst-015	PASSED	10	insert -> insert -> min -> contains -> insert -> delete
+bst-016	PASSED	10	insert -> contains -> insert -> insert -> min -> delete
+bst-017	PASSED	10	insert -> min -> insert -> contains -> min -> delete
+bst-018	PASSED	10	insert -> insert -> min -> delete -> min
+bst-019	PASSED	10	insert -> insert -> insert -> contains -> delete -> min -> delete
+bst-020	PASSED	9	insert -> min -> contains -> delete
+bst-021	PASSED	10	insert -> insert -> insert -> contains -> min -> delete
+bst-022	PASSED	10	insert -> insert -> insert -> min -> contains -> delete
+bst-023	STOPPED	0	delete -> contains
+bst-024	STOPPED	0	delete -> insert -> min -> contains -> delete
+bst-025	PASSED	10	insert -> insert -> insert -> contains -> min -> delete -> delete
+bst-026	PASSED	6	insert -> min -> min -> insert
+bst-027	PASSED	10	insert -> insert -> contains -> contains -> delete
+bst-028	STOPPED	0	min -> delete
+bst-029	PASSED	9	insert -> contains -> min -> delete
+bst-030	STOPPED	0	insert -> insert -> insert -> insert -> delete -> min -> contains
+bst-031	PASSED	10	insert -> insert -> insert -> contains -> min -> min -> delete
+bst-032	PASSED	10	insert -> insert -> contains -> delete -> min
+bst-033	PASSED	10	insert -> insert -> insert -> contains -> min
+bst-034	PASSED	10	insert -> insert -> min -> min -> delete -> min -> delete
+bst-035	STOPPED	0	insert -> insert -> insert -> insert -> contains -> min
+bst-036	PASSED	10	insert -> insert -> insert -> delete -> insert -> min
+bst-037	STOPPED	0	min -> delete -> contains -> insert -> min -> delete
+bst-038	PASSED	10	insert -> delete -> insert -> contains -> min -> insert -> delete
+bst-039	PASSED	10	insert -> insert -> insert -> contains -> delete
+bst-040	PASSED	10	insert -> insert -> min -> insert -> contains -> min -> delete
+bst-041	STOPPED	0	min -> insert -> min -> contains -> contains
+bst-042	PASSED	10	insert -> min -> insert -> insert -> contains -> min -> delete
+bst-043	STOPPED	0	contains -> insert -> insert -> contains -> delete
+bst-044	PASSED	10	insert -> insert -> insert -> delete -> contains -> min -> delete
+bst-045	STOPPED	0	delete -> delete
+bst-046	STOPPED	0	delete -> min -> min -> min -> delete -> insert
+bst-047	PASSED	10	insert -> insert -> insert -> delete
+bst-048	STOPPED	0	contains -> insert -> insert -> insert -> contains -> min -> delete
+bst-049	STOPPED	0	insert -> insert -> insert -> contains -> insert -> delete
+bst-050	PASSED	10	insert -> insert -> min -> contains -> insert -> delete -> delete
+bst-051	STOPPED	0	delete -> delete -> min -> delete -> min
+bst-052	STOPPED	0	contains -> insert -> insert -> insert -> contains
+bst-053	PASSED	10	insert -> insert -> contains -> insert -> min
+bst-054	STOPPED	0	insert -> delete -> min -> insert -> min -> insert
+bst-055	PASSED	10	insert -> insert -> insert -> contains -> contains -> min -> delete
+bst-056	STOPPED	0	min -> insert -> insert -> contains -> insert -> delete
+bst-057	STOPPED	0	contains -> min -> min -> insert -> delete
+bst-058	STOPPED	0	delete -> insert -> min -> delete
+bst-059	STOPPED	0	delete -> min -> min -> insert
+bst-060	PASSED	10	insert -> insert -> contains -> delete -> delete
+bst-061	PASSED	10	insert -> insert -> contains -> min -> min -> delete -> delete
+bst-062	STOPPED	0	contains -> delete -> insert -> delete -> min
+bst-063	STOPPED	0	contains -> insert -> delete -> contains -> min -> insert
+bst-064	STOPPED	0	contains -> delete -> delete -> min -> delete -> contains
+bst-065	STOPPED	0	contains -> insert -> insert -> insert -> min -> delete
+bst-066	PASSED	10	insert -> min -> min -> insert -> min -> insert -> contains
+bst-067	STOPPED	0	insert -> insert -> min -> delete -> min -> delete -> min
+bst-068	STOPPED	0	min -> contains -> delete
+bst-069	STOPPED	0	min -> delete -> insert
+bst-070	STOPPED	0	contains -> delete -> min -> insert
+bst-071	STOPPED	0	insert -> delete -> delete -> insert -> min -> insert
+bst-072	STOPPED	0	min -> delete -> min -> insert -> insert -> delete -> min
+bst-073	PASSED	10	insert -> delete -> insert -> contains -> min -> min -> insert
+bst-074	STOPPED	0	insert -> insert -> insert -> insert -> delete -> min
+bst-075	PASSED	10	insert -> insert -> contains -> min -> min -> delete
+bst-076	STOPPED	0	min -> insert -> contains -> insert -> insert -> min -> delete
+bst-077	STOPPED	0	contains -> insert -> contains -> delete -> min -> contains -> delete
+bst-078	PASSED	10	insert -> insert -> contains -> insert -> contains -> min -> delete
+bst-079	STOPPED	0	insert -> insert -> insert -> insert -> delete
+bst-080	STOPPED	0	delete -> delete -> insert -> delete -> min -> min -> min
+bst-081	STOPPED	0	min -> insert -> contains -> delete
+bst-082	PASSED	10	insert -> insert -> insert -> delete -> min -> contains
+bst-083	PASSED	10	insert -> insert -> contains -> min -> delete
+bst-084	PASSED	10	insert -> insert -> delete -> contains
+bst-085	STOPPED	0	delete -> insert -> delete -> delete -> contains -> min
+bst-086	PASSED	10	insert -> insert -> contains -> min -> insert -> delete
+bst-087	PASSED	10	insert -> contains -> contains -> insert -> contains -> contains
+bst-088	STOPPED	0	contains -> insert -> delete -> insert -> contains -> min -> insert
+bst-089	STOPPED	0	contains -> insert
+bst-090	STOPPED	0	min -> delete -> min -> contains -> delete -> min
+bst-091	PASSED	10	insert -> insert -> delete -> insert -> contains -> min -> delete
+bst-092	PASSED	10	insert -> insert -> insert -> min -> min -> delete
+bst-093	STOPPED	0	insert -> insert -> insert -> insert -> min -> delete
+bst-094	PASSED	10	insert -> insert -> contains -> min -> contains -> contains -> delete
+bst-095	STOPPED	0	insert -> delete -> delete
+bst-096	STOPPED	0	delete -> contains -> min -> contains -> min -> insert
+bst-097	PASSED	10	insert -> insert -> contains -> min -> insert
+bst-098	PASSED	10	insert -> insert -> contains -> min -> delete -> delete
+bst-099	PASSED	10	insert -> insert -> contains -> contains -> delete -> min
+bst-100	STOPPED	0	delete -> contains -> delete -> min -> min -> insert -> min
+bst-101	STOPPED	0	delete -> delete -> delete
+bst-102	PASSED	10	insert -> insert -> min -> insert -> contains -> min -> min
+bst-103	STOPPED	0	insert -> insert -> insert -> insert -> min -> insert -> delete
+bst-104	PASSED	10	insert -> insert -> delete -> min -> insert -> min -> delete
+bst-105	STOPPED	0	contains -> contains
+bst-106	PASSED	10	insert -> insert -> min -> contains -> min -> delete
+bst-107	PASSED	10	insert -> min -> insert -> insert -> contains -> min
+bst-108	STOPPED	0	delete -> contains -> min
+bst-109	PASSED	10	insert -> insert -> insert -> min -> contains -> min -> delete
+bst-110	STOPPED	0	min -> insert -> insert -> insert -> contains -> min
+bst-111	STOPPED	0	insert -> min -> insert -> insert -> contains -> insert -> delete
+bst-112	STOPPED	0	contains -> min -> min -> insert -> contains
+bst-113	PASSED	9	insert -> contains
+bst-114	STOPPED	0	insert -> insert -> contains -> insert -> insert -> min -> delete
+bst-115	STOPPED	0	min -> min -> insert
+bst-116	PASSED	10	insert -> delete -> insert -> contains -> min -> insert
+bst-117	STOPPED	0	contains -> min -> min
+bst-118	STOPPED	0	insert -> insert -> min -> insert -> contains -> insert -> delete
+bst-119	PASSED	10	insert -> delete -> insert -> insert -> contains -> min -> delete
+bst-120	STOPPED	0	delete -> insert -> insert -> contains -> min -> insert
+bst-121	STOPPED	0	contains -> min -> delete
+bst-122	STOPPED	0	min -> delete -> min -> contains -> min
+bst-123	PASSED	10	insert -> delete -> insert -> insert -> contains -> min -> insert
+bst-124	PASSED	6	insert -> insert
+bst-125	STOPPED	0	delete -> delete -> contains -> contains -> insert -> delete
+bst-126	PASSED	10	insert -> contains -> delete -> insert
+bst-127	PASSED	10	insert -> insert -> delete -> insert -> min -> contains -> insert
+bst-128	STOPPED	0	contains -> delete -> delete -> insert -> min -> delete
+bst-129	PASSED	10	insert -> contains -> contains -> insert -> min -> delete
+bst-130	STOPPED	0	delete -> contains -> min -> min
+bst-131	PASSED	10	insert -> insert -> delete
+bst-132	STOPPED	0	delete -> insert -> min -> contains
+bst-133	PASSED	10	insert -> insert -> insert -> delete -> insert -> delete
+bst-134	PASSED	10	insert -> insert -> insert -> contains
+bst-135	STOPPED	0	min -> insert
+bst-136	STOPPED	0	delete -> contains -> delete -> delete -> delete -> delete -> contains
+bst-137	PASSED	10	insert -> insert -> contains -> min -> min
+bst-138	PASSED	10	insert -> insert -> insert -> min -> delete
+bst-139	STOPPED	0	min -> contains -> insert -> insert
+bst-140	PASSED	10	insert -> insert -> contains -> min -> insert -> min -> delete
+bst-141	STOPPED	0	insert -> insert -> insert -> insert -> contains -> contains -> delete
+bst-142	STOPPED	0	insert -> delete -> contains -> insert -> contains -> insert -> delete
+bst-143	STOPPED	0	insert -> delete -> contains -> contains -> delete -> delete -> contains
+bst-144	PASSED	10	insert -> insert -> contains -> insert -> delete
+bst-145	STOPPED	0	delete -> insert -> insert -> min -> contains -> delete -> insert
+bst-146	STOPPED	0	delete -> min -> min
+bst-147	STOPPED	0	min -> delete -> min -> insert -> delete -> delete
+bst-148	PASSED	10	insert -> insert -> delete -> contains -> min
+bst-149	STOPPED	0	insert -> insert -> insert -> insert -> min -> min
+bst-150	PASSED	10	insert -> insert -> min -> delete
+bst-151	PASSED	9	insert -> min -> contains
+bst-152	PASSED	3	insert -> min -> delete
+bst-153	STOPPED	0	delete -> contains -> delete -> contains -> insert
+bst-154	STOPPED	0	min -> delete -> contains
+bst-155	STOPPED	0	min -> min -> min -> delete -> contains
+bst-156	STOPPED	0	contains -> insert -> contains
+bst-157	PASSED	10	insert -> insert -> contains -> delete
+bst-158	PASSED	10	insert -> insert -> insert -> delete -> min
+bst-159	STOPPED	0	contains -> contains -> delete -> contains
+bst-160	STOPPED	0	contains -> delete -> insert
+bst-161	STOPPED	0	contains -> min -> delete -> insert
+bst-162	STOPPED	0	delete -> insert -> insert -> insert -> contains -> min
+bst-163	STOPPED	0	min -> min -> delete -> delete -> delete -> min -> contains
+bst-164	STOPPED	0	insert -> insert -> contains -> contains -> insert -> contains -> insert
+bst-165	STOPPED	0	contains -> insert -> min -> min -> min
+bst-166	STOPPED	0	min -> insert -> insert -> min -> delete
+bst-167	PASSED	10	insert -> insert -> delete -> contains -> min -> delete
+bst-168	PASSED	9	insert -> contains -> delete
+bst-169	STOPPED	0	min -> contains
+bst-170	STOPPED	0	min -> contains -> insert -> min -> contains -> min
+bst-171	STOPPED	0	delete -> min -> contains -> min -> contains
+bst-172	PASSED	10	insert -> insert -> contains -> insert
+bst-173	STOPPED	0	contains -> min -> contains -> insert
+bst-174	PASSED	10	insert -> contains -> contains
+bst-175	STOPPED	0	insert -> contains -> contains -> delete -> insert -> delete -> min
+bst-176	PASSED	10	insert -> min -> insert -> min -> contains -> insert
+bst-177	STOPPED	0	contains -> delete
+bst-178	PASSED	6	insert -> insert -> insert -> min
+bst-179	PASSED	10	insert -> insert -> insert -> contains -> min -> contains -> delete
+bst-180	STOPPED	0	delete -> insert -> insert -> min -> insert
+bst-181	PASSED	10	insert -> insert -> contains -> contains -> insert -> min -> delete
+bst-182	STOPPED	0	min -> min -> delete -> insert
+bst-183	PASSED	10	insert -> contains -> insert -> insert -> min -> delete -> delete
+bst-184	STOPPED	0	contains -> min
+bst-185	STOPPED	0	min -> contains -> contains -> min
+bst-186	STOPPED	0	contains -> delete -> insert -> contains -> insert -> min -> insert
+bst-187	STOPPED	0	contains -> insert -> insert -> insert -> min -> min -> delete
+bst-188	STOPPED	0	insert -> insert -> min -> delete -> contains -> delete -> contains
+bst-189	PASSED	9	insert -> delete -> insert
+bst-190	PASSED	10	insert -> contains -> insert -> insert -> min -> min -> delete
+bst-191	STOPPED	0	min -> contains -> min -> min -> insert -> contains -> contains
+bst-192	PASSED	10	insert -> delete -> insert -> insert
+bst-193	STOPPED	0	contains -> delete -> min -> contains
+bst-194	STOPPED	0	insert -> insert -> insert -> insert -> insert -> contains -> min
+bst-195	STOPPED	0	insert -> contains -> delete -> min -> delete
+bst-196	STOPPED	0	contains -> contains -> contains
+bst-197	PASSED	10	insert -> contains -> min -> insert -> contains
+bst-198	STOPPED	0	delete -> delete -> min -> delete -> delete -> delete -> min
+bst-199	STOPPED	0	contains -> insert -> delete -> contains
+bst-200	PASSED	10	insert -> contains -> contains -> insert -> insert -> min -> delete
+bst-201	STOPPED	0	min -> insert -> insert -> min -> contains -> insert -> delete
+bst-202	PASSED	10	insert -> min -> contains -> insert -> insert -> delete
+bst-203	PASSED	10	insert -> contains -> insert -> insert -> contains -> min -> delete
+bst-204	STOPPED	0	delete -> insert -> insert -> insert -> contains -> min -> insert
+bst-205	PASSED	10	insert -> insert -> contains -> insert -> min -> delete -> delete
+bst-206	STOPPED	0	min -> insert -> min -> insert -> contains -> insert -> delete
+bst-207	STOPPED	0	delete -> insert -> contains -> contains -> insert -> insert -> contains
+bst-208	STOPPED	0	contains -> insert -> min -> delete
+bst-209	STOPPED	0	insert -> delete -> delete -> delete -> insert -> min -> delete
+bst-210	STOPPED	0	delete -> min -> delete -> insert -> contains
+bst-211	STOPPED	0	min -> insert -> contains -> min -> min
+bst-212	STOPPED	0	insert -> insert -> insert -> contains -> min -> insert -> delete
+bst-213	PASSED	10	insert -> insert -> insert -> delete -> contains -> min -> insert
+bst-214	STOPPED	0	min -> insert -> delete -> min -> delete -> delete
+bst-215	STOPPED	0	contains -> contains -> insert
+bst-216	STOPPED	0	delete -> insert -> delete
+bst-217	STOPPED	0	contains -> min -> insert -> contains
+bst-218	PASSED	10	insert -> delete -> insert -> contains -> delete
+bst-219	PASSED	10	insert -> min -> insert -> insert -> contains -> delete -> delete
+bst-220	STOPPED	0	insert -> min -> delete -> min -> delete
+bst-221	STOPPED	0	insert -> insert -> min -> contains -> insert -> contains -> insert
+bst-222	PASSED	10	insert -> insert -> min -> delete -> contains -> min -> insert
+bst-223	STOPPED	0	contains -> insert -> delete -> insert -> insert -> contains -> min
+bst-224	STOPPED	0	insert -> min -> delete -> delete -> contains
+bst-225	PASSED	10	insert -> contains -> insert -> min -> delete
+bst-226	PASSED	10	insert -> insert -> delete -> contains -> min -> insert
+bst-227	PASSED	10	insert -> insert -> contains -> insert -> min -> delete
+bst-228	STOPPED	0	min -> insert -> contains
+bst-229	PASSED	10	insert -> delete -> insert -> min -> insert -> insert
+bst-230	PASSED	10	insert -> contains -> insert -> delete
+bst-231	PASSED	10	insert -> insert -> contains -> contains -> min -> delete
+bst-232	STOPPED	0	delete -> delete -> delete -> insert -> min
+bst-233	STOPPED	0	insert -> delete -> min -> contains -> min -> insert
+bst-234	PASSED	10	insert -> min -> insert -> contains -> insert -> delete
+bst-235	STOPPED	0	min -> min
+bst-236	STOPPED	0	contains -> insert -> contains -> min -> insert -> delete
+bst-237	STOPPED	0	min -> min -> min -> min -> insert
+bst-238	STOPPED	0	delete -> insert -> insert -> min -> contains -> min -> insert
+bst-239	STOPPED	0	min -> insert -> insert -> contains -> min -> delete
+bst-240	PASSED	10	insert -> insert -> delete -> min -> contains
+bst-241	PASSED	10	insert -> insert -> contains -> contains -> contains -> min -> delete
+bst-242	STOPPED	0	delete -> insert -> insert -> contains -> insert
+bst-243	STOPPED	0	delete -> insert -> contains -> delete -> min -> insert
+bst-244	PASSED	10	insert -> insert -> delete -> contains -> min -> insert -> delete
+bst-245	STOPPED	0	contains -> contains -> delete -> min -> min
+bst-246	STOPPED	0	contains -> insert -> insert -> contains -> min -> delete
+bst-247	PASSED	6	insert -> min -> insert -> min -> min
+bst-248	STOPPED	0	delete -> insert -> insert -> contains -> min -> min
+bst-249	PASSED	10	insert -> contains -> insert -> insert -> delete -> min
+bst-250	STOPPED	0	min -> min -> min -> insert -> min -> insert -> delete
+bst-251	PASSED	10	insert -> min -> insert -> insert -> min -> contains
+bst-252	STOPPED	0	delete -> delete -> min
+bst-253	STOPPED	0	contains -> delete -> insert -> insert
+bst-254	STOPPED	0	delete -> insert -> insert -> min
+bst-255	PASSED	10	insert -> min -> contains -> insert -> contains -> insert -> delete
+bst-256	PASSED	10	insert -> insert -> insert -> contains -> delete -> min
+bst-257	PASSED	10	insert -> delete -> insert -> insert -> contains
+bst-258	STOPPED	0	min -> min -> delete -> min -> delete -> min
+bst-259	STOPPED	0	delete -> min -> min -> contains -> delete
+bst-260	STOPPED	0	delete -> insert -> delete -> contains -> contains -> delete

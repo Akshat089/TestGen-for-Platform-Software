@@ -1,0 +1,3 @@
+test GraphGenerated20 {
+    sequence: addEdge -> addEdge -> addEdge -> addEdge -> addVertex -> addVertex;
+}

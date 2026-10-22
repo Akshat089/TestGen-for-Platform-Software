@@ -1,0 +1,35 @@
+# generated mutants — hashmap
+# id	status	operator	method	file	killed-by-family	detail
+HASHMAP_GEN_SDL_1	INVALID	statement-deletion	-	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/HASHMAP_GEN_SDL_1/run/in/ac/iiitb/plproject/atc/generated/GeneratedATCsTest.java:26: error: cannot find symbol
+HASHMAP_GEN_SEI_2	INVALID	side-effect-insertion	-	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/HASHMAP_GEN_SEI_2/run/in/ac/iiitb/plproject/atc/generated/Helper.java:20: error: <identifier> expected
+HASHMAP_GEN_CRP_3	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+HASHMAP_GEN_CRP_4	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+HASHMAP_GEN_ARP_5	INVALID	argument-replacement	put	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/HASHMAP_GEN_ARP_5/run/in/ac/iiitb/plproject/atc/generated/Helper.java:32: error: incompatible types: Integer cannot be converted to String
+HASHMAP_GEN_MCR_6	KILLED	method-call-replacement	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST put: M.get(key) == value
+HASHMAP_GEN_AOI_7	KILLED	arithmetic-operator-insertion	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: size == \old(size) - 1
+HASHMAP_GEN_AOI_8	KILLED	arithmetic-operator-insertion	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: size == \old(size) - 1
+HASHMAP_GEN_UOI_9	KILLED	unary-operator-insertion	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: size == \old(size) - 1
+HASHMAP_GEN_ABS_10	KILLED	absolute-value-insertion	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: size == \old(size) - 1
+HASHMAP_GEN_SDL_11	KILLED	statement-deletion	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: size == \old(size) - 1
+HASHMAP_GEN_MCR_12	KILLED	method-call-replacement	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: size == \old(size) - 1
+HASHMAP_GEN_UOI_13	KILLED	unary-operator-insertion	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): null
+HASHMAP_GEN_ABS_14	KILLED	absolute-value-insertion	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): null
+HASHMAP_GEN_RVR_15	SURVIVED	return-value-replacement	put	Helper.java	-	every generated assertion still holds
+HASHMAP_GEN_RVR_16	SURVIVED	return-value-replacement	put	Helper.java	-	every generated assertion still holds
+HASHMAP_GEN_RVR_17	SURVIVED	return-value-replacement	put	Helper.java	-	every generated assertion still holds
+HASHMAP_GEN_SEI_18	KILLED	side-effect-insertion	put	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: size == \old(size) - 1
+HASHMAP_GEN_UOI_19	KILLED	unary-operator-insertion	getOldValue	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST getOldValue: curVal == M.get(key)
+HASHMAP_GEN_ABS_20	KILLED	absolute-value-insertion	getOldValue	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST getOldValue: curVal == M.get(key)
+HASHMAP_GEN_RVR_21	KILLED	return-value-replacement	getOldValue	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST getOldValue: curVal == M.get(key)
+HASHMAP_GEN_RVR_22	KILLED	return-value-replacement	getOldValue	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST getOldValue: curVal == M.get(key)
+HASHMAP_GEN_RVR_23	KILLED	return-value-replacement	getOldValue	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST getOldValue: curVal == M.get(key)
+HASHMAP_GEN_ARP_24	KILLED	argument-replacement	getOldValue	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST getOldValue: curVal == M.get(key)
+HASHMAP_GEN_ARP_25	INVALID	argument-replacement	getOldValue	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/HASHMAP_GEN_ARP_25/run/in/ac/iiitb/plproject/atc/generated/Helper.java:39: error: bad operand types for binary operator '-'
+HASHMAP_GEN_MCR_26	KILLED	method-call-replacement	getOldValue	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST getOldValue: curVal == M.get(key)
+HASHMAP_GEN_SEI_27	KILLED	side-effect-insertion	getOldValue	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST getOldValue: size == \old(size)
+HASHMAP_GEN_SDL_28	KILLED	statement-deletion	remove	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: !M.containsKey(key)
+HASHMAP_GEN_STR_29	SURVIVED	statement-replacement	remove	Helper.java	-	every generated assertion still holds
+HASHMAP_GEN_ARP_30	KILLED	argument-replacement	remove	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: !M.containsKey(key)
+HASHMAP_GEN_ARP_31	INVALID	argument-replacement	remove	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/HASHMAP_GEN_ARP_31/run/in/ac/iiitb/plproject/atc/generated/Helper.java:44: error: bad operand types for binary operator '-'
+HASHMAP_GEN_MCR_32	KILLED	method-call-replacement	remove	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST remove: !M.containsKey(key)
+HASHMAP_GEN_SEI_33	SURVIVED	side-effect-insertion	remove	Helper.java	-	every generated assertion still holds

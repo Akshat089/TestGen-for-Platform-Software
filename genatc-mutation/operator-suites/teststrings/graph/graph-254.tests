@@ -1,0 +1,3 @@
+test GraphGenerated254 {
+    sequence: hasEdge -> addVertex -> addVertex -> addVertex -> addEdge -> degree -> hasEdge;
+}

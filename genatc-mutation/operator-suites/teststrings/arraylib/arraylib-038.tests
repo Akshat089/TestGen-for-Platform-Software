@@ -1,6 +1,3 @@
 test ArraylibGenerated38 {
-    sequence: sum -> sum -> sum;
-
-    inputs {
-    }
+    sequence: set -> set -> indexOf -> get -> set -> sum -> indexOf;
 }

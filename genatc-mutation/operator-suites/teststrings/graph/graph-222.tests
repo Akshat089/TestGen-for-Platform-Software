@@ -1,0 +1,3 @@
+test GraphGenerated222 {
+    sequence: addVertex -> degree -> addVertex -> addVertex -> hasEdge -> degree -> addVertex;
+}

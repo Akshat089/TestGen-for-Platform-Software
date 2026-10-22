@@ -1,9 +1,3 @@
 test MathlibGenerated160 {
-    sequence: power -> factorial;
-
-    inputs {
-        power[0].base = 18;
-        power[0].exponent = 18;
-        factorial[1].n = 4;
-    }
+    sequence: abs -> gcd -> factorial -> power -> factorial -> factorial -> factorial;
 }

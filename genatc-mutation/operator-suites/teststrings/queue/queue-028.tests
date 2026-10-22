@@ -1,7 +1,3 @@
 test QueueGenerated28 {
-    sequence: enqueue -> dequeue -> front -> isEmpty;
-
-    inputs {
-        enqueue[0].elem = "first";
-    }
+    sequence: enqueue -> enqueue -> dequeue -> isEmpty -> front -> isEmpty;
 }

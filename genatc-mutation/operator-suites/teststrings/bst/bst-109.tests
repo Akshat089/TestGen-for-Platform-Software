@@ -1,8 +1,3 @@
 test BstGenerated109 {
-    sequence: min -> min -> delete -> min -> insert;
-
-    inputs {
-        delete[2].key = 3;
-        insert[4].key = 30;
-    }
+    sequence: insert -> insert -> insert -> min -> contains -> min -> delete;
 }

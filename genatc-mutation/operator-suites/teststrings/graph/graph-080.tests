@@ -1,0 +1,3 @@
+test GraphGenerated80 {
+    sequence: hasEdge -> hasEdge -> hasEdge;
+}

@@ -1,25 +1,31 @@
-# generated suites — summary
+# generated suites — summary (contract-only SPF; each test generated once)
 
 PHASE 1 — generated test strings
-library         tests   passed   stopped   failed   invalid
-stack             260      120       140        0         0
-ALL               260      120       140        0         0
+library      family  passed  incorrect  failed   other  seconds
+stack            10       3          7       0       0        9
+ALL              10       3          7       0       0
 
 PHASE 2 and 3 — generated mutants, alone and against the family
-library         mutants   killed  survived  invalid    alone by family with family
-stack                51       39         9        3    81.3%         6       93.8%
-ALL                  51       39         9        3    81.3%         6       93.8%
+library       mutants   killed  survived  invalid    alone by family  with family  seconds
+stack              51       36        12        3    75.0%         2        79.2%        9
+ALL                51       36        12        3    75.0%         2        79.2%
 
 BY OPERATOR
 operator                           abbr   mutants   killed  survived  invalid    alone with family
-arithmetic-operator-replacement    AOR         12        9         3        0    75.0%       91.7%
+arithmetic-operator-replacement    AOR         12        9         3        0    75.0%       75.0%
 arithmetic-operator-insertion      AOI          2        2         0        0   100.0%      100.0%
+relational-operator-replacement    ROR          0        0         0        0     0.0%        0.0%
+conditional-operator-replacement   COR          0        0         0        0     0.0%        0.0%
+conditional-operator-insertion     COI          0        0         0        0     0.0%        0.0%
 unary-operator-insertion           UOI          1        1         0        0   100.0%      100.0%
 absolute-value-insertion           ABS          1        1         0        0   100.0%      100.0%
-constant-replacement               CRP         11       10         1        0    90.9%      100.0%
+constant-replacement               CRP         11        8         3        0    72.7%       72.7%
+condition-to-constant              CTC          0        0         0        0     0.0%        0.0%
+loop-bound-replacement             LBR          0        0         0        0     0.0%        0.0%
 return-value-replacement           RVR          2        1         1        0    50.0%       50.0%
-statement-deletion                 SDL          5        4         0        1   100.0%      100.0%
+statement-deletion                 SDL          5        3         1        1    75.0%       75.0%
 statement-replacement              STR          1        1         0        0   100.0%      100.0%
 argument-replacement               ARP          2        0         1        1     0.0%      100.0%
-method-call-replacement            MCR          9        7         2        0    77.8%      100.0%
+method-call-replacement            MCR          9        7         2        0    77.8%       88.9%
 side-effect-insertion              SEI          5        3         1        1    75.0%       75.0%
+variable-replacement               VRO          0        0         0        0     0.0%        0.0%

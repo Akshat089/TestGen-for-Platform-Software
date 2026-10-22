@@ -1,7 +1,3 @@
 test ArraylibGenerated12 {
-    sequence: get -> sum;
-
-    inputs {
-        get[0].index = 7;
-    }
+    sequence: set -> set -> set -> get -> sum -> indexOf;
 }

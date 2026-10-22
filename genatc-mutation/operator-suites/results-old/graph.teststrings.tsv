@@ -1,0 +1,262 @@
+# generated test strings — graph
+# name	status	tests_generated	sequence
+graph-001	STOPPED	0	addEdge -> addVertex -> addVertex -> addEdge -> degree -> hasEdge
+graph-002	PASSED	10	addVertex -> addVertex -> addEdge -> addEdge -> degree -> hasEdge
+graph-003	PASSED	10	addVertex -> addVertex -> addVertex -> addEdge -> degree -> hasEdge -> hasEdge
+graph-004	PASSED	10	addVertex -> addVertex -> addEdge -> hasEdge -> hasEdge -> degree -> degree
+graph-005	PASSED	10	addVertex -> addVertex -> addEdge -> degree -> addVertex -> hasEdge
+graph-006	PASSED	10	addVertex -> hasEdge -> addVertex -> addVertex -> addEdge -> degree -> hasEdge
+graph-007	PASSED	3	addVertex -> addEdge -> degree -> hasEdge
+graph-008	PASSED	10	addVertex -> addVertex -> addEdge -> degree -> hasEdge -> hasEdge
+graph-009	PASSED	10	addVertex -> addVertex -> addEdge -> hasEdge -> degree
+graph-010	PASSED	10	addVertex -> addVertex -> hasEdge -> addEdge -> degree -> hasEdge
+graph-011	PASSED	10	addVertex -> degree -> addVertex -> addEdge -> hasEdge
+graph-012	STOPPED	0	degree -> addVertex -> addVertex -> addEdge -> degree
+graph-013	STOPPED	0	hasEdge -> hasEdge -> addVertex -> addEdge -> degree -> hasEdge
+graph-014	PASSED	10	addVertex -> degree -> degree -> addVertex -> addEdge -> degree -> hasEdge
+graph-015	PASSED	10	addVertex -> addVertex -> addEdge -> degree -> addVertex -> degree -> hasEdge
+graph-016	STOPPED	0	addEdge -> degree -> addEdge -> hasEdge
+graph-017	STOPPED	0	addEdge -> addVertex -> degree -> degree -> hasEdge
+graph-018	PASSED	10	addVertex -> addVertex -> addEdge -> degree -> hasEdge -> hasEdge -> hasEdge
+graph-019	PASSED	10	addVertex -> addVertex -> degree
+graph-020	STOPPED	0	addEdge -> addEdge -> addEdge -> addEdge -> addVertex -> addVertex
+graph-021	PASSED	10	addVertex -> addVertex -> addVertex -> addVertex -> addEdge -> degree -> hasEdge
+graph-022	PASSED	10	addVertex -> addVertex -> addEdge -> degree -> degree -> hasEdge
+graph-023	STOPPED	0	degree -> addVertex -> addVertex -> addVertex -> hasEdge -> addEdge -> degree
+graph-024	PASSED	9	addVertex -> degree -> addEdge -> degree -> addVertex
+graph-025	STOPPED	0	hasEdge -> degree -> addVertex -> degree -> hasEdge
+graph-026	STOPPED	0	hasEdge -> hasEdge -> degree
+graph-027	PASSED	10	addVertex -> addEdge -> addVertex -> hasEdge
+graph-028	PASSED	10	addVertex -> addVertex -> hasEdge -> addVertex -> addVertex -> addVertex
+graph-029	STOPPED	0	addEdge -> addVertex -> addVertex -> degree -> hasEdge -> addEdge -> hasEdge
+graph-030	PASSED	10	addVertex -> addVertex -> hasEdge -> addEdge -> degree -> degree -> hasEdge
+graph-031	STOPPED	0	addEdge -> addVertex -> addEdge -> degree -> addVertex -> addEdge -> addVertex
+graph-032	PASSED	10	addVertex -> addVertex -> addEdge -> degree -> degree -> degree -> hasEdge
+graph-033	PASSED	10	addVertex -> degree -> addVertex -> addEdge -> degree -> hasEdge -> hasEdge
+graph-034	PASSED	9	addVertex -> hasEdge -> addEdge -> degree -> addVertex
+graph-035	PASSED	10	addVertex -> addVertex -> addEdge -> addEdge -> addVertex -> degree -> hasEdge
+graph-036	STOPPED	0	addEdge -> hasEdge
+graph-037	PASSED	3	addVertex -> hasEdge -> degree
+graph-038	PASSED	10	addVertex -> addVertex -> addEdge -> hasEdge
+graph-039	STOPPED	0	degree -> degree
+graph-040	STOPPED	0	hasEdge -> addVertex -> addEdge -> addVertex
+graph-041	PASSED	10	addVertex -> addVertex -> addVertex -> addEdge -> degree -> degree -> hasEdge
+graph-042	PASSED	3	addVertex -> addEdge -> addEdge -> degree
+graph-043	STOPPED	0	hasEdge -> addVertex -> degree
+graph-044	STOPPED	0	degree -> hasEdge
+graph-045	STOPPED	0	hasEdge -> addVertex -> hasEdge
+graph-046	PASSED	10	addVertex -> addVertex -> hasEdge -> addEdge -> degree -> hasEdge -> hasEdge
+graph-047	PASSED	10	addVertex -> addVertex -> addEdge -> degree
+graph-048	PASSED	9	addVertex -> addVertex
+graph-049	PASSED	3	addVertex -> addEdge -> degree -> addEdge -> hasEdge -> hasEdge
+graph-050	PASSED	10	addVertex -> addEdge -> addVertex -> addEdge -> degree -> hasEdge
+graph-051	PASSED	10	addVertex -> addVertex -> addVertex -> addVertex -> addEdge -> degree
+graph-052	PASSED	10	addVertex -> addVertex -> addEdge -> addEdge -> hasEdge -> hasEdge
+graph-053	PASSED	10	addVertex -> addVertex -> degree -> addEdge -> hasEdge
+graph-054	PASSED	10	addVertex -> addVertex -> addVertex -> addEdge -> degree -> addVertex -> hasEdge
+graph-055	PASSED	3	addVertex -> addEdge
+graph-056	STOPPED	0	degree -> degree -> degree -> addEdge -> degree
+graph-057	PASSED	10	addVertex -> hasEdge -> degree -> addVertex -> degree
+graph-058	PASSED	10	addVertex -> addVertex -> addEdge -> degree -> addEdge -> hasEdge
+graph-059	PASSED	10	addVertex -> addVertex -> addVertex -> addEdge -> degree -> hasEdge
+graph-060	STOPPED	0	addEdge -> degree
+graph-061	PASSED	10	addVertex -> addVertex -> degree -> addEdge -> degree -> hasEdge -> hasEdge
+graph-062	PASSED	10	addVertex -> addVertex -> addVertex -> addEdge -> addVertex -> degree -> hasEdge
+graph-063	PASSED	10	addVertex -> addVertex -> addVertex -> addVertex -> degree -> hasEdge
+graph-064	STOPPED	0	addEdge -> addVertex -> addVertex
+graph-065	PASSED	10	addVertex -> addVertex -> addEdge -> addEdge -> addEdge -> degree -> hasEdge
+graph-066	STOPPED	0	hasEdge -> addEdge -> hasEdge
+graph-067	PASSED	10	addVertex -> addVertex -> degree -> degree -> hasEdge
+graph-068	PASSED	10	addVertex -> degree -> addVertex -> addEdge -> addVertex -> hasEdge
+graph-069	STOPPED	0	degree -> degree -> addEdge
+graph-070	STOPPED	0	addEdge -> degree -> hasEdge -> degree
+graph-071	PASSED	10	addVertex -> addVertex -> addEdge -> degree -> hasEdge
+graph-072	PASSED	9	addVertex -> hasEdge -> addEdge -> addVertex
+graph-073	PASSED	10	addVertex -> addEdge -> addVertex -> degree -> hasEdge
+graph-074	STOPPED	0	hasEdge -> addEdge
+graph-075	STOPPED	0	hasEdge -> degree -> degree -> addVertex
+graph-076	PASSED	3	addVertex -> addEdge -> addEdge -> addEdge -> degree
+graph-077	PASSED	10	addVertex -> addEdge -> addEdge -> addVertex -> degree -> hasEdge
+graph-078	PASSED	10	addVertex -> degree -> degree -> addVertex -> degree
+graph-079	STOPPED	0	hasEdge -> addEdge -> addVertex -> degree -> addVertex
+graph-080	STOPPED	0	hasEdge -> hasEdge -> hasEdge
+graph-081	STOPPED	0	addEdge -> addEdge -> addVertex -> addVertex -> addEdge -> degree -> hasEdge
+graph-082	PASSED	10	addVertex -> addVertex -> addVertex -> degree -> hasEdge
+graph-083	PASSED	10	addVertex -> hasEdge -> hasEdge -> addVertex -> degree -> hasEdge -> degree
+graph-084	PASSED	3	addVertex -> hasEdge -> hasEdge
+graph-085	PASSED	10	addVertex -> addVertex -> hasEdge -> hasEdge -> addEdge -> degree -> addVertex
+graph-086	STOPPED	0	hasEdge -> degree -> addVertex -> degree -> addEdge -> addEdge -> addEdge
+graph-087	STOPPED	0	addEdge -> degree -> degree -> addVertex
+graph-088	PASSED	10	addVertex -> addVertex -> addVertex -> hasEdge -> addEdge
+graph-089	STOPPED	0	addEdge -> addVertex -> degree -> hasEdge
+graph-090	PASSED	3	addVertex -> addEdge -> degree -> degree -> hasEdge
+graph-091	PASSED	10	addVertex -> addVertex -> degree -> hasEdge
+graph-092	STOPPED	0	hasEdge -> degree -> addEdge -> degree
+graph-093	PASSED	10	addVertex -> addEdge -> addEdge -> addVertex -> degree
+graph-094	STOPPED	0	degree -> addVertex -> addEdge
+graph-095	STOPPED	0	hasEdge -> hasEdge -> addVertex
+graph-096	STOPPED	0	addEdge -> hasEdge -> hasEdge
+graph-097	STOPPED	0	addEdge -> addVertex -> addEdge -> addVertex -> degree -> hasEdge
+graph-098	PASSED	10	addVertex -> degree -> addEdge -> addVertex -> addVertex -> hasEdge
+graph-099	PASSED	10	addVertex -> addEdge -> addEdge -> addVertex -> addVertex -> degree -> hasEdge
+graph-100	STOPPED	0	addEdge -> addVertex -> degree -> hasEdge -> addEdge -> degree -> addEdge
+graph-101	PASSED	10	addVertex -> addVertex -> degree -> addEdge -> addEdge
+graph-102	PASSED	3	addVertex -> addEdge -> degree
+graph-103	STOPPED	0	degree -> addVertex -> addEdge -> degree -> hasEdge
+graph-104	PASSED	10	addVertex -> addVertex -> addEdge -> hasEdge -> degree -> hasEdge
+graph-105	PASSED	10	addVertex -> degree -> addVertex -> addEdge -> degree
+graph-106	STOPPED	0	addEdge -> hasEdge -> hasEdge -> degree -> degree -> addEdge -> addVertex
+graph-107	PASSED	3	addVertex -> addEdge -> degree -> hasEdge -> hasEdge -> hasEdge
+graph-108	PASSED	10	addVertex -> addVertex -> addEdge -> addVertex -> hasEdge
+graph-109	PASSED	10	addVertex -> addVertex -> hasEdge -> degree -> addVertex
+graph-110	PASSED	9	addVertex -> hasEdge -> hasEdge -> addVertex
+graph-111	STOPPED	0	hasEdge -> addVertex -> degree -> addVertex -> hasEdge
+graph-112	PASSED	3	addVertex -> addEdge -> addEdge -> addEdge -> hasEdge -> hasEdge
+graph-113	PASSED	10	addVertex -> hasEdge -> degree -> hasEdge -> degree -> addVertex -> hasEdge
+graph-114	PASSED	10	addVertex -> degree -> addEdge -> addVertex -> hasEdge
+graph-115	STOPPED	0	degree -> addVertex -> hasEdge -> addVertex -> hasEdge
+graph-116	STOPPED	0	degree -> degree -> hasEdge -> hasEdge -> degree
+graph-117	PASSED	10	addVertex -> degree -> addVertex -> addVertex -> addEdge -> degree
+graph-118	PASSED	10	addVertex -> addVertex -> addEdge -> addEdge -> addEdge -> degree
+graph-119	PASSED	10	addVertex -> addVertex -> addVertex -> degree -> degree -> hasEdge
+graph-120	STOPPED	0	hasEdge -> addVertex -> addVertex -> addVertex -> addEdge -> degree
+graph-121	PASSED	10	addVertex -> addVertex -> addVertex -> addEdge -> hasEdge
+graph-122	STOPPED	0	hasEdge -> hasEdge -> degree -> degree -> degree -> hasEdge -> addEdge
+graph-123	STOPPED	0	hasEdge -> addVertex -> addEdge -> degree -> addVertex
+graph-124	PASSED	10	addVertex -> addEdge -> addVertex -> degree -> degree -> hasEdge
+graph-125	STOPPED	0	hasEdge -> hasEdge -> hasEdge -> addVertex
+graph-126	STOPPED	0	degree -> hasEdge -> addEdge -> addEdge
+graph-127	PASSED	10	addVertex -> addVertex -> hasEdge -> degree -> addEdge
+graph-128	STOPPED	0	hasEdge -> degree -> degree -> addEdge
+graph-129	PASSED	10	addVertex -> addVertex -> hasEdge -> degree
+graph-130	STOPPED	0	addEdge -> addEdge -> addVertex -> addVertex -> degree -> hasEdge
+graph-131	STOPPED	0	addEdge -> addVertex
+graph-132	PASSED	10	addVertex -> addVertex -> degree -> hasEdge -> hasEdge -> addEdge -> addEdge
+graph-133	PASSED	9	addVertex -> hasEdge -> addVertex
+graph-134	PASSED	3	addVertex -> addEdge -> degree -> addEdge -> hasEdge
+graph-135	PASSED	10	addVertex -> addVertex -> addVertex -> addEdge -> hasEdge -> degree -> hasEdge
+graph-136	PASSED	10	addVertex -> degree -> addVertex -> addEdge -> hasEdge -> hasEdge
+graph-137	STOPPED	0	degree -> degree -> addEdge -> addVertex -> hasEdge
+graph-138	PASSED	9	addVertex -> hasEdge -> hasEdge -> hasEdge -> degree -> degree -> addVertex
+graph-139	PASSED	10	addVertex -> hasEdge -> hasEdge -> addVertex -> addEdge -> hasEdge
+graph-140	PASSED	3	addVertex -> hasEdge -> addEdge -> degree -> hasEdge
+graph-141	PASSED	9	addVertex -> degree -> addEdge -> addEdge -> addVertex
+graph-142	PASSED	3	addVertex -> degree -> degree
+graph-143	STOPPED	0	degree -> degree -> addVertex -> addEdge -> degree -> hasEdge
+graph-144	PASSED	10	addVertex -> addVertex -> degree -> addEdge -> degree -> hasEdge
+graph-145	STOPPED	0	hasEdge -> degree -> hasEdge -> degree -> addEdge
+graph-146	STOPPED	0	addEdge -> addVertex -> addVertex -> degree -> hasEdge
+graph-147	STOPPED	0	degree -> degree -> addVertex -> addVertex -> addEdge -> addVertex -> addEdge
+graph-148	STOPPED	0	addEdge -> addVertex -> addVertex -> addVertex -> degree -> hasEdge
+graph-149	PASSED	10	addVertex -> addVertex -> addVertex -> degree -> hasEdge -> addEdge -> hasEdge
+graph-150	STOPPED	0	addEdge -> addEdge -> hasEdge -> addVertex
+graph-151	STOPPED	0	hasEdge -> degree
+graph-152	STOPPED	0	degree -> addEdge -> hasEdge
+graph-153	STOPPED	0	addEdge -> addVertex -> addVertex -> addVertex -> degree
+graph-154	STOPPED	0	degree -> addVertex -> addVertex -> hasEdge
+graph-155	STOPPED	0	addEdge -> degree -> addEdge
+graph-156	STOPPED	0	degree -> addVertex -> hasEdge -> addVertex -> addVertex -> addEdge -> addEdge
+graph-157	PASSED	10	addVertex -> addEdge -> degree -> addVertex -> addVertex -> hasEdge
+graph-158	PASSED	10	addVertex -> addVertex -> addEdge
+graph-159	PASSED	10	addVertex -> addVertex -> addEdge -> addVertex -> addEdge -> degree -> hasEdge
+graph-160	PASSED	3	addVertex -> addEdge -> degree -> degree -> degree -> hasEdge
+graph-161	PASSED	10	addVertex -> hasEdge -> addVertex -> addEdge -> degree -> hasEdge
+graph-162	STOPPED	0	degree -> hasEdge -> hasEdge -> hasEdge -> degree
+graph-163	STOPPED	0	addEdge -> addVertex -> addVertex -> hasEdge -> addEdge -> addEdge
+graph-164	STOPPED	0	addEdge -> addVertex -> degree -> degree -> hasEdge -> hasEdge -> addEdge
+graph-165	STOPPED	0	addEdge -> addVertex -> addVertex -> degree
+graph-166	PASSED	10	addVertex -> degree -> addVertex -> degree -> degree
+graph-167	STOPPED	0	degree -> hasEdge -> addEdge -> addVertex -> addVertex -> addVertex -> hasEdge
+graph-168	STOPPED	0	addEdge -> addVertex -> addEdge -> degree -> addVertex -> hasEdge
+graph-169	STOPPED	0	addEdge -> addVertex -> addVertex -> addVertex -> hasEdge -> degree -> hasEdge
+graph-170	PASSED	10	addVertex -> addEdge -> addVertex -> degree -> hasEdge -> hasEdge
+graph-171	PASSED	9	addVertex -> hasEdge -> hasEdge -> addEdge -> addEdge -> degree -> addVertex
+graph-172	STOPPED	0	addEdge -> degree -> addEdge -> degree
+graph-173	PASSED	10	addVertex -> degree -> addVertex -> addEdge -> hasEdge -> addVertex -> hasEdge
+graph-174	PASSED	9	addVertex -> degree -> degree -> degree -> addVertex
+graph-175	PASSED	3	addVertex -> addEdge -> hasEdge -> degree -> hasEdge
+graph-176	PASSED	10	addVertex -> addVertex -> addVertex -> addVertex -> degree -> addEdge -> degree
+graph-177	STOPPED	0	hasEdge -> degree -> addVertex -> addEdge -> degree -> addVertex -> hasEdge
+graph-178	STOPPED	0	addEdge -> addEdge -> addEdge -> hasEdge -> degree -> degree -> addEdge
+graph-179	STOPPED	0	degree -> addVertex -> degree -> addEdge -> degree -> hasEdge
+graph-180	STOPPED	0	addEdge -> addEdge -> hasEdge -> addVertex -> addEdge
+graph-181	STOPPED	0	hasEdge -> addVertex
+graph-182	STOPPED	0	hasEdge -> hasEdge -> addEdge -> hasEdge -> degree -> hasEdge -> degree
+graph-183	STOPPED	0	addEdge -> degree -> addVertex -> hasEdge -> addVertex -> degree
+graph-184	PASSED	9	addVertex -> addEdge -> degree -> degree -> hasEdge -> addEdge -> addVertex
+graph-185	PASSED	10	addVertex -> addVertex -> addEdge -> addVertex -> addVertex
+graph-186	STOPPED	0	hasEdge -> addVertex -> addVertex -> degree -> addVertex
+graph-187	STOPPED	0	addEdge -> hasEdge -> addEdge
+graph-188	PASSED	10	addVertex -> addVertex -> addEdge -> degree -> hasEdge -> degree
+graph-189	PASSED	10	addVertex -> degree -> addEdge -> addEdge -> addVertex -> hasEdge -> hasEdge
+graph-190	PASSED	10	addVertex -> addVertex -> hasEdge -> addEdge -> degree -> addEdge -> hasEdge
+graph-191	PASSED	10	addVertex -> addVertex -> addEdge -> degree -> degree
+graph-192	STOPPED	0	addEdge -> addVertex -> addVertex -> degree -> addEdge -> hasEdge
+graph-193	PASSED	3	addVertex -> addEdge -> hasEdge
+graph-194	PASSED	10	addVertex -> degree -> addVertex -> addEdge -> degree -> hasEdge
+graph-195	STOPPED	0	hasEdge -> degree -> addVertex -> degree -> hasEdge -> addVertex
+graph-196	PASSED	10	addVertex -> addEdge -> degree -> addEdge -> degree -> addVertex -> hasEdge
+graph-197	PASSED	3	addVertex -> hasEdge -> degree -> addEdge -> addEdge
+graph-198	STOPPED	0	hasEdge -> degree -> degree -> addVertex -> degree
+graph-199	STOPPED	0	degree -> addEdge -> addEdge
+graph-200	PASSED	10	addVertex -> addVertex -> addEdge -> addVertex -> degree -> hasEdge
+graph-201	STOPPED	0	hasEdge -> addVertex -> addEdge -> degree
+graph-202	PASSED	10	addVertex -> addVertex -> degree -> degree -> degree -> hasEdge
+graph-203	STOPPED	0	addEdge -> degree -> hasEdge -> degree -> hasEdge
+graph-204	STOPPED	0	hasEdge -> addVertex -> addVertex -> addEdge -> degree -> addVertex
+graph-205	STOPPED	0	degree -> addEdge
+graph-206	STOPPED	0	addEdge -> degree -> addEdge -> addVertex -> hasEdge -> addVertex
+graph-207	PASSED	10	addVertex -> hasEdge -> addVertex -> hasEdge -> degree -> addEdge
+graph-208	STOPPED	0	hasEdge -> addEdge -> addEdge -> addVertex
+graph-209	STOPPED	0	addEdge -> hasEdge -> degree -> degree -> addVertex -> hasEdge
+graph-210	PASSED	10	addVertex -> degree -> addVertex -> degree -> addEdge -> addEdge -> degree
+graph-211	PASSED	10	addVertex -> degree -> addVertex -> addVertex -> addVertex -> addVertex
+graph-212	STOPPED	0	addEdge -> hasEdge -> addVertex -> addEdge
+graph-213	PASSED	10	addVertex -> addVertex -> addEdge -> hasEdge -> hasEdge -> degree
+graph-214	PASSED	9	addVertex -> hasEdge -> addEdge -> hasEdge -> degree -> addVertex
+graph-215	STOPPED	0	addEdge -> hasEdge -> degree
+graph-216	PASSED	3	addVertex -> degree -> degree -> hasEdge
+graph-217	PASSED	9	addVertex -> hasEdge -> addEdge -> degree -> degree -> addVertex
+graph-218	PASSED	3	addVertex -> degree -> addEdge -> hasEdge
+graph-219	STOPPED	0	hasEdge -> addVertex -> degree -> addVertex -> addEdge
+graph-220	STOPPED	0	hasEdge -> addEdge -> addVertex -> addVertex -> addVertex
+graph-221	STOPPED	0	hasEdge -> hasEdge -> addEdge -> addEdge
+graph-222	PASSED	10	addVertex -> degree -> addVertex -> addVertex -> hasEdge -> degree -> addVertex
+graph-223	PASSED	3	addVertex -> addEdge -> hasEdge -> hasEdge
+graph-224	STOPPED	0	hasEdge -> addVertex -> addEdge -> addEdge -> degree -> degree -> addVertex
+graph-225	PASSED	10	addVertex -> addVertex -> addVertex -> addEdge -> degree
+graph-226	PASSED	10	addVertex -> addVertex -> addEdge -> addEdge -> hasEdge
+graph-227	PASSED	3	addVertex -> addEdge -> hasEdge -> degree
+graph-228	PASSED	3	addVertex -> hasEdge
+graph-229	PASSED	10	addVertex -> addVertex -> addVertex -> addVertex
+graph-230	PASSED	3	addVertex -> addEdge -> degree -> hasEdge -> hasEdge
+graph-231	STOPPED	0	hasEdge -> addEdge -> degree -> addVertex -> hasEdge -> addVertex
+graph-232	PASSED	10	addVertex -> addEdge -> degree -> addVertex -> hasEdge -> hasEdge
+graph-233	STOPPED	0	addEdge -> addEdge -> hasEdge -> addEdge -> addVertex -> addEdge -> addVertex
+graph-234	STOPPED	0	hasEdge -> addVertex -> addEdge -> hasEdge
+graph-235	STOPPED	0	degree -> addEdge -> degree
+graph-236	PASSED	10	addVertex -> hasEdge -> addVertex -> hasEdge -> addEdge -> hasEdge -> addEdge
+graph-237	STOPPED	0	hasEdge -> addEdge -> addVertex -> addEdge -> addEdge -> degree
+graph-238	PASSED	10	addVertex -> addVertex -> hasEdge -> addEdge -> degree
+graph-239	STOPPED	0	degree -> addVertex -> addVertex -> hasEdge -> addEdge -> degree -> hasEdge
+graph-240	STOPPED	0	addEdge -> hasEdge -> addVertex -> hasEdge -> hasEdge -> hasEdge
+graph-241	PASSED	3	addVertex -> degree
+graph-242	STOPPED	0	degree -> addVertex -> addVertex -> degree -> hasEdge
+graph-243	STOPPED	0	hasEdge -> addVertex -> addEdge -> addEdge
+graph-244	STOPPED	0	addEdge -> addVertex -> addVertex -> addEdge -> degree -> hasEdge -> hasEdge
+graph-245	PASSED	10	addVertex -> degree -> degree -> addEdge -> degree -> addVertex -> addEdge
+graph-246	PASSED	10	addVertex -> hasEdge -> addVertex -> degree
+graph-247	PASSED	10	addVertex -> addVertex -> degree -> hasEdge -> degree -> addEdge
+graph-248	PASSED	10	addVertex -> addVertex -> degree -> addVertex -> hasEdge
+graph-249	STOPPED	0	degree -> addEdge -> hasEdge -> degree
+graph-250	STOPPED	0	addEdge -> addVertex -> degree -> addVertex -> degree
+graph-251	PASSED	10	addVertex -> addVertex -> hasEdge
+graph-252	PASSED	9	addVertex -> hasEdge -> addEdge -> addEdge -> degree -> degree -> addVertex
+graph-253	STOPPED	0	addEdge -> addEdge -> addEdge
+graph-254	STOPPED	0	hasEdge -> addVertex -> addVertex -> addVertex -> addEdge -> degree -> hasEdge
+graph-255	STOPPED	0	degree -> hasEdge -> addVertex -> hasEdge -> degree -> degree
+graph-256	STOPPED	0	hasEdge -> addEdge -> addEdge -> degree
+graph-257	STOPPED	0	hasEdge -> addVertex -> addVertex -> hasEdge -> addEdge -> degree -> addVertex
+graph-258	STOPPED	0	hasEdge -> addVertex -> hasEdge -> addEdge -> hasEdge -> degree -> addVertex
+graph-259	STOPPED	0	hasEdge -> degree -> addVertex -> addVertex -> addEdge -> addVertex -> hasEdge
+graph-260	STOPPED	0	hasEdge -> addVertex -> addVertex -> addEdge -> degree -> hasEdge

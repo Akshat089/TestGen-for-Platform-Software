@@ -1,9 +1,3 @@
 test HashmapGenerated103 {
-    sequence: put -> remove;
-
-    inputs {
-        put[0].key = "beta";
-        put[0].value = 2;
-        remove[1].key = "beta";
-    }
+    sequence: put -> remove -> put -> getOldValue -> getOldValue -> remove;
 }

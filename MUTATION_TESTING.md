@@ -1,213 +1,278 @@
-# Mutation testing the generated suites
+# Mutation testing the generated black-box suites
 
-`verify-generated.sh` answers *does the generated test suite pass?*  That question
-has a cheap wrong answer: a suite that asserts nothing passes too.  Mutation
-testing asks the useful question instead — **when the library is broken, does the
-generated suite notice?**
+`verify-generated.sh` answers *does the generated test suite pass on the real
+library?* A suite that asserts nothing passes too, so mutation testing asks the
+useful question: **when the library is broken, does the generated suite notice?**
 
-Each mutant seeds one small fault into one library and the whole pipeline is
-re-run against it: the spec and test string are re-parsed, the propagation scan
-runs again, `GeneratedATCs.java`, `GeneratedATCs_JUnit.java` and
-`SingularCase.java` are regenerated, compiled, and executed.  Nothing is cached
-between mutants, so the result is a measurement of the *pipeline*, not of one
-stored artifact.
+## What is being measured
 
-## Running it
+The generator is **black-box**. It never looks inside a library and never
+explores paths (no SPF, no symbolic execution). For each library it:
+
+1. parses the `.spec` contract and the `.tests` test string, and checks both;
+2. picks the library's **one model state variable**, if it has one (see below);
+3. runs the test string against the **unmodified** library with **random
+   inputs**, many times (500 attempts, fixed seed 42), and keeps up to 10
+   distinct input vectors on which every check held;
+4. prints those vectors as `GeneratedATCsTest.java`, one `@Test` per vector.
+
+Mutation testing then treats that generated class as the oracle. For each
+mutant it seeds one fault into a private copy of the library, compiles the
+**same, unchanged** test class against it, and runs it. The suite is **not**
+regenerated per mutant. If it were, the sampler would pick inputs the mutant
+happens to pass, and that is not black-box testing.
+
+### Stateful libraries: one global model variable
+
+A stateful library (stack, queue, …) has one int state variable that its
+preconditions guard calls with, such as `size` in `pop`'s `requires: size > 0`.
+The generated test keeps **its own copy** of that variable in a single global
+field, `state`:
+
+```java
+/** The one global model state variable: the spec's 'size', kept by the test, not read from the library. */
+private static int state;
+
+@Test(timeout = 2000)
+public void run1() {
+    Helper.reset();
+    state = 0;
+
+    // call 0: push
+    String c0_elem = "s3";
+    assertTrue("PRE push: elem != null", c0_elem != null);
+    int old0_size = Helper.size;
+    Helper.push(c0_elem);
+    state = state + 1;                                   // from: size == \old(size) + 1
+    assertTrue("POST push: size == \\old(size) + 1", Helper.size == old0_size + 1);
+    ...
+    // call 2: pop
+    assertTrue("SEQUENCE pop: size > 0", state > 0);     // checked against the model, not the library
+    ...
+```
+
+- Each precondition conjunct that reads the model variable and no parameter
+  (`size > 0`) is a **SEQUENCE** check. Its truth depends only on which calls
+  came before it.
+- The model moves by the call's own `v == \old(v) ± …` clause and is never
+  read back from the library.
+- So a test string that calls something out of order is **called out at
+  generation time**, before any test is written:
+
+  ```
+  $ (test string: push -> pop -> pop)
+  INCORRECT SEQUENCE: call 2 (pop) is out of sequence: requires size > 0,
+  but the model's size is 0 after the calls before it
+  ```
+
+The model variable chosen for each library:
+
+| Library | Model variable | Comes from |
+|---|---|---|
+| stack, queue, linkedlist, heap, bst | `size` | `requires: size > 0` |
+| arraylib | `length` | `requires: index < length` |
+| lrucache | `capacity` | `requires: capacity > 0` |
+| mathlib | none (stateless) | no precondition reads state |
+| set, hashmap, graph | none | preconditions only test membership (`M.containsKey(key)`) |
+
+For the last group, an out-of-order call is still called out, by the sampler
+instead of the model. For example, `remove -> put` on hashmap gives:
+
+```
+INCORRECT SEQUENCE: no random input met the precondition of call 0 (remove)
+in 500 attempts — the calls before it never set up what it requires: M.containsKey(key)
+```
+
+### Stateless libraries: random inputs, test string must pass
+
+For mathlib there is no model. Every argument is drawn at random: half the
+time a small value in [-10, 10], otherwise a value in [-1000, 1000]. A draw is
+retried until that call's precondition holds. An attempt is kept only if the
+whole test string ran with every postcondition holding, so the delivered
+suite always passes on the real library.
+
+`String` parameters, and any value a spec uses as a `Set`/`Map` key (bst's
+`int key`), are drawn from a small shared pool (`"s1","s2","s3"` /
+`101,103,105`). This lets a later call's `contains`/`containsKey`
+precondition name a value an earlier call stored.
+
+Attempts that broke a postcondition on the **unmodified** library are thrown
+away and reported. Those are contract findings, not generator bugs:
+
+```
+mathlib:  discarded 76 attempt(s):  POST at call 2 (power): powerValue > 0   (int overflow; spec allows exponent <= 30)
+arraylib: discarded 243 attempt(s): POST at call 3 (sum): total >= 0         (spec never forbids negative values)
+```
+
+## Setup
+
+Requirements: **JDK 11+** and **Maven 3**. SPF, `jpf-core` and `jpf-symbc`
+are no longer needed (`scripts/setup-spf.sh` is obsolete), and nothing needs
+the network after Maven's first dependency download.
 
 ```bash
-./run-mutations.sh                       # every library
-./run-mutations.sh stack queue lrucache  # a subset
+# from the repository root
+mvn -o install -DskipTests            # builds pl-platform-testing and genatc-mutation
+                                      # (drop -o the very first time, to download JUnit/plugins)
+
+./verify-generated.sh                 # every library generates, and its suite passes on the real library
+
+./genatc-mutation/run-mutations.sh                    # hand-written mutants, every library
+./genatc-mutation/run-mutations.sh stack queue        # a subset
+
+./genatc-mutation/run-operator-suites.sh              # generated mutants + generated test strings
+./genatc-mutation/run-operator-suites.sh stack        # a subset
 ```
 
-or as part of the JUnit suite, where every mutant is its own test:
+Knobs (JVM system properties for `GenatcMain`):
 
-```bash
-cd pl-platform-testing
-mvn -o test                              # includes MutationScoreTest
-mvn -o test -Dmutation.skip=true         # everything except the mutation run
+| Property | Default | Meaning |
+|---|---|---|
+| `genatc.seed` | `42` | random seed; the same seed always gives the same suite |
+| `genatc.attempts` | `500` | sampling attempts per test string |
+| `genatc.maxTestsPerClass` | `10` | distinct passing vectors kept as `@Test` methods |
+
+Each generated test has `@Test(timeout = 2000)`, so a mutant that loops
+forever fails its test instead of hanging the run.
+
+Where things are written:
+
+| Path | What |
+|---|---|
+| `pl-platform-testing/outputs/<lib>/…/GeneratedATCsTest.java` | the suite, from `GenatcMain` / `verify-generated.sh` |
+| `pl-platform-testing/outputs/<lib>/sampler-work/` | the generated `GeneratedSampler.java` that drew the inputs |
+| `genatc-mutation/target/mutation/suites/` | baseline suites the mutation runner generated |
+| `genatc-mutation/target/mutation/mutants/<ID>/` | each mutant's sandboxed library + the run |
+| `genatc-mutation/operator-suites/` | generated mutants, test strings, per-row TSVs, `SUMMARY.txt` |
+
+## Results: hand-written mutants (`run-mutations.sh`)
+
+Baseline (generated from and run on the unmodified libraries). All 11
+supported libraries pass:
+
+```
+stack      PASS  (9 test(s))      queue      PASS  (9 test(s))     mathlib    PASS  (10 test(s))
+arraylib   PASS  (10 test(s))     linkedlist PASS  (10 test(s))    heap       PASS  (10 test(s))
+set        PASS  (10 test(s))     hashmap    PASS  (10 test(s))    bst        PASS  (10 test(s))
+graph      PASS  (10 test(s))     lrucache   PASS  (10 test(s))
 ```
 
-## Current result
+(stack and queue have 9 tests because two pooled pushes give only 3 × 3 = 9
+distinct vectors.)
 
 ```
-library         mutants   killed  survived  invalid score
-arraylib              9        7         2        0  77.8%
-bst                   8        7         1        0  87.5%
-graph                 8        6         2        0  75.0%
-hashmap              11        9         2        0  81.8%
-heap                  9        8         1        0  88.9%
-linkedlist            7        5         2        0  71.4%
-lrucache              8        7         1        0  87.5%
-mathlib              12        8         4        0  66.7%
-orderservice         14       12         2        0  85.7%
-queue                 8        7         1        0  87.5%
-set                   6        4         2        0  66.7%
-stack                11        8         3        0  72.7%
-taskqueue            11        8         3        0  72.7%
-ticketservice        13       11         2        0  84.6%
-ALL                 135      107        28        0  79.3%
+library       mutants   killed  survived  invalid score
+arraylib            9        7         2        0  77.8%
+bst                 9        8         1        0  88.9%
+graph               8        7         1        0  87.5%
+hashmap            11       10         1        0  90.9%
+heap                9        8         1        0  88.9%
+linkedlist          8        5         3        0  62.5%
+lrucache            8        6         2        0  75.0%
+mathlib            12        9         3        0  75.0%
+orderservice       14        0         0       14   0.0%
+queue               8        7         1        0  87.5%
+set                 6        6         0        0 100.0%
+stack              11        8         3        0  72.7%
+taskqueue          11        0         0       11   0.0%
+ticketservice      13        0         0       13   0.0%
+ALL               137       81        18       38  81.8%
 ```
 
-**Killed** means a generated precondition or postcondition rejected the fault.
-**Survived** means every generated condition still held.  The score is
-`killed / (killed + survived)`; **invalid** mutants — ones that could not be
-seeded, or that produced a library which does not compile — are excluded,
-because they measure nothing.
+The score is `killed / (killed + survived)` over the **99 runnable** mutants:
+**81 killed, 18 survived**. The 38 invalid mutants all belong to the three
+libraries that are unsupported by design (taskqueue, ticketservice,
+orderservice). Each needs an id returned by one call passed into a later
+call, and the no-propagation rule forbids that, so no suite exists to run
+them against.
 
-## The same mutants, counted by operator
-
-A single percentage is a poor summary.  "79% of faults are caught" does not say
-whether the specifications are sharp about arithmetic and blind to return values
-or the other way round, and those two situations call for completely different
-work.  Every mutant therefore declares which **kind** of fault it is, from a
-closed vocabulary of sixteen operators (`MutationOperator`), and the run reports
-the score both ways:
+By operator:
 
 ```
 operator                           abbr   mutants   killed  survived score
-arithmetic-operator-replacement    AOR          6        5         1  83.3%
-arithmetic-operator-insertion      AOI          7        5         2  71.4%
+arithmetic-operator-replacement    AOR          6        2         1  66.7%
+arithmetic-operator-insertion      AOI          7        4         0 100.0%
 relational-operator-replacement    ROR          5        2         3  40.0%
 conditional-operator-replacement   COR          2        2         0 100.0%
 conditional-operator-insertion     COI          4        2         2  50.0%
-unary-operator-insertion           UOI          7        6         1  85.7%
-absolute-value-insertion           ABS          2        2         0 100.0%
-constant-replacement               CRP          7        6         1  85.7%
+unary-operator-insertion           UOI          7        6         0 100.0%
+absolute-value-insertion           ABS          2        1         0 100.0%
+constant-replacement               CRP          7        3         2  60.0%
 condition-to-constant              CTC          2        2         0 100.0%
-loop-bound-replacement             LBR          4        1         3  25.0%
-return-value-replacement           RVR         14        9         5  64.3%
-statement-deletion                 SDL         41       40         1  97.6%
-statement-replacement              STR          6        5         1  83.3%
-argument-replacement               ARP         13        7         6  53.8%
-method-call-replacement            MCR          5        3         2  60.0%
-side-effect-insertion              SEI         10       10         0 100.0%
+loop-bound-replacement             LBR          4        2         1  66.7%
+return-value-replacement           RVR         14        9         3  75.0%
+statement-deletion                 SDL         41       24         1  96.0%
+statement-replacement              STR          6        5         0 100.0%
+argument-replacement               ARP         13        6         5  54.5%
+method-call-replacement            MCR          5        3         0 100.0%
+side-effect-insertion              SEI         10        6         0 100.0%
+variable-replacement               VRO          2        2         0 100.0%
 ```
 
-The vocabulary is **closed**: the parser rejects an operator that is not on the
-list, so a typo or an invented name is a syntax error rather than a silent extra
-row, and `MutationScoreTest` fails if any declared operator has no mutant at all.
-Without both of those the table would be a tally of whatever words people wrote.
+(The `mutants` column counts the invalid ones too; `score` does not.)
 
-### What the table says
+### What killed them
 
-Read down the score column and the specifications sort themselves into two
-kinds of clause.
+Every kill is a failing **POST** assertion, an exception thrown by the mutant
+(e.g. `ARRAY_SUM_RUNS_PAST_END`: `Index 4 out of bounds`), or, once,
+a **PRE** check on library state (`LRU_EVICTS_MOST_RECENT`:
+`!C.containsKey(evictedKey)`). No mutant was killed by a SEQUENCE check, and
+none could be. The model lives in the test, not the library, so a mutant
+cannot move it. The model's job is the one shown above: calling out an
+incorrect test string before a suite is generated at all.
 
-**Caught almost always — the operators that change how much work happens.**
-`statement-deletion` (97.6%) and `side-effect-insertion` (100%) are at the top
-because nearly every spec in the set counts something: `size`, `writes`,
-`calls`, `events`, `edgeCount`, `nextId`. A deleted statement stops a counter
-moving and an inserted one moves a counter that should have stayed still, and a
-counter is exactly what an `\old(...)` clause compares. `condition-to-constant`
-and `conditional-operator-replacement` follow for the same reason: forcing a
-branch usually changes a count too.
+### The 18 survivors
 
-**Missed most often — the operators that change which value comes back.**
-`loop-bound-replacement` (25%), `relational-operator-replacement` (40%) and
-`argument-replacement` (53.8%) are at the bottom, and they fail together because
-they fail in the same way. A loop that runs one iteration too few still returns
-*a* number; a comparison flipped by one still returns *an* index; a call made
-with the wrong argument still returns *an element*. The specs constrain the
-**range** of an answer (`total >= 0`, `-1 <= position < size`, `powerValue > 0`)
-because the grammar has no quantifier with which to constrain its **value** — so
-every fault that lands inside the declared range walks through.
+Same groups as before. Each survivor's `note` in `mutations/*.mutants` says why.
 
-That is one finding, not fifteen: **this pipeline is good at catching faults in
-bookkeeping and bad at catching faults in answers**, and the reason is a missing
-quantifier rather than a missing test. It is also why `return-value-replacement`
-sits in the middle at 64%: a return value that is *state-bearing* (a hold id, an
-evicted key) is caught by the state clauses around it, and a return value that is
-merely *computed* is not caught at all.
+| Why it survives | Mutants |
+|---|---|
+| **The spec can't say it** (range clause, not the value) | `ARRAY_SUM_SKIPS_FIRST`, `ARRAY_INDEXOF_ALWAYS_FIRST`, `LIST_INDEXOF_NEVER_MATCHES`, `LIST_INDEXOF_NEVER_WALKS`, `MATH_GCD_IGNORES_FIRST_ARG`, `MATH_POWER_ADDS_INSTEAD`, `MATH_FACTORIAL_STOPS_EARLY` |
+| **The spec could say it and doesn't** | `STACK_POP_FROM_BOTTOM`, `QUEUE_ENQUEUE_AT_FRONT`, `LRU_RESTORE_LOSES_VALUE`, `HASHMAP_PUT_OLDVAL_FABRICATED` |
+| **The test string never asks** | `STACK_PUSH_AT_BOTTOM`, `STACK_PEEK_RETURNS_BOTTOM`, `HEAP_EXTRACT_NO_REFILL`, `GRAPH_ADDVERTEX_REDECLARES` |
+| **The precondition rules it out** | `BST_INSERT_TIES_GO_LEFT` (insert requires the key absent, so ties never happen) |
+| **Random inputs didn't hit it** (new, see below) | `LIST_INDEXOF_COUNTS_FROM_ONE`, `LRU_PUT_HIDES_EVICTION` |
 
-## Survivors are the finding
+### Where black-box random inputs differ from the old SPF run
 
-A survivor is not a defect in the runner.  It is a statement about what the spec
-and the test string, taken together, do not pin down.  The twenty-eight of them
-fall into groups, and the group a survivor is in says what it would take to kill
-it.  The three tables below name twenty of them; the eight added with the
-operator-coverage mutants belong to the same three groups — with one exception,
-which is a group of its own and is described after them.  Every survivor carries
-its own `note` in `mutations/*.mutants`.
+`run-mutations.sh` exits non-zero because 7 mutants now disagree with the
+`expect:` they were declared with under the SPF pipeline (plus the 38
+unsupported-library mutants, which were already reported as unrunnable before):
 
-### 1. The test string never asks
+| Mutant | Declared | Now | Why |
+|---|---|---|---|
+| `SET_CONTAINS_ALWAYS_TRUE` | survives | **killed** | random pool draws sometimes ask about an element never added |
+| `SET_REMOVE_CLEARS_EVERYTHING` | survives | **killed** | random draws add two *different* elements, so clearing both is visible |
+| `HASHMAP_REMOVE_CLEARS_MAP` | survives | **killed** | same: two different keys |
+| `GRAPH_HASEDGE_ALWAYS_TRUE` | survives | **killed** | random vertex names ask about an unjoined pair |
+| `MATH_POWER_ONE_TOO_FEW` | survives | **killed** | random large bases overflow differently with one fewer multiplication, flipping `powerValue > 0`. A real kill, but incidental. |
+| `LIST_INDEXOF_COUNTS_FROM_ONE` | killed | **survives** | a random `Integer` almost never equals a value already in the list, so `indexOf` answers `-1` either way |
+| `LRU_PUT_HIDES_EVICTION` | killed | **survives** | the random keys rarely fill the cache with three *distinct* keys, so the eviction this mutant hides seldom happens |
 
-Seven survive because the sequence is too short or too uniform to tell the fault
-apart from correct behaviour.  Every one of them dies against a longer test
-string, with no change to any `.spec` file.
+The first five are what random inputs buy you. The fixed checked-in values
+always reused one element or key; random draws vary them. The last two are
+what random inputs cost: a value that must *exactly* match earlier state
+(`indexOf` on a stored value, three distinct keys) is something a solver
+finds deliberately and a random draw only finds by luck. Pooling `Integer`
+values used with `List.contains`/`indexOf` would likely recover
+`LIST_INDEXOF_COUNTS_FROM_ONE`.
 
-| Mutant | What would kill it |
-| --- | --- |
-| `STACK_PUSH_AT_BOTTOM` | reorder `specs/Stack.tests` to `push -> push -> peek -> pop` (verified) |
-| `STACK_PEEK_RETURNS_BOTTOM` | the same reordering — peeking before the pop separates "top of the stack" from "end of the list" |
-| `HASHMAP_REMOVE_CLEARS_MAP` | a second, untouched key in `specs/HashMapLib.tests` |
-| `SET_REMOVE_CLEARS_EVERYTHING` | a second, different element — the two adds use the same one, so the set holds exactly one entry |
-| `SET_CONTAINS_ALWAYS_TRUE` | a lookup of an element that was never added |
-| `GRAPH_HASEDGE_ALWAYS_TRUE` | a third vertex, and a question about a pair that was never joined |
-| `HEAP_EXTRACT_NO_REFILL` | a second `extractMin`, which would find the hole the first one left |
+The `expect:` lines in `mutations/*.mutants` have **not** been edited. They
+still record the SPF-era expectations, so the table above is the diff.
 
-### 2. The spec could say it in this grammar, and does not
+## Results: generated mutants (`run-operator-suites.sh`)
 
-Six survive because a postcondition is weaker than it needs to be.  Each is
-fixable by writing one more conjunct — sometimes after giving the library one
-more derived field to name.
+OPERATOR_SUITES_PLACEHOLDER
 
-| Mutant | The clause that is missing |
-| --- | --- |
-| `STACK_POP_FROM_BOTTOM` | which element `pop` returned. `Queue.spec` writes exactly this clause — `dequeuedElem == \old(head)` — and `QUEUE_DEQUEUE_FROM_BACK`, the same fault, dies there. The two examples side by side are the clearest evidence in the set that a survivor is a property of the specification. |
-| `QUEUE_ENQUEUE_AT_FRONT` | which end `enqueue` writes to. `head` is re-derived from `Q[0]` after every call, so a queue filled backwards stays self-consistent; naming the other end needs a second derived field, as `head` itself is. |
-| `LRU_RESTORE_LOSES_VALUE` | `C.get(evictedKey) == value` in `restore`'s ensures. Nothing currently says the value comes back with the key. |
-| `TASKQUEUE_RESULT_IS_NULL` | what `Results[taskId]` holds, as opposed to that it exists. |
-| `TICKETSERVICE_HOLD_ID_FROM_SEAT_PRODUCT` | that a hold id is unique, or that it relates to `nextHoldId`. |
-| `HASHMAP_PUT_OLDVAL_FABRICATED` | nothing — this one is **deliberate**. `oldVal` is a nullable SERVER_OUTPUT the spec constrains on purpose not at all, and no generated assertion mentions it. This survivor is the evidence for Section 5's invariant 2. |
+## The mutation-set format
 
-### 3. The grammar cannot say it at all
-
-Seven need a richer specification *language*, not a longer test string or a
-sharper spec.  No sequence over this grammar catches them.
-
-| Mutant | What the grammar lacks |
-| --- | --- |
-| `ARRAY_SUM_SKIPS_FIRST` | a summing quantifier: `sum` can only be constrained by its range |
-| `ARRAY_INDEXOF_ALWAYS_FIRST` | a conditional — `A[position] == value` holds only when the value was found |
-| `LIST_INDEXOF_NEVER_MATCHES` | the same conditional, in the other direction: `-1` is inside the declared range |
-| `MATH_GCD_IGNORES_FIRST_ARG` | quantification over the divisors the answer beats. The spec says "divides both", and 1 divides everything |
-| `MATH_POWER_ONE_TOO_FEW` | an exponentiation operator: `powerValue > 0` is satisfied by 27 as well as by 81 |
-| `TASKQUEUE_ID_OFF_BY_ONE` | a way to pin down an auto-incrementing global — shifting `taskId` moves every block of the sequence together |
-| `TICKETSERVICE_ALLOCATES_WORST_SEATS` | any way to name an individual seat. "Find and hold the **best** available seats" is what the ticket-service problem is actually about, and every generated condition holds while the customer is given the worst seats in the house |
-
-### 4. The precondition already rules the fault out
-
-One survivor is in none of those groups.  `BST_INSERT_TIES_GO_LEFT` sends a key
-equal to the node's own key down the wrong branch — and `insert`'s precondition
-requires the key to be **absent**, so no two keys in the run are ever equal and
-the changed branch is never the one taken.  The mutant is unreachable rather than
-undetected.
-
-That is worth separating from the other three, because it is the bill for a
-choice made deliberately.  `BinarySearchTree.spec` narrows `insert`'s domain in
-order to buy an unconditional `size == \old(size) + 1`; the same narrowing puts
-the duplicate-key behaviour outside the contract, where the suite has nothing to
-say about it.  A stronger precondition always buys a stronger postcondition with
-exactly this currency.
-
-That, and `TICKETSERVICE_ALLOCATES_WORST_SEATS`, are the sharpest results in the
-table, and the reason the groups are worth separating: a score of 79.3% says
-nothing on its own, while "these need a better test string, these need a better
-spec, these need a better language, and this one is outside the contract by
-design" is an agenda.
-
-Making any of those changes is what `expect:` is for: the mutants would start
-dying, `MutationScoreTest` would fail on the stale declaration, and the score
-would only settle again once the improvement was written down.
-
-## Declaring what should happen
-
-Every mutant carries an expectation:
+One file per library in `genatc-mutation/mutations/`, named after it
+(`stack.mutants`). Each entry is a named block of `key: value` fields:
 
 ```
 mutant STACK_PUSH_AT_BOTTOM {
     description: push inserts at the bottom of the list instead of the top
-    operator:    call-argument-mutation
+    operator:    argument-replacement
     in:          push
     find:        S.add(elem);
     replace:     S.add(0, elem);
@@ -216,102 +281,25 @@ mutant STACK_PUSH_AT_BOTTOM {
 }
 ```
 
-`expect: killed` is the default and is left implicit.  `expect: survives`
-requires a `note` saying why — a survivor nobody explained is indistinguishable
-from a gap nobody noticed, so the parser rejects one without it.
-
-### The generated counterpart
-
-The sets described here are hand-written: a person chose each fault and declared
-what should happen to it. `operator-suites/` holds the other kind — every operator
-applied to every line that admits one, several hundred per library, declaring
-nothing and measuring instead. It also generates a family of test strings per
-library, which is what finally tests the claim so many of the notes below make:
-*"reorder the test string and this fault dies."* See [operator.md](operator.md).
-
-This is why `MutationScoreTest` checks the declaration rather than simply failing
-on every survivor.  A permanent block of red tests for known, documented gaps
-teaches people to ignore red.  Declaring them turns the file into a two-way
-regression check:
-
-* tighten a postcondition and a declared survivor starts dying — the test fails
-  until the declaration is updated, so the improvement is recorded;
-* weaken a postcondition and a mutant that used to die starts surviving — the
-  test fails too, so the regression cannot pass quietly.
-
-## The mutation-set format
-
-One file per library, named after it: `mutations/stack.mutants` is the set for
-the `stack` example.  Comments follow the same rules as `.spec` and `.tests`
-files.  Each entry is a named block of `key: value` fields, where the value is
-the rest of the line, trimmed — there is no terminating semicolon, because
-`find` and `replace` carry Java statements that already end in one.
-
 | Field | Meaning |
 | --- | --- |
 | `description` | Plain-English statement of the fault. Required. |
-| `operator` | Which kind of fault this is. Required, and must be one of the sixteen below. |
-| `in` | The method whose body is searched, so a line that appears in two methods stays unambiguous. |
-| `file` | Which source of a multi-class library to seed into. Defaults to the façade, `Helper.java`. |
-| `find` | The line to replace, compared with surrounding whitespace stripped. Required. |
-| `replace` | What replaces it. Empty deletes the line. Required — write it empty deliberately. |
+| `operator` | One of the 17 operators below. Required; the parser rejects anything else. |
+| `in` | The method whose body is searched. |
+| `file` | Which source of a multi-class library to mutate. Defaults to `Helper.java`. |
+| `find` | The single line to replace (whitespace-trimmed match). Must match exactly once inside `in`, otherwise the mutant is `INVALID`. |
+| `replace` | Its replacement; empty deletes the line. |
 | `expect` | `killed` (default) or `survives`. |
-| `note` | Why a declared survivor survives. Required when `expect: survives`. |
+| `note` | Why a declared survivor survives. Required with `expect: survives`. |
 
-### The operator vocabulary
+The operators (`MutationOperator.java`, classical Mothra set): AOR, AOI, ROR,
+COR, COI, UOI, ABS, CRP, CTC, LBR, RVR, SDL, STR, ARP, MCR, SEI, VRO.
 
-Seventeen operators, following the classical Mothra set, with the conventional
-abbreviation kept so the table above can be read next to the literature. The list
-lives in `MutationOperator.java` and the parser enforces it.
+Classification:
 
-| Operator | Abbr | What it does |
-| --- | --- | --- |
-| `arithmetic-operator-replacement` | AOR | one arithmetic operator becomes another: `+` for `-`, `*` for `/` |
-| `arithmetic-operator-insertion` | AOI | an operator appears where there was none: `x` becomes `x + 1` |
-| `relational-operator-replacement` | ROR | one comparison becomes another: `<` for `<=`, `==` for `!=` |
-| `conditional-operator-replacement` | COR | one connective becomes another: `&&` for `\|\|` |
-| `conditional-operator-insertion` | COI | a branch condition is negated |
-| `unary-operator-insertion` | UOI | a unary operator appears: `x` becomes `-x` |
-| `absolute-value-insertion` | ABS | a value is forced through an absolute value or a sign flip |
-| `constant-replacement` | CRP | a literal becomes a different literal |
-| `condition-to-constant` | CTC | a guard becomes `true` or `false`, so a branch always or never runs |
-| `loop-bound-replacement` | LBR | a loop's start or end bound moves by one |
-| `return-value-replacement` | RVR | a method returns a different value |
-| `statement-deletion` | SDL | one statement is removed |
-| `statement-replacement` | STR | one statement becomes a different one |
-| `argument-replacement` | ARP | a call is made with a different argument |
-| `method-call-replacement` | MCR | a different method is called |
-| `side-effect-insertion` | SEI | a read-only method is given a write |
-| `variable-replacement` | VRO | one field becomes another of the same declared type |
-
-### Seeding a fault into a collaborator
-
-A library that is several classes needs one more field. `file` names the source to
-mutate; without it the fault goes into the façade, which is the only class the
-generated ATC ever calls — and the interesting question for a multi-class library
-is whether a spec written at the façade still catches a fault one or two classes
-further in:
-
-```
-mutant AUDIT_RECORD_NOT_COUNTED {
-    description: the trail is appended to but the event counter never moves
-    operator:    statement-deletion
-    file:        Audit.java
-    in:          record
-    find:        events = events + 1;
-    replace:
-}
-```
-
-`Audit` is two calls from the façade — `Helper` never mentions it, only `Ledger`
-does — and the mutant dies on `events == \old(events) + 1`, a clause written
-against `Helper`. Every source of the library is copied into the mutant's sandbox
-so it still compiles as the library it is; exactly one of them is rewritten on the
-way in, and a `file` that names no source of that library is an `INVALID` mutant
-rather than a silent fallback to the façade.
-
-A mutant is kept to a single line on purpose.  A fault that changes several
-things at once tells you nothing about which change was caught, and `find` must
-match exactly one line inside `in` — zero or several matches make the mutant
-`INVALID` rather than approximately applied, so a mutation set cannot silently
-drift away from the library it describes.
+- **KILLED**: any generated assertion (SEQUENCE / PRE / POST) fails, the
+  library throws, or a test hits its 2 s timeout.
+- **SURVIVED**: the whole generated suite still passes against the mutant.
+- **INVALID**: the mutant could not be seeded, the mutated library doesn't
+  compile, or the library has no passing baseline suite. Invalid mutants are
+  excluded from the score.

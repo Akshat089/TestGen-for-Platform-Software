@@ -1,9 +1,3 @@
 test LinkedlistGenerated211 {
-    sequence: removeFirst -> addLast -> addFirst -> indexOf;
-
-    inputs {
-        addLast[1].value = 0;
-        addFirst[2].value = 2;
-        indexOf[3].value = 20;
-    }
+    sequence: addFirst -> addLast -> indexOf -> indexOf -> removeFirst -> removeFirst;
 }

@@ -1,6 +1,0 @@
-test QueueGenerated229 {
-    sequence: isEmpty -> front -> front -> dequeue;
-
-    inputs {
-    }
-}

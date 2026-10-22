@@ -1,0 +1,3 @@
+test LrucacheGenerated64 {
+    sequence: restore -> restore -> get;
+}

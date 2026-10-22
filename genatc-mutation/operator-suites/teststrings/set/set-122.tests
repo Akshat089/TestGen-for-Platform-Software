@@ -1,8 +1,3 @@
 test SetGenerated122 {
-    sequence: remove -> add;
-
-    inputs {
-        remove[0].elem = "gamma";
-        add[1].elem = "beta";
-    }
+    sequence: add -> add -> remove -> remove;
 }

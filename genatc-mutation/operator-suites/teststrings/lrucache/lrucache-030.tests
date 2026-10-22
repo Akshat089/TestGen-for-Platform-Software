@@ -1,0 +1,3 @@
+test LrucacheGenerated30 {
+    sequence: restore -> get -> put -> restore -> put -> put;
+}

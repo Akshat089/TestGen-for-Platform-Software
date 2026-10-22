@@ -1,0 +1,262 @@
+# generated test strings — heap
+# name	status	tests_generated	sequence
+heap-001	PASSED	10	insert -> insert -> insert -> peekMin
+heap-002	PASSED	10	insert -> extractMin -> insert -> peekMin -> insert
+heap-003	PASSED	10	insert -> insert -> insert -> insert -> peekMin -> extractMin
+heap-004	PASSED	10	insert -> insert
+heap-005	PASSED	10	insert -> insert -> peekMin -> extractMin
+heap-006	STOPPED	0	extractMin -> insert -> extractMin -> insert
+heap-007	STOPPED	0	peekMin -> insert
+heap-008	STOPPED	0	insert -> extractMin -> extractMin
+heap-009	PASSED	10	insert -> insert -> extractMin -> peekMin -> insert
+heap-010	PASSED	10	insert -> peekMin -> extractMin
+heap-011	STOPPED	0	peekMin -> insert -> insert -> insert
+heap-012	PASSED	10	insert -> insert -> insert -> extractMin
+heap-013	STOPPED	0	extractMin -> extractMin -> extractMin -> peekMin -> extractMin
+heap-014	STOPPED	0	peekMin -> insert -> insert -> insert -> extractMin
+heap-015	STOPPED	0	peekMin -> extractMin
+heap-016	PASSED	10	insert -> insert -> peekMin -> extractMin -> extractMin
+heap-017	STOPPED	0	peekMin -> insert -> insert -> extractMin -> insert
+heap-018	PASSED	10	insert -> insert -> extractMin -> peekMin -> extractMin -> insert
+heap-019	PASSED	10	insert -> insert -> insert -> insert -> extractMin
+heap-020	STOPPED	0	peekMin -> extractMin -> peekMin -> peekMin -> peekMin -> insert -> extractMin
+heap-021	PASSED	10	insert -> extractMin -> insert -> insert -> extractMin -> peekMin
+heap-022	PASSED	10	insert -> insert -> insert -> peekMin -> peekMin -> extractMin
+heap-023	STOPPED	0	peekMin -> insert -> insert -> insert -> peekMin
+heap-024	PASSED	10	insert -> insert -> insert -> insert -> peekMin -> peekMin -> extractMin
+heap-025	STOPPED	0	peekMin -> insert -> peekMin -> insert -> extractMin
+heap-026	PASSED	10	insert -> insert -> insert -> peekMin -> peekMin -> peekMin -> extractMin
+heap-027	PASSED	10	insert -> insert -> insert -> peekMin -> extractMin -> extractMin
+heap-028	PASSED	10	insert -> insert -> insert -> extractMin -> peekMin -> insert
+heap-029	STOPPED	0	insert -> insert -> extractMin -> extractMin -> extractMin -> peekMin -> insert
+heap-030	PASSED	10	insert -> insert -> insert -> peekMin -> insert -> extractMin
+heap-031	STOPPED	0	extractMin -> extractMin -> insert -> peekMin -> extractMin
+heap-032	PASSED	10	insert -> insert -> insert -> peekMin -> peekMin
+heap-033	PASSED	10	insert -> insert -> peekMin -> peekMin -> extractMin
+heap-034	PASSED	10	insert -> insert -> insert
+heap-035	PASSED	10	insert -> insert -> insert -> insert -> peekMin
+heap-036	STOPPED	0	extractMin -> insert -> insert -> peekMin
+heap-037	PASSED	10	insert -> insert -> insert -> peekMin -> extractMin
+heap-038	PASSED	10	insert -> insert -> insert -> extractMin -> peekMin -> peekMin -> extractMin
+heap-039	PASSED	10	insert -> insert -> insert -> peekMin -> extractMin -> peekMin
+heap-040	PASSED	10	insert -> insert -> insert -> insert -> peekMin -> extractMin -> extractMin
+heap-041	PASSED	10	insert -> extractMin -> insert -> insert -> peekMin -> peekMin
+heap-042	STOPPED	0	peekMin -> peekMin
+heap-043	PASSED	10	insert -> insert -> insert -> insert -> insert -> peekMin -> extractMin
+heap-044	STOPPED	0	peekMin -> peekMin -> extractMin -> peekMin -> extractMin
+heap-045	PASSED	10	insert -> insert -> insert -> extractMin -> peekMin -> peekMin
+heap-046	STOPPED	0	extractMin -> insert -> extractMin -> extractMin
+heap-047	STOPPED	0	extractMin -> insert -> insert -> insert
+heap-048	STOPPED	0	extractMin -> insert -> insert -> peekMin -> extractMin -> insert
+heap-049	PASSED	10	insert -> insert -> extractMin -> insert
+heap-050	PASSED	10	insert -> insert -> peekMin -> insert -> insert -> peekMin -> extractMin
+heap-051	STOPPED	0	peekMin -> extractMin -> insert -> peekMin -> extractMin
+heap-052	STOPPED	0	peekMin -> extractMin -> extractMin -> extractMin -> insert
+heap-053	PASSED	10	insert -> peekMin -> insert -> peekMin -> peekMin -> extractMin
+heap-054	STOPPED	0	extractMin -> insert -> insert -> peekMin -> peekMin -> insert
+heap-055	PASSED	10	insert -> insert -> peekMin -> insert -> peekMin -> extractMin
+heap-056	STOPPED	0	peekMin -> peekMin -> insert -> peekMin -> peekMin -> extractMin -> extractMin
+heap-057	STOPPED	0	extractMin -> extractMin -> insert -> insert -> insert -> extractMin -> insert
+heap-058	STOPPED	0	peekMin -> extractMin -> extractMin -> peekMin -> peekMin -> extractMin
+heap-059	STOPPED	0	insert -> extractMin -> extractMin -> insert -> extractMin -> insert -> peekMin
+heap-060	PASSED	10	insert -> insert -> insert -> peekMin -> insert -> extractMin -> extractMin
+heap-061	STOPPED	0	peekMin -> insert -> insert -> insert -> insert -> extractMin
+heap-062	STOPPED	0	insert -> peekMin -> peekMin -> extractMin -> extractMin -> insert -> extractMin
+heap-063	PASSED	10	insert -> insert -> insert -> extractMin -> peekMin -> extractMin
+heap-064	PASSED	10	insert -> extractMin -> insert -> peekMin -> extractMin -> insert
+heap-065	PASSED	10	insert -> insert -> extractMin -> insert -> peekMin -> extractMin
+heap-066	STOPPED	0	peekMin -> peekMin -> insert -> insert -> insert
+heap-067	PASSED	10	insert -> extractMin -> insert -> insert -> peekMin -> extractMin
+heap-068	PASSED	10	insert -> insert -> extractMin -> peekMin -> insert -> extractMin
+heap-069	STOPPED	0	peekMin -> insert -> insert -> peekMin -> extractMin
+heap-070	PASSED	10	insert -> peekMin -> insert -> insert -> extractMin -> extractMin
+heap-071	STOPPED	0	extractMin -> extractMin -> peekMin -> insert -> insert -> insert
+heap-072	PASSED	10	insert -> insert -> insert -> insert -> extractMin -> insert -> peekMin
+heap-073	STOPPED	0	insert -> extractMin -> peekMin -> insert -> peekMin -> insert
+heap-074	PASSED	10	insert -> extractMin -> insert
+heap-075	STOPPED	0	extractMin -> insert -> insert -> insert -> peekMin -> insert
+heap-076	STOPPED	0	peekMin -> insert -> extractMin -> insert
+heap-077	STOPPED	0	peekMin -> insert -> insert -> insert -> peekMin -> extractMin
+heap-078	PASSED	10	insert -> extractMin -> insert -> insert -> peekMin
+heap-079	PASSED	10	insert -> peekMin -> insert -> insert -> peekMin -> insert -> extractMin
+heap-080	STOPPED	0	insert -> peekMin -> peekMin -> peekMin -> extractMin -> peekMin -> insert
+heap-081	STOPPED	0	extractMin -> extractMin -> insert -> insert -> peekMin -> insert
+heap-082	PASSED	10	insert -> insert -> extractMin -> insert -> peekMin -> insert
+heap-083	PASSED	10	insert -> insert -> peekMin -> insert -> insert -> extractMin
+heap-084	STOPPED	0	peekMin -> insert -> insert -> extractMin
+heap-085	PASSED	10	insert -> insert -> peekMin -> insert
+heap-086	STOPPED	0	peekMin -> peekMin -> extractMin -> insert -> extractMin -> insert
+heap-087	PASSED	10	insert -> extractMin -> insert -> peekMin -> extractMin
+heap-088	STOPPED	0	extractMin -> peekMin -> peekMin
+heap-089	STOPPED	0	peekMin -> insert -> insert -> extractMin -> peekMin
+heap-090	STOPPED	0	peekMin -> insert -> insert -> extractMin -> insert -> extractMin
+heap-091	STOPPED	0	peekMin -> insert -> insert -> insert -> insert -> peekMin -> extractMin
+heap-092	STOPPED	0	extractMin -> peekMin -> insert -> insert -> insert
+heap-093	STOPPED	0	insert -> peekMin -> peekMin -> extractMin -> insert -> extractMin -> peekMin
+heap-094	PASSED	10	insert -> insert -> insert -> peekMin -> peekMin -> insert -> extractMin
+heap-095	PASSED	10	insert -> insert -> peekMin -> insert -> peekMin
+heap-096	STOPPED	0	extractMin -> peekMin -> insert -> insert -> insert -> extractMin
+heap-097	STOPPED	0	extractMin -> peekMin -> extractMin -> extractMin
+heap-098	PASSED	10	insert -> extractMin -> insert -> insert -> insert -> extractMin
+heap-099	STOPPED	0	peekMin -> extractMin -> peekMin -> insert -> peekMin
+heap-100	STOPPED	0	extractMin -> insert -> insert -> peekMin -> peekMin -> insert -> insert
+heap-101	PASSED	10	insert -> peekMin -> peekMin -> insert
+heap-102	STOPPED	0	insert -> extractMin -> insert -> extractMin -> peekMin -> extractMin -> peekMin
+heap-103	PASSED	10	insert -> peekMin -> insert -> insert -> peekMin
+heap-104	PASSED	10	insert -> peekMin
+heap-105	STOPPED	0	peekMin -> peekMin -> peekMin -> insert -> insert -> peekMin -> extractMin
+heap-106	PASSED	10	insert -> insert -> insert -> insert -> insert -> extractMin
+heap-107	PASSED	10	insert -> peekMin -> insert -> insert -> extractMin
+heap-108	PASSED	10	insert -> insert -> extractMin -> insert -> peekMin -> extractMin -> extractMin
+heap-109	PASSED	10	insert -> peekMin -> insert -> insert -> insert -> insert -> extractMin
+heap-110	STOPPED	0	extractMin -> insert -> insert
+heap-111	STOPPED	0	peekMin -> insert -> extractMin -> peekMin -> peekMin -> extractMin
+heap-112	PASSED	10	insert -> insert -> insert -> peekMin -> extractMin -> extractMin -> extractMin
+heap-113	STOPPED	0	extractMin -> insert -> insert -> insert -> peekMin -> extractMin
+heap-114	PASSED	10	insert -> insert -> extractMin -> insert -> peekMin -> peekMin -> extractMin
+heap-115	STOPPED	0	insert -> peekMin -> extractMin -> insert -> extractMin -> extractMin -> insert
+heap-116	PASSED	10	insert -> peekMin -> insert -> extractMin -> extractMin
+heap-117	PASSED	10	insert -> extractMin -> insert -> insert -> peekMin -> insert
+heap-118	PASSED	10	insert -> insert -> peekMin -> peekMin -> insert -> peekMin -> extractMin
+heap-119	STOPPED	0	peekMin -> peekMin -> peekMin -> peekMin -> extractMin -> extractMin -> insert
+heap-120	STOPPED	0	extractMin -> peekMin -> extractMin -> insert -> insert
+heap-121	PASSED	10	insert -> extractMin -> insert -> insert -> insert -> insert -> peekMin
+heap-122	PASSED	10	insert -> insert -> peekMin -> insert -> peekMin -> extractMin -> extractMin
+heap-123	STOPPED	0	extractMin -> extractMin -> insert -> insert -> peekMin -> extractMin
+heap-124	STOPPED	0	peekMin -> insert -> insert -> peekMin -> peekMin -> peekMin -> extractMin
+heap-125	STOPPED	0	extractMin -> extractMin -> peekMin -> insert -> insert -> peekMin -> extractMin
+heap-126	PASSED	10	insert -> insert -> extractMin -> extractMin -> insert -> extractMin
+heap-127	PASSED	10	insert -> insert -> extractMin -> extractMin -> insert -> peekMin
+heap-128	STOPPED	0	insert -> peekMin -> insert -> extractMin -> extractMin -> peekMin
+heap-129	STOPPED	0	peekMin -> insert -> peekMin -> peekMin -> peekMin
+heap-130	STOPPED	0	peekMin -> insert -> peekMin -> insert -> extractMin -> extractMin -> extractMin
+heap-131	STOPPED	0	extractMin -> extractMin
+heap-132	STOPPED	0	extractMin -> insert -> insert -> extractMin -> insert -> peekMin
+heap-133	STOPPED	0	extractMin -> insert
+heap-134	STOPPED	0	extractMin -> extractMin -> extractMin -> insert
+heap-135	STOPPED	0	peekMin -> insert -> peekMin -> peekMin
+heap-136	STOPPED	0	peekMin -> peekMin -> peekMin
+heap-137	STOPPED	0	insert -> extractMin -> extractMin -> insert -> peekMin -> insert
+heap-138	STOPPED	0	peekMin -> insert -> insert -> insert -> extractMin -> extractMin
+heap-139	PASSED	10	insert -> insert -> peekMin -> insert -> extractMin
+heap-140	PASSED	10	insert -> extractMin
+heap-141	PASSED	10	insert -> insert -> insert -> extractMin -> peekMin
+heap-142	STOPPED	0	insert -> peekMin -> peekMin -> extractMin -> extractMin -> peekMin
+heap-143	STOPPED	0	insert -> peekMin -> peekMin -> extractMin -> insert -> extractMin -> extractMin
+heap-144	STOPPED	0	insert -> extractMin -> extractMin -> peekMin -> peekMin -> insert -> peekMin
+heap-145	STOPPED	0	peekMin -> peekMin -> insert
+heap-146	STOPPED	0	peekMin -> peekMin -> peekMin -> extractMin
+heap-147	PASSED	10	insert -> extractMin -> insert -> insert -> insert -> peekMin -> extractMin
+heap-148	STOPPED	0	insert -> extractMin -> peekMin -> insert
+heap-149	STOPPED	0	peekMin -> extractMin -> extractMin
+heap-150	PASSED	10	insert -> peekMin -> insert -> extractMin -> peekMin
+heap-151	STOPPED	0	extractMin -> peekMin -> extractMin -> peekMin -> peekMin -> extractMin -> extractMin
+heap-152	STOPPED	0	peekMin -> insert -> insert -> insert -> insert -> extractMin -> extractMin
+heap-153	STOPPED	0	extractMin -> peekMin -> peekMin -> peekMin
+heap-154	STOPPED	0	extractMin -> peekMin -> insert -> insert
+heap-155	STOPPED	0	peekMin -> insert -> insert -> extractMin -> extractMin -> extractMin
+heap-156	PASSED	10	insert -> extractMin -> insert -> extractMin
+heap-157	STOPPED	0	extractMin -> extractMin -> insert
+heap-158	PASSED	10	insert -> insert -> insert -> extractMin -> extractMin
+heap-159	PASSED	10	insert -> insert -> peekMin -> peekMin -> extractMin -> peekMin -> insert
+heap-160	PASSED	10	insert -> insert -> peekMin
+heap-161	STOPPED	0	peekMin -> peekMin -> insert -> extractMin -> peekMin -> peekMin
+heap-162	STOPPED	0	insert -> peekMin -> extractMin -> peekMin -> extractMin -> peekMin
+heap-163	STOPPED	0	extractMin -> insert -> insert -> insert -> peekMin -> peekMin -> extractMin
+heap-164	STOPPED	0	extractMin -> insert -> extractMin -> peekMin -> extractMin -> extractMin -> extractMin
+heap-165	STOPPED	0	peekMin -> peekMin -> extractMin -> peekMin -> extractMin -> peekMin
+heap-166	STOPPED	0	insert -> peekMin -> extractMin -> extractMin
+heap-167	STOPPED	0	extractMin -> peekMin -> peekMin -> extractMin -> insert -> extractMin -> peekMin
+heap-168	PASSED	10	insert -> extractMin -> insert -> insert -> extractMin
+heap-169	STOPPED	0	extractMin -> insert -> insert -> peekMin -> insert -> insert
+heap-170	STOPPED	0	extractMin -> peekMin -> peekMin -> extractMin -> insert
+heap-171	PASSED	10	insert -> insert -> insert -> insert -> insert -> peekMin
+heap-172	PASSED	10	insert -> insert -> insert -> peekMin -> peekMin -> extractMin -> extractMin
+heap-173	PASSED	10	insert -> peekMin -> extractMin -> insert -> insert -> extractMin
+heap-174	PASSED	10	insert -> insert -> insert -> extractMin -> insert
+heap-175	STOPPED	0	peekMin -> extractMin -> insert -> peekMin -> insert
+heap-176	PASSED	10	insert -> insert -> insert -> extractMin -> insert -> peekMin
+heap-177	STOPPED	0	peekMin -> insert -> insert -> extractMin -> peekMin -> insert -> extractMin
+heap-178	STOPPED	0	extractMin -> insert -> peekMin -> insert -> insert -> peekMin -> extractMin
+heap-179	STOPPED	0	peekMin -> peekMin -> extractMin -> extractMin -> peekMin -> peekMin -> extractMin
+heap-180	STOPPED	0	extractMin -> insert -> extractMin -> peekMin -> peekMin
+heap-181	PASSED	10	insert -> extractMin -> insert -> insert -> insert -> peekMin -> insert
+heap-182	PASSED	10	insert -> insert -> insert -> insert -> peekMin -> peekMin
+heap-183	PASSED	10	insert -> insert -> insert -> insert -> extractMin -> peekMin -> extractMin
+heap-184	STOPPED	0	extractMin -> insert -> peekMin
+heap-185	STOPPED	0	extractMin -> insert -> peekMin -> extractMin -> insert
+heap-186	STOPPED	0	peekMin -> peekMin -> insert -> extractMin -> extractMin
+heap-187	STOPPED	0	extractMin -> insert -> extractMin
+heap-188	PASSED	10	insert -> insert -> insert -> extractMin -> extractMin -> peekMin
+heap-189	PASSED	10	insert -> peekMin -> extractMin -> insert
+heap-190	PASSED	10	insert -> insert -> insert -> peekMin -> insert -> peekMin -> extractMin
+heap-191	STOPPED	0	insert -> insert -> peekMin -> extractMin -> extractMin -> extractMin
+heap-192	PASSED	10	insert -> extractMin -> insert -> peekMin -> peekMin
+heap-193	PASSED	10	insert -> insert -> insert -> insert -> extractMin -> peekMin
+heap-194	STOPPED	0	peekMin -> extractMin -> extractMin -> peekMin -> insert
+heap-195	PASSED	10	insert -> insert -> peekMin -> peekMin -> insert
+heap-196	STOPPED	0	peekMin -> extractMin -> insert -> peekMin -> peekMin
+heap-197	STOPPED	0	insert -> extractMin -> insert -> extractMin -> extractMin
+heap-198	PASSED	10	insert -> insert -> insert -> insert -> extractMin -> peekMin -> insert
+heap-199	STOPPED	0	peekMin -> extractMin -> extractMin -> peekMin -> extractMin -> extractMin
+heap-200	PASSED	10	insert -> peekMin -> insert -> insert -> insert -> extractMin -> peekMin
+heap-201	STOPPED	0	insert -> extractMin -> peekMin -> extractMin
+heap-202	STOPPED	0	peekMin -> extractMin -> peekMin -> extractMin -> insert -> extractMin -> peekMin
+heap-203	PASSED	10	insert -> peekMin -> insert -> extractMin
+heap-204	STOPPED	0	peekMin -> extractMin -> insert -> insert -> peekMin -> extractMin
+heap-205	STOPPED	0	extractMin -> insert -> insert -> insert -> insert -> extractMin
+heap-206	STOPPED	0	extractMin -> insert -> peekMin -> extractMin -> peekMin -> extractMin
+heap-207	STOPPED	0	extractMin -> peekMin
+heap-208	STOPPED	0	extractMin -> insert -> insert -> insert -> insert -> peekMin -> extractMin
+heap-209	STOPPED	0	insert -> extractMin -> extractMin -> insert -> peekMin
+heap-210	STOPPED	0	extractMin -> extractMin -> peekMin
+heap-211	STOPPED	0	extractMin -> extractMin -> insert -> insert -> insert -> peekMin -> extractMin
+heap-212	PASSED	10	insert -> peekMin -> insert -> insert -> insert -> extractMin -> extractMin
+heap-213	STOPPED	0	insert -> extractMin -> peekMin -> peekMin -> extractMin
+heap-214	PASSED	10	insert -> extractMin -> insert -> peekMin -> peekMin -> insert
+heap-215	PASSED	10	insert -> peekMin -> insert -> peekMin -> insert -> peekMin -> extractMin
+heap-216	STOPPED	0	peekMin -> peekMin -> insert -> peekMin -> extractMin -> insert -> extractMin
+heap-217	STOPPED	0	peekMin -> extractMin -> extractMin -> insert -> peekMin -> insert -> peekMin
+heap-218	STOPPED	0	peekMin -> insert -> extractMin -> extractMin -> peekMin
+heap-219	STOPPED	0	insert -> insert -> extractMin -> peekMin -> extractMin -> extractMin -> insert
+heap-220	PASSED	10	insert -> peekMin -> peekMin -> insert -> extractMin
+heap-221	STOPPED	0	insert -> extractMin -> peekMin -> insert -> insert
+heap-222	STOPPED	0	extractMin -> insert -> insert -> peekMin -> insert -> extractMin -> extractMin
+heap-223	PASSED	10	insert -> peekMin -> insert -> peekMin -> insert
+heap-224	PASSED	10	insert -> insert -> insert -> insert -> peekMin -> insert -> extractMin
+heap-225	STOPPED	0	peekMin -> extractMin -> insert -> peekMin -> peekMin -> peekMin
+heap-226	STOPPED	0	insert -> extractMin -> extractMin -> extractMin -> peekMin -> peekMin
+heap-227	PASSED	10	insert -> insert -> peekMin -> peekMin -> insert -> extractMin
+heap-228	STOPPED	0	insert -> extractMin -> extractMin -> insert -> insert -> peekMin
+heap-229	PASSED	10	insert -> insert -> insert -> extractMin -> peekMin -> extractMin -> extractMin
+heap-230	STOPPED	0	peekMin -> extractMin -> extractMin -> extractMin -> insert -> extractMin -> peekMin
+heap-231	STOPPED	0	extractMin -> extractMin -> extractMin
+heap-232	STOPPED	0	insert -> extractMin -> extractMin -> insert -> insert -> peekMin -> extractMin
+heap-233	PASSED	10	insert -> insert -> extractMin -> peekMin -> peekMin -> extractMin
+heap-234	PASSED	10	insert -> extractMin -> insert -> insert
+heap-235	STOPPED	0	extractMin -> extractMin -> peekMin -> extractMin -> insert
+heap-236	STOPPED	0	peekMin -> insert -> insert -> peekMin -> insert
+heap-237	STOPPED	0	peekMin -> insert -> insert -> extractMin -> extractMin -> insert
+heap-238	PASSED	10	insert -> peekMin -> insert -> extractMin -> insert -> extractMin
+heap-239	PASSED	10	insert -> insert -> extractMin -> insert -> insert -> peekMin -> extractMin
+heap-240	PASSED	10	insert -> peekMin -> insert -> insert -> insert -> peekMin -> extractMin
+heap-241	STOPPED	0	peekMin -> extractMin -> peekMin -> insert -> extractMin -> peekMin -> peekMin
+heap-242	STOPPED	0	extractMin -> insert -> insert -> insert -> extractMin -> peekMin -> peekMin
+heap-243	STOPPED	0	peekMin -> extractMin -> insert
+heap-244	STOPPED	0	insert -> extractMin -> peekMin -> extractMin -> extractMin
+heap-245	STOPPED	0	insert -> peekMin -> extractMin -> extractMin -> extractMin
+heap-246	STOPPED	0	peekMin -> insert -> extractMin -> extractMin
+heap-247	PASSED	10	insert -> insert -> extractMin -> peekMin
+heap-248	PASSED	10	insert -> insert -> extractMin -> insert -> peekMin
+heap-249	STOPPED	0	extractMin -> peekMin -> insert -> extractMin -> peekMin -> extractMin
+heap-250	STOPPED	0	extractMin -> peekMin -> extractMin -> extractMin -> insert -> insert
+heap-251	PASSED	10	insert -> peekMin -> peekMin -> insert -> insert -> extractMin
+heap-252	STOPPED	0	peekMin -> insert -> peekMin -> insert -> insert -> peekMin -> insert
+heap-253	PASSED	10	insert -> insert -> peekMin -> peekMin -> peekMin -> extractMin
+heap-254	PASSED	10	insert -> peekMin -> insert -> insert -> insert -> extractMin
+heap-255	PASSED	10	insert -> insert -> peekMin -> peekMin -> extractMin -> extractMin
+heap-256	PASSED	10	insert -> extractMin -> insert -> insert -> peekMin -> extractMin -> extractMin
+heap-257	STOPPED	0	peekMin -> extractMin -> peekMin -> extractMin -> extractMin -> insert
+heap-258	STOPPED	0	peekMin -> peekMin -> peekMin -> insert
+heap-259	STOPPED	0	extractMin -> insert -> peekMin -> extractMin
+heap-260	STOPPED	0	peekMin -> extractMin -> extractMin -> peekMin -> peekMin -> insert

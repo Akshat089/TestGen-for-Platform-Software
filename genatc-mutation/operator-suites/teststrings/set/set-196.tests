@@ -1,9 +1,0 @@
-test SetGenerated196 {
-    sequence: add -> add -> remove;
-
-    inputs {
-        add[0].elem = "alpha";
-        add[1].elem = "gamma";
-        remove[2].elem = "alpha";
-    }
-}

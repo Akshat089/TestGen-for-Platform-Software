@@ -1,0 +1,72 @@
+# generated mutants — graph
+# id	status	operator	method	file	killed-by-family	detail
+GRAPH_GEN_SDL_1	INVALID	statement-deletion	-	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/GRAPH_GEN_SDL_1/run/in/ac/iiitb/plproject/atc/generated/GeneratedATCsTest.java:24: error: cannot find symbol
+GRAPH_GEN_SEI_2	INVALID	side-effect-insertion	-	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/GRAPH_GEN_SEI_2/run/in/ac/iiitb/plproject/atc/generated/Helper.java:30: error: <identifier> expected
+GRAPH_GEN_SDL_3	INVALID	statement-deletion	-	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/GRAPH_GEN_SDL_3/run/in/ac/iiitb/plproject/atc/generated/GeneratedATCsTest.java:42: error: cannot find symbol
+GRAPH_GEN_SEI_4	INVALID	side-effect-insertion	-	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/GRAPH_GEN_SEI_4/run/in/ac/iiitb/plproject/atc/generated/Helper.java:31: error: <identifier> expected
+GRAPH_GEN_CRP_5	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+GRAPH_GEN_CRP_6	SURVIVED	constant-replacement	-	Helper.java	-	every generated assertion still holds
+GRAPH_GEN_COI_7	KILLED	conditional-operator-insertion	addVertex	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addVertex: V.contains(name)
+GRAPH_GEN_UOI_8	KILLED	unary-operator-insertion	addVertex	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addVertex: V.contains(name)
+GRAPH_GEN_CTC_9	SURVIVED	condition-to-constant	addVertex	Helper.java	-	every generated assertion still holds
+GRAPH_GEN_CTC_10	KILLED	condition-to-constant	addVertex	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addVertex: V.contains(name)
+GRAPH_GEN_ARP_11	SURVIVED	argument-replacement	addVertex	Helper.java	-	every generated assertion still holds
+GRAPH_GEN_ARP_12	INVALID	argument-replacement	addVertex	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/GRAPH_GEN_ARP_12/run/in/ac/iiitb/plproject/atc/generated/Helper.java:36: error: bad operand types for binary operator '-'
+GRAPH_GEN_SDL_13	KILLED	statement-deletion	addVertex	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addVertex: V.contains(name)
+GRAPH_GEN_STR_14	SURVIVED	statement-replacement	addVertex	Helper.java	-	every generated assertion still holds
+GRAPH_GEN_ARP_15	KILLED	argument-replacement	addVertex	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addVertex: V.contains(name)
+GRAPH_GEN_ARP_16	INVALID	argument-replacement	addVertex	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/GRAPH_GEN_ARP_16/run/in/ac/iiitb/plproject/atc/generated/Helper.java:37: error: bad operand types for binary operator '-'
+GRAPH_GEN_MCR_17	KILLED	method-call-replacement	addVertex	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addVertex: V.contains(name)
+GRAPH_GEN_SEI_18	KILLED	side-effect-insertion	addVertex	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addVertex: edgeCount == \old(edgeCount)
+GRAPH_GEN_SDL_19	KILLED	statement-deletion	addVertex	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): null
+GRAPH_GEN_STR_20	SURVIVED	statement-replacement	addVertex	Helper.java	-	every generated assertion still holds
+GRAPH_GEN_MCR_21	SURVIVED	method-call-replacement	addVertex	Helper.java	-	every generated assertion still holds
+GRAPH_GEN_SEI_22	KILLED	side-effect-insertion	addVertex	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addVertex: edgeCount == \old(edgeCount)
+GRAPH_GEN_SDL_23	KILLED	statement-deletion	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: Adj.get(from).contains(to)
+GRAPH_GEN_STR_24	SURVIVED	statement-replacement	addEdge	Helper.java	-	every generated assertion still holds
+GRAPH_GEN_ARP_25	KILLED	argument-replacement	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): null
+GRAPH_GEN_ARP_26	INVALID	argument-replacement	addEdge	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/GRAPH_GEN_ARP_26/run/in/ac/iiitb/plproject/atc/generated/Helper.java:44: error: bad operand types for binary operator '-'
+GRAPH_GEN_ARP_27	KILLED	argument-replacement	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: Adj.get(from).contains(to)
+GRAPH_GEN_ARP_28	INVALID	argument-replacement	addEdge	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/GRAPH_GEN_ARP_28/run/in/ac/iiitb/plproject/atc/generated/Helper.java:44: error: bad operand types for binary operator '-'
+GRAPH_GEN_MCR_29	KILLED	method-call-replacement	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: Adj.get(from).contains(to)
+GRAPH_GEN_MCR_30	KILLED	method-call-replacement	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): null
+GRAPH_GEN_SEI_31	KILLED	side-effect-insertion	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_SDL_32	KILLED	statement-deletion	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: Adj.get(to).contains(from)
+GRAPH_GEN_STR_33	SURVIVED	statement-replacement	addEdge	Helper.java	-	every generated assertion still holds
+GRAPH_GEN_ARP_34	KILLED	argument-replacement	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): null
+GRAPH_GEN_ARP_35	INVALID	argument-replacement	addEdge	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/GRAPH_GEN_ARP_35/run/in/ac/iiitb/plproject/atc/generated/Helper.java:45: error: bad operand types for binary operator '-'
+GRAPH_GEN_ARP_36	KILLED	argument-replacement	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: Adj.get(to).contains(from)
+GRAPH_GEN_ARP_37	INVALID	argument-replacement	addEdge	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/GRAPH_GEN_ARP_37/run/in/ac/iiitb/plproject/atc/generated/Helper.java:45: error: bad operand types for binary operator '-'
+GRAPH_GEN_MCR_38	KILLED	method-call-replacement	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: Adj.get(to).contains(from)
+GRAPH_GEN_MCR_39	KILLED	method-call-replacement	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): null
+GRAPH_GEN_SEI_40	KILLED	side-effect-insertion	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_AOR_41	KILLED	arithmetic-operator-replacement	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_AOR_42	KILLED	arithmetic-operator-replacement	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_AOR_43	KILLED	arithmetic-operator-replacement	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_AOR_44	KILLED	arithmetic-operator-replacement	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_AOI_45	KILLED	arithmetic-operator-insertion	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_AOI_46	KILLED	arithmetic-operator-insertion	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_UOI_47	KILLED	unary-operator-insertion	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_ABS_48	KILLED	absolute-value-insertion	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_CRP_49	KILLED	constant-replacement	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_CRP_50	KILLED	constant-replacement	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_CRP_51	KILLED	constant-replacement	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_SDL_52	KILLED	statement-deletion	addEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_UOI_53	KILLED	unary-operator-insertion	degree	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST degree: vertexDegree == Adj.get(name).size()
+GRAPH_GEN_ABS_54	KILLED	absolute-value-insertion	degree	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST degree: vertexDegree == Adj.get(name).size()
+GRAPH_GEN_RVR_55	KILLED	return-value-replacement	degree	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST degree: vertexDegree == Adj.get(name).size()
+GRAPH_GEN_RVR_56	KILLED	return-value-replacement	degree	Helper.java	-	killed by: run4(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST degree: vertexDegree == Adj.get(name).size()
+GRAPH_GEN_RVR_57	KILLED	return-value-replacement	degree	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST degree: vertexDegree == Adj.get(name).size()
+GRAPH_GEN_ARP_58	KILLED	argument-replacement	degree	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): null
+GRAPH_GEN_ARP_59	INVALID	argument-replacement	degree	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/GRAPH_GEN_ARP_59/run/in/ac/iiitb/plproject/atc/generated/Helper.java:56: error: bad operand types for binary operator '-'
+GRAPH_GEN_MCR_60	KILLED	method-call-replacement	degree	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST degree: vertexDegree == Adj.get(name).size()
+GRAPH_GEN_MCR_61	KILLED	method-call-replacement	degree	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): null
+GRAPH_GEN_SEI_62	KILLED	side-effect-insertion	degree	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST degree: edgeCount == \old(edgeCount)
+GRAPH_GEN_RVR_63	KILLED	return-value-replacement	hasEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST hasEdge: connected == Adj.get(from).contains(to)
+GRAPH_GEN_RVR_64	KILLED	return-value-replacement	hasEdge	Helper.java	-	killed by: run4(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST hasEdge: connected == Adj.get(from).contains(to)
+GRAPH_GEN_ARP_65	KILLED	argument-replacement	hasEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): null
+GRAPH_GEN_ARP_66	INVALID	argument-replacement	hasEdge	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/GRAPH_GEN_ARP_66/run/in/ac/iiitb/plproject/atc/generated/Helper.java:61: error: bad operand types for binary operator '-'
+GRAPH_GEN_ARP_67	KILLED	argument-replacement	hasEdge	Helper.java	-	killed by: run4(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST hasEdge: connected == Adj.get(from).contains(to)
+GRAPH_GEN_ARP_68	INVALID	argument-replacement	hasEdge	Helper.java	-	the mutated library does not compile: /home/akshatbetalol/Testing/TestGen-for-Platform-Software/genatc-mutation/target/operator-suites/mutants/GRAPH_GEN_ARP_68/run/in/ac/iiitb/plproject/atc/generated/Helper.java:61: error: bad operand types for binary operator '-'
+GRAPH_GEN_MCR_69	KILLED	method-call-replacement	hasEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): null
+GRAPH_GEN_SEI_70	KILLED	side-effect-insertion	hasEdge	Helper.java	-	killed by: run1(in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest): POST hasEdge: edgeCount == \old(edgeCount)

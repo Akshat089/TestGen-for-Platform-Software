@@ -1,0 +1,51 @@
+# generated suites — summary
+
+PHASE 1 — generated test strings
+library         tests   passed   stopped   failed   invalid
+stack             260       78       182        0         0
+queue             260       95       114        0        51
+mathlib           260      260         0        0         0
+arraylib          260      260         0        0         0
+linkedlist        260      133       127        0         0
+heap              260      114       146        0         0
+set               260      136       124        0         0
+hashmap           260       94       166        0         0
+bst               260      110       150        0         0
+graph             260      143       117        0         0
+lrucache          260      189        71        0         0
+ALL              2860     1612      1197        0        51
+
+PHASE 2 and 3 — generated mutants, alone and against the family
+library         mutants   killed  survived  invalid    alone by family with family
+stack                51       37        11        3    77.1%         6       89.6%
+queue                49       40         6        3    87.0%         1       89.1%
+mathlib             156      128        28        0    82.1%         2       83.3%
+arraylib             92       39        49        4    44.3%         7       52.3%
+linkedlist           84       20        42       22    32.3%         5       40.3%
+heap                215      115        97        3    54.2%        38       72.2%
+set                  27       15         6        6    71.4%         0       71.4%
+hashmap              33       21         7        5    75.0%         0       75.0%
+bst                 130       66        32       32    67.3%         6       73.5%
+graph                70       48         9       13    84.2%         0       84.2%
+lrucache             68       41        17       10    70.7%         6       81.0%
+ALL                 975      570       304      101    65.2%        71       73.3%
+
+BY OPERATOR
+operator                           abbr   mutants   killed  survived  invalid    alone with family
+arithmetic-operator-replacement    AOR         80       49        25        6    66.2%       73.0%
+arithmetic-operator-insertion      AOI         44       30        14        0    68.2%       77.3%
+relational-operator-replacement    ROR        135       57        42       36    57.6%       68.7%
+conditional-operator-replacement   COR          3        3         0        0   100.0%      100.0%
+conditional-operator-insertion     COI         23       18         4        1    81.8%       86.4%
+unary-operator-insertion           UOI         42       35         7        0    83.3%       92.9%
+absolute-value-insertion           ABS         39       32         7        0    82.1%       89.7%
+constant-replacement               CRP        135       60        73        2    45.1%       50.4%
+condition-to-constant              CTC         30       18        12        0    60.0%       76.7%
+loop-bound-replacement             LBR          6        3         3        0    50.0%       66.7%
+return-value-replacement           RVR         69       49        20        0    71.0%       72.5%
+statement-deletion                 SDL         89       56        17       16    76.7%       87.7%
+statement-replacement              STR         17        4        13        0    23.5%       23.5%
+argument-replacement               ARP         82       49        11       22    81.7%       90.0%
+method-call-replacement            MCR         56       47         7        2    87.0%       96.3%
+side-effect-insertion              SEI        115       52        47       16    52.5%       61.6%
+variable-replacement               VRO         10        8         2        0    80.0%      100.0%
