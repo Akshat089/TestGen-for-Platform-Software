@@ -38,32 +38,35 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /**
- * Tests the new (no-propagation, real-SPF) pipeline itself — the IR, the two
- * printers, and the input checks — WITHOUT running real SPF: every test here
- * builds a {@link TestPlan} from an actual {@code .spec}/{@code .tests} pair
- * via {@link IrBuilder} (the real Step 1/2), then drives the printers with a
- * hand-built {@link InputVector} rather than one SPF actually solved. That is
- * enough to check everything these tests care about — clause text, parameter
- * naming, snapshot types, boxing, no-SPF-tokens — since none of it depends on
- * which concrete values were chosen, only on the IR's structure. Whether SPF
- * itself solves a sequence correctly is checked separately, by actually
- * running it (see IMPLEMENTATION_NOTES.md for those real numbers) and by
- * {@code verify-generated.sh}.
- *
- * <p>The one exception is {@link #infeasibleSequenceProducesNoClassAndAReport()}:
- * infeasibility is a dynamic property of the symbolic search, so that one
- * test does run real SPF, and skips itself (rather than failing) if
+ * Tests the contract-only pipeline — the IR, the two printers, the input
+ * checks — mostly WITHOUT running SPF: a {@link TestPlan} is built from an
+ * actual {@code .spec}/{@code .tests} pair via {@link IrBuilder}, and the
+ * printers are driven with a hand-built {@link InputVector}. The tests marked
+ * "real SPF" run SPF itself and skip (rather than fail) when
  * {@code scripts/setup-spf.sh} has not been run on this machine.
  */
 public class GeneratorPipelineTest {
 
     private static final Pattern ASSERT_MESSAGE = Pattern.compile(
             "assertTrue\\(\"((?:PRE|POST) [^\"]*)\"");
+    private static final Pattern ASSERT_EXPR = Pattern.compile(
+            "assertTrue\\(\"(?:[^\"\\\\]|\\\\.)*\", (.*)\\);");
+
+    private static final String[][] SUPPORTED = {
+        { "Stack", "stack" }, { "Queue", "queue" }, { "MathLib", "mathlib" }, { "IntArray", "arraylib" },
+        { "LinkedList", "linkedlist" }, { "MinHeap", "heap" }, { "StringSet", "set" },
+        { "HashMapLib", "hashmap" }, { "BinarySearchTree", "bst" }, { "Graph", "graph" },
+        { "LruCache", "lrucache" },
+    };
 
     private static TestPlan buildPlan(String specPath, String testsPath) throws IOException {
         JmlSpecAst spec = SpecToAstConverter.convertSpecToAst(read(specPath), specPath);
         TestStringAst test = TestStringParser.parse(read(testsPath), testsPath);
         return IrBuilder.build(spec, test, specPath, testsPath);
+    }
+
+    private static TestPlan buildPlan(String name) throws IOException {
+        return buildPlan("../specs/" + name + ".spec", "../specs/" + name + ".tests");
     }
 
     private static String read(String path) throws IOException {
@@ -92,13 +95,22 @@ public class GeneratorPipelineTest {
                 java.util.Collections.<String>emptySet());
     }
 
+    private static boolean spfInstalled() {
+        try {
+            in.ac.iiitb.plproject.spf.SpfHome.resolveRunJpfJar();
+            return true;
+        } catch (IllegalStateException notInstalled) {
+            return false;
+        }
+    }
+
     // ── (1) every assertion traces to a contract clause, none invented ──────
 
     @Test
     public void everyGeneratedAssertionTracesToAContractClause() throws IOException {
-        TestPlan plan = buildPlan("../specs/Stack.spec", "../specs/Stack.tests");
+        TestPlan plan = buildPlan("Stack");
         String specText = read("../specs/Stack.spec");
-        String junit = JUnitPrinter.print(plan, java.util.Collections.singletonList(syntheticVector(plan)));
+        String junit = JUnitPrinter.print(plan, syntheticVector(plan));
 
         Matcher m = ASSERT_MESSAGE.matcher(junit);
         int checked = 0;
@@ -116,13 +128,32 @@ public class GeneratorPipelineTest {
         assertTrue("expected to find generated assertions to check", checked > 0);
     }
 
-    // ── (2) symbolic driver and JUnit share call order, params, precondition text ──
+    // ── (2) the driver never calls into the library ──────────────────────────
 
     @Test
-    public void symbolicDriverAndJUnitShareCallOrderParamsAndPreconditionText() throws IOException {
-        TestPlan plan = buildPlan("../specs/Stack.spec", "../specs/Stack.tests");
+    public void driverContainsNoCallIntoTheLibrary() throws IOException {
+        for (String[] lib : SUPPORTED) {
+            String driver = SymbolicDriverPrinter.print(buildPlan(lib[0]));
+            assertFalse(lib[1] + ": the driver must not mention Helper", driver.contains("Helper"));
+            assertFalse(lib[1] + ": the driver must not call reset()", driver.contains("reset("));
+            for (String libraryFile : new File("../libraries/" + lib[1]).list()) {
+                String cls = libraryFile.replace(".java", "");
+                assertFalse(lib[1] + ": the driver must not name library class " + cls,
+                        Pattern.compile("\\b" + cls + "\\b").matcher(driver).find());
+            }
+            assertTrue(lib[1] + ": the driver imports only SPF's Debug/Verify",
+                    driver.replaceAll("import gov\\.nasa\\.jpf\\.(symbc\\.Debug|vm\\.Verify);", "")
+                          .indexOf("import ") < 0);
+        }
+    }
+
+    // ── (3) driver and JUnit share call order, params and clause text ────────
+
+    @Test
+    public void symbolicDriverAndJUnitShareCallOrderParamsAndClauseText() throws IOException {
+        TestPlan plan = buildPlan("Stack");
         String driver = SymbolicDriverPrinter.print(plan);
-        String junit = JUnitPrinter.print(plan, java.util.Collections.singletonList(syntheticVector(plan)));
+        String junit = JUnitPrinter.print(plan, syntheticVector(plan));
 
         for (CallBlock block : plan.getCallBlocks()) {
             String callComment = "// call " + block.getIndex() + ": " + block.getOperationName();
@@ -131,95 +162,178 @@ public class GeneratorPipelineTest {
 
             for (ParamSlot p : block.getParams()) {
                 assertTrue("driver missing declaration of " + p.getSlotName(),
-                        driver.contains(p.getSlotName()));
+                        driver.contains(" " + p.getSlotName() + " = "));
                 assertTrue("junit missing declaration of " + p.getSlotName(),
-                        junit.contains(p.getSlotName()));
+                        junit.contains(" " + p.getSlotName() + " = "));
             }
 
             for (Clause pre : block.getPreconditions()) {
-                String preMessage = "PRE " + block.getOperationName() + ": " + pre.getOriginalText();
-                assertTrue("driver's own precondition handling must use the identical clause text"
-                                + " (checked via the shared javaExpr, present verbatim): " + pre.getJavaExpr(),
-                        driver.contains(pre.getJavaExpr()));
-                assertTrue("junit missing precondition check '" + preMessage + "'",
-                        junit.contains(preMessage));
+                assertTrue("driver must assume precondition '" + pre.getOriginalText() + "'",
+                        driver.contains("// requires: " + pre.getOriginalText()));
+                assertTrue("junit missing precondition check",
+                        junit.contains("PRE " + block.getOperationName() + ": " + pre.getOriginalText()));
             }
         }
     }
 
-    // ── (3) generated JUnit contains no SPF tokens ───────────────────────────
+    // ── (4) generated JUnit contains no SPF tokens ───────────────────────────
 
     @Test
     public void generatedJUnitContainsNoSpfTokens() throws IOException {
-        TestPlan plan = buildPlan("../specs/Stack.spec", "../specs/Stack.tests");
-        String junit = JUnitPrinter.print(plan, java.util.Collections.singletonList(syntheticVector(plan)));
+        TestPlan plan = buildPlan("Stack");
+        String junit = JUnitPrinter.print(plan, syntheticVector(plan));
 
         assertFalse("generated JUnit must not import gov.nasa.jpf", junit.contains("gov.nasa.jpf"));
         assertFalse("generated JUnit must not reference Debug.*", junit.contains("Debug."));
         assertFalse("generated JUnit must not reference Verify.*", junit.contains("Verify."));
+        assertTrue("every test has a time limit", junit.contains("@Test(timeout = 2000)"));
     }
 
-    // ── (4) snapshots are plain locals of the declared state type ───────────
+    // ── (5) no tautological assertion ────────────────────────────────────────
+
+    @Test
+    public void noAssertionOnlyNamesTheResult() throws IOException {
+        for (String[] lib : SUPPORTED) {
+            TestPlan plan = buildPlan(lib[0]);
+            String junit = JUnitPrinter.print(plan, syntheticVector(plan));
+            Matcher m = ASSERT_EXPR.matcher(junit);
+            while (m.find()) {
+                String expr = m.group(1).trim();
+                String[] sides = expr.split("==");
+                assertFalse(lib[1] + ": tautological assertion " + expr,
+                        sides.length == 2 && sides[0].trim().equals(sides[1].trim()));
+            }
+            assertFalse(lib[1] + ": \\result == alias must not be asserted",
+                    Pattern.compile("c(\\d+)_result == c\\1_result\\)").matcher(junit).find());
+        }
+    }
+
+    // ── (6) snapshots are plain locals of the declared state type ───────────
 
     @Test
     public void snapshotsArePlainLocalsOfTheDeclaredStateType() throws IOException {
-        TestPlan plan = buildPlan("../specs/Stack.spec", "../specs/Stack.tests");
-        String junit = JUnitPrinter.print(plan, java.util.Collections.singletonList(syntheticVector(plan)));
+        TestPlan plan = buildPlan("Stack");
+        String junit = JUnitPrinter.print(plan, syntheticVector(plan));
 
-        // Stack.spec declares `int size;` — every \old(size) snapshot must be a
-        // plain `int`, never Object/boxed/a symbolic wrapper.
         assertTrue("expected an `int old<i>_size = Helper.size;` snapshot somewhere",
                 Pattern.compile("int old\\d+_size = Helper\\.size;").matcher(junit).find());
         assertFalse("a size snapshot must never be declared Object",
                 Pattern.compile("Object old\\d+_size").matcher(junit).find());
     }
 
-    // ── (5) boxed types stay boxed ───────────────────────────────────────────
+    // ── (7) boxed types stay boxed in the JUnit test ─────────────────────────
 
     @Test
     public void boxedServerOutputStaysBoxed() throws IOException {
-        TestPlan plan = buildPlan("../specs/HashMapLib.spec", "../specs/HashMapLib.tests");
-        String junit = JUnitPrinter.print(plan, java.util.Collections.singletonList(syntheticVector(plan)));
-        String driver = SymbolicDriverPrinter.print(plan);
+        TestPlan plan = buildPlan("HashMapLib");
+        String junit = JUnitPrinter.print(plan, syntheticVector(plan));
 
-        // put's declared return type is Integer (nullable oldVal) — the result
-        // local must stay boxed in both outputs, never narrowed to primitive int.
         assertTrue("JUnit's put result must stay boxed Integer",
                 Pattern.compile("Integer c\\d+_result = Helper\\.put\\(").matcher(junit).find());
         assertFalse("JUnit must never narrow put's result to a primitive int",
                 Pattern.compile("(?<!r)int c\\d+_result = Helper\\.put\\(").matcher(junit).find());
-        assertTrue("the symbolic driver must declare put's result as boxed Integer too",
-                Pattern.compile("Integer c\\d+_result = Helper\\.put\\(").matcher(driver).find());
     }
 
-    // ── (6) an infeasible sequence produces no class and the right report ──
+    // ── (8) starting values come from the state block ────────────────────────
 
     @Test
-    public void infeasibleSequenceProducesNoClassAndAReport() throws Exception {
-        try {
-            in.ac.iiitb.plproject.spf.SpfHome.resolveRunJpfJar();
-        } catch (IllegalStateException notInstalled) {
-            Assume.assumeNoException("scripts/setup-spf.sh has not been run on this machine",
-                    notInstalled);
-        }
+    public void startingValuesComeFromTheStateBlock() throws IOException {
+        String driver = SymbolicDriverPrinter.print(buildPlan("IntArray"));
+        assertTrue(driver.contains("int m0_length = 4;"));
+        assertTrue(driver.contains("int[] m0_A = {0, 0, 0, 0};"));
+        assertTrue("a variable with no starting value starts from Java's default",
+                driver.contains("int m0_writes = 0;"));
+        assertTrue(SymbolicDriverPrinter.print(buildPlan("LruCache")).contains("int m0_capacity = 2;"));
+    }
 
-        Path testsFile = Files.createTempFile("infeasible-stack", ".tests");
+    // ── (9) real SPF: an incorrect sequence produces no class and the right report ──
+
+    @Test
+    public void incorrectSequenceProducesNoClassAndAReport() throws Exception {
+        Assume.assumeTrue("scripts/setup-spf.sh has not been run on this machine", spfInstalled());
+
+        Path testsFile = Files.createTempFile("incorrect-stack", ".tests");
         Files.write(testsFile,
-                "test InfeasibleStack { sequence: push -> pop -> pop; }".getBytes(StandardCharsets.UTF_8));
-        Path outDir = Files.createTempDirectory("infeasible-stack-out");
+                "test IncorrectStack { sequence: push -> pop -> pop; }".getBytes(StandardCharsets.UTF_8));
+        Path outDir = Files.createTempDirectory("incorrect-stack-out");
 
         LibraryRegistry.Entry entry = LibraryRegistry.variantOf(LibraryRegistry.STACK,
                 LibraryRegistry.STACK.librarySourcePaths, testsFile.toString(), outDir.toString());
 
         GenatcMain.LibraryOutcome outcome = GenatcMain.runOne(entry);
 
-        assertEquals("push -> pop -> pop must be reported infeasible", "INFEASIBLE", outcome.status);
-        assertTrue("the report must name the failing call and its precondition",
-                outcome.detail.contains("pop") && outcome.detail.contains("size > 0"));
+        assertEquals("INCORRECT_SEQUENCE", outcome.status);
+        assertEquals("INCORRECT SEQUENCE: call 2 (pop): size > 0", outcome.detail);
+        assertNull("no test for an incorrect sequence", outcome.junitSource);
+        File junitFile = new File(GenatcMain.generatedDir(outDir.toFile()), TestPlan.JUNIT_CLASS + ".java");
+        assertFalse("no JUnit class must be written for an incorrect sequence", junitFile.exists());
+    }
 
-        File junitFile = new File(outDir.toString()
-                + "/" + TestPlan.GENERATED_PACKAGE.replace('.', '/') + "/" + TestPlan.JUNIT_CLASS + ".java");
-        assertFalse("no JUnit class must be written for an infeasible sequence", junitFile.exists());
+    // ── (10) real SPF: one test method per sequence, library off SPF's classpath ──
+
+    @Test
+    public void oneTestMethodPerSequenceAndNoLibraryOnSpfsClasspath() throws Exception {
+        Assume.assumeTrue("scripts/setup-spf.sh has not been run on this machine", spfInstalled());
+
+        Path testsFile = Files.createTempFile("two-stack", ".tests");
+        Files.write(testsFile, ("test First { sequence: push -> pop; }\n"
+                + "test Second { sequence: push -> push -> peek; }\n").getBytes(StandardCharsets.UTF_8));
+        Path outDir = Files.createTempDirectory("two-stack-out");
+        LibraryRegistry.Entry entry = LibraryRegistry.variantOf(LibraryRegistry.STACK,
+                LibraryRegistry.STACK.librarySourcePaths, testsFile.toString(), outDir.toString());
+
+        GenatcMain.LibraryOutcome outcome = GenatcMain.generate(entry, outDir.toFile(), TestPlan.JUNIT_CLASS, false);
+        assertEquals("GENERATED", outcome.status);
+        assertEquals(2, outcome.testsGenerated);
+        Matcher tests = Pattern.compile("@Test\\(").matcher(outcome.junitSource);
+        int count = 0;
+        while (tests.find()) count++;
+        assertEquals("one @Test method per sequence", 2, count);
+
+        for (String run : new String[] { "spf-work/1", "spf-work/2" }) {
+            File runJpf = new File(outDir.toFile(), run + "/run.jpf");
+            String cp = in.ac.iiitb.plproject.spf.SpfRunner.modeledClasspath(runJpf);
+            for (String element : cp.split(",")) {
+                assertFalse("SPF's classpath must not contain the library: " + element,
+                        element.contains("libraries") || containsLibraryClass(new File(element)));
+            }
+            assertFalse("the SPF work directory must not contain the library source",
+                    containsLibraryClass(new File(outDir.toFile(), run)));
+        }
+    }
+
+    private static boolean containsLibraryClass(File dir) throws IOException {
+        if (!dir.isDirectory()) return false;
+        try (java.util.stream.Stream<Path> files = Files.walk(dir.toPath())) {
+            return files.anyMatch(p -> p.getFileName().toString().startsWith("Helper."));
+        }
+    }
+
+    // ── (11) real SPF: the same test for the correct and a mutated library ──
+
+    @Test
+    public void sameTestForCorrectAndMutatedLibrary() throws Exception {
+        Assume.assumeTrue("scripts/setup-spf.sh has not been run on this machine", spfInstalled());
+
+        Path mutantDir = Files.createTempDirectory("stack-mutant");
+        String source = read(LibraryRegistry.STACK.librarySourcePath());
+        String mutated = source.replace("size = S.size();", "size = S.size() + 1;");
+        assertFalse("the mutation must change the library", mutated.equals(source));
+        Path mutant = mutantDir.resolve("Helper.java");
+        Files.write(mutant, mutated.getBytes(StandardCharsets.UTF_8));
+
+        Path outA = Files.createTempDirectory("stack-correct");
+        Path outB = Files.createTempDirectory("stack-mutated");
+        LibraryRegistry.Entry correct = LibraryRegistry.variantOf(LibraryRegistry.STACK,
+                LibraryRegistry.STACK.librarySourcePaths, LibraryRegistry.STACK.testsPath, outA.toString());
+        LibraryRegistry.Entry mutatedEntry = LibraryRegistry.variantOf(LibraryRegistry.STACK,
+                java.util.Collections.singletonList(mutant.toString()), LibraryRegistry.STACK.testsPath,
+                outB.toString());
+
+        String a = GenatcMain.generate(correct, outA.toFile(), TestPlan.JUNIT_CLASS, false).junitSource;
+        String b = GenatcMain.generate(mutatedEntry, outB.toFile(), TestPlan.JUNIT_CLASS, false).junitSource;
+        assertTrue(a != null);
+        assertEquals("the generated test must not depend on the library", a, b);
     }
 
     // ── (7) a stateless sequence produces no reset ──────────────────────────
@@ -242,7 +356,7 @@ public class GeneratorPipelineTest {
         assertFalse("a spec with no state block must build a stateless plan", plan.isHasState());
 
         String driver = SymbolicDriverPrinter.print(plan);
-        String junit = JUnitPrinter.print(plan, java.util.Collections.singletonList(syntheticVector(plan)));
+        String junit = JUnitPrinter.print(plan, syntheticVector(plan));
 
         assertFalse("the symbolic driver must not call Helper.reset() for a stateless sequence",
                 driver.contains("reset()"));

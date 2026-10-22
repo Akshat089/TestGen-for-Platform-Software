@@ -1,6 +1,5 @@
 package in.ac.iiitb.plproject.mutation;
 
-import in.ac.iiitb.plproject.atc.GenatcMain;
 import in.ac.iiitb.plproject.atc.LibraryRegistry;
 
 import java.io.IOException;
@@ -15,23 +14,24 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Runs the whole pipeline against every mutant and reports what the generated
- * JUnit suite caught.
+ * Runs the hand-written mutation sets against the generated test and reports
+ * what it caught.
  *
- * <p><b>Adapted for the new pipeline</b> (the generator no longer produces a
- * {@code SingularCase}/condition-by-condition report; it produces one
- * {@code GeneratedATCsTest} JUnit class, verified against the library by
- * {@link GenatcMain#runOne}). For each mutant: seed the fault into a private
- * copy of the library, ask {@link GenatcMain#runOne} to regenerate the IR,
- * run real SPF, and verify the resulting JUnit class against the mutated
- * library, then classify the outcome. Nothing is cached between mutants.
+ * <p>SPF only sees the contract, so the test depends only on (spec,
+ * sequence). It is generated ONCE per library on the correct library,
+ * compiled once ({@link TestCache}), and that same compiled test is run
+ * against every mutant: seed the fault into a private copy of the library,
+ * compile that copy once, run the cached test against it in one child JVM.
+ * Nothing is regenerated and SPF never runs per mutant.
  *
- * <p>A mutant is <strong>killed</strong> when a generated JUnit assertion
- * fails against it, or when it makes the sequence infeasible where the
- * unmutated library completed it; it <strong>survives</strong> when the
- * generated suite still passes in full. A survivor is a measurement, not a
- * bug in the runner: it says the spec and the test string together never
- * constrained the behaviour that mutant changed.
+ * <p>A mutant is <strong>killed</strong> when any PRE or POST assertion
+ * fails, the library throws, or the test times out; it
+ * <strong>survives</strong> when the test passes; it is
+ * <strong>invalid</strong> when the fault cannot be placed, the mutant does
+ * not compile, or the library has no test (no test generated, or the test
+ * already fails on the correct library). Score = killed / (killed +
+ * survived). A survivor is a measurement, not a bug in the runner: the spec
+ * and the sequence together never constrained the behaviour it changed.
  *
  * <pre>
  *   cd genatc-mutation
@@ -44,11 +44,11 @@ public class MutationRunner {
 
     /** Where a mutant ended up. */
     public enum Status {
-        /** A generated assertion rejected the seeded fault, or it made the sequence infeasible. */
+        /** A PRE/POST assertion failed, the library threw, or the test timed out. */
         KILLED,
-        /** The generated suite still passed in full: nothing constrains this behaviour. */
+        /** The test passed: nothing it checks constrains this behaviour. */
         SURVIVED,
-        /** The mutant could not be seeded, or the mutated library/generated suite did not compile. */
+        /** The fault could not be placed, the mutant does not compile, or the library has no test. */
         INVALID
     }
 
@@ -57,19 +57,25 @@ public class MutationRunner {
         private final Mutant mutant;
         private final Status status;
         private final String detail;
-        private final GenatcMain.LibraryOutcome outcome;
+        /** KILLED only: PRE, POST, EXCEPTION or TIMEOUT. */
+        private final String killKind;
+        /** A SURVIVED mutant that a family test killed: that test's name (phase 3), else null. */
+        private String killedByFamily;
+        private String familyKillKind;
 
-        MutantResult(Mutant mutant, Status status, String detail, GenatcMain.LibraryOutcome outcome) {
+        MutantResult(Mutant mutant, Status status, String detail, String killKind) {
             this.mutant = mutant;
             this.status = status;
             this.detail = detail;
-            this.outcome = outcome;
+            this.killKind = killKind;
         }
 
         public Mutant getMutant() { return mutant; }
         public Status getStatus() { return status; }
         public String getDetail() { return detail; }
-        public GenatcMain.LibraryOutcome getOutcome() { return outcome; }
+        public String getKillKind() { return killKind; }
+        public String getKilledByFamily() { return killedByFamily; }
+        public String getFamilyKillKind() { return familyKillKind; }
 
         public boolean isKilled()   { return status == Status.KILLED; }
         public boolean isSurvivor() { return status == Status.SURVIVED; }
@@ -167,22 +173,58 @@ public class MutationRunner {
         this.workDir = workDir;
     }
 
-    /**
-     * Verifies the unmutated library first. A mutation score only means something
-     * if the suite passes on the original.
-     */
-    public GenatcMain.LibraryOutcome baseline(LibraryRegistry.Entry entry) throws Exception {
-        return GenatcMain.runOne(entry);
+    /** One library's cached test for its checked-in sequence, and how it did on the correct library. */
+    public static class Baseline {
+        public final TestCache cache;
+        public final TestCache.CachedTest test;
+        /** Null when there is no test to run. */
+        public final TestCache.TestRun onCorrect;
+
+        Baseline(TestCache cache, TestCache.CachedTest test, TestCache.TestRun onCorrect) {
+            this.cache = cache;
+            this.test = test;
+            this.onCorrect = onCorrect;
+        }
+
+        /** True when there is a test and it passes on the correct library. */
+        public boolean usable() { return onCorrect != null && onCorrect.passed; }
+
+        public String whyUnusable() {
+            if (!test.hasTest()) return "the library has no test: " + test.status + " " + test.detail;
+            if (onCorrect == null) return "the test did not run";
+            return "the test fails on the correct library: " + onCorrect.kind + " " + onCorrect.message;
+        }
+    }
+
+    /** Generates (once) and compiles the test for {@code entry}'s checked-in sequence, then runs it on the correct library. */
+    public Baseline baseline(LibraryRegistry.Entry entry) throws Exception {
+        TestCache cache = new TestCache(entry, workDir.resolve("cache").resolve(entry.key));
+        TestCache.CachedTest test = cache.generate(entry.key + "_main", entry.testsPath);
+        TestCache.TestRun run = null;
+        if (test.hasTest()) {
+            run = cache.runOnCorrectLibrary(Collections.singletonList(test.className)).get(test.className);
+        }
+        return new Baseline(cache, test, run);
     }
 
     /** Runs every mutant of every library named in {@code libraryKeys} (empty means all). */
     public Report run(List<String> libraryKeys, boolean verbose) throws Exception {
         List<Mutant> mutants = MutantSetParser.parseDirectory(mutationsDir);
         List<MutantResult> results = new ArrayList<MutantResult>();
+        Map<String, Baseline> baselines = new LinkedHashMap<String, Baseline>();
 
         for (Mutant mutant : mutants) {
             if (!libraryKeys.isEmpty() && !libraryKeys.contains(mutant.getLibraryKey())) continue;
-            MutantResult result = run(mutant);
+            LibraryRegistry.Entry entry = LibraryRegistry.byKey(mutant.getLibraryKey());
+            Baseline baseline = null;
+            if (entry != null && entry.isSupported()) {
+                baseline = baselines.get(entry.key);
+                if (baseline == null) {
+                    baseline = baseline(entry);
+                    baselines.put(entry.key, baseline);
+                }
+            }
+            MutantResult result = run(mutant, baseline, Collections.<String>emptyList());
             results.add(result);
             if (verbose) {
                 System.out.println(String.format("  %-9s %-34s %s%s",
@@ -193,29 +235,27 @@ public class MutationRunner {
         return new Report(results);
     }
 
-    public MutantResult run(Mutant mutant) throws Exception {
-        return run(mutant, null);
-    }
-
     /**
-     * Seeds one fault, regenerates, runs real SPF and the generated JUnit suite
-     * against the mutated library; classifies what came back.
-     *
-     * @param testsPath the sequence to run the mutant against, or null for the
-     *        library's checked-in one.
+     * Seeds one fault, compiles the mutated library once, and runs the cached
+     * test for the checked-in sequence against it — then, if it survives, the
+     * cached {@code familyTests} in order until the first one that fails
+     * (phase 3), all in the same child JVM.
      */
-    public MutantResult run(Mutant mutant, String testsPath) throws Exception {
+    public MutantResult run(Mutant mutant, Baseline baseline, List<String> familyTests) throws Exception {
         LibraryRegistry.Entry base = LibraryRegistry.byKey(mutant.getLibraryKey());
         if (base == null) {
-            return new MutantResult(mutant, Status.INVALID,
-                    "no library named " + mutant.getLibraryKey(), null);
+            return new MutantResult(mutant, Status.INVALID, "no library named " + mutant.getLibraryKey(), null);
         }
         if (!base.isSupported()) {
             return new MutantResult(mutant, Status.INVALID,
-                    "unsupported in the new design: " + base.unsupportedReason, null);
+                    "unsupported: " + base.unsupportedReason, null);
+        }
+        if (baseline == null || !baseline.usable()) {
+            return new MutantResult(mutant, Status.INVALID,
+                    baseline == null ? "the library has no test" : baseline.whyUnusable(), null);
         }
 
-        Path sandbox = workDir.resolve("mutants").resolve(mutant.getId());
+        Path sandbox = workDir.resolve("mutants").resolve(base.key).resolve(mutant.getId());
         deleteRecursively(sandbox);
         Files.createDirectories(sandbox);
 
@@ -248,36 +288,36 @@ public class MutationRunner {
                     + " library, which is built from " + base.librarySourcePaths, null);
         }
 
-        LibraryRegistry.Entry variant = LibraryRegistry.variantOf(base, sandboxSources,
-                testsPath != null ? testsPath : base.testsPath, sandbox.resolve("out").toString());
-        GenatcMain.LibraryOutcome outcome = GenatcMain.runOne(variant);
-
-        switch (outcome.status) {
-            case "COMPILE_ERROR":
-                return new MutantResult(mutant, Status.INVALID,
-                        "the mutated library does not compile: " + firstLine(outcome.detail), outcome);
-            case "INFEASIBLE":
-            case "CUT_OFF_DEPTH":
-            case "CUT_OFF_TIMEOUT":
-                return new MutantResult(mutant, Status.KILLED,
-                        "killed: the sequence became infeasible under the mutant (" + outcome.status + ")",
-                        outcome);
-            case "GENERATED":
-                if (!outcome.junitCompiled) {
-                    return new MutantResult(mutant, Status.INVALID,
-                            "the generated JUnit class does not compile against the mutated library",
-                            outcome);
-                }
-                if (!outcome.junitFailures.isEmpty()) {
-                    return new MutantResult(mutant, Status.KILLED,
-                            "killed by: " + outcome.junitFailures.get(0), outcome);
-                }
-                return new MutantResult(mutant, Status.SURVIVED,
-                        "every generated assertion still holds", outcome);
-            default:
-                return new MutantResult(mutant, Status.INVALID,
-                        "unexpected outcome status " + outcome.status + ": " + outcome.detail, outcome);
+        Path classes = sandbox.resolve("classes");
+        String compileError = TestCache.compileLibrary(sandboxSources, classes);
+        if (compileError != null) {
+            return new MutantResult(mutant, Status.INVALID,
+                    "the mutated library does not compile: " + firstLine(compileError), null);
         }
+
+        List<String> tests = new ArrayList<String>();
+        tests.add(baseline.test.className);
+        tests.addAll(familyTests);
+        Map<String, TestCache.TestRun> runs = baseline.cache.runTests(classes, tests, true);
+        deleteRecursively(sandbox);
+
+        TestCache.TestRun main = runs.get(baseline.test.className);
+        if (main == null) {
+            return new MutantResult(mutant, Status.INVALID, "the test did not report", null);
+        }
+        if (!main.passed) {
+            return new MutantResult(mutant, Status.KILLED, "killed by " + main.kind + ": " + main.message,
+                    main.kind);
+        }
+        MutantResult survived = new MutantResult(mutant, Status.SURVIVED, "the test passes", null);
+        for (TestCache.TestRun r : runs.values()) {
+            if (!r.passed) {
+                survived.killedByFamily = r.className.substring(r.className.lastIndexOf('.') + 1);
+                survived.familyKillKind = r.kind;
+                break;
+            }
+        }
+        return survived;
     }
 
     static void deleteRecursively(Path dir) throws IOException {
@@ -309,33 +349,29 @@ public class MutationRunner {
         }
 
         MutationRunner runner = new MutationRunner();
+        long startedAt = System.currentTimeMillis();
 
         System.out.println("════════════════════════════════════════════════════════════════");
-        System.out.println("BASELINE — the unmutated libraries must pass before anything else");
+        System.out.println("BASELINE — each library's test, generated once, on the correct library");
         System.out.println("════════════════════════════════════════════════════════════════");
         for (LibraryRegistry.Entry entry : LibraryRegistry.ALL) {
             if (!entry.isSupported()) continue;
             if (!libraryKeys.isEmpty() && !libraryKeys.contains(entry.key)) continue;
-            GenatcMain.LibraryOutcome outcome = runner.baseline(entry);
-            boolean pass = "GENERATED".equals(outcome.status) && outcome.junitCompiled
-                    && outcome.junitFailures.isEmpty();
-            System.out.println(String.format("  %-10s %s  (%d test(s))",
-                    entry.key, pass ? "PASS" : "FAIL", outcome.testsGenerated));
-            if (!pass) {
-                System.err.println("baseline failed for " + entry.key
-                        + "; mutation scores would be meaningless: " + outcome.status + " " + outcome.detail);
-                System.exit(1);
-            }
+            Baseline b = runner.baseline(entry);
+            System.out.println(String.format("  %-10s %-6s spf=%dms  %s", entry.key,
+                    b.usable() ? "PASS" : "NO", b.test.spfMillis, b.usable() ? "" : b.whyUnusable()));
         }
 
         System.out.println();
         System.out.println("════════════════════════════════════════════════════════════════");
-        System.out.println("MUTATION RUN — whole pipeline re-run per mutant");
+        System.out.println("MUTATION RUN — the cached test against every mutant");
         System.out.println("════════════════════════════════════════════════════════════════");
         Report report = runner.run(libraryKeys, true);
 
         System.out.println();
         printSummary(report, System.out);
+        System.out.println();
+        System.out.println("wall time: " + (System.currentTimeMillis() - startedAt) / 1000 + "s");
         System.exit(report.unexpected().isEmpty() ? 0 : 1);
     }
 
@@ -356,14 +392,35 @@ public class MutationRunner {
                 report.invalid(), report.mutationScore()));
 
         out.println();
-        out.println(String.format("%-34s %-5s %8s %8s %9s %s",
-                "operator", "abbr", "mutants", "killed", "survived", "score"));
-        for (Map.Entry<String, List<MutantResult>> entry : report.byOperator().entrySet()) {
-            Report perOperator = new Report(entry.getValue());
-            out.println(String.format("%-34s %-5s %8d %8d %9d %5.1f%%",
-                    entry.getKey(), MutationOperator.abbreviationOf(entry.getKey()),
+        out.println(String.format("%-34s %-5s %8s %8s %9s %8s %s",
+                "operator", "abbr", "mutants", "killed", "survived", "invalid", "score"));
+        for (String operator : MutationOperator.names()) {
+            List<MutantResult> bucket = report.byOperator().get(operator);
+            Report perOperator = new Report(bucket == null ? new ArrayList<MutantResult>() : bucket);
+            out.println(String.format("%-34s %-5s %8d %8d %9d %8d %5.1f%%",
+                    operator, MutationOperator.abbreviationOf(operator),
                     perOperator.total(), perOperator.killed(), perOperator.survived(),
-                    perOperator.mutationScore()));
+                    perOperator.invalid(), perOperator.mutationScore()));
+        }
+
+        out.println();
+        out.println("KILLED BY");
+        Map<String, Integer> kinds = new LinkedHashMap<String, Integer>();
+        for (String k : new String[] { "POST", "PRE", "EXCEPTION", "TIMEOUT" }) kinds.put(k, 0);
+        for (MutantResult r : report.getResults()) {
+            if (r.isKilled()) kinds.put(r.getKillKind(), kinds.getOrDefault(r.getKillKind(), 0) + 1);
+        }
+        for (Map.Entry<String, Integer> e : kinds.entrySet()) {
+            out.println(String.format("  %-10s %d", e.getKey(), e.getValue()));
+        }
+
+        out.println();
+        out.println("ALL RESULTS");
+        for (MutantResult r : report.getResults()) {
+            out.println(String.format("  %-9s %-9s %-40s %-34s expect:%s  %s", r.getStatus(),
+                    r.getKillKind() == null ? "-" : r.getKillKind(), r.getMutant().getId(),
+                    r.getMutant().getOperator(), r.getMutant().isExpectedKilled() ? "killed" : "survives",
+                    r.getDetail()));
         }
 
         if (!report.survivors().isEmpty()) {
