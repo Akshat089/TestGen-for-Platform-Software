@@ -2,9 +2,7 @@ package in.ac.iiitb.plproject.atc;
 
 import in.ac.iiitb.plproject.check.GenatcInputException;
 import in.ac.iiitb.plproject.ir.CallBlock;
-import in.ac.iiitb.plproject.ir.Clause;
 import in.ac.iiitb.plproject.ir.IrBuilder;
-import in.ac.iiitb.plproject.ir.ParamSlot;
 import in.ac.iiitb.plproject.ir.TestPlan;
 import in.ac.iiitb.plproject.parser.SpecToAstConverter;
 import in.ac.iiitb.plproject.parser.TestStringParser;
@@ -26,15 +24,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
- * The entry point: contract (.spec) + sequence (.tests) -&gt; checked -&gt; IR -&gt;
- * symbolic driver -&gt; real SPF -&gt; solved input vectors -&gt; JUnit class,
- * verified against the unmodified library. Replaces the old
- * {@code LibraryDryRunExamples}/{@code Main}.
+ * The entry point: contract (.spec) + sequence(s) (.tests) -&gt; checked -&gt; IR
+ * -&gt; contract-only symbolic driver -&gt; real SPF -&gt; one solved input vector
+ * per sequence -&gt; one JUnit class with one {@code @Test} per sequence,
+ * verified against the unmodified library.
+ *
+ * <p>Generation never reads, compiles or runs the library: {@link #generate}
+ * depends only on the spec and the sequence file. Only {@link #runOne}'s
+ * verification step puts the library next to the generated test.
  *
  * <pre>
  *   java -cp target/classes in.ac.iiitb.plproject.atc.GenatcMain            # every registered library
@@ -43,16 +43,34 @@ import java.util.Set;
  */
 public class GenatcMain {
 
+    /** What happened to one sequence of a library's .tests file. */
+    public static class SequenceOutcome {
+        public String name;
+        public String calls;
+        /** SOLVED, INCORRECT_SEQUENCE, UNSAT_POSTCONDITION, SOLVER_ERROR, TIMEOUT, COMPILE_ERROR. */
+        public String status;
+        public String detail = "";
+        public long spfMillis;
+        public int pathsCompleted;
+        public List<String> checkOnly = new ArrayList<String>();
+        public TestPlan plan;
+        public InputVector vector;
+    }
+
     public static class LibraryOutcome {
         public final LibraryRegistry.Entry entry;
-        public String status; // SKIPPED / INPUT_ERROR / INFEASIBLE / CUT_OFF / GENERATED
+        /** SKIPPED / INPUT_ERROR / GENERATED / or, when no sequence gave a test, the first sequence's status. */
+        public String status;
         public String detail = "";
-        public int pathsExplored;
+        public List<SequenceOutcome> sequences = new ArrayList<SequenceOutcome>();
         public int testsGenerated;
         public long spfMillis;
+        /** The generated JUnit class, or null when no test was generated. */
+        public String junitSource;
+        public String junitClassName = TestPlan.JUNIT_CLASS;
         public boolean junitCompiled;
+        public int junitRunCount;
         public List<String> junitFailures = new ArrayList<String>();
-        public List<String> unsolvedParams = new ArrayList<String>();
 
         LibraryOutcome(LibraryRegistry.Entry entry) { this.entry = entry; }
     }
@@ -79,133 +97,12 @@ public class GenatcMain {
         printSummary(outcomes);
     }
 
+    /** Generates the test for {@code entry} and runs it against {@code entry}'s library. */
     public static LibraryOutcome runOne(LibraryRegistry.Entry entry) throws Exception {
-        LibraryOutcome outcome = new LibraryOutcome(entry);
-        System.out.println("\n================================================================");
-        System.out.println(entry.key + " — " + entry.title);
-        System.out.println("================================================================");
+        LibraryOutcome outcome = generate(entry, new File(entry.outputDir), TestPlan.JUNIT_CLASS, true);
+        if (outcome.junitSource == null) return outcome;
 
-        if (!entry.isSupported()) {
-            outcome.status = "SKIPPED";
-            outcome.detail = entry.unsupportedReason;
-            System.out.println("SKIPPED (unsupported): " + entry.unsupportedReason);
-            return outcome;
-        }
-
-        JmlSpecAst spec = SpecToAstConverter.convertSpecToAst(read(entry.specPath), entry.specPath);
-        TestStringAst test = TestStringParser.parse(read(entry.testsPath), entry.testsPath);
-
-        TestPlan plan;
-        try {
-            plan = IrBuilder.build(spec, test, entry.specPath, entry.testsPath);
-        } catch (GenatcInputException e) {
-            outcome.status = "INPUT_ERROR";
-            outcome.detail = e.getMessage();
-            System.out.println("INPUT CHECKS FAILED:\n" + e.getMessage());
-            return outcome;
-        }
-
-        Set<String> unsolved = new LinkedHashSet<String>();
-        for (ParamSlot p : plan.pooledParams()) {
-            unsolved.add(p.getSlotName() + " (" + p.getType() + "): " + p.getPoolReason());
-        }
-        outcome.unsolvedParams.addAll(unsolved);
-
-        File outputDir = new File(entry.outputDir);
-        File genDir = new File(outputDir, TestPlan.GENERATED_PACKAGE.replace('.', '/'));
-        Files.createDirectories(genDir.toPath());
-
-        SpfRunner runner = new SpfRunner();
-        SpfRunResult result = runner.run(plan, new File(outputDir, "spf-work"), entry.librarySourcePaths,
-                SpfConfig.DEFAULT);
-        outcome.spfMillis = result.getElapsedMillis();
-        outcome.pathsExplored = result.pathsExplored();
-
-        if (result.isCompileFailed()) {
-            outcome.status = "COMPILE_ERROR";
-            outcome.detail = result.getCompileError();
-            System.out.println("SYMBOLIC DRIVER FAILED TO COMPILE:\n" + result.getCompileError());
-            return outcome;
-        }
-
-        if (!result.hasUsablePaths()) {
-            if (result.getInfeasibleAtCallIndex() != null && result.getExecutionErrorDetail() != null) {
-                outcome.status = "EXECUTION_ERROR";
-                CallBlock failing = plan.getCallBlocks().get(result.getInfeasibleAtCallIndex());
-                outcome.detail = "SPF could not execute call " + failing.getIndex() + " ("
-                        + failing.getOperationName() + ") at all — every explored end state was a"
-                        + " property violation rather than a normal completion: "
-                        + result.getExecutionErrorDetail()
-                        + ". This is a tool limitation (see IMPLEMENTATION_NOTES.md), not an"
-                        + " unsatisfiable precondition.";
-                System.out.println("EXECUTION ERROR: " + outcome.detail);
-            } else if (result.getInfeasibleAtCallIndex() != null) {
-                outcome.status = "INFEASIBLE";
-                CallBlock failing = plan.getCallBlocks().get(result.getInfeasibleAtCallIndex());
-                StringBuilder sb = new StringBuilder();
-                sb.append("no path reaches the end of the sequence — call ").append(failing.getIndex())
-                  .append(" (").append(failing.getOperationName())
-                  .append(") has no precondition-satisfying predecessor path. Its precondition:\n");
-                for (Clause c : failing.getPreconditions()) {
-                    sb.append("    requires: ").append(c.getOriginalText()).append('\n');
-                }
-                outcome.detail = sb.toString();
-                System.out.println("INFEASIBLE SEQUENCE: " + outcome.detail);
-            } else if (result.isDepthLimitHit()) {
-                outcome.status = "CUT_OFF_DEPTH";
-                outcome.detail = "search depth bound (" + SpfConfig.DEFAULT.getDepthLimit()
-                        + ") reached before any feasible path completed";
-                System.out.println(outcome.detail);
-            } else if (result.isTimedOut()) {
-                outcome.status = "CUT_OFF_TIMEOUT";
-                outcome.detail = "SPF timed out after " + SpfConfig.DEFAULT.getTimeoutSeconds()
-                        + "s before any feasible path completed";
-                System.out.println(outcome.detail);
-            } else {
-                outcome.status = "INFEASIBLE";
-                outcome.detail = "no feasible path found, and no call index could be isolated";
-                System.out.println(outcome.detail);
-            }
-            return outcome;
-        }
-
-        if (result.isDepthLimitHit()) {
-            System.out.println("NOTE: search depth bound was reached — exploration may be incomplete.");
-        }
-        if (result.isTimedOut()) {
-            System.out.println("NOTE: SPF timed out — exploration may be incomplete.");
-        }
-        if (result.errorStatesFound() > 0) {
-            System.out.println("NOTE: SPF found " + result.errorStatesFound()
-                    + " end state(s) that are a property violation (uncaught exception) along some"
-                    + " execution; excluded from the delivered suite, not presented as a passing path.");
-        }
-
-        List<InputVector> vectors = result.getInputVectors();
-        System.out.println("paths explored: " + outcome.pathsExplored + ", feasible: " + vectors.size()
-                + ", SPF time: " + outcome.spfMillis + "ms");
-        if (!unsolved.isEmpty()) {
-            System.out.println("NOT solved for (pooled instead): " + unsolved);
-        }
-        // Delivering every feasible path as a @Test method is impractical once a
-        // sequence has several pooled parameters (StringSet/Graph/LruCache's pool
-        // combinations multiply out quickly) — capped here, not in SPF's own
-        // exploration, so the report can still say how many paths SPF actually
-        // found versus how many became tests.
-        int maxTests = Integer.getInteger("genatc.maxTestsPerClass", 60);
-        if (vectors.size() > maxTests) {
-            System.out.println("NOTE: capping generated tests at " + maxTests + " of " + vectors.size()
-                    + " feasible paths (set -Dgenatc.maxTestsPerClass to change).");
-            vectors = vectors.subList(0, maxTests);
-        }
-        outcome.testsGenerated = vectors.size();
-
-        String driverSource = SymbolicDriverPrinter.print(plan);
-        Files.write(new File(genDir, TestPlan.SYMBOLIC_CLASS + ".java").toPath(),
-                driverSource.getBytes(StandardCharsets.UTF_8));
-        String junitSource = JUnitPrinter.print(plan, vectors);
-        Files.write(new File(genDir, TestPlan.JUNIT_CLASS + ".java").toPath(),
-                junitSource.getBytes(StandardCharsets.UTF_8));
+        File genDir = generatedDir(new File(entry.outputDir));
         for (String librarySourcePath : entry.librarySourcePaths) {
             Path src = Paths.get(librarySourcePath);
             Files.copy(src, new File(genDir, src.getFileName().toString()).toPath(),
@@ -216,8 +113,8 @@ public class GenatcMain {
         GeneratedSuiteHarness.VerifyResult verify = harness.compileAndRun(genDir, JunitJars.resolve(),
                 TestPlan.GENERATED_PACKAGE + "." + TestPlan.JUNIT_CLASS);
         outcome.junitCompiled = verify.compiled;
+        outcome.junitRunCount = verify.runCount;
         outcome.junitFailures = verify.failures;
-        outcome.status = "GENERATED";
 
         if (!verify.compiled) {
             System.out.println("GENERATED JUNIT FAILED TO COMPILE:\n" + verify.compileError);
@@ -232,15 +129,157 @@ public class GenatcMain {
         return outcome;
     }
 
+    /**
+     * Contract + sequences -&gt; JUnit source, without ever touching the library:
+     * nothing from {@code entry.librarySourcePaths} is read here. Writes the
+     * drivers and the JUnit class under {@code outputDir}.
+     */
+    public static LibraryOutcome generate(LibraryRegistry.Entry entry, File outputDir, String junitClassName,
+                                          boolean verbose) throws Exception {
+        LibraryOutcome outcome = new LibraryOutcome(entry);
+        outcome.junitClassName = junitClassName;
+        if (verbose) {
+            System.out.println("\n================================================================");
+            System.out.println(entry.key + " — " + entry.title);
+            System.out.println("================================================================");
+        }
+
+        if (!entry.isSupported()) {
+            outcome.status = "SKIPPED";
+            outcome.detail = entry.unsupportedReason;
+            if (verbose) System.out.println("SKIPPED (unsupported): " + entry.unsupportedReason);
+            return outcome;
+        }
+
+        JmlSpecAst spec = SpecToAstConverter.convertSpecToAst(read(entry.specPath), entry.specPath);
+        List<TestStringAst> tests = TestStringParser.parseAll(read(entry.testsPath), entry.testsPath);
+
+        List<TestPlan> plans = new ArrayList<TestPlan>();
+        try {
+            for (TestStringAst test : tests) plans.add(IrBuilder.build(spec, test, entry.specPath, entry.testsPath));
+        } catch (GenatcInputException e) {
+            outcome.status = "INPUT_ERROR";
+            outcome.detail = e.getMessage();
+            if (verbose) System.out.println("INPUT CHECKS FAILED:\n" + e.getMessage());
+            return outcome;
+        }
+
+        File genDir = generatedDir(outputDir);
+        Files.createDirectories(genDir.toPath());
+        deleteJava(genDir);
+
+        List<JUnitPrinter.Sequence> solved = new ArrayList<JUnitPrinter.Sequence>();
+        SpfRunner runner = new SpfRunner();
+        for (int k = 0; k < plans.size(); k++) {
+            TestPlan plan = plans.get(k);
+            SequenceOutcome seq = new SequenceOutcome();
+            seq.name = plan.getLibraryKey() != null ? plan.getLibraryKey() : "sequence" + (k + 1);
+            seq.calls = callsOf(plan);
+            seq.plan = plan;
+            seq.checkOnly.addAll(plan.checkOnlyClauses());
+            outcome.sequences.add(seq);
+
+            File work = new File(outputDir, plans.size() == 1 ? "spf-work" : "spf-work/" + (k + 1));
+            SpfRunResult result = runner.run(plan, work, SpfConfig.DEFAULT);
+            seq.spfMillis = result.getElapsedMillis();
+            seq.pathsCompleted = result.pathsCompleted();
+            seq.status = result.getStatus().name();
+            outcome.spfMillis += result.getElapsedMillis();
+
+            if (k == 0) {
+                Files.write(new File(genDir, TestPlan.SYMBOLIC_CLASS + ".java").toPath(),
+                        SymbolicDriverPrinter.print(plan).getBytes(StandardCharsets.UTF_8));
+            }
+
+            switch (result.getStatus()) {
+                case SOLVED:
+                    seq.vector = result.getVector();
+                    solved.add(new JUnitPrinter.Sequence(plan, result.getVector()));
+                    break;
+                case INCORRECT_SEQUENCE: {
+                    CallBlock b = plan.getCallBlocks().get(result.getBlockingCall());
+                    seq.detail = "INCORRECT SEQUENCE: call " + b.getIndex() + " (" + b.getOperationName()
+                            + "): " + ("declare".equals(result.getDetail())
+                                       ? "its parameters cannot be chosen" : result.getBlockingClause());
+                    break;
+                }
+                case UNSAT_POSTCONDITION: {
+                    CallBlock b = plan.getCallBlocks().get(result.getBlockingCall());
+                    seq.detail = "UNSATISFIABLE POSTCONDITION: call " + b.getIndex() + " ("
+                            + b.getOperationName() + "): " + result.getBlockingClause();
+                    break;
+                }
+                case SOLVER_ERROR:
+                    seq.detail = "SOLVER ERROR: " + firstLine(result.getDetail());
+                    break;
+                case TIMEOUT:
+                    seq.detail = "TIMEOUT: " + result.getDetail();
+                    break;
+                default:
+                    seq.detail = "DRIVER DID NOT COMPILE: " + result.getDetail();
+                    break;
+            }
+            if (verbose) {
+                System.out.println("sequence " + seq.name + ": " + seq.calls);
+                System.out.println("  SPF: " + seq.status + " in " + seq.spfMillis + "ms"
+                        + (seq.detail.isEmpty() ? "" : " — " + seq.detail));
+                for (String c : seq.checkOnly) System.out.println("  CHECK-ONLY " + c);
+                if (seq.vector != null && !seq.vector.getUnconstrainedSlots().isEmpty()) {
+                    System.out.println("  left free by the solver: " + seq.vector.getUnconstrainedSlots());
+                }
+            }
+        }
+
+        outcome.testsGenerated = solved.size();
+        if (solved.isEmpty()) {
+            SequenceOutcome first = outcome.sequences.get(0);
+            outcome.status = first.status;
+            outcome.detail = first.detail;
+            return outcome;
+        }
+        outcome.status = "GENERATED";
+        outcome.junitSource = JUnitPrinter.print(junitClassName, solved);
+        Files.write(new File(genDir, junitClassName + ".java").toPath(),
+                outcome.junitSource.getBytes(StandardCharsets.UTF_8));
+        return outcome;
+    }
+
+    public static File generatedDir(File outputDir) {
+        return new File(outputDir, TestPlan.GENERATED_PACKAGE.replace('.', '/'));
+    }
+
+    private static void deleteJava(File dir) {
+        File[] files = dir.listFiles();
+        if (files == null) return;
+        for (File f : files) if (f.getName().endsWith(".java")) f.delete();
+    }
+
+    private static String callsOf(TestPlan plan) {
+        StringBuilder sb = new StringBuilder();
+        for (CallBlock b : plan.getCallBlocks()) {
+            if (sb.length() > 0) sb.append(" -> ");
+            sb.append(b.getOperationName());
+        }
+        return sb.toString();
+    }
+
     private static void printSummary(List<LibraryOutcome> outcomes) {
         System.out.println("\n================================================================");
         System.out.println("SUMMARY");
         System.out.println("================================================================");
         for (LibraryOutcome o : outcomes) {
-            System.out.println(String.format("%-14s %-14s paths=%-4d tests=%-4d spf=%6dms %s",
-                    o.entry.key, o.status, o.pathsExplored, o.testsGenerated, o.spfMillis,
-                    o.junitFailures.isEmpty() ? "" : (o.junitFailures.size() + " JUnit failure(s)")));
+            System.out.println(String.format("%-14s %-20s tests=%-3d spf=%6dms %s",
+                    o.entry.key, o.status, o.testsGenerated, o.spfMillis,
+                    o.junitFailures.isEmpty() ? (o.status.equals("GENERATED") ? "" : o.detail)
+                                              : (o.junitFailures.size() + " JUnit failure(s)")));
         }
+    }
+
+    private static String firstLine(String text) {
+        if (text == null) return "";
+        String t = text.trim();
+        int newline = t.indexOf('\n');
+        return newline < 0 ? t : t.substring(0, newline);
     }
 
     private static String read(String path) throws IOException {

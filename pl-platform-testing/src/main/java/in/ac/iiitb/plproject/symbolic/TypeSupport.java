@@ -109,6 +109,34 @@ public final class TypeSupport {
         return out;
     }
 
+    private static final Set<String> PRIMITIVES = new HashSet<String>(java.util.Arrays.asList(
+            "int", "long", "short", "byte", "double", "boolean", "char"));
+
+    /** True for a Java primitive type the model holds as one symbolic value. */
+    public static boolean isPrimitive(String type) {
+        return type != null && PRIMITIVES.contains(type.trim());
+    }
+
+    /** The primitive behind a boxed type ({@code Integer -> int}); the type itself otherwise. */
+    public static String unboxed(String type) {
+        String t = trim(type);
+        for (Map.Entry<String, String> e : PRIMITIVE_TO_BOXED.entrySet()) {
+            if (e.getValue().equals(t)) return e.getKey();
+        }
+        return t;
+    }
+
+    /** Java's default value for a primitive type, as source text. */
+    public static String defaultValue(String type) {
+        switch (unboxed(type)) {
+            case "boolean": return "false";
+            case "double": return "0.0";
+            case "long": return "0L";
+            case "char": return "'\\0'";
+            default: return "0";
+        }
+    }
+
     /** The {@code Debug.makeSymbolic*} factory call for a numeric/boolean type. */
     public static String symbolicFactory(String type) {
         String f = SYMBOLIC_FACTORY.get(trim(type));

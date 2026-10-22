@@ -25,9 +25,29 @@ public class JmlSpecAst {
         this.specs = specs;
     }
 
+    /**
+     * Starting values from the state block ({@code int size = 0;}), name -&gt;
+     * initializer text. A state variable absent here starts from Java's
+     * default: 0, false, null, or an empty collection.
+     */
+    private Map<String, String> stateInitializers = new LinkedHashMap<String, String>();
+
     public JmlSpecAst(List<JmlFunctionSpec> specs, Map<String, String> stateVars) {
+        this(specs, stateVars, null);
+    }
+
+    public JmlSpecAst(List<JmlFunctionSpec> specs, Map<String, String> stateVars,
+                      Map<String, String> stateInitializers) {
         this.specs = specs;
         if (stateVars != null) this.stateVars = new LinkedHashMap<String, String>(stateVars);
+        if (stateInitializers != null) {
+            this.stateInitializers = new LinkedHashMap<String, String>(stateInitializers);
+        }
+    }
+
+    /** Declared starting values, name -&gt; initializer text. Empty when none is written. */
+    public Map<String, String> getStateInitializers() {
+        return Collections.unmodifiableMap(stateInitializers);
     }
 
     /** Declared global state, name -> type. Empty when the spec declares none. */

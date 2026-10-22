@@ -35,6 +35,10 @@ public class TestStringParser {
     private static final Pattern TEST_BLOCK = Pattern.compile(
             "test\\s+(\\w+)\\s*\\{(.*)\\}", Pattern.DOTALL);
 
+    /** One block, allowing one level of nested braces (an old {@code inputs { ... }}). */
+    private static final Pattern ONE_TEST_BLOCK = Pattern.compile(
+            "test\\s+(\\w+)\\s*\\{((?:[^{}]|\\{[^{}]*\\})*)\\}", Pattern.DOTALL);
+
     private static final Pattern SEQUENCE_CLAUSE = Pattern.compile(
             "sequence\\s*:\\s*([^;]+);", Pattern.DOTALL);
 
@@ -91,6 +95,24 @@ public class TestStringParser {
         ast.setSequenceLineNumber(SpecToAstConverter.lineOf(stripped, block.start() + sequence.start()));
         warnIfInputsBlockPresent(body, label, ast);
         return ast;
+    }
+
+    /**
+     * Every {@code test <Name> { sequence: ...; }} block in the file, in order —
+     * a file may carry several sequences for one library, each becoming one
+     * {@code @Test} method of the same class. A bare sequence file is one.
+     */
+    public static List<TestStringAst> parseAll(String text, String sourceFile) {
+        String stripped = stripComments(text);
+        List<TestStringAst> out = new ArrayList<TestStringAst>();
+        Matcher block = ONE_TEST_BLOCK.matcher(stripped);
+        int from = 0;
+        while (block.find(from)) {
+            out.add(parse(stripped.substring(block.start(), block.end()), sourceFile));
+            from = block.end();
+        }
+        if (out.isEmpty()) out.add(parse(text, sourceFile));
+        return out;
     }
 
     private static void warnIfInputsBlockPresent(String body, String label, TestStringAst ast) {

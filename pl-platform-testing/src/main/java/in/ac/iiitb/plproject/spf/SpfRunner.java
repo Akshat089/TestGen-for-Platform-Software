@@ -1,8 +1,6 @@
 package in.ac.iiitb.plproject.spf;
 
-import in.ac.iiitb.plproject.ir.CallBlock;
 import in.ac.iiitb.plproject.ir.TestPlan;
-import in.ac.iiitb.plproject.spf.listener.PathVectorListener;
 import in.ac.iiitb.plproject.symbolic.SymbolicDriverPrinter;
 
 import javax.tools.JavaCompiler;
@@ -11,141 +9,120 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
  * Step 4: runs Symbolic PathFinder, in a SEPARATE process from the generator
- * (rule 6), against the driver {@link SymbolicDriverPrinter} printed.
+ * (rule 6), on the driver {@link SymbolicDriverPrinter} printed from the
+ * contract. The library is not compiled, copied or put on any classpath here:
+ * SPF sees the contract and nothing else, so its answer depends only on
+ * (spec, sequence).
  *
- * <p>On a sequence SPF finds no feasible path through, re-runs against
- * successively shorter prefixes to find the first call whose precondition
- * could not be met (rule 10) — the listener itself only sees completed-path
- * end states, so distinguishing "nothing after call 2" from "nothing after
- * call 0" needs this kind of search, not a single run.
+ * <p>One run per sequence. The listener stops at the first solved path; when
+ * no path completes it reports the highest driver line it pruned at, which
+ * the printer's line map turns into the call and clause that cannot hold.
  */
 public class SpfRunner {
 
-    public SpfRunResult run(TestPlan plan, File workDir, List<String> librarySourcePaths,
-                             SpfConfig config) throws IOException, InterruptedException {
-        SingleRun full = runOnce(plan, workDir, librarySourcePaths, config, "full");
-        if (full.compileFailed) {
-            return new SpfRunResult(plan, full.paths, java.util.Collections.<InputVector>emptyList(),
-                    full.depthLimitHit, full.timedOut, true, full.compileError, null, full.elapsedMillis);
-        }
-
-        List<InputVector> vectors = ValueExtractor.extractAll(plan, full.paths);
-        if (!vectors.isEmpty() || full.depthLimitHit || full.timedOut) {
-            return new SpfRunResult(plan, full.paths, vectors, full.depthLimitHit, full.timedOut,
-                    false, null, null, full.elapsedMillis);
-        }
-
-        // Zero feasible paths, no cutoff: either genuinely infeasible (no call's
-        // precondition can be met) or SPF cannot execute some call at all (every
-        // explored end state is a property violation — see executionErrorDetail's
-        // doc). Re-run shrinking prefixes to find the first call where either
-        // happens; the two are reported distinctly (rule 10).
-        Integer failingCallIndex = null;
-        String executionErrorDetail = null;
-        long extraMillis = 0;
-        for (int k = 1; k <= plan.getCallBlocks().size(); k++) {
-            TestPlan prefix = new TestPlan(plan.getLibraryKey(), plan.getSpecFile(), plan.getTestsFile(),
-                    plan.isHasState(), plan.getStateVars(), plan.getCallBlocks().subList(0, k));
-            SingleRun r = runOnce(prefix, new File(workDir, "prefix" + k), librarySourcePaths, config,
-                    "prefix" + k);
-            extraMillis += r.elapsedMillis;
-            if (r.compileFailed) break;
-            boolean feasible = !ValueExtractor.extractAll(prefix, r.paths).isEmpty();
-            if (feasible) continue;
-            if (r.depthLimitHit || r.timedOut) break;
-            String firstError = firstErrorDetail(r.paths);
-            if (firstError != null) {
-                failingCallIndex = k - 1;
-                executionErrorDetail = firstError;
-            } else {
-                failingCallIndex = k - 1;
-            }
-            break;
-        }
-
-        return new SpfRunResult(plan, full.paths, vectors, full.depthLimitHit, full.timedOut,
-                false, null, failingCallIndex, executionErrorDetail, full.elapsedMillis + extraMillis);
-    }
-
-    private static String firstErrorDetail(List<PathVector> paths) {
-        for (PathVector p : paths) {
-            if (p.getEvent() == PathVector.Event.ERROR) return p.getDetail();
-        }
-        return null;
-    }
-
-    private static class SingleRun {
-        List<PathVector> paths = new ArrayList<PathVector>();
-        boolean depthLimitHit;
-        boolean timedOut;
-        boolean compileFailed;
-        String compileError;
-        long elapsedMillis;
-    }
-
-    private SingleRun runOnce(TestPlan plan, File workDir, List<String> librarySourcePaths,
-                               SpfConfig config, String label) throws IOException, InterruptedException {
+    public SpfRunResult run(TestPlan plan, File workDir, SpfConfig config)
+            throws IOException, InterruptedException {
         long start = System.currentTimeMillis();
-        SingleRun run = new SingleRun();
 
-        File genDir = new File(workDir, packagePath());
+        File genDir = new File(workDir, TestPlan.GENERATED_PACKAGE.replace('.', '/'));
         Files.createDirectories(genDir.toPath());
-
-        String driverSource = SymbolicDriverPrinter.print(plan);
+        SymbolicDriverPrinter.Printed printed = SymbolicDriverPrinter.printWithLines(plan);
         Files.write(new File(genDir, TestPlan.SYMBOLIC_CLASS + ".java").toPath(),
-                driverSource.getBytes(StandardCharsets.UTF_8));
-
-        for (String librarySourcePath : librarySourcePaths) {
-            Path src = Paths.get(librarySourcePath);
-            Files.copy(src, new File(genDir, src.getFileName().toString()).toPath(),
-                    java.nio.file.StandardCopyOption.REPLACE_EXISTING);
-        }
+                printed.source.getBytes(StandardCharsets.UTF_8));
 
         File classesDir = new File(workDir, "classes");
         Files.createDirectories(classesDir.toPath());
-        String compileError = compile(genDir, classesDir);
+        String compileError = compile(new File(genDir, TestPlan.SYMBOLIC_CLASS + ".java"), classesDir);
         if (compileError != null) {
-            run.compileFailed = true;
-            run.compileError = compileError;
-            run.elapsedMillis = System.currentTimeMillis() - start;
-            return run;
+            return new SpfRunResult(SpfRunResult.Status.COMPILE_ERROR, null, null, -1, null, compileError,
+                    System.currentTimeMillis() - start);
         }
 
         File outputJsonl = new File(workDir, "paths.jsonl");
+        Files.deleteIfExists(outputJsonl.toPath());
         File jpfConfig = new File(workDir, "run.jpf");
         writeJpfConfig(jpfConfig, classesDir, outputJsonl, config);
 
-        boolean timedOut = !runSpfProcess(jpfConfig, config.getTimeoutSeconds());
-        run.timedOut = timedOut;
-        run.paths = PathVectorReader.read(outputJsonl.toPath());
-        for (PathVector v : run.paths) {
-            if (v.getEvent() == PathVector.Event.SEARCH_CONSTRAINT_HIT && v.isDepthLimit()) {
-                run.depthLimitHit = true;
+        boolean finished = runSpfProcess(jpfConfig, config.getTimeoutSeconds());
+        List<PathVector> paths = PathVectorReader.read(outputJsonl.toPath());
+        long elapsed = System.currentTimeMillis() - start;
+        String console = consoleTail(new File(workDir, "spf-console.log"));
+
+        for (PathVector p : paths) {
+            if (p.getEvent() == PathVector.Event.PATH && p.isSat()) {
+                return new SpfRunResult(SpfRunResult.Status.SOLVED, ValueExtractor.extract(plan, p), paths,
+                        -1, null, null, elapsed);
             }
         }
-        run.elapsedMillis = System.currentTimeMillis() - start;
-        return run;
+
+        PathVector finishedEvent = null;
+        boolean timeLimit = !finished;
+        String firstError = null;
+        for (PathVector p : paths) {
+            if (p.getEvent() == PathVector.Event.SEARCH_FINISHED) finishedEvent = p;
+            if (p.getEvent() == PathVector.Event.SEARCH_CONSTRAINT_HIT
+                    && p.getDetail() != null && p.getDetail().contains("time")) timeLimit = true;
+            if (p.getEvent() == PathVector.Event.ERROR && firstError == null) firstError = p.getDetail();
+        }
+        if (timeLimit) {
+            return new SpfRunResult(SpfRunResult.Status.TIMEOUT, null, paths, -1, null,
+                    "SPF time limit (" + config.getTimeoutSeconds() + "s) reached before any path completed",
+                    elapsed);
+        }
+        if (finishedEvent == null || solverFailed(console)) {
+            return new SpfRunResult(SpfRunResult.Status.SOLVER_ERROR, null, paths, -1, null,
+                    "SPF did not finish its search normally: " + console, elapsed);
+        }
+        if (firstError != null) {
+            return new SpfRunResult(SpfRunResult.Status.SOLVER_ERROR, null, paths, -1, null,
+                    "SPF reported a property violation in the driver: " + firstError, elapsed);
+        }
+
+        SymbolicDriverPrinter.LineMap.Entry at = printed.lines.at(finishedEvent.getDeepestPruneLine());
+        if (at == null) {
+            return new SpfRunResult(SpfRunResult.Status.SOLVER_ERROR, null, paths, -1, null,
+                    "no path completed and the pruning point (line " + finishedEvent.getDeepestPruneLine()
+                    + ") is not an assumption of the driver", elapsed);
+        }
+        SpfRunResult.Status status = "ensures".equals(at.kind) ? SpfRunResult.Status.UNSAT_POSTCONDITION
+                                                               : SpfRunResult.Status.INCORRECT_SEQUENCE;
+        return new SpfRunResult(status, null, paths, at.callIndex, at.clauseText, at.kind, elapsed);
     }
 
-    private String compile(File genDir, File classesDir) throws IOException {
-        JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
-        List<String> sources = new ArrayList<String>();
-        for (File f : genDir.listFiles()) {
-            if (f.getName().endsWith(".java")) sources.add(f.getAbsolutePath());
+    /** z3/SPF failures show up only on the console; these are the markers seen in practice. */
+    private static boolean solverFailed(String console) {
+        return console.contains("Error Z3") || console.contains("Z3Exception")
+                || console.contains("java.lang.UnsatisfiedLinkError")
+                || console.contains("gov.nasa.jpf.JPFException");
+    }
+
+    private static String consoleTail(File log) {
+        try {
+            if (!log.isFile()) return "";
+            List<String> lines = Files.readAllLines(log.toPath(), StandardCharsets.UTF_8);
+            StringBuilder sb = new StringBuilder();
+            for (int i = Math.max(0, lines.size() - 15); i < lines.size(); i++) {
+                sb.append(lines.get(i)).append('\n');
+            }
+            return sb.toString();
+        } catch (IOException e) {
+            return "";
         }
-        String cp = SpfHome.resolveDriverCompileClasspath();
+    }
+
+    private String compile(File driver, File classesDir) throws IOException {
+        JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
         List<String> args = new ArrayList<String>();
-        args.add("-cp"); args.add(cp);
+        args.add("-cp"); args.add(SpfHome.resolveDriverCompileClasspath());
+        args.add("-g");
         args.add("-d"); args.add(classesDir.getAbsolutePath());
-        args.addAll(sources);
+        args.add(driver.getAbsolutePath());
 
         java.io.ByteArrayOutputStream errOut = new java.io.ByteArrayOutputStream();
         int rc = compiler.run(null, null, errOut, args.toArray(new String[0]));
@@ -156,7 +133,9 @@ public class SpfRunner {
             throws IOException {
         File jpfCore = SpfHome.resolveJpfCoreCheckoutDir();
         File jpfSymbc = SpfHome.resolveJpfSymbcCheckoutDir();
-        String listenerClasspath = classpathEntryOf(PathVectorListener.class);
+        // the listener ships in this same classes dir / jar; naming its class here would load
+        // gov.nasa.jpf.* into the generator JVM, which does not have it
+        String listenerClasspath = classpathEntryOf(SpfRunner.class);
 
         // Mirrors jpf-core's own jpf.properties: jpf-core.native_classpath is
         // build/jpf.jar + build/jpf-annotations.jar (the HOST-side engine), not
@@ -169,17 +148,17 @@ public class SpfRunner {
         File libDir = new File(jpfSymbc, "lib");
         File[] libJars = libDir.listFiles((dir, name) -> name.endsWith(".jar"));
         if (libJars != null) {
+            java.util.Arrays.sort(libJars);
             for (File jar : libJars) nativeCp.append(",").append(jar.getAbsolutePath());
         }
         nativeCp.append(",").append(listenerClasspath);
 
-        // The modeled/target-side classpath: the compiled driver + Helper, plus the
-        // same jpf-classes.jar/jpf-symbc-classes.jar they were compiled against, so
-        // the modeled JVM can resolve Verify/Debug as ordinary classes.
+        // The modeled/target-side classpath: the compiled driver ONLY, plus the
+        // jpf-classes.jar/jpf-symbc-classes.jar it was compiled against. No library.
         StringBuilder sb = new StringBuilder();
         sb.append("target = ").append(TestPlan.GENERATED_PACKAGE).append('.').append(TestPlan.SYMBOLIC_CLASS).append('\n');
         sb.append("classpath = ").append(classesDir.getAbsolutePath()).append(",")
-          .append(SpfHome.resolveDriverCompileClasspath()).append('\n');
+          .append(SpfHome.resolveDriverCompileClasspath().replace(File.pathSeparator, ",")).append('\n');
         sb.append("native_classpath = ").append(nativeCp).append('\n');
         sb.append("vm.insn_factory.class = gov.nasa.jpf.symbc.SymbolicInstructionFactory\n");
         sb.append("symbolic.dp = ").append(config.getSolver()).append('\n');
@@ -191,6 +170,14 @@ public class SpfRunner {
         sb.append("listener = in.ac.iiitb.plproject.spf.listener.PathVectorListener\n");
         sb.append("genatc.output = ").append(outputJsonl.getAbsolutePath()).append('\n');
         Files.write(jpfConfig.toPath(), sb.toString().getBytes(StandardCharsets.UTF_8));
+    }
+
+    /** The classpath SPF runs the driver with, for tests that check the library is not on it. */
+    public static String modeledClasspath(File runJpf) throws IOException {
+        for (String line : Files.readAllLines(runJpf.toPath(), StandardCharsets.UTF_8)) {
+            if (line.startsWith("classpath = ")) return line.substring("classpath = ".length());
+        }
+        return "";
     }
 
     private static String classpathEntryOf(Class<?> cls) {
@@ -206,8 +193,8 @@ public class SpfRunner {
     private boolean runSpfProcess(File jpfConfig, int timeoutSeconds) throws IOException, InterruptedException {
         File runJpfJar = SpfHome.resolveRunJpfJar();
         String javaBin = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
-        ProcessBuilder pb = new ProcessBuilder(javaBin, "-jar", runJpfJar.getAbsolutePath(),
-                jpfConfig.getAbsolutePath());
+        ProcessBuilder pb = new ProcessBuilder(javaBin, "-Xmx" + SpfConfig.SPF_HEAP, "-XX:+UseSerialGC",
+                "-jar", runJpfJar.getAbsolutePath(), jpfConfig.getAbsolutePath());
         pb.redirectErrorStream(true);
         pb.redirectOutput(new File(jpfConfig.getParentFile(), "spf-console.log"));
         Process process = pb.start();
@@ -216,9 +203,5 @@ public class SpfRunner {
             process.destroyForcibly();
         }
         return finished;
-    }
-
-    private static String packagePath() {
-        return TestPlan.GENERATED_PACKAGE.replace('.', '/');
     }
 }

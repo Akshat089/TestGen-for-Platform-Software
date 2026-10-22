@@ -2,125 +2,155 @@ package in.ac.iiitb.plproject.symbolic;
 
 import in.ac.iiitb.plproject.ir.CallBlock;
 import in.ac.iiitb.plproject.ir.Clause;
-import in.ac.iiitb.plproject.ir.ParamSlot;
-import in.ac.iiitb.plproject.ir.Snapshot;
 import in.ac.iiitb.plproject.ir.TestPlan;
 
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 /**
- * Step 3: {@link TestPlan} -&gt; the symbolic driver SPF actually executes.
+ * Step 3: {@link TestPlan} -&gt; the symbolic driver SPF executes, built from
+ * the CONTRACT ONLY. It never calls {@code Helper} and imports nothing from
+ * the library; SPF's classpath does not contain the library at all.
  *
- * <p>Declares each parameter symbolic (or, when pooled, declares a symbolic
- * POOL INDEX and resolves it against a shared literal array — rule 9), prints
- * the precondition as {@code Debug.assume(...)} or, for an already-concrete
- * conjunct, {@code Verify.ignoreIf(!(...))} (confirmed by direct experiment:
- * {@code Debug.assume} on a non-symbolic boolean is a silent no-op — it does
- * NOT prune the path). It does not print postconditions at all (rule 5): SPF
- * only needs to know which paths are feasible, not what they're supposed to
- * prove — that is the JUnit printer's job, once the path is a concrete vector.
+ * <p>The driver keeps its own model copy of every state variable, set to its
+ * starting value, and for each call in order: (a) declares a symbolic value
+ * per parameter, (b) assumes the precondition over the model, (c) declares a
+ * fresh symbolic result and a fresh value for every state variable the
+ * postcondition names, (d) assumes the postcondition, with {@code \old(v)}
+ * read from the previous model value. A state variable the postcondition does
+ * not name keeps its value (frame rule). Each assumption is printed as
+ * {@code Verify.ignoreIf(!(...))}: jpf-symbc's {@code Debug.assume} only
+ * prunes when its argument still carries a symbolic attribute, and a Java
+ * comparison has already been branched into a concrete boolean by the time it
+ * is passed (see the {@code assume} peer in
+ * {@code JPF_gov_nasa_jpf_symbc_Debug}), so it would silently prune nothing.
+ *
+ * <p>Every assumption sits on its own line so that the line SPF last pruned
+ * at names the clause that cannot hold ({@link LineMap}).
  */
 public final class SymbolicDriverPrinter {
 
     private SymbolicDriverPrinter() {}
 
+    /** Which clause each printed assumption line belongs to. */
+    public static final class LineMap {
+        public static final class Entry {
+            public final int line;
+            public final int callIndex;
+            /** "requires", "ensures" or "declare". */
+            public final String kind;
+            public final String clauseText;
+
+            Entry(int line, int callIndex, String kind, String clauseText) {
+                this.line = line;
+                this.callIndex = callIndex;
+                this.kind = kind;
+                this.clauseText = clauseText;
+            }
+        }
+
+        private final List<Entry> entries = new ArrayList<Entry>();
+
+        public List<Entry> getEntries() { return entries; }
+
+        /** The entry for {@code line}, or null when it is not an assumption line of the driver. */
+        public Entry at(int line) {
+            for (Entry e : entries) if (e.line == line) return e;
+            return null;
+        }
+    }
+
+    /** The driver source together with its line map. */
+    public static final class Printed {
+        public final String source;
+        public final LineMap lines;
+
+        Printed(String source, LineMap lines) {
+            this.source = source;
+            this.lines = lines;
+        }
+    }
+
     public static String print(TestPlan plan) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("package ").append(TestPlan.GENERATED_PACKAGE).append(";\n\n");
-        sb.append("import gov.nasa.jpf.symbc.Debug;\n");
-        sb.append("import gov.nasa.jpf.vm.Verify;\n\n");
-        sb.append("/** Symbolic driver for SPF. Not shipped with the JUnit test class (rule 11). */\n");
-        sb.append("public class ").append(TestPlan.SYMBOLIC_CLASS).append(" {\n\n");
+        return printWithLines(plan).source;
+    }
 
-        printPools(sb, plan);
-
-        sb.append("    public static void main(String[] args) {\n");
-        if (plan.isHasState()) {
-            sb.append("        Helper.reset();\n");
+    public static Printed printWithLines(TestPlan plan) {
+        Out out = new Out();
+        out.line("package " + TestPlan.GENERATED_PACKAGE + ";");
+        out.line("");
+        out.line("import gov.nasa.jpf.symbc.Debug;");
+        out.line("import gov.nasa.jpf.vm.Verify;");
+        out.line("");
+        out.line("/**");
+        out.line(" * Symbolic driver for SPF, built from " + plan.getSpecFile() + " only.");
+        out.line(" * It models the library state itself and never calls the library.");
+        out.line(" */");
+        out.line("public class " + TestPlan.SYMBOLIC_CLASS + " {");
+        out.line("");
+        out.line("    public static void main(String[] args) {");
+        if (!plan.getStartDecls().isEmpty()) {
+            out.line("        // starting state");
+            for (String d : plan.getStartDecls()) out.line("        " + d);
         }
         for (CallBlock block : plan.getCallBlocks()) {
-            sb.append("\n        // call ").append(block.getIndex()).append(": ")
-              .append(block.getOperationName()).append("\n");
-            printParamDeclarations(sb, block);
-            printPrecondition(sb, block);
-            printSnapshots(sb, block);
-            printCall(sb, block);
-        }
-        sb.append("    }\n");
-        sb.append("}\n");
-        return sb.toString();
-    }
-
-    private static void printPools(StringBuilder sb, TestPlan plan) {
-        Map<String, List<String>> poolsByType = new LinkedHashMap<String, List<String>>();
-        for (ParamSlot slot : plan.pooledParams()) {
-            poolsByType.putIfAbsent(slot.getType().trim(), slot.getPool());
-        }
-        for (Map.Entry<String, List<String>> e : poolsByType.entrySet()) {
-            String type = e.getKey();
-            String elemType = TypeSupport.poolArrayElementType(type);
-            sb.append("    private static final ").append(elemType).append("[] POOL_")
-              .append(sanitize(type)).append(" = {");
-            List<String> values = e.getValue();
-            for (int i = 0; i < values.size(); i++) {
-                if (i > 0) sb.append(", ");
-                sb.append(TypeSupport.literal(type, values.get(i)));
+            out.line("");
+            out.line("        // call " + block.getIndex() + ": " + block.getOperationName());
+            for (String d : block.getParamDecls()) {
+                out.mark(block.getIndex(), "declare", d);
+                out.line("        " + d);
             }
-            sb.append("};\n");
-        }
-        if (!poolsByType.isEmpty()) sb.append("\n");
-    }
-
-    private static void printParamDeclarations(StringBuilder sb, CallBlock block) {
-        for (ParamSlot p : block.getParams()) {
-            if (p.isSymbolic()) {
-                sb.append("        ").append(p.getType()).append(' ').append(p.getSlotName())
-                  .append(" = ").append(TypeSupport.symbolicFactory(p.getType()))
-                  .append("(\"").append(p.getSlotName()).append("\");\n");
-            } else {
-                String idx = p.getPoolIndexName();
-                sb.append("        int ").append(idx).append(" = Debug.makeSymbolicInteger(\"")
-                  .append(idx).append("\");\n");
-                sb.append("        Verify.ignoreIf(!(").append(idx).append(" >= 0 && ").append(idx)
-                  .append(" < ").append(p.getPool().size()).append("));\n");
-                sb.append("        ").append(p.getType()).append(' ').append(p.getSlotName())
-                  .append(" = POOL_").append(sanitize(p.getType())).append('[').append(idx)
-                  .append("];\n");
+            for (Clause c : block.getPreconditions()) printAssumption(out, block, c, "requires");
+            for (String d : block.getFreshDecls()) {
+                out.mark(block.getIndex(), "declare", d);
+                out.line("        " + d);
             }
+            for (Clause c : block.getPostconditions()) printAssumption(out, block, c, "ensures");
+        }
+        out.line("    }");
+        out.line("");
+        out.line("    /** A symbolic 0/1 flag. */");
+        out.line("    private static int flag(String name) {");
+        out.line("        int v = Debug.makeSymbolicInteger(name);");
+        out.line("        Verify.ignoreIf(v < 0 || v > 1);");
+        out.line("        return v;");
+        out.line("    }");
+        out.line("");
+        out.line("    /** A symbolic index into the " + TypeSupport.POOL_SIZE + "-value pool. */");
+        out.line("    private static int index(String name) {");
+        out.line("        int v = Debug.makeSymbolicInteger(name);");
+        out.line("        Verify.ignoreIf(v < 0 || v > " + (TypeSupport.POOL_SIZE - 1) + ");");
+        out.line("        return v;");
+        out.line("    }");
+        out.line("}");
+        return new Printed(out.sb.toString(), out.map);
+    }
+
+    private static void printAssumption(Out out, CallBlock block, Clause c, String kind) {
+        if (c.isTautological()) {
+            out.line("        // " + kind + ": " + c.getOriginalText() + "  (only names the result)");
+        } else if (c.isCheckOnly()) {
+            out.line("        // CHECK-ONLY " + kind + ": " + c.getOriginalText() + "  (" + c.getCheckOnlyReason() + ")");
+        } else {
+            out.line("        // " + kind + ": " + c.getOriginalText());
+            out.mark(block.getIndex(), kind, c.getOriginalText());
+            out.line("        Verify.ignoreIf(!(" + c.getModelExpr() + "));");
         }
     }
 
-    private static void printPrecondition(StringBuilder sb, CallBlock block) {
-        for (Clause c : block.getPreconditions()) {
-            if (c.mentionsSymbolicParam()) {
-                sb.append("        Debug.assume(").append(c.getJavaExpr()).append(");\n");
-            } else {
-                sb.append("        Verify.ignoreIf(!(").append(c.getJavaExpr()).append("));\n");
-            }
-        }
-    }
+    private static final class Out {
+        final StringBuilder sb = new StringBuilder();
+        final LineMap map = new LineMap();
+        int lineNo = 1;
 
-    private static void printSnapshots(StringBuilder sb, CallBlock block) {
-        for (Snapshot s : block.getSnapshots()) {
-            sb.append("        ").append(s.getType()).append(' ').append(s.getLocalName())
-              .append(" = Helper.").append(s.getStateVarName()).append(";\n");
+        void line(String text) {
+            sb.append(text).append('\n');
+            lineNo++;
         }
-    }
 
-    private static void printCall(StringBuilder sb, CallBlock block) {
-        sb.append("        ");
-        if (block.isStoresResult()) {
-            sb.append(block.getReturnType()).append(' ').append(block.getResultVarName()).append(" = ");
+        /** Records that the NEXT printed line belongs to this call and clause. */
+        void mark(int callIndex, String kind, String clauseText) {
+            map.entries.add(new LineMap.Entry(lineNo, callIndex, kind, clauseText));
         }
-        sb.append("Helper.").append(block.getOperationName()).append('(')
-          .append(block.argumentList()).append(");\n");
-    }
-
-    private static String sanitize(String type) {
-        return type.trim().replaceAll("[^A-Za-z0-9_]", "_");
     }
 }

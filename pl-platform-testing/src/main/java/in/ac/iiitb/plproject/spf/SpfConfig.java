@@ -11,6 +11,9 @@ public class SpfConfig {
 
     public static final SpfConfig DEFAULT = fromSystemProperties();
 
+    /** Heap for each SPF process; the drivers are small and many run in parallel. */
+    public static final String SPF_HEAP = System.getProperty("genatc.spf.heap", "384m");
+
     private final int depthLimit;
     private final int timeoutSeconds;
     private final String solver;
@@ -28,7 +31,7 @@ public class SpfConfig {
     public static SpfConfig fromSystemProperties() {
         return new SpfConfig(
                 Integer.getInteger("genatc.spf.depthLimit", 300),
-                Integer.getInteger("genatc.spf.timeoutSeconds", 120),
+                Integer.getInteger("genatc.spf.timeoutSeconds", 60),
                 System.getProperty("genatc.spf.solver", "z3"),
                 Integer.getInteger("genatc.spf.minInt", -1000),
                 Integer.getInteger("genatc.spf.maxInt", 1000));

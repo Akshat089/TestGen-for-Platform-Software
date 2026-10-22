@@ -40,30 +40,50 @@ public final class IrBuilder {
     private static final Pattern HASH_LOOKUP = Pattern.compile(
             "\\.(contains|containsKey|get|put|add|remove)\\s*\\(");
 
+    /** A pooled number is {@code NUMERIC_POOL_BASE + NUMERIC_POOL_STEP * index}: 101, 103, 105. */
+    public static final int NUMERIC_POOL_BASE = 101;
+    public static final int NUMERIC_POOL_STEP = 2;
+
+    private static final Pattern OLD_CALL = Pattern.compile("\\\\old\\s*\\(\\s*[A-Za-z_][A-Za-z0-9_]*\\s*\\)");
+
     public static TestPlan build(JmlSpecAst spec, TestStringAst test, String specFile, String testsFile) {
         InputChecker.check(spec, test, specFile, testsFile);
 
-        Set<String> stateVarNames = spec.getStateVars().keySet();
         Set<String> hashKeyTypes = collectHashKeyTypes(spec);
 
         // One shared literal pool per pooled TYPE, so e.g. a `String` added by one
         // call in the sequence can be the same literal a later call's precondition
         // requires to already be present (StringSet's add -> contains -> remove).
         Map<String, List<String>> poolsByType = new HashMap<String, List<String>>();
+        List<String> stringPool = poolsByType.computeIfAbsent("String", t -> freshPool(t));
+
+        Map<String, ModelTranslator.StateModel> model = ModelTranslator.modelState(
+                spec.getStateVars(), spec.getStateInitializers(), hashKeyTypes);
+        List<String> startDecls = new ArrayList<String>();
+        for (ModelTranslator.StateModel s : model.values()) {
+            startDecls.addAll(ModelTranslator.startDecls(s, stringPool));
+        }
+
+        // state name -> the model version a bare name currently reads (0 = starting value)
+        Map<String, Integer> current = new LinkedHashMap<String, Integer>();
+        for (String name : model.keySet()) current.put(name, 0);
 
         List<CallBlock> blocks = new ArrayList<CallBlock>();
         List<String> calls = test.getCalls();
         for (int i = 0; i < calls.size(); i++) {
             JmlFunctionSpec fn = spec.findSpecFor(calls.get(i));
-            blocks.add(buildBlock(i, fn, spec.getStateVars(), hashKeyTypes, poolsByType));
+            blocks.add(buildBlock(i, fn, spec.getStateVars(), model, current, hashKeyTypes, poolsByType,
+                    stringPool));
         }
 
         return new TestPlan(test.getName(), specFile, testsFile,
-                !spec.getStateVars().isEmpty(), spec.getStateVars(), blocks);
+                !spec.getStateVars().isEmpty(), spec.getStateVars(), startDecls, blocks);
     }
 
     private static CallBlock buildBlock(int i, JmlFunctionSpec fn, Map<String, String> stateVars,
-                                         Set<String> hashKeyTypes, Map<String, List<String>> poolsByType) {
+                                         Map<String, ModelTranslator.StateModel> model,
+                                         Map<String, Integer> current, Set<String> hashKeyTypes,
+                                         Map<String, List<String>> poolsByType, List<String> stringPool) {
         Set<String> stateVarNames = stateVars.keySet();
         FunctionSignature sig = fn.getSignature();
         List<Variable> declaredParams = (sig != null && sig.getParameters() != null)
@@ -71,10 +91,14 @@ public final class IrBuilder {
 
         List<ParamSlot> slots = new ArrayList<ParamSlot>();
         Map<String, String> paramSlotNames = new LinkedHashMap<String, String>();
+        Map<String, ParamSlot> paramsByName = new LinkedHashMap<String, ParamSlot>();
+        List<String> paramDecls = new ArrayList<String>();
         for (Variable p : declaredParams) {
             ParamSlot slot = buildSlot(i, p, hashKeyTypes, poolsByType);
             slots.add(slot);
             paramSlotNames.put(p.getName(), slot.getSlotName());
+            paramsByName.put(p.getName(), slot);
+            paramDecls.add(paramDecl(slot));
         }
 
         String returnType = fn.getReturnTypeName();
@@ -98,32 +122,93 @@ public final class IrBuilder {
             snapshots.add(new Snapshot(e.getKey(), stateVars.get(e.getKey()), e.getValue()));
         }
 
+        // (b) the precondition reads the model as it stands before the call
+        ModelTranslator.Scope preScope = new ModelTranslator.Scope(model, current, null, paramsByName,
+                null, null, stringPool);
         List<Clause> preconditions = new ArrayList<Clause>();
         for (String conjunct : ClauseText.splitTopLevelAnd(fn.getRequiresText())) {
             ClauseText.Rewritten r = ClauseText.rewrite(conjunct, paramSlotNames, stateVarNames,
                     null, null, snapshotNameOf);
-            boolean symbolic = mentionsSymbolic(r.referencedParams, slots);
-            preconditions.add(new Clause(conjunct, r.java, symbolic));
+            preconditions.add(clause(conjunct, r.java, preScope, false));
         }
 
+        // (c) fresh values: the result, and every state variable the postcondition
+        // names outside \old(...). Anything it does not name keeps its value (frame rule).
+        List<String> freshDecls = new ArrayList<String>();
+        ModelTranslator.Term resultTerm = null;
+        if (hasReturn) {
+            String rv = "c" + i + "_result";
+            freshDecls.addAll(resultDecl(returnType.trim(), rv));
+            resultTerm = ModelTranslator.Term.resultOf(returnType, rv);
+        }
+        Map<String, Integer> before = new LinkedHashMap<String, Integer>(current);
+        Set<String> changed = ClauseText.freeIdentifiers(OLD_CALL.matcher(ensuresText == null ? "" : ensuresText)
+                .replaceAll(" "));
+        for (ModelTranslator.StateModel s : model.values()) {
+            if (!changed.contains(s.name) || s.shape == ModelTranslator.Shape.UNSUPPORTED) continue;
+            current.put(s.name, i + 1);
+        }
+        ModelTranslator.Scope postScope = new ModelTranslator.Scope(model,
+                new LinkedHashMap<String, Integer>(current), before, paramsByName, resultAlias, resultTerm,
+                stringPool);
+        List<String> ensuresClauses = new ArrayList<String>();
+        for (String c : ClauseText.splitTopLevelAnd(ensuresText)) {
+            ensuresClauses.add(OLD_CALL.matcher(c).replaceAll(" 0 "));
+        }
+        for (ModelTranslator.StateModel s : model.values()) {
+            if (!changed.contains(s.name) || s.shape == ModelTranslator.Shape.UNSUPPORTED) continue;
+            freshDecls.addAll(ModelTranslator.freshCollection(s, i + 1, ensuresClauses, postScope));
+        }
+
+        // (d) the postcondition relates the fresh values to the old ones
         List<Clause> postconditions = new ArrayList<Clause>();
         for (String clauseText : ClauseText.splitTopLevelAnd(ensuresText)) {
             ClauseText.Rewritten r = ClauseText.rewrite(clauseText, paramSlotNames, stateVarNames,
                     resultAlias, resultVarName, snapshotNameOf);
-            boolean symbolic = mentionsSymbolic(r.referencedParams, slots);
-            postconditions.add(new Clause(clauseText, r.java, symbolic));
+            boolean tautological = namesOnlyTheResult(clauseText, resultAlias);
+            postconditions.add(tautological ? new Clause(clauseText, r.java, null, null, true)
+                                            : clause(clauseText, r.java, postScope, false));
         }
 
         return new CallBlock(i, fn.getName(), hasReturn ? returnType.trim() : "void",
                 slots, preconditions, snapshots, storesResult, resultVarName, resultAlias,
-                postconditions);
+                postconditions, paramDecls, freshDecls);
     }
 
-    private static boolean mentionsSymbolic(Set<String> referencedParamNames, List<ParamSlot> slots) {
-        for (ParamSlot slot : slots) {
-            if (referencedParamNames.contains(slot.getParamName()) && slot.isSymbolic()) return true;
+    private static Clause clause(String text, String java, ModelTranslator.Scope scope, boolean tautological) {
+        try {
+            return new Clause(text, java, ModelTranslator.translate(text, scope), null, tautological);
+        } catch (ModelTranslator.Unmodellable e) {
+            return new Clause(text, java, null, e.getMessage(), tautological);
         }
-        return false;
+    }
+
+    /** {@code \result == poppedElem}: both sides are the result, so it asserts nothing. */
+    static boolean namesOnlyTheResult(String clauseText, String resultAlias) {
+        String side = "(?:\\\\result" + (resultAlias != null ? "|" + Pattern.quote(resultAlias) : "") + ")";
+        return clauseText.trim().matches(side + "\\s*==\\s*" + side);
+    }
+
+    /** The driver line declaring one parameter (step a). */
+    private static String paramDecl(ParamSlot slot) {
+        String v = slot.getSlotName();
+        if (slot.isPooled()) {
+            // SPF chooses the pool index; the extractor maps it back to the literal.
+            return "int " + v + " = index(\"" + v + "\");";
+        }
+        String t = TypeSupport.unboxed(slot.getType());
+        return t + " " + v + " = " + TypeSupport.symbolicFactory(t) + "(\"" + v + "\");";
+    }
+
+    /** The driver lines declaring a call's fresh result. */
+    private static List<String> resultDecl(String type, String var) {
+        if (TypeSupport.isPrimitive(type)) {
+            List<String> out = new ArrayList<String>();
+            out.add(type + " " + var + " = " + TypeSupport.symbolicFactory(type) + "(\"" + var + "\");");
+            return out;
+        }
+        return ModelTranslator.freshRef(var, "String".equals(type) ? "int" : TypeSupport.unboxed(type),
+                "String".equals(type));
     }
 
     /**
@@ -205,7 +290,7 @@ public final class IrBuilder {
             if ("String".equals(type)) {
                 values.add("s" + (k + 1));
             } else {
-                values.add(String.valueOf(101 + k * 2)); // 101, 103, 105 — distinct, non-zero
+                values.add(String.valueOf(NUMERIC_POOL_BASE + k * NUMERIC_POOL_STEP)); // 101, 103, 105
             }
         }
         return values;

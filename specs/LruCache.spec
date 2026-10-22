@@ -36,7 +36,7 @@ state {
     Map<String,String> C;
     List<String> Recency;
     String mostRecent;
-    int capacity;
+    int capacity = 2;
     int size;
 }
 

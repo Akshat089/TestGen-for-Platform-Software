@@ -7,6 +7,10 @@ import gov.nasa.jpf.search.Search;
 import gov.nasa.jpf.symbc.numeric.PCChoiceGenerator;
 import gov.nasa.jpf.symbc.numeric.PathCondition;
 import gov.nasa.jpf.vm.ChoiceGenerator;
+import gov.nasa.jpf.vm.Instruction;
+import gov.nasa.jpf.vm.MethodInfo;
+import gov.nasa.jpf.vm.StackFrame;
+import gov.nasa.jpf.vm.ThreadInfo;
 import gov.nasa.jpf.vm.VM;
 
 import java.io.FileWriter;
@@ -38,6 +42,10 @@ public class PathVectorListener extends PropertyListenerAdapter {
 
     private final PrintWriter out;
     private int pathId = 0;
+    /** Highest line of the driver's main() at which SPF pruned a path, or -1. */
+    private int deepestPruneLine = -1;
+    /** Stop at the first completed, solved path: one input vector per sequence. */
+    private final boolean stopAtFirstPath;
 
     public PathVectorListener(Config conf, JPF jpf) {
         this(conf);
@@ -45,6 +53,7 @@ public class PathVectorListener extends PropertyListenerAdapter {
 
     public PathVectorListener(Config conf) {
         String path = conf.getString("genatc.output", "genatc-paths.jsonl");
+        this.stopAtFirstPath = conf.getBoolean("genatc.stop_at_first_path", true);
         try {
             this.out = new PrintWriter(new FileWriter(path, false));
         } catch (IOException e) {
@@ -57,6 +66,35 @@ public class PathVectorListener extends PropertyListenerAdapter {
         out.println("{\"event\":\"searchConstraintHit\",\"detail\":"
                 + jsonString(search.getSearchConstraint()) + "}");
         out.flush();
+    }
+
+    /**
+     * Remembers how far into the driver the search got before a path was
+     * pruned. The driver is straight-line with one assumption per line, so
+     * when NO path completes, the highest pruned line is the first clause
+     * that cannot hold after everything before it: every earlier clause was
+     * passed by some path, and no path got past this one.
+     */
+    @Override
+    public void instructionExecuted(VM vm, ThreadInfo ti, Instruction next, Instruction executed) {
+        if (!vm.getSystemState().isIgnored()) return;
+        int line = -1;
+        if (isDriverMain(executed.getMethodInfo())) {
+            line = executed.getLineNumber();
+        } else {
+            for (StackFrame f = ti.getTopFrame(); f != null; f = f.getPrevious()) {
+                if (isDriverMain(f.getMethodInfo())) {
+                    line = f.getLine();
+                    break;
+                }
+            }
+        }
+        if (line > deepestPruneLine) deepestPruneLine = line;
+    }
+
+    private static boolean isDriverMain(MethodInfo mi) {
+        return mi != null && "main".equals(mi.getName()) && mi.getClassInfo() != null
+                && mi.getClassInfo().getName().endsWith(".GeneratedATCs");
     }
 
     @Override
@@ -85,8 +123,11 @@ public class PathVectorListener extends PropertyListenerAdapter {
             cg = cg.getPreviousChoiceGeneratorOfType(PCChoiceGenerator.class);
         }
         if (!(cg instanceof PCChoiceGenerator)) {
-            out.println("{\"event\":\"path\",\"path\":" + pathId + ",\"sat\":false,\"vars\":{}}");
+            // no symbolic decision on this path at all: nothing is constrained,
+            // every value is free
+            out.println("{\"event\":\"path\",\"path\":" + pathId + ",\"sat\":true,\"vars\":{}}");
             out.flush();
+            if (stopAtFirstPath) search.terminate();
             return;
         }
 
@@ -107,11 +148,13 @@ public class PathVectorListener extends PropertyListenerAdapter {
         sb.append("}}");
         out.println(sb);
         out.flush();
+        if (sat && stopAtFirstPath) search.terminate();
     }
 
     @Override
     public void searchFinished(Search search) {
-        out.println("{\"event\":\"searchFinished\",\"paths\":" + pathId + "}");
+        out.println("{\"event\":\"searchFinished\",\"paths\":" + pathId
+                + ",\"deepestPruneLine\":" + deepestPruneLine + "}");
         out.flush();
         out.close();
     }

@@ -23,8 +23,8 @@
  */
 
 state {
-    int[] A;
-    int length;
+    int[] A = {0, 0, 0, 0};
+    int length = 4;
     int writes;
 }
 

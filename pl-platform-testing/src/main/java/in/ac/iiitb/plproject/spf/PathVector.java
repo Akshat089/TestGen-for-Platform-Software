@@ -36,9 +36,18 @@ public class PathVector {
         return new PathVector(Event.ERROR, -1, false, new LinkedHashMap<String, String>(), detail);
     }
 
-    public static PathVector finished(int totalPaths) {
+    public static PathVector finished(int totalPaths, int deepestPruneLine) {
         return new PathVector(Event.SEARCH_FINISHED, totalPaths, false,
-                new LinkedHashMap<String, String>(), null);
+                new LinkedHashMap<String, String>(), String.valueOf(deepestPruneLine));
+    }
+
+    /** SEARCH_FINISHED only: the highest driver line a path was pruned at, or -1. */
+    public int getDeepestPruneLine() {
+        try {
+            return detail == null ? -1 : Integer.parseInt(detail);
+        } catch (NumberFormatException e) {
+            return -1;
+        }
     }
 
     public Event getEvent() { return event; }

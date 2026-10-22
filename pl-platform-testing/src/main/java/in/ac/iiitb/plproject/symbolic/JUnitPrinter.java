@@ -10,56 +10,91 @@ import in.ac.iiitb.plproject.spf.InputVector;
 import java.util.List;
 
 /**
- * Step 6: {@link TestPlan} + one {@link InputVector} per feasible path -&gt;
- * {@code GeneratedATCsTest.java}, one {@code @Test} method per path named
- * {@code path1}, {@code path2}, ... (rule 11).
+ * Step 6: {@link TestPlan} + its one solved {@link InputVector} -&gt;
+ * {@code GeneratedATCsTest.java}, ONE {@code @Test} method per sequence.
  *
  * <p>Per call block, prints a precondition check, the snapshot locals, the
  * call with LITERAL arguments (storing the result if any), and one assertion
- * per postcondition clause — using the exact same {@link Clause#getJavaExpr()}
- * text {@link SymbolicDriverPrinter} used, so the two can never disagree about
- * what is being tested (rule 5): only HOW {@code c<i>_<param>} gets its value
- * differs (a literal local here, {@code Debug.makeSymbolic*} there). A
- * precondition failure and a postcondition failure are reported with
- * different message prefixes (rule 11) so a test failure immediately says
- * which kind it is. Imports nothing from {@code gov.nasa.jpf} (rule 11): by
- * the time this class exists every value is a plain Java literal.
+ * per postcondition clause — using the clause's JUnit form over the real
+ * library. A clause that only names the result ({@code \result == poppedElem})
+ * asserts nothing and is not printed as an assertion. A precondition failure
+ * and a postcondition failure are reported with different message prefixes
+ * ({@code PRE}/{@code POST}) so a failure immediately says which kind it is.
+ * Imports nothing from {@code gov.nasa.jpf}: by the time this class exists
+ * every value is a plain Java literal.
  */
 public final class JUnitPrinter {
 
     private JUnitPrinter() {}
 
-    public static String print(TestPlan plan, List<InputVector> vectors) {
+    /** Per-test time limit, so a looping library fails the test instead of hanging it. */
+    public static final int TEST_TIMEOUT_MILLIS = 2000;
+
+    /** One sequence and the inputs SPF solved for it. */
+    public static final class Sequence {
+        public final TestPlan plan;
+        public final InputVector vector;
+
+        public Sequence(TestPlan plan, InputVector vector) {
+            this.plan = plan;
+            this.vector = vector;
+        }
+    }
+
+    public static String print(TestPlan plan, InputVector vector) {
+        java.util.List<Sequence> one = new java.util.ArrayList<Sequence>();
+        one.add(new Sequence(plan, vector));
+        return print(TestPlan.JUNIT_CLASS, one);
+    }
+
+    public static String print(String className, List<Sequence> sequences) {
+        TestPlan first = sequences.get(0).plan;
         StringBuilder sb = new StringBuilder();
         sb.append("package ").append(TestPlan.GENERATED_PACKAGE).append(";\n\n");
         sb.append("import org.junit.Test;\n");
         sb.append("import static org.junit.Assert.assertTrue;\n\n");
-        sb.append("/**\n * Generated from ").append(plan.getSpecFile()).append(" + ")
-          .append(plan.getTestsFile()).append(".\n")
-          .append(" * One @Test method per path SPF found through the sequence;\n")
-          .append(" * every assertion traces to one postcondition clause of the contract.\n")
-          .append(" * No SPF on this class's classpath (rule 11).\n */\n");
-        sb.append("public class ").append(TestPlan.JUNIT_CLASS).append(" {\n");
+        sb.append("/**\n * Generated from ").append(first.getSpecFile()).append(" + ")
+          .append(first.getTestsFile()).append(".\n")
+          .append(" * One @Test method per sequence, with the inputs SPF solved from the contract;\n")
+          .append(" * every assertion traces to one clause of the contract.\n */\n");
+        sb.append("public class ").append(className).append(" {\n");
 
-        for (int i = 0; i < vectors.size(); i++) {
-            printPathMethod(sb, plan, vectors.get(i), i + 1);
+        java.util.Set<String> used = new java.util.HashSet<String>();
+        for (int i = 0; i < sequences.size(); i++) {
+            printSequenceMethod(sb, sequences.get(i), methodName(sequences.get(i).plan, i + 1, used));
         }
 
         sb.append("}\n");
         return sb.toString();
     }
 
-    private static void printPathMethod(StringBuilder sb, TestPlan plan, InputVector vector, int n) {
-        sb.append("\n    // SPF path #").append(vector.getPathId()).append('\n');
-        sb.append("    @Test\n");
-        sb.append("    public void path").append(n).append("() {\n");
+    private static String methodName(TestPlan plan, int n, java.util.Set<String> used) {
+        String base = plan.getLibraryKey() != null
+                ? plan.getLibraryKey().replaceAll("[^A-Za-z0-9_]", "_") : "sequence" + n;
+        if (!Character.isJavaIdentifierStart(base.charAt(0))) base = "s" + base;
+        base = Character.toLowerCase(base.charAt(0)) + base.substring(1);
+        String name = base;
+        for (int k = 2; !used.add(name); k++) name = base + "_" + k;
+        return name;
+    }
+
+    private static void printSequenceMethod(StringBuilder sb, Sequence seq, String name) {
+        TestPlan plan = seq.plan;
+        StringBuilder calls = new StringBuilder();
+        for (CallBlock b : plan.getCallBlocks()) {
+            if (calls.length() > 0) calls.append(" -> ");
+            calls.append(b.getOperationName());
+        }
+        sb.append("\n    // sequence: ").append(calls).append('\n');
+        sb.append("    @Test(timeout = ").append(TEST_TIMEOUT_MILLIS).append(")\n");
+        sb.append("    public void ").append(name).append("() {\n");
         if (plan.isHasState()) {
             sb.append("        Helper.reset();\n");
         }
         for (CallBlock block : plan.getCallBlocks()) {
             sb.append("\n        // call ").append(block.getIndex()).append(": ")
               .append(block.getOperationName()).append('\n');
-            printParamLiterals(sb, block, vector);
+            printParamLiterals(sb, block, seq.vector);
             printPreconditionChecks(sb, block);
             printSnapshots(sb, block);
             printCall(sb, block);
@@ -101,6 +136,7 @@ public final class JUnitPrinter {
 
     private static void printPostconditionAssertions(StringBuilder sb, CallBlock block) {
         for (Clause c : block.getPostconditions()) {
+            if (c.isTautological()) continue;
             sb.append("        assertTrue(")
               .append(javaString("POST " + block.getOperationName() + ": " + c.getOriginalText()))
               .append(", ").append(c.getJavaExpr()).append(");\n");

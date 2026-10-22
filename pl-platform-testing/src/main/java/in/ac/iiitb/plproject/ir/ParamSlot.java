@@ -41,9 +41,6 @@ public class ParamSlot {
     public String getPoolReason() { return poolReason; }
     public List<String> getPool() { return pool; }
 
-    /** The pool-index local's name, when this slot is pooled (e.g. {@code c0_elem$idx}). */
-    public String getPoolIndexName() { return slotName + "$idx"; }
-
     @Override
     public String toString() {
         return slotName + ": " + type + " [" + kind + (poolReason != null ? ", " + poolReason : "") + "]";

@@ -52,7 +52,9 @@ public final class PathVectorReader {
         } else if ("error".equals(event)) {
             return PathVector.error((String) obj.get("detail"));
         } else if ("searchFinished".equals(event)) {
-            return PathVector.finished(((Number) obj.get("paths")).intValue());
+            Object deepest = obj.get("deepestPruneLine");
+            return PathVector.finished(((Number) obj.get("paths")).intValue(),
+                    deepest instanceof Number ? ((Number) deepest).intValue() : -1);
         }
         throw new IllegalArgumentException("unknown event in: " + line);
     }

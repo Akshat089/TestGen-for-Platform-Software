@@ -35,7 +35,7 @@ public class SpecToAstConverter {
         }
 
         // Step 3: Pick up the optional global-state declaration block
-        return new JmlSpecAst(specs, extractStateVars(specText));
+        return new JmlSpecAst(specs, extractStateVars(specText), extractStateInitializers(specText));
     }
 
     /** 1-based line number of the given 0-based character offset into {@code text}. */
@@ -70,29 +70,58 @@ public class SpecToAstConverter {
      */
     static Map<String, String> extractStateVars(String specText) {
         Map<String, String> stateVars = new LinkedHashMap<>();
-        
-        Matcher m = Pattern.compile("(?m)^\\s*state\\s*\\{([^}]*)\\}", Pattern.DOTALL)
+        for (Map.Entry<String, String[]> e : extractStateDecls(specText).entrySet()) {
+            stateVars.put(e.getKey(), e.getValue()[0]);
+        }
+        return stateVars;
+    }
+
+    /**
+     * Starting values written in the state block ({@code int size = 0;}), name
+     * -&gt; initializer text exactly as written. A variable declared without one
+     * is absent here and starts from Java's default.
+     */
+    static Map<String, String> extractStateInitializers(String specText) {
+        Map<String, String> init = new LinkedHashMap<>();
+        for (Map.Entry<String, String[]> e : extractStateDecls(specText).entrySet()) {
+            if (e.getValue()[1] != null) init.put(e.getKey(), e.getValue()[1]);
+        }
+        return init;
+    }
+
+    /** name -&gt; {type, initializer-or-null}, in declaration order. */
+    private static Map<String, String[]> extractStateDecls(String specText) {
+        Map<String, String[]> decls = new LinkedHashMap<>();
+
+        Matcher m = Pattern.compile("(?m)^\\s*state\\s*\\{((?:[^{}]|\\{[^{}]*\\})*)\\}", Pattern.DOTALL)
                            .matcher(specText);
-        if (!m.find()) return stateVars;
-        
-        for (String decl : m.group(1).split(";")) {
-            String line = stripComments(decl).trim();
+        if (!m.find()) return decls;
+
+        for (String decl : stripComments(m.group(1)).split(";")) {
+            String line = decl.trim();
             if (line.isEmpty()) continue;
-            
+
+            String initializer = null;
+            int eq = line.indexOf('=');
+            if (eq >= 0) {
+                initializer = line.substring(eq + 1).trim();
+                line = line.substring(0, eq).trim();
+            }
+
             int split = line.lastIndexOf(' ');
             int tab = line.lastIndexOf('\t');
             if (tab > split) split = tab;
             if (split < 0) continue;
-            
+
             String type = line.substring(0, split).trim();
             String name = line.substring(split + 1).trim();
             if (!type.isEmpty() && name.matches("[a-zA-Z_][a-zA-Z0-9_]*")) {
-                stateVars.put(name, type);
+                decls.put(name, new String[] { type, initializer });
             }
         }
-        return stateVars;
+        return decls;
     }
-    
+
     static String stripComments(String text) {
         return text.replaceAll("(?s)/\\*.*?\\*/", "")
                    .replaceAll("(?m)//[^\n]*", "");

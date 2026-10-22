@@ -13,9 +13,9 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Step 5: one solved {@link PathVector} per path -&gt; one {@link InputVector},
- * mapping each {@code c<i>_<param>} (or, pooled, {@code c<i>_<param>$idx})
- * back to its {@link CallBlock}/{@link ParamSlot} and converting the raw
+ * Step 5: the one solved {@link PathVector} -&gt; one {@link InputVector},
+ * mapping each {@code c<i>_<param>} (for a pooled parameter, the pool index
+ * SPF chose) back to its {@link CallBlock}/{@link ParamSlot} and converting the raw
  * solver value to a Java literal of the declared type (rule 7): {@code long}
  * gets an {@code L} suffix, {@code String} is quoted and escaped, a boxed
  * type that the solver left unconstrained can still legally be {@code null}
@@ -37,45 +37,30 @@ public final class ValueExtractor {
 
         for (CallBlock block : plan.getCallBlocks()) {
             for (ParamSlot slot : block.getParams()) {
+                String raw = path.getVars().get(slot.getSlotName());
                 if (slot.isPooled()) {
+                    // the driver's c<i>_<param> IS the pool index SPF chose
                     pooled.add(slot.getSlotName());
-                    String idxRaw = path.getVars().get(slot.getPoolIndexName());
-                    int idx = 0;
-                    if (idxRaw != null) {
-                        try {
-                            idx = (int) Math.round(Double.parseDouble(idxRaw));
-                        } catch (NumberFormatException ignored) {
-                            idx = 0;
-                        }
-                    } else {
-                        unconstrained.add(slot.getSlotName());
-                    }
                     List<String> pool = slot.getPool();
-                    if (idx < 0 || idx >= pool.size()) idx = 0;
-                    literals.put(slot.getSlotName(), TypeSupport.literal(slot.getType(), pool.get(idx)));
-                } else {
-                    String raw = path.getVars().get(slot.getSlotName());
+                    int idx;
                     if (raw == null) {
                         unconstrained.add(slot.getSlotName());
-                        literals.put(slot.getSlotName(),
-                                TypeSupport.unconstrainedLiteral(slot.getType(), ordinal++));
+                        idx = ordinal++ % pool.size();
                     } else {
-                        literals.put(slot.getSlotName(), toJavaLiteral(slot.getType(), raw));
+                        idx = (int) parseLongLike(raw.trim());
+                        if (idx < 0 || idx >= pool.size()) idx = 0;
                     }
+                    literals.put(slot.getSlotName(), TypeSupport.literal(slot.getType(), pool.get(idx)));
+                } else if (raw == null) {
+                    unconstrained.add(slot.getSlotName());
+                    literals.put(slot.getSlotName(),
+                            TypeSupport.unconstrainedLiteral(slot.getType(), ordinal++));
+                } else {
+                    literals.put(slot.getSlotName(), toJavaLiteral(slot.getType(), raw));
                 }
             }
         }
         return new InputVector(path.getPathId(), literals, unconstrained, pooled);
-    }
-
-    public static List<InputVector> extractAll(TestPlan plan, List<PathVector> paths) {
-        List<InputVector> out = new ArrayList<InputVector>();
-        for (PathVector p : paths) {
-            if (p.getEvent() == PathVector.Event.PATH && p.isSat()) {
-                out.add(extract(plan, p));
-            }
-        }
-        return out;
     }
 
     private static String toJavaLiteral(String type, String rawSolverValue) {

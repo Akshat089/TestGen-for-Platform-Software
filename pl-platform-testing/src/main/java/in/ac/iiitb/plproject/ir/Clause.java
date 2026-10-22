@@ -2,37 +2,46 @@ package in.ac.iiitb.plproject.ir;
 
 /**
  * One conjunct of a precondition or one clause of a postcondition, kept with
- * its original text alongside the Java it rewrites to (rule 5e).
+ * its original text alongside the two forms it is printed in: the JUnit
+ * assertion over the real library ({@link #getJavaExpr()}) and the condition
+ * over the symbolic driver's model ({@link #getModelExpr()}).
  */
 public class Clause {
 
     private final String originalText;
     private final String javaExpr;
-    /** True when this clause references at least one SYMBOLIC parameter of its own call. */
-    private final boolean mentionsSymbolicParam;
+    /** Condition over the model, or null when the clause is check-only. */
+    private final String modelExpr;
+    /** Why the model cannot express this clause; null when it can. */
+    private final String checkOnlyReason;
+    /** True for {@code \result == alias}: it only names the result and asserts nothing. */
+    private final boolean tautological;
 
-    public Clause(String originalText, String javaExpr, boolean mentionsSymbolicParam) {
+    public Clause(String originalText, String javaExpr, String modelExpr, String checkOnlyReason,
+                  boolean tautological) {
         this.originalText = originalText;
         this.javaExpr = javaExpr;
-        this.mentionsSymbolicParam = mentionsSymbolicParam;
+        this.modelExpr = modelExpr;
+        this.checkOnlyReason = checkOnlyReason;
+        this.tautological = tautological;
     }
 
     /** The clause exactly as written in the {@code .spec} file. */
     public String getOriginalText() { return originalText; }
 
-    /** The same clause, rewritten: state vars qualified, {@code \old}/{@code \result} substituted. */
+    /** The JUnit form: state vars qualified as {@code Helper.<name>}, {@code \old}/{@code \result} substituted. */
     public String getJavaExpr() { return javaExpr; }
 
-    /**
-     * True when a symbolic (non-pooled) parameter of this call appears in the
-     * clause — decides, for a PRECONDITION conjunct, whether the symbolic
-     * driver prints {@code Debug.assume(...)} (there is something for the
-     * solver to constrain) or {@code Verify.ignoreIf(!(...))} (the clause is
-     * already fully concrete by the time this call runs — state plus
-     * pool-resolved literals — and {@code Debug.assume} on a concrete boolean
-     * is a silent no-op, confirmed by direct experiment while building this).
-     */
-    public boolean mentionsSymbolicParam() { return mentionsSymbolicParam; }
+    /** The driver form, over model variables; null when {@link #isCheckOnly()}. */
+    public String getModelExpr() { return modelExpr; }
+
+    /** True when the model cannot express this clause: it is asserted in JUnit only. */
+    public boolean isCheckOnly() { return modelExpr == null && !tautological; }
+
+    public String getCheckOnlyReason() { return checkOnlyReason; }
+
+    /** True for a clause that only names the result ({@code \result == poppedElem}); never asserted. */
+    public boolean isTautological() { return tautological; }
 
     @Override
     public String toString() {
