@@ -1,94 +1,90 @@
 #!/usr/bin/env bash
-# Builds the generator, regenerates every registered library through the real
-# pipeline (checks -> IR -> real SPF -> solved input vectors -> JUnit), and
-# fails loudly on any failure that is not an already-known, documented
-# outcome.
+# Builds the generator, regenerates every registered library through the
+# contract-only pipeline (checks -> IR -> symbolic driver built from the spec
+# alone -> real SPF -> one solved input vector per sequence -> JUnit), runs
+# each generated JUnit class against the unmodified library, compares the
+# generated sources with the golden copies, and fails loudly on anything that
+# is not the expected outcome:
 #
-#   - GENERATED : the library produced a JUnit class; prints pass/fail counts.
-#       A JUnit FAILURE here is not itself a script failure — arraylib is
-#       EXPECTED to show failures (a real contract bug, see
-#       IMPLEMENTATION_NOTES.md), so this script reports every failure loudly
-#       but only turns the exit code non-zero for a library that was not
-#       already known to fail when this script was last updated.
-#   - SKIPPED        : an unsupported library (reports its reason) — fine.
-#   - INFEASIBLE      : SPF found no feasible path — fine, as long as the
-#       library is not one of the ones this script expects to generate.
-#   - EXECUTION_ERROR : SPF could not execute a call at all (mathlib/gcd's
-#       confirmed jpf-symbc limitation) — fine for mathlib specifically.
-#   - COMPILE_ERROR / INPUT_ERROR / an unexpected status for any other
-#       library, or a library that was expected to generate but didn't : FAIL.
+#   - GENERATED with every JUnit test passing, for every supported library;
+#   - SKIPPED for the three libraries that need a returned id threaded into a
+#     later call (taskqueue, ticketservice, orderservice);
+#   - the generated GeneratedATCs.java / GeneratedATCsTest.java identical to
+#     pl-platform-testing/golden/<key>/ (regenerate those with --update-golden).
+#
+# Anything else — INCORRECT_SEQUENCE, UNSAT_POSTCONDITION, SOLVER_ERROR,
+# TIMEOUT, COMPILE_ERROR, INPUT_ERROR, a failing generated test, or a golden
+# difference — is a FAIL. It also checks that no generated driver mentions the
+# library (Helper) and that no SPF run had the library on its classpath.
 #
 # Prerequisite: scripts/setup-spf.sh has been run at least once.
 #
-# Run from the repository root:  ./verify-generated.sh
+# Run from the repository root:  ./verify-generated.sh [--update-golden]
 set -uo pipefail
 
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 PROJECT="$ROOT/pl-platform-testing"
+UPDATE_GOLDEN=0
+[ "${1:-}" = "--update-golden" ] && UPDATE_GOLDEN=1
 
-# Libraries this script expects to produce a GENERATED JUnit class, and the
-# ones whose status is something else for a documented reason (see
-# IMPLEMENTATION_NOTES.md for why).
-EXPECT_GENERATED="stack queue arraylib linkedlist heap set hashmap bst graph lrucache"
-EXPECT_EXECUTION_ERROR="mathlib"
+EXPECT_GENERATED="stack queue mathlib arraylib linkedlist heap set hashmap bst graph lrucache"
 EXPECT_SKIPPED="taskqueue ticketservice orderservice"
-# A JUnit FAILURE is expected (a found contract bug, not a generator bug) for:
-EXPECT_JUNIT_FAILURES="arraylib"
 
 cd "$PROJECT"
 echo "== mvn -o install (pl-platform-testing) =="
 mvn -q -o install -DskipTests || { echo "BUILD FAILED"; exit 1; }
 
-CP="target/classes"
-for jar in $(find "$HOME/.m2/repository/gov/nasa/jpf" -name '*.jar' 2>/dev/null); do CP="$CP:$jar"; done
 JUNIT_JAR=$(find "$HOME/.m2/repository/junit" -name 'junit-4.13.1.jar' 2>/dev/null | head -1)
 HAMCREST_JAR=$(find "$HOME/.m2/repository/org/hamcrest" -name 'hamcrest-core-1.3.jar' 2>/dev/null | head -1)
-CP="$CP:$JUNIT_JAR:$HAMCREST_JAR"
+CP="target/classes:$JUNIT_JAR:$HAMCREST_JAR"
 
 OUT="$(mktemp)"
-echo "== running GenatcMain for every registered library (real SPF) =="
-java -cp "$CP" in.ac.iiitb.plproject.atc.GenatcMain 2>&1 | tee "$OUT"
+echo "== running GenatcMain for every registered library =="
+java -cp "$CP" in.ac.iiitb.plproject.atc.GenatcMain 2>&1 | grep -v '^\[WARN\]' | tee "$OUT"
 
 status=0
+GEN=in/ac/iiitb/plproject/atc/generated
 for key in $EXPECT_GENERATED; do
-    line="$(grep -E "^${key}[[:space:]]" "$OUT")"
+    line="$(grep -E "^${key}[[:space:]]+[A-Z_]+[[:space:]]+tests=" "$OUT")"
     if [ -z "$line" ]; then
         echo "FAIL: $key did not appear in the summary at all"
         status=1
         continue
-    fi
-    if ! echo "$line" | grep -q "GENERATED"; then
+    elif ! echo "$line" | grep -q "GENERATED"; then
         echo "FAIL: $key expected GENERATED, got: $line"
         status=1
         continue
-    fi
-    if echo "$line" | grep -q "JUnit failure"; then
-        case " $EXPECT_JUNIT_FAILURES " in
-            *" $key "*)
-                echo "OK (expected JUnit failures, a documented contract bug): $line" ;;
-            *)
-                echo "FAIL: $key has UNEXPECTED JUnit failures: $line"
-                status=1 ;;
-        esac
+    elif echo "$line" | grep -q "JUnit failure"; then
+        echo "FAIL: $key has failing generated tests: $line"
+        status=1
     else
         echo "OK: $line"
     fi
-done
 
-for key in $EXPECT_EXECUTION_ERROR; do
-    line="$(grep -E "^${key}[[:space:]]" "$OUT")"
-    if echo "$line" | grep -q "EXECUTION_ERROR"; then
-        echo "OK (documented jpf-symbc limitation): $line"
-    else
-        echo "FAIL: $key expected EXECUTION_ERROR, got: $line"
+    driver="outputs/$key/$GEN/GeneratedATCs.java"
+    if grep -q "Helper" "$driver"; then
+        echo "FAIL: $key's symbolic driver mentions the library (Helper)"
         status=1
     fi
+    if grep -E '^classpath = ' "outputs/$key/spf-work/run.jpf" | grep -qE 'libraries|Helper'; then
+        echo "FAIL: $key's SPF classpath contains the library"
+        status=1
+    fi
+
+    for f in GeneratedATCs.java GeneratedATCsTest.java; do
+        if [ "$UPDATE_GOLDEN" -eq 1 ]; then
+            mkdir -p "golden/$key" && cp "outputs/$key/$GEN/$f" "golden/$key/$f"
+        elif ! diff -q "golden/$key/$f" "outputs/$key/$GEN/$f" > /dev/null 2>&1; then
+            echo "FAIL: $key's $f differs from golden/$key/$f"
+            status=1
+        fi
+    done
 done
 
 for key in $EXPECT_SKIPPED; do
-    line="$(grep -E "^${key}[[:space:]]" "$OUT")"
+    line="$(grep -E "^${key}[[:space:]]+[A-Z_]+[[:space:]]+tests=" "$OUT")"
     if echo "$line" | grep -q "SKIPPED"; then
-        echo "OK (unsupported by design): $line"
+        echo "OK (unsupported by design): $key"
     else
         echo "FAIL: $key expected SKIPPED, got: $line"
         status=1
@@ -96,11 +92,12 @@ for key in $EXPECT_SKIPPED; do
 done
 
 rm -f "$OUT"
+[ "$UPDATE_GOLDEN" -eq 1 ] && echo "golden files updated under pl-platform-testing/golden/"
 if [ "$status" -ne 0 ]; then
     echo
     echo "VERIFY FAILED — see FAIL lines above."
 else
     echo
-    echo "VERIFY OK — every library matches its documented, previously-observed status."
+    echo "VERIFY OK — every library matches its expected status and its golden files."
 fi
 exit $status
