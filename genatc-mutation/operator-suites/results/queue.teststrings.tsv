@@ -1,0 +1,262 @@
+# generated test strings — queue (family size 260, phase 1 1038s)
+# name	status	spf_ms	rounds	sequence	inputs	detail
+queue-001	PASSED	8298	3	enqueue -> enqueue -> enqueue -> dequeue -> front	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+queue-002	INCORRECT_SEQUENCE	2255	0	dequeue -> front -> isEmpty -> dequeue -> enqueue -> enqueue -> isEmpty	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-003	INCORRECT_SEQUENCE	5026	0	dequeue -> enqueue -> front -> enqueue -> isEmpty	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-004	INCORRECT_SEQUENCE	5961	2	enqueue -> dequeue -> enqueue -> dequeue -> front -> enqueue -> isEmpty	-	INCORRECT SEQUENCE: call 4 (front): size > 0
+queue-005	INCORRECT_SEQUENCE	2262	0	front -> enqueue -> dequeue -> isEmpty -> enqueue	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-006	PASSED	6583	2	enqueue -> enqueue -> dequeue -> front	{c0_elem="s1", c1_elem="s2"}	
+queue-007	PASSED	5796	2	enqueue -> enqueue -> dequeue -> front -> isEmpty -> front	{c0_elem="s1", c1_elem="s2"}	
+queue-008	PASSED	5294	2	enqueue -> enqueue -> dequeue -> front -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-009	INCORRECT_SEQUENCE	4184	1	enqueue -> dequeue -> front -> front -> dequeue -> front	-	INCORRECT SEQUENCE: call 2 (front): size > 0
+queue-010	INCORRECT_SEQUENCE	8780	2	enqueue -> enqueue -> dequeue -> dequeue -> dequeue -> front -> isEmpty	-	INCORRECT SEQUENCE: call 4 (dequeue): size > 0
+queue-011	INCORRECT_SEQUENCE	1870	0	dequeue -> isEmpty -> enqueue -> isEmpty -> front	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-012	INCORRECT_SEQUENCE	5812	2	enqueue -> enqueue -> dequeue -> dequeue -> front -> front -> isEmpty	-	INCORRECT SEQUENCE: call 4 (front): size > 0
+queue-013	FAILED	5478	2	isEmpty -> enqueue -> enqueue -> front -> front -> front	{c1_elem="s1", c2_elem="s2"}	POST: POST isEmpty: emptyFlag == false
+queue-014	INCORRECT_SEQUENCE	5357	2	enqueue -> enqueue -> dequeue -> dequeue -> front -> isEmpty	-	INCORRECT SEQUENCE: call 4 (front): size > 0
+queue-015	PASSED	5307	2	enqueue -> enqueue -> dequeue -> front -> isEmpty -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-016	INCORRECT_SEQUENCE	6564	1	isEmpty -> enqueue -> isEmpty -> dequeue -> front -> enqueue	-	INCORRECT SEQUENCE: call 4 (front): size > 0
+queue-017	INCORRECT_SEQUENCE	1688	0	isEmpty -> dequeue -> enqueue -> dequeue -> dequeue -> isEmpty	-	INCORRECT SEQUENCE: call 1 (dequeue): size > 0
+queue-018	PASSED	5463	2	enqueue -> front -> enqueue -> dequeue -> front -> front	{c0_elem="s1", c2_elem="s2"}	
+queue-019	PASSED	5212	2	enqueue -> isEmpty -> enqueue -> dequeue -> front	{c0_elem="s1", c2_elem="s2"}	
+queue-020	INCORRECT_SEQUENCE	3588	1	enqueue -> isEmpty -> dequeue -> dequeue -> front -> enqueue	-	INCORRECT SEQUENCE: call 3 (dequeue): size > 0
+queue-021	FAILED	5308	2	isEmpty -> enqueue -> dequeue -> enqueue -> front -> dequeue	{c1_elem="s1", c3_elem="s2"}	POST: POST isEmpty: emptyFlag == false
+queue-022	PASSED	5066	2	enqueue -> enqueue -> front -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-023	PASSED	8093	2	enqueue -> isEmpty -> enqueue -> dequeue -> isEmpty	{c0_elem="s1", c2_elem="s2"}	
+queue-024	PASSED	9012	4	enqueue -> enqueue -> enqueue -> front -> dequeue -> enqueue -> isEmpty	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c5_elem="s1"}	
+queue-025	PASSED	7022	3	enqueue -> enqueue -> dequeue -> enqueue -> dequeue -> front -> isEmpty	{c0_elem="s1", c1_elem="s2", c3_elem="s3"}	
+queue-026	PASSED	5325	2	enqueue -> enqueue -> dequeue	{c0_elem="s1", c1_elem="s2"}	
+queue-027	PASSED	6808	3	enqueue -> front -> isEmpty -> enqueue -> enqueue -> dequeue	{c0_elem="s1", c3_elem="s2", c4_elem="s3"}	
+queue-028	PASSED	8529	2	enqueue -> enqueue -> dequeue -> isEmpty -> front -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-029	INCORRECT_SEQUENCE	3545	1	isEmpty -> enqueue -> dequeue -> dequeue -> front -> enqueue	-	INCORRECT SEQUENCE: call 3 (dequeue): size > 0
+queue-030	INCORRECT_SEQUENCE	1844	0	front -> enqueue -> dequeue -> enqueue -> isEmpty	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-031	PASSED	5855	2	enqueue -> enqueue -> dequeue -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-032	FAILED	0	0	dequeue -> dequeue -> front -> isEmpty -> dequeue -> isEmpty	-	PRE: PRE dequeue: size > 0
+queue-033	INCORRECT_SEQUENCE	1973	0	front -> enqueue	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-034	PASSED	5433	2	enqueue -> isEmpty -> dequeue -> enqueue	{c0_elem="s1", c3_elem="s2"}	
+queue-035	PASSED	3853	1	enqueue -> front -> isEmpty	{c0_elem="s1"}	
+queue-036	PASSED	5578	2	enqueue -> front -> dequeue -> enqueue -> isEmpty	{c0_elem="s1", c3_elem="s2"}	
+queue-037	PASSED	8191	2	enqueue -> enqueue	{c0_elem="s1", c1_elem="s2"}	
+queue-038	PASSED	6993	3	enqueue -> enqueue -> enqueue -> dequeue -> front -> front -> isEmpty	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+queue-039	INCORRECT_SEQUENCE	3260	1	enqueue -> isEmpty -> dequeue -> front	-	INCORRECT SEQUENCE: call 3 (front): size > 0
+queue-040	INCORRECT_SEQUENCE	1720	0	isEmpty -> front -> enqueue -> enqueue	-	INCORRECT SEQUENCE: call 1 (front): size > 0
+queue-041	INCORRECT_SEQUENCE	1612	0	dequeue -> enqueue -> dequeue -> enqueue -> dequeue -> isEmpty	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-042	FAILED	0	0	front -> front -> front	-	PRE: PRE front: size > 0
+queue-043	INCORRECT_SEQUENCE	1704	0	dequeue -> enqueue -> enqueue -> front -> isEmpty	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-044	PASSED	7044	3	enqueue -> enqueue -> enqueue -> dequeue -> dequeue -> front -> isEmpty	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+queue-045	INCORRECT_SEQUENCE	3303	1	enqueue -> dequeue -> front -> isEmpty	-	INCORRECT SEQUENCE: call 2 (front): size > 0
+queue-046	INCORRECT_SEQUENCE	1616	0	dequeue -> enqueue -> dequeue -> front -> isEmpty	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-047	PASSED	9448	2	enqueue -> enqueue -> front -> isEmpty -> dequeue -> front -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-048	INCORRECT_SEQUENCE	6217	1	enqueue -> dequeue -> dequeue -> front -> isEmpty	-	INCORRECT SEQUENCE: call 2 (dequeue): size > 0
+queue-049	PASSED	8529	2	enqueue -> enqueue -> dequeue -> isEmpty -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-050	PASSED	10733	3	enqueue -> enqueue -> enqueue	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+queue-051	PASSED	7024	1	enqueue -> front	{c0_elem="s1"}	
+queue-052	PASSED	3684	1	enqueue -> dequeue	{c0_elem="s1"}	
+queue-053	FAILED	0	0	dequeue -> isEmpty	-	PRE: PRE dequeue: size > 0
+queue-054	FAILED	3783	1	isEmpty -> enqueue -> isEmpty	{c1_elem="s1"}	POST: POST isEmpty: emptyFlag == false
+queue-055	INCORRECT_SEQUENCE	1965	0	dequeue -> enqueue -> isEmpty -> front -> isEmpty	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-056	INCORRECT_SEQUENCE	1653	0	front -> enqueue -> enqueue -> isEmpty	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-057	FAILED	3751	1	isEmpty -> enqueue	{c1_elem="s1"}	POST: POST isEmpty: emptyFlag == false
+queue-058	FAILED	6247	2	enqueue -> enqueue -> dequeue -> dequeue -> isEmpty -> isEmpty	{c0_elem="s1", c1_elem="s2"}	POST: POST isEmpty: emptyFlag == false
+queue-059	INCORRECT_SEQUENCE	2480	0	dequeue -> isEmpty -> enqueue -> enqueue -> front -> isEmpty -> isEmpty	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-060	PASSED	10283	2	enqueue -> front -> dequeue -> enqueue -> front -> isEmpty	{c0_elem="s1", c3_elem="s2"}	
+queue-061	INCORRECT_SEQUENCE	4242	1	enqueue -> isEmpty -> dequeue -> front -> front -> isEmpty	-	INCORRECT SEQUENCE: call 3 (front): size > 0
+queue-062	INCORRECT_SEQUENCE	2311	0	dequeue -> enqueue -> dequeue -> front	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-063	PASSED	8049	3	enqueue -> isEmpty -> front -> enqueue -> enqueue	{c0_elem="s1", c3_elem="s2", c4_elem="s3"}	
+queue-064	PASSED	7882	3	enqueue -> enqueue -> enqueue -> dequeue -> front -> isEmpty	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+queue-065	INCORRECT_SEQUENCE	1516	0	dequeue -> front -> enqueue -> isEmpty	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-066	INCORRECT_SEQUENCE	1564	0	dequeue -> front -> dequeue -> isEmpty -> front -> enqueue	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-067	INCORRECT_SEQUENCE	1781	0	dequeue -> enqueue -> enqueue -> enqueue -> dequeue -> front -> isEmpty	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-068	INCORRECT_SEQUENCE	1755	0	dequeue -> enqueue -> enqueue -> dequeue -> front -> isEmpty	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-069	PASSED	7967	2	enqueue -> enqueue -> dequeue -> front -> front -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-070	FAILED	0	0	front -> front -> front -> front -> isEmpty -> front -> front	-	PRE: PRE front: size > 0
+queue-071	FAILED	3496	1	enqueue -> front -> front -> front -> dequeue -> isEmpty	{c0_elem="s1"}	POST: POST isEmpty: emptyFlag == false
+queue-072	INCORRECT_SEQUENCE	1776	0	dequeue -> isEmpty -> enqueue -> dequeue -> isEmpty	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-073	INCORRECT_SEQUENCE	1924	0	dequeue -> enqueue	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-074	FAILED	0	0	front -> front	-	PRE: PRE front: size > 0
+queue-075	PASSED	5576	2	enqueue -> enqueue -> front -> dequeue -> front -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-076	INCORRECT_SEQUENCE	1574	0	front -> isEmpty -> enqueue -> enqueue -> enqueue -> isEmpty	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-077	INCORRECT_SEQUENCE	1713	0	dequeue -> isEmpty -> isEmpty -> isEmpty -> enqueue -> front	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-078	FAILED	0	0	isEmpty -> isEmpty -> isEmpty -> isEmpty -> isEmpty	-	POST: POST isEmpty: emptyFlag == false
+queue-079	PASSED	8173	3	enqueue -> front -> enqueue -> enqueue -> isEmpty -> isEmpty	{c0_elem="s1", c2_elem="s2", c3_elem="s3"}	
+queue-080	PASSED	9649	3	enqueue -> enqueue -> enqueue -> dequeue -> isEmpty	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+queue-081	PASSED	8595	4	enqueue -> enqueue -> enqueue -> enqueue -> dequeue -> front -> isEmpty	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+queue-082	PASSED	8097	4	enqueue -> enqueue -> enqueue -> enqueue -> dequeue -> front	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+queue-083	PASSED	8505	4	enqueue -> enqueue -> enqueue -> dequeue -> front -> enqueue -> isEmpty	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c5_elem="s1"}	
+queue-084	INCORRECT_SEQUENCE	8037	2	enqueue -> dequeue -> enqueue -> dequeue -> front -> isEmpty	-	INCORRECT SEQUENCE: call 4 (front): size > 0
+queue-085	FAILED	0	0	dequeue -> isEmpty -> dequeue	-	PRE: PRE dequeue: size > 0
+queue-086	INCORRECT_SEQUENCE	1520	0	dequeue -> enqueue -> enqueue -> enqueue -> front	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-087	PASSED	4970	2	enqueue -> enqueue -> front -> front -> dequeue -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-088	PASSED	6727	3	enqueue -> enqueue -> dequeue -> enqueue -> front -> isEmpty	{c0_elem="s1", c1_elem="s2", c3_elem="s3"}	
+queue-089	INCORRECT_SEQUENCE	1447	0	front -> enqueue -> enqueue -> dequeue -> enqueue -> enqueue	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-090	FAILED	0	0	dequeue -> isEmpty -> front -> isEmpty -> dequeue	-	PRE: PRE dequeue: size > 0
+queue-091	INCORRECT_SEQUENCE	1434	0	front -> isEmpty -> dequeue -> enqueue	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-092	INCORRECT_SEQUENCE	1349	0	isEmpty -> dequeue -> isEmpty -> dequeue -> enqueue	-	INCORRECT SEQUENCE: call 1 (dequeue): size > 0
+queue-093	PASSED	4919	2	enqueue -> enqueue -> dequeue -> isEmpty -> isEmpty -> front	{c0_elem="s1", c1_elem="s2"}	
+queue-094	PASSED	4883	2	enqueue -> dequeue -> enqueue -> front -> front -> isEmpty	{c0_elem="s1", c2_elem="s2"}	
+queue-095	INCORRECT_SEQUENCE	1400	0	dequeue -> isEmpty -> front -> dequeue -> enqueue -> isEmpty -> dequeue	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-096	FAILED	8091	2	isEmpty -> isEmpty -> enqueue -> enqueue -> dequeue -> front -> isEmpty	{c2_elem="s1", c3_elem="s2"}	POST: POST isEmpty: emptyFlag == false
+queue-097	INCORRECT_SEQUENCE	3461	1	enqueue -> dequeue -> isEmpty -> front	-	INCORRECT SEQUENCE: call 3 (front): size > 0
+queue-098	INCORRECT_SEQUENCE	1728	0	dequeue -> enqueue -> front	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-099	PASSED	6519	3	enqueue -> enqueue -> enqueue -> dequeue -> front -> isEmpty -> isEmpty	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+queue-100	FAILED	0	0	dequeue -> dequeue -> dequeue	-	PRE: PRE dequeue: size > 0
+queue-101	FAILED	3344	1	enqueue -> dequeue -> isEmpty -> isEmpty	{c0_elem="s1"}	POST: POST isEmpty: emptyFlag == false
+queue-102	FAILED	0	0	dequeue -> front -> isEmpty	-	PRE: PRE dequeue: size > 0
+queue-103	INCORRECT_SEQUENCE	1627	0	dequeue -> enqueue -> dequeue	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-104	INCORRECT_SEQUENCE	1619	0	dequeue -> isEmpty -> enqueue -> enqueue -> dequeue -> front -> isEmpty	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-105	INCORRECT_SEQUENCE	1594	0	front -> front -> dequeue -> isEmpty -> dequeue -> enqueue	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-106	PASSED	5030	2	enqueue -> enqueue -> dequeue -> isEmpty -> front	{c0_elem="s1", c1_elem="s2"}	
+queue-107	PASSED	10192	3	enqueue -> dequeue -> enqueue -> front -> front -> enqueue -> dequeue	{c0_elem="s1", c2_elem="s2", c5_elem="s3"}	
+queue-108	PASSED	5276	2	enqueue -> enqueue -> front -> front -> dequeue -> isEmpty -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-109	FAILED	4930	2	isEmpty -> enqueue -> enqueue	{c1_elem="s1", c2_elem="s2"}	POST: POST isEmpty: emptyFlag == false
+queue-110	PASSED	6692	3	enqueue -> enqueue -> enqueue -> front -> isEmpty -> isEmpty	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+queue-111	PASSED	4974	2	enqueue -> enqueue -> dequeue -> front -> front -> isEmpty -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-112	PASSED	5029	2	enqueue -> enqueue -> isEmpty -> front -> dequeue	{c0_elem="s1", c1_elem="s2"}	
+queue-113	FAILED	0	0	front -> dequeue	-	PRE: PRE front: size > 0
+queue-114	INCORRECT_SEQUENCE	6215	1	isEmpty -> enqueue -> dequeue -> front -> enqueue	-	INCORRECT SEQUENCE: call 3 (front): size > 0
+queue-115	PASSED	5174	2	enqueue -> isEmpty -> enqueue -> dequeue -> front -> isEmpty	{c0_elem="s1", c2_elem="s2"}	
+queue-116	INCORRECT_SEQUENCE	1499	0	dequeue -> front -> front -> enqueue	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-117	PASSED	5081	2	enqueue -> enqueue -> front -> front -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-118	PASSED	6773	3	enqueue -> enqueue -> enqueue -> isEmpty -> front -> dequeue	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+queue-119	INCORRECT_SEQUENCE	1509	0	front -> front -> enqueue -> enqueue -> front -> enqueue -> dequeue	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-120	PASSED	5341	2	enqueue -> dequeue -> enqueue	{c0_elem="s1", c2_elem="s2"}	
+queue-121	FAILED	3697	1	enqueue -> front -> dequeue -> isEmpty	{c0_elem="s1"}	POST: POST isEmpty: emptyFlag == false
+queue-122	INCORRECT_SEQUENCE	1686	0	isEmpty -> dequeue -> front -> front -> enqueue	-	INCORRECT SEQUENCE: call 1 (dequeue): size > 0
+queue-123	FAILED	0	0	isEmpty -> front -> isEmpty	-	POST: POST isEmpty: emptyFlag == false
+queue-124	INCORRECT_SEQUENCE	8107	2	enqueue -> enqueue -> dequeue -> dequeue -> front -> isEmpty -> isEmpty	-	INCORRECT SEQUENCE: call 4 (front): size > 0
+queue-125	FAILED	0	0	dequeue -> dequeue -> front -> isEmpty	-	PRE: PRE dequeue: size > 0
+queue-126	INCORRECT_SEQUENCE	1983	0	front -> enqueue -> dequeue -> front	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-127	INCORRECT_SEQUENCE	5087	2	isEmpty -> enqueue -> enqueue -> dequeue -> dequeue -> front	-	INCORRECT SEQUENCE: call 5 (front): size > 0
+queue-128	INCORRECT_SEQUENCE	3534	1	isEmpty -> enqueue -> dequeue -> isEmpty -> isEmpty -> front -> front	-	INCORRECT SEQUENCE: call 5 (front): size > 0
+queue-129	INCORRECT_SEQUENCE	1577	0	front -> enqueue -> enqueue -> dequeue -> front -> front -> isEmpty	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-130	PASSED	3769	1	enqueue -> isEmpty	{c0_elem="s1"}	
+queue-131	FAILED	0	0	isEmpty -> dequeue -> isEmpty -> dequeue -> dequeue -> dequeue	-	POST: POST isEmpty: emptyFlag == false
+queue-132	INCORRECT_SEQUENCE	1554	0	front -> enqueue -> isEmpty -> enqueue	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-133	FAILED	7275	3	isEmpty -> enqueue -> enqueue -> dequeue -> front -> enqueue	{c1_elem="s1", c2_elem="s2", c5_elem="s3"}	POST: POST isEmpty: emptyFlag == false
+queue-134	INCORRECT_SEQUENCE	1767	0	isEmpty -> front -> enqueue -> isEmpty -> isEmpty -> enqueue	-	INCORRECT SEQUENCE: call 1 (front): size > 0
+queue-135	PASSED	7795	2	enqueue -> enqueue -> front -> isEmpty -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-136	PASSED	4952	2	enqueue -> front -> enqueue -> dequeue -> front -> isEmpty	{c0_elem="s1", c2_elem="s2"}	
+queue-137	FAILED	0	0	isEmpty -> dequeue	-	POST: POST isEmpty: emptyFlag == false
+queue-138	FAILED	0	0	front -> isEmpty -> isEmpty	-	PRE: PRE front: size > 0
+queue-139	INCORRECT_SEQUENCE	1501	0	dequeue -> isEmpty -> enqueue -> isEmpty -> enqueue -> isEmpty -> front	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-140	FAILED	0	0	dequeue -> isEmpty -> isEmpty -> isEmpty -> front	-	PRE: PRE dequeue: size > 0
+queue-141	PASSED	5143	2	enqueue -> enqueue -> front -> dequeue -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-142	FAILED	0	0	dequeue -> isEmpty -> dequeue -> dequeue -> isEmpty -> front	-	PRE: PRE dequeue: size > 0
+queue-143	PASSED	4912	2	enqueue -> front -> enqueue -> isEmpty -> dequeue -> front -> isEmpty	{c0_elem="s1", c2_elem="s2"}	
+queue-144	FAILED	0	0	dequeue -> dequeue	-	PRE: PRE dequeue: size > 0
+queue-145	INCORRECT_SEQUENCE	1467	0	dequeue -> front -> isEmpty -> dequeue -> enqueue -> dequeue -> dequeue	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-146	FAILED	3171	1	enqueue -> front -> dequeue -> isEmpty -> isEmpty	{c0_elem="s1"}	POST: POST isEmpty: emptyFlag == false
+queue-147	INCORRECT_SEQUENCE	1624	0	front -> isEmpty -> enqueue	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-148	PASSED	9768	3	enqueue -> enqueue -> enqueue -> isEmpty -> dequeue -> front -> isEmpty	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+queue-149	FAILED	0	0	dequeue -> front	-	PRE: PRE dequeue: size > 0
+queue-150	PASSED	6937	3	enqueue -> enqueue -> dequeue -> enqueue -> front -> front -> isEmpty	{c0_elem="s1", c1_elem="s2", c3_elem="s3"}	
+queue-151	INCORRECT_SEQUENCE	3175	1	enqueue -> dequeue -> front -> isEmpty -> front	-	INCORRECT SEQUENCE: call 2 (front): size > 0
+queue-152	FAILED	0	0	isEmpty -> isEmpty -> front -> isEmpty -> front -> isEmpty	-	POST: POST isEmpty: emptyFlag == false
+queue-153	FAILED	3335	1	isEmpty -> enqueue -> dequeue -> isEmpty -> isEmpty -> isEmpty	{c1_elem="s1"}	POST: POST isEmpty: emptyFlag == false
+queue-154	INCORRECT_SEQUENCE	4831	2	enqueue -> enqueue -> dequeue -> dequeue -> isEmpty -> dequeue	-	INCORRECT SEQUENCE: call 5 (dequeue): size > 0
+queue-155	PASSED	6779	3	enqueue -> enqueue -> enqueue -> dequeue -> isEmpty -> isEmpty	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+queue-156	INCORRECT_SEQUENCE	1399	0	front -> enqueue -> enqueue -> enqueue -> dequeue -> enqueue -> isEmpty	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-157	PASSED	7862	2	enqueue -> enqueue -> front -> front -> front -> dequeue -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-158	PASSED	6944	3	enqueue -> front -> enqueue -> dequeue -> enqueue -> isEmpty	{c0_elem="s1", c2_elem="s2", c4_elem="s3"}	
+queue-159	INCORRECT_SEQUENCE	1766	0	isEmpty -> front -> front -> front -> enqueue -> isEmpty	-	INCORRECT SEQUENCE: call 1 (front): size > 0
+queue-160	FAILED	5189	2	isEmpty -> enqueue -> enqueue -> dequeue -> front -> isEmpty	{c1_elem="s1", c2_elem="s2"}	POST: POST isEmpty: emptyFlag == false
+queue-161	INCORRECT_SEQUENCE	1597	0	front -> enqueue -> enqueue -> dequeue -> dequeue -> front -> isEmpty	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-162	INCORRECT_SEQUENCE	1659	0	dequeue -> front -> front -> enqueue -> front -> front -> enqueue	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-163	INCORRECT_SEQUENCE	3351	1	enqueue -> dequeue -> isEmpty -> dequeue -> front	-	INCORRECT SEQUENCE: call 3 (dequeue): size > 0
+queue-164	INCORRECT_SEQUENCE	3288	1	enqueue -> dequeue -> dequeue -> front -> enqueue	-	INCORRECT SEQUENCE: call 2 (dequeue): size > 0
+queue-165	INCORRECT_SEQUENCE	1554	0	front -> enqueue -> enqueue -> dequeue -> isEmpty	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-166	INCORRECT_SEQUENCE	1518	0	isEmpty -> dequeue -> enqueue -> isEmpty	-	INCORRECT SEQUENCE: call 1 (dequeue): size > 0
+queue-167	INCORRECT_SEQUENCE	7825	2	enqueue -> enqueue -> dequeue -> dequeue -> front -> dequeue -> isEmpty	-	INCORRECT SEQUENCE: call 4 (front): size > 0
+queue-168	FAILED	0	0	front -> dequeue -> isEmpty -> front	-	PRE: PRE front: size > 0
+queue-169	INCORRECT_SEQUENCE	1478	0	front -> front -> dequeue -> dequeue -> front -> enqueue -> front	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-170	INCORRECT_SEQUENCE	3150	1	isEmpty -> enqueue -> dequeue -> front -> front -> enqueue	-	INCORRECT SEQUENCE: call 3 (front): size > 0
+queue-171	INCORRECT_SEQUENCE	1522	0	front -> enqueue -> enqueue -> dequeue -> front -> isEmpty	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-172	INCORRECT_SEQUENCE	1447	0	front -> dequeue -> enqueue -> isEmpty -> isEmpty -> dequeue	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-173	FAILED	3043	1	enqueue -> dequeue -> isEmpty	{c0_elem="s1"}	POST: POST isEmpty: emptyFlag == false
+queue-174	INCORRECT_SEQUENCE	1716	0	front -> dequeue -> enqueue -> enqueue -> isEmpty	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-175	INCORRECT_SEQUENCE	3194	1	enqueue -> dequeue -> dequeue -> isEmpty -> front -> enqueue	-	INCORRECT SEQUENCE: call 2 (dequeue): size > 0
+queue-176	PASSED	6318	3	enqueue -> enqueue -> dequeue -> front -> isEmpty -> enqueue -> isEmpty	{c0_elem="s1", c1_elem="s2", c5_elem="s3"}	
+queue-177	FAILED	0	0	dequeue -> front -> front -> isEmpty	-	PRE: PRE dequeue: size > 0
+queue-178	INCORRECT_SEQUENCE	3137	1	enqueue -> isEmpty -> dequeue -> front -> front -> enqueue	-	INCORRECT SEQUENCE: call 3 (front): size > 0
+queue-179	FAILED	0	0	isEmpty -> front	-	POST: POST isEmpty: emptyFlag == false
+queue-180	INCORRECT_SEQUENCE	1681	0	isEmpty -> dequeue -> front -> enqueue	-	INCORRECT SEQUENCE: call 1 (dequeue): size > 0
+queue-181	INCORRECT_SEQUENCE	1576	0	front -> enqueue -> dequeue -> front -> isEmpty	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-182	INCORRECT_SEQUENCE	6162	1	enqueue -> dequeue -> isEmpty -> front -> enqueue	-	INCORRECT SEQUENCE: call 3 (front): size > 0
+queue-183	PASSED	6363	3	enqueue -> enqueue -> dequeue -> front -> enqueue -> front -> isEmpty	{c0_elem="s1", c1_elem="s2", c4_elem="s3"}	
+queue-184	PASSED	5328	2	enqueue -> enqueue -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-185	INCORRECT_SEQUENCE	4159	1	enqueue -> dequeue -> front -> front -> front -> isEmpty	-	INCORRECT SEQUENCE: call 2 (front): size > 0
+queue-186	PASSED	7591	3	enqueue -> enqueue -> enqueue -> dequeue -> isEmpty -> front -> isEmpty	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+queue-187	PASSED	5605	2	enqueue -> isEmpty -> enqueue -> dequeue -> dequeue	{c0_elem="s1", c2_elem="s2"}	
+queue-188	FAILED	0	0	isEmpty -> isEmpty -> front -> front	-	POST: POST isEmpty: emptyFlag == false
+queue-189	INCORRECT_SEQUENCE	5830	1	enqueue -> front -> dequeue -> front -> front -> isEmpty	-	INCORRECT SEQUENCE: call 3 (front): size > 0
+queue-190	PASSED	4663	2	enqueue -> front -> dequeue -> enqueue -> isEmpty -> front	{c0_elem="s1", c3_elem="s2"}	
+queue-191	INCORRECT_SEQUENCE	2848	1	enqueue -> isEmpty -> dequeue -> front -> isEmpty	-	INCORRECT SEQUENCE: call 3 (front): size > 0
+queue-192	FAILED	0	0	front -> isEmpty	-	PRE: PRE front: size > 0
+queue-193	FAILED	4473	2	isEmpty -> enqueue -> enqueue -> front -> dequeue -> isEmpty	{c1_elem="s1", c2_elem="s2"}	POST: POST isEmpty: emptyFlag == false
+queue-194	PASSED	4983	2	enqueue -> front -> enqueue -> front -> isEmpty	{c0_elem="s1", c2_elem="s2"}	
+queue-195	PASSED	7562	3	enqueue -> front -> enqueue -> enqueue -> dequeue -> isEmpty	{c0_elem="s1", c2_elem="s2", c3_elem="s3"}	
+queue-196	FAILED	0	0	dequeue -> dequeue -> isEmpty -> front -> front	-	PRE: PRE dequeue: size > 0
+queue-197	PASSED	12403	3	enqueue -> enqueue -> enqueue -> front -> dequeue -> front -> isEmpty	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+queue-198	FAILED	7686	2	enqueue -> enqueue -> isEmpty -> dequeue -> dequeue -> isEmpty	{c0_elem="s1", c1_elem="s2"}	POST: POST isEmpty: emptyFlag == false
+queue-199	PASSED	7484	2	enqueue -> front -> dequeue -> enqueue	{c0_elem="s1", c3_elem="s2"}	
+queue-200	PASSED	9987	3	enqueue -> enqueue -> dequeue -> enqueue -> front	{c0_elem="s1", c1_elem="s2", c3_elem="s3"}	
+queue-201	FAILED	0	0	dequeue -> front -> isEmpty -> front	-	PRE: PRE dequeue: size > 0
+queue-202	INCORRECT_SEQUENCE	10051	2	enqueue -> enqueue -> dequeue -> dequeue -> front	-	INCORRECT SEQUENCE: call 4 (front): size > 0
+queue-203	PASSED	8273	3	enqueue -> enqueue -> enqueue -> dequeue -> dequeue -> isEmpty	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+queue-204	PASSED	6321	2	enqueue -> enqueue -> front -> dequeue -> front -> isEmpty -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-205	FAILED	0	0	isEmpty -> front -> front -> isEmpty -> dequeue	-	POST: POST isEmpty: emptyFlag == false
+queue-206	PASSED	9333	3	enqueue -> enqueue -> enqueue -> dequeue -> front -> front	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+queue-207	FAILED	0	0	dequeue -> dequeue -> isEmpty -> front -> dequeue	-	PRE: PRE dequeue: size > 0
+queue-208	PASSED	8762	2	enqueue -> dequeue -> enqueue -> front -> isEmpty	{c0_elem="s1", c2_elem="s2"}	
+queue-209	PASSED	7715	3	enqueue -> enqueue -> front -> enqueue -> dequeue -> front -> isEmpty	{c0_elem="s1", c1_elem="s2", c3_elem="s3"}	
+queue-210	PASSED	5429	2	enqueue -> enqueue -> dequeue -> front -> isEmpty -> isEmpty -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-211	INCORRECT_SEQUENCE	1690	0	front -> dequeue -> dequeue -> front -> enqueue -> dequeue -> dequeue	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-212	FAILED	5289	2	isEmpty -> enqueue -> enqueue -> dequeue -> front -> front -> isEmpty	{c1_elem="s1", c2_elem="s2"}	POST: POST isEmpty: emptyFlag == false
+queue-213	PASSED	6870	3	enqueue -> enqueue -> front -> dequeue -> enqueue -> isEmpty	{c0_elem="s1", c1_elem="s2", c4_elem="s3"}	
+queue-214	PASSED	6576	3	enqueue -> enqueue -> enqueue -> front -> isEmpty	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+queue-215	FAILED	0	0	dequeue -> dequeue -> front	-	PRE: PRE dequeue: size > 0
+queue-216	FAILED	0	0	front -> isEmpty -> front	-	PRE: PRE front: size > 0
+queue-217	INCORRECT_SEQUENCE	1638	0	dequeue -> dequeue -> enqueue -> dequeue -> front -> isEmpty	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-218	FAILED	0	0	front -> dequeue -> dequeue -> isEmpty -> dequeue	-	PRE: PRE front: size > 0
+queue-219	PASSED	3289	1	enqueue -> isEmpty -> dequeue	{c0_elem="s1"}	
+queue-220	INCORRECT_SEQUENCE	1530	0	front -> dequeue -> enqueue -> enqueue -> front -> isEmpty	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-221	PASSED	3139	1	enqueue -> isEmpty -> front -> dequeue	{c0_elem="s1"}	
+queue-222	FAILED	8445	2	enqueue -> enqueue -> dequeue -> dequeue -> isEmpty	{c0_elem="s1", c1_elem="s2"}	POST: POST isEmpty: emptyFlag == false
+queue-223	INCORRECT_SEQUENCE	1459	0	dequeue -> isEmpty -> isEmpty -> enqueue	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-224	FAILED	5432	2	enqueue -> enqueue -> front -> dequeue -> dequeue -> isEmpty -> isEmpty	{c0_elem="s1", c1_elem="s2"}	POST: POST isEmpty: emptyFlag == false
+queue-225	INCORRECT_SEQUENCE	3062	1	enqueue -> dequeue -> front -> enqueue	-	INCORRECT SEQUENCE: call 2 (front): size > 0
+queue-226	PASSED	6123	3	enqueue -> enqueue -> dequeue -> enqueue -> front -> isEmpty -> isEmpty	{c0_elem="s1", c1_elem="s2", c3_elem="s3"}	
+queue-227	PASSED	6312	3	enqueue -> enqueue -> dequeue -> enqueue	{c0_elem="s1", c1_elem="s2", c3_elem="s3"}	
+queue-228	PASSED	4516	2	enqueue -> enqueue -> dequeue -> front -> front	{c0_elem="s1", c1_elem="s2"}	
+queue-229	INCORRECT_SEQUENCE	1250	0	front -> enqueue -> enqueue -> front -> isEmpty -> isEmpty	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-230	PASSED	7624	2	enqueue -> enqueue -> isEmpty -> front -> dequeue -> front -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-231	INCORRECT_SEQUENCE	2940	1	enqueue -> dequeue -> front -> isEmpty -> isEmpty	-	INCORRECT SEQUENCE: call 2 (front): size > 0
+queue-232	INCORRECT_SEQUENCE	1494	0	isEmpty -> front -> dequeue -> isEmpty -> enqueue -> dequeue	-	INCORRECT SEQUENCE: call 1 (front): size > 0
+queue-233	INCORRECT_SEQUENCE	2861	1	isEmpty -> enqueue -> front -> isEmpty -> dequeue -> dequeue -> isEmpty	-	INCORRECT SEQUENCE: call 5 (dequeue): size > 0
+queue-234	PASSED	4623	2	enqueue -> enqueue -> isEmpty -> dequeue -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-235	PASSED	7912	4	enqueue -> enqueue -> enqueue -> front -> dequeue -> enqueue	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c5_elem="s1"}	
+queue-236	INCORRECT_SEQUENCE	1452	0	front -> enqueue -> dequeue -> isEmpty -> isEmpty -> enqueue	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-237	INCORRECT_SEQUENCE	1515	0	dequeue -> front -> isEmpty -> enqueue -> enqueue	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-238	FAILED	0	0	isEmpty -> front -> dequeue	-	POST: POST isEmpty: emptyFlag == false
+queue-239	INCORRECT_SEQUENCE	2951	1	enqueue -> dequeue -> front -> enqueue -> isEmpty	-	INCORRECT SEQUENCE: call 2 (front): size > 0
+queue-240	INCORRECT_SEQUENCE	1500	0	dequeue -> enqueue -> enqueue -> front -> front -> front -> isEmpty	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-241	PASSED	7272	2	enqueue -> front -> enqueue -> dequeue -> isEmpty	{c0_elem="s1", c2_elem="s2"}	
+queue-242	PASSED	4488	2	enqueue -> front -> enqueue -> front -> dequeue -> isEmpty	{c0_elem="s1", c2_elem="s2"}	
+queue-243	INCORRECT_SEQUENCE	3031	1	enqueue -> dequeue -> front	-	INCORRECT SEQUENCE: call 2 (front): size > 0
+queue-244	INCORRECT_SEQUENCE	1386	0	dequeue -> enqueue -> isEmpty -> dequeue -> dequeue -> enqueue	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-245	PASSED	3348	1	enqueue -> isEmpty -> front	{c0_elem="s1"}	
+queue-246	INCORRECT_SEQUENCE	1531	0	dequeue -> enqueue -> enqueue -> front	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-247	INCORRECT_SEQUENCE	1482	0	dequeue -> enqueue -> front -> dequeue -> isEmpty -> isEmpty	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-248	PASSED	7949	4	enqueue -> enqueue -> enqueue -> enqueue -> isEmpty -> front -> dequeue	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+queue-249	PASSED	4564	2	enqueue -> enqueue -> isEmpty -> dequeue -> front -> isEmpty	{c0_elem="s1", c1_elem="s2"}	
+queue-250	PASSED	9423	3	enqueue -> enqueue -> front -> isEmpty -> enqueue	{c0_elem="s1", c1_elem="s2", c4_elem="s3"}	
+queue-251	FAILED	0	0	dequeue -> dequeue -> front -> front	-	PRE: PRE dequeue: size > 0
+queue-252	INCORRECT_SEQUENCE	3102	1	isEmpty -> enqueue -> isEmpty -> front -> dequeue -> front -> dequeue	-	INCORRECT SEQUENCE: call 5 (front): size > 0
+queue-253	INCORRECT_SEQUENCE	1376	0	front -> enqueue -> enqueue -> dequeue -> front -> isEmpty -> isEmpty	-	INCORRECT SEQUENCE: call 0 (front): size > 0
+queue-254	PASSED	4549	2	enqueue -> isEmpty -> enqueue -> front -> dequeue	{c0_elem="s1", c2_elem="s2"}	
+queue-255	INCORRECT_SEQUENCE	1587	0	dequeue -> dequeue -> enqueue -> enqueue -> enqueue -> front -> isEmpty	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-256	FAILED	0	0	isEmpty -> dequeue -> front	-	POST: POST isEmpty: emptyFlag == false
+queue-257	INCORRECT_SEQUENCE	1434	0	dequeue -> isEmpty -> isEmpty -> isEmpty -> enqueue	-	INCORRECT SEQUENCE: call 0 (dequeue): size > 0
+queue-258	FAILED	0	0	dequeue -> front -> dequeue -> isEmpty -> front -> isEmpty -> dequeue	-	PRE: PRE dequeue: size > 0
+queue-259	INCORRECT_SEQUENCE	3389	1	enqueue -> front -> dequeue -> front -> enqueue -> isEmpty	-	INCORRECT SEQUENCE: call 3 (front): size > 0
+queue-260	INCORRECT_SEQUENCE	1533	0	front -> front -> isEmpty -> isEmpty -> dequeue -> dequeue -> enqueue	-	INCORRECT SEQUENCE: call 0 (front): size > 0

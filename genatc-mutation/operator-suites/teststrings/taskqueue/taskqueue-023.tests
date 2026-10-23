@@ -1,7 +1,3 @@
 test TaskqueueGenerated23 {
-    sequence: submit -> cancelTask -> getResult;
-
-    inputs {
-        submit[0].payload = "gamma";
-    }
+    sequence: cancelTask -> getResult;
 }

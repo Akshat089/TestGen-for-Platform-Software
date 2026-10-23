@@ -1,0 +1,262 @@
+# generated test strings — lrucache (family size 260, phase 1 2258s)
+# name	status	spf_ms	rounds	sequence	inputs	detail
+lrucache-001	PASSED	16223	5	put -> put -> put -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_evictedKey="s1", c4_value="s3"}	
+lrucache-002	PASSED	14576	6	put -> put -> get -> put -> restore -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_key="s3", c3_value="s1", c4_evictedKey="s2", c4_value="s3", c5_evictedKey="s1", c5_value="s2"}	
+lrucache-003	PASSED	13019	4	put -> put -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2"}	
+lrucache-004	PASSED	13684	6	put -> put -> put -> put -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_evictedKey="s3", c5_value="s2"}	
+lrucache-005	INCORRECT_SEQUENCE	2107	0	get -> put -> put -> put -> get -> restore -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-006	PASSED	10864	5	put -> restore -> get -> get -> restore	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s3", c3_key="s3", c4_evictedKey="s2", c4_value="s2"}	
+lrucache-007	PASSED	13568	5	restore -> put -> put -> get -> put	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_key="s2", c4_value="s3"}	
+lrucache-008	PASSED	13093	6	put -> restore -> get -> restore -> get -> get	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s3", c3_evictedKey="s2", c3_value="s1", c4_key="s2", c5_key="s3"}	
+lrucache-009	PASSED	15442	6	put -> restore -> get -> put -> put -> get	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s3", c3_key="s3", c3_value="s1", c4_key="s2", c4_value="s3", c5_key="s2"}	
+lrucache-010	PASSED	11279	5	restore -> restore -> get -> restore -> restore	{c0_evictedKey="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s3", c3_evictedKey="s2", c3_value="s1", c4_evictedKey="s1", c4_value="s3"}	
+lrucache-011	PASSED	7401	3	restore -> put -> put	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3"}	
+lrucache-012	PASSED	18093	7	put -> put -> put -> put -> get -> restore -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_evictedKey="s3", c5_value="s2", c6_evictedKey="s2", c6_value="s1"}	
+lrucache-013	INCORRECT_SEQUENCE	1535	0	get -> put -> put -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-014	PASSED	11121	5	put -> put -> get -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_key="s3", c4_evictedKey="s2", c4_value="s2"}	
+lrucache-015	PASSED	7150	3	restore -> get -> get	{c0_evictedKey="s1", c0_value="s2", c1_key="s1", c2_key="s1"}	
+lrucache-016	PASSED	16168	6	restore -> put -> put -> put -> get -> restore	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_evictedKey="s3", c5_value="s2"}	
+lrucache-017	PASSED	14836	7	restore -> put -> put -> put -> get -> put -> put	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_key="s1", c5_value="s2", c6_key="s3", c6_value="s1"}	
+lrucache-018	INCORRECT_SEQUENCE	1938	0	get -> put -> restore -> put -> restore -> put -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-019	PASSED	8886	4	put -> put -> restore -> put	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s1", c3_value="s2"}	
+lrucache-020	PASSED	23368	7	put -> put -> put -> restore -> get -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2", c4_key="s1", c5_key="s1", c6_evictedKey="s3", c6_value="s3"}	
+lrucache-021	INCORRECT_SEQUENCE	2903	0	get -> get -> restore -> put -> put -> put -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-022	INCORRECT_SEQUENCE	2706	0	get -> put -> put -> put -> restore -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-023	PASSED	21323	7	put -> put -> put -> put -> get -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_key="s1", c6_evictedKey="s3", c6_value="s3"}	
+lrucache-024	PASSED	12049	5	put -> get -> put -> restore -> restore	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_evictedKey="s3", c3_value="s1", c4_evictedKey="s2", c4_value="s3"}	
+lrucache-025	PASSED	15971	4	put -> put -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_evictedKey="s2", c3_value="s1"}	
+lrucache-026	PASSED	12777	5	put -> put -> get -> restore -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_evictedKey="s2", c3_value="s1", c4_evictedKey="s1", c4_value="s3"}	
+lrucache-027	PASSED	13718	6	put -> restore -> restore -> put -> get -> put	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_key="s1", c5_value="s2"}	
+lrucache-028	PASSED	8438	2	put -> put	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1"}	
+lrucache-029	PASSED	9834	4	put -> get -> restore -> put	{c0_key="s1", c0_value="s2", c1_key="s1", c2_evictedKey="s2", c2_value="s2", c3_key="s3", c3_value="s1"}	
+lrucache-030	PASSED	14070	6	restore -> get -> put -> restore -> put -> put	{c0_evictedKey="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_evictedKey="s3", c3_value="s1", c4_key="s2", c4_value="s3", c5_key="s1", c5_value="s2"}	
+lrucache-031	PASSED	17120	7	put -> put -> put -> put -> put -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s3", c4_value="s1", c5_key="s3", c6_evictedKey="s2", c6_value="s1"}	
+lrucache-032	PASSED	12501	6	put -> put -> restore -> put -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_evictedKey="s3", c5_value="s2"}	
+lrucache-033	PASSED	14897	6	put -> put -> put -> get -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_key="s2", c5_evictedKey="s1", c5_value="s1"}	
+lrucache-034	INCORRECT_SEQUENCE	1831	0	get -> restore -> put -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-035	PASSED	12890	6	put -> put -> get -> put -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_key="s3", c3_value="s1", c4_key="s3", c5_evictedKey="s2", c5_value="s1"}	
+lrucache-036	INCORRECT_SEQUENCE	1770	0	get -> restore -> get -> restore -> get -> get -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-037	PASSED	14337	7	restore -> restore -> put -> put -> get -> put -> put	{c0_evictedKey="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_key="s1", c5_value="s2", c6_key="s3", c6_value="s1"}	
+lrucache-038	PASSED	14709	6	put -> put -> put -> get -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_key="s2", c4_value="s3", c5_evictedKey="s1", c5_value="s2"}	
+lrucache-039	PASSED	10319	5	put -> get -> put -> put -> put	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_key="s3", c3_value="s1", c4_key="s2", c4_value="s3"}	
+lrucache-040	INCORRECT_SEQUENCE	1605	0	get -> get -> restore -> put -> get -> get -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-041	PASSED	16848	7	restore -> get -> put -> restore -> get -> restore -> restore	{c0_evictedKey="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_evictedKey="s3", c3_value="s1", c4_key="s3", c5_evictedKey="s2", c5_value="s1", c6_evictedKey="s1", c6_value="s3"}	
+lrucache-042	PASSED	4839	2	restore -> put	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1"}	
+lrucache-043	PASSED	10522	5	put -> put -> put -> put -> get	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1"}	
+lrucache-044	PASSED	8458	4	put -> put -> put -> get	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2"}	
+lrucache-045	PASSED	11766	4	put -> restore -> put -> get	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2"}	
+lrucache-046	INCORRECT_SEQUENCE	1664	0	get -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-047	PASSED	10395	5	put -> put -> get -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_key="s3", c3_value="s1", c4_evictedKey="s2", c4_value="s3"}	
+lrucache-048	INCORRECT_SEQUENCE	1781	0	get -> put -> put -> get -> put -> restore -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-049	INCORRECT_SEQUENCE	1876	0	get -> restore -> get -> get -> get -> get	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-050	INCORRECT_SEQUENCE	1748	0	get -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-051	PASSED	16247	6	put -> restore -> get -> put -> put -> put	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s3", c3_key="s3", c3_value="s1", c4_key="s2", c4_value="s3", c5_key="s1", c5_value="s2"}	
+lrucache-052	PASSED	11018	5	put -> get -> restore -> restore -> get	{c0_key="s1", c0_value="s2", c1_key="s1", c2_evictedKey="s2", c2_value="s2", c3_evictedKey="s3", c3_value="s1", c4_key="s2"}	
+lrucache-053	INCORRECT_SEQUENCE	1844	0	get -> put -> put -> put -> get -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-054	INCORRECT_SEQUENCE	2061	0	get -> restore -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-055	PASSED	12609	6	put -> get -> put -> put -> restore -> get	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_key="s3", c3_value="s1", c4_evictedKey="s2", c4_value="s3", c5_key="s2"}	
+lrucache-056	PASSED	15810	6	put -> put -> put -> get -> restore -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_evictedKey="s1", c4_value="s3", c5_evictedKey="s3", c5_value="s2"}	
+lrucache-057	INCORRECT_SEQUENCE	1849	0	get -> get -> get -> put -> put -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-058	PASSED	14641	7	put -> put -> put -> get -> restore -> restore -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_evictedKey="s1", c4_value="s3", c5_evictedKey="s3", c5_value="s2", c6_evictedKey="s2", c6_value="s1"}	
+lrucache-059	PASSED	14052	5	put -> get -> get -> restore -> restore	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c3_evictedKey="s2", c3_value="s3", c4_evictedKey="s3", c4_value="s2"}	
+lrucache-060	PASSED	8861	4	restore -> put -> put -> get	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2"}	
+lrucache-061	PASSED	11981	6	put -> put -> restore -> restore -> get -> put	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2", c4_key="s1", c5_key="s1", c5_value="s2"}	
+lrucache-062	INCORRECT_SEQUENCE	1821	0	get -> restore -> get	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-063	PASSED	13201	5	put -> put -> put -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_evictedKey="s3", c4_value="s1"}	
+lrucache-064	PASSED	7195	3	restore -> restore -> get	{c0_evictedKey="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s3"}	
+lrucache-065	PASSED	8573	4	restore -> put -> restore -> get	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s2"}	
+lrucache-066	INCORRECT_SEQUENCE	1765	0	get -> restore -> put -> put -> get -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-067	PASSED	16352	7	restore -> put -> put -> get -> get -> put -> put	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_key="s2", c5_key="s3", c5_value="s1", c6_key="s2", c6_value="s3"}	
+lrucache-068	PASSED	11629	6	put -> restore -> put -> put -> get -> restore	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_evictedKey="s3", c5_value="s2"}	
+lrucache-069	PASSED	6604	3	put -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s1", c2_evictedKey="s2", c2_value="s2"}	
+lrucache-070	PASSED	11116	4	put -> put -> restore -> get	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s2"}	
+lrucache-071	PASSED	10107	5	put -> put -> get -> put -> get	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_key="s3", c3_value="s1", c4_key="s3"}	
+lrucache-072	INCORRECT_SEQUENCE	1932	0	get -> restore -> restore -> get -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-073	PASSED	16359	7	put -> put -> get -> put -> put -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_key="s3", c3_value="s1", c4_key="s2", c4_value="s3", c5_key="s2", c6_evictedKey="s1", c6_value="s3"}	
+lrucache-074	PASSED	12290	5	put -> put -> restore -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s2", c4_evictedKey="s1", c4_value="s3"}	
+lrucache-075	INCORRECT_SEQUENCE	1620	0	get -> restore -> restore -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-076	PASSED	13871	7	put -> put -> restore -> restore -> put -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2", c4_key="s3", c4_value="s1", c5_key="s3", c6_evictedKey="s2", c6_value="s1"}	
+lrucache-077	PASSED	22849	7	put -> put -> put -> get -> put -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_key="s2", c4_value="s3", c5_key="s2", c6_evictedKey="s1", c6_value="s3"}	
+lrucache-078	INCORRECT_SEQUENCE	3286	0	get -> restore -> get -> put -> get	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-079	PASSED	16674	6	put -> restore -> put -> put -> get -> put	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_key="s1", c5_value="s2"}	
+lrucache-080	INCORRECT_SEQUENCE	5036	0	get -> put -> put -> restore -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-081	PASSED	17773	7	restore -> put -> put -> put -> get -> put -> restore	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_key="s1", c5_value="s2", c6_evictedKey="s3", c6_value="s1"}	
+lrucache-082	INCORRECT_SEQUENCE	2228	0	get -> get -> put -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-083	PASSED	16299	5	put -> put -> put -> put -> put	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s3", c4_value="s1"}	
+lrucache-084	PASSED	13616	6	put -> get -> put -> restore -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_evictedKey="s3", c3_value="s1", c4_key="s2", c4_value="s3", c5_evictedKey="s1", c5_value="s2"}	
+lrucache-085	PASSED	8497	4	restore -> put -> get -> put	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_key="s3", c3_value="s1"}	
+lrucache-086	PASSED	12904	7	put -> restore -> get -> put -> put -> restore -> restore	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s3", c3_key="s3", c3_value="s1", c4_key="s2", c4_value="s3", c5_evictedKey="s1", c5_value="s2", c6_evictedKey="s3", c6_value="s1"}	
+lrucache-087	INCORRECT_SEQUENCE	1726	0	get -> restore -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-088	PASSED	18828	7	put -> put -> get -> put -> get -> restore -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_key="s3", c3_value="s1", c4_key="s3", c5_evictedKey="s2", c5_value="s1", c6_evictedKey="s1", c6_value="s3"}	
+lrucache-089	PASSED	13076	7	put -> get -> restore -> get -> restore -> get -> get	{c0_key="s1", c0_value="s2", c1_key="s1", c2_evictedKey="s2", c2_value="s2", c3_key="s1", c4_evictedKey="s3", c4_value="s2", c5_key="s3", c6_key="s1"}	
+lrucache-090	PASSED	12654	7	put -> get -> put -> put -> get -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_key="s3", c3_value="s1", c4_key="s3", c5_key="s3", c6_evictedKey="s2", c6_value="s2"}	
+lrucache-091	PASSED	12988	5	put -> put -> put -> restore -> get	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2", c4_key="s1"}	
+lrucache-092	PASSED	9291	5	restore -> get -> restore -> get -> put	{c0_evictedKey="s1", c0_value="s2", c1_key="s1", c2_evictedKey="s2", c2_value="s2", c3_key="s1", c4_key="s1", c4_value="s2"}	
+lrucache-093	INCORRECT_SEQUENCE	1623	0	get -> get -> put -> put -> put -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-094	PASSED	9977	5	put -> get -> put -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_key="s1", c4_evictedKey="s2", c4_value="s2"}	
+lrucache-095	PASSED	14183	6	put -> get -> put -> put -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_key="s3", c3_value="s1", c4_key="s2", c4_value="s3", c5_evictedKey="s1", c5_value="s2"}	
+lrucache-096	INCORRECT_SEQUENCE	1550	0	get -> restore -> restore -> get -> put -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-097	INCORRECT_SEQUENCE	1741	0	get -> restore -> restore -> restore -> put -> put -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-098	PASSED	13041	7	put -> restore -> put -> put -> put -> get -> restore	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s3", c4_value="s1", c5_key="s3", c6_evictedKey="s2", c6_value="s1"}	
+lrucache-099	PASSED	13937	6	put -> put -> restore -> put -> get -> put	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_key="s1", c5_value="s2"}	
+lrucache-100	INCORRECT_SEQUENCE	1626	0	get -> restore -> put -> get -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-101	INCORRECT_SEQUENCE	1617	0	get -> put -> put -> put -> put -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-102	PASSED	6500	3	restore -> get -> restore	{c0_evictedKey="s1", c0_value="s2", c1_key="s1", c2_evictedKey="s2", c2_value="s2"}	
+lrucache-103	PASSED	8398	4	put -> put -> put -> put	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2"}	
+lrucache-104	PASSED	14574	6	put -> put -> put -> get -> get -> get	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_key="s2", c5_key="s3"}	
+lrucache-105	INCORRECT_SEQUENCE	1597	0	get -> get -> get	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-106	PASSED	10041	5	put -> put -> put -> get -> get	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_key="s2"}	
+lrucache-107	INCORRECT_SEQUENCE	1642	0	get -> get -> restore -> restore -> get	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-108	PASSED	11734	6	put -> put -> put -> put -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s3", c4_value="s1", c5_evictedKey="s2", c5_value="s3"}	
+lrucache-109	INCORRECT_SEQUENCE	1782	0	get -> put -> put -> restore -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-110	PASSED	7708	2	put -> get	{c0_key="s1", c0_value="s2", c1_key="s1"}	
+lrucache-111	INCORRECT_SEQUENCE	2201	0	get -> get -> put -> put -> put -> put -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-112	INCORRECT_SEQUENCE	2065	0	get -> get -> restore -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-113	PASSED	11097	5	put -> get -> get -> put -> put	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c3_key="s2", c3_value="s3", c4_key="s1", c4_value="s2"}	
+lrucache-114	PASSED	13571	7	put -> put -> get -> get -> get -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_key="s3", c4_key="s1", c5_key="s2", c5_value="s3", c6_evictedKey="s3", c6_value="s2"}	
+lrucache-115	INCORRECT_SEQUENCE	1898	0	get -> get	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-116	PASSED	12596	5	put -> restore -> get -> put -> restore	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s3", c3_key="s3", c3_value="s1", c4_evictedKey="s2", c4_value="s3"}	
+lrucache-117	PASSED	11795	6	restore -> get -> put -> put -> get -> get	{c0_evictedKey="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_key="s3", c3_value="s1", c4_key="s3", c5_key="s3"}	
+lrucache-118	INCORRECT_SEQUENCE	1860	0	get -> put -> restore -> put -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-119	PASSED	14613	6	restore -> put -> put -> put -> get -> put	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_key="s1", c5_value="s2"}	
+lrucache-120	PASSED	8111	4	put -> restore -> get -> put	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s3", c3_key="s3", c3_value="s1"}	
+lrucache-121	PASSED	6654	3	put -> put -> get	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3"}	
+lrucache-122	PASSED	13554	7	restore -> get -> get -> restore -> get -> get -> restore	{c0_evictedKey="s1", c0_value="s2", c1_key="s1", c2_key="s1", c3_evictedKey="s2", c3_value="s3", c4_key="s1", c5_key="s2", c6_evictedKey="s3", c6_value="s1"}	
+lrucache-123	INCORRECT_SEQUENCE	4629	0	get -> restore -> get -> put -> restore -> get -> get	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-124	PASSED	11468	6	put -> restore -> put -> get -> get -> put	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_key="s2", c5_key="s3", c5_value="s1"}	
+lrucache-125	PASSED	12746	7	put -> put -> put -> restore -> restore -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2", c4_evictedKey="s3", c4_value="s1", c5_key="s3", c6_evictedKey="s2", c6_value="s1"}	
+lrucache-126	PASSED	12862	5	put -> put -> put -> restore -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2", c4_evictedKey="s3", c4_value="s1"}	
+lrucache-127	PASSED	9947	5	put -> get -> put -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_key="s3", c3_value="s1", c4_evictedKey="s2", c4_value="s3"}	
+lrucache-128	PASSED	6830	3	put -> restore -> put	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3"}	
+lrucache-129	PASSED	10181	5	put -> put -> restore -> get -> put	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s2", c4_key="s2", c4_value="s3"}	
+lrucache-130	PASSED	12977	5	put -> restore -> put -> get -> put	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_key="s2", c4_value="s3"}	
+lrucache-131	PASSED	14503	7	put -> restore -> restore -> put -> get -> restore -> put	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_evictedKey="s3", c5_value="s2", c6_key="s3", c6_value="s1"}	
+lrucache-132	INCORRECT_SEQUENCE	1622	0	get -> put -> put -> restore -> put -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-133	PASSED	12538	5	restore -> get -> restore -> put -> put	{c0_evictedKey="s1", c0_value="s2", c1_key="s1", c2_evictedKey="s2", c2_value="s2", c3_key="s3", c3_value="s1", c4_key="s2", c4_value="s3"}	
+lrucache-134	INCORRECT_SEQUENCE	1820	0	get -> put -> put -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-135	PASSED	10009	5	restore -> restore -> put -> put -> restore	{c0_evictedKey="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_evictedKey="s3", c4_value="s1"}	
+lrucache-136	PASSED	8523	4	restore -> get -> put -> put	{c0_evictedKey="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_key="s3", c3_value="s1"}	
+lrucache-137	PASSED	16939	7	restore -> put -> get -> put -> put -> get -> put	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_key="s3", c3_value="s1", c4_key="s2", c4_value="s3", c5_key="s2", c6_key="s2", c6_value="s3"}	
+lrucache-138	INCORRECT_SEQUENCE	1964	0	get -> put -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-139	PASSED	10226	5	put -> restore -> put -> restore -> get	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2", c4_key="s1"}	
+lrucache-140	PASSED	8023	4	put -> put -> restore -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2"}	
+lrucache-141	PASSED	14600	6	put -> restore -> put -> put -> put -> get	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s3", c4_value="s1", c5_key="s3"}	
+lrucache-142	PASSED	12319	6	put -> put -> get -> get -> get -> put	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_key="s3", c4_key="s1", c5_key="s2", c5_value="s3"}	
+lrucache-143	PASSED	9676	5	put -> put -> get -> restore -> put	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_evictedKey="s2", c3_value="s1", c4_key="s2", c4_value="s3"}	
+lrucache-144	INCORRECT_SEQUENCE	1572	0	get -> put -> get -> put -> put -> get -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-145	PASSED	9591	3	put -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3"}	
+lrucache-146	PASSED	10031	5	restore -> put -> put -> put -> restore	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_evictedKey="s3", c4_value="s1"}	
+lrucache-147	PASSED	12097	6	put -> restore -> get -> restore -> put -> put	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s3", c3_evictedKey="s2", c3_value="s1", c4_key="s2", c4_value="s3", c5_key="s1", c5_value="s2"}	
+lrucache-148	PASSED	16271	7	put -> get -> put -> put -> put -> restore -> restore	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_key="s3", c3_value="s1", c4_key="s2", c4_value="s3", c5_evictedKey="s1", c5_value="s2", c6_evictedKey="s3", c6_value="s1"}	
+lrucache-149	PASSED	12940	7	restore -> restore -> put -> put -> get -> get -> put	{c0_evictedKey="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_key="s1", c6_key="s2", c6_value="s3"}	
+lrucache-150	INCORRECT_SEQUENCE	1568	0	get -> put -> put -> put -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-151	INCORRECT_SEQUENCE	1604	0	get -> put -> get -> get -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-152	INCORRECT_SEQUENCE	1688	0	get -> put -> put -> put -> restore -> put -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-153	PASSED	14657	6	put -> put -> put -> restore -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2", c4_key="s1", c5_evictedKey="s3", c5_value="s2"}	
+lrucache-154	PASSED	8106	4	put -> put -> get -> get	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_key="s3"}	
+lrucache-155	PASSED	9887	5	put -> get -> restore -> put -> get	{c0_key="s1", c0_value="s2", c1_key="s1", c2_evictedKey="s2", c2_value="s2", c3_key="s3", c3_value="s1", c4_key="s2"}	
+lrucache-156	PASSED	9501	5	put -> restore -> restore -> put -> put	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s3", c4_value="s1"}	
+lrucache-157	PASSED	9364	3	put -> get -> get	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1"}	
+lrucache-158	PASSED	13309	7	put -> put -> put -> get -> get -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_key="s2", c5_key="s3", c5_value="s1", c6_evictedKey="s1", c6_value="s3"}	
+lrucache-159	PASSED	11690	6	put -> get -> restore -> get -> get -> put	{c0_key="s1", c0_value="s2", c1_key="s1", c2_evictedKey="s2", c2_value="s2", c3_key="s1", c4_key="s1", c5_key="s2", c5_value="s3"}	
+lrucache-160	PASSED	12774	5	restore -> get -> get -> put -> restore	{c0_evictedKey="s1", c0_value="s2", c1_key="s1", c2_key="s1", c3_key="s2", c3_value="s3", c4_evictedKey="s3", c4_value="s2"}	
+lrucache-161	PASSED	8390	4	put -> restore -> put -> put	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2"}	
+lrucache-162	PASSED	10445	5	put -> get -> put -> restore -> get	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_evictedKey="s3", c3_value="s1", c4_key="s3"}	
+lrucache-163	PASSED	16487	7	put -> put -> put -> put -> get -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_key="s1", c5_value="s2", c6_evictedKey="s3", c6_value="s1"}	
+lrucache-164	PASSED	13775	7	put -> restore -> put -> get -> get -> put -> put	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_key="s2", c5_key="s3", c5_value="s1", c6_key="s2", c6_value="s3"}	
+lrucache-165	PASSED	4551	2	put -> restore	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1"}	
+lrucache-166	INCORRECT_SEQUENCE	1488	0	get -> restore -> restore -> restore -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-167	PASSED	15197	7	restore -> put -> restore -> restore -> put -> get -> put	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2", c4_key="s3", c4_value="s1", c5_key="s3", c6_key="s3", c6_value="s1"}	
+lrucache-168	INCORRECT_SEQUENCE	1636	0	get -> put -> put -> restore -> put -> get -> get	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-169	PASSED	7442	4	put -> restore -> restore -> put	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s1", c3_value="s2"}	
+lrucache-170	PASSED	10645	6	put -> get -> put -> get -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_key="s1", c4_key="s1", c4_value="s2", c5_evictedKey="s3", c5_value="s1"}	
+lrucache-171	PASSED	14091	6	put -> get -> put -> put -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_key="s3", c3_value="s1", c4_key="s3", c5_evictedKey="s2", c5_value="s1"}	
+lrucache-172	PASSED	10888	6	put -> restore -> put -> put -> get -> get	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_key="s1"}	
+lrucache-173	INCORRECT_SEQUENCE	1390	0	get -> put -> get	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-174	INCORRECT_SEQUENCE	1422	0	get -> put -> put -> get -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-175	INCORRECT_SEQUENCE	1391	0	get -> restore -> get -> get -> restore -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-176	PASSED	6938	4	put -> get -> put -> get	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_key="s1"}	
+lrucache-177	PASSED	11596	5	restore -> get -> put -> get -> put	{c0_evictedKey="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_key="s1", c4_key="s1", c4_value="s2"}	
+lrucache-178	INCORRECT_SEQUENCE	1519	0	get -> put -> get -> put -> put -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-179	INCORRECT_SEQUENCE	1375	0	get -> get -> restore -> get -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-180	PASSED	11424	7	put -> put -> put -> get -> get -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_key="s2", c5_key="s3", c6_evictedKey="s1", c6_value="s2"}	
+lrucache-181	PASSED	4233	2	restore -> get	{c0_evictedKey="s1", c0_value="s2", c1_key="s1"}	
+lrucache-182	PASSED	15553	7	put -> put -> put -> put -> restore -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_evictedKey="s3", c4_value="s1", c5_key="s3", c6_evictedKey="s2", c6_value="s1"}	
+lrucache-183	PASSED	7489	4	put -> get -> restore -> restore	{c0_key="s1", c0_value="s2", c1_key="s1", c2_evictedKey="s2", c2_value="s2", c3_evictedKey="s3", c3_value="s1"}	
+lrucache-184	INCORRECT_SEQUENCE	1379	0	get -> put -> get -> get	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-185	INCORRECT_SEQUENCE	1411	0	get -> get -> get -> get -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-186	INCORRECT_SEQUENCE	1347	0	get -> restore -> put -> put -> get -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-187	PASSED	8844	5	put -> restore -> put -> get -> restore	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_evictedKey="s1", c4_value="s3"}	
+lrucache-188	PASSED	14625	7	put -> put -> put -> get -> restore -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_evictedKey="s1", c4_value="s3", c5_key="s1", c5_value="s2", c6_evictedKey="s3", c6_value="s1"}	
+lrucache-189	PASSED	11063	7	put -> put -> restore -> put -> get -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_key="s1", c5_value="s2", c6_evictedKey="s3", c6_value="s1"}	
+lrucache-190	PASSED	6580	4	put -> get -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_evictedKey="s3", c3_value="s1"}	
+lrucache-191	INCORRECT_SEQUENCE	1362	0	get -> restore -> restore -> restore -> restore -> restore -> get	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-192	PASSED	5214	3	restore -> restore -> restore	{c0_evictedKey="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3"}	
+lrucache-193	INCORRECT_SEQUENCE	1335	0	get -> restore -> put -> put -> restore -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-194	PASSED	12233	6	put -> get -> restore -> put -> get -> get	{c0_key="s1", c0_value="s2", c1_key="s1", c2_evictedKey="s2", c2_value="s2", c3_key="s3", c3_value="s1", c4_key="s2", c5_key="s3"}	
+lrucache-195	PASSED	6907	4	restore -> put -> put -> put	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2"}	
+lrucache-196	PASSED	12322	7	put -> put -> put -> get -> get -> restore -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_key="s2", c5_evictedKey="s1", c5_value="s1", c6_evictedKey="s3", c6_value="s3"}	
+lrucache-197	PASSED	14106	7	put -> restore -> restore -> restore -> get -> get -> put	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2", c4_key="s1", c5_key="s1", c6_key="s2", c6_value="s3"}	
+lrucache-198	PASSED	10982	7	put -> put -> put -> put -> restore -> get -> put	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_evictedKey="s3", c4_value="s1", c5_key="s3", c6_key="s3", c6_value="s1"}	
+lrucache-199	PASSED	9999	6	put -> get -> put -> put -> put -> get	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_key="s3", c3_value="s1", c4_key="s2", c4_value="s3", c5_key="s2"}	
+lrucache-200	PASSED	11240	5	put -> put -> put -> get -> put	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_key="s2", c4_value="s3"}	
+lrucache-201	PASSED	6965	4	restore -> get -> restore -> put	{c0_evictedKey="s1", c0_value="s2", c1_key="s1", c2_evictedKey="s2", c2_value="s2", c3_key="s3", c3_value="s1"}	
+lrucache-202	PASSED	6616	4	put -> restore -> get -> restore	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s3", c3_evictedKey="s2", c3_value="s1"}	
+lrucache-203	PASSED	6769	4	put -> get -> put -> put	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_key="s3", c3_value="s1"}	
+lrucache-204	PASSED	10704	7	put -> restore -> put -> put -> get -> restore -> restore	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_evictedKey="s3", c5_value="s2", c6_evictedKey="s2", c6_value="s1"}	
+lrucache-205	PASSED	11046	5	restore -> put -> restore -> put -> get	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1"}	
+lrucache-206	INCORRECT_SEQUENCE	1472	0	get -> put -> put -> get -> put -> get -> get	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-207	PASSED	10517	7	restore -> put -> restore -> put -> restore -> get -> put	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_evictedKey="s3", c4_value="s1", c5_key="s3", c6_key="s3", c6_value="s1"}	
+lrucache-208	INCORRECT_SEQUENCE	1332	0	get -> restore -> restore -> put -> put -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-209	PASSED	7904	5	restore -> restore -> restore -> get -> restore	{c0_evictedKey="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s2", c4_evictedKey="s1", c4_value="s3"}	
+lrucache-210	INCORRECT_SEQUENCE	1331	0	get -> restore -> put -> put -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-211	INCORRECT_SEQUENCE	1332	0	get -> get -> put -> put -> restore -> restore -> get	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-212	PASSED	11190	7	put -> put -> put -> restore -> put -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2", c4_key="s3", c4_value="s1", c5_key="s3", c6_evictedKey="s2", c6_value="s1"}	
+lrucache-213	INCORRECT_SEQUENCE	1684	0	get -> get -> restore -> get -> restore -> put -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-214	INCORRECT_SEQUENCE	1484	0	get -> restore -> put -> restore -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-215	PASSED	15479	7	put -> put -> get -> put -> put -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_key="s3", c3_value="s1", c4_key="s2", c4_value="s3", c5_key="s1", c5_value="s2", c6_evictedKey="s3", c6_value="s1"}	
+lrucache-216	PASSED	10969	7	put -> restore -> put -> restore -> put -> get -> restore	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2", c4_key="s3", c4_value="s1", c5_key="s3", c6_evictedKey="s2", c6_value="s1"}	
+lrucache-217	INCORRECT_SEQUENCE	1421	0	get -> put -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-218	PASSED	13748	7	put -> restore -> restore -> put -> restore -> restore -> get	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_evictedKey="s3", c4_value="s1", c5_evictedKey="s2", c5_value="s3", c6_key="s2"}	
+lrucache-219	PASSED	7931	5	put -> get -> get -> restore -> get	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c3_evictedKey="s2", c3_value="s3", c4_key="s1"}	
+lrucache-220	PASSED	11058	7	restore -> put -> restore -> put -> get -> put -> get	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_key="s1", c5_value="s2", c6_key="s1"}	
+lrucache-221	PASSED	8116	6	restore -> restore -> put -> get -> put -> get	{c0_evictedKey="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_key="s2", c4_value="s3", c5_key="s2"}	
+lrucache-222	INCORRECT_SEQUENCE	1101	0	get -> restore -> restore -> get -> put -> put -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-223	PASSED	10610	6	put -> restore -> restore -> put -> put -> get	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s3", c4_value="s1", c5_key="s3"}	
+lrucache-224	INCORRECT_SEQUENCE	1149	0	get -> get -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-225	PASSED	7669	6	put -> restore -> put -> get -> get -> restore	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s2", c4_key="s2", c5_evictedKey="s1", c5_value="s1"}	
+lrucache-226	INCORRECT_SEQUENCE	1079	0	get -> put -> put -> restore -> restore -> put -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-227	PASSED	7570	6	put -> restore -> put -> restore -> put -> restore	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2", c4_key="s3", c4_value="s1", c5_evictedKey="s2", c5_value="s3"}	
+lrucache-228	INCORRECT_SEQUENCE	1137	0	get -> get -> restore -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-229	INCORRECT_SEQUENCE	1107	0	get -> put -> restore -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-230	PASSED	7569	6	put -> put -> get -> restore -> get -> get	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_evictedKey="s2", c3_value="s1", c4_key="s2", c5_key="s3"}	
+lrucache-231	PASSED	8273	4	put -> get -> get -> put	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c3_key="s2", c3_value="s3"}	
+lrucache-232	PASSED	8778	7	put -> put -> restore -> restore -> get -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2", c4_key="s1", c5_key="s1", c5_value="s2", c6_evictedKey="s3", c6_value="s1"}	
+lrucache-233	PASSED	5453	4	restore -> restore -> restore -> restore	{c0_evictedKey="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2"}	
+lrucache-234	PASSED	8672	7	put -> restore -> put -> put -> put -> get -> put	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s3", c4_value="s1", c5_key="s3", c6_key="s3", c6_value="s1"}	
+lrucache-235	PASSED	10534	6	restore -> restore -> restore -> put -> put -> get	{c0_evictedKey="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s3", c4_value="s1", c5_key="s3"}	
+lrucache-236	PASSED	8860	7	restore -> put -> put -> put -> put -> get -> restore	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s3", c4_value="s1", c5_key="s3", c6_evictedKey="s2", c6_value="s1"}	
+lrucache-237	INCORRECT_SEQUENCE	1091	0	get -> put -> get -> restore	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-238	PASSED	5499	4	restore -> restore -> put -> restore	{c0_evictedKey="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2"}	
+lrucache-239	PASSED	7611	6	put -> restore -> restore -> restore -> put -> put	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_evictedKey="s1", c3_value="s2", c4_key="s3", c4_value="s1", c5_key="s2", c5_value="s3"}	
+lrucache-240	PASSED	11828	7	restore -> restore -> get -> restore -> put -> restore -> restore	{c0_evictedKey="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s3", c3_evictedKey="s2", c3_value="s1", c4_key="s2", c4_value="s3", c5_evictedKey="s1", c5_value="s2", c6_evictedKey="s3", c6_value="s1"}	
+lrucache-241	PASSED	6804	5	restore -> restore -> get -> get -> restore	{c0_evictedKey="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s3", c3_key="s3", c4_evictedKey="s2", c4_value="s2"}	
+lrucache-242	PASSED	7663	6	put -> put -> put -> put -> restore -> get	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_evictedKey="s3", c4_value="s1", c5_key="s3"}	
+lrucache-243	PASSED	7801	6	put -> put -> restore -> get -> restore -> put	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s2", c4_evictedKey="s1", c4_value="s3", c5_key="s1", c5_value="s2"}	
+lrucache-244	PASSED	10828	6	restore -> put -> get -> put -> restore -> restore	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_key="s3", c3_value="s1", c4_evictedKey="s2", c4_value="s3", c5_evictedKey="s1", c5_value="s2"}	
+lrucache-245	PASSED	8192	7	put -> put -> restore -> put -> get -> get -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_key="s1", c6_evictedKey="s3", c6_value="s3"}	
+lrucache-246	INCORRECT_SEQUENCE	970	0	get -> restore -> restore -> restore -> get	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-247	PASSED	7110	6	restore -> put -> get -> put -> restore -> get	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_key="s3", c3_value="s1", c4_evictedKey="s2", c4_value="s3", c5_key="s2"}	
+lrucache-248	PASSED	7384	6	put -> restore -> get -> restore -> get -> restore	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s3", c3_evictedKey="s2", c3_value="s1", c4_key="s2", c5_evictedKey="s1", c5_value="s1"}	
+lrucache-249	PASSED	11347	7	restore -> put -> put -> put -> get -> get -> restore	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s1", c5_key="s1", c6_evictedKey="s3", c6_value="s3"}	
+lrucache-250	PASSED	8525	7	restore -> restore -> restore -> get -> restore -> put -> get	{c0_evictedKey="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s2", c4_evictedKey="s1", c4_value="s3", c5_key="s1", c5_value="s2", c6_key="s1"}	
+lrucache-251	PASSED	8505	7	put -> get -> put -> get -> get -> put -> restore	{c0_key="s1", c0_value="s2", c1_key="s1", c2_key="s1", c2_value="s2", c3_key="s1", c4_key="s1", c5_key="s2", c5_value="s3", c6_evictedKey="s3", c6_value="s2"}	
+lrucache-252	PASSED	7426	6	restore -> restore -> restore -> put -> put -> put	{c0_evictedKey="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s1", c3_value="s2", c4_key="s3", c4_value="s1", c5_key="s2", c5_value="s3"}	
+lrucache-253	PASSED	3864	3	put -> restore -> get	{c0_key="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s3"}	
+lrucache-254	PASSED	9849	6	restore -> put -> restore -> get -> restore -> restore	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_evictedKey="s2", c2_value="s3", c3_key="s2", c4_evictedKey="s1", c4_value="s3", c5_evictedKey="s3", c5_value="s2"}	
+lrucache-255	PASSED	6610	6	restore -> restore -> get -> restore -> put -> put	{c0_evictedKey="s1", c0_value="s2", c1_evictedKey="s3", c1_value="s1", c2_key="s3", c3_evictedKey="s2", c3_value="s1", c4_key="s2", c4_value="s3", c5_key="s1", c5_value="s2"}	
+lrucache-256	PASSED	6254	6	restore -> put -> get -> put -> get -> put	{c0_evictedKey="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_key="s3", c3_value="s1", c4_key="s3", c5_key="s3", c5_value="s1"}	
+lrucache-257	INCORRECT_SEQUENCE	786	0	get -> get -> get -> put -> put -> put	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)
+lrucache-258	PASSED	6614	7	put -> put -> get -> get -> put -> restore -> restore	{c0_key="s1", c0_value="s2", c1_key="s3", c1_value="s1", c2_key="s3", c3_key="s3", c4_key="s1", c4_value="s2", c5_evictedKey="s2", c5_value="s1", c6_evictedKey="s3", c6_value="s3"}	
+lrucache-259	PASSED	6893	7	restore -> get -> restore -> restore -> put -> put -> get	{c0_evictedKey="s1", c0_value="s2", c1_key="s1", c2_evictedKey="s2", c2_value="s2", c3_evictedKey="s3", c3_value="s1", c4_key="s2", c4_value="s3", c5_key="s1", c5_value="s2", c6_key="s1"}	
+lrucache-260	INCORRECT_SEQUENCE	3901	0	get -> put -> get -> put -> restore -> get -> get	-	INCORRECT SEQUENCE: call 0 (get): C.containsKey(key)

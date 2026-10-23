@@ -1,0 +1,3 @@
+test ArraylibGenerated240 {
+    sequence: indexOf -> set -> sum -> get -> sum -> get -> get;
+}

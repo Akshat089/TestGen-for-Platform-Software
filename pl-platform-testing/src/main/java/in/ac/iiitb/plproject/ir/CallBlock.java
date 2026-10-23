@@ -5,15 +5,11 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * One position in the sequence: rule 5's call block.
- *
- * <p>Holds everything both printers need, already rewritten once: the
- * operation and its parameters (a), the precondition as a list of conjuncts
- * (b), the state variables the postcondition snapshots via {@code \old} (c),
- * the call and whether its result is stored (d), and the postcondition as a
- * list of clauses (e) — plus the symbolic driver's model lines: the
- * parameter declarations and the fresh result/state values the postcondition
- * constrains.
+ * One position in the sequence: the operation and its parameters, the
+ * precondition as a list of conjuncts, the state variables the postcondition
+ * snapshots via {@code \old}, the call and whether its result is stored, and
+ * the postcondition as a list of clauses. {@link in.ac.iiitb.plproject.symbolic.TestGen#getATC}
+ * turns each block into the ATC's statements.
  */
 public class CallBlock {
 
@@ -27,16 +23,11 @@ public class CallBlock {
     private final String resultVarName; // e.g. "c2_result"; null when storesResult is false
     private final String resultAlias;   // the \result == name binding's name, or null
     private final List<Clause> postconditions;
-    /** Driver lines declaring this call's parameters (step a). */
-    private final List<String> paramDecls;
-    /** Driver lines declaring the fresh result and fresh state values (step c). */
-    private final List<String> freshDecls;
 
     public CallBlock(int index, String operationName, String returnType,
                       List<ParamSlot> params, List<Clause> preconditions,
                       List<Snapshot> snapshots, boolean storesResult, String resultVarName,
-                      String resultAlias, List<Clause> postconditions,
-                      List<String> paramDecls, List<String> freshDecls) {
+                      String resultAlias, List<Clause> postconditions) {
         this.index = index;
         this.operationName = operationName;
         this.returnType = returnType;
@@ -47,15 +38,6 @@ public class CallBlock {
         this.resultVarName = resultVarName;
         this.resultAlias = resultAlias;
         this.postconditions = Collections.unmodifiableList(new ArrayList<Clause>(postconditions));
-        this.paramDecls = Collections.unmodifiableList(new ArrayList<String>(paramDecls));
-        this.freshDecls = Collections.unmodifiableList(new ArrayList<String>(freshDecls));
-    }
-
-    /** The same call with only its first {@code preCount} precondition conjuncts and no postcondition. */
-    public CallBlock truncated(int preCount) {
-        return new CallBlock(index, operationName, returnType, params, preconditions.subList(0, preCount),
-                snapshots, storesResult, resultVarName, resultAlias, Collections.<Clause>emptyList(),
-                paramDecls, Collections.<String>emptyList());
     }
 
     public int getIndex() { return index; }
@@ -68,8 +50,6 @@ public class CallBlock {
     public String getResultVarName() { return resultVarName; }
     public String getResultAlias() { return resultAlias; }
     public List<Clause> getPostconditions() { return postconditions; }
-    public List<String> getParamDecls() { return paramDecls; }
-    public List<String> getFreshDecls() { return freshDecls; }
 
     /** The call expression's argument list, in declaration order: {@code c0_elem, c0_x, ...}. */
     public String argumentList() {

@@ -1,0 +1,3 @@
+test HashmapGenerated170 {
+    sequence: getOldValue -> put -> put -> put -> put -> getOldValue -> remove;
+}

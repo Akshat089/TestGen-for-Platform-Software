@@ -1,0 +1,262 @@
+# generated test strings — taskqueue (family size 260, phase 1 1132s)
+# name	status	spf_ms	rounds	sequence	inputs	detail
+taskqueue-001	INCORRECT_SEQUENCE	8040	2	submit -> cancelTask -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 2 (getResult): Tasks.containsKey(taskId)
+taskqueue-002	PASSED	4666	2	submit -> cancelTask	{c0_payload="s1", c1_taskId=1}	
+taskqueue-003	INCORRECT_SEQUENCE	1754	0	getResult -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-004	PASSED	9913	5	submit -> getResult -> submit -> submit -> cancelTask	{c0_payload="s1", c1_taskId=1, c2_payload="s3", c3_payload="s1", c4_taskId=1}	
+taskqueue-005	INCORRECT_SEQUENCE	1596	0	getResult -> submit -> getResult -> cancelTask -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-006	INCORRECT_SEQUENCE	6470	3	submit -> getResult -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 3 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-007	PASSED	11312	4	submit -> submit -> getResult -> cancelTask	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_taskId=1}	
+taskqueue-008	PASSED	6474	3	submit -> getResult -> cancelTask	{c0_payload="s1", c1_taskId=1, c2_taskId=1}	
+taskqueue-009	INCORRECT_SEQUENCE	9073	4	submit -> getResult -> getResult -> cancelTask -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 4 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-010	PASSED	4940	2	submit -> getResult	{c0_payload="s1", c1_taskId=1}	
+taskqueue-011	INCORRECT_SEQUENCE	1614	0	getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-012	PASSED	16071	6	submit -> submit -> submit -> submit -> getResult -> cancelTask	{c0_payload="s1", c1_payload="s2", c2_payload="s3", c3_payload="s1", c4_taskId=1, c5_taskId=1}	
+taskqueue-013	PASSED	7175	3	submit -> submit -> getResult	{c0_payload="s1", c1_payload="s2", c2_taskId=1}	
+taskqueue-014	INCORRECT_SEQUENCE	1507	0	getResult -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-015	INCORRECT_SEQUENCE	1648	0	cancelTask -> submit -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-016	INCORRECT_SEQUENCE	1666	0	cancelTask -> submit -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-017	PASSED	7800	4	submit -> getResult -> getResult -> cancelTask	{c0_payload="s1", c1_taskId=1, c2_taskId=1, c3_taskId=1}	
+taskqueue-018	PASSED	11114	4	submit -> submit -> cancelTask -> getResult	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_taskId=2}	
+taskqueue-019	INCORRECT_SEQUENCE	1699	0	getResult -> submit -> submit -> getResult -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-020	INCORRECT_SEQUENCE	1561	0	getResult -> submit -> getResult -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-021	INCORRECT_SEQUENCE	1616	0	cancelTask -> submit -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-022	INCORRECT_SEQUENCE	1588	0	getResult -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-023	INCORRECT_SEQUENCE	1633	0	cancelTask -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-024	PASSED	13856	7	submit -> getResult -> submit -> cancelTask -> submit -> cancelTask -> getResult	{c0_payload="s1", c1_taskId=1, c2_payload="s3", c3_taskId=1, c4_payload="s2", c5_taskId=2, c6_taskId=3}	
+taskqueue-025	PASSED	13035	5	submit -> submit -> submit -> cancelTask -> getResult	{c0_payload="s1", c1_payload="s2", c2_payload="s3", c3_taskId=1, c4_taskId=2}	
+taskqueue-026	INCORRECT_SEQUENCE	1554	0	cancelTask -> getResult -> cancelTask -> cancelTask -> getResult -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-027	INCORRECT_SEQUENCE	1517	0	getResult -> submit -> getResult -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-028	PASSED	6546	3	submit -> getResult -> submit	{c0_payload="s1", c1_taskId=1, c2_payload="s3"}	
+taskqueue-029	PASSED	9787	5	submit -> submit -> submit -> getResult -> cancelTask	{c0_payload="s1", c1_payload="s2", c2_payload="s3", c3_taskId=1, c4_taskId=1}	
+taskqueue-030	INCORRECT_SEQUENCE	5149	2	submit -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 2 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-031	INCORRECT_SEQUENCE	1612	0	getResult -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-032	INCORRECT_SEQUENCE	13403	5	submit -> submit -> getResult -> cancelTask -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 5 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-033	INCORRECT_SEQUENCE	1649	0	cancelTask -> submit -> cancelTask -> getResult -> submit -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-034	INCORRECT_SEQUENCE	1710	0	cancelTask -> submit -> getResult -> submit -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-035	PASSED	8389	4	submit -> getResult -> getResult -> getResult	{c0_payload="s1", c1_taskId=1, c2_taskId=1, c3_taskId=1}	
+taskqueue-036	PASSED	17001	7	submit -> getResult -> submit -> submit -> cancelTask -> submit -> getResult	{c0_payload="s1", c1_taskId=1, c2_payload="s3", c3_payload="s1", c4_taskId=1, c5_payload="s3", c6_taskId=2}	
+taskqueue-037	PASSED	5161	2	submit -> submit	{c0_payload="s1", c1_payload="s2"}	
+taskqueue-038	INCORRECT_SEQUENCE	1635	0	getResult -> submit -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-039	PASSED	12109	6	submit -> getResult -> getResult -> getResult -> getResult -> cancelTask	{c0_payload="s1", c1_taskId=1, c2_taskId=1, c3_taskId=1, c4_taskId=1, c5_taskId=1}	
+taskqueue-040	INCORRECT_SEQUENCE	5194	2	submit -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 2 (getResult): Tasks.containsKey(taskId)
+taskqueue-041	INCORRECT_SEQUENCE	1698	0	cancelTask -> getResult -> getResult -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-042	INCORRECT_SEQUENCE	1589	0	getResult -> submit -> getResult -> getResult -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-043	INCORRECT_SEQUENCE	1693	0	getResult -> getResult -> submit -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-044	PASSED	11421	4	submit -> submit -> getResult -> getResult	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_taskId=1}	
+taskqueue-045	PASSED	8612	4	submit -> getResult -> submit -> cancelTask	{c0_payload="s1", c1_taskId=1, c2_payload="s3", c3_taskId=1}	
+taskqueue-046	INCORRECT_SEQUENCE	5702	2	submit -> cancelTask -> cancelTask -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 2 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-047	INCORRECT_SEQUENCE	1617	0	cancelTask -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-048	INCORRECT_SEQUENCE	1620	0	cancelTask -> cancelTask -> getResult -> getResult -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-049	INCORRECT_SEQUENCE	6637	3	submit -> getResult -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 3 (getResult): Tasks.containsKey(taskId)
+taskqueue-050	INCORRECT_SEQUENCE	4537	0	cancelTask -> getResult -> getResult -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-051	INCORRECT_SEQUENCE	4982	2	submit -> cancelTask -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 2 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-052	INCORRECT_SEQUENCE	1727	0	cancelTask -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-053	PASSED	6257	3	submit -> submit -> cancelTask	{c0_payload="s1", c1_payload="s2", c2_taskId=1}	
+taskqueue-054	INCORRECT_SEQUENCE	1884	0	getResult -> submit -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-055	INCORRECT_SEQUENCE	1667	0	getResult -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-056	INCORRECT_SEQUENCE	5022	2	submit -> cancelTask -> getResult -> getResult -> getResult -> submit	-	INCORRECT SEQUENCE: call 2 (getResult): Tasks.containsKey(taskId)
+taskqueue-057	PASSED	8783	4	submit -> submit -> cancelTask -> cancelTask	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_taskId=2}	
+taskqueue-058	INCORRECT_SEQUENCE	14110	5	submit -> cancelTask -> submit -> getResult -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 5 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-059	INCORRECT_SEQUENCE	1698	0	getResult -> cancelTask -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-060	INCORRECT_SEQUENCE	1894	0	cancelTask -> getResult -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-061	INCORRECT_SEQUENCE	10305	5	submit -> getResult -> getResult -> getResult -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 5 (getResult): Tasks.containsKey(taskId)
+taskqueue-062	INCORRECT_SEQUENCE	1607	0	getResult -> submit -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-063	PASSED	12990	5	submit -> submit -> getResult -> getResult -> submit	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_taskId=1, c4_payload="s2"}	
+taskqueue-064	INCORRECT_SEQUENCE	5197	2	submit -> cancelTask -> getResult -> submit -> getResult -> getResult	-	INCORRECT SEQUENCE: call 2 (getResult): Tasks.containsKey(taskId)
+taskqueue-065	INCORRECT_SEQUENCE	6962	3	submit -> getResult -> cancelTask -> cancelTask -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 3 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-066	INCORRECT_SEQUENCE	1794	0	getResult -> submit -> getResult -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-067	PASSED	11596	6	submit -> submit -> getResult -> getResult -> getResult -> cancelTask	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_taskId=1, c4_taskId=1, c5_taskId=1}	
+taskqueue-068	PASSED	13383	5	submit -> submit -> getResult -> getResult -> cancelTask	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_taskId=1, c4_taskId=1}	
+taskqueue-069	INCORRECT_SEQUENCE	1748	0	cancelTask -> cancelTask -> cancelTask -> cancelTask -> getResult -> submit -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-070	PASSED	10250	5	submit -> submit -> cancelTask -> getResult -> submit	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_taskId=2, c4_payload="s2"}	
+taskqueue-071	INCORRECT_SEQUENCE	1967	0	getResult -> submit -> getResult -> cancelTask -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-072	INCORRECT_SEQUENCE	6904	3	submit -> getResult -> cancelTask -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 3 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-073	INCORRECT_SEQUENCE	7811	2	submit -> cancelTask -> getResult -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 2 (getResult): Tasks.containsKey(taskId)
+taskqueue-074	PASSED	10120	5	submit -> getResult -> getResult -> getResult -> cancelTask	{c0_payload="s1", c1_taskId=1, c2_taskId=1, c3_taskId=1, c4_taskId=1}	
+taskqueue-075	PASSED	11763	6	submit -> submit -> cancelTask -> getResult -> getResult -> cancelTask	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_taskId=2, c4_taskId=2, c5_taskId=2}	
+taskqueue-076	INCORRECT_SEQUENCE	4991	2	submit -> cancelTask -> getResult -> getResult -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 2 (getResult): Tasks.containsKey(taskId)
+taskqueue-077	PASSED	10865	4	submit -> cancelTask -> submit -> cancelTask	{c0_payload="s1", c1_taskId=1, c2_payload="s3", c3_taskId=2}	
+taskqueue-078	PASSED	6585	3	submit -> submit -> submit	{c0_payload="s1", c1_payload="s2", c2_payload="s3"}	
+taskqueue-079	INCORRECT_SEQUENCE	1919	0	cancelTask -> submit -> cancelTask -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-080	INCORRECT_SEQUENCE	1596	0	getResult -> cancelTask -> submit -> cancelTask -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-081	INCORRECT_SEQUENCE	1593	0	cancelTask -> cancelTask -> cancelTask -> submit -> submit -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-082	PASSED	8128	4	submit -> submit -> submit -> getResult	{c0_payload="s1", c1_payload="s2", c2_payload="s3", c3_taskId=1}	
+taskqueue-083	INCORRECT_SEQUENCE	1598	0	getResult -> submit -> cancelTask -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-084	PASSED	6163	3	submit -> cancelTask -> submit	{c0_payload="s1", c1_taskId=1, c2_payload="s3"}	
+taskqueue-085	INCORRECT_SEQUENCE	4539	0	cancelTask -> cancelTask -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-086	INCORRECT_SEQUENCE	1826	0	getResult -> cancelTask -> getResult -> submit -> submit -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-087	INCORRECT_SEQUENCE	5106	2	submit -> cancelTask -> cancelTask -> submit -> submit	-	INCORRECT SEQUENCE: call 2 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-088	INCORRECT_SEQUENCE	1699	0	getResult -> submit -> submit -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-089	INCORRECT_SEQUENCE	1616	0	cancelTask -> cancelTask -> cancelTask -> getResult -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-090	INCORRECT_SEQUENCE	1684	0	getResult -> cancelTask -> getResult -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-091	PASSED	6589	3	submit -> getResult -> getResult	{c0_payload="s1", c1_taskId=1, c2_taskId=1}	
+taskqueue-092	PASSED	9878	5	submit -> submit -> getResult -> submit -> cancelTask	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_payload="s1", c4_taskId=1}	
+taskqueue-093	PASSED	12691	5	submit -> cancelTask -> submit -> submit -> submit	{c0_payload="s1", c1_taskId=1, c2_payload="s3", c3_payload="s1", c4_payload="s2"}	
+taskqueue-094	INCORRECT_SEQUENCE	1645	0	cancelTask -> getResult -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-095	INCORRECT_SEQUENCE	1748	0	cancelTask -> cancelTask -> cancelTask -> cancelTask -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-096	INCORRECT_SEQUENCE	1866	0	cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-097	INCORRECT_SEQUENCE	1721	0	cancelTask -> submit -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-098	PASSED	11980	6	submit -> submit -> submit -> getResult -> cancelTask -> cancelTask	{c0_payload="s1", c1_payload="s2", c2_payload="s3", c3_taskId=1, c4_taskId=1, c5_taskId=2}	
+taskqueue-099	INCORRECT_SEQUENCE	1846	0	getResult -> submit -> submit -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-100	INCORRECT_SEQUENCE	8021	2	submit -> cancelTask -> getResult -> getResult	-	INCORRECT SEQUENCE: call 2 (getResult): Tasks.containsKey(taskId)
+taskqueue-101	INCORRECT_SEQUENCE	1577	0	cancelTask -> submit -> submit -> getResult -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-102	INCORRECT_SEQUENCE	9805	5	submit -> getResult -> submit -> cancelTask -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 5 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-103	INCORRECT_SEQUENCE	1653	0	cancelTask -> getResult -> submit -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-104	INCORRECT_SEQUENCE	8545	4	submit -> getResult -> getResult -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 4 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-105	PASSED	7465	4	submit -> getResult -> cancelTask -> submit	{c0_payload="s1", c1_taskId=1, c2_taskId=1, c3_payload="s1"}	
+taskqueue-106	INCORRECT_SEQUENCE	1544	0	cancelTask -> cancelTask -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-107	INCORRECT_SEQUENCE	10650	4	submit -> submit -> cancelTask -> cancelTask -> cancelTask -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 4 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-108	PASSED	9097	5	submit -> getResult -> getResult -> submit -> cancelTask	{c0_payload="s1", c1_taskId=1, c2_taskId=1, c3_payload="s1", c4_taskId=1}	
+taskqueue-109	INCORRECT_SEQUENCE	1526	0	getResult -> cancelTask -> submit -> submit -> cancelTask -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-110	INCORRECT_SEQUENCE	1623	0	getResult -> cancelTask -> getResult -> cancelTask -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-111	PASSED	9370	5	submit -> submit -> getResult -> cancelTask -> cancelTask	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_taskId=1, c4_taskId=2}	
+taskqueue-112	INCORRECT_SEQUENCE	1590	0	cancelTask -> getResult -> submit -> getResult -> submit -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-113	INCORRECT_SEQUENCE	1507	0	cancelTask -> submit -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-114	INCORRECT_SEQUENCE	4441	0	cancelTask -> submit -> submit -> getResult -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-115	INCORRECT_SEQUENCE	1586	0	cancelTask -> submit -> submit -> cancelTask -> submit -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-116	INCORRECT_SEQUENCE	1796	0	cancelTask -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-117	PASSED	9685	5	submit -> getResult -> cancelTask -> submit -> cancelTask	{c0_payload="s1", c1_taskId=1, c2_taskId=1, c3_payload="s1", c4_taskId=2}	
+taskqueue-118	INCORRECT_SEQUENCE	1483	0	cancelTask -> cancelTask -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-119	INCORRECT_SEQUENCE	1425	0	getResult -> getResult -> submit -> getResult -> submit -> cancelTask -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-120	PASSED	6999	4	submit -> cancelTask -> submit -> submit	{c0_payload="s1", c1_taskId=1, c2_payload="s3", c3_payload="s1"}	
+taskqueue-121	INCORRECT_SEQUENCE	1404	0	getResult -> submit -> getResult -> getResult -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-122	INCORRECT_SEQUENCE	1446	0	getResult -> getResult -> submit -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-123	PASSED	11629	5	submit -> submit -> cancelTask -> getResult -> cancelTask	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_taskId=2, c4_taskId=2}	
+taskqueue-124	PASSED	11359	7	submit -> submit -> submit -> submit -> cancelTask -> submit -> cancelTask	{c0_payload="s1", c1_payload="s2", c2_payload="s3", c3_payload="s1", c4_taskId=1, c5_payload="s3", c6_taskId=2}	
+taskqueue-125	INCORRECT_SEQUENCE	1453	0	cancelTask -> submit -> submit -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-126	INCORRECT_SEQUENCE	1451	0	getResult -> getResult -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-127	INCORRECT_SEQUENCE	1397	0	cancelTask -> getResult -> cancelTask -> submit -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-128	INCORRECT_SEQUENCE	1553	0	cancelTask -> getResult -> submit -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-129	INCORRECT_SEQUENCE	1470	0	getResult -> submit -> submit -> getResult -> cancelTask -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-130	INCORRECT_SEQUENCE	1461	0	getResult -> getResult -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-131	INCORRECT_SEQUENCE	1669	0	getResult -> submit -> getResult -> getResult -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-132	INCORRECT_SEQUENCE	1597	0	getResult -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-133	INCORRECT_SEQUENCE	4945	2	submit -> cancelTask -> cancelTask -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 2 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-134	PASSED	10659	4	submit -> submit -> getResult -> submit	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_payload="s1"}	
+taskqueue-135	INCORRECT_SEQUENCE	1474	0	getResult -> getResult -> submit -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-136	PASSED	9776	6	submit -> submit -> cancelTask -> getResult -> getResult -> submit	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_taskId=2, c4_taskId=2, c5_payload="s3"}	
+taskqueue-137	INCORRECT_SEQUENCE	1434	0	getResult -> getResult -> getResult -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-138	INCORRECT_SEQUENCE	1545	0	getResult -> submit -> getResult -> getResult -> cancelTask -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-139	PASSED	8864	5	submit -> submit -> cancelTask -> getResult -> getResult	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_taskId=2, c4_taskId=2}	
+taskqueue-140	INCORRECT_SEQUENCE	1434	0	getResult -> getResult -> cancelTask -> getResult -> submit -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-141	INCORRECT_SEQUENCE	4423	0	cancelTask -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-142	INCORRECT_SEQUENCE	1655	0	cancelTask -> submit -> getResult -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-143	INCORRECT_SEQUENCE	1447	0	getResult -> cancelTask -> getResult -> cancelTask -> getResult -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-144	INCORRECT_SEQUENCE	1492	0	cancelTask -> submit -> getResult -> getResult -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-145	INCORRECT_SEQUENCE	1442	0	getResult -> getResult -> getResult -> cancelTask -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-146	INCORRECT_SEQUENCE	1425	0	getResult -> cancelTask -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-147	INCORRECT_SEQUENCE	1283	0	getResult -> getResult -> submit -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-148	INCORRECT_SEQUENCE	1377	0	cancelTask -> cancelTask -> cancelTask -> getResult -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-149	INCORRECT_SEQUENCE	1398	0	getResult -> cancelTask -> submit -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-150	PASSED	10651	7	submit -> submit -> getResult -> submit -> submit -> cancelTask -> submit	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_payload="s1", c4_payload="s2", c5_taskId=1, c6_payload="s1"}	
+taskqueue-151	INCORRECT_SEQUENCE	4019	2	submit -> cancelTask -> getResult -> submit -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 2 (getResult): Tasks.containsKey(taskId)
+taskqueue-152	INCORRECT_SEQUENCE	3964	2	submit -> cancelTask -> getResult -> submit -> submit	-	INCORRECT SEQUENCE: call 2 (getResult): Tasks.containsKey(taskId)
+taskqueue-153	INCORRECT_SEQUENCE	4318	0	getResult -> submit -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-154	INCORRECT_SEQUENCE	1369	0	getResult -> submit -> cancelTask -> getResult -> getResult -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-155	INCORRECT_SEQUENCE	1348	0	getResult -> cancelTask -> submit -> submit -> getResult -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-156	INCORRECT_SEQUENCE	1409	0	cancelTask -> getResult -> cancelTask -> submit -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-157	INCORRECT_SEQUENCE	1413	0	getResult -> cancelTask -> cancelTask -> submit -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-158	PASSED	10183	6	submit -> getResult -> submit -> cancelTask -> getResult -> getResult	{c0_payload="s1", c1_taskId=1, c2_payload="s3", c3_taskId=1, c4_taskId=2, c5_taskId=2}	
+taskqueue-159	INCORRECT_SEQUENCE	1444	0	cancelTask -> cancelTask -> cancelTask -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-160	INCORRECT_SEQUENCE	1424	0	getResult -> submit -> submit -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-161	INCORRECT_SEQUENCE	1481	0	cancelTask -> submit -> getResult -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-162	INCORRECT_SEQUENCE	1447	0	getResult -> cancelTask -> submit -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-163	INCORRECT_SEQUENCE	1601	0	cancelTask -> submit -> getResult -> getResult -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-164	PASSED	11817	5	submit -> getResult -> submit -> getResult -> cancelTask	{c0_payload="s1", c1_taskId=1, c2_payload="s3", c3_taskId=1, c4_taskId=1}	
+taskqueue-165	INCORRECT_SEQUENCE	4101	2	submit -> cancelTask -> getResult -> submit	-	INCORRECT SEQUENCE: call 2 (getResult): Tasks.containsKey(taskId)
+taskqueue-166	INCORRECT_SEQUENCE	1419	0	cancelTask -> getResult -> submit -> submit -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-167	INCORRECT_SEQUENCE	1411	0	getResult -> submit -> cancelTask -> getResult -> getResult -> cancelTask -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-168	INCORRECT_SEQUENCE	1361	0	cancelTask -> getResult -> getResult -> submit -> cancelTask -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-169	INCORRECT_SEQUENCE	4169	2	submit -> cancelTask -> getResult -> getResult -> cancelTask -> getResult -> submit	-	INCORRECT SEQUENCE: call 2 (getResult): Tasks.containsKey(taskId)
+taskqueue-170	INCORRECT_SEQUENCE	1380	0	cancelTask -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-171	PASSED	10216	6	submit -> getResult -> getResult -> getResult -> submit -> submit	{c0_payload="s1", c1_taskId=1, c2_taskId=1, c3_taskId=1, c4_payload="s2", c5_payload="s3"}	
+taskqueue-172	INCORRECT_SEQUENCE	1335	0	cancelTask -> submit -> getResult -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-173	PASSED	11314	5	submit -> cancelTask -> submit -> getResult -> cancelTask	{c0_payload="s1", c1_taskId=1, c2_payload="s3", c3_taskId=2, c4_taskId=2}	
+taskqueue-174	INCORRECT_SEQUENCE	1381	0	getResult -> getResult -> getResult -> cancelTask -> submit -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-175	PASSED	7912	5	submit -> submit -> getResult -> cancelTask -> getResult	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_taskId=1, c4_taskId=2}	
+taskqueue-176	INCORRECT_SEQUENCE	4065	2	submit -> cancelTask -> cancelTask -> getResult -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 2 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-177	INCORRECT_SEQUENCE	1284	0	getResult -> cancelTask -> submit -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-178	INCORRECT_SEQUENCE	1323	0	getResult -> cancelTask -> cancelTask -> cancelTask -> submit -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-179	INCORRECT_SEQUENCE	1462	0	getResult -> getResult -> getResult -> submit -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-180	INCORRECT_SEQUENCE	6962	4	submit -> getResult -> getResult -> cancelTask -> getResult -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 4 (getResult): Tasks.containsKey(taskId)
+taskqueue-181	INCORRECT_SEQUENCE	1326	0	getResult -> cancelTask -> submit -> getResult -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-182	INCORRECT_SEQUENCE	1334	0	getResult -> cancelTask -> submit -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-183	INCORRECT_SEQUENCE	1388	0	getResult -> getResult -> submit -> cancelTask -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-184	INCORRECT_SEQUENCE	1325	0	cancelTask -> cancelTask -> submit -> submit -> getResult -> submit -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-185	INCORRECT_SEQUENCE	4281	0	cancelTask -> submit -> submit -> getResult -> cancelTask -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-186	INCORRECT_SEQUENCE	5490	3	submit -> getResult -> cancelTask -> getResult -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 3 (getResult): Tasks.containsKey(taskId)
+taskqueue-187	PASSED	9454	6	submit -> submit -> getResult -> getResult -> cancelTask -> cancelTask	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_taskId=1, c4_taskId=1, c5_taskId=2}	
+taskqueue-188	INCORRECT_SEQUENCE	1285	0	getResult -> getResult -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-189	INCORRECT_SEQUENCE	1317	0	getResult -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-190	PASSED	10747	7	submit -> submit -> getResult -> cancelTask -> getResult -> submit -> cancelTask	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_taskId=1, c4_taskId=2, c5_payload="s3", c6_taskId=2}	
+taskqueue-191	PASSED	9216	6	submit -> cancelTask -> submit -> cancelTask -> submit -> submit	{c0_payload="s1", c1_taskId=1, c2_payload="s3", c3_taskId=2, c4_payload="s2", c5_payload="s3"}	
+taskqueue-192	INCORRECT_SEQUENCE	1413	0	getResult -> cancelTask -> getResult -> cancelTask -> cancelTask -> submit -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-193	INCORRECT_SEQUENCE	1444	0	getResult -> submit -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-194	INCORRECT_SEQUENCE	4887	2	submit -> cancelTask -> getResult -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 2 (getResult): Tasks.containsKey(taskId)
+taskqueue-195	INCORRECT_SEQUENCE	5909	0	getResult -> getResult -> submit -> submit -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-196	INCORRECT_SEQUENCE	1462	0	cancelTask -> cancelTask -> getResult -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-197	INCORRECT_SEQUENCE	1360	0	cancelTask -> getResult -> cancelTask -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-198	INCORRECT_SEQUENCE	1597	0	getResult -> getResult -> cancelTask -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-199	PASSED	9361	6	submit -> getResult -> cancelTask -> submit -> cancelTask -> submit	{c0_payload="s1", c1_taskId=1, c2_taskId=1, c3_payload="s1", c4_taskId=2, c5_payload="s3"}	
+taskqueue-200	INCORRECT_SEQUENCE	5606	3	submit -> getResult -> cancelTask -> getResult -> getResult	-	INCORRECT SEQUENCE: call 3 (getResult): Tasks.containsKey(taskId)
+taskqueue-201	INCORRECT_SEQUENCE	1412	0	getResult -> submit -> submit -> submit -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-202	INCORRECT_SEQUENCE	1445	0	cancelTask -> submit -> submit -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-203	PASSED	9503	6	submit -> getResult -> submit -> getResult -> submit -> submit	{c0_payload="s1", c1_taskId=1, c2_payload="s3", c3_taskId=1, c4_payload="s2", c5_payload="s3"}	
+taskqueue-204	PASSED	10984	5	submit -> cancelTask -> submit -> getResult -> getResult	{c0_payload="s1", c1_taskId=1, c2_payload="s3", c3_taskId=2, c4_taskId=2}	
+taskqueue-205	INCORRECT_SEQUENCE	1402	0	getResult -> getResult -> getResult -> cancelTask -> getResult -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-206	INCORRECT_SEQUENCE	1344	0	getResult -> getResult -> submit -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-207	INCORRECT_SEQUENCE	1376	0	cancelTask -> cancelTask -> submit -> submit -> submit -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-208	PASSED	10995	7	submit -> getResult -> submit -> getResult -> cancelTask -> getResult -> getResult	{c0_payload="s1", c1_taskId=1, c2_payload="s3", c3_taskId=1, c4_taskId=1, c5_taskId=2, c6_taskId=2}	
+taskqueue-209	PASSED	6658	5	submit -> getResult -> submit -> cancelTask -> cancelTask	{c0_payload="s1", c1_taskId=1, c2_payload="s3", c3_taskId=1, c4_taskId=2}	
+taskqueue-210	INCORRECT_SEQUENCE	1120	0	cancelTask -> submit -> cancelTask -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-211	INCORRECT_SEQUENCE	1120	0	getResult -> getResult -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-212	INCORRECT_SEQUENCE	4070	0	getResult -> submit -> getResult -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-213	PASSED	7698	6	submit -> submit -> submit -> getResult -> getResult -> cancelTask	{c0_payload="s1", c1_payload="s2", c2_payload="s3", c3_taskId=1, c4_taskId=1, c5_taskId=1}	
+taskqueue-214	INCORRECT_SEQUENCE	1138	0	cancelTask -> cancelTask -> submit -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-215	INCORRECT_SEQUENCE	1074	0	getResult -> cancelTask -> submit -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-216	INCORRECT_SEQUENCE	1077	0	cancelTask -> submit -> getResult -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-217	INCORRECT_SEQUENCE	1114	0	getResult -> getResult -> cancelTask -> getResult -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-218	INCORRECT_SEQUENCE	1060	0	cancelTask -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-219	INCORRECT_SEQUENCE	6676	5	submit -> getResult -> getResult -> getResult -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 5 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-220	PASSED	7627	6	submit -> submit -> submit -> getResult -> getResult -> submit	{c0_payload="s1", c1_payload="s2", c2_payload="s3", c3_taskId=1, c4_taskId=1, c5_payload="s3"}	
+taskqueue-221	INCORRECT_SEQUENCE	1035	0	getResult -> getResult -> getResult -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-222	INCORRECT_SEQUENCE	1069	0	cancelTask -> getResult -> submit -> cancelTask -> cancelTask -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-223	INCORRECT_SEQUENCE	1163	0	cancelTask -> getResult -> getResult -> cancelTask -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-224	INCORRECT_SEQUENCE	4033	0	cancelTask -> getResult -> submit -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-225	PASSED	8841	7	submit -> submit -> cancelTask -> getResult -> getResult -> getResult -> submit	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_taskId=2, c4_taskId=2, c5_taskId=2, c6_payload="s1"}	
+taskqueue-226	PASSED	6421	5	submit -> submit -> submit -> getResult -> submit	{c0_payload="s1", c1_payload="s2", c2_payload="s3", c3_taskId=1, c4_payload="s2"}	
+taskqueue-227	INCORRECT_SEQUENCE	1192	0	getResult -> submit -> submit -> submit -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-228	INCORRECT_SEQUENCE	1103	0	getResult -> cancelTask -> getResult -> getResult -> cancelTask -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-229	INCORRECT_SEQUENCE	1104	0	cancelTask -> submit -> getResult -> cancelTask -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-230	INCORRECT_SEQUENCE	1069	0	getResult -> getResult -> getResult -> getResult -> getResult -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-231	PASSED	8787	7	submit -> cancelTask -> submit -> getResult -> getResult -> cancelTask -> submit	{c0_payload="s1", c1_taskId=1, c2_payload="s3", c3_taskId=2, c4_taskId=2, c5_taskId=2, c6_payload="s1"}	
+taskqueue-232	PASSED	9450	5	submit -> submit -> getResult -> submit -> submit	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_payload="s1", c4_payload="s2"}	
+taskqueue-233	INCORRECT_SEQUENCE	4486	3	submit -> getResult -> cancelTask -> cancelTask -> submit -> submit -> getResult	-	INCORRECT SEQUENCE: call 3 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-234	INCORRECT_SEQUENCE	1180	0	cancelTask -> cancelTask -> submit -> cancelTask -> submit -> getResult -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-235	INCORRECT_SEQUENCE	1111	0	getResult -> submit -> cancelTask -> submit -> submit -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-236	INCORRECT_SEQUENCE	1199	0	cancelTask -> getResult -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-237	INCORRECT_SEQUENCE	1106	0	getResult -> getResult -> cancelTask -> cancelTask -> submit -> cancelTask -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-238	INCORRECT_SEQUENCE	1087	0	getResult -> cancelTask -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-239	INCORRECT_SEQUENCE	1114	0	cancelTask -> cancelTask -> submit -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-240	INCORRECT_SEQUENCE	1104	0	cancelTask -> getResult -> cancelTask -> submit -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-241	INCORRECT_SEQUENCE	1197	0	cancelTask -> getResult -> submit -> getResult -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-242	INCORRECT_SEQUENCE	1108	0	getResult -> submit -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-243	INCORRECT_SEQUENCE	1115	0	getResult -> getResult -> submit -> cancelTask -> submit -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-244	INCORRECT_SEQUENCE	1132	0	getResult -> getResult -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-245	INCORRECT_SEQUENCE	1086	0	getResult -> cancelTask -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-246	INCORRECT_SEQUENCE	1137	0	cancelTask -> submit -> getResult -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-247	INCORRECT_SEQUENCE	1133	0	getResult -> cancelTask -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-248	INCORRECT_SEQUENCE	1129	0	cancelTask -> getResult -> cancelTask -> getResult -> getResult -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-249	PASSED	11788	7	submit -> submit -> getResult -> getResult -> getResult -> cancelTask -> getResult	{c0_payload="s1", c1_payload="s2", c2_taskId=1, c3_taskId=1, c4_taskId=1, c5_taskId=1, c6_taskId=2}	
+taskqueue-250	INCORRECT_SEQUENCE	1072	0	cancelTask -> getResult -> getResult -> cancelTask -> submit -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-251	INCORRECT_SEQUENCE	4479	3	submit -> getResult -> cancelTask -> getResult -> cancelTask -> submit -> getResult	-	INCORRECT SEQUENCE: call 3 (getResult): Tasks.containsKey(taskId)
+taskqueue-252	INCORRECT_SEQUENCE	4603	3	submit -> getResult -> cancelTask -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 3 (getResult): Tasks.containsKey(taskId)
+taskqueue-253	INCORRECT_SEQUENCE	1147	0	cancelTask -> submit -> cancelTask -> getResult	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-254	INCORRECT_SEQUENCE	1090	0	cancelTask -> submit -> cancelTask -> cancelTask -> cancelTask -> cancelTask -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-255	INCORRECT_SEQUENCE	1094	0	cancelTask -> submit -> getResult -> getResult -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-256	INCORRECT_SEQUENCE	1100	0	cancelTask -> cancelTask -> getResult -> getResult -> submit	-	INCORRECT SEQUENCE: call 0 (cancelTask): Tasks.containsKey(taskId)
+taskqueue-257	INCORRECT_SEQUENCE	1104	0	getResult -> submit -> cancelTask -> getResult -> submit -> cancelTask -> submit	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-258	INCORRECT_SEQUENCE	1185	0	getResult -> submit -> cancelTask -> cancelTask -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-259	INCORRECT_SEQUENCE	1125	0	getResult -> submit -> cancelTask -> cancelTask -> submit -> getResult -> getResult	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)
+taskqueue-260	INCORRECT_SEQUENCE	1136	0	getResult -> submit -> cancelTask -> getResult -> cancelTask	-	INCORRECT SEQUENCE: call 0 (getResult): Tasks.containsKey(taskId)

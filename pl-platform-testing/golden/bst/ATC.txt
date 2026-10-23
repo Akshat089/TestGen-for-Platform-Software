@@ -1,0 +1,371 @@
+# ../specs/BinarySearchTree.spec + ../specs/BinarySearchTree.tests (BinarySearchTreeDryRun)
+
+== ATC t ==
+// starting state: the library's real state after Helper.reset()
+// call 0: insert
+old0_size := Helper.size
+c0_key := input<int>()
+assume(!Helper.Keys.contains(c0_key))
+insert(c0_key)
+assert(Helper.Keys.contains(c0_key))
+assert(Helper.size == old0_size + 1)
+// call 1: insert
+old1_size := Helper.size
+c1_key := input<int>()
+assume(!Helper.Keys.contains(c1_key))
+insert(c1_key)
+assert(Helper.Keys.contains(c1_key))
+assert(Helper.size == old1_size + 1)
+// call 2: insert
+old2_size := Helper.size
+c2_key := input<int>()
+assume(!Helper.Keys.contains(c2_key))
+insert(c2_key)
+assert(Helper.Keys.contains(c2_key))
+assert(Helper.size == old2_size + 1)
+// call 3: contains
+old3_size := Helper.size
+c3_key := input<int>()
+assume(Helper.size > 0)
+c3_result := contains(c3_key)
+assert(c3_result == Helper.Keys.contains(c3_key))
+assert(Helper.size == old3_size)
+// call 4: min
+old4_size := Helper.size
+assume(Helper.size > 0)
+c4_result := min()
+assert(c4_result == Helper.minKey)
+assert(Helper.size == old4_size)
+// call 5: delete
+old5_size := Helper.size
+c5_key := input<int>()
+assume(Helper.Keys.contains(c5_key))
+delete(c5_key)
+assert(!Helper.Keys.contains(c5_key))
+assert(Helper.size == old5_size - 1)
+
+== round 0: t' = rewriteATC(t, []) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: insert
+old0_size := Helper.size
+c0_key := input<int>()
+assume(!Helper.Keys.contains(c0_key))
+insert(c0_key)
+assert(Helper.Keys.contains(c0_key))
+assert(Helper.size == old0_size + 1)
+// call 1: insert
+old1_size := Helper.size
+c1_key := input<int>()
+assume(!Helper.Keys.contains(c1_key))
+insert(c1_key)
+assert(Helper.Keys.contains(c1_key))
+assert(Helper.size == old1_size + 1)
+// call 2: insert
+old2_size := Helper.size
+c2_key := input<int>()
+assume(!Helper.Keys.contains(c2_key))
+insert(c2_key)
+assert(Helper.Keys.contains(c2_key))
+assert(Helper.size == old2_size + 1)
+// call 3: contains
+old3_size := Helper.size
+c3_key := input<int>()
+assume(Helper.size > 0)
+c3_result := contains(c3_key)
+assert(c3_result == Helper.Keys.contains(c3_key))
+assert(Helper.size == old3_size)
+// call 4: min
+old4_size := Helper.size
+assume(Helper.size > 0)
+c4_result := min()
+assert(c4_result == Helper.minKey)
+assert(Helper.size == old4_size)
+// call 5: delete
+old5_size := Helper.size
+c5_key := input<int>()
+assume(Helper.Keys.contains(c5_key))
+delete(c5_key)
+assert(!Helper.Keys.contains(c5_key))
+assert(Helper.size == old5_size - 1)
+-- symex: 5 ready statement(s), stopped at insert(c0_key)
+-- pc = (!Helper.Keys.contains(c0_key))
+-- L' = [101]
+
+== round 1: t' = rewriteATC(t, [101]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: insert
+old0_size := Helper.size
+c0_key := 101
+assume(!Helper.Keys.contains(c0_key))
+insert(c0_key)
+assert(Helper.Keys.contains(c0_key))
+assert(Helper.size == old0_size + 1)
+// call 1: insert
+old1_size := Helper.size
+c1_key := input<int>()
+assume(!Helper.Keys.contains(c1_key))
+insert(c1_key)
+assert(Helper.Keys.contains(c1_key))
+assert(Helper.size == old1_size + 1)
+// call 2: insert
+old2_size := Helper.size
+c2_key := input<int>()
+assume(!Helper.Keys.contains(c2_key))
+insert(c2_key)
+assert(Helper.Keys.contains(c2_key))
+assert(Helper.size == old2_size + 1)
+// call 3: contains
+old3_size := Helper.size
+c3_key := input<int>()
+assume(Helper.size > 0)
+c3_result := contains(c3_key)
+assert(c3_result == Helper.Keys.contains(c3_key))
+assert(Helper.size == old3_size)
+// call 4: min
+old4_size := Helper.size
+assume(Helper.size > 0)
+c4_result := min()
+assert(c4_result == Helper.minKey)
+assert(Helper.size == old4_size)
+// call 5: delete
+old5_size := Helper.size
+c5_key := input<int>()
+assume(Helper.Keys.contains(c5_key))
+delete(c5_key)
+assert(!Helper.Keys.contains(c5_key))
+assert(Helper.size == old5_size - 1)
+-- symex: 12 ready statement(s), stopped at insert(c1_key)
+-- pc = (!Helper.Keys.contains(101)) && (!Helper.Keys.contains(c1_key))
+-- L' = [103]
+
+== round 2: t' = rewriteATC(t, [103]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: insert
+old0_size := Helper.size
+c0_key := 101
+assume(!Helper.Keys.contains(c0_key))
+insert(c0_key)
+assert(Helper.Keys.contains(c0_key))
+assert(Helper.size == old0_size + 1)
+// call 1: insert
+old1_size := Helper.size
+c1_key := 103
+assume(!Helper.Keys.contains(c1_key))
+insert(c1_key)
+assert(Helper.Keys.contains(c1_key))
+assert(Helper.size == old1_size + 1)
+// call 2: insert
+old2_size := Helper.size
+c2_key := input<int>()
+assume(!Helper.Keys.contains(c2_key))
+insert(c2_key)
+assert(Helper.Keys.contains(c2_key))
+assert(Helper.size == old2_size + 1)
+// call 3: contains
+old3_size := Helper.size
+c3_key := input<int>()
+assume(Helper.size > 0)
+c3_result := contains(c3_key)
+assert(c3_result == Helper.Keys.contains(c3_key))
+assert(Helper.size == old3_size)
+// call 4: min
+old4_size := Helper.size
+assume(Helper.size > 0)
+c4_result := min()
+assert(c4_result == Helper.minKey)
+assert(Helper.size == old4_size)
+// call 5: delete
+old5_size := Helper.size
+c5_key := input<int>()
+assume(Helper.Keys.contains(c5_key))
+delete(c5_key)
+assert(!Helper.Keys.contains(c5_key))
+assert(Helper.size == old5_size - 1)
+-- symex: 19 ready statement(s), stopped at insert(c2_key)
+-- pc = (!Helper.Keys.contains(101)) && (!Helper.Keys.contains(103)) && (!Helper.Keys.contains(c2_key))
+-- L' = [105]
+
+== round 3: t' = rewriteATC(t, [105]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: insert
+old0_size := Helper.size
+c0_key := 101
+assume(!Helper.Keys.contains(c0_key))
+insert(c0_key)
+assert(Helper.Keys.contains(c0_key))
+assert(Helper.size == old0_size + 1)
+// call 1: insert
+old1_size := Helper.size
+c1_key := 103
+assume(!Helper.Keys.contains(c1_key))
+insert(c1_key)
+assert(Helper.Keys.contains(c1_key))
+assert(Helper.size == old1_size + 1)
+// call 2: insert
+old2_size := Helper.size
+c2_key := 105
+assume(!Helper.Keys.contains(c2_key))
+insert(c2_key)
+assert(Helper.Keys.contains(c2_key))
+assert(Helper.size == old2_size + 1)
+// call 3: contains
+old3_size := Helper.size
+c3_key := input<int>()
+assume(Helper.size > 0)
+c3_result := contains(c3_key)
+assert(c3_result == Helper.Keys.contains(c3_key))
+assert(Helper.size == old3_size)
+// call 4: min
+old4_size := Helper.size
+assume(Helper.size > 0)
+c4_result := min()
+assert(c4_result == Helper.minKey)
+assert(Helper.size == old4_size)
+// call 5: delete
+old5_size := Helper.size
+c5_key := input<int>()
+assume(Helper.Keys.contains(c5_key))
+delete(c5_key)
+assert(!Helper.Keys.contains(c5_key))
+assert(Helper.size == old5_size - 1)
+-- symex: 26 ready statement(s), stopped at c3_result := contains(c3_key)
+-- pc = (!Helper.Keys.contains(101)) && (!Helper.Keys.contains(103)) && (!Helper.Keys.contains(105)) && (Helper.size > 0)
+-- L' = [101]
+
+== round 4: t' = rewriteATC(t, [101]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: insert
+old0_size := Helper.size
+c0_key := 101
+assume(!Helper.Keys.contains(c0_key))
+insert(c0_key)
+assert(Helper.Keys.contains(c0_key))
+assert(Helper.size == old0_size + 1)
+// call 1: insert
+old1_size := Helper.size
+c1_key := 103
+assume(!Helper.Keys.contains(c1_key))
+insert(c1_key)
+assert(Helper.Keys.contains(c1_key))
+assert(Helper.size == old1_size + 1)
+// call 2: insert
+old2_size := Helper.size
+c2_key := 105
+assume(!Helper.Keys.contains(c2_key))
+insert(c2_key)
+assert(Helper.Keys.contains(c2_key))
+assert(Helper.size == old2_size + 1)
+// call 3: contains
+old3_size := Helper.size
+c3_key := 101
+assume(Helper.size > 0)
+c3_result := contains(c3_key)
+assert(c3_result == Helper.Keys.contains(c3_key))
+assert(Helper.size == old3_size)
+// call 4: min
+old4_size := Helper.size
+assume(Helper.size > 0)
+c4_result := min()
+assert(c4_result == Helper.minKey)
+assert(Helper.size == old4_size)
+// call 5: delete
+old5_size := Helper.size
+c5_key := input<int>()
+assume(Helper.Keys.contains(c5_key))
+delete(c5_key)
+assert(!Helper.Keys.contains(c5_key))
+assert(Helper.size == old5_size - 1)
+-- symex: 39 ready statement(s), stopped at delete(c5_key)
+-- pc = (!Helper.Keys.contains(101)) && (!Helper.Keys.contains(103)) && (!Helper.Keys.contains(105)) && (Helper.size > 0) && (Helper.size > 0) && (Helper.Keys.contains(c5_key))
+-- L' = [103]
+
+== round 5: t' = rewriteATC(t, [103]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: insert
+old0_size := Helper.size
+c0_key := 101
+assume(!Helper.Keys.contains(c0_key))
+insert(c0_key)
+assert(Helper.Keys.contains(c0_key))
+assert(Helper.size == old0_size + 1)
+// call 1: insert
+old1_size := Helper.size
+c1_key := 103
+assume(!Helper.Keys.contains(c1_key))
+insert(c1_key)
+assert(Helper.Keys.contains(c1_key))
+assert(Helper.size == old1_size + 1)
+// call 2: insert
+old2_size := Helper.size
+c2_key := 105
+assume(!Helper.Keys.contains(c2_key))
+insert(c2_key)
+assert(Helper.Keys.contains(c2_key))
+assert(Helper.size == old2_size + 1)
+// call 3: contains
+old3_size := Helper.size
+c3_key := 101
+assume(Helper.size > 0)
+c3_result := contains(c3_key)
+assert(c3_result == Helper.Keys.contains(c3_key))
+assert(Helper.size == old3_size)
+// call 4: min
+old4_size := Helper.size
+assume(Helper.size > 0)
+c4_result := min()
+assert(c4_result == Helper.minKey)
+assert(Helper.size == old4_size)
+// call 5: delete
+old5_size := Helper.size
+c5_key := 103
+assume(Helper.Keys.contains(c5_key))
+delete(c5_key)
+assert(!Helper.Keys.contains(c5_key))
+assert(Helper.size == old5_size - 1)
+-- symex: 42 ready statement(s), all of t' ran
+-- pc = (!Helper.Keys.contains(101)) && (!Helper.Keys.contains(103)) && (!Helper.Keys.contains(105)) && (Helper.size > 0) && (Helper.size > 0) && (Helper.Keys.contains(103))
+-- L' = []
+
+== concrete test case ==
+// starting state: the library's real state after Helper.reset()
+// call 0: insert
+old0_size := Helper.size
+c0_key := 101
+assume(!Helper.Keys.contains(c0_key))
+insert(c0_key)
+assert(Helper.Keys.contains(c0_key))
+assert(Helper.size == old0_size + 1)
+// call 1: insert
+old1_size := Helper.size
+c1_key := 103
+assume(!Helper.Keys.contains(c1_key))
+insert(c1_key)
+assert(Helper.Keys.contains(c1_key))
+assert(Helper.size == old1_size + 1)
+// call 2: insert
+old2_size := Helper.size
+c2_key := 105
+assume(!Helper.Keys.contains(c2_key))
+insert(c2_key)
+assert(Helper.Keys.contains(c2_key))
+assert(Helper.size == old2_size + 1)
+// call 3: contains
+old3_size := Helper.size
+c3_key := 101
+assume(Helper.size > 0)
+c3_result := contains(c3_key)
+assert(c3_result == Helper.Keys.contains(c3_key))
+assert(Helper.size == old3_size)
+// call 4: min
+old4_size := Helper.size
+assume(Helper.size > 0)
+c4_result := min()
+assert(c4_result == Helper.minKey)
+assert(Helper.size == old4_size)
+// call 5: delete
+old5_size := Helper.size
+c5_key := 103
+assume(Helper.Keys.contains(c5_key))
+delete(c5_key)
+assert(!Helper.Keys.contains(c5_key))
+assert(Helper.size == old5_size - 1)

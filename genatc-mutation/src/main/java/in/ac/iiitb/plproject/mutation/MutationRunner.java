@@ -358,8 +358,9 @@ public class MutationRunner {
             if (!entry.isSupported()) continue;
             if (!libraryKeys.isEmpty() && !libraryKeys.contains(entry.key)) continue;
             Baseline b = runner.baseline(entry);
-            System.out.println(String.format("  %-10s %-6s spf=%dms  %s", entry.key,
-                    b.usable() ? "PASS" : "NO", b.test.spfMillis, b.usable() ? "" : b.whyUnusable()));
+            System.out.println(String.format("  %-14s %-6s rounds=%d spf=%dms  inputs=%s  %s", entry.key,
+                    b.usable() ? "PASS" : "NO", b.test.rounds, b.test.spfMillis, b.test.inputs,
+                    b.usable() ? "" : b.whyUnusable()));
         }
 
         System.out.println();

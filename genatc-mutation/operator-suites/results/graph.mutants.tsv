@@ -1,0 +1,72 @@
+# generated mutants — graph (phases 2+3 25s, library total 2016s)
+# id	status	kill_kind	operator	method	file	killed-by-family	family_kill_kind	detail
+GRAPH_GEN_SDL_1	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/graph/GRAPH_GEN_SDL_1/Helper.java:36: error: cannot find symbol
+GRAPH_GEN_SEI_2	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/graph/GRAPH_GEN_SEI_2/Helper.java:30: error: <identifier> expected
+GRAPH_GEN_SDL_3	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/graph/GRAPH_GEN_SDL_3/Helper.java:38: error: cannot find symbol
+GRAPH_GEN_SEI_4	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/graph/GRAPH_GEN_SEI_4/Helper.java:31: error: <identifier> expected
+GRAPH_GEN_CRP_5	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+GRAPH_GEN_CRP_6	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+GRAPH_GEN_COI_7	KILLED	POST	conditional-operator-insertion	addVertex	Helper.java	-	-	killed by POST: POST addVertex: V.contains(name)
+GRAPH_GEN_UOI_8	KILLED	POST	unary-operator-insertion	addVertex	Helper.java	-	-	killed by POST: POST addVertex: V.contains(name)
+GRAPH_GEN_CTC_9	SURVIVED	-	condition-to-constant	addVertex	Helper.java	-	-	the test passes
+GRAPH_GEN_CTC_10	KILLED	POST	condition-to-constant	addVertex	Helper.java	-	-	killed by POST: POST addVertex: V.contains(name)
+GRAPH_GEN_ARP_11	SURVIVED	-	argument-replacement	addVertex	Helper.java	-	-	the test passes
+GRAPH_GEN_ARP_12	INVALID	-	argument-replacement	addVertex	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/graph/GRAPH_GEN_ARP_12/Helper.java:36: error: bad operand types for binary operator '-'
+GRAPH_GEN_SDL_13	KILLED	POST	statement-deletion	addVertex	Helper.java	-	-	killed by POST: POST addVertex: V.contains(name)
+GRAPH_GEN_STR_14	SURVIVED	-	statement-replacement	addVertex	Helper.java	-	-	the test passes
+GRAPH_GEN_ARP_15	KILLED	POST	argument-replacement	addVertex	Helper.java	-	-	killed by POST: POST addVertex: V.contains(name)
+GRAPH_GEN_ARP_16	INVALID	-	argument-replacement	addVertex	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/graph/GRAPH_GEN_ARP_16/Helper.java:37: error: bad operand types for binary operator '-'
+GRAPH_GEN_MCR_17	KILLED	POST	method-call-replacement	addVertex	Helper.java	-	-	killed by POST: POST addVertex: V.contains(name)
+GRAPH_GEN_SEI_18	KILLED	POST	side-effect-insertion	addVertex	Helper.java	-	-	killed by POST: POST addVertex: edgeCount == \old(edgeCount)
+GRAPH_GEN_SDL_19	KILLED	EXCEPTION	statement-deletion	addVertex	Helper.java	-	-	killed by EXCEPTION: java.lang.NullPointerException
+GRAPH_GEN_STR_20	SURVIVED	-	statement-replacement	addVertex	Helper.java	-	-	the test passes
+GRAPH_GEN_MCR_21	SURVIVED	-	method-call-replacement	addVertex	Helper.java	-	-	the test passes
+GRAPH_GEN_SEI_22	KILLED	POST	side-effect-insertion	addVertex	Helper.java	-	-	killed by POST: POST addVertex: edgeCount == \old(edgeCount)
+GRAPH_GEN_SDL_23	SURVIVED	-	statement-deletion	addEdge	Helper.java	GeneratedATCsTest_graph_002	POST	the test passes
+GRAPH_GEN_STR_24	SURVIVED	-	statement-replacement	addEdge	Helper.java	-	-	the test passes
+GRAPH_GEN_ARP_25	KILLED	EXCEPTION	argument-replacement	addEdge	Helper.java	-	-	killed by EXCEPTION: java.lang.NullPointerException
+GRAPH_GEN_ARP_26	INVALID	-	argument-replacement	addEdge	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/graph/GRAPH_GEN_ARP_26/Helper.java:44: error: bad operand types for binary operator '-'
+GRAPH_GEN_ARP_27	SURVIVED	-	argument-replacement	addEdge	Helper.java	GeneratedATCsTest_graph_002	POST	the test passes
+GRAPH_GEN_ARP_28	INVALID	-	argument-replacement	addEdge	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/graph/GRAPH_GEN_ARP_28/Helper.java:44: error: bad operand types for binary operator '-'
+GRAPH_GEN_MCR_29	SURVIVED	-	method-call-replacement	addEdge	Helper.java	GeneratedATCsTest_graph_002	POST	the test passes
+GRAPH_GEN_MCR_30	KILLED	EXCEPTION	method-call-replacement	addEdge	Helper.java	-	-	killed by EXCEPTION: java.lang.NullPointerException
+GRAPH_GEN_SEI_31	KILLED	POST	side-effect-insertion	addEdge	Helper.java	-	-	killed by POST: POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_SDL_32	SURVIVED	-	statement-deletion	addEdge	Helper.java	GeneratedATCsTest_graph_002	POST	the test passes
+GRAPH_GEN_STR_33	SURVIVED	-	statement-replacement	addEdge	Helper.java	-	-	the test passes
+GRAPH_GEN_ARP_34	KILLED	EXCEPTION	argument-replacement	addEdge	Helper.java	-	-	killed by EXCEPTION: java.lang.NullPointerException
+GRAPH_GEN_ARP_35	INVALID	-	argument-replacement	addEdge	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/graph/GRAPH_GEN_ARP_35/Helper.java:45: error: bad operand types for binary operator '-'
+GRAPH_GEN_ARP_36	SURVIVED	-	argument-replacement	addEdge	Helper.java	GeneratedATCsTest_graph_002	POST	the test passes
+GRAPH_GEN_ARP_37	INVALID	-	argument-replacement	addEdge	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/graph/GRAPH_GEN_ARP_37/Helper.java:45: error: bad operand types for binary operator '-'
+GRAPH_GEN_MCR_38	SURVIVED	-	method-call-replacement	addEdge	Helper.java	GeneratedATCsTest_graph_002	POST	the test passes
+GRAPH_GEN_MCR_39	KILLED	EXCEPTION	method-call-replacement	addEdge	Helper.java	-	-	killed by EXCEPTION: java.lang.NullPointerException
+GRAPH_GEN_SEI_40	KILLED	POST	side-effect-insertion	addEdge	Helper.java	-	-	killed by POST: POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_AOR_41	KILLED	POST	arithmetic-operator-replacement	addEdge	Helper.java	-	-	killed by POST: POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_AOR_42	KILLED	POST	arithmetic-operator-replacement	addEdge	Helper.java	-	-	killed by POST: POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_AOR_43	KILLED	POST	arithmetic-operator-replacement	addEdge	Helper.java	-	-	killed by POST: POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_AOR_44	KILLED	POST	arithmetic-operator-replacement	addEdge	Helper.java	-	-	killed by POST: POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_AOI_45	KILLED	POST	arithmetic-operator-insertion	addEdge	Helper.java	-	-	killed by POST: POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_AOI_46	KILLED	POST	arithmetic-operator-insertion	addEdge	Helper.java	-	-	killed by POST: POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_UOI_47	KILLED	POST	unary-operator-insertion	addEdge	Helper.java	-	-	killed by POST: POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_ABS_48	KILLED	POST	absolute-value-insertion	addEdge	Helper.java	-	-	killed by POST: POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_CRP_49	KILLED	POST	constant-replacement	addEdge	Helper.java	-	-	killed by POST: POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_CRP_50	KILLED	POST	constant-replacement	addEdge	Helper.java	-	-	killed by POST: POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_CRP_51	KILLED	POST	constant-replacement	addEdge	Helper.java	-	-	killed by POST: POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_SDL_52	KILLED	POST	statement-deletion	addEdge	Helper.java	-	-	killed by POST: POST addEdge: edgeCount == \old(edgeCount) + 1
+GRAPH_GEN_UOI_53	SURVIVED	-	unary-operator-insertion	degree	Helper.java	GeneratedATCsTest_graph_002	POST	the test passes
+GRAPH_GEN_ABS_54	SURVIVED	-	absolute-value-insertion	degree	Helper.java	GeneratedATCsTest_graph_002	POST	the test passes
+GRAPH_GEN_RVR_55	SURVIVED	-	return-value-replacement	degree	Helper.java	GeneratedATCsTest_graph_002	POST	the test passes
+GRAPH_GEN_RVR_56	KILLED	POST	return-value-replacement	degree	Helper.java	-	-	killed by POST: POST degree: vertexDegree == Adj.get(name).size()
+GRAPH_GEN_RVR_57	KILLED	POST	return-value-replacement	degree	Helper.java	-	-	killed by POST: POST degree: vertexDegree == Adj.get(name).size()
+GRAPH_GEN_ARP_58	KILLED	EXCEPTION	argument-replacement	degree	Helper.java	-	-	killed by EXCEPTION: java.lang.NullPointerException
+GRAPH_GEN_ARP_59	INVALID	-	argument-replacement	degree	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/graph/GRAPH_GEN_ARP_59/Helper.java:56: error: bad operand types for binary operator '-'
+GRAPH_GEN_MCR_60	KILLED	POST	method-call-replacement	degree	Helper.java	-	-	killed by POST: POST degree: vertexDegree == Adj.get(name).size()
+GRAPH_GEN_MCR_61	KILLED	EXCEPTION	method-call-replacement	degree	Helper.java	-	-	killed by EXCEPTION: java.lang.NullPointerException
+GRAPH_GEN_SEI_62	KILLED	POST	side-effect-insertion	degree	Helper.java	-	-	killed by POST: POST degree: edgeCount == \old(edgeCount)
+GRAPH_GEN_RVR_63	SURVIVED	-	return-value-replacement	hasEdge	Helper.java	GeneratedATCsTest_graph_003	POST	the test passes
+GRAPH_GEN_RVR_64	KILLED	POST	return-value-replacement	hasEdge	Helper.java	-	-	killed by POST: POST hasEdge: connected == Adj.get(from).contains(to)
+GRAPH_GEN_ARP_65	KILLED	EXCEPTION	argument-replacement	hasEdge	Helper.java	-	-	killed by EXCEPTION: java.lang.NullPointerException
+GRAPH_GEN_ARP_66	INVALID	-	argument-replacement	hasEdge	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/graph/GRAPH_GEN_ARP_66/Helper.java:61: error: bad operand types for binary operator '-'
+GRAPH_GEN_ARP_67	KILLED	POST	argument-replacement	hasEdge	Helper.java	-	-	killed by POST: POST hasEdge: connected == Adj.get(from).contains(to)
+GRAPH_GEN_ARP_68	INVALID	-	argument-replacement	hasEdge	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/graph/GRAPH_GEN_ARP_68/Helper.java:61: error: bad operand types for binary operator '-'
+GRAPH_GEN_MCR_69	KILLED	EXCEPTION	method-call-replacement	hasEdge	Helper.java	-	-	killed by EXCEPTION: java.lang.NullPointerException
+GRAPH_GEN_SEI_70	KILLED	POST	side-effect-insertion	hasEdge	Helper.java	-	-	killed by POST: POST hasEdge: edgeCount == \old(edgeCount)

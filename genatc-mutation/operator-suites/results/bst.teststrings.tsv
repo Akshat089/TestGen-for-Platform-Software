@@ -1,0 +1,262 @@
+# generated test strings — bst (family size 260, phase 1 1696s)
+# name	status	spf_ms	rounds	sequence	inputs	detail
+bst-001	INCORRECT_SEQUENCE	2218	0	delete -> contains -> delete -> delete -> min	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-002	PASSED	15690	5	insert -> contains -> insert -> delete -> min -> insert	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c5_key=103}	
+bst-003	INCORRECT_SEQUENCE	9079	3	insert -> insert -> insert -> insert -> contains -> delete	-	INCORRECT SEQUENCE: call 3 (insert): !Keys.contains(key)
+bst-004	INCORRECT_SEQUENCE	2236	0	delete -> insert -> insert -> insert -> contains -> min -> delete	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-005	INCORRECT_SEQUENCE	2009	0	delete -> insert	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-006	INCORRECT_SEQUENCE	11192	3	insert -> insert -> insert -> insert -> contains -> min -> delete	-	INCORRECT SEQUENCE: call 3 (insert): !Keys.contains(key)
+bst-007	PASSED	14286	6	insert -> insert -> contains -> insert -> min -> contains -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=105, c5_key=103, c6_key=105}	
+bst-008	INCORRECT_SEQUENCE	5832	2	insert -> delete -> delete -> min -> contains	-	INCORRECT SEQUENCE: call 2 (delete): Keys.contains(key)
+bst-009	PASSED	8772	4	insert -> contains -> contains -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=101}	
+bst-010	INCORRECT_SEQUENCE	2125	0	delete -> delete -> insert	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-011	INCORRECT_SEQUENCE	4739	0	delete -> min -> insert -> min -> min	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-012	PASSED	5443	2	insert -> delete	{c0_key=101, c1_key=101}	
+bst-013	INCORRECT_SEQUENCE	1776	0	min -> insert -> insert -> insert -> contains -> min -> delete	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-014	INCORRECT_SEQUENCE	8939	4	insert -> insert -> insert -> contains -> insert -> min -> delete	-	INCORRECT SEQUENCE: call 4 (insert): !Keys.contains(key)
+bst-015	PASSED	10853	5	insert -> insert -> min -> contains -> insert -> delete	{c0_key=101, c1_key=103, c3_key=105, c4_key=105, c5_key=103}	
+bst-016	PASSED	14029	5	insert -> contains -> insert -> insert -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=103, c5_key=103}	
+bst-017	PASSED	9092	4	insert -> min -> insert -> contains -> min -> delete	{c0_key=101, c2_key=103, c3_key=105, c5_key=101}	
+bst-018	PASSED	7307	3	insert -> insert -> min -> delete -> min	{c0_key=101, c1_key=103, c3_key=101}	
+bst-019	PASSED	15961	6	insert -> insert -> insert -> contains -> delete -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c4_key=103, c6_key=105}	
+bst-020	PASSED	7560	3	insert -> min -> contains -> delete	{c0_key=101, c2_key=103, c3_key=101}	
+bst-021	PASSED	12208	5	insert -> insert -> insert -> contains -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c5_key=103}	
+bst-022	PASSED	14093	5	insert -> insert -> insert -> min -> contains -> delete	{c0_key=101, c1_key=103, c2_key=105, c4_key=101, c5_key=103}	
+bst-023	INCORRECT_SEQUENCE	1710	0	delete -> contains	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-024	INCORRECT_SEQUENCE	2004	0	delete -> insert -> min -> contains -> delete	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-025	PASSED	12694	6	insert -> insert -> insert -> contains -> min -> delete -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c5_key=103, c6_key=105}	
+bst-026	PASSED	5558	2	insert -> min -> min -> insert	{c0_key=101, c3_key=103}	
+bst-027	PASSED	14845	5	insert -> insert -> contains -> contains -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c4_key=103}	
+bst-028	INCORRECT_SEQUENCE	1970	0	min -> delete	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-029	PASSED	13008	3	insert -> contains -> min -> delete	{c0_key=101, c1_key=103, c3_key=101}	
+bst-030	INCORRECT_SEQUENCE	10914	3	insert -> insert -> insert -> insert -> delete -> min -> contains	-	INCORRECT SEQUENCE: call 3 (insert): !Keys.contains(key)
+bst-031	PASSED	15767	5	insert -> insert -> insert -> contains -> min -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c6_key=103}	
+bst-032	PASSED	10320	4	insert -> insert -> contains -> delete -> min	{c0_key=101, c1_key=103, c2_key=105, c3_key=101}	
+bst-033	PASSED	16167	4	insert -> insert -> insert -> contains -> min	{c0_key=101, c1_key=103, c2_key=105, c3_key=101}	
+bst-034	PASSED	11297	4	insert -> insert -> min -> min -> delete -> min -> delete	{c0_key=101, c1_key=103, c4_key=101, c6_key=103}	
+bst-035	INCORRECT_SEQUENCE	8259	3	insert -> insert -> insert -> insert -> contains -> min	-	INCORRECT SEQUENCE: call 3 (insert): !Keys.contains(key)
+bst-036	PASSED	14105	5	insert -> insert -> insert -> delete -> insert -> min	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c4_key=101}	
+bst-037	INCORRECT_SEQUENCE	1741	0	min -> delete -> contains -> insert -> min -> delete	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-038	PASSED	14010	6	insert -> delete -> insert -> contains -> min -> insert -> delete	{c0_key=101, c1_key=101, c2_key=105, c3_key=101, c5_key=103, c6_key=105}	
+bst-039	PASSED	12002	5	insert -> insert -> insert -> contains -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c4_key=103}	
+bst-040	PASSED	13326	5	insert -> insert -> min -> insert -> contains -> min -> delete	{c0_key=101, c1_key=103, c3_key=105, c4_key=101, c6_key=103}	
+bst-041	INCORRECT_SEQUENCE	1681	0	min -> insert -> min -> contains -> contains	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-042	PASSED	11088	5	insert -> min -> insert -> insert -> contains -> min -> delete	{c0_key=101, c2_key=103, c3_key=105, c4_key=101, c6_key=103}	
+bst-043	INCORRECT_SEQUENCE	1691	0	contains -> insert -> insert -> contains -> delete	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-044	PASSED	15959	6	insert -> insert -> insert -> delete -> contains -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c4_key=103, c6_key=105}	
+bst-045	INCORRECT_SEQUENCE	1779	0	delete -> delete	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-046	INCORRECT_SEQUENCE	1683	0	delete -> min -> min -> min -> delete -> insert	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-047	PASSED	9214	4	insert -> insert -> insert -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=101}	
+bst-048	INCORRECT_SEQUENCE	1887	0	contains -> insert -> insert -> insert -> contains -> min -> delete	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-049	INCORRECT_SEQUENCE	8807	4	insert -> insert -> insert -> contains -> insert -> delete	-	INCORRECT SEQUENCE: call 4 (insert): !Keys.contains(key)
+bst-050	PASSED	14829	6	insert -> insert -> min -> contains -> insert -> delete -> delete	{c0_key=101, c1_key=103, c3_key=105, c4_key=105, c5_key=103, c6_key=105}	
+bst-051	INCORRECT_SEQUENCE	1791	0	delete -> delete -> min -> delete -> min	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-052	INCORRECT_SEQUENCE	1714	0	contains -> insert -> insert -> insert -> contains	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-053	PASSED	8777	4	insert -> insert -> contains -> insert -> min	{c0_key=101, c1_key=103, c2_key=105, c3_key=105}	
+bst-054	INCORRECT_SEQUENCE	4893	2	insert -> delete -> min -> insert -> min -> insert	-	INCORRECT SEQUENCE: call 2 (min): size > 0
+bst-055	PASSED	15131	6	insert -> insert -> insert -> contains -> contains -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c4_key=103, c6_key=105}	
+bst-056	INCORRECT_SEQUENCE	1510	0	min -> insert -> insert -> contains -> insert -> delete	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-057	INCORRECT_SEQUENCE	1896	0	contains -> min -> min -> insert -> delete	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-058	INCORRECT_SEQUENCE	1619	0	delete -> insert -> min -> delete	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-059	INCORRECT_SEQUENCE	1918	0	delete -> min -> min -> insert	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-060	PASSED	10815	5	insert -> insert -> contains -> delete -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c4_key=103}	
+bst-061	PASSED	10238	5	insert -> insert -> contains -> min -> min -> delete -> delete	{c0_key=101, c1_key=103, c2_key=105, c5_key=101, c6_key=103}	
+bst-062	INCORRECT_SEQUENCE	4636	0	contains -> delete -> insert -> delete -> min	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-063	INCORRECT_SEQUENCE	1786	0	contains -> insert -> delete -> contains -> min -> insert	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-064	INCORRECT_SEQUENCE	1701	0	contains -> delete -> delete -> min -> delete -> contains	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-065	INCORRECT_SEQUENCE	1798	0	contains -> insert -> insert -> insert -> min -> delete	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-066	PASSED	8407	4	insert -> min -> min -> insert -> min -> insert -> contains	{c0_key=101, c3_key=103, c5_key=105, c6_key=101}	
+bst-067	INCORRECT_SEQUENCE	9090	4	insert -> insert -> min -> delete -> min -> delete -> min	-	INCORRECT SEQUENCE: call 6 (min): size > 0
+bst-068	INCORRECT_SEQUENCE	1564	0	min -> contains -> delete	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-069	INCORRECT_SEQUENCE	1530	0	min -> delete -> insert	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-070	INCORRECT_SEQUENCE	2067	0	contains -> delete -> min -> insert	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-071	INCORRECT_SEQUENCE	8654	2	insert -> delete -> delete -> insert -> min -> insert	-	INCORRECT SEQUENCE: call 2 (delete): Keys.contains(key)
+bst-072	INCORRECT_SEQUENCE	1607	0	min -> delete -> min -> insert -> insert -> delete -> min	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-073	PASSED	10977	5	insert -> delete -> insert -> contains -> min -> min -> insert	{c0_key=101, c1_key=101, c2_key=105, c3_key=101, c6_key=103}	
+bst-074	INCORRECT_SEQUENCE	7738	3	insert -> insert -> insert -> insert -> delete -> min	-	INCORRECT SEQUENCE: call 3 (insert): !Keys.contains(key)
+bst-075	PASSED	8502	4	insert -> insert -> contains -> min -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c5_key=101}	
+bst-076	INCORRECT_SEQUENCE	4455	0	min -> insert -> contains -> insert -> insert -> min -> delete	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-077	INCORRECT_SEQUENCE	1948	0	contains -> insert -> contains -> delete -> min -> contains -> delete	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-078	PASSED	12488	6	insert -> insert -> contains -> insert -> contains -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=105, c4_key=103, c6_key=105}	
+bst-079	INCORRECT_SEQUENCE	7401	3	insert -> insert -> insert -> insert -> delete	-	INCORRECT SEQUENCE: call 3 (insert): !Keys.contains(key)
+bst-080	INCORRECT_SEQUENCE	1704	0	delete -> delete -> insert -> delete -> min -> min -> min	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-081	INCORRECT_SEQUENCE	1473	0	min -> insert -> contains -> delete	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-082	PASSED	13564	5	insert -> insert -> insert -> delete -> min -> contains	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c5_key=103}	
+bst-083	PASSED	8668	4	insert -> insert -> contains -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c4_key=101}	
+bst-084	PASSED	8554	4	insert -> insert -> delete -> contains	{c0_key=101, c1_key=103, c2_key=101, c3_key=101}	
+bst-085	INCORRECT_SEQUENCE	1804	0	delete -> insert -> delete -> delete -> contains -> min	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-086	PASSED	13260	5	insert -> insert -> contains -> min -> insert -> delete	{c0_key=101, c1_key=103, c2_key=105, c4_key=105, c5_key=103}	
+bst-087	PASSED	13127	6	insert -> contains -> contains -> insert -> contains -> contains	{c0_key=101, c1_key=103, c2_key=105, c3_key=103, c4_key=103, c5_key=105}	
+bst-088	INCORRECT_SEQUENCE	1713	0	contains -> insert -> delete -> insert -> contains -> min -> insert	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-089	INCORRECT_SEQUENCE	2003	0	contains -> insert	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-090	INCORRECT_SEQUENCE	1616	0	min -> delete -> min -> contains -> delete -> min	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-091	PASSED	12020	6	insert -> insert -> delete -> insert -> contains -> min -> delete	{c0_key=101, c1_key=103, c2_key=101, c3_key=101, c4_key=103, c6_key=101}	
+bst-092	PASSED	10945	4	insert -> insert -> insert -> min -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c5_key=101}	
+bst-093	INCORRECT_SEQUENCE	6820	3	insert -> insert -> insert -> insert -> min -> delete	-	INCORRECT SEQUENCE: call 3 (insert): !Keys.contains(key)
+bst-094	PASSED	11569	6	insert -> insert -> contains -> min -> contains -> contains -> delete	{c0_key=101, c1_key=103, c2_key=105, c4_key=101, c5_key=103, c6_key=101}	
+bst-095	INCORRECT_SEQUENCE	5075	2	insert -> delete -> delete	-	INCORRECT SEQUENCE: call 2 (delete): Keys.contains(key)
+bst-096	INCORRECT_SEQUENCE	4579	0	delete -> contains -> min -> contains -> min -> insert	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-097	PASSED	8036	4	insert -> insert -> contains -> min -> insert	{c0_key=101, c1_key=103, c2_key=105, c4_key=105}	
+bst-098	PASSED	12249	5	insert -> insert -> contains -> min -> delete -> delete	{c0_key=101, c1_key=103, c2_key=105, c4_key=101, c5_key=103}	
+bst-099	PASSED	11501	5	insert -> insert -> contains -> contains -> delete -> min	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c4_key=103}	
+bst-100	INCORRECT_SEQUENCE	4584	0	delete -> contains -> delete -> min -> min -> insert -> min	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-101	INCORRECT_SEQUENCE	1736	0	delete -> delete -> delete	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-102	PASSED	8150	4	insert -> insert -> min -> insert -> contains -> min -> min	{c0_key=101, c1_key=103, c3_key=105, c4_key=101}	
+bst-103	INCORRECT_SEQUENCE	6838	3	insert -> insert -> insert -> insert -> min -> insert -> delete	-	INCORRECT SEQUENCE: call 3 (insert): !Keys.contains(key)
+bst-104	PASSED	12974	5	insert -> insert -> delete -> min -> insert -> min -> delete	{c0_key=101, c1_key=103, c2_key=101, c4_key=101, c6_key=103}	
+bst-105	INCORRECT_SEQUENCE	5424	0	contains -> contains	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-106	PASSED	13091	4	insert -> insert -> min -> contains -> min -> delete	{c0_key=101, c1_key=103, c3_key=105, c5_key=101}	
+bst-107	PASSED	11849	4	insert -> min -> insert -> insert -> contains -> min	{c0_key=101, c2_key=103, c3_key=105, c4_key=101}	
+bst-108	INCORRECT_SEQUENCE	2689	0	delete -> contains -> min	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-109	PASSED	16346	5	insert -> insert -> insert -> min -> contains -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c4_key=101, c6_key=103}	
+bst-110	INCORRECT_SEQUENCE	1914	0	min -> insert -> insert -> insert -> contains -> min	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-111	INCORRECT_SEQUENCE	11836	4	insert -> min -> insert -> insert -> contains -> insert -> delete	-	INCORRECT SEQUENCE: call 5 (insert): !Keys.contains(key)
+bst-112	INCORRECT_SEQUENCE	2295	0	contains -> min -> min -> insert -> contains	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-113	PASSED	9040	2	insert -> contains	{c0_key=101, c1_key=103}	
+bst-114	INCORRECT_SEQUENCE	10564	4	insert -> insert -> contains -> insert -> insert -> min -> delete	-	INCORRECT SEQUENCE: call 4 (insert): !Keys.contains(key)
+bst-115	INCORRECT_SEQUENCE	1720	0	min -> min -> insert	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-116	PASSED	11007	5	insert -> delete -> insert -> contains -> min -> insert	{c0_key=101, c1_key=101, c2_key=105, c3_key=101, c5_key=103}	
+bst-117	INCORRECT_SEQUENCE	1809	0	contains -> min -> min	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-118	INCORRECT_SEQUENCE	7972	4	insert -> insert -> min -> insert -> contains -> insert -> delete	-	INCORRECT SEQUENCE: call 5 (insert): !Keys.contains(key)
+bst-119	PASSED	12177	6	insert -> delete -> insert -> insert -> contains -> min -> delete	{c0_key=101, c1_key=101, c2_key=105, c3_key=101, c4_key=103, c6_key=105}	
+bst-120	INCORRECT_SEQUENCE	1686	0	delete -> insert -> insert -> contains -> min -> insert	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-121	INCORRECT_SEQUENCE	5698	0	contains -> min -> delete	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-122	INCORRECT_SEQUENCE	1661	0	min -> delete -> min -> contains -> min	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-123	PASSED	12150	6	insert -> delete -> insert -> insert -> contains -> min -> insert	{c0_key=101, c1_key=101, c2_key=105, c3_key=101, c4_key=103, c6_key=103}	
+bst-124	PASSED	4684	2	insert -> insert	{c0_key=101, c1_key=103}	
+bst-125	INCORRECT_SEQUENCE	1701	0	delete -> delete -> contains -> contains -> insert -> delete	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-126	PASSED	8132	4	insert -> contains -> delete -> insert	{c0_key=101, c1_key=103, c2_key=101, c3_key=101}	
+bst-127	PASSED	14406	6	insert -> insert -> delete -> insert -> min -> contains -> insert	{c0_key=101, c1_key=103, c2_key=101, c3_key=101, c5_key=103, c6_key=105}	
+bst-128	INCORRECT_SEQUENCE	1542	0	contains -> delete -> delete -> insert -> min -> delete	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-129	PASSED	9564	5	insert -> contains -> contains -> insert -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=103, c5_key=103}	
+bst-130	INCORRECT_SEQUENCE	1923	0	delete -> contains -> min -> min	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-131	PASSED	6242	3	insert -> insert -> delete	{c0_key=101, c1_key=103, c2_key=101}	
+bst-132	INCORRECT_SEQUENCE	1609	0	delete -> insert -> min -> contains	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-133	PASSED	14146	6	insert -> insert -> insert -> delete -> insert -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c4_key=101, c5_key=105}	
+bst-134	PASSED	8373	4	insert -> insert -> insert -> contains	{c0_key=101, c1_key=103, c2_key=105, c3_key=101}	
+bst-135	INCORRECT_SEQUENCE	1294	0	min -> insert	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-136	INCORRECT_SEQUENCE	1748	0	delete -> contains -> delete -> delete -> delete -> delete -> contains	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-137	PASSED	6162	3	insert -> insert -> contains -> min -> min	{c0_key=101, c1_key=103, c2_key=105}	
+bst-138	PASSED	11075	4	insert -> insert -> insert -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c4_key=101}	
+bst-139	INCORRECT_SEQUENCE	1634	0	min -> contains -> insert -> insert	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-140	PASSED	9598	5	insert -> insert -> contains -> min -> insert -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c4_key=105, c6_key=103}	
+bst-141	INCORRECT_SEQUENCE	6684	3	insert -> insert -> insert -> insert -> contains -> contains -> delete	-	INCORRECT SEQUENCE: call 3 (insert): !Keys.contains(key)
+bst-142	INCORRECT_SEQUENCE	5106	2	insert -> delete -> contains -> insert -> contains -> insert -> delete	-	INCORRECT SEQUENCE: call 2 (contains): size > 0
+bst-143	INCORRECT_SEQUENCE	5206	2	insert -> delete -> contains -> contains -> delete -> delete -> contains	-	INCORRECT SEQUENCE: call 2 (contains): size > 0
+bst-144	PASSED	12665	5	insert -> insert -> contains -> insert -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=105, c4_key=103}	
+bst-145	INCORRECT_SEQUENCE	1555	0	delete -> insert -> insert -> min -> contains -> delete -> insert	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-146	INCORRECT_SEQUENCE	1866	0	delete -> min -> min	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-147	INCORRECT_SEQUENCE	1737	0	min -> delete -> min -> insert -> delete -> delete	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-148	PASSED	8672	4	insert -> insert -> delete -> contains -> min	{c0_key=101, c1_key=103, c2_key=101, c3_key=101}	
+bst-149	INCORRECT_SEQUENCE	6885	3	insert -> insert -> insert -> insert -> min -> min	-	INCORRECT SEQUENCE: call 3 (insert): !Keys.contains(key)
+bst-150	PASSED	10061	3	insert -> insert -> min -> delete	{c0_key=101, c1_key=103, c3_key=101}	
+bst-151	PASSED	6373	2	insert -> min -> contains	{c0_key=101, c2_key=103}	
+bst-152	PASSED	4766	2	insert -> min -> delete	{c0_key=101, c2_key=101}	
+bst-153	INCORRECT_SEQUENCE	1654	0	delete -> contains -> delete -> contains -> insert	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-154	INCORRECT_SEQUENCE	1383	0	min -> delete -> contains	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-155	INCORRECT_SEQUENCE	1556	0	min -> min -> min -> delete -> contains	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-156	INCORRECT_SEQUENCE	1587	0	contains -> insert -> contains	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-157	PASSED	7724	4	insert -> insert -> contains -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=101}	
+bst-158	PASSED	11366	4	insert -> insert -> insert -> delete -> min	{c0_key=101, c1_key=103, c2_key=105, c3_key=101}	
+bst-159	INCORRECT_SEQUENCE	1508	0	contains -> contains -> delete -> contains	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-160	INCORRECT_SEQUENCE	1647	0	contains -> delete -> insert	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-161	INCORRECT_SEQUENCE	1671	0	contains -> min -> delete -> insert	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-162	INCORRECT_SEQUENCE	1735	0	delete -> insert -> insert -> insert -> contains -> min	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-163	INCORRECT_SEQUENCE	1464	0	min -> min -> delete -> delete -> delete -> min -> contains	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-164	INCORRECT_SEQUENCE	12250	6	insert -> insert -> contains -> contains -> insert -> contains -> insert	-	INCORRECT SEQUENCE: call 6 (insert): !Keys.contains(key)
+bst-165	INCORRECT_SEQUENCE	2064	0	contains -> insert -> min -> min -> min	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-166	INCORRECT_SEQUENCE	1595	0	min -> insert -> insert -> min -> delete	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-167	PASSED	12572	5	insert -> insert -> delete -> contains -> min -> delete	{c0_key=101, c1_key=103, c2_key=101, c3_key=101, c5_key=103}	
+bst-168	PASSED	6710	3	insert -> contains -> delete	{c0_key=101, c1_key=103, c2_key=101}	
+bst-169	INCORRECT_SEQUENCE	1382	0	min -> contains	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-170	INCORRECT_SEQUENCE	1369	0	min -> contains -> insert -> min -> contains -> min	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-171	INCORRECT_SEQUENCE	1549	0	delete -> min -> contains -> min -> contains	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-172	PASSED	8526	4	insert -> insert -> contains -> insert	{c0_key=101, c1_key=103, c2_key=105, c3_key=105}	
+bst-173	INCORRECT_SEQUENCE	1853	0	contains -> min -> contains -> insert	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-174	PASSED	9442	3	insert -> contains -> contains	{c0_key=101, c1_key=103, c2_key=105}	
+bst-175	INCORRECT_SEQUENCE	12300	6	insert -> contains -> contains -> delete -> insert -> delete -> min	-	INCORRECT SEQUENCE: call 6 (min): size > 0
+bst-176	PASSED	8181	4	insert -> min -> insert -> min -> contains -> insert	{c0_key=101, c2_key=103, c4_key=105, c5_key=105}	
+bst-177	INCORRECT_SEQUENCE	1661	0	contains -> delete	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-178	PASSED	6882	3	insert -> insert -> insert -> min	{c0_key=101, c1_key=103, c2_key=105}	
+bst-179	PASSED	15077	6	insert -> insert -> insert -> contains -> min -> contains -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c5_key=103, c6_key=105}	
+bst-180	INCORRECT_SEQUENCE	1673	0	delete -> insert -> insert -> min -> insert	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-181	PASSED	12505	6	insert -> insert -> contains -> contains -> insert -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c4_key=105, c6_key=105}	
+bst-182	INCORRECT_SEQUENCE	1544	0	min -> min -> delete -> insert	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-183	PASSED	14904	6	insert -> contains -> insert -> insert -> min -> delete -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=103, c5_key=103, c6_key=105}	
+bst-184	INCORRECT_SEQUENCE	1768	0	contains -> min	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-185	INCORRECT_SEQUENCE	1628	0	min -> contains -> contains -> min	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-186	INCORRECT_SEQUENCE	1886	0	contains -> delete -> insert -> contains -> insert -> min -> insert	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-187	INCORRECT_SEQUENCE	1781	0	contains -> insert -> insert -> insert -> min -> min -> delete	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-188	INCORRECT_SEQUENCE	10959	5	insert -> insert -> min -> delete -> contains -> delete -> contains	-	INCORRECT SEQUENCE: call 6 (contains): size > 0
+bst-189	PASSED	6511	3	insert -> delete -> insert	{c0_key=101, c1_key=101, c2_key=105}	
+bst-190	PASSED	13173	5	insert -> contains -> insert -> insert -> min -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=103, c6_key=103}	
+bst-191	INCORRECT_SEQUENCE	1433	0	min -> contains -> min -> min -> insert -> contains -> contains	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-192	PASSED	8914	4	insert -> delete -> insert -> insert	{c0_key=101, c1_key=101, c2_key=105, c3_key=101}	
+bst-193	INCORRECT_SEQUENCE	1830	0	contains -> delete -> min -> contains	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-194	INCORRECT_SEQUENCE	7186	3	insert -> insert -> insert -> insert -> insert -> contains -> min	-	INCORRECT SEQUENCE: call 3 (insert): !Keys.contains(key)
+bst-195	INCORRECT_SEQUENCE	10332	3	insert -> contains -> delete -> min -> delete	-	INCORRECT SEQUENCE: call 3 (min): size > 0
+bst-196	INCORRECT_SEQUENCE	1782	0	contains -> contains -> contains	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-197	PASSED	8957	4	insert -> contains -> min -> insert -> contains	{c0_key=101, c1_key=103, c3_key=105, c4_key=101}	
+bst-198	INCORRECT_SEQUENCE	1697	0	delete -> delete -> min -> delete -> delete -> delete -> min	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-199	INCORRECT_SEQUENCE	1670	0	contains -> insert -> delete -> contains	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-200	PASSED	11606	6	insert -> contains -> contains -> insert -> insert -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=103, c4_key=105, c6_key=105}	
+bst-201	INCORRECT_SEQUENCE	1483	0	min -> insert -> insert -> min -> contains -> insert -> delete	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-202	PASSED	12869	5	insert -> min -> contains -> insert -> insert -> delete	{c0_key=101, c2_key=103, c3_key=105, c4_key=103, c5_key=103}	
+bst-203	PASSED	11781	6	insert -> contains -> insert -> insert -> contains -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=103, c4_key=103, c6_key=105}	
+bst-204	INCORRECT_SEQUENCE	1684	0	delete -> insert -> insert -> insert -> contains -> min -> insert	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-205	PASSED	14979	6	insert -> insert -> contains -> insert -> min -> delete -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=105, c5_key=103, c6_key=105}	
+bst-206	INCORRECT_SEQUENCE	1585	0	min -> insert -> min -> insert -> contains -> insert -> delete	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-207	INCORRECT_SEQUENCE	1630	0	delete -> insert -> contains -> contains -> insert -> insert -> contains	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-208	INCORRECT_SEQUENCE	1565	0	contains -> insert -> min -> delete	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-209	INCORRECT_SEQUENCE	5166	2	insert -> delete -> delete -> delete -> insert -> min -> delete	-	INCORRECT SEQUENCE: call 2 (delete): Keys.contains(key)
+bst-210	INCORRECT_SEQUENCE	1773	0	delete -> min -> delete -> insert -> contains	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-211	INCORRECT_SEQUENCE	1516	0	min -> insert -> contains -> min -> min	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-212	INCORRECT_SEQUENCE	8876	4	insert -> insert -> insert -> contains -> min -> insert -> delete	-	INCORRECT SEQUENCE: call 5 (insert): !Keys.contains(key)
+bst-213	PASSED	14565	6	insert -> insert -> insert -> delete -> contains -> min -> insert	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c4_key=103, c6_key=101}	
+bst-214	INCORRECT_SEQUENCE	1376	0	min -> insert -> delete -> min -> delete -> delete	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-215	INCORRECT_SEQUENCE	1711	0	contains -> contains -> insert	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-216	INCORRECT_SEQUENCE	1590	0	delete -> insert -> delete	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-217	INCORRECT_SEQUENCE	1696	0	contains -> min -> insert -> contains	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-218	PASSED	10377	5	insert -> delete -> insert -> contains -> delete	{c0_key=101, c1_key=101, c2_key=105, c3_key=101, c4_key=105}	
+bst-219	PASSED	14347	6	insert -> min -> insert -> insert -> contains -> delete -> delete	{c0_key=101, c2_key=103, c3_key=105, c4_key=101, c5_key=103, c6_key=105}	
+bst-220	INCORRECT_SEQUENCE	4791	2	insert -> min -> delete -> min -> delete	-	INCORRECT SEQUENCE: call 3 (min): size > 0
+bst-221	INCORRECT_SEQUENCE	10397	5	insert -> insert -> min -> contains -> insert -> contains -> insert	-	INCORRECT SEQUENCE: call 6 (insert): !Keys.contains(key)
+bst-222	PASSED	9532	5	insert -> insert -> min -> delete -> contains -> min -> insert	{c0_key=101, c1_key=103, c3_key=101, c4_key=101, c6_key=105}	
+bst-223	INCORRECT_SEQUENCE	1648	0	contains -> insert -> delete -> insert -> insert -> contains -> min	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-224	INCORRECT_SEQUENCE	4845	2	insert -> min -> delete -> delete -> contains	-	INCORRECT SEQUENCE: call 3 (delete): Keys.contains(key)
+bst-225	PASSED	11604	4	insert -> contains -> insert -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c4_key=101}	
+bst-226	PASSED	9685	5	insert -> insert -> delete -> contains -> min -> insert	{c0_key=101, c1_key=103, c2_key=101, c3_key=101, c5_key=105}	
+bst-227	PASSED	9863	5	insert -> insert -> contains -> insert -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=105, c5_key=103}	
+bst-228	INCORRECT_SEQUENCE	1356	0	min -> insert -> contains	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-229	PASSED	12903	5	insert -> delete -> insert -> min -> insert -> insert	{c0_key=101, c1_key=101, c2_key=105, c4_key=101, c5_key=103}	
+bst-230	PASSED	8687	4	insert -> contains -> insert -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=101}	
+bst-231	PASSED	10239	5	insert -> insert -> contains -> contains -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c5_key=103}	
+bst-232	INCORRECT_SEQUENCE	1708	0	delete -> delete -> delete -> insert -> min	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-233	INCORRECT_SEQUENCE	4803	2	insert -> delete -> min -> contains -> min -> insert	-	INCORRECT SEQUENCE: call 2 (min): size > 0
+bst-234	PASSED	13180	5	insert -> min -> insert -> contains -> insert -> delete	{c0_key=101, c2_key=103, c3_key=105, c4_key=105, c5_key=103}	
+bst-235	FAILED	0	0	min -> min	-	PRE: PRE min: size > 0
+bst-236	INCORRECT_SEQUENCE	1638	0	contains -> insert -> contains -> min -> insert -> delete	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-237	INCORRECT_SEQUENCE	1570	0	min -> min -> min -> min -> insert	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-238	INCORRECT_SEQUENCE	1615	0	delete -> insert -> insert -> min -> contains -> min -> insert	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-239	INCORRECT_SEQUENCE	1542	0	min -> insert -> insert -> contains -> min -> delete	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-240	PASSED	8081	4	insert -> insert -> delete -> min -> contains	{c0_key=101, c1_key=103, c2_key=101, c4_key=101}	
+bst-241	PASSED	13826	6	insert -> insert -> contains -> contains -> contains -> min -> delete	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c4_key=103, c6_key=101}	
+bst-242	INCORRECT_SEQUENCE	1476	0	delete -> insert -> insert -> contains -> insert	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-243	INCORRECT_SEQUENCE	1499	0	delete -> insert -> contains -> delete -> min -> insert	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-244	PASSED	10840	6	insert -> insert -> delete -> contains -> min -> insert -> delete	{c0_key=101, c1_key=103, c2_key=101, c3_key=101, c5_key=105, c6_key=105}	
+bst-245	INCORRECT_SEQUENCE	1593	0	contains -> contains -> delete -> min -> min	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-246	INCORRECT_SEQUENCE	1641	0	contains -> insert -> insert -> contains -> min -> delete	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-247	PASSED	4466	2	insert -> min -> insert -> min -> min	{c0_key=101, c2_key=103}	
+bst-248	INCORRECT_SEQUENCE	1593	0	delete -> insert -> insert -> contains -> min -> min	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-249	PASSED	12421	5	insert -> contains -> insert -> insert -> delete -> min	{c0_key=101, c1_key=103, c2_key=105, c3_key=103, c4_key=103}	
+bst-250	INCORRECT_SEQUENCE	1351	0	min -> min -> min -> insert -> min -> insert -> delete	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-251	PASSED	7926	4	insert -> min -> insert -> insert -> min -> contains	{c0_key=101, c2_key=103, c3_key=105, c5_key=101}	
+bst-252	INCORRECT_SEQUENCE	1627	0	delete -> delete -> min	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-253	INCORRECT_SEQUENCE	1420	0	contains -> delete -> insert -> insert	-	INCORRECT SEQUENCE: call 0 (contains): size > 0
+bst-254	INCORRECT_SEQUENCE	1418	0	delete -> insert -> insert -> min	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-255	PASSED	9888	6	insert -> min -> contains -> insert -> contains -> insert -> delete	{c0_key=101, c2_key=103, c3_key=105, c4_key=101, c5_key=103, c6_key=105}	
+bst-256	PASSED	11703	5	insert -> insert -> insert -> contains -> delete -> min	{c0_key=101, c1_key=103, c2_key=105, c3_key=101, c4_key=103}	
+bst-257	PASSED	8663	5	insert -> delete -> insert -> insert -> contains	{c0_key=101, c1_key=101, c2_key=105, c3_key=101, c4_key=103}	
+bst-258	INCORRECT_SEQUENCE	1233	0	min -> min -> delete -> min -> delete -> min	-	INCORRECT SEQUENCE: call 0 (min): size > 0
+bst-259	INCORRECT_SEQUENCE	1418	0	delete -> min -> min -> contains -> delete	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)
+bst-260	INCORRECT_SEQUENCE	1482	0	delete -> insert -> delete -> contains -> contains -> delete	-	INCORRECT SEQUENCE: call 0 (delete): Keys.contains(key)

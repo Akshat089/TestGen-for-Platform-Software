@@ -8,12 +8,11 @@ import in.ac.iiitb.plproject.parser.SpecToAstConverter;
 import in.ac.iiitb.plproject.parser.TestStringParser;
 import in.ac.iiitb.plproject.parser.ast.JmlSpecAst;
 import in.ac.iiitb.plproject.parser.ast.TestStringAst;
-import in.ac.iiitb.plproject.spf.InputVector;
 import in.ac.iiitb.plproject.spf.SpfConfig;
-import in.ac.iiitb.plproject.spf.SpfRunResult;
-import in.ac.iiitb.plproject.spf.SpfRunner;
+import in.ac.iiitb.plproject.spf.SpfSymexEngine;
 import in.ac.iiitb.plproject.symbolic.JUnitPrinter;
-import in.ac.iiitb.plproject.symbolic.SymbolicDriverPrinter;
+import in.ac.iiitb.plproject.symbolic.Stmt;
+import in.ac.iiitb.plproject.symbolic.TestGen;
 import in.ac.iiitb.plproject.verify.GeneratedSuiteHarness;
 import in.ac.iiitb.plproject.verify.JunitJars;
 
@@ -24,17 +23,20 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * The entry point: contract (.spec) + sequence(s) (.tests) -&gt; checked -&gt; IR
- * -&gt; contract-only symbolic driver -&gt; real SPF -&gt; one solved input vector
- * per sequence -&gt; one JUnit class with one {@code @Test} per sequence,
+ * -&gt; abstract test case -&gt; genCTC (each round: rewriteATC, then symex on
+ * SPF with every ready call running on the real library) -&gt; the concrete
+ * test case -&gt; one JUnit class with one {@code @Test} per sequence,
  * verified against the unmodified library.
  *
- * <p>Generation never reads, compiles or runs the library: {@link #generate}
- * depends only on the spec and the sequence file. Only {@link #runOne}'s
- * verification step puts the library next to the generated test.
+ * <p>The library is never read: it is compiled next to each round's SPF
+ * driver and called, with concrete arguments only.
  *
  * <pre>
  *   java -cp target/classes in.ac.iiitb.plproject.atc.GenatcMain            # every registered library
@@ -43,18 +45,27 @@ import java.util.List;
  */
 public class GenatcMain {
 
+    /** Name of the generation trace written next to the outputs: ATC, every round, concrete test. */
+    public static final String TRACE_FILE = "ATC.txt";
+
     /** What happened to one sequence of a library's .tests file. */
     public static class SequenceOutcome {
         public String name;
         public String calls;
-        /** SOLVED, INCORRECT_SEQUENCE, UNSAT_POSTCONDITION, SOLVER_ERROR, TIMEOUT, COMPILE_ERROR. */
+        /** GENERATED, or genCTC's status: INCORRECT_SEQUENCE, SOLVER_ERROR, TIMEOUT, LIBRARY_EXCEPTION, ... */
         public String status;
         public String detail = "";
         public long spfMillis;
-        public int pathsCompleted;
-        public List<String> checkOnly = new ArrayList<String>();
+        /** genCTC rounds that turned inputs concrete. */
+        public int rounds;
+        /** symex calls, i.e. SPF runs. */
+        public int spfRuns;
+        /** The value each input command got, in order: {@code c0_elem -> "s1"}. */
+        public Map<String, String> inputs = new LinkedHashMap<String, String>();
         public TestPlan plan;
-        public InputVector vector;
+        public List<Stmt> atc;
+        public TestGen.Result result;
+        public String trace;
     }
 
     public static class LibraryOutcome {
@@ -130,9 +141,11 @@ public class GenatcMain {
     }
 
     /**
-     * Contract + sequences -&gt; JUnit source, without ever touching the library:
-     * nothing from {@code entry.librarySourcePaths} is read here. Writes the
-     * drivers and the JUnit class under {@code outputDir}.
+     * Contract + sequences -&gt; JUnit source. Each sequence's ATC is
+     * concretised by genCTC on {@code entry}'s library (the correct one when
+     * the mutation runner caches a test). Writes each round's SPF driver under
+     * {@code outputDir/spf-work}, the trace to {@code outputDir/ATC.txt} and the
+     * JUnit class under {@code outputDir}.
      */
     public static LibraryOutcome generate(LibraryRegistry.Entry entry, File outputDir, String junitClassName,
                                           boolean verbose) throws Exception {
@@ -168,80 +181,68 @@ public class GenatcMain {
         Files.createDirectories(genDir.toPath());
         deleteJava(genDir);
 
-        List<JUnitPrinter.Sequence> solved = new ArrayList<JUnitPrinter.Sequence>();
-        SpfRunner runner = new SpfRunner();
+        List<JUnitPrinter.Sequence> concrete = new ArrayList<JUnitPrinter.Sequence>();
+        StringBuilder traces = new StringBuilder();
         for (int k = 0; k < plans.size(); k++) {
             TestPlan plan = plans.get(k);
             SequenceOutcome seq = new SequenceOutcome();
             seq.name = plan.getLibraryKey() != null ? plan.getLibraryKey() : "sequence" + (k + 1);
             seq.calls = callsOf(plan);
             seq.plan = plan;
-            seq.checkOnly.addAll(plan.checkOnlyClauses());
             outcome.sequences.add(seq);
 
             File work = new File(outputDir, plans.size() == 1 ? "spf-work" : "spf-work/" + (k + 1));
-            SpfRunResult result = runner.run(plan, work, SpfConfig.DEFAULT);
-            seq.spfMillis = result.getElapsedMillis();
-            seq.pathsCompleted = result.pathsCompleted();
-            seq.status = result.getStatus().name();
-            outcome.spfMillis += result.getElapsedMillis();
+            deleteRecursively(work);
+            seq.atc = TestGen.getATC(plan);
+            SpfSymexEngine engine = new SpfSymexEngine(plan, entry.librarySourcePaths, work, SpfConfig.DEFAULT);
+            seq.result = TestGen.genCTC(seq.atc, Collections.<String>emptyList(), TestGen.typeEnv(plan), engine);
+            seq.status = seq.result.status.name();
+            seq.detail = seq.result.detail;
+            seq.rounds = seq.result.concretisingRounds();
+            seq.spfRuns = seq.result.symexRuns();
+            seq.spfMillis = seq.result.engineMillis();
+            outcome.spfMillis += seq.spfMillis;
+            seq.trace = TestGen.trace(plan, seq.atc, seq.result);
+            if (traces.length() > 0) traces.append("\n\n");
+            traces.append(seq.trace);
 
-            if (k == 0) {
-                Files.write(new File(genDir, TestPlan.SYMBOLIC_CLASS + ".java").toPath(),
-                        SymbolicDriverPrinter.print(plan).getBytes(StandardCharsets.UTF_8));
-            }
-
-            switch (result.getStatus()) {
-                case SOLVED:
-                    seq.vector = result.getVector();
-                    solved.add(new JUnitPrinter.Sequence(plan, result.getVector()));
-                    break;
-                case INCORRECT_SEQUENCE: {
-                    CallBlock b = plan.getCallBlocks().get(result.getBlockingCall());
-                    seq.detail = "INCORRECT SEQUENCE: call " + b.getIndex() + " (" + b.getOperationName()
-                            + "): " + ("declare".equals(result.getDetail())
-                                       ? "its parameters cannot be chosen" : result.getBlockingClause());
-                    break;
+            if (seq.result.concrete != null) {
+                for (Stmt s : seq.result.concrete) {
+                    if (s instanceof Stmt.Assign && ((Stmt.Assign) s).fromInput != null) {
+                        seq.inputs.put(((Stmt.Assign) s).var, ((Stmt.Assign) s).expr.toString());
+                    }
                 }
-                case UNSAT_POSTCONDITION: {
-                    CallBlock b = plan.getCallBlocks().get(result.getBlockingCall());
-                    seq.detail = "UNSATISFIABLE POSTCONDITION: call " + b.getIndex() + " ("
-                            + b.getOperationName() + "): " + result.getBlockingClause();
-                    break;
-                }
-                case SOLVER_ERROR:
-                    seq.detail = "SOLVER ERROR: " + firstLine(result.getDetail());
-                    break;
-                case TIMEOUT:
-                    seq.detail = "TIMEOUT: " + result.getDetail();
-                    break;
-                default:
-                    seq.detail = "DRIVER DID NOT COMPILE: " + result.getDetail();
-                    break;
+                concrete.add(new JUnitPrinter.Sequence(plan, seq.result.concrete));
             }
             if (verbose) {
                 System.out.println("sequence " + seq.name + ": " + seq.calls);
-                System.out.println("  SPF: " + seq.status + " in " + seq.spfMillis + "ms"
+                System.out.println("  genCTC: " + seq.status + " after " + seq.rounds + " round(s), "
+                        + seq.spfRuns + " SPF run(s), " + seq.spfMillis + "ms"
                         + (seq.detail.isEmpty() ? "" : " — " + seq.detail));
-                for (String c : seq.checkOnly) System.out.println("  CHECK-ONLY " + c);
-                if (seq.vector != null && !seq.vector.getUnconstrainedSlots().isEmpty()) {
-                    System.out.println("  left free by the solver: " + seq.vector.getUnconstrainedSlots());
-                }
+                if (!seq.inputs.isEmpty()) System.out.println("  inputs: " + seq.inputs);
             }
         }
+        Files.write(new File(outputDir, TRACE_FILE).toPath(), traces.toString().getBytes(StandardCharsets.UTF_8));
 
-        outcome.testsGenerated = solved.size();
-        if (solved.isEmpty()) {
+        outcome.testsGenerated = concrete.size();
+        if (concrete.isEmpty()) {
             SequenceOutcome first = outcome.sequences.get(0);
             outcome.status = first.status;
             outcome.detail = first.detail;
             return outcome;
         }
         outcome.status = "GENERATED";
-        outcome.junitSource = JUnitPrinter.print(junitClassName, solved);
+        outcome.junitSource = JUnitPrinter.print(junitClassName, concrete);
         Files.write(new File(genDir, junitClassName + ".java").toPath(),
                 outcome.junitSource.getBytes(StandardCharsets.UTF_8));
         return outcome;
+    }
+
+    private static void deleteRecursively(File dir) throws IOException {
+        if (!dir.exists()) return;
+        try (java.util.stream.Stream<Path> files = Files.walk(dir.toPath())) {
+            files.sorted(java.util.Comparator.reverseOrder()).forEach(p -> p.toFile().delete());
+        }
     }
 
     public static File generatedDir(File outputDir) {
@@ -268,8 +269,10 @@ public class GenatcMain {
         System.out.println("SUMMARY");
         System.out.println("================================================================");
         for (LibraryOutcome o : outcomes) {
-            System.out.println(String.format("%-14s %-20s tests=%-3d spf=%6dms %s",
-                    o.entry.key, o.status, o.testsGenerated, o.spfMillis,
+            int rounds = 0;
+            for (SequenceOutcome seq : o.sequences) rounds += seq.rounds;
+            System.out.println(String.format("%-14s %-20s tests=%-3d rounds=%-2d spf=%6dms %s",
+                    o.entry.key, o.status, o.testsGenerated, rounds, o.spfMillis,
                     o.junitFailures.isEmpty() ? (o.status.equals("GENERATED") ? "" : o.detail)
                                               : (o.junitFailures.size() + " JUnit failure(s)")));
         }

@@ -1,0 +1,3 @@
+test SetGenerated246 {
+    sequence: remove -> remove -> add -> add -> remove;
+}

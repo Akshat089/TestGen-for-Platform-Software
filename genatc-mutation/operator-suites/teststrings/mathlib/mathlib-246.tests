@@ -1,0 +1,3 @@
+test MathlibGenerated246 {
+    sequence: abs -> gcd -> factorial -> gcd -> power -> power -> factorial;
+}

@@ -1,21 +1,22 @@
 #!/usr/bin/env bash
 # Builds the generator, regenerates every registered library through the
-# contract-only pipeline (checks -> IR -> symbolic driver built from the spec
-# alone -> real SPF -> one solved input vector per sequence -> JUnit), runs
-# each generated JUnit class against the unmodified library, compares the
-# generated sources with the golden copies, and fails loudly on anything that
-# is not the expected outcome:
+# TestGen pipeline (checks -> IR -> abstract test case -> genCTC: each round
+# rewriteATC, then symex on real SPF with every ready call running on the real
+# library -> the concrete test case -> JUnit), runs each generated JUnit class
+# against the unmodified library, compares the outputs with the golden copies,
+# and fails loudly on anything that is not the expected outcome:
 #
-#   - GENERATED with every JUnit test passing, for every supported library;
-#   - SKIPPED for the three libraries that need a returned id threaded into a
-#     later call (taskqueue, ticketservice, orderservice);
-#   - the generated GeneratedATCs.java / GeneratedATCsTest.java identical to
-#     pl-platform-testing/golden/<key>/ (regenerate those with --update-golden).
+#   - GENERATED with every JUnit test passing, for every library;
+#   - the generation trace ATC.txt (ATC, t' after every genCTC round, concrete
+#     test) and GeneratedATCsTest.java identical to
+#     pl-platform-testing/golden/<key>/, for every library that has a golden
+#     directory (regenerate those with --update-golden);
+#   - the black-box guard never fired in any SPF run (no symbolic value
+#     reached the library), and no generated JUnit class mentions SPF.
 #
-# Anything else — INCORRECT_SEQUENCE, UNSAT_POSTCONDITION, SOLVER_ERROR,
-# TIMEOUT, COMPILE_ERROR, INPUT_ERROR, a failing generated test, or a golden
-# difference — is a FAIL. It also checks that no generated driver mentions the
-# library (Helper) and that no SPF run had the library on its classpath.
+# Anything else — INCORRECT_SEQUENCE, SOLVER_ERROR, TIMEOUT, LIBRARY_EXCEPTION,
+# BLACK_BOX_VIOLATION, NO_PROGRESS, COMPILE_ERROR, INPUT_ERROR, a failing
+# generated test, or a golden difference — is a FAIL.
 #
 # Prerequisite: scripts/setup-spf.sh has been run at least once.
 #
@@ -27,8 +28,7 @@ PROJECT="$ROOT/pl-platform-testing"
 UPDATE_GOLDEN=0
 [ "${1:-}" = "--update-golden" ] && UPDATE_GOLDEN=1
 
-EXPECT_GENERATED="stack queue mathlib arraylib linkedlist heap set hashmap bst graph lrucache"
-EXPECT_SKIPPED="taskqueue ticketservice orderservice"
+EXPECT_GENERATED="stack queue mathlib arraylib linkedlist heap set hashmap bst graph lrucache taskqueue ticketservice orderservice"
 
 cd "$PROJECT"
 echo "== mvn -o install (pl-platform-testing) =="
@@ -61,34 +61,28 @@ for key in $EXPECT_GENERATED; do
         echo "OK: $line"
     fi
 
-    driver="outputs/$key/$GEN/GeneratedATCs.java"
-    if grep -q "Helper" "$driver"; then
-        echo "FAIL: $key's symbolic driver mentions the library (Helper)"
+    if find "outputs/$key/spf-work" -name blackbox.txt -size +0 2>/dev/null | grep -q .; then
+        echo "FAIL: $key: the black-box guard fired (a symbolic value reached the library)"
         status=1
     fi
-    if grep -E '^classpath = ' "outputs/$key/spf-work/run.jpf" | grep -qE 'libraries|Helper'; then
-        echo "FAIL: $key's SPF classpath contains the library"
+    if grep -q "gov.nasa.jpf" "outputs/$key/$GEN/GeneratedATCsTest.java"; then
+        echo "FAIL: $key's JUnit class mentions SPF"
         status=1
     fi
 
-    for f in GeneratedATCs.java GeneratedATCsTest.java; do
+    if [ ! -d "golden/$key" ]; then
+        echo "   (no golden directory for $key; outputs not compared)"
+        continue
+    fi
+    for f in ATC.txt GeneratedATCsTest.java; do
+        if [ "$f" = ATC.txt ]; then out="outputs/$key/$f"; else out="outputs/$key/$GEN/$f"; fi
         if [ "$UPDATE_GOLDEN" -eq 1 ]; then
-            mkdir -p "golden/$key" && cp "outputs/$key/$GEN/$f" "golden/$key/$f"
-        elif ! diff -q "golden/$key/$f" "outputs/$key/$GEN/$f" > /dev/null 2>&1; then
+            cp "$out" "golden/$key/$f"
+        elif ! diff -q "golden/$key/$f" "$out" > /dev/null 2>&1; then
             echo "FAIL: $key's $f differs from golden/$key/$f"
             status=1
         fi
     done
-done
-
-for key in $EXPECT_SKIPPED; do
-    line="$(grep -E "^${key}[[:space:]]+[A-Z_]+[[:space:]]+tests=" "$OUT")"
-    if echo "$line" | grep -q "SKIPPED"; then
-        echo "OK (unsupported by design): $key"
-    else
-        echo "FAIL: $key expected SKIPPED, got: $line"
-        status=1
-    fi
 done
 
 rm -f "$OUT"

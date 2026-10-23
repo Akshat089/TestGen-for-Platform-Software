@@ -1,0 +1,53 @@
+# generated mutants — stack (phases 2+3 21s, library total 1016s)
+# id	status	kill_kind	operator	method	file	killed-by-family	family_kill_kind	detail
+STACK_GEN_SDL_1	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/stack/STACK_GEN_SDL_1/Helper.java:31: error: cannot find symbol
+STACK_GEN_SEI_2	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/stack/STACK_GEN_SEI_2/Helper.java:25: error: <identifier> expected
+STACK_GEN_CRP_3	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+STACK_GEN_CRP_4	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+STACK_GEN_SDL_5	KILLED	POST	statement-deletion	push	Helper.java	-	-	killed by POST: POST push: size == \old(size) + 1
+STACK_GEN_STR_6	KILLED	POST	statement-replacement	push	Helper.java	-	-	killed by POST: POST push: size == \old(size) + 1
+STACK_GEN_ARP_7	SURVIVED	-	argument-replacement	push	Helper.java	GeneratedATCsTest_stack_008	POST	the test passes
+STACK_GEN_ARP_8	INVALID	-	argument-replacement	push	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/stack/STACK_GEN_ARP_8/Helper.java:31: error: bad operand types for binary operator '-'
+STACK_GEN_MCR_9	KILLED	POST	method-call-replacement	push	Helper.java	-	-	killed by POST: POST push: size == \old(size) + 1
+STACK_GEN_SEI_10	SURVIVED	-	side-effect-insertion	push	Helper.java	-	-	the test passes
+STACK_GEN_AOI_11	KILLED	POST	arithmetic-operator-insertion	push	Helper.java	-	-	killed by POST: POST push: size == \old(size) + 1
+STACK_GEN_AOI_12	KILLED	POST	arithmetic-operator-insertion	push	Helper.java	-	-	killed by POST: POST push: size == \old(size) + 1
+STACK_GEN_UOI_13	KILLED	POST	unary-operator-insertion	push	Helper.java	-	-	killed by POST: POST push: size == \old(size) + 1
+STACK_GEN_ABS_14	KILLED	POST	absolute-value-insertion	push	Helper.java	-	-	killed by POST: POST push: size == \old(size) + 1
+STACK_GEN_SDL_15	KILLED	POST	statement-deletion	push	Helper.java	-	-	killed by POST: POST push: size == \old(size) + 1
+STACK_GEN_MCR_16	KILLED	POST	method-call-replacement	push	Helper.java	-	-	killed by POST: POST push: size == \old(size) + 1
+STACK_GEN_SDL_17	KILLED	POST	statement-deletion	push	Helper.java	-	-	killed by POST: POST push: top == elem
+STACK_GEN_SEI_18	KILLED	POST	side-effect-insertion	push	Helper.java	-	-	killed by POST: POST push: size == \old(size) + 1
+STACK_GEN_AOR_19	KILLED	EXCEPTION	arithmetic-operator-replacement	pop	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 3 out of bounds for length 2
+STACK_GEN_AOR_20	KILLED	EXCEPTION	arithmetic-operator-replacement	pop	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 2 out of bounds for length 2
+STACK_GEN_AOR_21	KILLED	EXCEPTION	arithmetic-operator-replacement	pop	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 2 out of bounds for length 2
+STACK_GEN_AOR_22	SURVIVED	-	arithmetic-operator-replacement	pop	Helper.java	-	-	the test passes
+STACK_GEN_CRP_23	KILLED	EXCEPTION	constant-replacement	pop	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 2 out of bounds for length 2
+STACK_GEN_CRP_24	KILLED	EXCEPTION	constant-replacement	pop	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 3 out of bounds for length 2
+STACK_GEN_CRP_25	SURVIVED	-	constant-replacement	pop	Helper.java	GeneratedATCsTest_stack_043	EXCEPTION	the test passes
+STACK_GEN_MCR_26	KILLED	POST	method-call-replacement	pop	Helper.java	-	-	killed by POST: POST pop: size == \old(size) - 1
+STACK_GEN_MCR_27	KILLED	EXCEPTION	method-call-replacement	pop	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 116609 out of bounds for length 2
+STACK_GEN_AOR_28	KILLED	EXCEPTION	arithmetic-operator-replacement	pop	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 2 out of bounds for length 1
+STACK_GEN_AOR_29	KILLED	EXCEPTION	arithmetic-operator-replacement	pop	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+STACK_GEN_AOR_30	KILLED	EXCEPTION	arithmetic-operator-replacement	pop	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+STACK_GEN_AOR_31	SURVIVED	-	arithmetic-operator-replacement	pop	Helper.java	GeneratedATCsTest_stack_006	POST	the test passes
+STACK_GEN_CRP_32	KILLED	EXCEPTION	constant-replacement	pop	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+STACK_GEN_CRP_33	KILLED	EXCEPTION	constant-replacement	pop	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 2 out of bounds for length 1
+STACK_GEN_CRP_34	KILLED	EXCEPTION	constant-replacement	pop	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 1
+STACK_GEN_SDL_35	KILLED	POST	statement-deletion	pop	Helper.java	-	-	killed by POST: POST peek: peekedElem == top
+STACK_GEN_MCR_36	SURVIVED	-	method-call-replacement	pop	Helper.java	GeneratedATCsTest_stack_043	EXCEPTION	the test passes
+STACK_GEN_MCR_37	KILLED	EXCEPTION	method-call-replacement	pop	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 3644 out of bounds for length 1
+STACK_GEN_MCR_38	KILLED	EXCEPTION	method-call-replacement	pop	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 0
+STACK_GEN_RVR_39	SURVIVED	-	return-value-replacement	pop	Helper.java	-	-	the test passes
+STACK_GEN_SEI_40	KILLED	POST	side-effect-insertion	pop	Helper.java	-	-	killed by POST: POST pop: size == \old(size) - 1
+STACK_GEN_AOR_41	KILLED	EXCEPTION	arithmetic-operator-replacement	peek	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 2 out of bounds for length 1
+STACK_GEN_AOR_42	KILLED	EXCEPTION	arithmetic-operator-replacement	peek	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+STACK_GEN_AOR_43	KILLED	EXCEPTION	arithmetic-operator-replacement	peek	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+STACK_GEN_AOR_44	SURVIVED	-	arithmetic-operator-replacement	peek	Helper.java	GeneratedATCsTest_stack_006	POST	the test passes
+STACK_GEN_CRP_45	KILLED	EXCEPTION	constant-replacement	peek	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+STACK_GEN_CRP_46	KILLED	EXCEPTION	constant-replacement	peek	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 2 out of bounds for length 1
+STACK_GEN_CRP_47	KILLED	EXCEPTION	constant-replacement	peek	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 1
+STACK_GEN_RVR_48	KILLED	POST	return-value-replacement	peek	Helper.java	-	-	killed by POST: POST peek: peekedElem == top
+STACK_GEN_MCR_49	KILLED	EXCEPTION	method-call-replacement	peek	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 3644 out of bounds for length 1
+STACK_GEN_MCR_50	SURVIVED	-	method-call-replacement	peek	Helper.java	GeneratedATCsTest_stack_008	POST	the test passes
+STACK_GEN_SEI_51	KILLED	POST	side-effect-insertion	peek	Helper.java	-	-	killed by POST: POST peek: size == \old(size)

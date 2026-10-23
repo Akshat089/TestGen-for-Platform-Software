@@ -1,0 +1,51 @@
+# generated mutants — queue (phases 2+3 24s, library total 1074s)
+# id	status	kill_kind	operator	method	file	killed-by-family	family_kill_kind	detail
+QUEUE_GEN_SDL_1	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/queue/QUEUE_GEN_SDL_1/Helper.java:32: error: cannot find symbol
+QUEUE_GEN_SEI_2	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/queue/QUEUE_GEN_SEI_2/Helper.java:26: error: <identifier> expected
+QUEUE_GEN_CRP_3	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+QUEUE_GEN_CRP_4	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+QUEUE_GEN_SDL_5	KILLED	EXCEPTION	statement-deletion	enqueue	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+QUEUE_GEN_STR_6	KILLED	POST	statement-replacement	enqueue	Helper.java	-	-	killed by POST: POST enqueue: size == \old(size) + 1
+QUEUE_GEN_ARP_7	KILLED	POST	argument-replacement	enqueue	Helper.java	-	-	killed by POST: POST enqueue: Q.contains(elem)
+QUEUE_GEN_ARP_8	INVALID	-	argument-replacement	enqueue	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/queue/QUEUE_GEN_ARP_8/Helper.java:32: error: bad operand types for binary operator '-'
+QUEUE_GEN_MCR_9	KILLED	EXCEPTION	method-call-replacement	enqueue	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+QUEUE_GEN_SEI_10	SURVIVED	-	side-effect-insertion	enqueue	Helper.java	-	-	the test passes
+QUEUE_GEN_AOI_11	KILLED	POST	arithmetic-operator-insertion	enqueue	Helper.java	-	-	killed by POST: POST enqueue: size == \old(size) + 1
+QUEUE_GEN_AOI_12	KILLED	POST	arithmetic-operator-insertion	enqueue	Helper.java	-	-	killed by POST: POST enqueue: size == \old(size) + 1
+QUEUE_GEN_UOI_13	KILLED	POST	unary-operator-insertion	enqueue	Helper.java	-	-	killed by POST: POST enqueue: size == \old(size) + 1
+QUEUE_GEN_ABS_14	KILLED	POST	absolute-value-insertion	enqueue	Helper.java	-	-	killed by POST: POST enqueue: size == \old(size) + 1
+QUEUE_GEN_SDL_15	KILLED	POST	statement-deletion	enqueue	Helper.java	-	-	killed by POST: POST enqueue: size == \old(size) + 1
+QUEUE_GEN_MCR_16	KILLED	POST	method-call-replacement	enqueue	Helper.java	-	-	killed by POST: POST enqueue: size == \old(size) + 1
+QUEUE_GEN_CRP_17	KILLED	EXCEPTION	constant-replacement	enqueue	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+QUEUE_GEN_CRP_18	KILLED	EXCEPTION	constant-replacement	enqueue	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 1
+QUEUE_GEN_SDL_19	KILLED	POST	statement-deletion	enqueue	Helper.java	-	-	killed by POST: POST dequeue: dequeuedElem == \old(head)
+QUEUE_GEN_ARP_20	KILLED	EXCEPTION	argument-replacement	enqueue	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+QUEUE_GEN_ARP_21	KILLED	EXCEPTION	argument-replacement	enqueue	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 1
+QUEUE_GEN_MCR_22	KILLED	POST	method-call-replacement	enqueue	Helper.java	-	-	killed by POST: POST enqueue: Q.contains(elem)
+QUEUE_GEN_SEI_23	KILLED	POST	side-effect-insertion	enqueue	Helper.java	-	-	killed by POST: POST enqueue: size == \old(size) + 1
+QUEUE_GEN_CRP_24	KILLED	POST	constant-replacement	dequeue	Helper.java	-	-	killed by POST: POST dequeue: dequeuedElem == \old(head)
+QUEUE_GEN_CRP_25	KILLED	EXCEPTION	constant-replacement	dequeue	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 2
+QUEUE_GEN_ARP_26	KILLED	POST	argument-replacement	dequeue	Helper.java	-	-	killed by POST: POST dequeue: dequeuedElem == \old(head)
+QUEUE_GEN_ARP_27	KILLED	EXCEPTION	argument-replacement	dequeue	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 2
+QUEUE_GEN_MCR_28	KILLED	POST	method-call-replacement	dequeue	Helper.java	-	-	killed by POST: POST dequeue: size == \old(size) - 1
+QUEUE_GEN_CRP_29	KILLED	EXCEPTION	constant-replacement	dequeue	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+QUEUE_GEN_CRP_30	KILLED	EXCEPTION	constant-replacement	dequeue	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 1
+QUEUE_GEN_SDL_31	KILLED	POST	statement-deletion	dequeue	Helper.java	-	-	killed by POST: POST front: frontElem == head
+QUEUE_GEN_ARP_32	KILLED	EXCEPTION	argument-replacement	dequeue	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+QUEUE_GEN_ARP_33	KILLED	EXCEPTION	argument-replacement	dequeue	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 1
+QUEUE_GEN_MCR_34	SURVIVED	-	method-call-replacement	dequeue	Helper.java	GeneratedATCsTest_queue_034	EXCEPTION	the test passes
+QUEUE_GEN_MCR_35	KILLED	EXCEPTION	method-call-replacement	dequeue	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+QUEUE_GEN_SEI_36	KILLED	POST	side-effect-insertion	dequeue	Helper.java	-	-	killed by POST: POST dequeue: size == \old(size) - 1
+QUEUE_GEN_RVR_37	KILLED	POST	return-value-replacement	dequeue	Helper.java	-	-	killed by POST: POST dequeue: dequeuedElem == \old(head)
+QUEUE_GEN_SEI_38	KILLED	POST	side-effect-insertion	dequeue	Helper.java	-	-	killed by POST: POST dequeue: size == \old(size) - 1
+QUEUE_GEN_CRP_39	KILLED	EXCEPTION	constant-replacement	front	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+QUEUE_GEN_CRP_40	KILLED	EXCEPTION	constant-replacement	front	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 1
+QUEUE_GEN_RVR_41	KILLED	POST	return-value-replacement	front	Helper.java	-	-	killed by POST: POST front: frontElem == head
+QUEUE_GEN_ARP_42	KILLED	EXCEPTION	argument-replacement	front	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+QUEUE_GEN_ARP_43	KILLED	EXCEPTION	argument-replacement	front	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 1
+QUEUE_GEN_MCR_44	KILLED	POST	method-call-replacement	front	Helper.java	-	-	killed by POST: POST isEmpty: emptyFlag == false
+QUEUE_GEN_SEI_45	KILLED	POST	side-effect-insertion	front	Helper.java	-	-	killed by POST: POST front: size == \old(size)
+QUEUE_GEN_RVR_46	KILLED	POST	return-value-replacement	isEmpty	Helper.java	-	-	killed by POST: POST isEmpty: emptyFlag == false
+QUEUE_GEN_RVR_47	SURVIVED	-	return-value-replacement	isEmpty	Helper.java	-	-	the test passes
+QUEUE_GEN_MCR_48	SURVIVED	-	method-call-replacement	isEmpty	Helper.java	-	-	the test passes
+QUEUE_GEN_SEI_49	KILLED	POST	side-effect-insertion	isEmpty	Helper.java	-	-	killed by POST: POST isEmpty: size == \old(size)

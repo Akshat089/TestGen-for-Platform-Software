@@ -1,0 +1,3 @@
+test SetGenerated190 {
+    sequence: add -> add -> add -> contains -> add;
+}

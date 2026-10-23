@@ -1,0 +1,1654 @@
+/*
+ * GENERATED MUTATION SUITE — orderservice
+ *
+ * Produced by OperatorMutantGenerator from:
+ *   ../libraries/orderservice/Helper.java
+ *   ../libraries/orderservice/Catalogue.java
+ *   ../libraries/orderservice/Ledger.java
+ *   ../libraries/orderservice/Audit.java
+ *
+ * DO NOT EDIT. Regenerate with ./run-operator-suites.sh orderservice
+ *
+ * Every operator in MutationOperator is applied to every line of the library
+ * that admits it, so this file is what the specification is measured against
+ * when nobody is choosing the faults. It is the counterpart of the
+ * hand-written set in mutations/orderservice.mutants:
+ * that one asks whether the suite catches the faults we thought of, this one
+ * asks what fraction of all faults of each KIND it catches.
+ *
+ * `expect` is absent throughout: a generated mutant carries no prediction,
+ * and some of these are equivalent to the original and cannot be killed by
+ * anyone. The run measures; it does not check a declaration.
+ */
+
+mutant ORDERSERVICE_GEN_SDL_1 {
+    description: the statement is removed, in Helper.java
+    operator:    statement-deletion
+    file:        Helper.java
+    find:        public static Map<String, Integer> Stock = Catalogue.Stock;
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_SEI_2 {
+    description: a write to stockUnits is inserted after the statement, in Helper.java
+    operator:    side-effect-insertion
+    file:        Helper.java
+    find:        public static Map<String, Integer> Stock = Catalogue.Stock;
+    replace:     public static Map<String, Integer> Stock = Catalogue.Stock; stockUnits = stockUnits + 1;
+}
+
+mutant ORDERSERVICE_GEN_SDL_3 {
+    description: the statement is removed, in Helper.java
+    operator:    statement-deletion
+    file:        Helper.java
+    find:        public static Map<Integer, String> Open = Ledger.Open;
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_SEI_4 {
+    description: a write to stockUnits is inserted after the statement, in Helper.java
+    operator:    side-effect-insertion
+    file:        Helper.java
+    find:        public static Map<Integer, String> Open = Ledger.Open;
+    replace:     public static Map<Integer, String> Open = Ledger.Open; stockUnits = stockUnits + 1;
+}
+
+mutant ORDERSERVICE_GEN_SDL_5 {
+    description: the statement is removed, in Helper.java
+    operator:    statement-deletion
+    file:        Helper.java
+    find:        public static Map<Integer, String> Shipped = Ledger.Shipped;
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_SEI_6 {
+    description: a write to stockUnits is inserted after the statement, in Helper.java
+    operator:    side-effect-insertion
+    file:        Helper.java
+    find:        public static Map<Integer, String> Shipped = Ledger.Shipped;
+    replace:     public static Map<Integer, String> Shipped = Ledger.Shipped; stockUnits = stockUnits + 1;
+}
+
+mutant ORDERSERVICE_GEN_SDL_7 {
+    description: the statement is removed, in Helper.java
+    operator:    statement-deletion
+    file:        Helper.java
+    find:        public static List<String> Trail = Audit.Trail;
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_SEI_8 {
+    description: a write to stockUnits is inserted after the statement, in Helper.java
+    operator:    side-effect-insertion
+    file:        Helper.java
+    find:        public static List<String> Trail = Audit.Trail;
+    replace:     public static List<String> Trail = Audit.Trail; stockUnits = stockUnits + 1;
+}
+
+mutant ORDERSERVICE_GEN_CRP_9 {
+    description: the literal 0 becomes 1, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int stockUnits = 0;
+    replace:     public static int stockUnits = 1;
+}
+
+mutant ORDERSERVICE_GEN_CRP_10 {
+    description: the literal 0 becomes -1, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int stockUnits = 0;
+    replace:     public static int stockUnits = -1;
+}
+
+mutant ORDERSERVICE_GEN_CRP_11 {
+    description: the literal 0 becomes 1, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int orderedUnits = 0;
+    replace:     public static int orderedUnits = 1;
+}
+
+mutant ORDERSERVICE_GEN_CRP_12 {
+    description: the literal 0 becomes -1, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int orderedUnits = 0;
+    replace:     public static int orderedUnits = -1;
+}
+
+mutant ORDERSERVICE_GEN_CRP_13 {
+    description: the literal 1 becomes 0, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int nextOrderId = 1;
+    replace:     public static int nextOrderId = 0;
+}
+
+mutant ORDERSERVICE_GEN_CRP_14 {
+    description: the literal 1 becomes -1, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int nextOrderId = 1;
+    replace:     public static int nextOrderId = -1;
+}
+
+mutant ORDERSERVICE_GEN_CRP_15 {
+    description: the literal 1 becomes 2, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int nextOrderId = 1;
+    replace:     public static int nextOrderId = 2;
+}
+
+mutant ORDERSERVICE_GEN_CRP_16 {
+    description: the literal 0 becomes 1, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int events = 0;
+    replace:     public static int events = 1;
+}
+
+mutant ORDERSERVICE_GEN_CRP_17 {
+    description: the literal 0 becomes -1, in Helper.java
+    operator:    constant-replacement
+    file:        Helper.java
+    find:        public static int events = 0;
+    replace:     public static int events = -1;
+}
+
+mutant ORDERSERVICE_GEN_SDL_18 {
+    description: the statement is removed, in restock()
+    operator:    statement-deletion
+    in:          restock
+    file:        Helper.java
+    find:        Catalogue.restock(sku, quantity);
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_STR_19 {
+    description: the statement runs twice, in restock()
+    operator:    statement-replacement
+    in:          restock
+    file:        Helper.java
+    find:        Catalogue.restock(sku, quantity);
+    replace:     Catalogue.restock(sku, quantity); Catalogue.restock(sku, quantity);
+}
+
+mutant ORDERSERVICE_GEN_ARP_20 {
+    description: the two arguments to restock() are swapped, in restock()
+    operator:    argument-replacement
+    in:          restock
+    file:        Helper.java
+    find:        Catalogue.restock(sku, quantity);
+    replace:     Catalogue.restock(quantity, sku);
+}
+
+mutant ORDERSERVICE_GEN_SEI_21 {
+    description: a write to stockUnits is inserted after the statement, in restock()
+    operator:    side-effect-insertion
+    in:          restock
+    file:        Helper.java
+    find:        Catalogue.restock(sku, quantity);
+    replace:     Catalogue.restock(sku, quantity); stockUnits = stockUnits + 1;
+}
+
+mutant ORDERSERVICE_GEN_SDL_22 {
+    description: the statement is removed, in restock()
+    operator:    statement-deletion
+    in:          restock
+    file:        Helper.java
+    find:        refresh();
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_SEI_23 {
+    description: a write to stockUnits is inserted after the statement, in restock()
+    operator:    side-effect-insertion
+    in:          restock
+    file:        Helper.java
+    find:        refresh();
+    replace:     refresh(); stockUnits = stockUnits + 1;
+}
+
+mutant ORDERSERVICE_GEN_SDL_24 {
+    description: the statement is removed, in placeOrder()
+    operator:    statement-deletion
+    in:          placeOrder
+    file:        Helper.java
+    find:        Catalogue.take(sku, quantity);
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_STR_25 {
+    description: the statement runs twice, in placeOrder()
+    operator:    statement-replacement
+    in:          placeOrder
+    file:        Helper.java
+    find:        Catalogue.take(sku, quantity);
+    replace:     Catalogue.take(sku, quantity); Catalogue.take(sku, quantity);
+}
+
+mutant ORDERSERVICE_GEN_ARP_26 {
+    description: the two arguments to take() are swapped, in placeOrder()
+    operator:    argument-replacement
+    in:          placeOrder
+    file:        Helper.java
+    find:        Catalogue.take(sku, quantity);
+    replace:     Catalogue.take(quantity, sku);
+}
+
+mutant ORDERSERVICE_GEN_SEI_27 {
+    description: a write to stockUnits is inserted after the statement, in placeOrder()
+    operator:    side-effect-insertion
+    in:          placeOrder
+    file:        Helper.java
+    find:        Catalogue.take(sku, quantity);
+    replace:     Catalogue.take(sku, quantity); stockUnits = stockUnits + 1;
+}
+
+mutant ORDERSERVICE_GEN_ARP_28 {
+    description: the two arguments to open() are swapped, in placeOrder()
+    operator:    argument-replacement
+    in:          placeOrder
+    file:        Helper.java
+    find:        int orderId = Ledger.open(sku, quantity);
+    replace:     int orderId = Ledger.open(quantity, sku);
+}
+
+mutant ORDERSERVICE_GEN_UOI_29 {
+    description: the returned value is negated, in placeOrder()
+    operator:    unary-operator-insertion
+    in:          placeOrder
+    file:        Helper.java
+    find:        return orderId;
+    replace:     return -(orderId);
+}
+
+mutant ORDERSERVICE_GEN_ABS_30 {
+    description: the returned value is forced negative, in placeOrder()
+    operator:    absolute-value-insertion
+    in:          placeOrder
+    file:        Helper.java
+    find:        return orderId;
+    replace:     return -Math.abs(orderId);
+}
+
+mutant ORDERSERVICE_GEN_RVR_31 {
+    description: the answer becomes 0, in placeOrder()
+    operator:    return-value-replacement
+    in:          placeOrder
+    file:        Helper.java
+    find:        return orderId;
+    replace:     return 0;
+}
+
+mutant ORDERSERVICE_GEN_RVR_32 {
+    description: the answer becomes 1, in placeOrder()
+    operator:    return-value-replacement
+    in:          placeOrder
+    file:        Helper.java
+    find:        return orderId;
+    replace:     return 1;
+}
+
+mutant ORDERSERVICE_GEN_RVR_33 {
+    description: the answer becomes -1, in placeOrder()
+    operator:    return-value-replacement
+    in:          placeOrder
+    file:        Helper.java
+    find:        return orderId;
+    replace:     return -1;
+}
+
+mutant ORDERSERVICE_GEN_SEI_34 {
+    description: a write to stockUnits is inserted before the return, in placeOrder()
+    operator:    side-effect-insertion
+    in:          placeOrder
+    file:        Helper.java
+    find:        return orderId;
+    replace:     stockUnits = stockUnits + 1; return orderId;
+}
+
+mutant ORDERSERVICE_GEN_SDL_35 {
+    description: the statement is removed, in ship()
+    operator:    statement-deletion
+    in:          ship
+    file:        Helper.java
+    find:        Ledger.ship(orderId);
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_STR_36 {
+    description: the statement runs twice, in ship()
+    operator:    statement-replacement
+    in:          ship
+    file:        Helper.java
+    find:        Ledger.ship(orderId);
+    replace:     Ledger.ship(orderId); Ledger.ship(orderId);
+}
+
+mutant ORDERSERVICE_GEN_ARP_37 {
+    description: the argument to ship() is shifted by + 1, in ship()
+    operator:    argument-replacement
+    in:          ship
+    file:        Helper.java
+    find:        Ledger.ship(orderId);
+    replace:     Ledger.ship(orderId + 1);
+}
+
+mutant ORDERSERVICE_GEN_ARP_38 {
+    description: the argument to ship() is shifted by - 1, in ship()
+    operator:    argument-replacement
+    in:          ship
+    file:        Helper.java
+    find:        Ledger.ship(orderId);
+    replace:     Ledger.ship(orderId - 1);
+}
+
+mutant ORDERSERVICE_GEN_SEI_39 {
+    description: a write to stockUnits is inserted after the statement, in ship()
+    operator:    side-effect-insertion
+    in:          ship
+    file:        Helper.java
+    find:        Ledger.ship(orderId);
+    replace:     Ledger.ship(orderId); stockUnits = stockUnits + 1;
+}
+
+mutant ORDERSERVICE_GEN_ARP_40 {
+    description: the argument to level() is shifted by + 1, in stockLevel()
+    operator:    argument-replacement
+    in:          stockLevel
+    file:        Helper.java
+    find:        int level = Catalogue.level(sku);
+    replace:     int level = Catalogue.level(sku + 1);
+}
+
+mutant ORDERSERVICE_GEN_ARP_41 {
+    description: the argument to level() is shifted by - 1, in stockLevel()
+    operator:    argument-replacement
+    in:          stockLevel
+    file:        Helper.java
+    find:        int level = Catalogue.level(sku);
+    replace:     int level = Catalogue.level(sku - 1);
+}
+
+mutant ORDERSERVICE_GEN_UOI_42 {
+    description: the returned value is negated, in stockLevel()
+    operator:    unary-operator-insertion
+    in:          stockLevel
+    file:        Helper.java
+    find:        return level;
+    replace:     return -(level);
+}
+
+mutant ORDERSERVICE_GEN_ABS_43 {
+    description: the returned value is forced negative, in stockLevel()
+    operator:    absolute-value-insertion
+    in:          stockLevel
+    file:        Helper.java
+    find:        return level;
+    replace:     return -Math.abs(level);
+}
+
+mutant ORDERSERVICE_GEN_RVR_44 {
+    description: the answer becomes 0, in stockLevel()
+    operator:    return-value-replacement
+    in:          stockLevel
+    file:        Helper.java
+    find:        return level;
+    replace:     return 0;
+}
+
+mutant ORDERSERVICE_GEN_RVR_45 {
+    description: the answer becomes 1, in stockLevel()
+    operator:    return-value-replacement
+    in:          stockLevel
+    file:        Helper.java
+    find:        return level;
+    replace:     return 1;
+}
+
+mutant ORDERSERVICE_GEN_RVR_46 {
+    description: the answer becomes -1, in stockLevel()
+    operator:    return-value-replacement
+    in:          stockLevel
+    file:        Helper.java
+    find:        return level;
+    replace:     return -1;
+}
+
+mutant ORDERSERVICE_GEN_SEI_47 {
+    description: a write to stockUnits is inserted before the return, in stockLevel()
+    operator:    side-effect-insertion
+    in:          stockLevel
+    file:        Helper.java
+    find:        return level;
+    replace:     stockUnits = stockUnits + 1; return level;
+}
+
+mutant ORDERSERVICE_GEN_SDL_48 {
+    description: the statement is removed, in Catalogue.java
+    operator:    statement-deletion
+    file:        Catalogue.java
+    find:        static Map<String, Integer> Stock = new LinkedHashMap<String, Integer>();
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_SEI_49 {
+    description: a write to units is inserted after the statement, in Catalogue.java
+    operator:    side-effect-insertion
+    file:        Catalogue.java
+    find:        static Map<String, Integer> Stock = new LinkedHashMap<String, Integer>();
+    replace:     static Map<String, Integer> Stock = new LinkedHashMap<String, Integer>(); units = units + 1;
+}
+
+mutant ORDERSERVICE_GEN_CRP_50 {
+    description: the literal 0 becomes 1, in Catalogue.java
+    operator:    constant-replacement
+    file:        Catalogue.java
+    find:        static int units = 0;
+    replace:     static int units = 1;
+}
+
+mutant ORDERSERVICE_GEN_CRP_51 {
+    description: the literal 0 becomes -1, in Catalogue.java
+    operator:    constant-replacement
+    file:        Catalogue.java
+    find:        static int units = 0;
+    replace:     static int units = -1;
+}
+
+mutant ORDERSERVICE_GEN_ARP_52 {
+    description: the argument to get() is shifted by + 1, in level()
+    operator:    argument-replacement
+    in:          level
+    file:        Catalogue.java
+    find:        Integer held = Stock.get(sku);
+    replace:     Integer held = Stock.get(sku + 1);
+}
+
+mutant ORDERSERVICE_GEN_ARP_53 {
+    description: the argument to get() is shifted by - 1, in level()
+    operator:    argument-replacement
+    in:          level
+    file:        Catalogue.java
+    find:        Integer held = Stock.get(sku);
+    replace:     Integer held = Stock.get(sku - 1);
+}
+
+mutant ORDERSERVICE_GEN_MCR_54 {
+    description: .get( becomes .remove(, in level()
+    operator:    method-call-replacement
+    in:          level
+    file:        Catalogue.java
+    find:        Integer held = Stock.get(sku);
+    replace:     Integer held = Stock.remove(sku);
+}
+
+mutant ORDERSERVICE_GEN_ROR_55 {
+    description: == becomes <=, in level()
+    operator:    relational-operator-replacement
+    in:          level
+    file:        Catalogue.java
+    find:        return held == null ? 0 : held;
+    replace:     return held <= null ? 0 : held;
+}
+
+mutant ORDERSERVICE_GEN_ROR_56 {
+    description: == becomes >=, in level()
+    operator:    relational-operator-replacement
+    in:          level
+    file:        Catalogue.java
+    find:        return held == null ? 0 : held;
+    replace:     return held >= null ? 0 : held;
+}
+
+mutant ORDERSERVICE_GEN_ROR_57 {
+    description: == becomes !=, in level()
+    operator:    relational-operator-replacement
+    in:          level
+    file:        Catalogue.java
+    find:        return held == null ? 0 : held;
+    replace:     return held != null ? 0 : held;
+}
+
+mutant ORDERSERVICE_GEN_ROR_58 {
+    description: == becomes <, in level()
+    operator:    relational-operator-replacement
+    in:          level
+    file:        Catalogue.java
+    find:        return held == null ? 0 : held;
+    replace:     return held < null ? 0 : held;
+}
+
+mutant ORDERSERVICE_GEN_ROR_59 {
+    description: == becomes >, in level()
+    operator:    relational-operator-replacement
+    in:          level
+    file:        Catalogue.java
+    find:        return held == null ? 0 : held;
+    replace:     return held > null ? 0 : held;
+}
+
+mutant ORDERSERVICE_GEN_CRP_60 {
+    description: the literal 0 becomes 1, in level()
+    operator:    constant-replacement
+    in:          level
+    file:        Catalogue.java
+    find:        return held == null ? 0 : held;
+    replace:     return held == null ? 1 : held;
+}
+
+mutant ORDERSERVICE_GEN_CRP_61 {
+    description: the literal 0 becomes -1, in level()
+    operator:    constant-replacement
+    in:          level
+    file:        Catalogue.java
+    find:        return held == null ? 0 : held;
+    replace:     return held == null ? -1 : held;
+}
+
+mutant ORDERSERVICE_GEN_RVR_62 {
+    description: the answer becomes 0, in level()
+    operator:    return-value-replacement
+    in:          level
+    file:        Catalogue.java
+    find:        return held == null ? 0 : held;
+    replace:     return 0;
+}
+
+mutant ORDERSERVICE_GEN_RVR_63 {
+    description: the answer becomes 1, in level()
+    operator:    return-value-replacement
+    in:          level
+    file:        Catalogue.java
+    find:        return held == null ? 0 : held;
+    replace:     return 1;
+}
+
+mutant ORDERSERVICE_GEN_RVR_64 {
+    description: the answer becomes -1, in level()
+    operator:    return-value-replacement
+    in:          level
+    file:        Catalogue.java
+    find:        return held == null ? 0 : held;
+    replace:     return -1;
+}
+
+mutant ORDERSERVICE_GEN_SEI_65 {
+    description: a write to units is inserted before the return, in level()
+    operator:    side-effect-insertion
+    in:          level
+    file:        Catalogue.java
+    find:        return held == null ? 0 : held;
+    replace:     units = units + 1; return held == null ? 0 : held;
+}
+
+mutant ORDERSERVICE_GEN_AOR_66 {
+    description: + becomes -, in restock()
+    operator:    arithmetic-operator-replacement
+    in:          restock
+    file:        Catalogue.java
+    find:        Stock.put(sku, level(sku) + quantity);
+    replace:     Stock.put(sku, level(sku) - quantity);
+}
+
+mutant ORDERSERVICE_GEN_AOR_67 {
+    description: + becomes *, in restock()
+    operator:    arithmetic-operator-replacement
+    in:          restock
+    file:        Catalogue.java
+    find:        Stock.put(sku, level(sku) + quantity);
+    replace:     Stock.put(sku, level(sku) * quantity);
+}
+
+mutant ORDERSERVICE_GEN_AOR_68 {
+    description: + becomes /, in restock()
+    operator:    arithmetic-operator-replacement
+    in:          restock
+    file:        Catalogue.java
+    find:        Stock.put(sku, level(sku) + quantity);
+    replace:     Stock.put(sku, level(sku) / quantity);
+}
+
+mutant ORDERSERVICE_GEN_AOR_69 {
+    description: + becomes %, in restock()
+    operator:    arithmetic-operator-replacement
+    in:          restock
+    file:        Catalogue.java
+    find:        Stock.put(sku, level(sku) + quantity);
+    replace:     Stock.put(sku, level(sku) % quantity);
+}
+
+mutant ORDERSERVICE_GEN_SDL_70 {
+    description: the statement is removed, in restock()
+    operator:    statement-deletion
+    in:          restock
+    file:        Catalogue.java
+    find:        Stock.put(sku, level(sku) + quantity);
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_STR_71 {
+    description: the statement runs twice, in restock()
+    operator:    statement-replacement
+    in:          restock
+    file:        Catalogue.java
+    find:        Stock.put(sku, level(sku) + quantity);
+    replace:     Stock.put(sku, level(sku) + quantity); Stock.put(sku, level(sku) + quantity);
+}
+
+mutant ORDERSERVICE_GEN_MCR_72 {
+    description: .put( becomes .putIfAbsent(, in restock()
+    operator:    method-call-replacement
+    in:          restock
+    file:        Catalogue.java
+    find:        Stock.put(sku, level(sku) + quantity);
+    replace:     Stock.putIfAbsent(sku, level(sku) + quantity);
+}
+
+mutant ORDERSERVICE_GEN_SEI_73 {
+    description: a write to units is inserted after the statement, in restock()
+    operator:    side-effect-insertion
+    in:          restock
+    file:        Catalogue.java
+    find:        Stock.put(sku, level(sku) + quantity);
+    replace:     Stock.put(sku, level(sku) + quantity); units = units + 1;
+}
+
+mutant ORDERSERVICE_GEN_AOR_74 {
+    description: + becomes -, in restock()
+    operator:    arithmetic-operator-replacement
+    in:          restock
+    file:        Catalogue.java
+    find:        units = units + quantity;
+    replace:     units = units - quantity;
+}
+
+mutant ORDERSERVICE_GEN_AOR_75 {
+    description: + becomes *, in restock()
+    operator:    arithmetic-operator-replacement
+    in:          restock
+    file:        Catalogue.java
+    find:        units = units + quantity;
+    replace:     units = units * quantity;
+}
+
+mutant ORDERSERVICE_GEN_AOR_76 {
+    description: + becomes /, in restock()
+    operator:    arithmetic-operator-replacement
+    in:          restock
+    file:        Catalogue.java
+    find:        units = units + quantity;
+    replace:     units = units / quantity;
+}
+
+mutant ORDERSERVICE_GEN_AOR_77 {
+    description: + becomes %, in restock()
+    operator:    arithmetic-operator-replacement
+    in:          restock
+    file:        Catalogue.java
+    find:        units = units + quantity;
+    replace:     units = units % quantity;
+}
+
+mutant ORDERSERVICE_GEN_AOI_78 {
+    description: the value assigned to units is shifted by + 1, in restock()
+    operator:    arithmetic-operator-insertion
+    in:          restock
+    file:        Catalogue.java
+    find:        units = units + quantity;
+    replace:     units = units + quantity + 1;
+}
+
+mutant ORDERSERVICE_GEN_AOI_79 {
+    description: the value assigned to units is shifted by - 1, in restock()
+    operator:    arithmetic-operator-insertion
+    in:          restock
+    file:        Catalogue.java
+    find:        units = units + quantity;
+    replace:     units = units + quantity - 1;
+}
+
+mutant ORDERSERVICE_GEN_UOI_80 {
+    description: the value assigned to units is negated, in restock()
+    operator:    unary-operator-insertion
+    in:          restock
+    file:        Catalogue.java
+    find:        units = units + quantity;
+    replace:     units = -(units + quantity);
+}
+
+mutant ORDERSERVICE_GEN_ABS_81 {
+    description: the value assigned to units is forced negative, in restock()
+    operator:    absolute-value-insertion
+    in:          restock
+    file:        Catalogue.java
+    find:        units = units + quantity;
+    replace:     units = -Math.abs(units + quantity);
+}
+
+mutant ORDERSERVICE_GEN_SDL_82 {
+    description: the statement is removed, in restock()
+    operator:    statement-deletion
+    in:          restock
+    file:        Catalogue.java
+    find:        units = units + quantity;
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_AOR_83 {
+    description: - becomes +, in take()
+    operator:    arithmetic-operator-replacement
+    in:          take
+    file:        Catalogue.java
+    find:        Stock.put(sku, level(sku) - quantity);
+    replace:     Stock.put(sku, level(sku) + quantity);
+}
+
+mutant ORDERSERVICE_GEN_AOR_84 {
+    description: - becomes *, in take()
+    operator:    arithmetic-operator-replacement
+    in:          take
+    file:        Catalogue.java
+    find:        Stock.put(sku, level(sku) - quantity);
+    replace:     Stock.put(sku, level(sku) * quantity);
+}
+
+mutant ORDERSERVICE_GEN_AOR_85 {
+    description: - becomes /, in take()
+    operator:    arithmetic-operator-replacement
+    in:          take
+    file:        Catalogue.java
+    find:        Stock.put(sku, level(sku) - quantity);
+    replace:     Stock.put(sku, level(sku) / quantity);
+}
+
+mutant ORDERSERVICE_GEN_AOR_86 {
+    description: - becomes %, in take()
+    operator:    arithmetic-operator-replacement
+    in:          take
+    file:        Catalogue.java
+    find:        Stock.put(sku, level(sku) - quantity);
+    replace:     Stock.put(sku, level(sku) % quantity);
+}
+
+mutant ORDERSERVICE_GEN_SDL_87 {
+    description: the statement is removed, in take()
+    operator:    statement-deletion
+    in:          take
+    file:        Catalogue.java
+    find:        Stock.put(sku, level(sku) - quantity);
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_STR_88 {
+    description: the statement runs twice, in take()
+    operator:    statement-replacement
+    in:          take
+    file:        Catalogue.java
+    find:        Stock.put(sku, level(sku) - quantity);
+    replace:     Stock.put(sku, level(sku) - quantity); Stock.put(sku, level(sku) - quantity);
+}
+
+mutant ORDERSERVICE_GEN_MCR_89 {
+    description: .put( becomes .putIfAbsent(, in take()
+    operator:    method-call-replacement
+    in:          take
+    file:        Catalogue.java
+    find:        Stock.put(sku, level(sku) - quantity);
+    replace:     Stock.putIfAbsent(sku, level(sku) - quantity);
+}
+
+mutant ORDERSERVICE_GEN_SEI_90 {
+    description: a write to units is inserted after the statement, in take()
+    operator:    side-effect-insertion
+    in:          take
+    file:        Catalogue.java
+    find:        Stock.put(sku, level(sku) - quantity);
+    replace:     Stock.put(sku, level(sku) - quantity); units = units + 1;
+}
+
+mutant ORDERSERVICE_GEN_AOR_91 {
+    description: - becomes +, in take()
+    operator:    arithmetic-operator-replacement
+    in:          take
+    file:        Catalogue.java
+    find:        units = units - quantity;
+    replace:     units = units + quantity;
+}
+
+mutant ORDERSERVICE_GEN_AOR_92 {
+    description: - becomes *, in take()
+    operator:    arithmetic-operator-replacement
+    in:          take
+    file:        Catalogue.java
+    find:        units = units - quantity;
+    replace:     units = units * quantity;
+}
+
+mutant ORDERSERVICE_GEN_AOR_93 {
+    description: - becomes /, in take()
+    operator:    arithmetic-operator-replacement
+    in:          take
+    file:        Catalogue.java
+    find:        units = units - quantity;
+    replace:     units = units / quantity;
+}
+
+mutant ORDERSERVICE_GEN_AOR_94 {
+    description: - becomes %, in take()
+    operator:    arithmetic-operator-replacement
+    in:          take
+    file:        Catalogue.java
+    find:        units = units - quantity;
+    replace:     units = units % quantity;
+}
+
+mutant ORDERSERVICE_GEN_AOI_95 {
+    description: the value assigned to units is shifted by + 1, in take()
+    operator:    arithmetic-operator-insertion
+    in:          take
+    file:        Catalogue.java
+    find:        units = units - quantity;
+    replace:     units = units - quantity + 1;
+}
+
+mutant ORDERSERVICE_GEN_AOI_96 {
+    description: the value assigned to units is shifted by - 1, in take()
+    operator:    arithmetic-operator-insertion
+    in:          take
+    file:        Catalogue.java
+    find:        units = units - quantity;
+    replace:     units = units - quantity - 1;
+}
+
+mutant ORDERSERVICE_GEN_UOI_97 {
+    description: the value assigned to units is negated, in take()
+    operator:    unary-operator-insertion
+    in:          take
+    file:        Catalogue.java
+    find:        units = units - quantity;
+    replace:     units = -(units - quantity);
+}
+
+mutant ORDERSERVICE_GEN_ABS_98 {
+    description: the value assigned to units is forced negative, in take()
+    operator:    absolute-value-insertion
+    in:          take
+    file:        Catalogue.java
+    find:        units = units - quantity;
+    replace:     units = -Math.abs(units - quantity);
+}
+
+mutant ORDERSERVICE_GEN_SDL_99 {
+    description: the statement is removed, in take()
+    operator:    statement-deletion
+    in:          take
+    file:        Catalogue.java
+    find:        units = units - quantity;
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_SDL_100 {
+    description: the statement is removed, in Ledger.java
+    operator:    statement-deletion
+    file:        Ledger.java
+    find:        static Map<Integer, String> Open = new LinkedHashMap<Integer, String>();
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_SEI_101 {
+    description: a write to committed is inserted after the statement, in Ledger.java
+    operator:    side-effect-insertion
+    file:        Ledger.java
+    find:        static Map<Integer, String> Open = new LinkedHashMap<Integer, String>();
+    replace:     static Map<Integer, String> Open = new LinkedHashMap<Integer, String>(); committed = committed + 1;
+}
+
+mutant ORDERSERVICE_GEN_SDL_102 {
+    description: the statement is removed, in Ledger.java
+    operator:    statement-deletion
+    file:        Ledger.java
+    find:        static Map<Integer, String> Shipped = new LinkedHashMap<Integer, String>();
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_SEI_103 {
+    description: a write to committed is inserted after the statement, in Ledger.java
+    operator:    side-effect-insertion
+    file:        Ledger.java
+    find:        static Map<Integer, String> Shipped = new LinkedHashMap<Integer, String>();
+    replace:     static Map<Integer, String> Shipped = new LinkedHashMap<Integer, String>(); committed = committed + 1;
+}
+
+mutant ORDERSERVICE_GEN_CRP_104 {
+    description: the literal 0 becomes 1, in Ledger.java
+    operator:    constant-replacement
+    file:        Ledger.java
+    find:        static int committed = 0;
+    replace:     static int committed = 1;
+}
+
+mutant ORDERSERVICE_GEN_CRP_105 {
+    description: the literal 0 becomes -1, in Ledger.java
+    operator:    constant-replacement
+    file:        Ledger.java
+    find:        static int committed = 0;
+    replace:     static int committed = -1;
+}
+
+mutant ORDERSERVICE_GEN_CRP_106 {
+    description: the literal 1 becomes 0, in Ledger.java
+    operator:    constant-replacement
+    file:        Ledger.java
+    find:        static int nextOrderId = 1;
+    replace:     static int nextOrderId = 0;
+}
+
+mutant ORDERSERVICE_GEN_CRP_107 {
+    description: the literal 1 becomes -1, in Ledger.java
+    operator:    constant-replacement
+    file:        Ledger.java
+    find:        static int nextOrderId = 1;
+    replace:     static int nextOrderId = -1;
+}
+
+mutant ORDERSERVICE_GEN_CRP_108 {
+    description: the literal 1 becomes 2, in Ledger.java
+    operator:    constant-replacement
+    file:        Ledger.java
+    find:        static int nextOrderId = 1;
+    replace:     static int nextOrderId = 2;
+}
+
+mutant ORDERSERVICE_GEN_VRO_109 {
+    description: nextOrderId becomes committed, in open()
+    operator:    variable-replacement
+    in:          open
+    file:        Ledger.java
+    find:        int orderId = nextOrderId;
+    replace:     int orderId = committed;
+}
+
+mutant ORDERSERVICE_GEN_AOR_110 {
+    description: + becomes -, in open()
+    operator:    arithmetic-operator-replacement
+    in:          open
+    file:        Ledger.java
+    find:        nextOrderId = nextOrderId + 1;
+    replace:     nextOrderId = nextOrderId - 1;
+}
+
+mutant ORDERSERVICE_GEN_AOR_111 {
+    description: + becomes *, in open()
+    operator:    arithmetic-operator-replacement
+    in:          open
+    file:        Ledger.java
+    find:        nextOrderId = nextOrderId + 1;
+    replace:     nextOrderId = nextOrderId * 1;
+}
+
+mutant ORDERSERVICE_GEN_AOR_112 {
+    description: + becomes /, in open()
+    operator:    arithmetic-operator-replacement
+    in:          open
+    file:        Ledger.java
+    find:        nextOrderId = nextOrderId + 1;
+    replace:     nextOrderId = nextOrderId / 1;
+}
+
+mutant ORDERSERVICE_GEN_AOR_113 {
+    description: + becomes %, in open()
+    operator:    arithmetic-operator-replacement
+    in:          open
+    file:        Ledger.java
+    find:        nextOrderId = nextOrderId + 1;
+    replace:     nextOrderId = nextOrderId % 1;
+}
+
+mutant ORDERSERVICE_GEN_AOI_114 {
+    description: the value assigned to nextOrderId is shifted by + 1, in open()
+    operator:    arithmetic-operator-insertion
+    in:          open
+    file:        Ledger.java
+    find:        nextOrderId = nextOrderId + 1;
+    replace:     nextOrderId = nextOrderId + 1 + 1;
+}
+
+mutant ORDERSERVICE_GEN_AOI_115 {
+    description: the value assigned to nextOrderId is shifted by - 1, in open()
+    operator:    arithmetic-operator-insertion
+    in:          open
+    file:        Ledger.java
+    find:        nextOrderId = nextOrderId + 1;
+    replace:     nextOrderId = nextOrderId + 1 - 1;
+}
+
+mutant ORDERSERVICE_GEN_UOI_116 {
+    description: the value assigned to nextOrderId is negated, in open()
+    operator:    unary-operator-insertion
+    in:          open
+    file:        Ledger.java
+    find:        nextOrderId = nextOrderId + 1;
+    replace:     nextOrderId = -(nextOrderId + 1);
+}
+
+mutant ORDERSERVICE_GEN_ABS_117 {
+    description: the value assigned to nextOrderId is forced negative, in open()
+    operator:    absolute-value-insertion
+    in:          open
+    file:        Ledger.java
+    find:        nextOrderId = nextOrderId + 1;
+    replace:     nextOrderId = -Math.abs(nextOrderId + 1);
+}
+
+mutant ORDERSERVICE_GEN_CRP_118 {
+    description: the literal 1 becomes 0, in open()
+    operator:    constant-replacement
+    in:          open
+    file:        Ledger.java
+    find:        nextOrderId = nextOrderId + 1;
+    replace:     nextOrderId = nextOrderId + 0;
+}
+
+mutant ORDERSERVICE_GEN_CRP_119 {
+    description: the literal 1 becomes -1, in open()
+    operator:    constant-replacement
+    in:          open
+    file:        Ledger.java
+    find:        nextOrderId = nextOrderId + 1;
+    replace:     nextOrderId = nextOrderId + -1;
+}
+
+mutant ORDERSERVICE_GEN_CRP_120 {
+    description: the literal 1 becomes 2, in open()
+    operator:    constant-replacement
+    in:          open
+    file:        Ledger.java
+    find:        nextOrderId = nextOrderId + 1;
+    replace:     nextOrderId = nextOrderId + 2;
+}
+
+mutant ORDERSERVICE_GEN_SDL_121 {
+    description: the statement is removed, in open()
+    operator:    statement-deletion
+    in:          open
+    file:        Ledger.java
+    find:        nextOrderId = nextOrderId + 1;
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_SEI_122 {
+    description: a write to committed is inserted after the statement, in open()
+    operator:    side-effect-insertion
+    in:          open
+    file:        Ledger.java
+    find:        nextOrderId = nextOrderId + 1;
+    replace:     nextOrderId = nextOrderId + 1; committed = committed + 1;
+}
+
+mutant ORDERSERVICE_GEN_VRO_123 {
+    description: nextOrderId becomes committed, in open()
+    operator:    variable-replacement
+    in:          open
+    file:        Ledger.java
+    find:        nextOrderId = nextOrderId + 1;
+    replace:     committed = nextOrderId + 1;
+}
+
+mutant ORDERSERVICE_GEN_VRO_124 {
+    description: nextOrderId becomes committed, in open()
+    operator:    variable-replacement
+    in:          open
+    file:        Ledger.java
+    find:        nextOrderId = nextOrderId + 1;
+    replace:     nextOrderId = committed + 1;
+}
+
+mutant ORDERSERVICE_GEN_SDL_125 {
+    description: the statement is removed, in open()
+    operator:    statement-deletion
+    in:          open
+    file:        Ledger.java
+    find:        Open.put(orderId, sku);
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_STR_126 {
+    description: the statement runs twice, in open()
+    operator:    statement-replacement
+    in:          open
+    file:        Ledger.java
+    find:        Open.put(orderId, sku);
+    replace:     Open.put(orderId, sku); Open.put(orderId, sku);
+}
+
+mutant ORDERSERVICE_GEN_ARP_127 {
+    description: the two arguments to put() are swapped, in open()
+    operator:    argument-replacement
+    in:          open
+    file:        Ledger.java
+    find:        Open.put(orderId, sku);
+    replace:     Open.put(sku, orderId);
+}
+
+mutant ORDERSERVICE_GEN_MCR_128 {
+    description: .put( becomes .putIfAbsent(, in open()
+    operator:    method-call-replacement
+    in:          open
+    file:        Ledger.java
+    find:        Open.put(orderId, sku);
+    replace:     Open.putIfAbsent(orderId, sku);
+}
+
+mutant ORDERSERVICE_GEN_SEI_129 {
+    description: a write to committed is inserted after the statement, in open()
+    operator:    side-effect-insertion
+    in:          open
+    file:        Ledger.java
+    find:        Open.put(orderId, sku);
+    replace:     Open.put(orderId, sku); committed = committed + 1;
+}
+
+mutant ORDERSERVICE_GEN_VRO_130 {
+    description: Open becomes Shipped, in open()
+    operator:    variable-replacement
+    in:          open
+    file:        Ledger.java
+    find:        Open.put(orderId, sku);
+    replace:     Shipped.put(orderId, sku);
+}
+
+mutant ORDERSERVICE_GEN_AOR_131 {
+    description: + becomes -, in open()
+    operator:    arithmetic-operator-replacement
+    in:          open
+    file:        Ledger.java
+    find:        committed = committed + quantity;
+    replace:     committed = committed - quantity;
+}
+
+mutant ORDERSERVICE_GEN_AOR_132 {
+    description: + becomes *, in open()
+    operator:    arithmetic-operator-replacement
+    in:          open
+    file:        Ledger.java
+    find:        committed = committed + quantity;
+    replace:     committed = committed * quantity;
+}
+
+mutant ORDERSERVICE_GEN_AOR_133 {
+    description: + becomes /, in open()
+    operator:    arithmetic-operator-replacement
+    in:          open
+    file:        Ledger.java
+    find:        committed = committed + quantity;
+    replace:     committed = committed / quantity;
+}
+
+mutant ORDERSERVICE_GEN_AOR_134 {
+    description: + becomes %, in open()
+    operator:    arithmetic-operator-replacement
+    in:          open
+    file:        Ledger.java
+    find:        committed = committed + quantity;
+    replace:     committed = committed % quantity;
+}
+
+mutant ORDERSERVICE_GEN_AOI_135 {
+    description: the value assigned to committed is shifted by + 1, in open()
+    operator:    arithmetic-operator-insertion
+    in:          open
+    file:        Ledger.java
+    find:        committed = committed + quantity;
+    replace:     committed = committed + quantity + 1;
+}
+
+mutant ORDERSERVICE_GEN_AOI_136 {
+    description: the value assigned to committed is shifted by - 1, in open()
+    operator:    arithmetic-operator-insertion
+    in:          open
+    file:        Ledger.java
+    find:        committed = committed + quantity;
+    replace:     committed = committed + quantity - 1;
+}
+
+mutant ORDERSERVICE_GEN_UOI_137 {
+    description: the value assigned to committed is negated, in open()
+    operator:    unary-operator-insertion
+    in:          open
+    file:        Ledger.java
+    find:        committed = committed + quantity;
+    replace:     committed = -(committed + quantity);
+}
+
+mutant ORDERSERVICE_GEN_ABS_138 {
+    description: the value assigned to committed is forced negative, in open()
+    operator:    absolute-value-insertion
+    in:          open
+    file:        Ledger.java
+    find:        committed = committed + quantity;
+    replace:     committed = -Math.abs(committed + quantity);
+}
+
+mutant ORDERSERVICE_GEN_SDL_139 {
+    description: the statement is removed, in open()
+    operator:    statement-deletion
+    in:          open
+    file:        Ledger.java
+    find:        committed = committed + quantity;
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_VRO_140 {
+    description: committed becomes nextOrderId, in open()
+    operator:    variable-replacement
+    in:          open
+    file:        Ledger.java
+    find:        committed = committed + quantity;
+    replace:     nextOrderId = committed + quantity;
+}
+
+mutant ORDERSERVICE_GEN_VRO_141 {
+    description: committed becomes nextOrderId, in open()
+    operator:    variable-replacement
+    in:          open
+    file:        Ledger.java
+    find:        committed = committed + quantity;
+    replace:     committed = nextOrderId + quantity;
+}
+
+mutant ORDERSERVICE_GEN_SDL_142 {
+    description: the statement is removed, in open()
+    operator:    statement-deletion
+    in:          open
+    file:        Ledger.java
+    find:        Audit.record("open " + orderId + " " + sku + " x" + quantity);
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_STR_143 {
+    description: the statement runs twice, in open()
+    operator:    statement-replacement
+    in:          open
+    file:        Ledger.java
+    find:        Audit.record("open " + orderId + " " + sku + " x" + quantity);
+    replace:     Audit.record("open " + orderId + " " + sku + " x" + quantity); Audit.record("open " + orderId + " " + sku + " x" + quantity);
+}
+
+mutant ORDERSERVICE_GEN_SEI_144 {
+    description: a write to committed is inserted after the statement, in open()
+    operator:    side-effect-insertion
+    in:          open
+    file:        Ledger.java
+    find:        Audit.record("open " + orderId + " " + sku + " x" + quantity);
+    replace:     Audit.record("open " + orderId + " " + sku + " x" + quantity); committed = committed + 1;
+}
+
+mutant ORDERSERVICE_GEN_UOI_145 {
+    description: the returned value is negated, in open()
+    operator:    unary-operator-insertion
+    in:          open
+    file:        Ledger.java
+    find:        return orderId;
+    replace:     return -(orderId);
+}
+
+mutant ORDERSERVICE_GEN_ABS_146 {
+    description: the returned value is forced negative, in open()
+    operator:    absolute-value-insertion
+    in:          open
+    file:        Ledger.java
+    find:        return orderId;
+    replace:     return -Math.abs(orderId);
+}
+
+mutant ORDERSERVICE_GEN_RVR_147 {
+    description: the answer becomes 0, in open()
+    operator:    return-value-replacement
+    in:          open
+    file:        Ledger.java
+    find:        return orderId;
+    replace:     return 0;
+}
+
+mutant ORDERSERVICE_GEN_RVR_148 {
+    description: the answer becomes 1, in open()
+    operator:    return-value-replacement
+    in:          open
+    file:        Ledger.java
+    find:        return orderId;
+    replace:     return 1;
+}
+
+mutant ORDERSERVICE_GEN_RVR_149 {
+    description: the answer becomes -1, in open()
+    operator:    return-value-replacement
+    in:          open
+    file:        Ledger.java
+    find:        return orderId;
+    replace:     return -1;
+}
+
+mutant ORDERSERVICE_GEN_SEI_150 {
+    description: a write to committed is inserted before the return, in open()
+    operator:    side-effect-insertion
+    in:          open
+    file:        Ledger.java
+    find:        return orderId;
+    replace:     committed = committed + 1; return orderId;
+}
+
+mutant ORDERSERVICE_GEN_ARP_151 {
+    description: the argument to remove() is shifted by + 1, in ship()
+    operator:    argument-replacement
+    in:          ship
+    file:        Ledger.java
+    find:        String sku = Open.remove(orderId);
+    replace:     String sku = Open.remove(orderId + 1);
+}
+
+mutant ORDERSERVICE_GEN_ARP_152 {
+    description: the argument to remove() is shifted by - 1, in ship()
+    operator:    argument-replacement
+    in:          ship
+    file:        Ledger.java
+    find:        String sku = Open.remove(orderId);
+    replace:     String sku = Open.remove(orderId - 1);
+}
+
+mutant ORDERSERVICE_GEN_MCR_153 {
+    description: .remove( becomes .get(, in ship()
+    operator:    method-call-replacement
+    in:          ship
+    file:        Ledger.java
+    find:        String sku = Open.remove(orderId);
+    replace:     String sku = Open.get(orderId);
+}
+
+mutant ORDERSERVICE_GEN_VRO_154 {
+    description: Open becomes Shipped, in ship()
+    operator:    variable-replacement
+    in:          ship
+    file:        Ledger.java
+    find:        String sku = Open.remove(orderId);
+    replace:     String sku = Shipped.remove(orderId);
+}
+
+mutant ORDERSERVICE_GEN_SDL_155 {
+    description: the statement is removed, in ship()
+    operator:    statement-deletion
+    in:          ship
+    file:        Ledger.java
+    find:        Shipped.put(orderId, sku);
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_STR_156 {
+    description: the statement runs twice, in ship()
+    operator:    statement-replacement
+    in:          ship
+    file:        Ledger.java
+    find:        Shipped.put(orderId, sku);
+    replace:     Shipped.put(orderId, sku); Shipped.put(orderId, sku);
+}
+
+mutant ORDERSERVICE_GEN_ARP_157 {
+    description: the two arguments to put() are swapped, in ship()
+    operator:    argument-replacement
+    in:          ship
+    file:        Ledger.java
+    find:        Shipped.put(orderId, sku);
+    replace:     Shipped.put(sku, orderId);
+}
+
+mutant ORDERSERVICE_GEN_MCR_158 {
+    description: .put( becomes .putIfAbsent(, in ship()
+    operator:    method-call-replacement
+    in:          ship
+    file:        Ledger.java
+    find:        Shipped.put(orderId, sku);
+    replace:     Shipped.putIfAbsent(orderId, sku);
+}
+
+mutant ORDERSERVICE_GEN_SEI_159 {
+    description: a write to committed is inserted after the statement, in ship()
+    operator:    side-effect-insertion
+    in:          ship
+    file:        Ledger.java
+    find:        Shipped.put(orderId, sku);
+    replace:     Shipped.put(orderId, sku); committed = committed + 1;
+}
+
+mutant ORDERSERVICE_GEN_VRO_160 {
+    description: Shipped becomes Open, in ship()
+    operator:    variable-replacement
+    in:          ship
+    file:        Ledger.java
+    find:        Shipped.put(orderId, sku);
+    replace:     Open.put(orderId, sku);
+}
+
+mutant ORDERSERVICE_GEN_SDL_161 {
+    description: the statement is removed, in ship()
+    operator:    statement-deletion
+    in:          ship
+    file:        Ledger.java
+    find:        Audit.record("ship " + orderId + " " + sku);
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_STR_162 {
+    description: the statement runs twice, in ship()
+    operator:    statement-replacement
+    in:          ship
+    file:        Ledger.java
+    find:        Audit.record("ship " + orderId + " " + sku);
+    replace:     Audit.record("ship " + orderId + " " + sku); Audit.record("ship " + orderId + " " + sku);
+}
+
+mutant ORDERSERVICE_GEN_SEI_163 {
+    description: a write to committed is inserted after the statement, in ship()
+    operator:    side-effect-insertion
+    in:          ship
+    file:        Ledger.java
+    find:        Audit.record("ship " + orderId + " " + sku);
+    replace:     Audit.record("ship " + orderId + " " + sku); committed = committed + 1;
+}
+
+mutant ORDERSERVICE_GEN_SDL_164 {
+    description: the statement is removed, in Audit.java
+    operator:    statement-deletion
+    file:        Audit.java
+    find:        static List<String> Trail = new ArrayList<String>();
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_SEI_165 {
+    description: a write to events is inserted after the statement, in Audit.java
+    operator:    side-effect-insertion
+    file:        Audit.java
+    find:        static List<String> Trail = new ArrayList<String>();
+    replace:     static List<String> Trail = new ArrayList<String>(); events = events + 1;
+}
+
+mutant ORDERSERVICE_GEN_CRP_166 {
+    description: the literal 0 becomes 1, in Audit.java
+    operator:    constant-replacement
+    file:        Audit.java
+    find:        static int events = 0;
+    replace:     static int events = 1;
+}
+
+mutant ORDERSERVICE_GEN_CRP_167 {
+    description: the literal 0 becomes -1, in Audit.java
+    operator:    constant-replacement
+    file:        Audit.java
+    find:        static int events = 0;
+    replace:     static int events = -1;
+}
+
+mutant ORDERSERVICE_GEN_SDL_168 {
+    description: the statement is removed, in record()
+    operator:    statement-deletion
+    in:          record
+    file:        Audit.java
+    find:        Trail.add(event);
+    replace:     
+}
+
+mutant ORDERSERVICE_GEN_STR_169 {
+    description: the statement runs twice, in record()
+    operator:    statement-replacement
+    in:          record
+    file:        Audit.java
+    find:        Trail.add(event);
+    replace:     Trail.add(event); Trail.add(event);
+}
+
+mutant ORDERSERVICE_GEN_ARP_170 {
+    description: the argument to add() is shifted by + 1, in record()
+    operator:    argument-replacement
+    in:          record
+    file:        Audit.java
+    find:        Trail.add(event);
+    replace:     Trail.add(event + 1);
+}
+
+mutant ORDERSERVICE_GEN_ARP_171 {
+    description: the argument to add() is shifted by - 1, in record()
+    operator:    argument-replacement
+    in:          record
+    file:        Audit.java
+    find:        Trail.add(event);
+    replace:     Trail.add(event - 1);
+}
+
+mutant ORDERSERVICE_GEN_MCR_172 {
+    description: .add( becomes .contains(, in record()
+    operator:    method-call-replacement
+    in:          record
+    file:        Audit.java
+    find:        Trail.add(event);
+    replace:     Trail.contains(event);
+}
+
+mutant ORDERSERVICE_GEN_SEI_173 {
+    description: a write to events is inserted after the statement, in record()
+    operator:    side-effect-insertion
+    in:          record
+    file:        Audit.java
+    find:        Trail.add(event);
+    replace:     Trail.add(event); events = events + 1;
+}
+
+mutant ORDERSERVICE_GEN_AOR_174 {
+    description: + becomes -, in record()
+    operator:    arithmetic-operator-replacement
+    in:          record
+    file:        Audit.java
+    find:        events = events + 1;
+    replace:     events = events - 1;
+}
+
+mutant ORDERSERVICE_GEN_AOR_175 {
+    description: + becomes *, in record()
+    operator:    arithmetic-operator-replacement
+    in:          record
+    file:        Audit.java
+    find:        events = events + 1;
+    replace:     events = events * 1;
+}
+
+mutant ORDERSERVICE_GEN_AOR_176 {
+    description: + becomes /, in record()
+    operator:    arithmetic-operator-replacement
+    in:          record
+    file:        Audit.java
+    find:        events = events + 1;
+    replace:     events = events / 1;
+}
+
+mutant ORDERSERVICE_GEN_AOR_177 {
+    description: + becomes %, in record()
+    operator:    arithmetic-operator-replacement
+    in:          record
+    file:        Audit.java
+    find:        events = events + 1;
+    replace:     events = events % 1;
+}
+
+mutant ORDERSERVICE_GEN_AOI_178 {
+    description: the value assigned to events is shifted by + 1, in record()
+    operator:    arithmetic-operator-insertion
+    in:          record
+    file:        Audit.java
+    find:        events = events + 1;
+    replace:     events = events + 1 + 1;
+}
+
+mutant ORDERSERVICE_GEN_AOI_179 {
+    description: the value assigned to events is shifted by - 1, in record()
+    operator:    arithmetic-operator-insertion
+    in:          record
+    file:        Audit.java
+    find:        events = events + 1;
+    replace:     events = events + 1 - 1;
+}
+
+mutant ORDERSERVICE_GEN_UOI_180 {
+    description: the value assigned to events is negated, in record()
+    operator:    unary-operator-insertion
+    in:          record
+    file:        Audit.java
+    find:        events = events + 1;
+    replace:     events = -(events + 1);
+}
+
+mutant ORDERSERVICE_GEN_ABS_181 {
+    description: the value assigned to events is forced negative, in record()
+    operator:    absolute-value-insertion
+    in:          record
+    file:        Audit.java
+    find:        events = events + 1;
+    replace:     events = -Math.abs(events + 1);
+}
+
+mutant ORDERSERVICE_GEN_CRP_182 {
+    description: the literal 1 becomes 0, in record()
+    operator:    constant-replacement
+    in:          record
+    file:        Audit.java
+    find:        events = events + 1;
+    replace:     events = events + 0;
+}
+
+mutant ORDERSERVICE_GEN_CRP_183 {
+    description: the literal 1 becomes -1, in record()
+    operator:    constant-replacement
+    in:          record
+    file:        Audit.java
+    find:        events = events + 1;
+    replace:     events = events + -1;
+}
+
+mutant ORDERSERVICE_GEN_CRP_184 {
+    description: the literal 1 becomes 2, in record()
+    operator:    constant-replacement
+    in:          record
+    file:        Audit.java
+    find:        events = events + 1;
+    replace:     events = events + 2;
+}
+
+mutant ORDERSERVICE_GEN_SDL_185 {
+    description: the statement is removed, in record()
+    operator:    statement-deletion
+    in:          record
+    file:        Audit.java
+    find:        events = events + 1;
+    replace:     
+}
+

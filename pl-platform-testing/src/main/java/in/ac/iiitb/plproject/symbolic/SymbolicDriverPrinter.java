@@ -1,81 +1,57 @@
 package in.ac.iiitb.plproject.symbolic;
 
-import in.ac.iiitb.plproject.ir.CallBlock;
-import in.ac.iiitb.plproject.ir.Clause;
+import in.ac.iiitb.plproject.ir.ParamSlot;
 import in.ac.iiitb.plproject.ir.TestPlan;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Step 3: {@link TestPlan} -&gt; the symbolic driver SPF executes, built from
- * the CONTRACT ONLY. It never calls {@code Helper} and imports nothing from
- * the library; SPF's classpath does not contain the library at all.
+ * Prints one genCTC round's t' as the Java program SPF runs: the ready
+ * prefix of t' and nothing after it. Concrete inputs are literals, the
+ * remaining inputs are symbolic ({@code Debug.makeSymbolic*}, or a pick from
+ * candidate values with a symbolic index for a pooled one), each assume is
+ * {@code Verify.ignoreIf(!(c))} and each ready call is a real call to
+ * {@code Helper}. The program ends at the first not-ready call.
  *
- * <p>The driver keeps its own model copy of every state variable, set to its
- * starting value, and for each call in order: (a) declares a symbolic value
- * per parameter, (b) assumes the precondition over the model, (c) declares a
- * fresh symbolic result and a fresh value for every state variable the
- * postcondition names, (d) assumes the postcondition, with {@code \old(v)}
- * read from the previous model value. A state variable the postcondition does
- * not name keeps its value (frame rule). Each assumption is printed as
- * {@code Verify.ignoreIf(!(...))}: jpf-symbc's {@code Debug.assume} only
- * prunes when its argument still carries a symbolic attribute, and a Java
- * comparison has already been branched into a concrete boolean by the time it
- * is passed (see the {@code assume} peer in
- * {@code JPF_gov_nasa_jpf_symbc_Debug}), so it would silently prune nothing.
+ * <p>Assumes are {@code Verify.ignoreIf}, not {@code Debug.assume}: in
+ * jpf-symbc 3bedf0b {@code Debug.assume} only prunes when its argument still
+ * carries a symbolic attribute, and a Java comparison has already been
+ * branched into a concrete boolean by then. An assume whose evaluation throws
+ * (say, a null map entry) counts as false.
  *
- * <p>Every assumption sits on its own line so that the line SPF last pruned
- * at names the clause that cannot hold ({@link LineMap}).
+ * <p>Every assume and every call sits on its own line, so the line SPF last
+ * pruned at, or threw at, names the statement ({@link Printed#at}).
  */
 public final class SymbolicDriverPrinter {
 
     private SymbolicDriverPrinter() {}
 
-    /** Which clause each printed assumption line belongs to. */
-    public static final class LineMap {
-        public static final class Entry {
-            public final int line;
-            public final int callIndex;
-            /** "requires", "ensures" or "declare". */
-            public final String kind;
-            public final String clauseText;
+    /** Name of the driver's static field the picks of the current path are appended to. */
+    public static final String PICKS_FIELD = "picks";
+    /** Separates a pick's name from its value, and one pick from the next. */
+    public static final char PICK_NAME_END = '\u001f';
+    public static final char PICK_END = '\u001e';
 
-            Entry(int line, int callIndex, String kind, String clauseText) {
-                this.line = line;
-                this.callIndex = callIndex;
-                this.kind = kind;
-                this.clauseText = clauseText;
-            }
+    public static final class Printed {
+        public final String source;
+        private final List<Integer> lines;
+        private final List<Stmt> statements;
+
+        Printed(String source, List<Integer> lines, List<Stmt> statements) {
+            this.source = source;
+            this.lines = lines;
+            this.statements = statements;
         }
 
-        private final List<Entry> entries = new ArrayList<Entry>();
-
-        public List<Entry> getEntries() { return entries; }
-
-        /** The entry for {@code line}, or null when it is not an assumption line of the driver. */
-        public Entry at(int line) {
-            for (Entry e : entries) if (e.line == line) return e;
+        /** The statement printed on {@code line} of the driver, or null. */
+        public Stmt at(int line) {
+            for (int i = 0; i < lines.size(); i++) if (lines.get(i) == line) return statements.get(i);
             return null;
         }
     }
 
-    /** The driver source together with its line map. */
-    public static final class Printed {
-        public final String source;
-        public final LineMap lines;
-
-        Printed(String source, LineMap lines) {
-            this.source = source;
-            this.lines = lines;
-        }
-    }
-
-    public static String print(TestPlan plan) {
-        return printWithLines(plan).source;
-    }
-
-    public static Printed printWithLines(TestPlan plan) {
+    public static Printed print(TestPlan plan, TestGen.Prefix prefix, int round) {
         Out out = new Out();
         out.line("package " + TestPlan.GENERATED_PACKAGE + ";");
         out.line("");
@@ -83,64 +59,110 @@ public final class SymbolicDriverPrinter {
         out.line("import gov.nasa.jpf.vm.Verify;");
         out.line("");
         out.line("/**");
-        out.line(" * Symbolic driver for SPF, built from " + plan.getSpecFile() + " only.");
-        out.line(" * It models the library state itself and never calls the library.");
+        out.line(" * genCTC round " + round + " for " + plan.getSpecFile() + " + " + plan.getTestsFile() + ":");
+        out.line(" * t' up to its first not-ready call"
+                + (prefix.firstNotReady == null ? " (every call is ready)." : ", " + prefix.firstNotReady + "."));
+        out.line(" * Ready calls run on the real library with concrete arguments.");
         out.line(" */");
         out.line("public class " + TestPlan.SYMBOLIC_CLASS + " {");
         out.line("");
+        out.line("    static String " + PICKS_FIELD + " = \"\";");
+        out.line("");
         out.line("    public static void main(String[] args) {");
-        if (!plan.getStartDecls().isEmpty()) {
-            out.line("        // starting state");
-            for (String d : plan.getStartDecls()) out.line("        " + d);
-        }
-        for (CallBlock block : plan.getCallBlocks()) {
-            out.line("");
-            out.line("        // call " + block.getIndex() + ": " + block.getOperationName());
-            for (String d : block.getParamDecls()) {
-                out.mark(block.getIndex(), "declare", d);
-                out.line("        " + d);
-            }
-            for (Clause c : block.getPreconditions()) printAssumption(out, block, c, "requires");
-            for (String d : block.getFreshDecls()) {
-                out.mark(block.getIndex(), "declare", d);
-                out.line("        " + d);
-            }
-            for (Clause c : block.getPostconditions()) printAssumption(out, block, c, "ensures");
+        out.line("        boolean ok;");
+        for (Stmt s : prefix.statements) printStatement(out, s);
+        if (prefix.firstNotReady != null) {
+            out.line("        // first not-ready statement: " + prefix.firstNotReady + " — the program ends here");
         }
         out.line("    }");
         out.line("");
-        out.line("    /** A symbolic 0/1 flag. */");
-        out.line("    private static int flag(String name) {");
-        out.line("        int v = Debug.makeSymbolicInteger(name);");
-        out.line("        Verify.ignoreIf(v < 0 || v > 1);");
-        out.line("        return v;");
-        out.line("    }");
-        out.line("");
-        out.line("    /** A symbolic index into the " + TypeSupport.POOL_SIZE + "-value pool. */");
-        out.line("    private static int index(String name) {");
-        out.line("        int v = Debug.makeSymbolicInteger(name);");
-        out.line("        Verify.ignoreIf(v < 0 || v > " + (TypeSupport.POOL_SIZE - 1) + ");");
-        out.line("        return v;");
+        out.line("    /**");
+        out.line("     * One of the candidates — the pool, then the members of the given collections —");
+        out.line("     * chosen by a symbolic index, the preferred one explored first.");
+        out.line("     */");
+        out.line("    private static Object pick(String name, int preferred, Class<?> type, Object[] pool,");
+        out.line("                               Object... collections) {");
+        out.line("        java.util.List<Object> candidates = new java.util.ArrayList<Object>(java.util.Arrays.asList(pool));");
+        out.line("        for (Object c : collections) {");
+        out.line("            Iterable<?> members = c instanceof java.util.Map ? ((java.util.Map<?, ?>) c).keySet()");
+        out.line("                    : c instanceof Iterable ? (Iterable<?>) c : java.util.Collections.emptyList();");
+        out.line("            for (Object m : members) if (type.isInstance(m) && !candidates.contains(m)) candidates.add(m);");
+        out.line("        }");
+        out.line("        int index = Debug.makeSymbolicInteger(name);");
+        out.line("        int n = candidates.size();");
+        out.line("        for (int k = 0; k < n; k++) {");
+        out.line("            int j = (preferred + k) % n;");
+        out.line("            if (index == j) {");
+        out.line("                Object v = candidates.get(j);");
+        out.line("                " + PICKS_FIELD + " = " + PICKS_FIELD + " + name + \"" + escape(PICK_NAME_END)
+                + "\" + v + \"" + escape(PICK_END) + "\";");
+        out.line("                return v;");
+        out.line("            }");
+        out.line("        }");
+        out.line("        Verify.ignoreIf(true);");
+        out.line("        return null;");
         out.line("    }");
         out.line("}");
-        return new Printed(out.sb.toString(), out.map);
+        return new Printed(out.sb.toString(), out.lines, out.statements);
     }
 
-    private static void printAssumption(Out out, CallBlock block, Clause c, String kind) {
-        if (c.isTautological()) {
-            out.line("        // " + kind + ": " + c.getOriginalText() + "  (only names the result)");
-        } else if (c.isCheckOnly()) {
-            out.line("        // CHECK-ONLY " + kind + ": " + c.getOriginalText() + "  (" + c.getCheckOnlyReason() + ")");
-        } else {
-            out.line("        // " + kind + ": " + c.getOriginalText());
-            out.mark(block.getIndex(), kind, c.getOriginalText());
-            out.line("        Verify.ignoreIf(!(" + c.getModelExpr() + "));");
+    private static void printStatement(Out out, Stmt s) {
+        if (s instanceof Stmt.Reset) {
+            out.line("        // " + s.toString().substring(3));
+            out.mark(s);
+            out.line("        Helper.reset();");
+        } else if (s instanceof Stmt.Comment) {
+            out.line("");
+            out.line("        " + s);
+        } else if (s instanceof Stmt.Input) {
+            out.mark(s);
+            out.line("        " + symbolicInput((Stmt.Input) s));
+        } else if (s instanceof Stmt.Assign) {
+            Stmt.Assign a = (Stmt.Assign) s;
+            out.mark(s);
+            out.line("        " + JUnitPrinter.assignment(a));
+        } else if (s instanceof Stmt.Assume) {
+            Stmt.Assume a = (Stmt.Assume) s;
+            out.line("        // assume: " + a.clause.getOriginalText());
+            out.mark(s);
+            out.line("        try { ok = (" + a.clause.getJavaExpr() + "); } catch (RuntimeException e) { ok = false; }"
+                    + " Verify.ignoreIf(!ok);");
+        } else if (s instanceof Stmt.Assert) {
+            out.line("        // assert (not a constraint; checked in the final test): "
+                    + ((Stmt.Assert) s).clause.getOriginalText());
         }
+    }
+
+    /** The declaration of an input that is still symbolic. */
+    static String symbolicInput(Stmt.Input in) {
+        ParamSlot slot = in.slot;
+        String type = in.type.trim();
+        String v = in.var;
+        if (slot.isPooled()) {
+            List<String> pool = new ArrayList<String>();
+            for (String raw : slot.getPool()) pool.add(TypeSupport.literal(type, raw));
+            StringBuilder sb = new StringBuilder();
+            sb.append(type).append(' ').append(v).append(" = (").append(TypeSupport.boxed(type)).append(") pick(\"")
+              .append(v).append("\", ").append(in.ordinal % pool.size()).append(", ")
+              .append(TypeSupport.boxed(type)).append(".class, new Object[] {").append(String.join(", ", pool))
+              .append('}');
+            for (String collection : slot.getMembership()) sb.append(", ").append(TestGen.stateVar(collection));
+            return sb.append(");").toString();
+        }
+        String prim = TypeSupport.unboxed(type);
+        String sym = TypeSupport.symbolicFactory(prim) + "(\"" + v + "\")";
+        if (TypeSupport.isBoxed(type)) return type + " " + v + " = new " + type + "(" + sym + ");";
+        return type + " " + v + " = " + sym + ";";
+    }
+
+    private static String escape(char c) {
+        return String.format("\\u%04x", (int) c);
     }
 
     private static final class Out {
         final StringBuilder sb = new StringBuilder();
-        final LineMap map = new LineMap();
+        final List<Integer> lines = new ArrayList<Integer>();
+        final List<Stmt> statements = new ArrayList<Stmt>();
         int lineNo = 1;
 
         void line(String text) {
@@ -148,9 +170,10 @@ public final class SymbolicDriverPrinter {
             lineNo++;
         }
 
-        /** Records that the NEXT printed line belongs to this call and clause. */
-        void mark(int callIndex, String kind, String clauseText) {
-            map.entries.add(new LineMap.Entry(lineNo, callIndex, kind, clauseText));
+        /** Records that the NEXT printed line is statement {@code s}. */
+        void mark(Stmt s) {
+            lines.add(lineNo);
+            statements.add(s);
         }
     }
 }

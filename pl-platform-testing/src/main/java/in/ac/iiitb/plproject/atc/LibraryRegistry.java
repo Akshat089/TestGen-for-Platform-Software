@@ -6,14 +6,12 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * The fourteen libraries GENATC knows about, replacing the old
- * {@code LibraryDryRunExamples}. Three are marked unsupported rather than
- * silently mis-generated: {@code submit -> getResult -> cancelTask} (and the
- * two libraries shaped like it) depend on one call's return value — an
- * opaque, library-chosen id — being passed as a later call's argument, which
- * rule 1 forbids and which the generator cannot satisfy by pooling (rule 12
- * forbids reading the library to learn its id-allocation scheme, and nothing
- * in the {@code .spec} text says what the id will be).
+ * The fourteen libraries GENATC knows about. All are supported: taskqueue,
+ * ticketservice and orderservice need an id one call returns, and get it
+ * because genCTC runs that call on the real library before the later call's
+ * input is chosen — the later call's precondition ({@code Tasks.containsKey(taskId)})
+ * is solved against the real, concrete map. {@link Entry#unsupportedReason}
+ * stays for a library that cannot be handled.
  */
 public final class LibraryRegistry {
 
@@ -116,24 +114,17 @@ public final class LibraryRegistry {
             "LruCache — restore's precondition only needs an unused pooled key, not literally the evicted one",
             "LruCache.spec", "LruCache.tests", "lrucache/Helper.java");
 
-    public static final Entry TASKQUEUE = unsupported("taskqueue",
-            "TaskQueue — submit -> getResult -> cancelTask",
-            "TaskQueue.spec", "TaskQueue.tests", "taskqueue/Helper.java",
-            "getResult/cancelTask need the exact taskId submit() returned — an opaque,"
-          + " library-chosen id, not something a pool or the solver can predict without"
-          + " reading the library (forbidden) or threading a return value (forbidden by rule 1)");
+    public static final Entry TASKQUEUE = supported("taskqueue",
+            "TaskQueue — taskId is solved against the real Tasks map submit() filled",
+            "TaskQueue.spec", "TaskQueue.tests", "taskqueue/Helper.java");
 
-    public static final Entry TICKETSERVICE = unsupported("ticketservice",
-            "TicketService — findAndHoldSeats -> reserveSeats",
-            "TicketService.spec", "TicketService.tests", "ticketservice/Helper.java",
-            "reserveSeats needs the exact seatHoldId findAndHoldSeats() returned, for the"
-          + " same reason as TaskQueue's taskId");
+    public static final Entry TICKETSERVICE = supported("ticketservice",
+            "TicketService — seatHoldId is solved against the real Holds map",
+            "TicketService.spec", "TicketService.tests", "ticketservice/Helper.java");
 
-    public static final Entry ORDERSERVICE = unsupportedMulti("orderservice",
-            "OrderService — placeOrder -> ship (façade over Catalogue/Ledger/Audit)",
+    public static final Entry ORDERSERVICE = supportedMulti("orderservice",
+            "OrderService — orderId is solved against the real Open map (façade over Catalogue/Ledger/Audit)",
             "OrderService.spec", "OrderService.tests",
-            "ship needs the exact orderId placeOrder() returned, for the same reason as"
-          + " TaskQueue's taskId",
             "orderservice/Helper.java", "orderservice/Catalogue.java",
             "orderservice/Ledger.java", "orderservice/Audit.java");
 

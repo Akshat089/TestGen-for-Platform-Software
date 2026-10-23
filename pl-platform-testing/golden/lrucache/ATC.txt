@@ -1,0 +1,419 @@
+# ../specs/LruCache.spec + ../specs/LruCache.tests (LruCacheDryRun)
+
+== ATC t ==
+// starting state: the library's real state after Helper.reset()
+// call 0: put
+c0_key := input<String>()
+c0_value := input<String>()
+assume(c0_key != null)
+assume(c0_value != null)
+assume(Helper.capacity > 0)
+c0_result := put(c0_key, c0_value)
+assert(Helper.C.get(c0_key) == c0_value)
+assert(Helper.mostRecent == c0_key)
+assert(Helper.size <= Helper.capacity)
+// call 1: put
+c1_key := input<String>()
+c1_value := input<String>()
+assume(c1_key != null)
+assume(c1_value != null)
+assume(Helper.capacity > 0)
+c1_result := put(c1_key, c1_value)
+assert(Helper.C.get(c1_key) == c1_value)
+assert(Helper.mostRecent == c1_key)
+assert(Helper.size <= Helper.capacity)
+// call 2: put
+c2_key := input<String>()
+c2_value := input<String>()
+assume(c2_key != null)
+assume(c2_value != null)
+assume(Helper.capacity > 0)
+c2_result := put(c2_key, c2_value)
+assert(Helper.C.get(c2_key) == c2_value)
+assert(Helper.mostRecent == c2_key)
+assert(Helper.size <= Helper.capacity)
+// call 3: get
+old3_size := Helper.size
+c3_key := input<String>()
+assume(Helper.C.containsKey(c3_key))
+c3_result := get(c3_key)
+assert(c3_result == Helper.C.get(c3_key))
+assert(Helper.mostRecent == c3_key)
+assert(Helper.size == old3_size)
+// call 4: restore
+c4_evictedKey := input<String>()
+c4_value := input<String>()
+assume(c4_evictedKey != null)
+assume(!Helper.C.containsKey(c4_evictedKey))
+restore(c4_evictedKey, c4_value)
+assert(Helper.C.containsKey(c4_evictedKey))
+assert(Helper.mostRecent == c4_evictedKey)
+assert(Helper.size <= Helper.capacity)
+
+== round 0: t' = rewriteATC(t, []) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: put
+c0_key := input<String>()
+c0_value := input<String>()
+assume(c0_key != null)
+assume(c0_value != null)
+assume(Helper.capacity > 0)
+c0_result := put(c0_key, c0_value)
+assert(Helper.C.get(c0_key) == c0_value)
+assert(Helper.mostRecent == c0_key)
+assert(Helper.size <= Helper.capacity)
+// call 1: put
+c1_key := input<String>()
+c1_value := input<String>()
+assume(c1_key != null)
+assume(c1_value != null)
+assume(Helper.capacity > 0)
+c1_result := put(c1_key, c1_value)
+assert(Helper.C.get(c1_key) == c1_value)
+assert(Helper.mostRecent == c1_key)
+assert(Helper.size <= Helper.capacity)
+// call 2: put
+c2_key := input<String>()
+c2_value := input<String>()
+assume(c2_key != null)
+assume(c2_value != null)
+assume(Helper.capacity > 0)
+c2_result := put(c2_key, c2_value)
+assert(Helper.C.get(c2_key) == c2_value)
+assert(Helper.mostRecent == c2_key)
+assert(Helper.size <= Helper.capacity)
+// call 3: get
+old3_size := Helper.size
+c3_key := input<String>()
+assume(Helper.C.containsKey(c3_key))
+c3_result := get(c3_key)
+assert(c3_result == Helper.C.get(c3_key))
+assert(Helper.mostRecent == c3_key)
+assert(Helper.size == old3_size)
+// call 4: restore
+c4_evictedKey := input<String>()
+c4_value := input<String>()
+assume(c4_evictedKey != null)
+assume(!Helper.C.containsKey(c4_evictedKey))
+restore(c4_evictedKey, c4_value)
+assert(Helper.C.containsKey(c4_evictedKey))
+assert(Helper.mostRecent == c4_evictedKey)
+assert(Helper.size <= Helper.capacity)
+-- symex: 7 ready statement(s), stopped at c0_result := put(c0_key, c0_value)
+-- pc = (c0_key != null) && (c0_value != null) && (Helper.capacity > 0)
+-- L' = ["s1", "s2"]
+
+== round 1: t' = rewriteATC(t, ["s1", "s2"]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: put
+c0_key := "s1"
+c0_value := "s2"
+assume(c0_key != null)
+assume(c0_value != null)
+assume(Helper.capacity > 0)
+c0_result := put(c0_key, c0_value)
+assert(Helper.C.get(c0_key) == c0_value)
+assert(Helper.mostRecent == c0_key)
+assert(Helper.size <= Helper.capacity)
+// call 1: put
+c1_key := input<String>()
+c1_value := input<String>()
+assume(c1_key != null)
+assume(c1_value != null)
+assume(Helper.capacity > 0)
+c1_result := put(c1_key, c1_value)
+assert(Helper.C.get(c1_key) == c1_value)
+assert(Helper.mostRecent == c1_key)
+assert(Helper.size <= Helper.capacity)
+// call 2: put
+c2_key := input<String>()
+c2_value := input<String>()
+assume(c2_key != null)
+assume(c2_value != null)
+assume(Helper.capacity > 0)
+c2_result := put(c2_key, c2_value)
+assert(Helper.C.get(c2_key) == c2_value)
+assert(Helper.mostRecent == c2_key)
+assert(Helper.size <= Helper.capacity)
+// call 3: get
+old3_size := Helper.size
+c3_key := input<String>()
+assume(Helper.C.containsKey(c3_key))
+c3_result := get(c3_key)
+assert(c3_result == Helper.C.get(c3_key))
+assert(Helper.mostRecent == c3_key)
+assert(Helper.size == old3_size)
+// call 4: restore
+c4_evictedKey := input<String>()
+c4_value := input<String>()
+assume(c4_evictedKey != null)
+assume(!Helper.C.containsKey(c4_evictedKey))
+restore(c4_evictedKey, c4_value)
+assert(Helper.C.containsKey(c4_evictedKey))
+assert(Helper.mostRecent == c4_evictedKey)
+assert(Helper.size <= Helper.capacity)
+-- symex: 17 ready statement(s), stopped at c1_result := put(c1_key, c1_value)
+-- pc = ("s1" != null) && ("s2" != null) && (Helper.capacity > 0) && (c1_key != null) && (c1_value != null) && (Helper.capacity > 0)
+-- L' = ["s3", "s1"]
+
+== round 2: t' = rewriteATC(t, ["s3", "s1"]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: put
+c0_key := "s1"
+c0_value := "s2"
+assume(c0_key != null)
+assume(c0_value != null)
+assume(Helper.capacity > 0)
+c0_result := put(c0_key, c0_value)
+assert(Helper.C.get(c0_key) == c0_value)
+assert(Helper.mostRecent == c0_key)
+assert(Helper.size <= Helper.capacity)
+// call 1: put
+c1_key := "s3"
+c1_value := "s1"
+assume(c1_key != null)
+assume(c1_value != null)
+assume(Helper.capacity > 0)
+c1_result := put(c1_key, c1_value)
+assert(Helper.C.get(c1_key) == c1_value)
+assert(Helper.mostRecent == c1_key)
+assert(Helper.size <= Helper.capacity)
+// call 2: put
+c2_key := input<String>()
+c2_value := input<String>()
+assume(c2_key != null)
+assume(c2_value != null)
+assume(Helper.capacity > 0)
+c2_result := put(c2_key, c2_value)
+assert(Helper.C.get(c2_key) == c2_value)
+assert(Helper.mostRecent == c2_key)
+assert(Helper.size <= Helper.capacity)
+// call 3: get
+old3_size := Helper.size
+c3_key := input<String>()
+assume(Helper.C.containsKey(c3_key))
+c3_result := get(c3_key)
+assert(c3_result == Helper.C.get(c3_key))
+assert(Helper.mostRecent == c3_key)
+assert(Helper.size == old3_size)
+// call 4: restore
+c4_evictedKey := input<String>()
+c4_value := input<String>()
+assume(c4_evictedKey != null)
+assume(!Helper.C.containsKey(c4_evictedKey))
+restore(c4_evictedKey, c4_value)
+assert(Helper.C.containsKey(c4_evictedKey))
+assert(Helper.mostRecent == c4_evictedKey)
+assert(Helper.size <= Helper.capacity)
+-- symex: 27 ready statement(s), stopped at c2_result := put(c2_key, c2_value)
+-- pc = ("s1" != null) && ("s2" != null) && (Helper.capacity > 0) && ("s3" != null) && ("s1" != null) && (Helper.capacity > 0) && (c2_key != null) && (c2_value != null) && (Helper.capacity > 0)
+-- L' = ["s2", "s3"]
+
+== round 3: t' = rewriteATC(t, ["s2", "s3"]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: put
+c0_key := "s1"
+c0_value := "s2"
+assume(c0_key != null)
+assume(c0_value != null)
+assume(Helper.capacity > 0)
+c0_result := put(c0_key, c0_value)
+assert(Helper.C.get(c0_key) == c0_value)
+assert(Helper.mostRecent == c0_key)
+assert(Helper.size <= Helper.capacity)
+// call 1: put
+c1_key := "s3"
+c1_value := "s1"
+assume(c1_key != null)
+assume(c1_value != null)
+assume(Helper.capacity > 0)
+c1_result := put(c1_key, c1_value)
+assert(Helper.C.get(c1_key) == c1_value)
+assert(Helper.mostRecent == c1_key)
+assert(Helper.size <= Helper.capacity)
+// call 2: put
+c2_key := "s2"
+c2_value := "s3"
+assume(c2_key != null)
+assume(c2_value != null)
+assume(Helper.capacity > 0)
+c2_result := put(c2_key, c2_value)
+assert(Helper.C.get(c2_key) == c2_value)
+assert(Helper.mostRecent == c2_key)
+assert(Helper.size <= Helper.capacity)
+// call 3: get
+old3_size := Helper.size
+c3_key := input<String>()
+assume(Helper.C.containsKey(c3_key))
+c3_result := get(c3_key)
+assert(c3_result == Helper.C.get(c3_key))
+assert(Helper.mostRecent == c3_key)
+assert(Helper.size == old3_size)
+// call 4: restore
+c4_evictedKey := input<String>()
+c4_value := input<String>()
+assume(c4_evictedKey != null)
+assume(!Helper.C.containsKey(c4_evictedKey))
+restore(c4_evictedKey, c4_value)
+assert(Helper.C.containsKey(c4_evictedKey))
+assert(Helper.mostRecent == c4_evictedKey)
+assert(Helper.size <= Helper.capacity)
+-- symex: 35 ready statement(s), stopped at c3_result := get(c3_key)
+-- pc = ("s1" != null) && ("s2" != null) && (Helper.capacity > 0) && ("s3" != null) && ("s1" != null) && (Helper.capacity > 0) && ("s2" != null) && ("s3" != null) && (Helper.capacity > 0) && (Helper.C.containsKey(c3_key))
+-- L' = ["s2"]
+
+== round 4: t' = rewriteATC(t, ["s2"]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: put
+c0_key := "s1"
+c0_value := "s2"
+assume(c0_key != null)
+assume(c0_value != null)
+assume(Helper.capacity > 0)
+c0_result := put(c0_key, c0_value)
+assert(Helper.C.get(c0_key) == c0_value)
+assert(Helper.mostRecent == c0_key)
+assert(Helper.size <= Helper.capacity)
+// call 1: put
+c1_key := "s3"
+c1_value := "s1"
+assume(c1_key != null)
+assume(c1_value != null)
+assume(Helper.capacity > 0)
+c1_result := put(c1_key, c1_value)
+assert(Helper.C.get(c1_key) == c1_value)
+assert(Helper.mostRecent == c1_key)
+assert(Helper.size <= Helper.capacity)
+// call 2: put
+c2_key := "s2"
+c2_value := "s3"
+assume(c2_key != null)
+assume(c2_value != null)
+assume(Helper.capacity > 0)
+c2_result := put(c2_key, c2_value)
+assert(Helper.C.get(c2_key) == c2_value)
+assert(Helper.mostRecent == c2_key)
+assert(Helper.size <= Helper.capacity)
+// call 3: get
+old3_size := Helper.size
+c3_key := "s2"
+assume(Helper.C.containsKey(c3_key))
+c3_result := get(c3_key)
+assert(c3_result == Helper.C.get(c3_key))
+assert(Helper.mostRecent == c3_key)
+assert(Helper.size == old3_size)
+// call 4: restore
+c4_evictedKey := input<String>()
+c4_value := input<String>()
+assume(c4_evictedKey != null)
+assume(!Helper.C.containsKey(c4_evictedKey))
+restore(c4_evictedKey, c4_value)
+assert(Helper.C.containsKey(c4_evictedKey))
+assert(Helper.mostRecent == c4_evictedKey)
+assert(Helper.size <= Helper.capacity)
+-- symex: 44 ready statement(s), stopped at restore(c4_evictedKey, c4_value)
+-- pc = ("s1" != null) && ("s2" != null) && (Helper.capacity > 0) && ("s3" != null) && ("s1" != null) && (Helper.capacity > 0) && ("s2" != null) && ("s3" != null) && (Helper.capacity > 0) && (Helper.C.containsKey("s2")) && (c4_evictedKey != null) && (!Helper.C.containsKey(c4_evictedKey))
+-- L' = ["s1", "s3"]
+
+== round 5: t' = rewriteATC(t, ["s1", "s3"]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: put
+c0_key := "s1"
+c0_value := "s2"
+assume(c0_key != null)
+assume(c0_value != null)
+assume(Helper.capacity > 0)
+c0_result := put(c0_key, c0_value)
+assert(Helper.C.get(c0_key) == c0_value)
+assert(Helper.mostRecent == c0_key)
+assert(Helper.size <= Helper.capacity)
+// call 1: put
+c1_key := "s3"
+c1_value := "s1"
+assume(c1_key != null)
+assume(c1_value != null)
+assume(Helper.capacity > 0)
+c1_result := put(c1_key, c1_value)
+assert(Helper.C.get(c1_key) == c1_value)
+assert(Helper.mostRecent == c1_key)
+assert(Helper.size <= Helper.capacity)
+// call 2: put
+c2_key := "s2"
+c2_value := "s3"
+assume(c2_key != null)
+assume(c2_value != null)
+assume(Helper.capacity > 0)
+c2_result := put(c2_key, c2_value)
+assert(Helper.C.get(c2_key) == c2_value)
+assert(Helper.mostRecent == c2_key)
+assert(Helper.size <= Helper.capacity)
+// call 3: get
+old3_size := Helper.size
+c3_key := "s2"
+assume(Helper.C.containsKey(c3_key))
+c3_result := get(c3_key)
+assert(c3_result == Helper.C.get(c3_key))
+assert(Helper.mostRecent == c3_key)
+assert(Helper.size == old3_size)
+// call 4: restore
+c4_evictedKey := "s1"
+c4_value := "s3"
+assume(c4_evictedKey != null)
+assume(!Helper.C.containsKey(c4_evictedKey))
+restore(c4_evictedKey, c4_value)
+assert(Helper.C.containsKey(c4_evictedKey))
+assert(Helper.mostRecent == c4_evictedKey)
+assert(Helper.size <= Helper.capacity)
+-- symex: 48 ready statement(s), all of t' ran
+-- pc = ("s1" != null) && ("s2" != null) && (Helper.capacity > 0) && ("s3" != null) && ("s1" != null) && (Helper.capacity > 0) && ("s2" != null) && ("s3" != null) && (Helper.capacity > 0) && (Helper.C.containsKey("s2")) && ("s1" != null) && (!Helper.C.containsKey("s1"))
+-- L' = []
+
+== concrete test case ==
+// starting state: the library's real state after Helper.reset()
+// call 0: put
+c0_key := "s1"
+c0_value := "s2"
+assume(c0_key != null)
+assume(c0_value != null)
+assume(Helper.capacity > 0)
+c0_result := put(c0_key, c0_value)
+assert(Helper.C.get(c0_key) == c0_value)
+assert(Helper.mostRecent == c0_key)
+assert(Helper.size <= Helper.capacity)
+// call 1: put
+c1_key := "s3"
+c1_value := "s1"
+assume(c1_key != null)
+assume(c1_value != null)
+assume(Helper.capacity > 0)
+c1_result := put(c1_key, c1_value)
+assert(Helper.C.get(c1_key) == c1_value)
+assert(Helper.mostRecent == c1_key)
+assert(Helper.size <= Helper.capacity)
+// call 2: put
+c2_key := "s2"
+c2_value := "s3"
+assume(c2_key != null)
+assume(c2_value != null)
+assume(Helper.capacity > 0)
+c2_result := put(c2_key, c2_value)
+assert(Helper.C.get(c2_key) == c2_value)
+assert(Helper.mostRecent == c2_key)
+assert(Helper.size <= Helper.capacity)
+// call 3: get
+old3_size := Helper.size
+c3_key := "s2"
+assume(Helper.C.containsKey(c3_key))
+c3_result := get(c3_key)
+assert(c3_result == Helper.C.get(c3_key))
+assert(Helper.mostRecent == c3_key)
+assert(Helper.size == old3_size)
+// call 4: restore
+c4_evictedKey := "s1"
+c4_value := "s3"
+assume(c4_evictedKey != null)
+assume(!Helper.C.containsKey(c4_evictedKey))
+restore(c4_evictedKey, c4_value)
+assert(Helper.C.containsKey(c4_evictedKey))
+assert(Helper.mostRecent == c4_evictedKey)
+assert(Helper.size <= Helper.capacity)

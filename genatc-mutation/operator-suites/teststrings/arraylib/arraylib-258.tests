@@ -1,0 +1,3 @@
+test ArraylibGenerated258 {
+    sequence: get -> indexOf -> get;
+}

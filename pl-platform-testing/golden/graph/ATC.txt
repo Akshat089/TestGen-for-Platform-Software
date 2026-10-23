@@ -1,0 +1,371 @@
+# ../specs/Graph.spec + ../specs/Graph.tests (GraphDryRun)
+
+== ATC t ==
+// starting state: the library's real state after Helper.reset()
+// call 0: addVertex
+old0_edgeCount := Helper.edgeCount
+c0_name := input<String>()
+assume(c0_name != null)
+addVertex(c0_name)
+assert(Helper.V.contains(c0_name))
+assert(Helper.edgeCount == old0_edgeCount)
+// call 1: addVertex
+old1_edgeCount := Helper.edgeCount
+c1_name := input<String>()
+assume(c1_name != null)
+addVertex(c1_name)
+assert(Helper.V.contains(c1_name))
+assert(Helper.edgeCount == old1_edgeCount)
+// call 2: addEdge
+old2_edgeCount := Helper.edgeCount
+c2_from := input<String>()
+c2_to := input<String>()
+assume(Helper.V.contains(c2_from))
+assume(Helper.V.contains(c2_to))
+addEdge(c2_from, c2_to)
+assert(Helper.Adj.get(c2_from).contains(c2_to))
+assert(Helper.Adj.get(c2_to).contains(c2_from))
+assert(Helper.edgeCount == old2_edgeCount + 1)
+// call 3: degree
+old3_edgeCount := Helper.edgeCount
+c3_name := input<String>()
+assume(Helper.V.contains(c3_name))
+c3_result := degree(c3_name)
+assert(c3_result == Helper.Adj.get(c3_name).size())
+assert(c3_result >= 0)
+assert(Helper.edgeCount == old3_edgeCount)
+// call 4: hasEdge
+old4_edgeCount := Helper.edgeCount
+c4_from := input<String>()
+c4_to := input<String>()
+assume(Helper.V.contains(c4_from))
+assume(Helper.V.contains(c4_to))
+c4_result := hasEdge(c4_from, c4_to)
+assert(c4_result == Helper.Adj.get(c4_from).contains(c4_to))
+assert(Helper.edgeCount == old4_edgeCount)
+
+== round 0: t' = rewriteATC(t, []) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: addVertex
+old0_edgeCount := Helper.edgeCount
+c0_name := input<String>()
+assume(c0_name != null)
+addVertex(c0_name)
+assert(Helper.V.contains(c0_name))
+assert(Helper.edgeCount == old0_edgeCount)
+// call 1: addVertex
+old1_edgeCount := Helper.edgeCount
+c1_name := input<String>()
+assume(c1_name != null)
+addVertex(c1_name)
+assert(Helper.V.contains(c1_name))
+assert(Helper.edgeCount == old1_edgeCount)
+// call 2: addEdge
+old2_edgeCount := Helper.edgeCount
+c2_from := input<String>()
+c2_to := input<String>()
+assume(Helper.V.contains(c2_from))
+assume(Helper.V.contains(c2_to))
+addEdge(c2_from, c2_to)
+assert(Helper.Adj.get(c2_from).contains(c2_to))
+assert(Helper.Adj.get(c2_to).contains(c2_from))
+assert(Helper.edgeCount == old2_edgeCount + 1)
+// call 3: degree
+old3_edgeCount := Helper.edgeCount
+c3_name := input<String>()
+assume(Helper.V.contains(c3_name))
+c3_result := degree(c3_name)
+assert(c3_result == Helper.Adj.get(c3_name).size())
+assert(c3_result >= 0)
+assert(Helper.edgeCount == old3_edgeCount)
+// call 4: hasEdge
+old4_edgeCount := Helper.edgeCount
+c4_from := input<String>()
+c4_to := input<String>()
+assume(Helper.V.contains(c4_from))
+assume(Helper.V.contains(c4_to))
+c4_result := hasEdge(c4_from, c4_to)
+assert(c4_result == Helper.Adj.get(c4_from).contains(c4_to))
+assert(Helper.edgeCount == old4_edgeCount)
+-- symex: 5 ready statement(s), stopped at addVertex(c0_name)
+-- pc = (c0_name != null)
+-- L' = ["s1"]
+
+== round 1: t' = rewriteATC(t, ["s1"]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: addVertex
+old0_edgeCount := Helper.edgeCount
+c0_name := "s1"
+assume(c0_name != null)
+addVertex(c0_name)
+assert(Helper.V.contains(c0_name))
+assert(Helper.edgeCount == old0_edgeCount)
+// call 1: addVertex
+old1_edgeCount := Helper.edgeCount
+c1_name := input<String>()
+assume(c1_name != null)
+addVertex(c1_name)
+assert(Helper.V.contains(c1_name))
+assert(Helper.edgeCount == old1_edgeCount)
+// call 2: addEdge
+old2_edgeCount := Helper.edgeCount
+c2_from := input<String>()
+c2_to := input<String>()
+assume(Helper.V.contains(c2_from))
+assume(Helper.V.contains(c2_to))
+addEdge(c2_from, c2_to)
+assert(Helper.Adj.get(c2_from).contains(c2_to))
+assert(Helper.Adj.get(c2_to).contains(c2_from))
+assert(Helper.edgeCount == old2_edgeCount + 1)
+// call 3: degree
+old3_edgeCount := Helper.edgeCount
+c3_name := input<String>()
+assume(Helper.V.contains(c3_name))
+c3_result := degree(c3_name)
+assert(c3_result == Helper.Adj.get(c3_name).size())
+assert(c3_result >= 0)
+assert(Helper.edgeCount == old3_edgeCount)
+// call 4: hasEdge
+old4_edgeCount := Helper.edgeCount
+c4_from := input<String>()
+c4_to := input<String>()
+assume(Helper.V.contains(c4_from))
+assume(Helper.V.contains(c4_to))
+c4_result := hasEdge(c4_from, c4_to)
+assert(c4_result == Helper.Adj.get(c4_from).contains(c4_to))
+assert(Helper.edgeCount == old4_edgeCount)
+-- symex: 12 ready statement(s), stopped at addVertex(c1_name)
+-- pc = ("s1" != null) && (c1_name != null)
+-- L' = ["s2"]
+
+== round 2: t' = rewriteATC(t, ["s2"]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: addVertex
+old0_edgeCount := Helper.edgeCount
+c0_name := "s1"
+assume(c0_name != null)
+addVertex(c0_name)
+assert(Helper.V.contains(c0_name))
+assert(Helper.edgeCount == old0_edgeCount)
+// call 1: addVertex
+old1_edgeCount := Helper.edgeCount
+c1_name := "s2"
+assume(c1_name != null)
+addVertex(c1_name)
+assert(Helper.V.contains(c1_name))
+assert(Helper.edgeCount == old1_edgeCount)
+// call 2: addEdge
+old2_edgeCount := Helper.edgeCount
+c2_from := input<String>()
+c2_to := input<String>()
+assume(Helper.V.contains(c2_from))
+assume(Helper.V.contains(c2_to))
+addEdge(c2_from, c2_to)
+assert(Helper.Adj.get(c2_from).contains(c2_to))
+assert(Helper.Adj.get(c2_to).contains(c2_from))
+assert(Helper.edgeCount == old2_edgeCount + 1)
+// call 3: degree
+old3_edgeCount := Helper.edgeCount
+c3_name := input<String>()
+assume(Helper.V.contains(c3_name))
+c3_result := degree(c3_name)
+assert(c3_result == Helper.Adj.get(c3_name).size())
+assert(c3_result >= 0)
+assert(Helper.edgeCount == old3_edgeCount)
+// call 4: hasEdge
+old4_edgeCount := Helper.edgeCount
+c4_from := input<String>()
+c4_to := input<String>()
+assume(Helper.V.contains(c4_from))
+assume(Helper.V.contains(c4_to))
+c4_result := hasEdge(c4_from, c4_to)
+assert(c4_result == Helper.Adj.get(c4_from).contains(c4_to))
+assert(Helper.edgeCount == old4_edgeCount)
+-- symex: 21 ready statement(s), stopped at addEdge(c2_from, c2_to)
+-- pc = ("s1" != null) && ("s2" != null) && (Helper.V.contains(c2_from)) && (Helper.V.contains(c2_to))
+-- L' = ["s1", "s1"]
+
+== round 3: t' = rewriteATC(t, ["s1", "s1"]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: addVertex
+old0_edgeCount := Helper.edgeCount
+c0_name := "s1"
+assume(c0_name != null)
+addVertex(c0_name)
+assert(Helper.V.contains(c0_name))
+assert(Helper.edgeCount == old0_edgeCount)
+// call 1: addVertex
+old1_edgeCount := Helper.edgeCount
+c1_name := "s2"
+assume(c1_name != null)
+addVertex(c1_name)
+assert(Helper.V.contains(c1_name))
+assert(Helper.edgeCount == old1_edgeCount)
+// call 2: addEdge
+old2_edgeCount := Helper.edgeCount
+c2_from := "s1"
+c2_to := "s1"
+assume(Helper.V.contains(c2_from))
+assume(Helper.V.contains(c2_to))
+addEdge(c2_from, c2_to)
+assert(Helper.Adj.get(c2_from).contains(c2_to))
+assert(Helper.Adj.get(c2_to).contains(c2_from))
+assert(Helper.edgeCount == old2_edgeCount + 1)
+// call 3: degree
+old3_edgeCount := Helper.edgeCount
+c3_name := input<String>()
+assume(Helper.V.contains(c3_name))
+c3_result := degree(c3_name)
+assert(c3_result == Helper.Adj.get(c3_name).size())
+assert(c3_result >= 0)
+assert(Helper.edgeCount == old3_edgeCount)
+// call 4: hasEdge
+old4_edgeCount := Helper.edgeCount
+c4_from := input<String>()
+c4_to := input<String>()
+assume(Helper.V.contains(c4_from))
+assume(Helper.V.contains(c4_to))
+c4_result := hasEdge(c4_from, c4_to)
+assert(c4_result == Helper.Adj.get(c4_from).contains(c4_to))
+assert(Helper.edgeCount == old4_edgeCount)
+-- symex: 29 ready statement(s), stopped at c3_result := degree(c3_name)
+-- pc = ("s1" != null) && ("s2" != null) && (Helper.V.contains("s1")) && (Helper.V.contains("s1")) && (Helper.V.contains(c3_name))
+-- L' = ["s2"]
+
+== round 4: t' = rewriteATC(t, ["s2"]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: addVertex
+old0_edgeCount := Helper.edgeCount
+c0_name := "s1"
+assume(c0_name != null)
+addVertex(c0_name)
+assert(Helper.V.contains(c0_name))
+assert(Helper.edgeCount == old0_edgeCount)
+// call 1: addVertex
+old1_edgeCount := Helper.edgeCount
+c1_name := "s2"
+assume(c1_name != null)
+addVertex(c1_name)
+assert(Helper.V.contains(c1_name))
+assert(Helper.edgeCount == old1_edgeCount)
+// call 2: addEdge
+old2_edgeCount := Helper.edgeCount
+c2_from := "s1"
+c2_to := "s1"
+assume(Helper.V.contains(c2_from))
+assume(Helper.V.contains(c2_to))
+addEdge(c2_from, c2_to)
+assert(Helper.Adj.get(c2_from).contains(c2_to))
+assert(Helper.Adj.get(c2_to).contains(c2_from))
+assert(Helper.edgeCount == old2_edgeCount + 1)
+// call 3: degree
+old3_edgeCount := Helper.edgeCount
+c3_name := "s2"
+assume(Helper.V.contains(c3_name))
+c3_result := degree(c3_name)
+assert(c3_result == Helper.Adj.get(c3_name).size())
+assert(c3_result >= 0)
+assert(Helper.edgeCount == old3_edgeCount)
+// call 4: hasEdge
+old4_edgeCount := Helper.edgeCount
+c4_from := input<String>()
+c4_to := input<String>()
+assume(Helper.V.contains(c4_from))
+assume(Helper.V.contains(c4_to))
+c4_result := hasEdge(c4_from, c4_to)
+assert(c4_result == Helper.Adj.get(c4_from).contains(c4_to))
+assert(Helper.edgeCount == old4_edgeCount)
+-- symex: 39 ready statement(s), stopped at c4_result := hasEdge(c4_from, c4_to)
+-- pc = ("s1" != null) && ("s2" != null) && (Helper.V.contains("s1")) && (Helper.V.contains("s1")) && (Helper.V.contains("s2")) && (Helper.V.contains(c4_from)) && (Helper.V.contains(c4_to))
+-- L' = ["s1", "s1"]
+
+== round 5: t' = rewriteATC(t, ["s1", "s1"]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: addVertex
+old0_edgeCount := Helper.edgeCount
+c0_name := "s1"
+assume(c0_name != null)
+addVertex(c0_name)
+assert(Helper.V.contains(c0_name))
+assert(Helper.edgeCount == old0_edgeCount)
+// call 1: addVertex
+old1_edgeCount := Helper.edgeCount
+c1_name := "s2"
+assume(c1_name != null)
+addVertex(c1_name)
+assert(Helper.V.contains(c1_name))
+assert(Helper.edgeCount == old1_edgeCount)
+// call 2: addEdge
+old2_edgeCount := Helper.edgeCount
+c2_from := "s1"
+c2_to := "s1"
+assume(Helper.V.contains(c2_from))
+assume(Helper.V.contains(c2_to))
+addEdge(c2_from, c2_to)
+assert(Helper.Adj.get(c2_from).contains(c2_to))
+assert(Helper.Adj.get(c2_to).contains(c2_from))
+assert(Helper.edgeCount == old2_edgeCount + 1)
+// call 3: degree
+old3_edgeCount := Helper.edgeCount
+c3_name := "s2"
+assume(Helper.V.contains(c3_name))
+c3_result := degree(c3_name)
+assert(c3_result == Helper.Adj.get(c3_name).size())
+assert(c3_result >= 0)
+assert(Helper.edgeCount == old3_edgeCount)
+// call 4: hasEdge
+old4_edgeCount := Helper.edgeCount
+c4_from := "s1"
+c4_to := "s1"
+assume(Helper.V.contains(c4_from))
+assume(Helper.V.contains(c4_to))
+c4_result := hasEdge(c4_from, c4_to)
+assert(c4_result == Helper.Adj.get(c4_from).contains(c4_to))
+assert(Helper.edgeCount == old4_edgeCount)
+-- symex: 42 ready statement(s), all of t' ran
+-- pc = ("s1" != null) && ("s2" != null) && (Helper.V.contains("s1")) && (Helper.V.contains("s1")) && (Helper.V.contains("s2")) && (Helper.V.contains("s1")) && (Helper.V.contains("s1"))
+-- L' = []
+
+== concrete test case ==
+// starting state: the library's real state after Helper.reset()
+// call 0: addVertex
+old0_edgeCount := Helper.edgeCount
+c0_name := "s1"
+assume(c0_name != null)
+addVertex(c0_name)
+assert(Helper.V.contains(c0_name))
+assert(Helper.edgeCount == old0_edgeCount)
+// call 1: addVertex
+old1_edgeCount := Helper.edgeCount
+c1_name := "s2"
+assume(c1_name != null)
+addVertex(c1_name)
+assert(Helper.V.contains(c1_name))
+assert(Helper.edgeCount == old1_edgeCount)
+// call 2: addEdge
+old2_edgeCount := Helper.edgeCount
+c2_from := "s1"
+c2_to := "s1"
+assume(Helper.V.contains(c2_from))
+assume(Helper.V.contains(c2_to))
+addEdge(c2_from, c2_to)
+assert(Helper.Adj.get(c2_from).contains(c2_to))
+assert(Helper.Adj.get(c2_to).contains(c2_from))
+assert(Helper.edgeCount == old2_edgeCount + 1)
+// call 3: degree
+old3_edgeCount := Helper.edgeCount
+c3_name := "s2"
+assume(Helper.V.contains(c3_name))
+c3_result := degree(c3_name)
+assert(c3_result == Helper.Adj.get(c3_name).size())
+assert(c3_result >= 0)
+assert(Helper.edgeCount == old3_edgeCount)
+// call 4: hasEdge
+old4_edgeCount := Helper.edgeCount
+c4_from := "s1"
+c4_to := "s1"
+assume(Helper.V.contains(c4_from))
+assume(Helper.V.contains(c4_to))
+c4_result := hasEdge(c4_from, c4_to)
+assert(c4_result == Helper.Adj.get(c4_from).contains(c4_to))
+assert(Helper.edgeCount == old4_edgeCount)

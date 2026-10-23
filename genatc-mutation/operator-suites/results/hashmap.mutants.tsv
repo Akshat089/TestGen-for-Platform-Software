@@ -1,0 +1,35 @@
+# generated mutants — hashmap (phases 2+3 13s, library total 1674s)
+# id	status	kill_kind	operator	method	file	killed-by-family	family_kill_kind	detail
+HASHMAP_GEN_SDL_1	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/hashmap/HASHMAP_GEN_SDL_1/Helper.java:32: error: cannot find symbol
+HASHMAP_GEN_SEI_2	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/hashmap/HASHMAP_GEN_SEI_2/Helper.java:20: error: <identifier> expected
+HASHMAP_GEN_CRP_3	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+HASHMAP_GEN_CRP_4	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+HASHMAP_GEN_ARP_5	INVALID	-	argument-replacement	put	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/hashmap/HASHMAP_GEN_ARP_5/Helper.java:32: error: incompatible types: Integer cannot be converted to String
+HASHMAP_GEN_MCR_6	SURVIVED	-	method-call-replacement	put	Helper.java	GeneratedATCsTest_hashmap_014	POST	the test passes
+HASHMAP_GEN_AOI_7	KILLED	POST	arithmetic-operator-insertion	put	Helper.java	-	-	killed by POST: POST remove: size == \old(size) - 1
+HASHMAP_GEN_AOI_8	KILLED	POST	arithmetic-operator-insertion	put	Helper.java	-	-	killed by POST: POST remove: size == \old(size) - 1
+HASHMAP_GEN_UOI_9	KILLED	POST	unary-operator-insertion	put	Helper.java	-	-	killed by POST: POST remove: size == \old(size) - 1
+HASHMAP_GEN_ABS_10	KILLED	POST	absolute-value-insertion	put	Helper.java	-	-	killed by POST: POST remove: size == \old(size) - 1
+HASHMAP_GEN_SDL_11	KILLED	POST	statement-deletion	put	Helper.java	-	-	killed by POST: POST remove: size == \old(size) - 1
+HASHMAP_GEN_MCR_12	KILLED	POST	method-call-replacement	put	Helper.java	-	-	killed by POST: POST remove: size == \old(size) - 1
+HASHMAP_GEN_UOI_13	KILLED	EXCEPTION	unary-operator-insertion	put	Helper.java	-	-	killed by EXCEPTION: java.lang.NullPointerException
+HASHMAP_GEN_ABS_14	KILLED	EXCEPTION	absolute-value-insertion	put	Helper.java	-	-	killed by EXCEPTION: java.lang.NullPointerException
+HASHMAP_GEN_RVR_15	SURVIVED	-	return-value-replacement	put	Helper.java	-	-	the test passes
+HASHMAP_GEN_RVR_16	SURVIVED	-	return-value-replacement	put	Helper.java	-	-	the test passes
+HASHMAP_GEN_RVR_17	SURVIVED	-	return-value-replacement	put	Helper.java	-	-	the test passes
+HASHMAP_GEN_SEI_18	KILLED	POST	side-effect-insertion	put	Helper.java	-	-	killed by POST: POST remove: size == \old(size) - 1
+HASHMAP_GEN_UOI_19	KILLED	POST	unary-operator-insertion	getOldValue	Helper.java	-	-	killed by POST: POST getOldValue: curVal == M.get(key)
+HASHMAP_GEN_ABS_20	KILLED	POST	absolute-value-insertion	getOldValue	Helper.java	-	-	killed by POST: POST getOldValue: curVal == M.get(key)
+HASHMAP_GEN_RVR_21	KILLED	POST	return-value-replacement	getOldValue	Helper.java	-	-	killed by POST: POST getOldValue: curVal == M.get(key)
+HASHMAP_GEN_RVR_22	KILLED	POST	return-value-replacement	getOldValue	Helper.java	-	-	killed by POST: POST getOldValue: curVal == M.get(key)
+HASHMAP_GEN_RVR_23	KILLED	POST	return-value-replacement	getOldValue	Helper.java	-	-	killed by POST: POST getOldValue: curVal == M.get(key)
+HASHMAP_GEN_ARP_24	KILLED	POST	argument-replacement	getOldValue	Helper.java	-	-	killed by POST: POST getOldValue: curVal == M.get(key)
+HASHMAP_GEN_ARP_25	INVALID	-	argument-replacement	getOldValue	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/hashmap/HASHMAP_GEN_ARP_25/Helper.java:39: error: bad operand types for binary operator '-'
+HASHMAP_GEN_MCR_26	KILLED	POST	method-call-replacement	getOldValue	Helper.java	-	-	killed by POST: POST getOldValue: curVal == M.get(key)
+HASHMAP_GEN_SEI_27	KILLED	POST	side-effect-insertion	getOldValue	Helper.java	-	-	killed by POST: POST getOldValue: size == \old(size)
+HASHMAP_GEN_SDL_28	KILLED	POST	statement-deletion	remove	Helper.java	-	-	killed by POST: POST remove: !M.containsKey(key)
+HASHMAP_GEN_STR_29	SURVIVED	-	statement-replacement	remove	Helper.java	-	-	the test passes
+HASHMAP_GEN_ARP_30	KILLED	POST	argument-replacement	remove	Helper.java	-	-	killed by POST: POST remove: !M.containsKey(key)
+HASHMAP_GEN_ARP_31	INVALID	-	argument-replacement	remove	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/hashmap/HASHMAP_GEN_ARP_31/Helper.java:44: error: bad operand types for binary operator '-'
+HASHMAP_GEN_MCR_32	KILLED	POST	method-call-replacement	remove	Helper.java	-	-	killed by POST: POST remove: !M.containsKey(key)
+HASHMAP_GEN_SEI_33	SURVIVED	-	side-effect-insertion	remove	Helper.java	-	-	the test passes

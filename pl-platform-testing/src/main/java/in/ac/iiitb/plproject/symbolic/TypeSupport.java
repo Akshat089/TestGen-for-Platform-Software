@@ -178,6 +178,40 @@ public final class TypeSupport {
         return raw;
     }
 
+    /** The boxed form of a primitive ({@code int -> Integer}); the type itself otherwise. */
+    public static String boxed(String type) {
+        String t = trim(type);
+        String b = PRIMITIVE_TO_BOXED.get(t);
+        return b != null ? b : t;
+    }
+
+    /** A solver value ({@code "3"}, {@code "1"} for true, {@code "2.5"}) as a Java literal of {@code type}. */
+    public static String solverLiteral(String type, String rawSolverValue) {
+        String v = rawSolverValue.trim();
+        switch (trim(type)) {
+            case "boolean": case "Boolean":
+                if (v.equals("1")) return "true";
+                if (v.equals("0")) return "false";
+                return String.valueOf(Boolean.parseBoolean(v));
+            case "long": case "Long":
+                return parseLongLike(v) + "L";
+            case "char": case "Character":
+                return "'" + (char) parseLongLike(v) + "'";
+            case "double": case "Double":
+                return v.contains(".") ? v : v + ".0";
+            default:
+                return String.valueOf(parseLongLike(v));
+        }
+    }
+
+    private static long parseLongLike(String v) {
+        try {
+            return Long.parseLong(v);
+        } catch (NumberFormatException e) {
+            return (long) Double.parseDouble(v);
+        }
+    }
+
     /** The array element type to declare a shared literal pool with, for {@code type}. */
     public static String poolArrayElementType(String type) {
         return "String".equals(trim(type)) ? "String" : trim(type);

@@ -24,11 +24,11 @@ import java.util.concurrent.TimeUnit;
 /**
  * One library's generated tests, each generated ONCE and compiled ONCE.
  *
- * <p>SPF only ever sees the contract, so a test depends only on (spec,
- * sequence): it is generated here, compiled against the correct library into
- * {@link #testClasses()}, and that same compiled class is then run against
- * the correct library and every mutant. Nothing is regenerated per mutant
- * and SPF never runs per mutant.
+ * <p>genCTC runs the ready calls on the library, so a test is generated here
+ * on the CORRECT library, compiled against it into {@link #testClasses()},
+ * and that same compiled class is then run, unchanged, against the correct
+ * library and every mutant. Nothing is regenerated per mutant and SPF never
+ * runs per mutant.
  *
  * <p>Every cached test gets its own class name in the generated package, so
  * all of a library's tests sit in one directory and one child JVM can run
@@ -47,10 +47,13 @@ public class TestCache {
         /** Fully-qualified class name, or null when no test was produced. */
         public final String className;
         public final long spfMillis;
-        public final List<String> checkOnly;
+        /** genCTC rounds that turned inputs concrete. */
+        public final int rounds;
+        /** The value each input command got: {@code c0_elem -> "s1"}. */
+        public final Map<String, String> inputs;
 
         CachedTest(String name, String testsPath, String sequence, String status, String detail,
-                   String className, long spfMillis, List<String> checkOnly) {
+                   String className, long spfMillis, int rounds, Map<String, String> inputs) {
             this.name = name;
             this.testsPath = testsPath;
             this.sequence = sequence;
@@ -58,7 +61,8 @@ public class TestCache {
             this.detail = detail;
             this.className = className;
             this.spfMillis = spfMillis;
-            this.checkOnly = checkOnly;
+            this.rounds = rounds;
+            this.inputs = inputs;
         }
 
         public boolean hasTest() { return className != null; }
@@ -103,21 +107,25 @@ public class TestCache {
         GenatcMain.LibraryOutcome outcome = GenatcMain.generate(variant,
                 new File(variant.outputDir), simpleName, false);
         String sequence = outcome.sequences.isEmpty() ? "?" : outcome.sequences.get(0).calls;
-        List<String> checkOnly = new ArrayList<String>();
-        for (GenatcMain.SequenceOutcome s : outcome.sequences) checkOnly.addAll(s.checkOnly);
+        int rounds = 0;
+        Map<String, String> inputs = new LinkedHashMap<String, String>();
+        for (GenatcMain.SequenceOutcome s : outcome.sequences) {
+            rounds += s.rounds;
+            inputs.putAll(s.inputs);
+        }
         if (outcome.junitSource == null) {
             return new CachedTest(name, testsPath, sequence, outcome.status, outcome.detail, null,
-                    outcome.spfMillis, checkOnly);
+                    outcome.spfMillis, rounds, inputs);
         }
         File source = new File(GenatcMain.generatedDir(new File(variant.outputDir)), simpleName + ".java");
         String error = javac(testClasses(), libraryClasses().toString() + File.pathSeparator + junitClasspath(),
                 java.util.Collections.singletonList(source.getAbsolutePath()));
         if (error != null) {
             return new CachedTest(name, testsPath, sequence, "TEST_COMPILE_ERROR", error, null,
-                    outcome.spfMillis, checkOnly);
+                    outcome.spfMillis, rounds, inputs);
         }
         return new CachedTest(name, testsPath, sequence, "GENERATED", "",
-                TestPlan.GENERATED_PACKAGE + "." + simpleName, outcome.spfMillis, checkOnly);
+                TestPlan.GENERATED_PACKAGE + "." + simpleName, outcome.spfMillis, rounds, inputs);
     }
 
     /** Runs cached tests against the correct library, in one JVM. */

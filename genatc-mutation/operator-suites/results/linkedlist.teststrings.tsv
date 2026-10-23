@@ -1,0 +1,262 @@
+# generated test strings — linkedlist (family size 260, phase 1 1546s)
+# name	status	spf_ms	rounds	sequence	inputs	detail
+linkedlist-001	INCORRECT_SEQUENCE	3872	1	addFirst -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 2 (indexOf): size > 0
+linkedlist-002	INCORRECT_SEQUENCE	1756	0	removeFirst -> addLast -> removeFirst -> indexOf -> addLast	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-003	PASSED	13161	4	addFirst -> addLast -> addLast -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c4_value=13}	
+linkedlist-004	INCORRECT_SEQUENCE	1997	0	removeFirst -> addFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-005	INCORRECT_SEQUENCE	6444	2	addFirst -> addLast -> removeFirst -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 4 (indexOf): size > 0
+linkedlist-006	INCORRECT_SEQUENCE	1719	0	indexOf -> indexOf -> addLast -> addFirst -> addFirst -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-007	PASSED	5245	2	addFirst -> addLast	{c0_value=7, c1_value=9}	
+linkedlist-008	PASSED	7193	3	addFirst -> indexOf -> addLast -> removeFirst	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-009	PASSED	13655	5	addFirst -> addLast -> addLast -> removeFirst -> indexOf -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c4_value=13, c5_value=15}	
+linkedlist-010	INCORRECT_SEQUENCE	5908	2	addFirst -> indexOf -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 3 (indexOf): size > 0
+linkedlist-011	PASSED	8414	4	addFirst -> addFirst -> addLast -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c4_value=13}	
+linkedlist-012	INCORRECT_SEQUENCE	1674	0	removeFirst -> indexOf -> addFirst -> addLast	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-013	PASSED	7085	3	addFirst -> addLast -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c3_value=11}	
+linkedlist-014	PASSED	9595	3	addLast -> addFirst -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c3_value=11}	
+linkedlist-015	PASSED	8672	4	addFirst -> addLast -> removeFirst -> addLast -> indexOf	{c0_value=7, c1_value=9, c3_value=11, c4_value=13}	
+linkedlist-016	INCORRECT_SEQUENCE	3134	1	addLast -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 2 (indexOf): size > 0
+linkedlist-017	PASSED	6613	3	addLast -> addLast -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c3_value=11}	
+linkedlist-018	INCORRECT_SEQUENCE	1695	0	indexOf -> addLast -> addFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-019	PASSED	9625	3	addFirst -> addLast -> indexOf	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-020	INCORRECT_SEQUENCE	1485	0	removeFirst -> removeFirst -> addFirst -> addLast -> removeFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-021	PASSED	6224	3	addFirst -> removeFirst -> addLast -> indexOf	{c0_value=7, c2_value=9, c3_value=11}	
+linkedlist-022	INCORRECT_SEQUENCE	1802	0	removeFirst -> addLast -> removeFirst -> addLast -> addFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-023	INCORRECT_SEQUENCE	1765	0	indexOf -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-024	PASSED	9948	5	addFirst -> removeFirst -> addLast -> indexOf -> addFirst -> addLast	{c0_value=7, c2_value=9, c3_value=11, c4_value=13, c5_value=15}	
+linkedlist-025	INCORRECT_SEQUENCE	6640	3	addFirst -> addLast -> indexOf -> removeFirst -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 5 (indexOf): size > 0
+linkedlist-026	PASSED	13264	5	addFirst -> addFirst -> addFirst -> addLast -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c5_value=15}	
+linkedlist-027	INCORRECT_SEQUENCE	1676	0	indexOf -> indexOf -> addLast -> removeFirst -> addFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-028	INCORRECT_SEQUENCE	3344	1	addFirst -> removeFirst -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 2 (removeFirst): size > 0
+linkedlist-029	PASSED	5454	2	addLast -> addLast	{c0_value=7, c1_value=9}	
+linkedlist-030	INCORRECT_SEQUENCE	1861	0	removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-031	INCORRECT_SEQUENCE	2067	0	indexOf -> indexOf -> addFirst -> addLast -> addLast -> addLast -> addLast	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-032	INCORRECT_SEQUENCE	1602	0	indexOf -> addFirst -> addLast -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-033	PASSED	13354	5	addFirst -> addLast -> addLast -> addFirst -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c5_value=15}	
+linkedlist-034	INCORRECT_SEQUENCE	1495	0	indexOf -> removeFirst -> addLast -> indexOf -> indexOf -> indexOf	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-035	INCORRECT_SEQUENCE	6870	3	addFirst -> addLast -> removeFirst -> removeFirst -> addFirst -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 6 (indexOf): size > 0
+linkedlist-036	INCORRECT_SEQUENCE	5112	2	addFirst -> addLast -> removeFirst -> removeFirst -> indexOf -> addFirst	-	INCORRECT SEQUENCE: call 4 (indexOf): size > 0
+linkedlist-037	INCORRECT_SEQUENCE	1685	0	removeFirst -> indexOf -> removeFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-038	PASSED	12140	6	addLast -> addFirst -> addFirst -> addLast -> addFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c4_value=15, c5_value=17}	
+linkedlist-039	PASSED	12612	4	addLast -> addFirst -> removeFirst -> addLast -> indexOf	{c0_value=7, c1_value=9, c3_value=11, c4_value=13}	
+linkedlist-040	PASSED	5403	1	addLast -> removeFirst	{c0_value=7}	
+linkedlist-041	INCORRECT_SEQUENCE	2789	0	removeFirst -> indexOf -> indexOf -> addFirst -> indexOf -> indexOf	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-042	PASSED	13032	4	addFirst -> addFirst -> addLast -> addLast -> removeFirst	{c0_value=7, c1_value=9, c2_value=11, c3_value=13}	
+linkedlist-043	PASSED	17044	6	addFirst -> indexOf -> indexOf -> addLast -> indexOf -> addFirst	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c4_value=15, c5_value=17}	
+linkedlist-044	PASSED	7474	3	addFirst -> indexOf -> removeFirst -> addLast	{c0_value=7, c1_value=9, c3_value=11}	
+linkedlist-045	INCORRECT_SEQUENCE	1913	0	removeFirst -> addLast -> addFirst -> indexOf -> indexOf -> indexOf	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-046	PASSED	9143	3	addLast -> addLast -> addFirst	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-047	PASSED	19086	6	addLast -> addLast -> addFirst -> indexOf -> addFirst -> addLast	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c4_value=15, c5_value=17}	
+linkedlist-048	PASSED	7146	3	addFirst -> removeFirst -> addLast -> indexOf -> removeFirst	{c0_value=7, c2_value=9, c3_value=11}	
+linkedlist-049	PASSED	5049	2	addLast -> addFirst	{c0_value=7, c1_value=9}	
+linkedlist-050	PASSED	3935	1	addFirst -> removeFirst	{c0_value=7}	
+linkedlist-051	PASSED	11068	4	addFirst -> addLast -> addFirst -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c4_value=13}	
+linkedlist-052	PASSED	6905	3	addFirst -> addFirst -> indexOf -> removeFirst	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-053	PASSED	9158	4	addFirst -> addFirst -> removeFirst -> addFirst -> addFirst	{c0_value=7, c1_value=9, c3_value=11, c4_value=13}	
+linkedlist-054	PASSED	9959	4	addFirst -> addLast -> removeFirst -> removeFirst -> addLast -> indexOf	{c0_value=7, c1_value=9, c4_value=11, c5_value=13}	
+linkedlist-055	PASSED	11006	4	addFirst -> indexOf -> addFirst -> addLast	{c0_value=7, c1_value=9, c2_value=11, c3_value=13}	
+linkedlist-056	PASSED	9385	5	addFirst -> addFirst -> indexOf -> addFirst -> addLast	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c4_value=15}	
+linkedlist-057	PASSED	11479	6	addFirst -> indexOf -> removeFirst -> addFirst -> addLast -> indexOf -> indexOf	{c0_value=7, c1_value=9, c3_value=11, c4_value=13, c5_value=15, c6_value=17}	
+linkedlist-058	PASSED	5054	2	addLast -> indexOf -> removeFirst	{c0_value=7, c1_value=9}	
+linkedlist-059	PASSED	7823	2	addFirst -> addLast -> removeFirst	{c0_value=7, c1_value=9}	
+linkedlist-060	PASSED	9603	5	addFirst -> addLast -> removeFirst -> addFirst -> addFirst -> indexOf	{c0_value=7, c1_value=9, c3_value=11, c4_value=13, c5_value=15}	
+linkedlist-061	PASSED	8099	4	addLast -> addLast -> addFirst -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c4_value=13}	
+linkedlist-062	INCORRECT_SEQUENCE	1450	0	indexOf -> addLast -> addFirst -> removeFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-063	INCORRECT_SEQUENCE	1751	0	indexOf -> addLast -> addFirst -> indexOf -> removeFirst -> removeFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-064	INCORRECT_SEQUENCE	1383	0	removeFirst -> removeFirst -> removeFirst -> indexOf -> removeFirst -> removeFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-065	PASSED	10696	4	addLast -> addFirst -> addLast -> removeFirst -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c5_value=13}	
+linkedlist-066	PASSED	9674	5	addFirst -> removeFirst -> addLast -> addLast -> addLast -> indexOf	{c0_value=7, c2_value=9, c3_value=11, c4_value=13, c5_value=15}	
+linkedlist-067	PASSED	4577	2	addLast -> indexOf	{c0_value=7, c1_value=9}	
+linkedlist-068	INCORRECT_SEQUENCE	1550	0	indexOf -> addLast -> addFirst -> addFirst -> removeFirst -> addFirst -> addFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-069	INCORRECT_SEQUENCE	1502	0	removeFirst -> indexOf -> addFirst -> addLast -> addFirst -> removeFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-070	PASSED	9575	5	addFirst -> addLast -> indexOf -> addLast -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c5_value=15}	
+linkedlist-071	PASSED	9276	3	addLast -> indexOf -> addFirst	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-072	PASSED	8088	4	addFirst -> addLast -> removeFirst -> indexOf -> indexOf	{c0_value=7, c1_value=9, c3_value=11, c4_value=13}	
+linkedlist-073	INCORRECT_SEQUENCE	1569	0	removeFirst -> indexOf -> addLast -> removeFirst -> indexOf -> addFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-074	PASSED	9260	5	addLast -> addFirst -> removeFirst -> indexOf -> addLast -> addFirst	{c0_value=7, c1_value=9, c3_value=11, c4_value=13, c5_value=15}	
+linkedlist-075	INCORRECT_SEQUENCE	1467	0	indexOf -> addLast -> removeFirst -> indexOf -> addFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-076	INCORRECT_SEQUENCE	1555	0	indexOf -> addLast	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-077	INCORRECT_SEQUENCE	1465	0	indexOf -> addFirst -> addLast -> removeFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-078	PASSED	9183	3	addFirst -> addFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-079	PASSED	9610	5	addFirst -> addFirst -> removeFirst -> addLast -> removeFirst -> addFirst -> indexOf	{c0_value=7, c1_value=9, c3_value=11, c5_value=13, c6_value=15}	
+linkedlist-080	PASSED	7893	4	addFirst -> removeFirst -> addLast -> addFirst -> indexOf	{c0_value=7, c2_value=9, c3_value=11, c4_value=13}	
+linkedlist-081	INCORRECT_SEQUENCE	1561	0	indexOf -> addLast -> removeFirst -> addFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-082	PASSED	10094	5	addFirst -> addFirst -> addLast -> addLast -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c5_value=15}	
+linkedlist-083	INCORRECT_SEQUENCE	8047	2	addLast -> indexOf -> removeFirst -> removeFirst -> removeFirst -> indexOf -> removeFirst	-	INCORRECT SEQUENCE: call 3 (removeFirst): size > 0
+linkedlist-084	INCORRECT_SEQUENCE	1687	0	removeFirst -> addLast -> indexOf	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-085	PASSED	11813	6	addFirst -> addFirst -> addFirst -> addLast -> addLast -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c4_value=15, c6_value=17}	
+linkedlist-086	PASSED	4737	2	addFirst -> indexOf	{c0_value=7, c1_value=9}	
+linkedlist-087	PASSED	4815	2	addFirst -> addLast -> removeFirst -> removeFirst	{c0_value=7, c1_value=9}	
+linkedlist-088	INCORRECT_SEQUENCE	1589	0	indexOf -> addLast -> addFirst -> removeFirst -> addLast -> addLast -> removeFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-089	INCORRECT_SEQUENCE	1629	0	removeFirst -> indexOf -> addFirst -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-090	PASSED	11497	4	addFirst -> removeFirst -> addLast -> addLast -> removeFirst -> addLast	{c0_value=7, c2_value=9, c3_value=11, c5_value=13}	
+linkedlist-091	PASSED	8137	4	addFirst -> addLast -> indexOf -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c4_value=13}	
+linkedlist-092	INCORRECT_SEQUENCE	1559	0	indexOf -> removeFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-093	INCORRECT_SEQUENCE	1687	0	indexOf -> addLast -> removeFirst -> addFirst -> addFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-094	PASSED	13264	7	addFirst -> addLast -> indexOf -> indexOf -> addFirst -> addFirst -> addLast	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c4_value=15, c5_value=17, c6_value=19}	
+linkedlist-095	PASSED	10765	4	addFirst -> indexOf -> addLast -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c4_value=13}	
+linkedlist-096	INCORRECT_SEQUENCE	1513	0	indexOf -> indexOf -> removeFirst -> indexOf -> addFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-097	PASSED	10059	5	addFirst -> indexOf -> addLast -> addLast -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c5_value=15}	
+linkedlist-098	INCORRECT_SEQUENCE	3032	1	addFirst -> removeFirst -> indexOf -> addLast -> removeFirst	-	INCORRECT SEQUENCE: call 2 (indexOf): size > 0
+linkedlist-099	PASSED	9278	5	addLast -> addFirst -> addFirst -> addLast -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c5_value=15}	
+linkedlist-100	PASSED	9011	3	addFirst -> addFirst -> removeFirst -> addLast	{c0_value=7, c1_value=9, c3_value=11}	
+linkedlist-101	PASSED	8361	4	addFirst -> indexOf -> indexOf -> removeFirst -> addLast	{c0_value=7, c1_value=9, c2_value=11, c4_value=13}	
+linkedlist-102	INCORRECT_SEQUENCE	1611	0	removeFirst -> addFirst -> addLast -> removeFirst -> indexOf -> removeFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-103	INCORRECT_SEQUENCE	1395	0	removeFirst -> removeFirst -> addLast -> indexOf -> addFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-104	INCORRECT_SEQUENCE	1523	0	indexOf -> addLast -> removeFirst -> removeFirst -> addFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-105	INCORRECT_SEQUENCE	1446	0	removeFirst -> removeFirst -> removeFirst -> addLast	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-106	PASSED	8111	4	addFirst -> addLast -> indexOf -> removeFirst -> addLast	{c0_value=7, c1_value=9, c2_value=11, c4_value=13}	
+linkedlist-107	INCORRECT_SEQUENCE	1399	0	removeFirst -> addLast -> addFirst -> indexOf	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-108	INCORRECT_SEQUENCE	1372	0	indexOf -> addLast -> addFirst -> indexOf	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-109	INCORRECT_SEQUENCE	1626	0	indexOf -> removeFirst -> addFirst -> removeFirst -> addLast	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-110	INCORRECT_SEQUENCE	4460	0	removeFirst -> addFirst -> addLast -> indexOf -> removeFirst -> removeFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-111	PASSED	5906	3	addFirst -> addLast -> indexOf -> removeFirst	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-112	PASSED	7838	4	addFirst -> addFirst -> addLast -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13}	
+linkedlist-113	INCORRECT_SEQUENCE	1558	0	removeFirst -> addLast	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-114	INCORRECT_SEQUENCE	1411	0	indexOf -> addFirst -> removeFirst -> addFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-115	INCORRECT_SEQUENCE	1587	0	removeFirst -> addLast -> indexOf -> addFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-116	INCORRECT_SEQUENCE	1482	0	indexOf -> addLast -> removeFirst -> addLast -> indexOf	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-117	INCORRECT_SEQUENCE	1376	0	indexOf -> addLast -> addLast	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-118	INCORRECT_SEQUENCE	1415	0	removeFirst -> addFirst -> addLast -> indexOf -> indexOf	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-119	INCORRECT_SEQUENCE	1383	0	removeFirst -> indexOf -> indexOf -> addLast -> indexOf -> removeFirst -> addFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-120	INCORRECT_SEQUENCE	2854	1	addFirst -> removeFirst -> removeFirst -> addFirst -> addLast -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 2 (removeFirst): size > 0
+linkedlist-121	INCORRECT_SEQUENCE	1476	0	indexOf -> addLast -> indexOf -> removeFirst -> addLast	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-122	PASSED	10404	4	addFirst -> addLast -> addLast -> addLast -> removeFirst	{c0_value=7, c1_value=9, c2_value=11, c3_value=13}	
+linkedlist-123	PASSED	7975	4	addFirst -> addFirst -> addLast -> addFirst	{c0_value=7, c1_value=9, c2_value=11, c3_value=13}	
+linkedlist-124	PASSED	12009	5	addFirst -> addFirst -> addLast -> removeFirst -> indexOf -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c4_value=13, c5_value=15}	
+linkedlist-125	INCORRECT_SEQUENCE	1867	0	removeFirst -> removeFirst -> addFirst -> indexOf -> addLast -> removeFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-126	INCORRECT_SEQUENCE	5193	2	addFirst -> addLast -> removeFirst -> removeFirst -> indexOf -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 4 (indexOf): size > 0
+linkedlist-127	INCORRECT_SEQUENCE	4368	0	removeFirst -> addFirst -> indexOf	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-128	INCORRECT_SEQUENCE	1324	0	indexOf -> addLast -> addLast -> indexOf -> indexOf -> addFirst -> removeFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-129	INCORRECT_SEQUENCE	3134	1	addLast -> removeFirst -> indexOf -> indexOf	-	INCORRECT SEQUENCE: call 2 (indexOf): size > 0
+linkedlist-130	PASSED	7656	4	addFirst -> indexOf -> addLast -> removeFirst -> addLast	{c0_value=7, c1_value=9, c2_value=11, c4_value=13}	
+linkedlist-131	INCORRECT_SEQUENCE	1425	0	indexOf -> addFirst -> addLast -> removeFirst -> indexOf -> indexOf	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-132	PASSED	9774	5	addFirst -> addLast -> addLast -> addLast -> removeFirst -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c6_value=15}	
+linkedlist-133	INCORRECT_SEQUENCE	2234	0	indexOf -> addLast -> indexOf -> indexOf -> removeFirst -> addFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-134	PASSED	9847	2	addLast -> removeFirst -> addLast	{c0_value=7, c2_value=9}	
+linkedlist-135	PASSED	11915	4	addFirst -> addFirst -> removeFirst -> addFirst -> indexOf	{c0_value=7, c1_value=9, c3_value=11, c4_value=13}	
+linkedlist-136	INCORRECT_SEQUENCE	2633	0	indexOf -> addFirst -> addFirst -> addLast -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-137	INCORRECT_SEQUENCE	8080	3	addFirst -> addFirst -> addLast -> removeFirst -> removeFirst -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 6 (indexOf): size > 0
+linkedlist-138	PASSED	14171	4	addFirst -> addLast -> removeFirst -> addFirst -> indexOf	{c0_value=7, c1_value=9, c3_value=11, c4_value=13}	
+linkedlist-139	PASSED	11973	5	addFirst -> addLast -> addFirst -> addLast -> addFirst	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c4_value=15}	
+linkedlist-140	PASSED	13320	5	addFirst -> addLast -> addLast -> addLast -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c5_value=15}	
+linkedlist-141	PASSED	15964	6	addFirst -> addFirst -> addLast -> addLast -> addLast -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c4_value=15, c6_value=17}	
+linkedlist-142	PASSED	13316	7	addFirst -> indexOf -> addLast -> indexOf -> indexOf -> addFirst -> addFirst	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c4_value=15, c5_value=17, c6_value=19}	
+linkedlist-143	INCORRECT_SEQUENCE	1682	0	removeFirst -> indexOf -> addFirst -> removeFirst -> addLast -> addLast	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-144	INCORRECT_SEQUENCE	1684	0	indexOf -> indexOf -> indexOf	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-145	INCORRECT_SEQUENCE	1355	0	removeFirst -> removeFirst -> indexOf -> removeFirst -> addLast -> addLast -> removeFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-146	PASSED	8826	5	addFirst -> addLast -> addLast -> indexOf -> addFirst -> removeFirst	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c4_value=15}	
+linkedlist-147	PASSED	6416	3	addFirst -> addLast -> addLast -> removeFirst	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-148	PASSED	11934	4	addLast -> addFirst -> indexOf -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c4_value=13}	
+linkedlist-149	PASSED	7768	4	addFirst -> addLast -> addFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13}	
+linkedlist-150	INCORRECT_SEQUENCE	4508	2	addFirst -> removeFirst -> addLast -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 4 (indexOf): size > 0
+linkedlist-151	INCORRECT_SEQUENCE	2966	1	addLast -> removeFirst -> removeFirst	-	INCORRECT SEQUENCE: call 2 (removeFirst): size > 0
+linkedlist-152	PASSED	6026	3	addFirst -> addLast -> indexOf -> removeFirst -> removeFirst	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-153	PASSED	5905	3	addFirst -> addFirst -> indexOf -> removeFirst -> removeFirst	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-154	INCORRECT_SEQUENCE	1380	0	indexOf -> indexOf -> addLast -> addFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-155	INCORRECT_SEQUENCE	6059	1	addFirst -> removeFirst -> removeFirst -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 2 (removeFirst): size > 0
+linkedlist-156	PASSED	7210	4	addLast -> addFirst -> addFirst -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c4_value=13}	
+linkedlist-157	INCORRECT_SEQUENCE	4404	2	addFirst -> removeFirst -> addLast -> removeFirst -> indexOf -> indexOf	-	INCORRECT SEQUENCE: call 4 (indexOf): size > 0
+linkedlist-158	PASSED	5798	3	addLast -> addFirst -> addLast -> removeFirst	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-159	INCORRECT_SEQUENCE	1537	0	indexOf -> addFirst -> indexOf	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-160	PASSED	9952	6	addLast -> addLast -> addLast -> removeFirst -> addLast -> addLast -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c4_value=13, c5_value=15, c6_value=17}	
+linkedlist-161	PASSED	11754	5	addFirst -> addLast -> addLast -> removeFirst -> removeFirst -> indexOf -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c5_value=13, c6_value=15}	
+linkedlist-162	PASSED	7688	4	addFirst -> removeFirst -> addLast -> addLast -> removeFirst -> indexOf	{c0_value=7, c2_value=9, c3_value=11, c5_value=13}	
+linkedlist-163	INCORRECT_SEQUENCE	1394	0	removeFirst -> indexOf -> addLast -> indexOf -> indexOf -> indexOf	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-164	INCORRECT_SEQUENCE	2824	1	addFirst -> removeFirst -> removeFirst -> addLast -> addFirst -> addFirst -> addLast	-	INCORRECT SEQUENCE: call 2 (removeFirst): size > 0
+linkedlist-165	PASSED	6019	3	addFirst -> addFirst -> addLast	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-166	PASSED	5858	3	addLast -> addFirst -> addLast	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-167	INCORRECT_SEQUENCE	4256	0	removeFirst -> addFirst -> addLast -> addLast -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-168	PASSED	6186	3	addLast -> addLast -> indexOf	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-169	PASSED	7494	4	addFirst -> addFirst -> addLast -> indexOf -> removeFirst	{c0_value=7, c1_value=9, c2_value=11, c3_value=13}	
+linkedlist-170	INCORRECT_SEQUENCE	4757	2	addFirst -> indexOf -> removeFirst -> removeFirst	-	INCORRECT SEQUENCE: call 3 (removeFirst): size > 0
+linkedlist-171	PASSED	6249	3	addFirst -> indexOf -> indexOf	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-172	INCORRECT_SEQUENCE	1482	0	indexOf -> removeFirst -> addFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-173	INCORRECT_SEQUENCE	1507	0	removeFirst -> addFirst -> addLast -> removeFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-174	INCORRECT_SEQUENCE	1431	0	removeFirst -> addFirst -> addLast -> removeFirst -> addFirst -> addLast	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-175	PASSED	9044	3	addFirst -> addLast -> removeFirst -> indexOf -> removeFirst	{c0_value=7, c1_value=9, c3_value=11}	
+linkedlist-176	PASSED	7613	4	addFirst -> addLast -> indexOf -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13}	
+linkedlist-177	INCORRECT_SEQUENCE	1724	0	removeFirst -> indexOf -> removeFirst -> addLast -> addFirst -> removeFirst -> removeFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-178	INCORRECT_SEQUENCE	3167	1	addFirst -> removeFirst -> indexOf -> indexOf	-	INCORRECT SEQUENCE: call 2 (indexOf): size > 0
+linkedlist-179	INCORRECT_SEQUENCE	1821	0	indexOf -> addLast -> addLast -> removeFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-180	PASSED	9333	5	addFirst -> addLast -> addLast -> indexOf -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c5_value=15}	
+linkedlist-181	INCORRECT_SEQUENCE	1597	0	removeFirst -> removeFirst -> addFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-182	INCORRECT_SEQUENCE	3073	1	addFirst -> removeFirst -> removeFirst	-	INCORRECT SEQUENCE: call 2 (removeFirst): size > 0
+linkedlist-183	INCORRECT_SEQUENCE	4480	0	indexOf -> indexOf -> addFirst -> addFirst -> indexOf -> removeFirst -> addFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-184	PASSED	9984	4	addLast -> addFirst -> removeFirst -> indexOf -> addLast -> removeFirst	{c0_value=7, c1_value=9, c3_value=11, c4_value=13}	
+linkedlist-185	PASSED	8966	5	addLast -> addLast -> addFirst -> removeFirst -> addFirst -> removeFirst -> addLast	{c0_value=7, c1_value=9, c2_value=11, c4_value=13, c6_value=15}	
+linkedlist-186	PASSED	6000	3	addLast -> removeFirst -> addLast -> indexOf	{c0_value=7, c2_value=9, c3_value=11}	
+linkedlist-187	INCORRECT_SEQUENCE	5891	3	addFirst -> addLast -> removeFirst -> indexOf -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 5 (indexOf): size > 0
+linkedlist-188	PASSED	8886	3	addFirst -> addLast -> addLast	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-189	INCORRECT_SEQUENCE	1513	0	indexOf -> addLast -> indexOf -> addLast	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-190	PASSED	9420	5	addLast -> addFirst -> addFirst -> indexOf -> addFirst	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c4_value=15}	
+linkedlist-191	PASSED	8012	4	addFirst -> addLast -> addLast -> removeFirst -> addLast -> removeFirst -> removeFirst	{c0_value=7, c1_value=9, c2_value=11, c4_value=13}	
+linkedlist-192	PASSED	10619	4	addFirst -> addLast -> addLast -> removeFirst -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c5_value=13}	
+linkedlist-193	PASSED	5954	3	addFirst -> addLast -> addFirst -> removeFirst	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-194	PASSED	11053	6	addFirst -> addFirst -> indexOf -> addLast -> removeFirst -> indexOf -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c5_value=15, c6_value=17}	
+linkedlist-195	INCORRECT_SEQUENCE	1397	0	removeFirst -> indexOf -> indexOf -> indexOf -> addFirst -> addFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-196	PASSED	7793	4	addFirst -> addFirst -> addLast -> removeFirst -> indexOf -> removeFirst	{c0_value=7, c1_value=9, c2_value=11, c4_value=13}	
+linkedlist-197	PASSED	12164	5	addFirst -> indexOf -> removeFirst -> addLast -> addLast -> addLast	{c0_value=7, c1_value=9, c3_value=11, c4_value=13, c5_value=15}	
+linkedlist-198	INCORRECT_SEQUENCE	1481	0	indexOf -> addFirst -> addLast -> indexOf -> removeFirst -> removeFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-199	PASSED	9373	5	addFirst -> addLast -> removeFirst -> removeFirst -> addFirst -> indexOf -> indexOf	{c0_value=7, c1_value=9, c4_value=11, c5_value=13, c6_value=15}	
+linkedlist-200	PASSED	6019	3	addLast -> addFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-201	INCORRECT_SEQUENCE	1461	0	indexOf -> indexOf -> indexOf -> addFirst -> removeFirst -> addLast	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-202	PASSED	6030	3	addFirst -> addFirst -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c3_value=11}	
+linkedlist-203	PASSED	10909	4	addLast -> indexOf -> removeFirst -> addFirst -> addLast -> removeFirst	{c0_value=7, c1_value=9, c3_value=11, c4_value=13}	
+linkedlist-204	PASSED	9412	5	addFirst -> addFirst -> addLast -> indexOf -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c5_value=15}	
+linkedlist-205	PASSED	7887	4	addLast -> indexOf -> addLast -> addLast	{c0_value=7, c1_value=9, c2_value=11, c3_value=13}	
+linkedlist-206	PASSED	14398	6	addFirst -> addFirst -> addLast -> removeFirst -> indexOf -> addLast -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c4_value=13, c5_value=15, c6_value=17}	
+linkedlist-207	PASSED	7707	4	addLast -> addLast -> addLast -> addFirst -> removeFirst	{c0_value=7, c1_value=9, c2_value=11, c3_value=13}	
+linkedlist-208	PASSED	7968	4	addFirst -> addLast -> indexOf -> indexOf -> removeFirst	{c0_value=7, c1_value=9, c2_value=11, c3_value=13}	
+linkedlist-209	INCORRECT_SEQUENCE	1897	0	removeFirst -> addFirst -> addLast -> indexOf -> addLast	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-210	PASSED	7770	4	addFirst -> addFirst -> addLast -> removeFirst -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c5_value=13}	
+linkedlist-211	PASSED	10695	4	addFirst -> addLast -> indexOf -> indexOf -> removeFirst -> removeFirst	{c0_value=7, c1_value=9, c2_value=11, c3_value=13}	
+linkedlist-212	PASSED	10931	6	addFirst -> addLast -> addLast -> addLast -> addLast -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c4_value=15, c6_value=17}	
+linkedlist-213	INCORRECT_SEQUENCE	1574	0	removeFirst -> indexOf -> addLast -> addFirst -> addFirst -> indexOf	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-214	INCORRECT_SEQUENCE	1625	0	removeFirst -> indexOf -> removeFirst -> addLast -> removeFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-215	INCORRECT_SEQUENCE	4770	2	addLast -> addFirst -> removeFirst -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 4 (indexOf): size > 0
+linkedlist-216	PASSED	6748	3	addFirst -> addLast -> addLast -> removeFirst -> removeFirst	{c0_value=7, c1_value=9, c2_value=11}	
+linkedlist-217	INCORRECT_SEQUENCE	1657	0	removeFirst -> indexOf -> addLast -> addLast	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-218	PASSED	14767	6	addLast -> indexOf -> addLast -> indexOf -> indexOf -> indexOf -> removeFirst	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c4_value=15, c5_value=17}	
+linkedlist-219	INCORRECT_SEQUENCE	4592	2	addFirst -> addLast -> removeFirst -> removeFirst -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 4 (removeFirst): size > 0
+linkedlist-220	INCORRECT_SEQUENCE	1557	0	indexOf -> addLast -> indexOf -> addFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-221	PASSED	6214	3	addLast -> indexOf -> removeFirst -> addFirst	{c0_value=7, c1_value=9, c3_value=11}	
+linkedlist-222	INCORRECT_SEQUENCE	1451	0	removeFirst -> addLast -> indexOf -> addFirst -> indexOf -> addLast -> addLast	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-223	INCORRECT_SEQUENCE	1494	0	removeFirst -> addLast -> addFirst -> addFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-224	PASSED	4489	2	addLast -> removeFirst -> addFirst	{c0_value=7, c2_value=9}	
+linkedlist-225	INCORRECT_SEQUENCE	8989	3	addFirst -> addLast -> indexOf -> removeFirst -> removeFirst -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 5 (removeFirst): size > 0
+linkedlist-226	PASSED	7727	4	addFirst -> addFirst -> removeFirst -> addFirst -> addLast	{c0_value=7, c1_value=9, c3_value=11, c4_value=13}	
+linkedlist-227	INCORRECT_SEQUENCE	1575	0	removeFirst -> removeFirst -> indexOf -> addLast -> addLast -> addFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-228	PASSED	9033	5	addLast -> removeFirst -> addLast -> addLast -> addLast -> addFirst	{c0_value=7, c2_value=9, c3_value=11, c4_value=13, c5_value=15}	
+linkedlist-229	PASSED	9209	5	addFirst -> addFirst -> addLast -> removeFirst -> addLast -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c4_value=13, c5_value=15}	
+linkedlist-230	PASSED	10700	4	addFirst -> addFirst -> addFirst -> addFirst	{c0_value=7, c1_value=9, c2_value=11, c3_value=13}	
+linkedlist-231	INCORRECT_SEQUENCE	1410	0	removeFirst -> removeFirst -> addFirst -> addLast -> indexOf -> indexOf	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-232	INCORRECT_SEQUENCE	1547	0	indexOf -> indexOf -> addLast -> indexOf	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-233	INCORRECT_SEQUENCE	6085	3	addFirst -> indexOf -> addLast -> removeFirst -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 5 (indexOf): size > 0
+linkedlist-234	INCORRECT_SEQUENCE	1576	0	indexOf -> removeFirst -> addLast	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-235	INCORRECT_SEQUENCE	4995	2	addFirst -> removeFirst -> addFirst -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 4 (indexOf): size > 0
+linkedlist-236	INCORRECT_SEQUENCE	1549	0	indexOf -> indexOf	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-237	PASSED	7930	4	addLast -> addFirst -> addLast -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c4_value=13}	
+linkedlist-238	INCORRECT_SEQUENCE	1437	0	removeFirst -> addFirst -> addLast -> addFirst	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-239	PASSED	10630	4	addFirst -> removeFirst -> addLast -> removeFirst -> addLast -> indexOf	{c0_value=7, c2_value=9, c4_value=11, c5_value=13}	
+linkedlist-240	PASSED	7713	4	addFirst -> indexOf -> removeFirst -> addLast -> indexOf	{c0_value=7, c1_value=9, c3_value=11, c4_value=13}	
+linkedlist-241	PASSED	9101	5	addFirst -> addLast -> indexOf -> addFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c4_value=15}	
+linkedlist-242	INCORRECT_SEQUENCE	7454	4	addLast -> indexOf -> removeFirst -> addFirst -> indexOf -> removeFirst -> removeFirst	-	INCORRECT SEQUENCE: call 6 (removeFirst): size > 0
+linkedlist-243	FAILED	0	0	removeFirst -> removeFirst	-	PRE: PRE removeFirst: size > 0
+linkedlist-244	INCORRECT_SEQUENCE	4369	0	removeFirst -> addFirst -> addLast -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-245	INCORRECT_SEQUENCE	1430	0	indexOf -> addFirst -> addLast -> removeFirst -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-246	INCORRECT_SEQUENCE	1460	0	indexOf -> removeFirst -> removeFirst -> removeFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-247	INCORRECT_SEQUENCE	1415	0	indexOf -> addFirst -> removeFirst -> indexOf -> addFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-248	INCORRECT_SEQUENCE	1539	0	indexOf -> indexOf -> addFirst -> addLast -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-249	INCORRECT_SEQUENCE	1333	0	indexOf -> addFirst -> removeFirst -> removeFirst -> indexOf	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-250	PASSED	10310	6	addFirst -> indexOf -> addFirst -> indexOf -> indexOf -> addFirst	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c4_value=15, c5_value=17}	
+linkedlist-251	INCORRECT_SEQUENCE	2969	1	addLast -> removeFirst -> removeFirst -> removeFirst	-	INCORRECT SEQUENCE: call 2 (removeFirst): size > 0
+linkedlist-252	PASSED	7680	4	addFirst -> addLast -> indexOf -> addFirst	{c0_value=7, c1_value=9, c2_value=11, c3_value=13}	
+linkedlist-253	INCORRECT_SEQUENCE	7413	2	addFirst -> addLast -> removeFirst -> removeFirst -> removeFirst -> indexOf -> indexOf	-	INCORRECT SEQUENCE: call 4 (removeFirst): size > 0
+linkedlist-254	PASSED	10692	6	addFirst -> addLast -> addLast -> indexOf -> addLast -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c4_value=15, c6_value=17}	
+linkedlist-255	INCORRECT_SEQUENCE	1470	0	indexOf -> addLast -> removeFirst -> removeFirst -> addFirst -> indexOf -> addLast	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-256	INCORRECT_SEQUENCE	1434	0	removeFirst -> indexOf -> addLast	-	INCORRECT SEQUENCE: call 0 (removeFirst): size > 0
+linkedlist-257	PASSED	9045	5	addLast -> addLast -> addFirst -> addLast -> removeFirst -> indexOf	{c0_value=7, c1_value=9, c2_value=11, c3_value=13, c5_value=15}	
+linkedlist-258	INCORRECT_SEQUENCE	2958	1	addFirst -> removeFirst -> removeFirst -> indexOf -> addLast -> indexOf -> addFirst	-	INCORRECT SEQUENCE: call 2 (removeFirst): size > 0
+linkedlist-259	INCORRECT_SEQUENCE	1427	0	indexOf -> indexOf -> indexOf -> addLast -> removeFirst -> addFirst	-	INCORRECT SEQUENCE: call 0 (indexOf): size > 0
+linkedlist-260	PASSED	8873	3	addFirst -> indexOf -> addLast	{c0_value=7, c1_value=9, c2_value=11}	

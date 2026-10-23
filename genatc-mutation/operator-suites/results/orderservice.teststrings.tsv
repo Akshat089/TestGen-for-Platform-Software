@@ -1,0 +1,262 @@
+# generated test strings — orderservice (family size 260, phase 1 934s)
+# name	status	spf_ms	rounds	sequence	inputs	detail
+orderservice-001	INCORRECT_SEQUENCE	8249	2	restock -> restock -> ship -> stockLevel -> stockLevel	-	INCORRECT SEQUENCE: call 2 (ship): Open.containsKey(orderId)
+orderservice-002	PASSED	6626	3	restock -> stockLevel -> placeOrder	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c2_sku="s1", c2_quantity=1}	
+orderservice-003	INCORRECT_SEQUENCE	1494	0	ship -> restock -> restock -> placeOrder -> restock	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-004	INCORRECT_SEQUENCE	1808	0	placeOrder -> restock -> placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-005	PASSED	8395	4	restock -> placeOrder -> stockLevel -> ship	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c1_quantity=1, c2_sku="s1", c3_orderId=1}	
+orderservice-006	PASSED	9824	5	restock -> restock -> placeOrder -> ship -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s3", c1_quantity=1, c2_sku="s3", c2_quantity=1, c3_orderId=1, c4_sku="s3"}	
+orderservice-007	INCORRECT_SEQUENCE	1956	0	stockLevel -> ship -> restock	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-008	INCORRECT_SEQUENCE	4550	0	ship -> restock -> placeOrder -> ship -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-009	INCORRECT_SEQUENCE	1766	0	placeOrder -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-010	INCORRECT_SEQUENCE	1692	0	placeOrder -> placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-011	INCORRECT_SEQUENCE	5086	2	restock -> placeOrder -> placeOrder -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 2 (placeOrder): Stock.get(sku) >= quantity
+orderservice-012	INCORRECT_SEQUENCE	6862	3	restock -> placeOrder -> ship -> placeOrder -> placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 3 (placeOrder): Stock.get(sku) >= quantity
+orderservice-013	INCORRECT_SEQUENCE	5453	2	restock -> restock -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 2 (ship): Open.containsKey(orderId)
+orderservice-014	INCORRECT_SEQUENCE	1568	0	placeOrder -> stockLevel -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-015	INCORRECT_SEQUENCE	5198	2	restock -> placeOrder -> placeOrder -> ship -> stockLevel -> stockLevel	-	INCORRECT SEQUENCE: call 2 (placeOrder): Stock.get(sku) >= quantity
+orderservice-016	INCORRECT_SEQUENCE	9808	3	restock -> placeOrder -> ship -> placeOrder -> placeOrder -> placeOrder -> ship	-	INCORRECT SEQUENCE: call 3 (placeOrder): Stock.get(sku) >= quantity
+orderservice-017	INCORRECT_SEQUENCE	6611	3	restock -> restock -> restock -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 3 (ship): Open.containsKey(orderId)
+orderservice-018	INCORRECT_SEQUENCE	1540	0	stockLevel -> ship -> placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-019	PASSED	12087	6	restock -> restock -> placeOrder -> restock -> ship -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s3", c1_quantity=1, c2_sku="s3", c2_quantity=1, c3_sku="s1", c3_quantity=1, c4_orderId=1, c5_sku="s1"}	
+orderservice-020	INCORRECT_SEQUENCE	1639	0	stockLevel -> restock -> placeOrder -> placeOrder -> restock -> restock -> restock	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-021	INCORRECT_SEQUENCE	5320	2	restock -> placeOrder -> placeOrder -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 2 (placeOrder): Stock.get(sku) >= quantity
+orderservice-022	INCORRECT_SEQUENCE	4708	0	ship -> placeOrder -> restock -> stockLevel -> placeOrder -> ship	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-023	INCORRECT_SEQUENCE	1626	0	ship -> placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-024	PASSED	8316	4	restock -> placeOrder -> ship -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c1_quantity=1, c2_orderId=1, c3_sku="s1"}	
+orderservice-025	INCORRECT_SEQUENCE	1728	0	ship -> ship -> placeOrder -> stockLevel -> ship -> placeOrder	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-026	INCORRECT_SEQUENCE	1698	0	ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-027	INCORRECT_SEQUENCE	1694	0	placeOrder -> ship -> restock -> restock -> stockLevel -> restock	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-028	INCORRECT_SEQUENCE	3297	1	restock -> ship -> stockLevel -> stockLevel -> stockLevel	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-029	INCORRECT_SEQUENCE	1682	0	ship -> placeOrder -> restock -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-030	INCORRECT_SEQUENCE	6655	3	restock -> placeOrder -> ship -> ship -> restock -> stockLevel	-	INCORRECT SEQUENCE: call 3 (ship): Open.containsKey(orderId)
+orderservice-031	INCORRECT_SEQUENCE	11484	4	restock -> placeOrder -> stockLevel -> ship -> ship	-	INCORRECT SEQUENCE: call 4 (ship): Open.containsKey(orderId)
+orderservice-032	INCORRECT_SEQUENCE	1857	0	stockLevel -> ship -> placeOrder	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-033	INCORRECT_SEQUENCE	5136	2	restock -> stockLevel -> ship -> placeOrder	-	INCORRECT SEQUENCE: call 2 (ship): Open.containsKey(orderId)
+orderservice-034	INCORRECT_SEQUENCE	3298	1	restock -> ship -> restock -> placeOrder -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-035	INCORRECT_SEQUENCE	5023	2	restock -> restock -> ship -> placeOrder -> placeOrder -> ship -> placeOrder	-	INCORRECT SEQUENCE: call 2 (ship): Open.containsKey(orderId)
+orderservice-036	INCORRECT_SEQUENCE	1574	0	placeOrder -> restock -> placeOrder -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-037	INCORRECT_SEQUENCE	1748	0	ship -> stockLevel -> ship -> placeOrder -> ship	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-038	INCORRECT_SEQUENCE	1674	0	placeOrder -> restock -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-039	INCORRECT_SEQUENCE	6659	3	restock -> placeOrder -> ship -> ship -> placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 3 (ship): Open.containsKey(orderId)
+orderservice-040	INCORRECT_SEQUENCE	6126	1	restock -> ship -> restock -> placeOrder	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-041	INCORRECT_SEQUENCE	1642	0	placeOrder -> ship	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-042	INCORRECT_SEQUENCE	1688	0	stockLevel -> placeOrder -> placeOrder -> restock -> restock	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-043	PASSED	12177	6	restock -> stockLevel -> stockLevel -> placeOrder -> ship -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c2_sku="s1", c3_sku="s1", c3_quantity=1, c4_orderId=1, c5_sku="s1"}	
+orderservice-044	PASSED	8915	4	restock -> stockLevel -> stockLevel -> restock	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c2_sku="s1", c3_sku="s2", c3_quantity=1}	
+orderservice-045	INCORRECT_SEQUENCE	1893	0	ship -> placeOrder -> restock -> restock -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-046	INCORRECT_SEQUENCE	3211	1	restock -> ship -> ship -> ship -> placeOrder	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-047	INCORRECT_SEQUENCE	4647	0	placeOrder -> ship -> stockLevel -> stockLevel -> ship -> placeOrder -> restock	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-048	INCORRECT_SEQUENCE	8356	4	restock -> restock -> placeOrder -> ship -> ship	-	INCORRECT SEQUENCE: call 4 (ship): Open.containsKey(orderId)
+orderservice-049	INCORRECT_SEQUENCE	1657	0	stockLevel -> stockLevel -> restock -> placeOrder -> ship	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-050	PASSED	10209	5	restock -> restock -> placeOrder -> stockLevel -> ship	{c0_sku="s1", c0_quantity=1, c1_sku="s3", c1_quantity=1, c2_sku="s3", c2_quantity=1, c3_sku="s1", c4_orderId=1}	
+orderservice-051	PASSED	6169	3	restock -> restock -> placeOrder	{c0_sku="s1", c0_quantity=1, c1_sku="s3", c1_quantity=1, c2_sku="s3", c2_quantity=1}	
+orderservice-052	INCORRECT_SEQUENCE	3057	1	restock -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-053	INCORRECT_SEQUENCE	7558	2	restock -> placeOrder -> placeOrder -> ship	-	INCORRECT SEQUENCE: call 2 (placeOrder): Stock.get(sku) >= quantity
+orderservice-054	PASSED	6225	3	restock -> placeOrder -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c1_quantity=1, c2_sku="s1"}	
+orderservice-055	INCORRECT_SEQUENCE	1471	0	stockLevel -> placeOrder -> ship -> restock	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-056	INCORRECT_SEQUENCE	1574	0	ship -> placeOrder -> restock -> restock -> placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-057	PASSED	10758	6	restock -> placeOrder -> restock -> ship -> placeOrder -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c1_quantity=1, c2_sku="s2", c2_quantity=1, c3_orderId=1, c4_sku="s2", c4_quantity=1, c5_sku="s1"}	
+orderservice-058	INCORRECT_SEQUENCE	6598	3	restock -> placeOrder -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 3 (ship): Open.containsKey(orderId)
+orderservice-059	INCORRECT_SEQUENCE	1568	0	placeOrder -> placeOrder -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-060	INCORRECT_SEQUENCE	1573	0	ship -> stockLevel -> stockLevel -> ship -> ship -> placeOrder	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-061	PASSED	10835	4	restock -> restock -> stockLevel -> placeOrder	{c0_sku="s1", c0_quantity=1, c1_sku="s3", c1_quantity=1, c2_sku="s3", c3_sku="s3", c3_quantity=1}	
+orderservice-062	INCORRECT_SEQUENCE	9476	5	restock -> restock -> restock -> placeOrder -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 5 (ship): Open.containsKey(orderId)
+orderservice-063	INCORRECT_SEQUENCE	1443	0	ship -> ship -> ship -> ship -> restock -> restock -> placeOrder	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-064	INCORRECT_SEQUENCE	1457	0	stockLevel -> placeOrder -> stockLevel -> restock -> ship -> ship -> ship	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-065	INCORRECT_SEQUENCE	1365	0	stockLevel -> placeOrder -> ship -> ship -> ship -> restock	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-066	INCORRECT_SEQUENCE	1495	0	placeOrder -> stockLevel -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-067	INCORRECT_SEQUENCE	1411	0	placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-068	INCORRECT_SEQUENCE	11792	5	restock -> placeOrder -> stockLevel -> ship -> restock -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 5 (ship): Open.containsKey(orderId)
+orderservice-069	INCORRECT_SEQUENCE	6076	3	restock -> placeOrder -> ship -> placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 3 (placeOrder): Stock.get(sku) >= quantity
+orderservice-070	INCORRECT_SEQUENCE	1395	0	stockLevel -> ship -> ship -> stockLevel -> placeOrder -> ship	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-071	INCORRECT_SEQUENCE	1446	0	placeOrder -> placeOrder -> restock -> placeOrder -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-072	INCORRECT_SEQUENCE	1489	0	stockLevel -> ship	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-073	INCORRECT_SEQUENCE	1425	0	ship -> restock -> restock -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-074	INCORRECT_SEQUENCE	1447	0	placeOrder -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-075	INCORRECT_SEQUENCE	7442	4	restock -> placeOrder -> restock -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 4 (ship): Open.containsKey(orderId)
+orderservice-076	INCORRECT_SEQUENCE	1520	0	placeOrder -> stockLevel -> restock -> ship	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-077	INCORRECT_SEQUENCE	1633	0	ship -> placeOrder -> placeOrder -> placeOrder -> ship -> restock	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-078	INCORRECT_SEQUENCE	1615	0	stockLevel -> placeOrder -> ship -> placeOrder -> restock	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-079	INCORRECT_SEQUENCE	1911	0	placeOrder -> placeOrder -> stockLevel -> restock -> stockLevel -> placeOrder	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-080	PASSED	12410	5	restock -> restock -> placeOrder -> ship -> restock	{c0_sku="s1", c0_quantity=1, c1_sku="s3", c1_quantity=1, c2_sku="s3", c2_quantity=1, c3_orderId=1, c4_sku="s2", c4_quantity=1}	
+orderservice-081	INCORRECT_SEQUENCE	1524	0	placeOrder -> restock -> placeOrder -> placeOrder -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-082	INCORRECT_SEQUENCE	4279	2	restock -> stockLevel -> ship -> ship -> placeOrder	-	INCORRECT SEQUENCE: call 2 (ship): Open.containsKey(orderId)
+orderservice-083	INCORRECT_SEQUENCE	5714	3	restock -> placeOrder -> ship -> placeOrder -> ship	-	INCORRECT SEQUENCE: call 3 (placeOrder): Stock.get(sku) >= quantity
+orderservice-084	INCORRECT_SEQUENCE	2965	1	restock -> ship -> placeOrder -> placeOrder -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-085	INCORRECT_SEQUENCE	1694	0	ship -> placeOrder -> stockLevel -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-086	INCORRECT_SEQUENCE	1589	0	stockLevel -> restock -> placeOrder -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-087	INCORRECT_SEQUENCE	1389	0	ship -> placeOrder -> placeOrder -> stockLevel -> restock	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-088	PASSED	7186	4	restock -> placeOrder -> restock -> ship	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c1_quantity=1, c2_sku="s2", c2_quantity=1, c3_orderId=1}	
+orderservice-089	INCORRECT_SEQUENCE	7450	2	restock -> placeOrder -> placeOrder	-	INCORRECT SEQUENCE: call 2 (placeOrder): Stock.get(sku) >= quantity
+orderservice-090	INCORRECT_SEQUENCE	5673	3	restock -> stockLevel -> stockLevel -> ship -> ship -> placeOrder	-	INCORRECT SEQUENCE: call 3 (ship): Open.containsKey(orderId)
+orderservice-091	INCORRECT_SEQUENCE	1470	0	ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-092	INCORRECT_SEQUENCE	1334	0	ship -> ship -> restock -> restock -> ship	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-093	PASSED	10823	7	restock -> restock -> placeOrder -> ship -> stockLevel -> stockLevel -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s3", c1_quantity=1, c2_sku="s3", c2_quantity=1, c3_orderId=1, c4_sku="s3", c5_sku="s3", c6_sku="s1"}	
+orderservice-094	INCORRECT_SEQUENCE	1377	0	ship -> restock -> placeOrder	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-095	INCORRECT_SEQUENCE	4015	2	restock -> placeOrder -> placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 2 (placeOrder): Stock.get(sku) >= quantity
+orderservice-096	INCORRECT_SEQUENCE	1369	0	stockLevel -> placeOrder	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-097	PASSED	11097	5	restock -> placeOrder -> ship -> stockLevel -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c1_quantity=1, c2_orderId=1, c3_sku="s1", c4_sku="s1"}	
+orderservice-098	INCORRECT_SEQUENCE	2791	1	restock -> ship -> ship -> stockLevel -> placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-099	INCORRECT_SEQUENCE	1553	0	placeOrder -> placeOrder -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-100	INCORRECT_SEQUENCE	8886	5	restock -> restock -> placeOrder -> stockLevel -> ship -> ship	-	INCORRECT SEQUENCE: call 5 (ship): Open.containsKey(orderId)
+orderservice-101	PASSED	10596	6	restock -> restock -> restock -> placeOrder -> ship -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s3", c1_quantity=1, c2_sku="s2", c2_quantity=1, c3_sku="s1", c3_quantity=1, c4_orderId=1, c5_sku="s1"}	
+orderservice-102	INCORRECT_SEQUENCE	1399	0	ship -> placeOrder -> restock	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-103	INCORRECT_SEQUENCE	4398	0	placeOrder -> restock -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-104	INCORRECT_SEQUENCE	1336	0	stockLevel -> placeOrder -> placeOrder -> stockLevel -> restock -> ship	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-105	PASSED	8303	5	restock -> placeOrder -> ship -> restock -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c1_quantity=1, c2_orderId=1, c3_sku="s3", c3_quantity=1, c4_sku="s3"}	
+orderservice-106	INCORRECT_SEQUENCE	2795	1	restock -> ship -> placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-107	INCORRECT_SEQUENCE	1384	0	stockLevel -> stockLevel -> stockLevel -> stockLevel -> ship -> restock	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-108	INCORRECT_SEQUENCE	4774	2	restock -> restock -> ship -> restock -> restock	-	INCORRECT SEQUENCE: call 2 (ship): Open.containsKey(orderId)
+orderservice-109	PASSED	5533	3	restock -> placeOrder -> ship	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c1_quantity=1, c2_orderId=1}	
+orderservice-110	INCORRECT_SEQUENCE	5697	3	restock -> placeOrder -> ship -> ship	-	INCORRECT SEQUENCE: call 3 (ship): Open.containsKey(orderId)
+orderservice-111	INCORRECT_SEQUENCE	7222	2	restock -> placeOrder -> placeOrder -> ship -> restock -> stockLevel	-	INCORRECT SEQUENCE: call 2 (placeOrder): Stock.get(sku) >= quantity
+orderservice-112	PASSED	9383	6	restock -> stockLevel -> stockLevel -> placeOrder -> restock -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c2_sku="s1", c3_sku="s1", c3_quantity=1, c4_sku="s1", c4_quantity=1, c5_sku="s1"}	
+orderservice-113	INCORRECT_SEQUENCE	2779	1	restock -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-114	INCORRECT_SEQUENCE	5644	3	restock -> placeOrder -> ship -> placeOrder -> placeOrder	-	INCORRECT SEQUENCE: call 3 (placeOrder): Stock.get(sku) >= quantity
+orderservice-115	PASSED	9363	6	restock -> restock -> placeOrder -> placeOrder -> ship -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s3", c1_quantity=1, c2_sku="s3", c2_quantity=1, c3_sku="s1", c3_quantity=1, c4_orderId=1, c5_sku="s1"}	
+orderservice-116	PASSED	9716	4	restock -> stockLevel -> placeOrder -> ship	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c2_sku="s1", c2_quantity=1, c3_orderId=1}	
+orderservice-117	INCORRECT_SEQUENCE	5614	3	restock -> placeOrder -> ship -> placeOrder -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 3 (placeOrder): Stock.get(sku) >= quantity
+orderservice-118	INCORRECT_SEQUENCE	1296	0	stockLevel -> ship -> stockLevel -> restock -> placeOrder -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-119	PASSED	3961	2	restock -> restock	{c0_sku="s1", c0_quantity=1, c1_sku="s3", c1_quantity=1}	
+orderservice-120	INCORRECT_SEQUENCE	1313	0	placeOrder -> placeOrder -> placeOrder	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-121	INCORRECT_SEQUENCE	1341	0	placeOrder -> ship -> restock -> restock -> ship	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-122	INCORRECT_SEQUENCE	1417	0	placeOrder -> placeOrder -> restock -> stockLevel -> ship -> placeOrder	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-123	INCORRECT_SEQUENCE	1351	0	ship -> ship -> placeOrder -> stockLevel -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-124	INCORRECT_SEQUENCE	1318	0	ship -> restock -> restock -> restock -> restock -> ship -> ship	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-125	INCORRECT_SEQUENCE	1299	0	placeOrder -> placeOrder -> stockLevel -> restock -> placeOrder -> ship -> placeOrder	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-126	INCORRECT_SEQUENCE	1319	0	placeOrder -> ship -> placeOrder	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-127	INCORRECT_SEQUENCE	2635	1	restock -> ship -> stockLevel -> placeOrder -> stockLevel -> stockLevel	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-128	INCORRECT_SEQUENCE	4117	2	restock -> restock -> ship -> ship -> stockLevel -> stockLevel	-	INCORRECT SEQUENCE: call 2 (ship): Open.containsKey(orderId)
+orderservice-129	INCORRECT_SEQUENCE	1320	0	placeOrder -> stockLevel -> stockLevel -> stockLevel -> ship -> placeOrder	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-130	INCORRECT_SEQUENCE	4067	2	restock -> placeOrder -> placeOrder -> placeOrder -> stockLevel -> ship	-	INCORRECT SEQUENCE: call 2 (placeOrder): Stock.get(sku) >= quantity
+orderservice-131	PASSED	4148	2	restock -> placeOrder	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c1_quantity=1}	
+orderservice-132	INCORRECT_SEQUENCE	1866	0	stockLevel -> stockLevel -> placeOrder -> ship -> restock	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-133	PASSED	11964	4	restock -> restock -> placeOrder -> ship	{c0_sku="s1", c0_quantity=1, c1_sku="s3", c1_quantity=1, c2_sku="s3", c2_quantity=1, c3_orderId=1}	
+orderservice-134	PASSED	8272	5	restock -> restock -> placeOrder -> placeOrder -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s3", c1_quantity=1, c2_sku="s3", c2_quantity=1, c3_sku="s1", c3_quantity=1, c4_sku="s3"}	
+orderservice-135	INCORRECT_SEQUENCE	1343	0	stockLevel -> restock	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-136	INCORRECT_SEQUENCE	1305	0	placeOrder -> restock -> placeOrder -> ship	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-137	INCORRECT_SEQUENCE	2905	1	restock -> ship -> placeOrder -> restock -> ship	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-138	INCORRECT_SEQUENCE	1376	0	stockLevel -> stockLevel -> placeOrder -> ship	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-139	INCORRECT_SEQUENCE	1348	0	ship -> restock -> placeOrder -> ship -> stockLevel -> stockLevel -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-140	INCORRECT_SEQUENCE	2911	1	restock -> ship -> placeOrder -> restock	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-141	INCORRECT_SEQUENCE	5574	3	restock -> restock -> stockLevel -> ship -> restock -> placeOrder	-	INCORRECT SEQUENCE: call 3 (ship): Open.containsKey(orderId)
+orderservice-142	INCORRECT_SEQUENCE	7212	2	restock -> placeOrder -> placeOrder -> restock -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 2 (placeOrder): Stock.get(sku) >= quantity
+orderservice-143	INCORRECT_SEQUENCE	1326	0	placeOrder -> stockLevel -> ship	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-144	PASSED	10930	7	restock -> restock -> restock -> stockLevel -> stockLevel -> stockLevel -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s3", c1_quantity=1, c2_sku="s2", c2_quantity=1, c3_sku="s1", c4_sku="s2", c5_sku="s3", c6_sku="s1"}	
+orderservice-145	INCORRECT_SEQUENCE	1376	0	ship -> placeOrder -> stockLevel -> restock	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-146	INCORRECT_SEQUENCE	1342	0	ship -> ship -> stockLevel -> placeOrder	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-147	INCORRECT_SEQUENCE	5736	3	restock -> restock -> stockLevel -> ship -> restock -> stockLevel -> placeOrder	-	INCORRECT SEQUENCE: call 3 (ship): Open.containsKey(orderId)
+orderservice-148	INCORRECT_SEQUENCE	1297	0	placeOrder -> ship -> stockLevel -> ship	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-149	INCORRECT_SEQUENCE	1104	0	ship -> stockLevel -> stockLevel -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-150	INCORRECT_SEQUENCE	6870	5	restock -> stockLevel -> restock -> placeOrder -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 5 (ship): Open.containsKey(orderId)
+orderservice-151	INCORRECT_SEQUENCE	5192	1	restock -> ship -> placeOrder -> restock -> stockLevel -> stockLevel	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-152	INCORRECT_SEQUENCE	3311	2	restock -> restock -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 2 (ship): Open.containsKey(orderId)
+orderservice-153	PASSED	3283	2	restock -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s1"}	
+orderservice-154	INCORRECT_SEQUENCE	2248	1	restock -> ship -> ship -> placeOrder	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-155	PASSED	6483	5	restock -> restock -> restock -> restock -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s3", c1_quantity=1, c2_sku="s2", c2_quantity=1, c3_sku="s1", c3_quantity=1, c4_sku="s3"}	
+orderservice-156	INCORRECT_SEQUENCE	1125	0	ship -> restock -> placeOrder -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-157	INCORRECT_SEQUENCE	2171	1	restock -> ship -> stockLevel -> stockLevel -> placeOrder -> placeOrder -> ship	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-158	INCORRECT_SEQUENCE	1172	0	ship -> stockLevel -> restock -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-159	INCORRECT_SEQUENCE	1123	0	ship -> restock	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-160	INCORRECT_SEQUENCE	1150	0	stockLevel -> restock -> placeOrder -> stockLevel -> restock	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-161	INCORRECT_SEQUENCE	1078	0	ship -> placeOrder	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-162	INCORRECT_SEQUENCE	1107	0	stockLevel -> placeOrder -> restock -> stockLevel -> restock -> ship -> restock	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-163	PASSED	11818	7	restock -> restock -> placeOrder -> stockLevel -> ship -> stockLevel -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s3", c1_quantity=1, c2_sku="s3", c2_quantity=1, c3_sku="s1", c4_orderId=1, c5_sku="s3", c6_sku="s1"}	
+orderservice-164	PASSED	6850	5	restock -> placeOrder -> restock -> placeOrder -> ship	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c1_quantity=1, c2_sku="s2", c2_quantity=1, c3_sku="s2", c3_quantity=1, c4_orderId=1}	
+orderservice-165	PASSED	6541	5	restock -> restock -> placeOrder -> placeOrder -> ship	{c0_sku="s1", c0_quantity=1, c1_sku="s3", c1_quantity=1, c2_sku="s3", c2_quantity=1, c3_sku="s1", c3_quantity=1, c4_orderId=1}	
+orderservice-166	INCORRECT_SEQUENCE	1164	0	ship -> placeOrder -> ship -> ship -> placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-167	INCORRECT_SEQUENCE	2218	1	restock -> ship -> stockLevel -> restock -> stockLevel -> placeOrder -> placeOrder	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-168	INCORRECT_SEQUENCE	1104	0	stockLevel -> ship -> stockLevel -> restock -> placeOrder	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-169	INCORRECT_SEQUENCE	1123	0	placeOrder -> ship -> placeOrder -> ship -> ship	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-170	INCORRECT_SEQUENCE	2255	1	restock -> ship -> placeOrder	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-171	INCORRECT_SEQUENCE	1095	0	ship -> placeOrder -> placeOrder -> restock -> restock -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-172	INCORRECT_SEQUENCE	3261	2	restock -> restock -> ship -> stockLevel -> placeOrder	-	INCORRECT SEQUENCE: call 2 (ship): Open.containsKey(orderId)
+orderservice-173	PASSED	10681	6	restock -> placeOrder -> ship -> restock -> stockLevel -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c1_quantity=1, c2_orderId=1, c3_sku="s3", c3_quantity=1, c4_sku="s3", c5_sku="s3"}	
+orderservice-174	INCORRECT_SEQUENCE	1086	0	placeOrder -> ship -> placeOrder -> stockLevel -> restock	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-175	INCORRECT_SEQUENCE	1120	0	ship -> restock -> ship	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-176	INCORRECT_SEQUENCE	1145	0	ship -> placeOrder -> ship	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-177	INCORRECT_SEQUENCE	1118	0	ship -> stockLevel -> stockLevel -> ship	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-178	INCORRECT_SEQUENCE	1171	0	ship -> restock -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-179	INCORRECT_SEQUENCE	5626	4	restock -> restock -> placeOrder -> ship -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 4 (ship): Open.containsKey(orderId)
+orderservice-180	INCORRECT_SEQUENCE	1127	0	placeOrder -> restock -> ship -> stockLevel -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-181	INCORRECT_SEQUENCE	1176	0	stockLevel -> restock -> placeOrder	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-182	INCORRECT_SEQUENCE	4515	3	restock -> placeOrder -> stockLevel -> placeOrder -> ship -> placeOrder	-	INCORRECT SEQUENCE: call 3 (placeOrder): Stock.get(sku) >= quantity
+orderservice-183	INCORRECT_SEQUENCE	1136	0	stockLevel -> placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-184	INCORRECT_SEQUENCE	1124	0	ship -> placeOrder -> stockLevel -> stockLevel -> ship -> placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-185	INCORRECT_SEQUENCE	4476	3	restock -> stockLevel -> restock -> ship -> placeOrder	-	INCORRECT SEQUENCE: call 3 (ship): Open.containsKey(orderId)
+orderservice-186	PASSED	9586	5	restock -> stockLevel -> placeOrder -> ship -> restock	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c2_sku="s1", c2_quantity=1, c3_orderId=1, c4_sku="s1", c4_quantity=1}	
+orderservice-187	PASSED	6863	5	restock -> stockLevel -> placeOrder -> ship -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c2_sku="s1", c2_quantity=1, c3_orderId=1, c4_sku="s1"}	
+orderservice-188	INCORRECT_SEQUENCE	1142	0	placeOrder -> ship -> ship	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-189	INCORRECT_SEQUENCE	1118	0	placeOrder -> stockLevel -> ship -> ship	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-190	INCORRECT_SEQUENCE	1161	0	ship -> ship -> placeOrder -> stockLevel -> restock -> restock -> placeOrder	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-191	INCORRECT_SEQUENCE	1138	0	placeOrder -> stockLevel -> stockLevel -> placeOrder	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-192	INCORRECT_SEQUENCE	1097	0	placeOrder -> ship -> stockLevel -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-193	INCORRECT_SEQUENCE	3318	2	restock -> stockLevel -> ship	-	INCORRECT SEQUENCE: call 2 (ship): Open.containsKey(orderId)
+orderservice-194	INCORRECT_SEQUENCE	1109	0	stockLevel -> ship -> stockLevel -> placeOrder -> stockLevel -> placeOrder	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-195	INCORRECT_SEQUENCE	1106	0	stockLevel -> restock -> restock -> placeOrder -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-196	INCORRECT_SEQUENCE	1132	0	stockLevel -> restock -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-197	INCORRECT_SEQUENCE	1157	0	ship -> restock -> placeOrder -> placeOrder -> ship -> restock -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-198	INCORRECT_SEQUENCE	3432	2	restock -> restock -> ship -> placeOrder -> restock -> placeOrder	-	INCORRECT SEQUENCE: call 2 (ship): Open.containsKey(orderId)
+orderservice-199	INCORRECT_SEQUENCE	1154	0	placeOrder -> restock -> restock -> placeOrder -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-200	INCORRECT_SEQUENCE	1178	0	ship -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-201	INCORRECT_SEQUENCE	1145	0	placeOrder -> restock -> restock -> placeOrder -> stockLevel -> placeOrder	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-202	INCORRECT_SEQUENCE	6393	2	restock -> stockLevel -> ship -> restock -> restock -> ship -> restock	-	INCORRECT SEQUENCE: call 2 (ship): Open.containsKey(orderId)
+orderservice-203	PASSED	4232	3	restock -> stockLevel -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c2_sku="s1"}	
+orderservice-204	INCORRECT_SEQUENCE	3076	2	restock -> placeOrder -> placeOrder -> placeOrder -> ship -> restock -> stockLevel	-	INCORRECT SEQUENCE: call 2 (placeOrder): Stock.get(sku) >= quantity
+orderservice-205	INCORRECT_SEQUENCE	966	0	placeOrder -> placeOrder -> restock -> placeOrder -> restock	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-206	INCORRECT_SEQUENCE	1014	0	placeOrder -> restock -> stockLevel -> ship	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-207	INCORRECT_SEQUENCE	988	0	ship -> placeOrder -> restock -> restock -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-208	PASSED	6312	5	restock -> placeOrder -> stockLevel -> stockLevel -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c1_quantity=1, c2_sku="s1", c3_sku="s1", c4_sku="s1"}	
+orderservice-209	INCORRECT_SEQUENCE	1101	0	ship -> placeOrder -> restock -> restock	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-210	INCORRECT_SEQUENCE	1081	0	placeOrder -> stockLevel -> placeOrder -> ship	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-211	INCORRECT_SEQUENCE	1075	0	placeOrder -> restock -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-212	INCORRECT_SEQUENCE	2121	1	restock -> ship -> placeOrder -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-213	INCORRECT_SEQUENCE	1112	0	placeOrder -> ship -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-214	INCORRECT_SEQUENCE	1073	0	placeOrder -> stockLevel -> ship -> restock	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-215	INCORRECT_SEQUENCE	1060	0	stockLevel -> stockLevel	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-216	INCORRECT_SEQUENCE	2144	1	restock -> ship -> ship -> placeOrder -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 1 (ship): Open.containsKey(orderId)
+orderservice-217	INCORRECT_SEQUENCE	8385	4	restock -> restock -> placeOrder -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 4 (ship): Open.containsKey(orderId)
+orderservice-218	INCORRECT_SEQUENCE	5409	4	restock -> stockLevel -> placeOrder -> ship -> placeOrder	-	INCORRECT SEQUENCE: call 4 (placeOrder): Stock.get(sku) >= quantity
+orderservice-219	INCORRECT_SEQUENCE	1145	0	placeOrder -> placeOrder -> placeOrder -> stockLevel -> restock -> stockLevel -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-220	PASSED	5374	4	restock -> stockLevel -> placeOrder -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c2_sku="s1", c2_quantity=1, c3_sku="s1"}	
+orderservice-221	INCORRECT_SEQUENCE	1118	0	ship -> restock -> placeOrder -> placeOrder	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-222	INCORRECT_SEQUENCE	1098	0	placeOrder -> restock -> placeOrder -> restock -> stockLevel -> ship	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-223	INCORRECT_SEQUENCE	1055	0	placeOrder -> ship -> placeOrder -> placeOrder -> restock -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-224	INCORRECT_SEQUENCE	1052	0	placeOrder -> restock -> ship -> placeOrder -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-225	INCORRECT_SEQUENCE	1114	0	placeOrder -> ship -> restock -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-226	INCORRECT_SEQUENCE	1092	0	ship -> stockLevel -> stockLevel -> restock -> restock -> restock -> placeOrder	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-227	INCORRECT_SEQUENCE	3262	2	restock -> placeOrder -> placeOrder -> placeOrder -> ship	-	INCORRECT SEQUENCE: call 2 (placeOrder): Stock.get(sku) >= quantity
+orderservice-228	INCORRECT_SEQUENCE	1123	0	stockLevel -> ship -> placeOrder -> restock	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-229	INCORRECT_SEQUENCE	3184	2	restock -> restock -> ship -> placeOrder	-	INCORRECT SEQUENCE: call 2 (ship): Open.containsKey(orderId)
+orderservice-230	INCORRECT_SEQUENCE	934	0	placeOrder -> restock -> placeOrder -> ship -> placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-231	PASSED	8833	5	restock -> placeOrder -> stockLevel -> ship -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c1_quantity=1, c2_sku="s1", c3_orderId=1, c4_sku="s1"}	
+orderservice-232	INCORRECT_SEQUENCE	4084	3	restock -> placeOrder -> stockLevel -> placeOrder -> restock	-	INCORRECT SEQUENCE: call 3 (placeOrder): Stock.get(sku) >= quantity
+orderservice-233	INCORRECT_SEQUENCE	904	0	ship -> placeOrder -> placeOrder -> restock -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-234	INCORRECT_SEQUENCE	926	0	ship -> ship -> placeOrder -> restock	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-235	PASSED	4545	4	restock -> stockLevel -> restock -> restock	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c2_sku="s1", c2_quantity=1, c3_sku="s3", c3_quantity=1}	
+orderservice-236	INCORRECT_SEQUENCE	920	0	stockLevel -> restock -> placeOrder -> ship -> restock	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-237	INCORRECT_SEQUENCE	2801	2	restock -> placeOrder -> placeOrder -> ship -> stockLevel -> placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 2 (placeOrder): Stock.get(sku) >= quantity
+orderservice-238	INCORRECT_SEQUENCE	799	0	placeOrder -> ship -> restock -> restock -> restock -> placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-239	INCORRECT_SEQUENCE	793	0	placeOrder -> placeOrder -> restock -> placeOrder -> placeOrder	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-240	INCORRECT_SEQUENCE	3310	3	restock -> restock -> restock -> ship	-	INCORRECT SEQUENCE: call 3 (ship): Open.containsKey(orderId)
+orderservice-241	INCORRECT_SEQUENCE	4177	4	restock -> placeOrder -> ship -> restock -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 4 (ship): Open.containsKey(orderId)
+orderservice-242	INCORRECT_SEQUENCE	3543	3	restock -> placeOrder -> stockLevel -> placeOrder -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 3 (placeOrder): Stock.get(sku) >= quantity
+orderservice-243	INCORRECT_SEQUENCE	873	0	stockLevel -> placeOrder -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-244	PASSED	10236	7	restock -> restock -> placeOrder -> placeOrder -> ship -> ship -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s3", c1_quantity=1, c2_sku="s3", c2_quantity=1, c3_sku="s1", c3_quantity=1, c4_orderId=1, c5_orderId=2, c6_sku="s3"}	
+orderservice-245	PASSED	6387	6	restock -> placeOrder -> ship -> restock -> restock -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s1", c1_quantity=1, c2_orderId=1, c3_sku="s3", c3_quantity=1, c4_sku="s2", c4_quantity=1, c5_sku="s1"}	
+orderservice-246	INCORRECT_SEQUENCE	900	0	placeOrder -> ship -> ship -> restock -> placeOrder	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-247	INCORRECT_SEQUENCE	893	0	stockLevel -> restock -> placeOrder -> stockLevel	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-248	INCORRECT_SEQUENCE	916	0	placeOrder -> restock -> restock -> stockLevel	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-249	INCORRECT_SEQUENCE	927	0	stockLevel -> ship -> placeOrder -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-250	INCORRECT_SEQUENCE	893	0	stockLevel -> placeOrder -> placeOrder -> ship -> placeOrder -> ship	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-251	INCORRECT_SEQUENCE	899	0	stockLevel -> ship -> placeOrder -> restock -> stockLevel	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-252	INCORRECT_SEQUENCE	894	0	stockLevel -> placeOrder -> restock -> ship -> placeOrder -> ship	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-253	INCORRECT_SEQUENCE	2400	2	restock -> placeOrder -> placeOrder -> stockLevel -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 2 (placeOrder): Stock.get(sku) >= quantity
+orderservice-254	INCORRECT_SEQUENCE	678	0	placeOrder -> stockLevel -> placeOrder -> stockLevel -> restock	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-255	PASSED	5760	7	restock -> restock -> placeOrder -> placeOrder -> ship -> stockLevel -> stockLevel	{c0_sku="s1", c0_quantity=1, c1_sku="s3", c1_quantity=1, c2_sku="s3", c2_quantity=1, c3_sku="s1", c3_quantity=1, c4_orderId=1, c5_sku="s1", c6_sku="s3"}	
+orderservice-256	INCORRECT_SEQUENCE	659	0	stockLevel -> placeOrder -> placeOrder	-	INCORRECT SEQUENCE: call 0 (stockLevel): Stock.containsKey(sku)
+orderservice-257	INCORRECT_SEQUENCE	805	0	placeOrder -> placeOrder -> stockLevel -> stockLevel -> restock	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)
+orderservice-258	INCORRECT_SEQUENCE	2086	2	restock -> restock -> ship -> placeOrder -> ship -> restock	-	INCORRECT SEQUENCE: call 2 (ship): Open.containsKey(orderId)
+orderservice-259	INCORRECT_SEQUENCE	699	0	ship -> ship -> restock -> placeOrder -> ship -> ship -> stockLevel	-	INCORRECT SEQUENCE: call 0 (ship): Open.containsKey(orderId)
+orderservice-260	INCORRECT_SEQUENCE	719	0	placeOrder -> placeOrder -> stockLevel -> stockLevel -> stockLevel -> ship	-	INCORRECT SEQUENCE: call 0 (placeOrder): Stock.containsKey(sku)

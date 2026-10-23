@@ -1,0 +1,3 @@
+test BstGenerated233 {
+    sequence: insert -> delete -> min -> contains -> min -> insert;
+}

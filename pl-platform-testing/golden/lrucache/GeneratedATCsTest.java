@@ -5,8 +5,8 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Generated from ../specs/LruCache.spec + ../specs/LruCache.tests.
- * One @Test method per sequence, with the inputs SPF solved from the contract;
- * every assertion traces to one clause of the contract.
+ * One @Test method per sequence: the concrete test case genCTC returned,
+ * statement for statement; every assertion is one clause of the contract.
  */
 public class GeneratedATCsTest {
 
@@ -16,8 +16,8 @@ public class GeneratedATCsTest {
         Helper.reset();
 
         // call 0: put
-        String c0_key = "s3";
-        String c0_value = "s1";
+        String c0_key = "s1";
+        String c0_value = "s2";
         assertTrue("PRE put: key != null", c0_key != null);
         assertTrue("PRE put: value != null", c0_value != null);
         assertTrue("PRE put: capacity > 0", Helper.capacity > 0);
@@ -38,8 +38,8 @@ public class GeneratedATCsTest {
         assertTrue("POST put: size <= capacity", Helper.size <= Helper.capacity);
 
         // call 2: put
-        String c2_key = "s3";
-        String c2_value = "s1";
+        String c2_key = "s2";
+        String c2_value = "s3";
         assertTrue("PRE put: key != null", c2_key != null);
         assertTrue("PRE put: value != null", c2_value != null);
         assertTrue("PRE put: capacity > 0", Helper.capacity > 0);
@@ -49,9 +49,9 @@ public class GeneratedATCsTest {
         assertTrue("POST put: size <= capacity", Helper.size <= Helper.capacity);
 
         // call 3: get
-        String c3_key = "s3";
-        assertTrue("PRE get: C.containsKey(key)", Helper.C.containsKey(c3_key));
         int old3_size = Helper.size;
+        String c3_key = "s2";
+        assertTrue("PRE get: C.containsKey(key)", Helper.C.containsKey(c3_key));
         String c3_result = Helper.get(c3_key);
         assertTrue("POST get: cachedValue == C.get(key)", c3_result == Helper.C.get(c3_key));
         assertTrue("POST get: mostRecent == key", Helper.mostRecent == c3_key);
@@ -59,7 +59,7 @@ public class GeneratedATCsTest {
 
         // call 4: restore
         String c4_evictedKey = "s1";
-        String c4_value = "s1";
+        String c4_value = "s3";
         assertTrue("PRE restore: evictedKey != null", c4_evictedKey != null);
         assertTrue("PRE restore: !C.containsKey(evictedKey)", !Helper.C.containsKey(c4_evictedKey));
         Helper.restore(c4_evictedKey, c4_value);

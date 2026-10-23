@@ -1,0 +1,3 @@
+test ArraylibGenerated232 {
+    sequence: sum -> set -> sum -> get -> get -> set -> indexOf;
+}

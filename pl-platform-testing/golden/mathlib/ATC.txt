@@ -1,0 +1,317 @@
+# ../specs/MathLib.spec + ../specs/MathLib.tests (MathLibDryRun)
+
+== ATC t ==
+// starting state: the library's real state after Helper.reset()
+// call 0: abs
+old0_calls := Helper.calls
+c0_x := input<int>()
+assume(c0_x >= -2147483647)
+c0_result := abs(c0_x)
+assert(c0_result >= 0)
+assert(Helper.lastResult == c0_result)
+assert(Helper.calls == old0_calls + 1)
+// call 1: gcd
+old1_calls := Helper.calls
+c1_a := input<int>()
+c1_b := input<int>()
+assume(c1_a > 0)
+assume(c1_b > 0)
+c1_result := gcd(c1_a, c1_b)
+assert(c1_result > 0)
+assert(c1_a % c1_result == 0)
+assert(c1_b % c1_result == 0)
+assert(Helper.lastResult == c1_result)
+assert(Helper.calls == old1_calls + 1)
+// call 2: power
+old2_calls := Helper.calls
+c2_base := input<int>()
+c2_exponent := input<int>()
+assume(c2_base > 0)
+assume(c2_exponent >= 0)
+assume(c2_exponent <= 30)
+c2_result := power(c2_base, c2_exponent)
+assert(c2_result > 0)
+assert(Helper.lastResult == c2_result)
+assert(Helper.calls == old2_calls + 1)
+// call 3: factorial
+old3_calls := Helper.calls
+c3_n := input<int>()
+assume(c3_n >= 0)
+assume(c3_n <= 12)
+c3_result := factorial(c3_n)
+assert(c3_result >= 1)
+assert(Helper.lastResult == c3_result)
+assert(Helper.calls == old3_calls + 1)
+
+== round 0: t' = rewriteATC(t, []) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: abs
+old0_calls := Helper.calls
+c0_x := input<int>()
+assume(c0_x >= -2147483647)
+c0_result := abs(c0_x)
+assert(c0_result >= 0)
+assert(Helper.lastResult == c0_result)
+assert(Helper.calls == old0_calls + 1)
+// call 1: gcd
+old1_calls := Helper.calls
+c1_a := input<int>()
+c1_b := input<int>()
+assume(c1_a > 0)
+assume(c1_b > 0)
+c1_result := gcd(c1_a, c1_b)
+assert(c1_result > 0)
+assert(c1_a % c1_result == 0)
+assert(c1_b % c1_result == 0)
+assert(Helper.lastResult == c1_result)
+assert(Helper.calls == old1_calls + 1)
+// call 2: power
+old2_calls := Helper.calls
+c2_base := input<int>()
+c2_exponent := input<int>()
+assume(c2_base > 0)
+assume(c2_exponent >= 0)
+assume(c2_exponent <= 30)
+c2_result := power(c2_base, c2_exponent)
+assert(c2_result > 0)
+assert(Helper.lastResult == c2_result)
+assert(Helper.calls == old2_calls + 1)
+// call 3: factorial
+old3_calls := Helper.calls
+c3_n := input<int>()
+assume(c3_n >= 0)
+assume(c3_n <= 12)
+c3_result := factorial(c3_n)
+assert(c3_result >= 1)
+assert(Helper.lastResult == c3_result)
+assert(Helper.calls == old3_calls + 1)
+-- symex: 5 ready statement(s), stopped at c0_result := abs(c0_x)
+-- pc = (c0_x >= -2147483647)
+-- L' = [7]
+
+== round 1: t' = rewriteATC(t, [7]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: abs
+old0_calls := Helper.calls
+c0_x := 7
+assume(c0_x >= -2147483647)
+c0_result := abs(c0_x)
+assert(c0_result >= 0)
+assert(Helper.lastResult == c0_result)
+assert(Helper.calls == old0_calls + 1)
+// call 1: gcd
+old1_calls := Helper.calls
+c1_a := input<int>()
+c1_b := input<int>()
+assume(c1_a > 0)
+assume(c1_b > 0)
+c1_result := gcd(c1_a, c1_b)
+assert(c1_result > 0)
+assert(c1_a % c1_result == 0)
+assert(c1_b % c1_result == 0)
+assert(Helper.lastResult == c1_result)
+assert(Helper.calls == old1_calls + 1)
+// call 2: power
+old2_calls := Helper.calls
+c2_base := input<int>()
+c2_exponent := input<int>()
+assume(c2_base > 0)
+assume(c2_exponent >= 0)
+assume(c2_exponent <= 30)
+c2_result := power(c2_base, c2_exponent)
+assert(c2_result > 0)
+assert(Helper.lastResult == c2_result)
+assert(Helper.calls == old2_calls + 1)
+// call 3: factorial
+old3_calls := Helper.calls
+c3_n := input<int>()
+assume(c3_n >= 0)
+assume(c3_n <= 12)
+c3_result := factorial(c3_n)
+assert(c3_result >= 1)
+assert(Helper.lastResult == c3_result)
+assert(Helper.calls == old3_calls + 1)
+-- symex: 15 ready statement(s), stopped at c1_result := gcd(c1_a, c1_b)
+-- pc = (7 >= -2147483647) && (c1_a > 0) && (c1_b > 0)
+-- L' = [1, 1]
+
+== round 2: t' = rewriteATC(t, [1, 1]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: abs
+old0_calls := Helper.calls
+c0_x := 7
+assume(c0_x >= -2147483647)
+c0_result := abs(c0_x)
+assert(c0_result >= 0)
+assert(Helper.lastResult == c0_result)
+assert(Helper.calls == old0_calls + 1)
+// call 1: gcd
+old1_calls := Helper.calls
+c1_a := 1
+c1_b := 1
+assume(c1_a > 0)
+assume(c1_b > 0)
+c1_result := gcd(c1_a, c1_b)
+assert(c1_result > 0)
+assert(c1_a % c1_result == 0)
+assert(c1_b % c1_result == 0)
+assert(Helper.lastResult == c1_result)
+assert(Helper.calls == old1_calls + 1)
+// call 2: power
+old2_calls := Helper.calls
+c2_base := input<int>()
+c2_exponent := input<int>()
+assume(c2_base > 0)
+assume(c2_exponent >= 0)
+assume(c2_exponent <= 30)
+c2_result := power(c2_base, c2_exponent)
+assert(c2_result > 0)
+assert(Helper.lastResult == c2_result)
+assert(Helper.calls == old2_calls + 1)
+// call 3: factorial
+old3_calls := Helper.calls
+c3_n := input<int>()
+assume(c3_n >= 0)
+assume(c3_n <= 12)
+c3_result := factorial(c3_n)
+assert(c3_result >= 1)
+assert(Helper.lastResult == c3_result)
+assert(Helper.calls == old3_calls + 1)
+-- symex: 28 ready statement(s), stopped at c2_result := power(c2_base, c2_exponent)
+-- pc = (7 >= -2147483647) && (1 > 0) && (1 > 0) && (c2_base > 0) && (c2_exponent >= 0) && (c2_exponent <= 30)
+-- L' = [1, 0]
+
+== round 3: t' = rewriteATC(t, [1, 0]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: abs
+old0_calls := Helper.calls
+c0_x := 7
+assume(c0_x >= -2147483647)
+c0_result := abs(c0_x)
+assert(c0_result >= 0)
+assert(Helper.lastResult == c0_result)
+assert(Helper.calls == old0_calls + 1)
+// call 1: gcd
+old1_calls := Helper.calls
+c1_a := 1
+c1_b := 1
+assume(c1_a > 0)
+assume(c1_b > 0)
+c1_result := gcd(c1_a, c1_b)
+assert(c1_result > 0)
+assert(c1_a % c1_result == 0)
+assert(c1_b % c1_result == 0)
+assert(Helper.lastResult == c1_result)
+assert(Helper.calls == old1_calls + 1)
+// call 2: power
+old2_calls := Helper.calls
+c2_base := 1
+c2_exponent := 0
+assume(c2_base > 0)
+assume(c2_exponent >= 0)
+assume(c2_exponent <= 30)
+c2_result := power(c2_base, c2_exponent)
+assert(c2_result > 0)
+assert(Helper.lastResult == c2_result)
+assert(Helper.calls == old2_calls + 1)
+// call 3: factorial
+old3_calls := Helper.calls
+c3_n := input<int>()
+assume(c3_n >= 0)
+assume(c3_n <= 12)
+c3_result := factorial(c3_n)
+assert(c3_result >= 1)
+assert(Helper.lastResult == c3_result)
+assert(Helper.calls == old3_calls + 1)
+-- symex: 37 ready statement(s), stopped at c3_result := factorial(c3_n)
+-- pc = (7 >= -2147483647) && (1 > 0) && (1 > 0) && (1 > 0) && (0 >= 0) && (0 <= 30) && (c3_n >= 0) && (c3_n <= 12)
+-- L' = [0]
+
+== round 4: t' = rewriteATC(t, [0]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: abs
+old0_calls := Helper.calls
+c0_x := 7
+assume(c0_x >= -2147483647)
+c0_result := abs(c0_x)
+assert(c0_result >= 0)
+assert(Helper.lastResult == c0_result)
+assert(Helper.calls == old0_calls + 1)
+// call 1: gcd
+old1_calls := Helper.calls
+c1_a := 1
+c1_b := 1
+assume(c1_a > 0)
+assume(c1_b > 0)
+c1_result := gcd(c1_a, c1_b)
+assert(c1_result > 0)
+assert(c1_a % c1_result == 0)
+assert(c1_b % c1_result == 0)
+assert(Helper.lastResult == c1_result)
+assert(Helper.calls == old1_calls + 1)
+// call 2: power
+old2_calls := Helper.calls
+c2_base := 1
+c2_exponent := 0
+assume(c2_base > 0)
+assume(c2_exponent >= 0)
+assume(c2_exponent <= 30)
+c2_result := power(c2_base, c2_exponent)
+assert(c2_result > 0)
+assert(Helper.lastResult == c2_result)
+assert(Helper.calls == old2_calls + 1)
+// call 3: factorial
+old3_calls := Helper.calls
+c3_n := 0
+assume(c3_n >= 0)
+assume(c3_n <= 12)
+c3_result := factorial(c3_n)
+assert(c3_result >= 1)
+assert(Helper.lastResult == c3_result)
+assert(Helper.calls == old3_calls + 1)
+-- symex: 41 ready statement(s), all of t' ran
+-- pc = (7 >= -2147483647) && (1 > 0) && (1 > 0) && (1 > 0) && (0 >= 0) && (0 <= 30) && (0 >= 0) && (0 <= 12)
+-- L' = []
+
+== concrete test case ==
+// starting state: the library's real state after Helper.reset()
+// call 0: abs
+old0_calls := Helper.calls
+c0_x := 7
+assume(c0_x >= -2147483647)
+c0_result := abs(c0_x)
+assert(c0_result >= 0)
+assert(Helper.lastResult == c0_result)
+assert(Helper.calls == old0_calls + 1)
+// call 1: gcd
+old1_calls := Helper.calls
+c1_a := 1
+c1_b := 1
+assume(c1_a > 0)
+assume(c1_b > 0)
+c1_result := gcd(c1_a, c1_b)
+assert(c1_result > 0)
+assert(c1_a % c1_result == 0)
+assert(c1_b % c1_result == 0)
+assert(Helper.lastResult == c1_result)
+assert(Helper.calls == old1_calls + 1)
+// call 2: power
+old2_calls := Helper.calls
+c2_base := 1
+c2_exponent := 0
+assume(c2_base > 0)
+assume(c2_exponent >= 0)
+assume(c2_exponent <= 30)
+c2_result := power(c2_base, c2_exponent)
+assert(c2_result > 0)
+assert(Helper.lastResult == c2_result)
+assert(Helper.calls == old2_calls + 1)
+// call 3: factorial
+old3_calls := Helper.calls
+c3_n := 0
+assume(c3_n >= 0)
+assume(c3_n <= 12)
+c3_result := factorial(c3_n)
+assert(c3_result >= 1)
+assert(Helper.lastResult == c3_result)
+assert(Helper.calls == old3_calls + 1)

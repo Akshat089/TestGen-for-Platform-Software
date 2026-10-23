@@ -1,0 +1,3 @@
+test MathlibGenerated258 {
+    sequence: factorial -> factorial -> factorial;
+}

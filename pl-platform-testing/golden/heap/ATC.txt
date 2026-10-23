@@ -1,0 +1,235 @@
+# ../specs/MinHeap.spec + ../specs/MinHeap.tests (MinHeapDryRun)
+
+== ATC t ==
+// starting state: the library's real state after Helper.reset()
+// call 0: insert
+old0_size := Helper.size
+c0_value := input<Integer>()
+assume(c0_value != null)
+insert(c0_value)
+assert(Helper.H.contains(c0_value))
+assert(Helper.size == old0_size + 1)
+// call 1: insert
+old1_size := Helper.size
+c1_value := input<Integer>()
+assume(c1_value != null)
+insert(c1_value)
+assert(Helper.H.contains(c1_value))
+assert(Helper.size == old1_size + 1)
+// call 2: insert
+old2_size := Helper.size
+c2_value := input<Integer>()
+assume(c2_value != null)
+insert(c2_value)
+assert(Helper.H.contains(c2_value))
+assert(Helper.size == old2_size + 1)
+// call 3: peekMin
+old3_size := Helper.size
+assume(Helper.size > 0)
+c3_result := peekMin()
+assert(c3_result == Helper.minValue)
+assert(Helper.size == old3_size)
+// call 4: extractMin
+old4_minValue := Helper.minValue
+old4_size := Helper.size
+assume(Helper.size > 0)
+c4_result := extractMin()
+assert(c4_result == old4_minValue)
+assert(Helper.size == old4_size - 1)
+
+== round 0: t' = rewriteATC(t, []) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: insert
+old0_size := Helper.size
+c0_value := input<Integer>()
+assume(c0_value != null)
+insert(c0_value)
+assert(Helper.H.contains(c0_value))
+assert(Helper.size == old0_size + 1)
+// call 1: insert
+old1_size := Helper.size
+c1_value := input<Integer>()
+assume(c1_value != null)
+insert(c1_value)
+assert(Helper.H.contains(c1_value))
+assert(Helper.size == old1_size + 1)
+// call 2: insert
+old2_size := Helper.size
+c2_value := input<Integer>()
+assume(c2_value != null)
+insert(c2_value)
+assert(Helper.H.contains(c2_value))
+assert(Helper.size == old2_size + 1)
+// call 3: peekMin
+old3_size := Helper.size
+assume(Helper.size > 0)
+c3_result := peekMin()
+assert(c3_result == Helper.minValue)
+assert(Helper.size == old3_size)
+// call 4: extractMin
+old4_minValue := Helper.minValue
+old4_size := Helper.size
+assume(Helper.size > 0)
+c4_result := extractMin()
+assert(c4_result == old4_minValue)
+assert(Helper.size == old4_size - 1)
+-- symex: 5 ready statement(s), stopped at insert(c0_value)
+-- pc = (c0_value != null)
+-- L' = [7]
+
+== round 1: t' = rewriteATC(t, [7]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: insert
+old0_size := Helper.size
+c0_value := 7
+assume(c0_value != null)
+insert(c0_value)
+assert(Helper.H.contains(c0_value))
+assert(Helper.size == old0_size + 1)
+// call 1: insert
+old1_size := Helper.size
+c1_value := input<Integer>()
+assume(c1_value != null)
+insert(c1_value)
+assert(Helper.H.contains(c1_value))
+assert(Helper.size == old1_size + 1)
+// call 2: insert
+old2_size := Helper.size
+c2_value := input<Integer>()
+assume(c2_value != null)
+insert(c2_value)
+assert(Helper.H.contains(c2_value))
+assert(Helper.size == old2_size + 1)
+// call 3: peekMin
+old3_size := Helper.size
+assume(Helper.size > 0)
+c3_result := peekMin()
+assert(c3_result == Helper.minValue)
+assert(Helper.size == old3_size)
+// call 4: extractMin
+old4_minValue := Helper.minValue
+old4_size := Helper.size
+assume(Helper.size > 0)
+c4_result := extractMin()
+assert(c4_result == old4_minValue)
+assert(Helper.size == old4_size - 1)
+-- symex: 12 ready statement(s), stopped at insert(c1_value)
+-- pc = (7 != null) && (c1_value != null)
+-- L' = [9]
+
+== round 2: t' = rewriteATC(t, [9]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: insert
+old0_size := Helper.size
+c0_value := 7
+assume(c0_value != null)
+insert(c0_value)
+assert(Helper.H.contains(c0_value))
+assert(Helper.size == old0_size + 1)
+// call 1: insert
+old1_size := Helper.size
+c1_value := 9
+assume(c1_value != null)
+insert(c1_value)
+assert(Helper.H.contains(c1_value))
+assert(Helper.size == old1_size + 1)
+// call 2: insert
+old2_size := Helper.size
+c2_value := input<Integer>()
+assume(c2_value != null)
+insert(c2_value)
+assert(Helper.H.contains(c2_value))
+assert(Helper.size == old2_size + 1)
+// call 3: peekMin
+old3_size := Helper.size
+assume(Helper.size > 0)
+c3_result := peekMin()
+assert(c3_result == Helper.minValue)
+assert(Helper.size == old3_size)
+// call 4: extractMin
+old4_minValue := Helper.minValue
+old4_size := Helper.size
+assume(Helper.size > 0)
+c4_result := extractMin()
+assert(c4_result == old4_minValue)
+assert(Helper.size == old4_size - 1)
+-- symex: 19 ready statement(s), stopped at insert(c2_value)
+-- pc = (7 != null) && (9 != null) && (c2_value != null)
+-- L' = [11]
+
+== round 3: t' = rewriteATC(t, [11]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: insert
+old0_size := Helper.size
+c0_value := 7
+assume(c0_value != null)
+insert(c0_value)
+assert(Helper.H.contains(c0_value))
+assert(Helper.size == old0_size + 1)
+// call 1: insert
+old1_size := Helper.size
+c1_value := 9
+assume(c1_value != null)
+insert(c1_value)
+assert(Helper.H.contains(c1_value))
+assert(Helper.size == old1_size + 1)
+// call 2: insert
+old2_size := Helper.size
+c2_value := 11
+assume(c2_value != null)
+insert(c2_value)
+assert(Helper.H.contains(c2_value))
+assert(Helper.size == old2_size + 1)
+// call 3: peekMin
+old3_size := Helper.size
+assume(Helper.size > 0)
+c3_result := peekMin()
+assert(c3_result == Helper.minValue)
+assert(Helper.size == old3_size)
+// call 4: extractMin
+old4_minValue := Helper.minValue
+old4_size := Helper.size
+assume(Helper.size > 0)
+c4_result := extractMin()
+assert(c4_result == old4_minValue)
+assert(Helper.size == old4_size - 1)
+-- symex: 35 ready statement(s), all of t' ran
+-- pc = (7 != null) && (9 != null) && (11 != null) && (Helper.size > 0) && (Helper.size > 0)
+-- L' = []
+
+== concrete test case ==
+// starting state: the library's real state after Helper.reset()
+// call 0: insert
+old0_size := Helper.size
+c0_value := 7
+assume(c0_value != null)
+insert(c0_value)
+assert(Helper.H.contains(c0_value))
+assert(Helper.size == old0_size + 1)
+// call 1: insert
+old1_size := Helper.size
+c1_value := 9
+assume(c1_value != null)
+insert(c1_value)
+assert(Helper.H.contains(c1_value))
+assert(Helper.size == old1_size + 1)
+// call 2: insert
+old2_size := Helper.size
+c2_value := 11
+assume(c2_value != null)
+insert(c2_value)
+assert(Helper.H.contains(c2_value))
+assert(Helper.size == old2_size + 1)
+// call 3: peekMin
+old3_size := Helper.size
+assume(Helper.size > 0)
+c3_result := peekMin()
+assert(c3_result == Helper.minValue)
+assert(Helper.size == old3_size)
+// call 4: extractMin
+old4_minValue := Helper.minValue
+old4_size := Helper.size
+assume(Helper.size > 0)
+c4_result := extractMin()
+assert(c4_result == old4_minValue)
+assert(Helper.size == old4_size - 1)

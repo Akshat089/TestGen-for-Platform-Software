@@ -1,0 +1,3 @@
+test BstGenerated230 {
+    sequence: insert -> contains -> insert -> delete;
+}

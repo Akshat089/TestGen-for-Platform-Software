@@ -1,0 +1,317 @@
+# ../specs/IntArray.spec + ../specs/IntArray.tests (IntArrayDryRun)
+
+== ATC t ==
+// starting state: the library's real state after Helper.reset()
+// call 0: set
+old0_writes := Helper.writes
+c0_index := input<int>()
+c0_value := input<int>()
+assume(c0_index >= 0)
+assume(c0_index < Helper.length)
+set(c0_index, c0_value)
+assert(Helper.A[c0_index] == c0_value)
+assert(Helper.writes == old0_writes + 1)
+// call 1: set
+old1_writes := Helper.writes
+c1_index := input<int>()
+c1_value := input<int>()
+assume(c1_index >= 0)
+assume(c1_index < Helper.length)
+set(c1_index, c1_value)
+assert(Helper.A[c1_index] == c1_value)
+assert(Helper.writes == old1_writes + 1)
+// call 2: get
+old2_writes := Helper.writes
+c2_index := input<int>()
+assume(c2_index >= 0)
+assume(c2_index < Helper.length)
+c2_result := get(c2_index)
+assert(c2_result == Helper.A[c2_index])
+assert(Helper.writes == old2_writes)
+// call 3: sum
+old3_writes := Helper.writes
+assume(Helper.length > 0)
+c3_result := sum()
+assert(c3_result >= 0)
+assert(Helper.writes == old3_writes)
+// call 4: indexOf
+old4_writes := Helper.writes
+c4_value := input<int>()
+assume(Helper.length > 0)
+c4_result := indexOf(c4_value)
+assert(c4_result >= -1)
+assert(c4_result < Helper.length)
+assert(Helper.writes == old4_writes)
+
+== round 0: t' = rewriteATC(t, []) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: set
+old0_writes := Helper.writes
+c0_index := input<int>()
+c0_value := input<int>()
+assume(c0_index >= 0)
+assume(c0_index < Helper.length)
+set(c0_index, c0_value)
+assert(Helper.A[c0_index] == c0_value)
+assert(Helper.writes == old0_writes + 1)
+// call 1: set
+old1_writes := Helper.writes
+c1_index := input<int>()
+c1_value := input<int>()
+assume(c1_index >= 0)
+assume(c1_index < Helper.length)
+set(c1_index, c1_value)
+assert(Helper.A[c1_index] == c1_value)
+assert(Helper.writes == old1_writes + 1)
+// call 2: get
+old2_writes := Helper.writes
+c2_index := input<int>()
+assume(c2_index >= 0)
+assume(c2_index < Helper.length)
+c2_result := get(c2_index)
+assert(c2_result == Helper.A[c2_index])
+assert(Helper.writes == old2_writes)
+// call 3: sum
+old3_writes := Helper.writes
+assume(Helper.length > 0)
+c3_result := sum()
+assert(c3_result >= 0)
+assert(Helper.writes == old3_writes)
+// call 4: indexOf
+old4_writes := Helper.writes
+c4_value := input<int>()
+assume(Helper.length > 0)
+c4_result := indexOf(c4_value)
+assert(c4_result >= -1)
+assert(c4_result < Helper.length)
+assert(Helper.writes == old4_writes)
+-- symex: 7 ready statement(s), stopped at set(c0_index, c0_value)
+-- pc = (c0_index >= 0) && (c0_index < Helper.length)
+-- L' = [0, 9]
+
+== round 1: t' = rewriteATC(t, [0, 9]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: set
+old0_writes := Helper.writes
+c0_index := 0
+c0_value := 9
+assume(c0_index >= 0)
+assume(c0_index < Helper.length)
+set(c0_index, c0_value)
+assert(Helper.A[c0_index] == c0_value)
+assert(Helper.writes == old0_writes + 1)
+// call 1: set
+old1_writes := Helper.writes
+c1_index := input<int>()
+c1_value := input<int>()
+assume(c1_index >= 0)
+assume(c1_index < Helper.length)
+set(c1_index, c1_value)
+assert(Helper.A[c1_index] == c1_value)
+assert(Helper.writes == old1_writes + 1)
+// call 2: get
+old2_writes := Helper.writes
+c2_index := input<int>()
+assume(c2_index >= 0)
+assume(c2_index < Helper.length)
+c2_result := get(c2_index)
+assert(c2_result == Helper.A[c2_index])
+assert(Helper.writes == old2_writes)
+// call 3: sum
+old3_writes := Helper.writes
+assume(Helper.length > 0)
+c3_result := sum()
+assert(c3_result >= 0)
+assert(Helper.writes == old3_writes)
+// call 4: indexOf
+old4_writes := Helper.writes
+c4_value := input<int>()
+assume(Helper.length > 0)
+c4_result := indexOf(c4_value)
+assert(c4_result >= -1)
+assert(c4_result < Helper.length)
+assert(Helper.writes == old4_writes)
+-- symex: 16 ready statement(s), stopped at set(c1_index, c1_value)
+-- pc = (0 >= 0) && (0 < Helper.length) && (c1_index >= 0) && (c1_index < Helper.length)
+-- L' = [0, 13]
+
+== round 2: t' = rewriteATC(t, [0, 13]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: set
+old0_writes := Helper.writes
+c0_index := 0
+c0_value := 9
+assume(c0_index >= 0)
+assume(c0_index < Helper.length)
+set(c0_index, c0_value)
+assert(Helper.A[c0_index] == c0_value)
+assert(Helper.writes == old0_writes + 1)
+// call 1: set
+old1_writes := Helper.writes
+c1_index := 0
+c1_value := 13
+assume(c1_index >= 0)
+assume(c1_index < Helper.length)
+set(c1_index, c1_value)
+assert(Helper.A[c1_index] == c1_value)
+assert(Helper.writes == old1_writes + 1)
+// call 2: get
+old2_writes := Helper.writes
+c2_index := input<int>()
+assume(c2_index >= 0)
+assume(c2_index < Helper.length)
+c2_result := get(c2_index)
+assert(c2_result == Helper.A[c2_index])
+assert(Helper.writes == old2_writes)
+// call 3: sum
+old3_writes := Helper.writes
+assume(Helper.length > 0)
+c3_result := sum()
+assert(c3_result >= 0)
+assert(Helper.writes == old3_writes)
+// call 4: indexOf
+old4_writes := Helper.writes
+c4_value := input<int>()
+assume(Helper.length > 0)
+c4_result := indexOf(c4_value)
+assert(c4_result >= -1)
+assert(c4_result < Helper.length)
+assert(Helper.writes == old4_writes)
+-- symex: 24 ready statement(s), stopped at c2_result := get(c2_index)
+-- pc = (0 >= 0) && (0 < Helper.length) && (0 >= 0) && (0 < Helper.length) && (c2_index >= 0) && (c2_index < Helper.length)
+-- L' = [0]
+
+== round 3: t' = rewriteATC(t, [0]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: set
+old0_writes := Helper.writes
+c0_index := 0
+c0_value := 9
+assume(c0_index >= 0)
+assume(c0_index < Helper.length)
+set(c0_index, c0_value)
+assert(Helper.A[c0_index] == c0_value)
+assert(Helper.writes == old0_writes + 1)
+// call 1: set
+old1_writes := Helper.writes
+c1_index := 0
+c1_value := 13
+assume(c1_index >= 0)
+assume(c1_index < Helper.length)
+set(c1_index, c1_value)
+assert(Helper.A[c1_index] == c1_value)
+assert(Helper.writes == old1_writes + 1)
+// call 2: get
+old2_writes := Helper.writes
+c2_index := 0
+assume(c2_index >= 0)
+assume(c2_index < Helper.length)
+c2_result := get(c2_index)
+assert(c2_result == Helper.A[c2_index])
+assert(Helper.writes == old2_writes)
+// call 3: sum
+old3_writes := Helper.writes
+assume(Helper.length > 0)
+c3_result := sum()
+assert(c3_result >= 0)
+assert(Helper.writes == old3_writes)
+// call 4: indexOf
+old4_writes := Helper.writes
+c4_value := input<int>()
+assume(Helper.length > 0)
+c4_result := indexOf(c4_value)
+assert(c4_result >= -1)
+assert(c4_result < Helper.length)
+assert(Helper.writes == old4_writes)
+-- symex: 37 ready statement(s), stopped at c4_result := indexOf(c4_value)
+-- pc = (0 >= 0) && (0 < Helper.length) && (0 >= 0) && (0 < Helper.length) && (0 >= 0) && (0 < Helper.length) && (Helper.length > 0) && (Helper.length > 0)
+-- L' = [17]
+
+== round 4: t' = rewriteATC(t, [17]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: set
+old0_writes := Helper.writes
+c0_index := 0
+c0_value := 9
+assume(c0_index >= 0)
+assume(c0_index < Helper.length)
+set(c0_index, c0_value)
+assert(Helper.A[c0_index] == c0_value)
+assert(Helper.writes == old0_writes + 1)
+// call 1: set
+old1_writes := Helper.writes
+c1_index := 0
+c1_value := 13
+assume(c1_index >= 0)
+assume(c1_index < Helper.length)
+set(c1_index, c1_value)
+assert(Helper.A[c1_index] == c1_value)
+assert(Helper.writes == old1_writes + 1)
+// call 2: get
+old2_writes := Helper.writes
+c2_index := 0
+assume(c2_index >= 0)
+assume(c2_index < Helper.length)
+c2_result := get(c2_index)
+assert(c2_result == Helper.A[c2_index])
+assert(Helper.writes == old2_writes)
+// call 3: sum
+old3_writes := Helper.writes
+assume(Helper.length > 0)
+c3_result := sum()
+assert(c3_result >= 0)
+assert(Helper.writes == old3_writes)
+// call 4: indexOf
+old4_writes := Helper.writes
+c4_value := 17
+assume(Helper.length > 0)
+c4_result := indexOf(c4_value)
+assert(c4_result >= -1)
+assert(c4_result < Helper.length)
+assert(Helper.writes == old4_writes)
+-- symex: 41 ready statement(s), all of t' ran
+-- pc = (0 >= 0) && (0 < Helper.length) && (0 >= 0) && (0 < Helper.length) && (0 >= 0) && (0 < Helper.length) && (Helper.length > 0) && (Helper.length > 0)
+-- L' = []
+
+== concrete test case ==
+// starting state: the library's real state after Helper.reset()
+// call 0: set
+old0_writes := Helper.writes
+c0_index := 0
+c0_value := 9
+assume(c0_index >= 0)
+assume(c0_index < Helper.length)
+set(c0_index, c0_value)
+assert(Helper.A[c0_index] == c0_value)
+assert(Helper.writes == old0_writes + 1)
+// call 1: set
+old1_writes := Helper.writes
+c1_index := 0
+c1_value := 13
+assume(c1_index >= 0)
+assume(c1_index < Helper.length)
+set(c1_index, c1_value)
+assert(Helper.A[c1_index] == c1_value)
+assert(Helper.writes == old1_writes + 1)
+// call 2: get
+old2_writes := Helper.writes
+c2_index := 0
+assume(c2_index >= 0)
+assume(c2_index < Helper.length)
+c2_result := get(c2_index)
+assert(c2_result == Helper.A[c2_index])
+assert(Helper.writes == old2_writes)
+// call 3: sum
+old3_writes := Helper.writes
+assume(Helper.length > 0)
+c3_result := sum()
+assert(c3_result >= 0)
+assert(Helper.writes == old3_writes)
+// call 4: indexOf
+old4_writes := Helper.writes
+c4_value := 17
+assume(Helper.length > 0)
+c4_result := indexOf(c4_value)
+assert(c4_result >= -1)
+assert(c4_result < Helper.length)
+assert(Helper.writes == old4_writes)

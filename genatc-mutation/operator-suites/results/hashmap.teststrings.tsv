@@ -1,0 +1,262 @@
+# generated test strings — hashmap (family size 260, phase 1 1645s)
+# name	status	spf_ms	rounds	sequence	inputs	detail
+hashmap-001	PASSED	11457	3	put -> put -> put	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17}	
+hashmap-002	PASSED	13066	5	put -> put -> put -> remove -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1", c4_key="s2"}	
+hashmap-003	PASSED	9960	4	put -> put -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3"}	
+hashmap-004	INCORRECT_SEQUENCE	1796	0	getOldValue -> remove -> getOldValue -> getOldValue -> put -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-005	PASSED	15013	5	put -> put -> remove -> put -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c3_value=19, c4_key="s3"}	
+hashmap-006	INCORRECT_SEQUENCE	1835	0	getOldValue -> getOldValue -> put -> put -> put -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-007	PASSED	9979	4	put -> put -> put -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1"}	
+hashmap-008	INCORRECT_SEQUENCE	1853	0	remove -> remove -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-009	INCORRECT_SEQUENCE	1753	0	getOldValue -> remove -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-010	PASSED	5516	2	put -> put	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13}	
+hashmap-011	INCORRECT_SEQUENCE	1806	0	getOldValue -> remove -> put -> put -> getOldValue -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-012	INCORRECT_SEQUENCE	2059	0	getOldValue -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-013	PASSED	16280	6	put -> remove -> put -> getOldValue -> getOldValue -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s1", c4_key="s1", c5_key="s1"}	
+hashmap-014	PASSED	12350	6	put -> put -> put -> put -> put -> put	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1", c3_value=21, c4_key="s3", c4_value=25, c5_key="s2", c5_value=29}	
+hashmap-015	INCORRECT_SEQUENCE	1745	0	getOldValue -> getOldValue -> put -> getOldValue -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-016	PASSED	8114	2	put -> remove	{c0_key="s1", c0_value=9, c1_key="s1"}	
+hashmap-017	PASSED	10880	5	put -> put -> getOldValue -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c4_key="s1"}	
+hashmap-018	INCORRECT_SEQUENCE	1752	0	remove -> put -> getOldValue -> getOldValue -> getOldValue -> getOldValue	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-019	INCORRECT_SEQUENCE	1718	0	getOldValue -> put -> put -> put -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-020	INCORRECT_SEQUENCE	2105	0	getOldValue -> getOldValue -> put -> put -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-021	INCORRECT_SEQUENCE	1756	0	remove -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-022	PASSED	7416	3	put -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1"}	
+hashmap-023	INCORRECT_SEQUENCE	1920	0	getOldValue -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-024	PASSED	15658	6	put -> put -> getOldValue -> remove -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c4_key="s1", c5_key="s1"}	
+hashmap-025	INCORRECT_SEQUENCE	5904	2	put -> remove -> getOldValue -> getOldValue -> put	-	INCORRECT SEQUENCE: call 2 (getOldValue): M.containsKey(key)
+hashmap-026	INCORRECT_SEQUENCE	10003	4	put -> getOldValue -> put -> remove -> remove	-	INCORRECT SEQUENCE: call 4 (remove): M.containsKey(key)
+hashmap-027	PASSED	15473	6	put -> put -> put -> getOldValue -> remove -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1", c4_key="s2", c5_key="s3"}	
+hashmap-028	INCORRECT_SEQUENCE	1721	0	remove -> put -> getOldValue -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-029	PASSED	10652	5	put -> put -> put -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1", c4_key="s2"}	
+hashmap-030	PASSED	7043	3	put -> put -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3"}	
+hashmap-031	INCORRECT_SEQUENCE	1756	0	remove -> remove -> put -> put -> put -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-032	INCORRECT_SEQUENCE	5551	2	put -> remove -> getOldValue -> remove -> put -> remove	-	INCORRECT SEQUENCE: call 2 (getOldValue): M.containsKey(key)
+hashmap-033	INCORRECT_SEQUENCE	4888	0	getOldValue -> put -> put -> put -> put -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-034	PASSED	16969	5	put -> put -> remove -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s1", c4_key="s1"}	
+hashmap-035	PASSED	20608	6	put -> put -> getOldValue -> getOldValue -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c4_key="s1", c5_key="s3"}	
+hashmap-036	INCORRECT_SEQUENCE	1900	0	getOldValue -> put -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-037	INCORRECT_SEQUENCE	1767	0	getOldValue -> remove -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-038	INCORRECT_SEQUENCE	1905	0	remove -> put -> put -> getOldValue -> remove -> remove -> getOldValue	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-039	INCORRECT_SEQUENCE	2206	0	remove -> getOldValue -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-040	PASSED	12005	5	put -> put -> getOldValue -> remove -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c4_key="s1"}	
+hashmap-041	INCORRECT_SEQUENCE	2850	0	remove -> put -> getOldValue -> remove -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-042	INCORRECT_SEQUENCE	3095	0	remove -> getOldValue -> getOldValue -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-043	PASSED	13801	4	put -> put -> put -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1"}	
+hashmap-044	INCORRECT_SEQUENCE	6344	2	put -> remove -> remove -> getOldValue -> put	-	INCORRECT SEQUENCE: call 2 (remove): M.containsKey(key)
+hashmap-045	INCORRECT_SEQUENCE	6111	2	put -> remove -> getOldValue -> getOldValue -> remove -> put	-	INCORRECT SEQUENCE: call 2 (getOldValue): M.containsKey(key)
+hashmap-046	INCORRECT_SEQUENCE	7894	3	put -> getOldValue -> remove -> getOldValue -> put -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 3 (getOldValue): M.containsKey(key)
+hashmap-047	INCORRECT_SEQUENCE	8464	2	put -> remove -> getOldValue -> remove -> getOldValue -> put -> getOldValue	-	INCORRECT SEQUENCE: call 2 (getOldValue): M.containsKey(key)
+hashmap-048	INCORRECT_SEQUENCE	2050	0	remove -> put -> put -> getOldValue	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-049	INCORRECT_SEQUENCE	1615	0	getOldValue -> put -> remove -> put -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-050	PASSED	5541	2	put -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s1"}	
+hashmap-051	INCORRECT_SEQUENCE	2303	0	getOldValue -> put -> getOldValue -> getOldValue -> put -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-052	INCORRECT_SEQUENCE	1888	0	getOldValue -> put -> remove -> put -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-053	INCORRECT_SEQUENCE	1872	0	getOldValue -> remove -> put -> getOldValue -> remove -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-054	INCORRECT_SEQUENCE	1801	0	remove -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-055	INCORRECT_SEQUENCE	2174	0	remove -> put -> put -> put -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-056	INCORRECT_SEQUENCE	2603	0	remove -> remove -> put -> getOldValue	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-057	INCORRECT_SEQUENCE	2354	0	getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-058	PASSED	17536	7	put -> remove -> put -> put -> getOldValue -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s3", c3_value=19, c4_key="s3", c5_key="s3", c6_key="s1"}	
+hashmap-059	PASSED	8914	4	put -> put -> remove -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s1"}	
+hashmap-060	INCORRECT_SEQUENCE	7477	3	put -> getOldValue -> remove -> remove	-	INCORRECT SEQUENCE: call 3 (remove): M.containsKey(key)
+hashmap-061	PASSED	6816	3	put -> put -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3"}	
+hashmap-062	PASSED	14553	6	put -> put -> put -> put -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1", c3_value=21, c4_key="s3", c5_key="s1"}	
+hashmap-063	INCORRECT_SEQUENCE	1758	0	getOldValue -> remove -> put -> put -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-064	INCORRECT_SEQUENCE	1701	0	remove -> put -> put -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-065	INCORRECT_SEQUENCE	1662	0	remove -> put -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-066	INCORRECT_SEQUENCE	1925	0	remove -> remove -> put -> getOldValue -> getOldValue -> getOldValue -> getOldValue	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-067	PASSED	12343	6	put -> put -> put -> remove -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1", c4_key="s2", c5_key="s3"}	
+hashmap-068	PASSED	11427	4	put -> getOldValue -> put -> remove	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s1"}	
+hashmap-069	PASSED	12403	6	put -> put -> getOldValue -> getOldValue -> remove -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c4_key="s1", c5_key="s3"}	
+hashmap-070	INCORRECT_SEQUENCE	1668	0	remove -> put -> put -> remove -> put -> getOldValue	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-071	INCORRECT_SEQUENCE	1678	0	remove -> remove -> put -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-072	INCORRECT_SEQUENCE	1615	0	getOldValue -> put -> remove -> getOldValue -> put -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-073	INCORRECT_SEQUENCE	1759	0	remove -> getOldValue -> put -> getOldValue -> getOldValue -> getOldValue -> getOldValue	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-074	PASSED	16900	7	put -> put -> put -> getOldValue -> put -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1", c4_key="s2", c4_value=23, c5_key="s1", c6_key="s2"}	
+hashmap-075	INCORRECT_SEQUENCE	10724	5	put -> put -> remove -> getOldValue -> remove -> remove	-	INCORRECT SEQUENCE: call 5 (remove): M.containsKey(key)
+hashmap-076	INCORRECT_SEQUENCE	10382	5	put -> put -> getOldValue -> remove -> remove -> remove	-	INCORRECT SEQUENCE: call 5 (remove): M.containsKey(key)
+hashmap-077	INCORRECT_SEQUENCE	1757	0	remove -> getOldValue -> remove -> put -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-078	INCORRECT_SEQUENCE	7926	2	put -> remove -> getOldValue	-	INCORRECT SEQUENCE: call 2 (getOldValue): M.containsKey(key)
+hashmap-079	INCORRECT_SEQUENCE	1537	0	getOldValue -> getOldValue -> getOldValue -> remove -> getOldValue -> getOldValue -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-080	INCORRECT_SEQUENCE	12634	6	put -> remove -> put -> getOldValue -> getOldValue -> remove -> remove	-	INCORRECT SEQUENCE: call 6 (remove): M.containsKey(key)
+hashmap-081	PASSED	10716	5	put -> put -> put -> put -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1", c3_value=21, c4_key="s3"}	
+hashmap-082	INCORRECT_SEQUENCE	8369	2	put -> remove -> getOldValue -> put	-	INCORRECT SEQUENCE: call 2 (getOldValue): M.containsKey(key)
+hashmap-083	INCORRECT_SEQUENCE	9081	4	put -> getOldValue -> put -> remove -> getOldValue -> put	-	INCORRECT SEQUENCE: call 4 (getOldValue): M.containsKey(key)
+hashmap-084	INCORRECT_SEQUENCE	1692	0	getOldValue -> getOldValue -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-085	INCORRECT_SEQUENCE	2027	0	remove -> getOldValue -> put -> remove -> getOldValue	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-086	INCORRECT_SEQUENCE	5778	2	put -> remove -> remove	-	INCORRECT SEQUENCE: call 2 (remove): M.containsKey(key)
+hashmap-087	INCORRECT_SEQUENCE	1914	0	remove -> remove -> put -> remove -> getOldValue -> getOldValue	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-088	PASSED	13761	5	put -> getOldValue -> put -> put -> remove	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s3", c3_value=19, c4_key="s3"}	
+hashmap-089	INCORRECT_SEQUENCE	1713	0	getOldValue -> getOldValue -> put -> remove -> getOldValue -> getOldValue -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-090	PASSED	10532	5	put -> getOldValue -> put -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s1", c4_key="s1"}	
+hashmap-091	PASSED	14244	7	put -> put -> put -> getOldValue -> put -> getOldValue -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1", c4_key="s2", c4_value=23, c5_key="s1", c6_key="s2"}	
+hashmap-092	INCORRECT_SEQUENCE	1798	0	getOldValue -> getOldValue -> getOldValue -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-093	PASSED	11489	4	put -> getOldValue -> put -> put	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s3", c3_value=19}	
+hashmap-094	INCORRECT_SEQUENCE	2002	0	remove -> put -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-095	PASSED	10575	5	put -> put -> put -> getOldValue -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1", c4_key="s2"}	
+hashmap-096	INCORRECT_SEQUENCE	8924	4	put -> getOldValue -> put -> remove -> getOldValue	-	INCORRECT SEQUENCE: call 4 (getOldValue): M.containsKey(key)
+hashmap-097	INCORRECT_SEQUENCE	7901	2	put -> remove -> remove -> remove -> getOldValue -> put	-	INCORRECT SEQUENCE: call 2 (remove): M.containsKey(key)
+hashmap-098	INCORRECT_SEQUENCE	1747	0	getOldValue -> put -> put -> put -> put -> put -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-099	INCORRECT_SEQUENCE	5290	2	put -> remove -> getOldValue -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 2 (getOldValue): M.containsKey(key)
+hashmap-100	INCORRECT_SEQUENCE	1862	0	remove -> put -> put -> getOldValue -> remove -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-101	INCORRECT_SEQUENCE	9315	4	put -> remove -> put -> remove -> getOldValue	-	INCORRECT SEQUENCE: call 4 (getOldValue): M.containsKey(key)
+hashmap-102	PASSED	7203	3	put -> remove -> put	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15}	
+hashmap-103	PASSED	14547	6	put -> remove -> put -> getOldValue -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s1", c4_key="s1", c5_key="s1"}	
+hashmap-104	INCORRECT_SEQUENCE	1580	0	getOldValue -> remove -> put -> remove -> remove -> put -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-105	PASSED	11792	6	put -> getOldValue -> remove -> put -> put -> remove	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c3_key="s2", c3_value=17, c4_key="s1", c4_value=21, c5_key="s1"}	
+hashmap-106	INCORRECT_SEQUENCE	1719	0	getOldValue -> getOldValue -> getOldValue -> remove -> remove -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-107	INCORRECT_SEQUENCE	1639	0	remove -> put -> remove -> put -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-108	INCORRECT_SEQUENCE	1584	0	remove -> put -> put -> remove -> remove -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-109	PASSED	8134	4	put -> put -> remove -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s1"}	
+hashmap-110	INCORRECT_SEQUENCE	4658	0	remove -> getOldValue -> getOldValue -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-111	INCORRECT_SEQUENCE	1690	0	getOldValue -> put -> remove -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-112	PASSED	12682	6	put -> put -> getOldValue -> put -> remove -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c3_value=19, c4_key="s3", c5_key="s1"}	
+hashmap-113	INCORRECT_SEQUENCE	2156	0	remove -> getOldValue	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-114	INCORRECT_SEQUENCE	1902	0	getOldValue -> put -> remove -> remove -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-115	INCORRECT_SEQUENCE	16374	6	put -> remove -> put -> getOldValue -> put -> remove -> getOldValue	-	INCORRECT SEQUENCE: call 6 (getOldValue): M.containsKey(key)
+hashmap-116	INCORRECT_SEQUENCE	8115	4	put -> getOldValue -> getOldValue -> remove -> remove	-	INCORRECT SEQUENCE: call 4 (remove): M.containsKey(key)
+hashmap-117	INCORRECT_SEQUENCE	1744	0	remove -> put -> remove -> put -> remove -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-118	INCORRECT_SEQUENCE	1591	0	remove -> getOldValue -> put -> put -> put -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-119	INCORRECT_SEQUENCE	1642	0	remove -> put -> put -> put -> getOldValue -> remove -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-120	INCORRECT_SEQUENCE	1529	0	remove -> put -> getOldValue	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-121	INCORRECT_SEQUENCE	1743	0	getOldValue -> remove -> getOldValue -> put -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-122	PASSED	20871	7	put -> put -> put -> getOldValue -> getOldValue -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1", c4_key="s2", c5_key="s3", c6_key="s1"}	
+hashmap-123	INCORRECT_SEQUENCE	2296	0	remove -> put -> put -> getOldValue -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-124	PASSED	15096	5	put -> put -> getOldValue -> put -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c3_value=19, c4_key="s3"}	
+hashmap-125	INCORRECT_SEQUENCE	2234	0	remove -> put -> remove -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-126	PASSED	19177	6	put -> put -> remove -> getOldValue -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s1", c4_key="s1", c5_key="s1"}	
+hashmap-127	PASSED	11238	4	put -> remove -> put -> put	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s3", c3_value=19}	
+hashmap-128	INCORRECT_SEQUENCE	18867	6	put -> put -> getOldValue -> put -> remove -> remove -> remove	-	INCORRECT SEQUENCE: call 6 (remove): M.containsKey(key)
+hashmap-129	INCORRECT_SEQUENCE	2158	0	remove -> put -> put -> put -> remove -> getOldValue	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-130	INCORRECT_SEQUENCE	1915	0	getOldValue -> remove -> getOldValue -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-131	PASSED	9052	4	put -> put -> put -> put	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1", c3_value=21}	
+hashmap-132	PASSED	12049	6	put -> put -> getOldValue -> getOldValue -> put -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c4_key="s1", c4_value=21, c5_key="s3"}	
+hashmap-133	INCORRECT_SEQUENCE	1671	0	remove -> getOldValue -> put -> put -> getOldValue	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-134	INCORRECT_SEQUENCE	1617	0	remove -> put -> getOldValue -> getOldValue -> put -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-135	INCORRECT_SEQUENCE	1630	0	getOldValue -> put -> put -> getOldValue -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-136	PASSED	8448	4	put -> getOldValue -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c3_key="s1"}	
+hashmap-137	INCORRECT_SEQUENCE	1671	0	getOldValue -> remove -> put -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-138	PASSED	13739	5	put -> put -> remove -> remove -> put	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s1", c4_key="s1", c4_value=21}	
+hashmap-139	INCORRECT_SEQUENCE	1879	0	getOldValue -> put -> getOldValue -> getOldValue -> getOldValue -> put -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-140	INCORRECT_SEQUENCE	1824	0	remove -> getOldValue -> remove -> remove -> remove -> put -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-141	INCORRECT_SEQUENCE	1675	0	remove -> remove -> getOldValue -> remove -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-142	PASSED	9534	5	put -> remove -> put -> getOldValue -> put	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s1", c4_key="s1", c4_value=21}	
+hashmap-143	INCORRECT_SEQUENCE	6586	3	put -> getOldValue -> remove -> getOldValue -> getOldValue -> getOldValue	-	INCORRECT SEQUENCE: call 3 (getOldValue): M.containsKey(key)
+hashmap-144	PASSED	13958	6	put -> getOldValue -> put -> getOldValue -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s1", c4_key="s1", c5_key="s1"}	
+hashmap-145	INCORRECT_SEQUENCE	1639	0	remove -> remove -> remove -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-146	PASSED	10857	6	put -> getOldValue -> put -> getOldValue -> put -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s1", c4_key="s1", c4_value=21, c5_key="s1"}	
+hashmap-147	INCORRECT_SEQUENCE	8433	4	put -> getOldValue -> put -> remove -> remove -> remove	-	INCORRECT SEQUENCE: call 4 (remove): M.containsKey(key)
+hashmap-148	INCORRECT_SEQUENCE	1640	0	getOldValue -> remove -> put -> put -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-149	INCORRECT_SEQUENCE	1625	0	remove -> put -> getOldValue -> getOldValue -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-150	INCORRECT_SEQUENCE	1725	0	getOldValue -> put -> put -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-151	INCORRECT_SEQUENCE	1719	0	remove -> remove -> put -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-152	INCORRECT_SEQUENCE	4619	0	getOldValue -> getOldValue -> remove -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-153	INCORRECT_SEQUENCE	1667	0	remove -> remove -> put -> getOldValue -> getOldValue	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-154	PASSED	13514	7	put -> getOldValue -> put -> put -> put -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s3", c3_value=19, c4_key="s2", c4_value=23, c5_key="s1", c6_key="s2"}	
+hashmap-155	INCORRECT_SEQUENCE	1627	0	getOldValue -> put -> put -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-156	PASSED	12786	7	put -> put -> remove -> put -> getOldValue -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c3_value=19, c4_key="s3", c5_key="s3", c6_key="s1"}	
+hashmap-157	INCORRECT_SEQUENCE	8005	2	put -> remove -> remove -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 2 (remove): M.containsKey(key)
+hashmap-158	INCORRECT_SEQUENCE	8373	4	put -> getOldValue -> getOldValue -> remove -> getOldValue -> put -> remove	-	INCORRECT SEQUENCE: call 4 (getOldValue): M.containsKey(key)
+hashmap-159	PASSED	9803	5	put -> getOldValue -> remove -> put -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c3_key="s2", c3_value=17, c4_key="s2"}	
+hashmap-160	PASSED	16355	7	put -> getOldValue -> put -> getOldValue -> getOldValue -> put -> remove	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s1", c4_key="s1", c5_key="s2", c5_value=23, c6_key="s1"}	
+hashmap-161	INCORRECT_SEQUENCE	1586	0	getOldValue -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-162	INCORRECT_SEQUENCE	5063	2	put -> remove -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 2 (getOldValue): M.containsKey(key)
+hashmap-163	INCORRECT_SEQUENCE	1823	0	remove -> put -> put -> put -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-164	PASSED	13635	7	put -> getOldValue -> getOldValue -> getOldValue -> remove -> put -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c3_key="s1", c4_key="s1", c5_key="s1", c5_value=21, c6_key="s1"}	
+hashmap-165	PASSED	17736	7	put -> getOldValue -> put -> put -> put -> getOldValue -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s3", c3_value=19, c4_key="s2", c4_value=23, c5_key="s1", c6_key="s2"}	
+hashmap-166	INCORRECT_SEQUENCE	2350	0	getOldValue -> put -> put -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-167	INCORRECT_SEQUENCE	1666	0	remove -> remove -> remove -> remove -> getOldValue -> remove -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-168	INCORRECT_SEQUENCE	1674	0	getOldValue -> put -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-169	PASSED	12643	7	put -> put -> getOldValue -> getOldValue -> getOldValue -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c4_key="s1", c5_key="s3", c6_key="s3"}	
+hashmap-170	INCORRECT_SEQUENCE	1545	0	getOldValue -> put -> put -> put -> put -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-171	PASSED	15802	7	put -> put -> getOldValue -> getOldValue -> remove -> put -> put	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c4_key="s1", c5_key="s2", c5_value=23, c6_key="s1", c6_value=27}	
+hashmap-172	INCORRECT_SEQUENCE	1627	0	getOldValue -> remove -> getOldValue -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-173	PASSED	9808	5	put -> remove -> put -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s1", c4_key="s1"}	
+hashmap-174	PASSED	15195	6	put -> put -> put -> getOldValue -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1", c4_key="s2", c5_key="s3"}	
+hashmap-175	INCORRECT_SEQUENCE	1679	0	getOldValue -> getOldValue -> put -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-176	PASSED	8002	4	put -> remove -> put -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s1"}	
+hashmap-177	PASSED	12998	7	put -> put -> getOldValue -> remove -> put -> put -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c4_key="s1", c4_value=21, c5_key="s3", c5_value=25, c6_key="s3"}	
+hashmap-178	INCORRECT_SEQUENCE	1691	0	remove -> getOldValue -> put -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-179	PASSED	6510	3	put -> getOldValue -> put	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15}	
+hashmap-180	INCORRECT_SEQUENCE	4695	0	getOldValue -> remove -> remove -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-181	INCORRECT_SEQUENCE	1582	0	remove -> put -> getOldValue -> remove -> remove -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-182	INCORRECT_SEQUENCE	1626	0	remove -> put -> put -> getOldValue -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-183	PASSED	11981	6	put -> put -> put -> getOldValue -> put -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1", c4_key="s2", c4_value=23, c5_key="s1"}	
+hashmap-184	PASSED	11849	6	put -> remove -> put -> put -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s3", c3_value=19, c4_key="s3", c5_key="s3"}	
+hashmap-185	INCORRECT_SEQUENCE	1734	0	getOldValue -> put -> remove -> remove -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-186	PASSED	11715	4	put -> remove -> put -> remove	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s1"}	
+hashmap-187	INCORRECT_SEQUENCE	1649	0	remove -> put -> put -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-188	INCORRECT_SEQUENCE	1913	0	remove -> remove -> getOldValue	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-189	INCORRECT_SEQUENCE	8435	4	put -> getOldValue -> getOldValue -> remove -> remove -> getOldValue	-	INCORRECT SEQUENCE: call 4 (remove): M.containsKey(key)
+hashmap-190	INCORRECT_SEQUENCE	1791	0	getOldValue -> put -> getOldValue -> remove -> remove -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-191	INCORRECT_SEQUENCE	1896	0	remove -> remove -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-192	PASSED	17118	7	put -> getOldValue -> put -> put -> getOldValue -> put -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s3", c3_value=19, c4_key="s3", c5_key="s3", c5_value=25, c6_key="s3"}	
+hashmap-193	INCORRECT_SEQUENCE	1636	0	getOldValue -> put -> put -> put -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-194	INCORRECT_SEQUENCE	1723	0	getOldValue -> getOldValue -> put -> remove -> put -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-195	PASSED	8408	4	put -> put -> getOldValue -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3"}	
+hashmap-196	PASSED	12638	6	put -> put -> getOldValue -> put -> remove -> put	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c3_value=19, c4_key="s3", c5_key="s3", c5_value=25}	
+hashmap-197	PASSED	14740	6	put -> getOldValue -> remove -> put -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c3_key="s2", c3_value=17, c4_key="s2", c5_key="s2"}	
+hashmap-198	INCORRECT_SEQUENCE	1765	0	remove -> getOldValue -> put -> getOldValue -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-199	INCORRECT_SEQUENCE	10940	5	put -> put -> getOldValue -> remove -> remove -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 5 (getOldValue): M.containsKey(key)
+hashmap-200	INCORRECT_SEQUENCE	1763	0	getOldValue -> put -> remove -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-201	INCORRECT_SEQUENCE	1743	0	remove -> remove -> remove -> getOldValue -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-202	PASSED	11695	4	put -> put -> getOldValue -> put	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c3_value=19}	
+hashmap-203	INCORRECT_SEQUENCE	1877	0	remove -> getOldValue -> put -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-204	INCORRECT_SEQUENCE	5818	2	put -> remove -> getOldValue -> put -> put	-	INCORRECT SEQUENCE: call 2 (getOldValue): M.containsKey(key)
+hashmap-205	PASSED	13412	7	put -> put -> put -> remove -> put -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1", c4_key="s2", c4_value=23, c5_key="s2", c6_key="s2"}	
+hashmap-206	INCORRECT_SEQUENCE	1615	0	remove -> remove -> put -> put -> getOldValue -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-207	PASSED	16144	7	put -> put -> remove -> put -> getOldValue -> remove -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c3_value=19, c4_key="s3", c5_key="s3", c6_key="s1"}	
+hashmap-208	PASSED	13388	7	put -> put -> put -> put -> getOldValue -> put -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1", c3_value=21, c4_key="s3", c5_key="s1", c5_value=27, c6_key="s3"}	
+hashmap-209	PASSED	7868	4	put -> getOldValue -> getOldValue -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c3_key="s1"}	
+hashmap-210	INCORRECT_SEQUENCE	1638	0	remove -> getOldValue -> remove -> put -> remove -> getOldValue	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-211	PASSED	13391	5	put -> getOldValue -> put -> getOldValue -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s1", c4_key="s1"}	
+hashmap-212	INCORRECT_SEQUENCE	5091	2	put -> remove -> remove -> getOldValue	-	INCORRECT SEQUENCE: call 2 (remove): M.containsKey(key)
+hashmap-213	INCORRECT_SEQUENCE	1650	0	getOldValue -> getOldValue -> remove -> remove -> getOldValue -> remove -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-214	INCORRECT_SEQUENCE	1870	0	remove -> put -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-215	INCORRECT_SEQUENCE	1596	0	getOldValue -> remove -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-216	INCORRECT_SEQUENCE	1596	0	remove -> getOldValue -> remove -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-217	INCORRECT_SEQUENCE	2082	0	remove -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-218	INCORRECT_SEQUENCE	5351	2	put -> remove -> getOldValue -> put -> put -> getOldValue -> getOldValue	-	INCORRECT SEQUENCE: call 2 (getOldValue): M.containsKey(key)
+hashmap-219	INCORRECT_SEQUENCE	1874	0	remove -> put -> getOldValue -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-220	INCORRECT_SEQUENCE	1538	0	remove -> getOldValue -> put -> put -> getOldValue -> getOldValue -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-221	INCORRECT_SEQUENCE	1735	0	getOldValue -> put -> remove -> remove -> remove -> remove -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-222	PASSED	14455	6	put -> getOldValue -> getOldValue -> put -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c3_key="s2", c3_value=17, c4_key="s1", c5_key="s2"}	
+hashmap-223	INCORRECT_SEQUENCE	1658	0	remove -> remove -> remove -> remove -> put -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-224	PASSED	13450	7	put -> put -> put -> put -> put -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1", c3_value=21, c4_key="s3", c4_value=25, c5_key="s2", c6_key="s3"}	
+hashmap-225	INCORRECT_SEQUENCE	1636	0	remove -> put -> getOldValue -> getOldValue	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-226	INCORRECT_SEQUENCE	1687	0	getOldValue -> put -> put -> remove -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-227	PASSED	13004	5	put -> put -> remove -> put -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c3_value=19, c4_key="s3"}	
+hashmap-228	PASSED	6249	3	put -> getOldValue -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1"}	
+hashmap-229	INCORRECT_SEQUENCE	1589	0	remove -> put -> put -> getOldValue -> put -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-230	INCORRECT_SEQUENCE	1782	0	getOldValue -> remove -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-231	PASSED	12859	7	put -> put -> getOldValue -> put -> getOldValue -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c3_value=19, c4_key="s3", c5_key="s3", c6_key="s1"}	
+hashmap-232	INCORRECT_SEQUENCE	1801	0	getOldValue -> remove -> put -> getOldValue -> getOldValue -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-233	INCORRECT_SEQUENCE	1609	0	remove -> put -> remove -> remove -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-234	INCORRECT_SEQUENCE	4663	0	remove -> put -> put -> put -> getOldValue -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-235	INCORRECT_SEQUENCE	1576	0	getOldValue -> put -> put -> put -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-236	INCORRECT_SEQUENCE	5113	2	put -> remove -> remove -> put	-	INCORRECT SEQUENCE: call 2 (remove): M.containsKey(key)
+hashmap-237	INCORRECT_SEQUENCE	9889	5	put -> getOldValue -> getOldValue -> getOldValue -> remove -> remove	-	INCORRECT SEQUENCE: call 5 (remove): M.containsKey(key)
+hashmap-238	INCORRECT_SEQUENCE	1617	0	getOldValue -> remove -> getOldValue -> getOldValue -> put -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-239	INCORRECT_SEQUENCE	1625	0	remove -> put -> put -> put -> getOldValue -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-240	PASSED	15706	7	put -> put -> put -> put -> getOldValue -> remove -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s2", c2_value=17, c3_key="s1", c3_value=21, c4_key="s3", c5_key="s1", c6_key="s2"}	
+hashmap-241	PASSED	9686	5	put -> remove -> put -> getOldValue -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c2_value=15, c3_key="s1", c4_key="s1"}	
+hashmap-242	PASSED	8012	4	put -> put -> remove -> put	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c3_value=19}	
+hashmap-243	PASSED	10437	5	put -> getOldValue -> getOldValue -> put -> put	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c3_key="s2", c3_value=17, c4_key="s1", c4_value=21}	
+hashmap-244	INCORRECT_SEQUENCE	1610	0	getOldValue -> getOldValue -> getOldValue -> put -> put -> remove -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-245	INCORRECT_SEQUENCE	4642	0	getOldValue -> put -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-246	INCORRECT_SEQUENCE	1638	0	remove -> put -> getOldValue -> remove -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-247	PASSED	9477	5	put -> put -> getOldValue -> put -> getOldValue	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c3_value=19, c4_key="s3"}	
+hashmap-248	INCORRECT_SEQUENCE	1679	0	getOldValue -> put -> put -> getOldValue -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-249	PASSED	10039	5	put -> getOldValue -> getOldValue -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c3_key="s1", c4_key="s1"}	
+hashmap-250	INCORRECT_SEQUENCE	1554	0	remove -> getOldValue -> put -> remove -> getOldValue -> getOldValue -> getOldValue	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-251	INCORRECT_SEQUENCE	1513	0	getOldValue -> getOldValue -> getOldValue -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-252	INCORRECT_SEQUENCE	4557	2	put -> remove -> getOldValue -> put -> getOldValue	-	INCORRECT SEQUENCE: call 2 (getOldValue): M.containsKey(key)
+hashmap-253	INCORRECT_SEQUENCE	4598	0	getOldValue -> remove -> getOldValue -> getOldValue -> put -> remove -> getOldValue	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-254	INCORRECT_SEQUENCE	1539	0	getOldValue -> put -> getOldValue -> put -> getOldValue -> remove	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-255	INCORRECT_SEQUENCE	1565	0	getOldValue -> put -> remove -> put -> remove -> put	-	INCORRECT SEQUENCE: call 0 (getOldValue): M.containsKey(key)
+hashmap-256	INCORRECT_SEQUENCE	1503	0	remove -> getOldValue -> remove -> remove -> put -> put	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-257	PASSED	12337	7	put -> getOldValue -> getOldValue -> put -> getOldValue -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s1", c2_key="s1", c3_key="s2", c3_value=17, c4_key="s1", c5_key="s2", c6_key="s1"}	
+hashmap-258	INCORRECT_SEQUENCE	1623	0	remove -> put -> remove -> put -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)
+hashmap-259	PASSED	11140	6	put -> put -> getOldValue -> put -> getOldValue -> remove	{c0_key="s1", c0_value=9, c1_key="s3", c1_value=13, c2_key="s3", c3_key="s3", c3_value=19, c4_key="s3", c5_key="s3"}	
+hashmap-260	INCORRECT_SEQUENCE	4455	0	remove -> put -> getOldValue -> put -> remove	-	INCORRECT SEQUENCE: call 0 (remove): M.containsKey(key)

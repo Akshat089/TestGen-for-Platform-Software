@@ -46,11 +46,20 @@ public final class PathVectorReader {
                     vars.put(e.getKey(), String.valueOf(e.getValue()));
                 }
             }
-            return PathVector.path(pathId, sat, vars);
+            @SuppressWarnings("unchecked")
+            Map<String, Object> rawPicks = (Map<String, Object>) obj.get("picks");
+            Map<String, String> picks = new LinkedHashMap<String, String>();
+            if (rawPicks != null) {
+                for (Map.Entry<String, Object> e : rawPicks.entrySet()) {
+                    picks.put(e.getKey(), String.valueOf(e.getValue()));
+                }
+            }
+            return PathVector.path(pathId, sat, vars, picks);
         } else if ("searchConstraintHit".equals(event)) {
             return PathVector.constraintHit((String) obj.get("detail"));
         } else if ("error".equals(event)) {
-            return PathVector.error((String) obj.get("detail"));
+            Object at = obj.get("line");
+            return PathVector.error((String) obj.get("detail"), at instanceof Number ? ((Number) at).intValue() : -1);
         } else if ("searchFinished".equals(event)) {
             Object deepest = obj.get("deepestPruneLine");
             return PathVector.finished(((Number) obj.get("paths")).intValue(),
@@ -105,6 +114,8 @@ public final class PathVectorReader {
             if (c == '\\') {
                 char n = s.charAt(pos[0]++);
                 if (n == 'n') sb.append('\n');
+                else if (n == 't') sb.append('\t');
+                else if (n == 'u') { sb.append((char) Integer.parseInt(s.substring(pos[0], pos[0] + 4), 16)); pos[0] += 4; }
                 else sb.append(n);
             } else {
                 sb.append(c);

@@ -1,10 +1,3 @@
 test TicketserviceGenerated181 {
-    sequence: reserveSeats -> reserveSeats;
-
-    inputs {
-        reserveSeats[0].seatHoldId = 3;
-        reserveSeats[0].customerEmail = "alpha";
-        reserveSeats[1].seatHoldId = 0;
-        reserveSeats[1].customerEmail = "alpha";
-    }
+    sequence: findAndHoldSeats -> reserveSeats -> findAndHoldSeats -> findAndHoldSeats -> reserveSeats;
 }

@@ -1,0 +1,3 @@
+test BstGenerated196 {
+    sequence: contains -> contains -> contains;
+}

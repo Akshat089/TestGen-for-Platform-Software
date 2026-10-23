@@ -1,0 +1,3 @@
+test MathlibGenerated227 {
+    sequence: factorial -> factorial -> factorial -> factorial -> power;
+}

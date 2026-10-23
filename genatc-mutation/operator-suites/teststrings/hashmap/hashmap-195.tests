@@ -1,0 +1,3 @@
+test HashmapGenerated195 {
+    sequence: put -> put -> getOldValue -> getOldValue;
+}

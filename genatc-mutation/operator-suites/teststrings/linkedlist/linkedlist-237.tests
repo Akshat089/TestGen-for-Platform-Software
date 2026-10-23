@@ -1,0 +1,3 @@
+test LinkedlistGenerated237 {
+    sequence: addLast -> addFirst -> addLast -> removeFirst -> indexOf;
+}

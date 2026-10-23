@@ -1,0 +1,70 @@
+# generated mutants — lrucache (phases 2+3 16s, library total 2293s)
+# id	status	kill_kind	operator	method	file	killed-by-family	family_kill_kind	detail
+LRUCACHE_GEN_SDL_1	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/lrucache/LRUCACHE_GEN_SDL_1/Helper.java:54: error: cannot find symbol
+LRUCACHE_GEN_SEI_2	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/lrucache/LRUCACHE_GEN_SEI_2/Helper.java:38: error: <identifier> expected
+LRUCACHE_GEN_SDL_3	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/lrucache/LRUCACHE_GEN_SDL_3/Helper.java:55: error: cannot find symbol
+LRUCACHE_GEN_SEI_4	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/lrucache/LRUCACHE_GEN_SEI_4/Helper.java:39: error: <identifier> expected
+LRUCACHE_GEN_CRP_5	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+LRUCACHE_GEN_CRP_6	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+LRUCACHE_GEN_CRP_7	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+LRUCACHE_GEN_CRP_8	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+LRUCACHE_GEN_CRP_9	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+LRUCACHE_GEN_CRP_10	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+LRUCACHE_GEN_ROR_11	KILLED	EXCEPTION	relational-operator-replacement	put	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+LRUCACHE_GEN_ROR_12	SURVIVED	-	relational-operator-replacement	put	Helper.java	-	-	the test passes
+LRUCACHE_GEN_ROR_13	KILLED	EXCEPTION	relational-operator-replacement	put	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+LRUCACHE_GEN_ROR_14	KILLED	EXCEPTION	relational-operator-replacement	put	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+LRUCACHE_GEN_ROR_15	KILLED	POST	relational-operator-replacement	put	Helper.java	-	-	killed by POST: POST put: size <= capacity
+LRUCACHE_GEN_COR_16	KILLED	EXCEPTION	conditional-operator-replacement	put	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+LRUCACHE_GEN_COI_17	KILLED	EXCEPTION	conditional-operator-insertion	put	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+LRUCACHE_GEN_UOI_18	KILLED	POST	unary-operator-insertion	put	Helper.java	-	-	killed by POST: POST put: size <= capacity
+LRUCACHE_GEN_CTC_19	KILLED	EXCEPTION	condition-to-constant	put	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+LRUCACHE_GEN_CTC_20	KILLED	POST	condition-to-constant	put	Helper.java	-	-	killed by POST: POST put: size <= capacity
+LRUCACHE_GEN_ARP_21	SURVIVED	-	argument-replacement	put	Helper.java	-	-	the test passes
+LRUCACHE_GEN_ARP_22	INVALID	-	argument-replacement	put	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/lrucache/LRUCACHE_GEN_ARP_22/Helper.java:54: error: bad operand types for binary operator '-'
+LRUCACHE_GEN_MCR_23	SURVIVED	-	method-call-replacement	put	Helper.java	GeneratedATCsTest_lrucache_029	POST	the test passes
+LRUCACHE_GEN_MCR_24	KILLED	POST	method-call-replacement	put	Helper.java	-	-	killed by POST: POST put: size <= capacity
+LRUCACHE_GEN_VRO_25	KILLED	EXCEPTION	variable-replacement	put	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+LRUCACHE_GEN_CRP_26	KILLED	PRE	constant-replacement	put	Helper.java	-	-	killed by PRE: PRE restore: !C.containsKey(evictedKey)
+LRUCACHE_GEN_CRP_27	KILLED	EXCEPTION	constant-replacement	put	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 2
+LRUCACHE_GEN_SDL_28	KILLED	POST	statement-deletion	put	Helper.java	-	-	killed by POST: POST put: size <= capacity
+LRUCACHE_GEN_ARP_29	KILLED	PRE	argument-replacement	put	Helper.java	-	-	killed by PRE: PRE restore: !C.containsKey(evictedKey)
+LRUCACHE_GEN_ARP_30	KILLED	EXCEPTION	argument-replacement	put	Helper.java	-	-	killed by EXCEPTION: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 2
+LRUCACHE_GEN_MCR_31	KILLED	POST	method-call-replacement	put	Helper.java	-	-	killed by POST: POST restore: size <= capacity
+LRUCACHE_GEN_SEI_32	SURVIVED	-	side-effect-insertion	put	Helper.java	GeneratedATCsTest_lrucache_004	PRE	the test passes
+LRUCACHE_GEN_SDL_33	KILLED	POST	statement-deletion	put	Helper.java	-	-	killed by POST: POST put: size <= capacity
+LRUCACHE_GEN_STR_34	SURVIVED	-	statement-replacement	put	Helper.java	-	-	the test passes
+LRUCACHE_GEN_ARP_35	KILLED	POST	argument-replacement	put	Helper.java	-	-	killed by POST: POST put: size <= capacity
+LRUCACHE_GEN_ARP_36	INVALID	-	argument-replacement	put	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/lrucache/LRUCACHE_GEN_ARP_36/Helper.java:56: error: bad operand types for binary operator '-'
+LRUCACHE_GEN_MCR_37	KILLED	POST	method-call-replacement	put	Helper.java	-	-	killed by POST: POST put: size <= capacity
+LRUCACHE_GEN_SEI_38	SURVIVED	-	side-effect-insertion	put	Helper.java	GeneratedATCsTest_lrucache_004	PRE	the test passes
+LRUCACHE_GEN_SDL_39	KILLED	POST	statement-deletion	put	Helper.java	-	-	killed by POST: POST put: C.get(key) == value
+LRUCACHE_GEN_STR_40	SURVIVED	-	statement-replacement	put	Helper.java	-	-	the test passes
+LRUCACHE_GEN_ARP_41	KILLED	POST	argument-replacement	put	Helper.java	-	-	killed by POST: POST put: C.get(key) == value
+LRUCACHE_GEN_MCR_42	SURVIVED	-	method-call-replacement	put	Helper.java	GeneratedATCsTest_lrucache_131	POST	the test passes
+LRUCACHE_GEN_SEI_43	KILLED	PRE	side-effect-insertion	put	Helper.java	-	-	killed by PRE: PRE restore: !C.containsKey(evictedKey)
+LRUCACHE_GEN_SDL_44	KILLED	POST	statement-deletion	put	Helper.java	-	-	killed by POST: POST put: mostRecent == key
+LRUCACHE_GEN_SEI_45	KILLED	PRE	side-effect-insertion	put	Helper.java	-	-	killed by PRE: PRE restore: !C.containsKey(evictedKey)
+LRUCACHE_GEN_SDL_46	KILLED	POST	statement-deletion	put	Helper.java	-	-	killed by POST: POST put: mostRecent == key
+LRUCACHE_GEN_SEI_47	KILLED	PRE	side-effect-insertion	put	Helper.java	-	-	killed by PRE: PRE restore: !C.containsKey(evictedKey)
+LRUCACHE_GEN_RVR_48	SURVIVED	-	return-value-replacement	put	Helper.java	-	-	the test passes
+LRUCACHE_GEN_SEI_49	KILLED	PRE	side-effect-insertion	put	Helper.java	-	-	killed by PRE: PRE restore: !C.containsKey(evictedKey)
+LRUCACHE_GEN_ARP_50	KILLED	POST	argument-replacement	get	Helper.java	-	-	killed by POST: POST get: cachedValue == C.get(key)
+LRUCACHE_GEN_ARP_51	INVALID	-	argument-replacement	get	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/lrucache/LRUCACHE_GEN_ARP_51/Helper.java:71: error: bad operand types for binary operator '-'
+LRUCACHE_GEN_MCR_52	KILLED	POST	method-call-replacement	get	Helper.java	-	-	killed by POST: POST get: cachedValue == C.get(key)
+LRUCACHE_GEN_RVR_53	KILLED	POST	return-value-replacement	get	Helper.java	-	-	killed by POST: POST get: cachedValue == C.get(key)
+LRUCACHE_GEN_SEI_54	SURVIVED	-	side-effect-insertion	get	Helper.java	GeneratedATCsTest_lrucache_002	PRE	the test passes
+LRUCACHE_GEN_SDL_55	KILLED	POST	statement-deletion	restore	Helper.java	-	-	killed by POST: POST restore: C.containsKey(evictedKey)
+LRUCACHE_GEN_SEI_56	SURVIVED	-	side-effect-insertion	restore	Helper.java	GeneratedATCsTest_lrucache_010	PRE	the test passes
+LRUCACHE_GEN_SDL_57	SURVIVED	-	statement-deletion	touch	Helper.java	GeneratedATCsTest_lrucache_030	POST	the test passes
+LRUCACHE_GEN_STR_58	SURVIVED	-	statement-replacement	touch	Helper.java	-	-	the test passes
+LRUCACHE_GEN_ARP_59	SURVIVED	-	argument-replacement	touch	Helper.java	GeneratedATCsTest_lrucache_030	POST	the test passes
+LRUCACHE_GEN_ARP_60	INVALID	-	argument-replacement	touch	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/lrucache/LRUCACHE_GEN_ARP_60/Helper.java:90: error: bad operand types for binary operator '-'
+LRUCACHE_GEN_MCR_61	INVALID	-	method-call-replacement	touch	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/lrucache/LRUCACHE_GEN_MCR_61/Helper.java:90: error: incompatible types: String cannot be converted to int
+LRUCACHE_GEN_SEI_62	KILLED	PRE	side-effect-insertion	touch	Helper.java	-	-	killed by PRE: PRE restore: !C.containsKey(evictedKey)
+LRUCACHE_GEN_SDL_63	KILLED	POST	statement-deletion	touch	Helper.java	-	-	killed by POST: POST put: mostRecent == key
+LRUCACHE_GEN_STR_64	KILLED	POST	statement-replacement	touch	Helper.java	-	-	killed by POST: POST restore: size <= capacity
+LRUCACHE_GEN_ARP_65	KILLED	POST	argument-replacement	touch	Helper.java	-	-	killed by POST: POST put: mostRecent == key
+LRUCACHE_GEN_ARP_66	INVALID	-	argument-replacement	touch	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/lrucache/LRUCACHE_GEN_ARP_66/Helper.java:91: error: bad operand types for binary operator '-'
+LRUCACHE_GEN_MCR_67	KILLED	POST	method-call-replacement	touch	Helper.java	-	-	killed by POST: POST put: mostRecent == key
+LRUCACHE_GEN_SEI_68	KILLED	PRE	side-effect-insertion	touch	Helper.java	-	-	killed by PRE: PRE restore: !C.containsKey(evictedKey)

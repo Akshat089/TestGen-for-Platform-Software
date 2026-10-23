@@ -1,0 +1,3 @@
+test QueueGenerated227 {
+    sequence: enqueue -> enqueue -> dequeue -> enqueue;
+}

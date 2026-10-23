@@ -1,0 +1,233 @@
+# ../specs/HashMapLib.spec + ../specs/HashMapLib.tests (HashMapDryRun)
+
+== ATC t ==
+// starting state: the library's real state after Helper.reset()
+// call 0: put
+c0_key := input<String>()
+c0_value := input<Integer>()
+assume(c0_key != null)
+assume(c0_value != null)
+c0_result := put(c0_key, c0_value)
+assert(Helper.M.get(c0_key) == c0_value)
+// call 1: put
+c1_key := input<String>()
+c1_value := input<Integer>()
+assume(c1_key != null)
+assume(c1_value != null)
+c1_result := put(c1_key, c1_value)
+assert(Helper.M.get(c1_key) == c1_value)
+// call 2: getOldValue
+old2_size := Helper.size
+c2_key := input<String>()
+assume(Helper.M.containsKey(c2_key))
+c2_result := getOldValue(c2_key)
+assert(c2_result == Helper.M.get(c2_key))
+assert(Helper.size == old2_size)
+// call 3: remove
+old3_size := Helper.size
+c3_key := input<String>()
+assume(Helper.M.containsKey(c3_key))
+remove(c3_key)
+assert(!Helper.M.containsKey(c3_key))
+assert(Helper.size == old3_size - 1)
+
+== round 0: t' = rewriteATC(t, []) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: put
+c0_key := input<String>()
+c0_value := input<Integer>()
+assume(c0_key != null)
+assume(c0_value != null)
+c0_result := put(c0_key, c0_value)
+assert(Helper.M.get(c0_key) == c0_value)
+// call 1: put
+c1_key := input<String>()
+c1_value := input<Integer>()
+assume(c1_key != null)
+assume(c1_value != null)
+c1_result := put(c1_key, c1_value)
+assert(Helper.M.get(c1_key) == c1_value)
+// call 2: getOldValue
+old2_size := Helper.size
+c2_key := input<String>()
+assume(Helper.M.containsKey(c2_key))
+c2_result := getOldValue(c2_key)
+assert(c2_result == Helper.M.get(c2_key))
+assert(Helper.size == old2_size)
+// call 3: remove
+old3_size := Helper.size
+c3_key := input<String>()
+assume(Helper.M.containsKey(c3_key))
+remove(c3_key)
+assert(!Helper.M.containsKey(c3_key))
+assert(Helper.size == old3_size - 1)
+-- symex: 6 ready statement(s), stopped at c0_result := put(c0_key, c0_value)
+-- pc = (c0_key != null) && (c0_value != null)
+-- L' = ["s1", 9]
+
+== round 1: t' = rewriteATC(t, ["s1", 9]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: put
+c0_key := "s1"
+c0_value := 9
+assume(c0_key != null)
+assume(c0_value != null)
+c0_result := put(c0_key, c0_value)
+assert(Helper.M.get(c0_key) == c0_value)
+// call 1: put
+c1_key := input<String>()
+c1_value := input<Integer>()
+assume(c1_key != null)
+assume(c1_value != null)
+c1_result := put(c1_key, c1_value)
+assert(Helper.M.get(c1_key) == c1_value)
+// call 2: getOldValue
+old2_size := Helper.size
+c2_key := input<String>()
+assume(Helper.M.containsKey(c2_key))
+c2_result := getOldValue(c2_key)
+assert(c2_result == Helper.M.get(c2_key))
+assert(Helper.size == old2_size)
+// call 3: remove
+old3_size := Helper.size
+c3_key := input<String>()
+assume(Helper.M.containsKey(c3_key))
+remove(c3_key)
+assert(!Helper.M.containsKey(c3_key))
+assert(Helper.size == old3_size - 1)
+-- symex: 13 ready statement(s), stopped at c1_result := put(c1_key, c1_value)
+-- pc = ("s1" != null) && (9 != null) && (c1_key != null) && (c1_value != null)
+-- L' = ["s3", 13]
+
+== round 2: t' = rewriteATC(t, ["s3", 13]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: put
+c0_key := "s1"
+c0_value := 9
+assume(c0_key != null)
+assume(c0_value != null)
+c0_result := put(c0_key, c0_value)
+assert(Helper.M.get(c0_key) == c0_value)
+// call 1: put
+c1_key := "s3"
+c1_value := 13
+assume(c1_key != null)
+assume(c1_value != null)
+c1_result := put(c1_key, c1_value)
+assert(Helper.M.get(c1_key) == c1_value)
+// call 2: getOldValue
+old2_size := Helper.size
+c2_key := input<String>()
+assume(Helper.M.containsKey(c2_key))
+c2_result := getOldValue(c2_key)
+assert(c2_result == Helper.M.get(c2_key))
+assert(Helper.size == old2_size)
+// call 3: remove
+old3_size := Helper.size
+c3_key := input<String>()
+assume(Helper.M.containsKey(c3_key))
+remove(c3_key)
+assert(!Helper.M.containsKey(c3_key))
+assert(Helper.size == old3_size - 1)
+-- symex: 19 ready statement(s), stopped at c2_result := getOldValue(c2_key)
+-- pc = ("s1" != null) && (9 != null) && ("s3" != null) && (13 != null) && (Helper.M.containsKey(c2_key))
+-- L' = ["s3"]
+
+== round 3: t' = rewriteATC(t, ["s3"]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: put
+c0_key := "s1"
+c0_value := 9
+assume(c0_key != null)
+assume(c0_value != null)
+c0_result := put(c0_key, c0_value)
+assert(Helper.M.get(c0_key) == c0_value)
+// call 1: put
+c1_key := "s3"
+c1_value := 13
+assume(c1_key != null)
+assume(c1_value != null)
+c1_result := put(c1_key, c1_value)
+assert(Helper.M.get(c1_key) == c1_value)
+// call 2: getOldValue
+old2_size := Helper.size
+c2_key := "s3"
+assume(Helper.M.containsKey(c2_key))
+c2_result := getOldValue(c2_key)
+assert(c2_result == Helper.M.get(c2_key))
+assert(Helper.size == old2_size)
+// call 3: remove
+old3_size := Helper.size
+c3_key := input<String>()
+assume(Helper.M.containsKey(c3_key))
+remove(c3_key)
+assert(!Helper.M.containsKey(c3_key))
+assert(Helper.size == old3_size - 1)
+-- symex: 26 ready statement(s), stopped at remove(c3_key)
+-- pc = ("s1" != null) && (9 != null) && ("s3" != null) && (13 != null) && (Helper.M.containsKey("s3")) && (Helper.M.containsKey(c3_key))
+-- L' = ["s3"]
+
+== round 4: t' = rewriteATC(t, ["s3"]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: put
+c0_key := "s1"
+c0_value := 9
+assume(c0_key != null)
+assume(c0_value != null)
+c0_result := put(c0_key, c0_value)
+assert(Helper.M.get(c0_key) == c0_value)
+// call 1: put
+c1_key := "s3"
+c1_value := 13
+assume(c1_key != null)
+assume(c1_value != null)
+c1_result := put(c1_key, c1_value)
+assert(Helper.M.get(c1_key) == c1_value)
+// call 2: getOldValue
+old2_size := Helper.size
+c2_key := "s3"
+assume(Helper.M.containsKey(c2_key))
+c2_result := getOldValue(c2_key)
+assert(c2_result == Helper.M.get(c2_key))
+assert(Helper.size == old2_size)
+// call 3: remove
+old3_size := Helper.size
+c3_key := "s3"
+assume(Helper.M.containsKey(c3_key))
+remove(c3_key)
+assert(!Helper.M.containsKey(c3_key))
+assert(Helper.size == old3_size - 1)
+-- symex: 29 ready statement(s), all of t' ran
+-- pc = ("s1" != null) && (9 != null) && ("s3" != null) && (13 != null) && (Helper.M.containsKey("s3")) && (Helper.M.containsKey("s3"))
+-- L' = []
+
+== concrete test case ==
+// starting state: the library's real state after Helper.reset()
+// call 0: put
+c0_key := "s1"
+c0_value := 9
+assume(c0_key != null)
+assume(c0_value != null)
+c0_result := put(c0_key, c0_value)
+assert(Helper.M.get(c0_key) == c0_value)
+// call 1: put
+c1_key := "s3"
+c1_value := 13
+assume(c1_key != null)
+assume(c1_value != null)
+c1_result := put(c1_key, c1_value)
+assert(Helper.M.get(c1_key) == c1_value)
+// call 2: getOldValue
+old2_size := Helper.size
+c2_key := "s3"
+assume(Helper.M.containsKey(c2_key))
+c2_result := getOldValue(c2_key)
+assert(c2_result == Helper.M.get(c2_key))
+assert(Helper.size == old2_size)
+// call 3: remove
+old3_size := Helper.size
+c3_key := "s3"
+assume(Helper.M.containsKey(c3_key))
+remove(c3_key)
+assert(!Helper.M.containsKey(c3_key))
+assert(Helper.size == old3_size - 1)

@@ -1,0 +1,52 @@
+# generated mutants — taskqueue (phases 2+3 17s, library total 1156s)
+# id	status	kill_kind	operator	method	file	killed-by-family	family_kill_kind	detail
+TASKQUEUE_GEN_SDL_1	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/taskqueue/TASKQUEUE_GEN_SDL_1/Helper.java:38: error: cannot find symbol
+TASKQUEUE_GEN_SEI_2	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/taskqueue/TASKQUEUE_GEN_SEI_2/Helper.java:25: error: <identifier> expected
+TASKQUEUE_GEN_SDL_3	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/taskqueue/TASKQUEUE_GEN_SDL_3/Helper.java:49: error: cannot find symbol
+TASKQUEUE_GEN_SEI_4	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/taskqueue/TASKQUEUE_GEN_SEI_4/Helper.java:26: error: <identifier> expected
+TASKQUEUE_GEN_CRP_5	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+TASKQUEUE_GEN_CRP_6	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+TASKQUEUE_GEN_CRP_7	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+TASKQUEUE_GEN_SDL_8	KILLED	POST	statement-deletion	submit	Helper.java	-	-	killed by POST: POST submit: Tasks.containsKey(taskId)
+TASKQUEUE_GEN_STR_9	SURVIVED	-	statement-replacement	submit	Helper.java	-	-	the test passes
+TASKQUEUE_GEN_ARP_10	INVALID	-	argument-replacement	submit	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/taskqueue/TASKQUEUE_GEN_ARP_10/Helper.java:38: error: incompatible types: String cannot be converted to Integer
+TASKQUEUE_GEN_MCR_11	SURVIVED	-	method-call-replacement	submit	Helper.java	-	-	the test passes
+TASKQUEUE_GEN_SEI_12	KILLED	POST	side-effect-insertion	submit	Helper.java	-	-	killed by POST: POST submit: nextId == \old(nextId) + 1
+TASKQUEUE_GEN_VRO_13	KILLED	POST	variable-replacement	submit	Helper.java	-	-	killed by POST: POST submit: Tasks.containsKey(taskId)
+TASKQUEUE_GEN_AOR_14	KILLED	POST	arithmetic-operator-replacement	submit	Helper.java	-	-	killed by POST: POST submit: nextId == \old(nextId) + 1
+TASKQUEUE_GEN_AOR_15	KILLED	POST	arithmetic-operator-replacement	submit	Helper.java	-	-	killed by POST: POST submit: nextId == \old(nextId) + 1
+TASKQUEUE_GEN_AOR_16	KILLED	POST	arithmetic-operator-replacement	submit	Helper.java	-	-	killed by POST: POST submit: nextId == \old(nextId) + 1
+TASKQUEUE_GEN_AOR_17	KILLED	POST	arithmetic-operator-replacement	submit	Helper.java	-	-	killed by POST: POST submit: nextId == \old(nextId) + 1
+TASKQUEUE_GEN_AOI_18	KILLED	POST	arithmetic-operator-insertion	submit	Helper.java	-	-	killed by POST: POST submit: nextId == \old(nextId) + 1
+TASKQUEUE_GEN_AOI_19	KILLED	POST	arithmetic-operator-insertion	submit	Helper.java	-	-	killed by POST: POST submit: nextId == \old(nextId) + 1
+TASKQUEUE_GEN_UOI_20	KILLED	POST	unary-operator-insertion	submit	Helper.java	-	-	killed by POST: POST submit: nextId == \old(nextId) + 1
+TASKQUEUE_GEN_ABS_21	KILLED	POST	absolute-value-insertion	submit	Helper.java	-	-	killed by POST: POST submit: nextId == \old(nextId) + 1
+TASKQUEUE_GEN_CRP_22	KILLED	POST	constant-replacement	submit	Helper.java	-	-	killed by POST: POST submit: nextId == \old(nextId) + 1
+TASKQUEUE_GEN_CRP_23	KILLED	POST	constant-replacement	submit	Helper.java	-	-	killed by POST: POST submit: nextId == \old(nextId) + 1
+TASKQUEUE_GEN_CRP_24	KILLED	POST	constant-replacement	submit	Helper.java	-	-	killed by POST: POST submit: nextId == \old(nextId) + 1
+TASKQUEUE_GEN_SDL_25	KILLED	POST	statement-deletion	submit	Helper.java	-	-	killed by POST: POST submit: nextId == \old(nextId) + 1
+TASKQUEUE_GEN_UOI_26	KILLED	POST	unary-operator-insertion	submit	Helper.java	-	-	killed by POST: POST submit: Tasks.containsKey(taskId)
+TASKQUEUE_GEN_ABS_27	KILLED	POST	absolute-value-insertion	submit	Helper.java	-	-	killed by POST: POST submit: Tasks.containsKey(taskId)
+TASKQUEUE_GEN_RVR_28	KILLED	POST	return-value-replacement	submit	Helper.java	-	-	killed by POST: POST submit: Tasks.containsKey(taskId)
+TASKQUEUE_GEN_RVR_29	SURVIVED	-	return-value-replacement	submit	Helper.java	GeneratedATCsTest_taskqueue_024	POST	the test passes
+TASKQUEUE_GEN_RVR_30	KILLED	POST	return-value-replacement	submit	Helper.java	-	-	killed by POST: POST submit: Tasks.containsKey(taskId)
+TASKQUEUE_GEN_SEI_31	KILLED	POST	side-effect-insertion	submit	Helper.java	-	-	killed by POST: POST submit: nextId == \old(nextId) + 1
+TASKQUEUE_GEN_ARP_32	SURVIVED	-	argument-replacement	getResult	Helper.java	-	-	the test passes
+TASKQUEUE_GEN_ARP_33	SURVIVED	-	argument-replacement	getResult	Helper.java	-	-	the test passes
+TASKQUEUE_GEN_MCR_34	KILLED	PRE	method-call-replacement	getResult	Helper.java	-	-	killed by PRE: PRE cancelTask: Tasks.containsKey(taskId)
+TASKQUEUE_GEN_VRO_35	SURVIVED	-	variable-replacement	getResult	Helper.java	-	-	the test passes
+TASKQUEUE_GEN_SDL_36	KILLED	POST	statement-deletion	getResult	Helper.java	-	-	killed by POST: POST getResult: Results.containsKey(taskId)
+TASKQUEUE_GEN_STR_37	SURVIVED	-	statement-replacement	getResult	Helper.java	-	-	the test passes
+TASKQUEUE_GEN_ARP_38	INVALID	-	argument-replacement	getResult	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/taskqueue/TASKQUEUE_GEN_ARP_38/Helper.java:49: error: incompatible types: String cannot be converted to Integer
+TASKQUEUE_GEN_MCR_39	SURVIVED	-	method-call-replacement	getResult	Helper.java	-	-	the test passes
+TASKQUEUE_GEN_SEI_40	SURVIVED	-	side-effect-insertion	getResult	Helper.java	GeneratedATCsTest_taskqueue_024	PRE	the test passes
+TASKQUEUE_GEN_VRO_41	KILLED	POST	variable-replacement	getResult	Helper.java	-	-	killed by POST: POST getResult: Results.containsKey(taskId)
+TASKQUEUE_GEN_RVR_42	SURVIVED	-	return-value-replacement	getResult	Helper.java	-	-	the test passes
+TASKQUEUE_GEN_SEI_43	SURVIVED	-	side-effect-insertion	getResult	Helper.java	GeneratedATCsTest_taskqueue_024	PRE	the test passes
+TASKQUEUE_GEN_SDL_44	KILLED	POST	statement-deletion	cancelTask	Helper.java	-	-	killed by POST: POST cancelTask: !Tasks.containsKey(taskId)
+TASKQUEUE_GEN_STR_45	SURVIVED	-	statement-replacement	cancelTask	Helper.java	-	-	the test passes
+TASKQUEUE_GEN_ARP_46	KILLED	POST	argument-replacement	cancelTask	Helper.java	-	-	killed by POST: POST cancelTask: !Tasks.containsKey(taskId)
+TASKQUEUE_GEN_ARP_47	KILLED	POST	argument-replacement	cancelTask	Helper.java	-	-	killed by POST: POST cancelTask: !Tasks.containsKey(taskId)
+TASKQUEUE_GEN_MCR_48	KILLED	POST	method-call-replacement	cancelTask	Helper.java	-	-	killed by POST: POST cancelTask: !Tasks.containsKey(taskId)
+TASKQUEUE_GEN_SEI_49	SURVIVED	-	side-effect-insertion	cancelTask	Helper.java	GeneratedATCsTest_taskqueue_024	PRE	the test passes
+TASKQUEUE_GEN_VRO_50	KILLED	POST	variable-replacement	cancelTask	Helper.java	-	-	killed by POST: POST cancelTask: !Tasks.containsKey(taskId)

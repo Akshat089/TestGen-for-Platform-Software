@@ -1,0 +1,51 @@
+# generated suites — summary (contract-only SPF; each test generated once)
+
+PHASE 1 — generated test strings
+library      family  passed  incorrect  failed   other  seconds
+stack           260      78        182       0       0     1191
+queue           260      95        144      21       0     1257
+mathlib         260     260          0       0       0     1271
+arraylib        260     260          0       0       0     1310
+linkedlist      260     133        119       8       0     1201
+heap            260     114        146       0       0     1194
+set             260     122         93      45       0     1422
+hashmap         260      94        166       0       0     1483
+bst             260     110        141       8       1     1416
+graph           260     143        117       0       0      648
+lrucache        260     123         77      60       0      697
+ALL            2860    1532       1185     142       1
+
+PHASE 2 and 3 — generated mutants, alone and against the family
+library       mutants   killed  survived  invalid    alone by family  with family  seconds
+stack              51       36        12        3    75.0%         4        83.3%       44
+queue              49       37         9        3    80.4%         3        87.0%       41
+mathlib           156       89        67        0    57.1%         3        59.0%      228
+arraylib           92       30        58        4    34.1%         1        35.2%      165
+linkedlist         84       17        45       22    27.4%         5        35.5%       97
+heap              215       92       120        3    43.4%        40        62.3%      266
+set                27       14         7        6    66.7%         1        71.4%       17
+hashmap            33       17        11        5    60.7%         0        60.7%       14
+bst               130       46        52       32    46.9%        12        59.2%       78
+graph              70       41        16       13    71.9%         1        73.7%       17
+lrucache           68       18        40       10    31.0%        26        75.9%       15
+ALL               975      437       437      101    50.0%        96        61.0%
+
+BY OPERATOR
+operator                           abbr   mutants   killed  survived  invalid    alone with family
+arithmetic-operator-replacement    AOR         80       40        34        6    54.1%       58.1%
+arithmetic-operator-insertion      AOI         44       28        16        0    63.6%       65.9%
+relational-operator-replacement    ROR        135       37        62       36    37.4%       55.6%
+conditional-operator-replacement   COR          3        3         0        0   100.0%      100.0%
+conditional-operator-insertion     COI         23       12        10        1    54.5%       72.7%
+unary-operator-insertion           UOI         42       25        17        0    59.5%       64.3%
+absolute-value-insertion           ABS         39       23        16        0    59.0%       59.0%
+constant-replacement               CRP        135       49        84        2    36.8%       43.6%
+condition-to-constant              CTC         30       13        17        0    43.3%       66.7%
+loop-bound-replacement             LBR          6        1         5        0    16.7%       16.7%
+return-value-replacement           RVR         69       40        29        0    58.0%       62.3%
+statement-deletion                 SDL         89       36        37       16    49.3%       68.5%
+statement-replacement              STR         17        3        14        0    17.6%       23.5%
+argument-replacement               ARP         82       38        22       22    63.3%       83.3%
+method-call-replacement            MCR         56       39        15        2    72.2%       88.9%
+side-effect-insertion              SEI        115       42        57       16    42.4%       54.5%
+variable-replacement               VRO         10        8         2        0    80.0%       90.0%

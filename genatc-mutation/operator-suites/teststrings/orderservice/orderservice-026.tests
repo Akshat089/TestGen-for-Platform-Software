@@ -1,0 +1,3 @@
+test OrderserviceGenerated26 {
+    sequence: ship -> stockLevel;
+}

@@ -1,0 +1,262 @@
+# generated test strings — set (family size 260, phase 1 1988s)
+# name	status	spf_ms	rounds	sequence	inputs	detail
+set-001	PASSED	11711	3	add -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s1"}	
+set-002	PASSED	12833	5	contains -> add -> contains -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-003	INCORRECT_SEQUENCE	8104	3	add -> remove -> contains -> remove -> remove -> add -> add	-	INCORRECT SEQUENCE: call 3 (remove): E.contains(elem)
+set-004	PASSED	14723	5	add -> add -> add -> remove -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-005	INCORRECT_SEQUENCE	2133	0	remove -> add -> add -> add -> contains -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-006	INCORRECT_SEQUENCE	2072	0	remove -> add -> add -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-007	INCORRECT_SEQUENCE	1825	0	remove -> contains -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-008	INCORRECT_SEQUENCE	7855	3	add -> remove -> contains -> remove -> add	-	INCORRECT SEQUENCE: call 3 (remove): E.contains(elem)
+set-009	PASSED	10681	5	add -> remove -> contains -> add -> add	{c0_elem="s1", c1_elem="s1", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-010	PASSED	15825	6	add -> remove -> add -> add -> contains -> add	{c0_elem="s1", c1_elem="s1", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-011	PASSED	5569	2	add -> remove	{c0_elem="s1", c1_elem="s1"}	
+set-012	PASSED	9154	4	add -> add -> remove -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s1", c3_elem="s1"}	
+set-013	INCORRECT_SEQUENCE	1790	0	remove -> contains -> add -> add -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-014	PASSED	14046	5	add -> add -> remove -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s1", c3_elem="s1", c4_elem="s2"}	
+set-015	PASSED	10735	5	add -> add -> contains -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-016	PASSED	12596	6	add -> add -> add -> contains -> remove -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-017	PASSED	14094	5	add -> remove -> add -> add -> contains	{c0_elem="s1", c1_elem="s1", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-018	PASSED	11590	5	add -> add -> add -> remove -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-019	PASSED	7967	3	add -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s1"}	
+set-020	INCORRECT_SEQUENCE	5984	2	add -> remove -> remove -> contains -> add	-	INCORRECT SEQUENCE: call 2 (remove): E.contains(elem)
+set-021	PASSED	15520	6	add -> contains -> contains -> contains -> add -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-022	INCORRECT_SEQUENCE	1799	0	remove -> contains -> contains -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-023	INCORRECT_SEQUENCE	5867	2	add -> remove -> remove	-	INCORRECT SEQUENCE: call 2 (remove): E.contains(elem)
+set-024	PASSED	10737	5	add -> add -> contains -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-025	PASSED	14925	4	add -> add -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+set-026	PASSED	20135	6	add -> add -> add -> add -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-027	PASSED	9193	2	contains -> contains	{c0_elem="s1", c1_elem="s2"}	
+set-028	PASSED	11001	5	add -> remove -> add -> contains -> remove	{c0_elem="s1", c1_elem="s1", c2_elem="s3", c3_elem="s1", c4_elem="s3"}	
+set-029	INCORRECT_SEQUENCE	1840	0	remove -> add -> remove -> contains -> remove -> add -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-030	PASSED	9159	3	add -> add -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+set-031	PASSED	14992	4	add -> remove -> contains -> add	{c0_elem="s1", c1_elem="s1", c2_elem="s3", c3_elem="s1"}	
+set-032	PASSED	10149	4	add -> add -> remove -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s1", c3_elem="s1"}	
+set-033	PASSED	9562	4	add -> add -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+set-034	PASSED	14042	5	add -> add -> add -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-035	INCORRECT_SEQUENCE	1941	0	remove -> add -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-036	PASSED	13326	6	add -> add -> contains -> contains -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s1"}	
+set-037	PASSED	8185	3	contains -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s2"}	
+set-038	PASSED	8243	2	add -> contains	{c0_elem="s1", c1_elem="s2"}	
+set-039	INCORRECT_SEQUENCE	1847	0	remove -> remove -> add -> remove -> add -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-040	INCORRECT_SEQUENCE	6953	3	add -> remove -> contains -> remove	-	INCORRECT SEQUENCE: call 3 (remove): E.contains(elem)
+set-041	INCORRECT_SEQUENCE	1673	0	remove -> add -> add -> add -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-042	PASSED	8361	4	add -> add -> add -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+set-043	INCORRECT_SEQUENCE	3557	1	contains -> remove -> remove	-	INCORRECT SEQUENCE: call 1 (remove): E.contains(elem)
+set-044	PASSED	13041	5	add -> remove -> contains -> add -> remove	{c0_elem="s1", c1_elem="s1", c2_elem="s3", c3_elem="s1", c4_elem="s1"}	
+set-045	INCORRECT_SEQUENCE	1797	0	remove -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-046	PASSED	10874	5	contains -> add -> add -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-047	PASSED	10439	5	contains -> add -> remove -> add -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s2", c3_elem="s1", c4_elem="s2"}	
+set-048	INCORRECT_SEQUENCE	1658	0	remove -> add -> add -> add -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-049	PASSED	13344	5	add -> contains -> contains -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s1"}	
+set-050	INCORRECT_SEQUENCE	1785	0	remove -> add -> contains -> add -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-051	PASSED	10451	5	add -> add -> contains -> remove -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-052	PASSED	10486	5	add -> contains -> add -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s3"}	
+set-053	PASSED	7674	2	contains -> add	{c0_elem="s1", c1_elem="s2"}	
+set-054	PASSED	12032	6	add -> add -> contains -> remove -> contains -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-055	PASSED	12321	6	add -> remove -> add -> add -> contains -> remove	{c0_elem="s1", c1_elem="s1", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-056	PASSED	13067	5	add -> contains -> add -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s3"}	
+set-057	PASSED	8589	4	add -> contains -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+set-058	INCORRECT_SEQUENCE	5565	2	add -> remove -> remove -> contains	-	INCORRECT SEQUENCE: call 2 (remove): E.contains(elem)
+set-059	PASSED	12451	6	add -> contains -> contains -> contains -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s1"}	
+set-060	PASSED	8390	2	add -> add	{c0_elem="s1", c1_elem="s2"}	
+set-061	INCORRECT_SEQUENCE	5641	2	add -> remove -> remove -> contains -> remove -> add	-	INCORRECT SEQUENCE: call 2 (remove): E.contains(elem)
+set-062	INCORRECT_SEQUENCE	1834	0	remove -> add -> add -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-063	INCORRECT_SEQUENCE	1773	0	remove -> add -> contains -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-064	PASSED	12374	6	contains -> add -> add -> remove -> contains -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s2", c4_elem="s2", c5_elem="s3"}	
+set-065	INCORRECT_SEQUENCE	3465	1	contains -> remove	-	INCORRECT SEQUENCE: call 1 (remove): E.contains(elem)
+set-066	PASSED	15487	6	add -> add -> add -> remove -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-067	INCORRECT_SEQUENCE	1522	0	remove -> add -> contains -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-068	PASSED	12170	6	add -> contains -> add -> remove -> remove -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s3", c5_elem="s3"}	
+set-069	INCORRECT_SEQUENCE	3186	1	contains -> remove -> contains -> add -> contains -> remove -> add	-	INCORRECT SEQUENCE: call 1 (remove): E.contains(elem)
+set-070	PASSED	16034	7	add -> add -> add -> contains -> contains -> remove -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3", c6_elem="s1"}	
+set-071	PASSED	14093	7	add -> add -> add -> remove -> contains -> remove -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3", c6_elem="s2"}	
+set-072	INCORRECT_SEQUENCE	6646	3	contains -> add -> remove -> remove	-	INCORRECT SEQUENCE: call 3 (remove): E.contains(elem)
+set-073	INCORRECT_SEQUENCE	1745	0	remove -> remove -> contains -> add -> contains -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-074	PASSED	11517	4	contains -> add -> remove -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s2", c3_elem="s1"}	
+set-075	INCORRECT_SEQUENCE	1795	0	remove -> add -> contains -> contains -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-076	INCORRECT_SEQUENCE	2022	0	remove -> contains -> remove -> remove -> contains -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-077	INCORRECT_SEQUENCE	1848	0	remove -> remove -> contains -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-078	PASSED	8601	4	add -> remove -> add -> contains	{c0_elem="s1", c1_elem="s1", c2_elem="s3", c3_elem="s1"}	
+set-079	PASSED	12070	6	contains -> contains -> add -> contains -> remove -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s3", c5_elem="s3"}	
+set-080	INCORRECT_SEQUENCE	4590	0	remove -> add -> contains -> contains -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-081	INCORRECT_SEQUENCE	1543	0	remove -> contains -> add -> add -> remove -> add -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-082	INCORRECT_SEQUENCE	1476	0	remove -> contains -> contains -> contains -> contains -> remove -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-083	PASSED	11670	6	add -> add -> add -> contains -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-084	INCORRECT_SEQUENCE	6546	3	add -> contains -> remove -> remove	-	INCORRECT SEQUENCE: call 3 (remove): E.contains(elem)
+set-085	PASSED	14239	6	add -> add -> contains -> remove -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s2"}	
+set-086	INCORRECT_SEQUENCE	1586	0	remove -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-087	PASSED	8202	4	add -> add -> contains -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+set-088	INCORRECT_SEQUENCE	2027	0	remove -> add -> add -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-089	PASSED	8685	3	contains -> add -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+set-090	INCORRECT_SEQUENCE	1964	0	remove -> remove -> remove -> add -> contains -> add -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-091	INCORRECT_SEQUENCE	6283	2	add -> remove -> remove -> add -> add -> contains -> add	-	INCORRECT SEQUENCE: call 2 (remove): E.contains(elem)
+set-092	PASSED	14483	6	add -> contains -> add -> contains -> remove -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s3", c5_elem="s1"}	
+set-093	INCORRECT_SEQUENCE	1620	0	remove -> contains -> remove -> add -> add -> remove -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-094	PASSED	8040	4	add -> contains -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+set-095	INCORRECT_SEQUENCE	1791	0	remove -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-096	PASSED	21689	7	add -> add -> contains -> add -> contains -> remove -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s1", c6_elem="s2"}	
+set-097	PASSED	12775	4	contains -> add -> remove -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s2", c3_elem="s1"}	
+set-098	PASSED	19720	6	add -> add -> remove -> remove -> contains -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s1", c3_elem="s2", c4_elem="s2", c5_elem="s3"}	
+set-099	PASSED	14890	6	add -> add -> contains -> add -> add -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-100	PASSED	16741	5	add -> add -> remove -> contains -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s1", c3_elem="s1", c4_elem="s2"}	
+set-101	INCORRECT_SEQUENCE	1702	0	remove -> contains -> contains -> contains -> add -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-102	INCORRECT_SEQUENCE	2320	0	remove -> remove -> contains -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-103	PASSED	11260	5	contains -> add -> add -> contains -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-104	PASSED	10646	5	contains -> add -> add -> remove -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s2", c4_elem="s2"}	
+set-105	INCORRECT_SEQUENCE	1713	0	remove -> contains -> add -> add -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-106	INCORRECT_SEQUENCE	11869	6	add -> contains -> remove -> add -> contains -> remove -> remove	-	INCORRECT SEQUENCE: call 6 (remove): E.contains(elem)
+set-107	PASSED	15717	6	add -> add -> contains -> contains -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s1"}	
+set-108	PASSED	10866	6	add -> add -> add -> add -> remove -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-109	INCORRECT_SEQUENCE	1619	0	remove -> contains -> add -> contains -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-110	INCORRECT_SEQUENCE	1570	0	remove -> add -> add -> remove -> remove -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-111	PASSED	6159	3	add -> contains -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+set-112	INCORRECT_SEQUENCE	4787	2	contains -> contains -> remove -> remove	-	INCORRECT SEQUENCE: call 2 (remove): E.contains(elem)
+set-113	INCORRECT_SEQUENCE	1613	0	remove -> remove -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-114	PASSED	12562	5	add -> remove -> contains -> contains -> add	{c0_elem="s1", c1_elem="s1", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-115	PASSED	7748	4	contains -> add -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s2"}	
+set-116	PASSED	11715	6	add -> contains -> add -> add -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-117	INCORRECT_SEQUENCE	1747	0	remove -> contains -> contains -> add -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-118	PASSED	14086	6	add -> add -> contains -> add -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s1"}	
+set-119	INCORRECT_SEQUENCE	1858	0	remove -> remove -> add -> remove -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-120	PASSED	11178	6	contains -> add -> add -> remove -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s2", c4_elem="s2", c5_elem="s3"}	
+set-121	PASSED	9112	5	add -> add -> contains -> add -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-122	PASSED	11107	4	add -> add -> remove -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s1", c3_elem="s2"}	
+set-123	INCORRECT_SEQUENCE	10015	5	add -> add -> remove -> contains -> remove -> remove	-	INCORRECT SEQUENCE: call 5 (remove): E.contains(elem)
+set-124	PASSED	6615	3	add -> remove -> add	{c0_elem="s1", c1_elem="s1", c2_elem="s3"}	
+set-125	INCORRECT_SEQUENCE	1701	0	remove -> add -> remove -> add -> remove -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-126	INCORRECT_SEQUENCE	1654	0	remove -> contains -> add -> add -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-127	PASSED	9328	3	contains -> contains -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+set-128	PASSED	13864	7	add -> add -> contains -> contains -> add -> remove -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s1", c6_elem="s2"}	
+set-129	PASSED	13253	7	add -> contains -> contains -> remove -> add -> contains -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3", c6_elem="s1"}	
+set-130	PASSED	10237	3	add -> remove -> contains	{c0_elem="s1", c1_elem="s1", c2_elem="s3"}	
+set-131	PASSED	11402	5	add -> add -> add -> add -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-132	INCORRECT_SEQUENCE	1735	0	remove -> add -> add -> remove -> remove -> contains -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-133	INCORRECT_SEQUENCE	1660	0	remove -> add -> add -> remove -> remove -> remove -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-134	PASSED	9351	5	contains -> add -> contains -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-135	INCORRECT_SEQUENCE	1527	0	remove -> contains -> add -> add -> contains -> add -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-136	INCORRECT_SEQUENCE	1669	0	remove -> remove -> remove -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-137	PASSED	12543	5	contains -> add -> add -> add -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-138	PASSED	11740	6	contains -> contains -> contains -> add -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s1"}	
+set-139	INCORRECT_SEQUENCE	3842	1	contains -> remove -> remove -> contains -> remove -> remove	-	INCORRECT SEQUENCE: call 1 (remove): E.contains(elem)
+set-140	INCORRECT_SEQUENCE	1720	0	remove -> add -> contains -> remove -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-141	PASSED	12848	5	add -> contains -> contains -> remove -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-142	INCORRECT_SEQUENCE	10099	5	add -> contains -> remove -> add -> remove -> remove	-	INCORRECT SEQUENCE: call 5 (remove): E.contains(elem)
+set-143	PASSED	13137	7	add -> contains -> add -> remove -> add -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3", c6_elem="s2"}	
+set-144	INCORRECT_SEQUENCE	1814	0	remove -> add -> add -> contains -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-145	INCORRECT_SEQUENCE	1611	0	remove -> contains -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-146	PASSED	11230	4	add -> contains -> add -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+set-147	INCORRECT_SEQUENCE	1732	0	remove -> contains -> contains -> remove -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-148	INCORRECT_SEQUENCE	3427	1	contains -> remove -> add -> remove -> remove -> remove	-	INCORRECT SEQUENCE: call 1 (remove): E.contains(elem)
+set-149	INCORRECT_SEQUENCE	1708	0	remove -> add -> contains -> remove -> remove -> add -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-150	INCORRECT_SEQUENCE	3512	1	contains -> remove -> contains -> add -> add	-	INCORRECT SEQUENCE: call 1 (remove): E.contains(elem)
+set-151	INCORRECT_SEQUENCE	6777	3	contains -> add -> remove -> remove -> remove -> remove	-	INCORRECT SEQUENCE: call 3 (remove): E.contains(elem)
+set-152	PASSED	12864	5	add -> contains -> add -> remove -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-153	PASSED	13109	7	add -> contains -> add -> add -> add -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3", c6_elem="s1"}	
+set-154	INCORRECT_SEQUENCE	8893	4	contains -> add -> remove -> contains -> remove -> remove	-	INCORRECT SEQUENCE: call 4 (remove): E.contains(elem)
+set-155	PASSED	16795	7	add -> add -> add -> add -> contains -> remove -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3", c6_elem="s1"}	
+set-156	INCORRECT_SEQUENCE	1763	0	remove -> add -> add -> add -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-157	PASSED	12159	6	contains -> add -> contains -> contains -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s2"}	
+set-158	INCORRECT_SEQUENCE	1885	0	remove -> remove -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-159	PASSED	6486	3	add -> contains -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+set-160	PASSED	12717	5	add -> contains -> contains -> contains -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-161	INCORRECT_SEQUENCE	1764	0	remove -> contains -> remove -> add -> add -> remove -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-162	INCORRECT_SEQUENCE	1751	0	remove -> remove -> remove -> remove -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-163	PASSED	11779	6	add -> add -> add -> add -> add -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-164	PASSED	15323	6	add -> add -> contains -> contains -> remove -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s1"}	
+set-165	PASSED	9104	4	contains -> add -> add -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+set-166	PASSED	8077	4	add -> add -> contains -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+set-167	PASSED	11484	6	add -> add -> contains -> add -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s1"}	
+set-168	INCORRECT_SEQUENCE	1698	0	remove -> remove -> add -> contains -> add -> contains -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-169	INCORRECT_SEQUENCE	9509	3	contains -> add -> remove -> remove -> remove -> remove -> add	-	INCORRECT SEQUENCE: call 3 (remove): E.contains(elem)
+set-170	INCORRECT_SEQUENCE	1989	0	remove -> contains -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-171	PASSED	9649	5	contains -> add -> add -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-172	INCORRECT_SEQUENCE	8244	4	add -> contains -> contains -> remove -> remove	-	INCORRECT SEQUENCE: call 4 (remove): E.contains(elem)
+set-173	INCORRECT_SEQUENCE	1565	0	remove -> add -> contains -> add -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-174	INCORRECT_SEQUENCE	1644	0	remove -> remove -> add -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-175	INCORRECT_SEQUENCE	3538	1	contains -> remove -> contains -> remove	-	INCORRECT SEQUENCE: call 1 (remove): E.contains(elem)
+set-176	INCORRECT_SEQUENCE	4705	0	remove -> add -> add -> contains -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-177	PASSED	11295	6	contains -> add -> remove -> add -> add -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s2", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-178	INCORRECT_SEQUENCE	1719	0	remove -> add -> add -> contains -> contains -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-179	INCORRECT_SEQUENCE	1741	0	remove -> remove -> add -> add -> add -> contains -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-180	PASSED	7255	3	add -> add -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+set-181	PASSED	13282	5	add -> remove -> add -> contains -> contains	{c0_elem="s1", c1_elem="s1", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-182	INCORRECT_SEQUENCE	9947	5	add -> add -> contains -> remove -> remove -> remove	-	INCORRECT SEQUENCE: call 5 (remove): E.contains(elem)
+set-183	INCORRECT_SEQUENCE	3467	1	contains -> remove -> contains -> add	-	INCORRECT SEQUENCE: call 1 (remove): E.contains(elem)
+set-184	INCORRECT_SEQUENCE	1688	0	remove -> remove -> add -> contains -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-185	INCORRECT_SEQUENCE	8410	4	add -> remove -> add -> remove -> remove	-	INCORRECT SEQUENCE: call 4 (remove): E.contains(elem)
+set-186	PASSED	14411	6	add -> add -> contains -> remove -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s2"}	
+set-187	INCORRECT_SEQUENCE	6812	3	contains -> contains -> contains -> remove -> contains -> remove -> remove	-	INCORRECT SEQUENCE: call 3 (remove): E.contains(elem)
+set-188	INCORRECT_SEQUENCE	1687	0	remove -> add -> contains -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-189	PASSED	12919	7	add -> contains -> add -> contains -> remove -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s3", c5_elem="s3", c6_elem="s1"}	
+set-190	PASSED	12547	5	add -> add -> add -> contains -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-191	INCORRECT_SEQUENCE	3277	1	contains -> remove -> contains -> add -> contains	-	INCORRECT SEQUENCE: call 1 (remove): E.contains(elem)
+set-192	INCORRECT_SEQUENCE	1740	0	remove -> contains -> add -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-193	PASSED	11340	6	add -> add -> remove -> add -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s1", c3_elem="s1", c4_elem="s2", c5_elem="s1"}	
+set-194	PASSED	11243	6	add -> add -> add -> contains -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-195	PASSED	11290	4	contains -> add -> contains -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+set-196	PASSED	13526	7	add -> contains -> remove -> contains -> add -> contains -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s1", c3_elem="s1", c4_elem="s2", c5_elem="s3", c6_elem="s1"}	
+set-197	INCORRECT_SEQUENCE	1712	0	remove -> contains -> add -> remove -> add -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-198	PASSED	8636	4	contains -> add -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s2"}	
+set-199	INCORRECT_SEQUENCE	7874	2	contains -> contains -> remove -> add -> add -> remove	-	INCORRECT SEQUENCE: call 2 (remove): E.contains(elem)
+set-200	PASSED	11293	6	add -> remove -> add -> contains -> contains -> remove	{c0_elem="s1", c1_elem="s1", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-201	PASSED	11022	6	contains -> contains -> add -> contains -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-202	INCORRECT_SEQUENCE	3022	1	contains -> remove -> add -> contains	-	INCORRECT SEQUENCE: call 1 (remove): E.contains(elem)
+set-203	INCORRECT_SEQUENCE	1561	0	remove -> contains -> contains -> add -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-204	PASSED	11925	5	contains -> add -> contains -> add -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-205	INCORRECT_SEQUENCE	6246	3	add -> contains -> remove -> remove -> contains -> remove -> remove	-	INCORRECT SEQUENCE: call 3 (remove): E.contains(elem)
+set-206	PASSED	9031	5	add -> add -> add -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-207	INCORRECT_SEQUENCE	1572	0	remove -> contains -> remove -> add -> add -> add -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-208	INCORRECT_SEQUENCE	6444	3	add -> contains -> remove -> remove -> remove	-	INCORRECT SEQUENCE: call 3 (remove): E.contains(elem)
+set-209	PASSED	12134	5	contains -> contains -> add -> add -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s3"}	
+set-210	INCORRECT_SEQUENCE	9537	5	add -> add -> remove -> remove -> contains -> remove	-	INCORRECT SEQUENCE: call 5 (remove): E.contains(elem)
+set-211	PASSED	8420	5	add -> add -> remove -> contains -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s1", c3_elem="s1", c4_elem="s2"}	
+set-212	PASSED	9935	4	add -> contains -> add -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+set-213	PASSED	9952	6	add -> contains -> remove -> add -> remove -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s1", c3_elem="s1", c4_elem="s1", c5_elem="s3"}	
+set-214	INCORRECT_SEQUENCE	4283	2	contains -> contains -> remove	-	INCORRECT SEQUENCE: call 2 (remove): E.contains(elem)
+set-215	INCORRECT_SEQUENCE	1453	0	remove -> add -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-216	INCORRECT_SEQUENCE	2866	1	contains -> remove -> add -> contains -> add	-	INCORRECT SEQUENCE: call 1 (remove): E.contains(elem)
+set-217	PASSED	10730	6	contains -> add -> add -> add -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-218	PASSED	14933	7	add -> contains -> contains -> add -> add -> remove -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s1", c6_elem="s1"}	
+set-219	INCORRECT_SEQUENCE	2822	1	contains -> remove -> contains	-	INCORRECT SEQUENCE: call 1 (remove): E.contains(elem)
+set-220	PASSED	10044	6	add -> remove -> add -> contains -> add -> add	{c0_elem="s1", c1_elem="s1", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-221	INCORRECT_SEQUENCE	1532	0	remove -> add -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-222	INCORRECT_SEQUENCE	1382	0	remove -> remove -> add -> remove -> add -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-223	INCORRECT_SEQUENCE	10278	4	contains -> contains -> contains -> contains -> remove -> add -> add	-	INCORRECT SEQUENCE: call 4 (remove): E.contains(elem)
+set-224	INCORRECT_SEQUENCE	4535	2	contains -> contains -> remove -> contains -> remove -> contains -> contains	-	INCORRECT SEQUENCE: call 2 (remove): E.contains(elem)
+set-225	PASSED	9373	6	add -> contains -> contains -> add -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s1"}	
+set-226	INCORRECT_SEQUENCE	1271	0	remove -> contains -> remove -> contains -> add -> contains -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-227	PASSED	6713	4	add -> contains -> contains -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+set-228	INCORRECT_SEQUENCE	1296	0	remove -> add -> remove -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-229	INCORRECT_SEQUENCE	1392	0	remove -> remove -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-230	INCORRECT_SEQUENCE	12261	6	add -> add -> contains -> remove -> contains -> remove -> remove	-	INCORRECT SEQUENCE: call 6 (remove): E.contains(elem)
+set-231	PASSED	8086	5	add -> add -> add -> contains -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-232	PASSED	11701	7	add -> add -> add -> contains -> remove -> remove -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3", c6_elem="s1"}	
+set-233	INCORRECT_SEQUENCE	3490	1	contains -> remove -> add -> add	-	INCORRECT SEQUENCE: call 1 (remove): E.contains(elem)
+set-234	PASSED	12443	6	contains -> add -> add -> contains -> remove -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-235	PASSED	9581	6	add -> add -> remove -> add -> add -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s1", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-236	INCORRECT_SEQUENCE	2683	1	contains -> remove -> add -> add -> contains -> remove	-	INCORRECT SEQUENCE: call 1 (remove): E.contains(elem)
+set-237	INCORRECT_SEQUENCE	1375	0	remove -> contains -> add -> remove -> remove -> remove -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-238	INCORRECT_SEQUENCE	1729	0	remove -> add -> contains -> remove -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-239	PASSED	11220	7	add -> add -> add -> remove -> add -> add -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3", c6_elem="s1"}	
+set-240	PASSED	11059	5	add -> contains -> add -> contains -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-241	PASSED	10472	7	add -> add -> contains -> contains -> remove -> contains -> add	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3", c6_elem="s1"}	
+set-242	PASSED	10854	7	add -> contains -> add -> add -> remove -> remove -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s3", c5_elem="s1", c6_elem="s1"}	
+set-243	INCORRECT_SEQUENCE	2660	1	contains -> remove -> contains -> contains	-	INCORRECT SEQUENCE: call 1 (remove): E.contains(elem)
+set-244	INCORRECT_SEQUENCE	1360	0	remove -> remove -> contains -> contains -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-245	INCORRECT_SEQUENCE	1352	0	remove -> add -> add -> remove -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-246	INCORRECT_SEQUENCE	4264	0	remove -> remove -> add -> add -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-247	PASSED	8197	5	add -> contains -> add -> remove -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s3"}	
+set-248	PASSED	10302	7	add -> contains -> add -> add -> add -> contains -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3", c6_elem="s1"}	
+set-249	INCORRECT_SEQUENCE	1320	0	remove -> remove -> add -> remove	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-250	PASSED	10407	7	contains -> add -> add -> contains -> add -> contains -> remove	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3", c6_elem="s2"}	
+set-251	PASSED	7761	5	add -> contains -> contains -> add -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2"}	
+set-252	INCORRECT_SEQUENCE	1451	0	remove -> contains -> remove -> remove -> contains -> remove -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-253	PASSED	12144	4	add -> remove -> contains -> contains	{c0_elem="s1", c1_elem="s1", c2_elem="s3", c3_elem="s1"}	
+set-254	INCORRECT_SEQUENCE	1409	0	remove -> add -> remove -> contains -> add -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-255	INCORRECT_SEQUENCE	1517	0	remove -> contains -> contains -> contains	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-256	INCORRECT_SEQUENCE	6769	4	contains -> add -> contains -> remove -> remove -> contains	-	INCORRECT SEQUENCE: call 4 (remove): E.contains(elem)
+set-257	PASSED	9335	6	contains -> contains -> contains -> add -> contains -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	
+set-258	INCORRECT_SEQUENCE	1452	0	remove -> contains -> remove -> remove -> add	-	INCORRECT SEQUENCE: call 0 (remove): E.contains(elem)
+set-259	INCORRECT_SEQUENCE	9430	6	add -> add -> remove -> contains -> add -> remove -> remove	-	INCORRECT SEQUENCE: call 6 (remove): E.contains(elem)
+set-260	PASSED	12408	6	add -> add -> add -> add -> add -> contains	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c4_elem="s2", c5_elem="s3"}	

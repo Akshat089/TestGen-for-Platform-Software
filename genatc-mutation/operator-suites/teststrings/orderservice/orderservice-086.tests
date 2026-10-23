@@ -1,0 +1,3 @@
+test OrderserviceGenerated86 {
+    sequence: stockLevel -> restock -> placeOrder -> ship -> stockLevel;
+}

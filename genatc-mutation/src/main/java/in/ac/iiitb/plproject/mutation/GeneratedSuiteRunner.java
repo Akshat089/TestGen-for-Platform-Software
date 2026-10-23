@@ -75,10 +75,10 @@ public class GeneratedSuiteRunner {
         INCORRECT_SEQUENCE,
         /** The test failed on the correct library — a finding against the contract. */
         FAILED,
-        /** Every precondition can hold but a postcondition cannot — no test. */
-        UNSAT_POSTCONDITION,
         /** SPF or the solver failed. */
         SOLVER_ERROR,
+        /** A ready call threw on the correct library during generation — no test. */
+        LIBRARY_EXCEPTION,
         /** SPF ran out of time. */
         TIMEOUT,
         /** The generated sources did not compile. */
@@ -344,7 +344,7 @@ public class GeneratedSuiteRunner {
             } else {
                 switch (t.status) {
                     case "INCORRECT_SEQUENCE": status = TestStringStatus.INCORRECT_SEQUENCE; break;
-                    case "UNSAT_POSTCONDITION": status = TestStringStatus.UNSAT_POSTCONDITION; break;
+                    case "LIBRARY_EXCEPTION": status = TestStringStatus.LIBRARY_EXCEPTION; break;
                     case "SOLVER_ERROR": status = TestStringStatus.SOLVER_ERROR; break;
                     case "TIMEOUT": status = TestStringStatus.TIMEOUT; break;
                     default: status = TestStringStatus.INVALID; break;
@@ -409,10 +409,14 @@ public class GeneratedSuiteRunner {
         out.append("# generated test strings — ").append(report.getKey())
            .append(" (family size ").append(report.familySize).append(", phase 1 ")
            .append(report.testStringSeconds).append("s)\n");
-        out.append("# name\tstatus\tspf_ms\tsequence\tdetail\n");
+        out.append("# name\tstatus\tspf_ms\trounds\tsequence\tinputs\tdetail\n");
         for (TestStringResult result : report.testStrings) {
             out.append(result.name).append('\t').append(result.status).append('\t')
-               .append(result.spfMillis).append('\t').append(result.sequence).append('\t')
+               .append(result.spfMillis).append('\t')
+               .append(result.test == null ? "-" : String.valueOf(result.test.rounds)).append('\t')
+               .append(result.sequence).append('\t')
+               .append(result.test == null || result.test.inputs.isEmpty() ? "-" : result.test.inputs.toString())
+               .append('\t')
                .append(result.detail == null ? "" : result.detail.replace('\t', ' ').replace('\n', ' '))
                .append('\n');
         }
@@ -444,7 +448,7 @@ public class GeneratedSuiteRunner {
 
     private static void writeSummary(Map<String, LibraryReport> reports) throws IOException {
         StringBuilder out = new StringBuilder();
-        out.append("# generated suites — summary (contract-only SPF; each test generated once)\n\n");
+        out.append("# generated suites — summary (TestGen genCTC on SPF, ready calls on the real library; each test generated once)\n\n");
         appendTestStringTable(reports, out);
         out.append('\n');
         appendMutantTable(reports, out);

@@ -1,0 +1,3 @@
+test OrderserviceGenerated126 {
+    sequence: placeOrder -> ship -> placeOrder;
+}

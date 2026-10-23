@@ -2,16 +2,18 @@
 # Builds and runs the generated test suites, and measures them with the
 # generated mutation suites. Three phases per library:
 #
-#   1. generate ~260 test strings from the spec, run each one through the
-#      real pipeline (real SPF, then the generated JUnit class against the
-#      real library), and record whether it passed, SPF found no feasible
-#      path (stopped at a precondition), or a generated assertion failed.
+#   1. generate 260 test strings from the spec, generate each one's test ONCE
+#      on the correct library (genCTC on real SPF, ready calls on the real
+#      library), run it on the correct library, and record whether it passed,
+#      genCTC rejected it (INCORRECT SEQUENCE), or a generated assertion failed.
 #   2. generate the operator mutants — every operator in MutationOperator applied
-#      to every line of the library source that admits one — and run each against
-#      the library's own checked-in test string. This is the per-operator score.
-#   3. re-run every mutant that survived phase 2 against the family from phase 1,
-#      stopping at the first sequence that kills it. This measures how much of
-#      the survival was the specification and how much was the single sequence.
+#      to every line of the library source that admits one — and run the cached
+#      test for the library's own checked-in sequence against each. This is the
+#      per-operator score.
+#   3. run every mutant that survived phase 2 against the passing family tests
+#      from phase 1, stopping at the first one that kills it. This measures how
+#      much of the survival was the specification and how much was the single
+#      sequence.
 #
 # This is the mechanical counterpart of ./run-mutations.sh, which runs the
 # hand-written sets in mutations/ and checks their declared expectations. This
@@ -24,7 +26,7 @@
 #   results/<key>.teststrings.tsv    one row per test string
 #   SUMMARY.txt                      the three tables
 #
-# It is SLOW — thousands of real SPF runs. Budget well over an hour for the
+# It is SLOW — thousands of real SPF runs (one per genCTC round). Budget well over an hour for the
 # whole set; pass keys for a subset.
 #
 # Prerequisite: ../scripts/setup-spf.sh has been run once.

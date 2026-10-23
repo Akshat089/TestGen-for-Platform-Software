@@ -1,0 +1,3 @@
+test QueueGenerated245 {
+    sequence: enqueue -> isEmpty -> front;
+}

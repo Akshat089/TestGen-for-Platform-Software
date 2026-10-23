@@ -1,0 +1,3 @@
+test BstGenerated177 {
+    sequence: contains -> delete;
+}

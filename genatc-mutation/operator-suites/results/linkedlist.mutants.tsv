@@ -1,0 +1,86 @@
+# generated mutants — linkedlist (phases 2+3 51s, library total 1610s)
+# id	status	kill_kind	operator	method	file	killed-by-family	family_kill_kind	detail
+LINKEDLIST_GEN_SDL_1	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_SDL_1/Helper.java:32: error: cannot find symbol
+LINKEDLIST_GEN_SEI_2	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_SEI_2/Helper.java:30: error: <identifier> expected
+LINKEDLIST_GEN_SDL_3	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_SDL_3/Helper.java:45: error: cannot find symbol
+LINKEDLIST_GEN_SEI_4	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_SEI_4/Helper.java:31: error: <identifier> expected
+LINKEDLIST_GEN_SDL_5	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_SDL_5/Helper.java:94: error: cannot find symbol
+LINKEDLIST_GEN_SEI_6	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_SEI_6/Helper.java:37: error: <identifier> expected
+LINKEDLIST_GEN_CRP_7	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_CRP_8	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_SDL_9	SURVIVED	-	statement-deletion	addFirst	Helper.java	GeneratedATCsTest_linkedlist_011	POST	the test passes
+LINKEDLIST_GEN_SEI_10	SURVIVED	-	side-effect-insertion	addFirst	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_SDL_11	KILLED	POST	statement-deletion	addFirst	Helper.java	-	-	killed by POST: POST addFirst: head == value
+LINKEDLIST_GEN_SEI_12	SURVIVED	-	side-effect-insertion	addFirst	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_SDL_13	KILLED	POST	statement-deletion	addFirst	Helper.java	-	-	killed by POST: POST addFirst: head == value
+LINKEDLIST_GEN_SEI_14	KILLED	POST	side-effect-insertion	addFirst	Helper.java	-	-	killed by POST: POST addFirst: size == \old(size) + 1
+LINKEDLIST_GEN_ROR_15	INVALID	-	relational-operator-replacement	addLast	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_ROR_15/Helper.java:53: error: bad operand types for binary operator '<='
+LINKEDLIST_GEN_ROR_16	INVALID	-	relational-operator-replacement	addLast	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_ROR_16/Helper.java:53: error: bad operand types for binary operator '>='
+LINKEDLIST_GEN_ROR_17	KILLED	POST	relational-operator-replacement	addLast	Helper.java	-	-	killed by POST: POST addLast: size == \old(size) + 1
+LINKEDLIST_GEN_ROR_18	INVALID	-	relational-operator-replacement	addLast	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_ROR_18/Helper.java:53: error: bad operand types for binary operator '<'
+LINKEDLIST_GEN_ROR_19	INVALID	-	relational-operator-replacement	addLast	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_ROR_19/Helper.java:53: error: bad operand types for binary operator '>'
+LINKEDLIST_GEN_COI_20	KILLED	POST	conditional-operator-insertion	addLast	Helper.java	-	-	killed by POST: POST addLast: size == \old(size) + 1
+LINKEDLIST_GEN_CTC_21	KILLED	POST	condition-to-constant	addLast	Helper.java	-	-	killed by POST: POST addLast: size == \old(size) + 1
+LINKEDLIST_GEN_CTC_22	SURVIVED	-	condition-to-constant	addLast	Helper.java	GeneratedATCsTest_linkedlist_014	EXCEPTION	the test passes
+LINKEDLIST_GEN_ROR_23	INVALID	-	relational-operator-replacement	addLast	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_ROR_23/Helper.java:57: error: bad operand types for binary operator '<='
+LINKEDLIST_GEN_ROR_24	INVALID	-	relational-operator-replacement	addLast	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_ROR_24/Helper.java:57: error: bad operand types for binary operator '>='
+LINKEDLIST_GEN_ROR_25	KILLED	EXCEPTION	relational-operator-replacement	addLast	Helper.java	-	-	killed by EXCEPTION: java.lang.NullPointerException
+LINKEDLIST_GEN_ROR_26	INVALID	-	relational-operator-replacement	addLast	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_ROR_26/Helper.java:57: error: bad operand types for binary operator '<'
+LINKEDLIST_GEN_ROR_27	INVALID	-	relational-operator-replacement	addLast	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_ROR_27/Helper.java:57: error: bad operand types for binary operator '>'
+LINKEDLIST_GEN_COI_28	KILLED	EXCEPTION	conditional-operator-insertion	addLast	Helper.java	-	-	killed by EXCEPTION: java.lang.NullPointerException
+LINKEDLIST_GEN_SDL_29	SURVIVED	-	statement-deletion	addLast	Helper.java	GeneratedATCsTest_linkedlist_003	TIMEOUT	the test passes
+LINKEDLIST_GEN_SEI_30	SURVIVED	-	side-effect-insertion	addLast	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_SDL_31	KILLED	POST	statement-deletion	addLast	Helper.java	-	-	killed by POST: POST addLast: tail == value
+LINKEDLIST_GEN_SEI_32	SURVIVED	-	side-effect-insertion	addLast	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_SDL_33	KILLED	POST	statement-deletion	removeFirst	Helper.java	-	-	killed by POST: POST removeFirst: size == \old(size) - 1
+LINKEDLIST_GEN_SEI_34	SURVIVED	-	side-effect-insertion	removeFirst	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_UOI_35	KILLED	POST	unary-operator-insertion	removeFirst	Helper.java	-	-	killed by POST: POST removeFirst: removedValue == \old(head)
+LINKEDLIST_GEN_ABS_36	KILLED	POST	absolute-value-insertion	removeFirst	Helper.java	-	-	killed by POST: POST removeFirst: removedValue == \old(head)
+LINKEDLIST_GEN_RVR_37	KILLED	POST	return-value-replacement	removeFirst	Helper.java	-	-	killed by POST: POST removeFirst: removedValue == \old(head)
+LINKEDLIST_GEN_RVR_38	KILLED	POST	return-value-replacement	removeFirst	Helper.java	-	-	killed by POST: POST removeFirst: removedValue == \old(head)
+LINKEDLIST_GEN_RVR_39	KILLED	POST	return-value-replacement	removeFirst	Helper.java	-	-	killed by POST: POST removeFirst: removedValue == \old(head)
+LINKEDLIST_GEN_SEI_40	KILLED	POST	side-effect-insertion	removeFirst	Helper.java	-	-	killed by POST: POST removeFirst: size == \old(size) - 1
+LINKEDLIST_GEN_CRP_41	SURVIVED	-	constant-replacement	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_CRP_42	SURVIVED	-	constant-replacement	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_ROR_43	INVALID	-	relational-operator-replacement	indexOf	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_ROR_43/Helper.java:82: error: bad operand types for binary operator '<='
+LINKEDLIST_GEN_ROR_44	INVALID	-	relational-operator-replacement	indexOf	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_ROR_44/Helper.java:82: error: bad operand types for binary operator '>='
+LINKEDLIST_GEN_ROR_45	SURVIVED	-	relational-operator-replacement	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_ROR_46	INVALID	-	relational-operator-replacement	indexOf	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_ROR_46/Helper.java:82: error: bad operand types for binary operator '<'
+LINKEDLIST_GEN_ROR_47	INVALID	-	relational-operator-replacement	indexOf	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_ROR_47/Helper.java:82: error: bad operand types for binary operator '>'
+LINKEDLIST_GEN_COI_48	SURVIVED	-	conditional-operator-insertion	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_COI_49	SURVIVED	-	conditional-operator-insertion	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_CTC_50	SURVIVED	-	condition-to-constant	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_CTC_51	SURVIVED	-	condition-to-constant	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_ARP_52	SURVIVED	-	argument-replacement	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_ARP_53	SURVIVED	-	argument-replacement	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_UOI_54	SURVIVED	-	unary-operator-insertion	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_ABS_55	SURVIVED	-	absolute-value-insertion	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_RVR_56	SURVIVED	-	return-value-replacement	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_RVR_57	SURVIVED	-	return-value-replacement	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_RVR_58	SURVIVED	-	return-value-replacement	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_SEI_59	SURVIVED	-	side-effect-insertion	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_AOR_60	SURVIVED	-	arithmetic-operator-replacement	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_AOR_61	SURVIVED	-	arithmetic-operator-replacement	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_AOR_62	SURVIVED	-	arithmetic-operator-replacement	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_AOR_63	SURVIVED	-	arithmetic-operator-replacement	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_AOI_64	SURVIVED	-	arithmetic-operator-insertion	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_AOI_65	SURVIVED	-	arithmetic-operator-insertion	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_UOI_66	SURVIVED	-	unary-operator-insertion	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_ABS_67	SURVIVED	-	absolute-value-insertion	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_CRP_68	SURVIVED	-	constant-replacement	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_CRP_69	SURVIVED	-	constant-replacement	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_CRP_70	SURVIVED	-	constant-replacement	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_SDL_71	SURVIVED	-	statement-deletion	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_SEI_72	SURVIVED	-	side-effect-insertion	indexOf	Helper.java	GeneratedATCsTest_linkedlist_008	POST	the test passes
+LINKEDLIST_GEN_AOR_73	KILLED	POST	arithmetic-operator-replacement	indexOf	Helper.java	-	-	killed by POST: POST indexOf: position < size
+LINKEDLIST_GEN_AOR_74	INVALID	-	arithmetic-operator-replacement	indexOf	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_AOR_74/Helper.java:89: error: illegal start of expression
+LINKEDLIST_GEN_AOR_75	INVALID	-	arithmetic-operator-replacement	indexOf	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_AOR_75/Helper.java:89: error: illegal start of expression
+LINKEDLIST_GEN_AOR_76	INVALID	-	arithmetic-operator-replacement	indexOf	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_AOR_76/Helper.java:89: error: illegal start of expression
+LINKEDLIST_GEN_UOI_77	KILLED	POST	unary-operator-insertion	indexOf	Helper.java	-	-	killed by POST: POST indexOf: position < size
+LINKEDLIST_GEN_ABS_78	SURVIVED	-	absolute-value-insertion	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_CRP_79	SURVIVED	-	constant-replacement	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_CRP_80	INVALID	-	constant-replacement	indexOf	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_CRP_80/Helper.java:89: error: unexpected type
+LINKEDLIST_GEN_CRP_81	KILLED	POST	constant-replacement	indexOf	Helper.java	-	-	killed by POST: POST indexOf: position >= -1
+LINKEDLIST_GEN_RVR_82	SURVIVED	-	return-value-replacement	indexOf	Helper.java	-	-	the test passes
+LINKEDLIST_GEN_RVR_83	KILLED	POST	return-value-replacement	indexOf	Helper.java	-	-	killed by POST: POST indexOf: position < size
+LINKEDLIST_GEN_SEI_84	SURVIVED	-	side-effect-insertion	indexOf	Helper.java	GeneratedATCsTest_linkedlist_008	POST	the test passes

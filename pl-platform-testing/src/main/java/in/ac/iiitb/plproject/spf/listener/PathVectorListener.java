@@ -7,7 +7,11 @@ import gov.nasa.jpf.search.Search;
 import gov.nasa.jpf.symbc.numeric.PCChoiceGenerator;
 import gov.nasa.jpf.symbc.numeric.PathCondition;
 import gov.nasa.jpf.vm.ChoiceGenerator;
+import gov.nasa.jpf.vm.ClassInfo;
+import gov.nasa.jpf.vm.ClassLoaderInfo;
+import gov.nasa.jpf.vm.ElementInfo;
 import gov.nasa.jpf.vm.Instruction;
+import gov.nasa.jpf.vm.MJIEnv;
 import gov.nasa.jpf.vm.MethodInfo;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
@@ -34,9 +38,13 @@ import java.util.Map;
  * a structured getter, not scraped text — so a depth cutoff can be reported
  * distinctly from "no path reaches the end" (rule 10).
  *
+ * <p>Each completed path also carries the driver's {@code picks} field: the
+ * candidate every pooled input picked on that path. JPF restores static fields
+ * on backtracking, so the field always holds the current path's picks.
+ *
  * <p>Deliberately generic: it has no idea what a "call block" or a "parameter
- * slot" is. {@code in.ac.iiitb.plproject.spf.ValueExtractor} maps the raw
- * {@code c<i>_<param>[$idx]} variable names in its output back to the IR.
+ * slot" is. {@code SpfSymexEngine} maps the {@code c<i>_<param>} names in its
+ * output back to the test case.
  */
 public class PathVectorListener extends PropertyListenerAdapter {
 
@@ -44,6 +52,8 @@ public class PathVectorListener extends PropertyListenerAdapter {
     private int pathId = 0;
     /** Highest line of the driver's main() at which SPF pruned a path, or -1. */
     private int deepestPruneLine = -1;
+    /** The driver line executing right now, to say where an exception was thrown. */
+    private int currentLine = -1;
     /** Stop at the first completed, solved path: one input vector per sequence. */
     private final boolean stopAtFirstPath;
 
@@ -77,6 +87,7 @@ public class PathVectorListener extends PropertyListenerAdapter {
      */
     @Override
     public void instructionExecuted(VM vm, ThreadInfo ti, Instruction next, Instruction executed) {
+        if (isDriverMain(executed.getMethodInfo())) currentLine = executed.getLineNumber();
         if (!vm.getSystemState().isIgnored()) return;
         int line = -1;
         if (isDriverMain(executed.getMethodInfo())) {
@@ -92,9 +103,11 @@ public class PathVectorListener extends PropertyListenerAdapter {
         if (line > deepestPruneLine) deepestPruneLine = line;
     }
 
+    private static final String DRIVER_CLASS = "in.ac.iiitb.plproject.atc.generated.GeneratedATCs";
+
     private static boolean isDriverMain(MethodInfo mi) {
         return mi != null && "main".equals(mi.getName()) && mi.getClassInfo() != null
-                && mi.getClassInfo().getName().endsWith(".GeneratedATCs");
+                && mi.getClassInfo().getName().equals(DRIVER_CLASS);
     }
 
     @Override
@@ -111,7 +124,8 @@ public class PathVectorListener extends PropertyListenerAdapter {
         // generator can at least count how many such states were seen; not
         // reported as a usable path.
         if (search.getCurrentError() != null) {
-            out.println("{\"event\":\"error\",\"detail\":" + jsonString(search.getCurrentError().getDescription()) + "}");
+            out.println("{\"event\":\"error\",\"line\":" + currentLine + ",\"detail\":"
+                    + jsonString(search.getCurrentError().getDescription()) + "}");
             out.flush();
             return;
         }
@@ -125,7 +139,8 @@ public class PathVectorListener extends PropertyListenerAdapter {
         if (!(cg instanceof PCChoiceGenerator)) {
             // no symbolic decision on this path at all: nothing is constrained,
             // every value is free
-            out.println("{\"event\":\"path\",\"path\":" + pathId + ",\"sat\":true,\"vars\":{}}");
+            out.println("{\"event\":\"path\",\"path\":" + pathId + ",\"sat\":true,\"vars\":{},\"picks\":"
+                    + picks(vm) + "}");
             out.flush();
             if (stopAtFirstPath) search.terminate();
             return;
@@ -145,10 +160,29 @@ public class PathVectorListener extends PropertyListenerAdapter {
             first = false;
             sb.append(jsonString(e.getKey())).append(":").append(jsonString(String.valueOf(e.getValue())));
         }
-        sb.append("}}");
+        sb.append("},\"picks\":").append(picks(vm)).append("}");
         out.println(sb);
         out.flush();
         if (sat && stopAtFirstPath) search.terminate();
+    }
+
+    /** The driver's {@code picks} field as a JSON object, input name -&gt; picked value. */
+    private static String picks(VM vm) {
+        StringBuilder sb = new StringBuilder("{");
+        ClassInfo driver = ClassLoaderInfo.getCurrentSystemClassLoader()
+                .tryGetResolvedClassInfo(DRIVER_CLASS);
+        if (driver != null) {
+            ElementInfo statics = driver.getStaticElementInfo();
+            int ref = statics.getReferenceField("picks");
+            String text = ref == MJIEnv.NULL ? "" : vm.getHeap().get(ref).asString();
+            for (String pick : text.split("\u001e")) {
+                int sep = pick.indexOf('\u001f');
+                if (sep < 0) continue;
+                if (sb.length() > 1) sb.append(",");
+                sb.append(jsonString(pick.substring(0, sep))).append(":").append(jsonString(pick.substring(sep + 1)));
+            }
+        }
+        return sb.append("}").toString();
     }
 
     @Override
@@ -166,6 +200,8 @@ public class PathVectorListener extends PropertyListenerAdapter {
             char c = s.charAt(i);
             if (c == '"' || c == '\\') sb.append('\\').append(c);
             else if (c == '\n') sb.append("\\n");
+            else if (c == '\t') sb.append("\\t");
+            else if (c < 0x20) sb.append(String.format("\\u%04x", (int) c));
             else sb.append(c);
         }
         return sb.append('"').toString();

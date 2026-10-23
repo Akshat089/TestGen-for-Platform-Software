@@ -1,27 +1,17 @@
 package in.ac.iiitb.plproject.symbolic;
 
-import in.ac.iiitb.plproject.ir.CallBlock;
-import in.ac.iiitb.plproject.ir.Clause;
-import in.ac.iiitb.plproject.ir.ParamSlot;
-import in.ac.iiitb.plproject.ir.Snapshot;
 import in.ac.iiitb.plproject.ir.TestPlan;
-import in.ac.iiitb.plproject.spf.InputVector;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Step 6: {@link TestPlan} + its one solved {@link InputVector} -&gt;
- * {@code GeneratedATCsTest.java}, ONE {@code @Test} method per sequence.
- *
- * <p>Per call block, prints a precondition check, the snapshot locals, the
- * call with LITERAL arguments (storing the result if any), and one assertion
- * per postcondition clause — using the clause's JUnit form over the real
- * library. A clause that only names the result ({@code \result == poppedElem})
- * asserts nothing and is not printed as an assertion. A precondition failure
- * and a postcondition failure are reported with different message prefixes
- * ({@code PRE}/{@code POST}) so a failure immediately says which kind it is.
- * Imports nothing from {@code gov.nasa.jpf}: by the time this class exists
- * every value is a plain Java literal.
+ * The concrete test case genCTC returned -&gt; {@code GeneratedATCsTest.java},
+ * ONE {@code @Test} method per sequence, printing exactly the statements of
+ * the final t in order and nothing else: the reset, each assignment, each
+ * real call, each {@code assume} as a {@code "PRE <op>: <clause>"} assertion
+ * and each {@code assert} as a {@code "POST <op>: <clause>"} assertion.
+ * Imports nothing from {@code gov.nasa.jpf}.
  */
 public final class JUnitPrinter {
 
@@ -30,20 +20,20 @@ public final class JUnitPrinter {
     /** Per-test time limit, so a looping library fails the test instead of hanging it. */
     public static final int TEST_TIMEOUT_MILLIS = 2000;
 
-    /** One sequence and the inputs SPF solved for it. */
+    /** One sequence and the concrete test case genCTC returned for it. */
     public static final class Sequence {
         public final TestPlan plan;
-        public final InputVector vector;
+        public final List<Stmt> concrete;
 
-        public Sequence(TestPlan plan, InputVector vector) {
+        public Sequence(TestPlan plan, List<Stmt> concrete) {
             this.plan = plan;
-            this.vector = vector;
+            this.concrete = concrete;
         }
     }
 
-    public static String print(TestPlan plan, InputVector vector) {
-        java.util.List<Sequence> one = new java.util.ArrayList<Sequence>();
-        one.add(new Sequence(plan, vector));
+    public static String print(TestPlan plan, List<Stmt> concrete) {
+        List<Sequence> one = new ArrayList<Sequence>();
+        one.add(new Sequence(plan, concrete));
         return print(TestPlan.JUNIT_CLASS, one);
     }
 
@@ -55,8 +45,8 @@ public final class JUnitPrinter {
         sb.append("import static org.junit.Assert.assertTrue;\n\n");
         sb.append("/**\n * Generated from ").append(first.getSpecFile()).append(" + ")
           .append(first.getTestsFile()).append(".\n")
-          .append(" * One @Test method per sequence, with the inputs SPF solved from the contract;\n")
-          .append(" * every assertion traces to one clause of the contract.\n */\n");
+          .append(" * One @Test method per sequence: the concrete test case genCTC returned,\n")
+          .append(" * statement for statement; every assertion is one clause of the contract.\n */\n");
         sb.append("public class ").append(className).append(" {\n");
 
         java.util.Set<String> used = new java.util.HashSet<String>();
@@ -79,68 +69,57 @@ public final class JUnitPrinter {
     }
 
     private static void printSequenceMethod(StringBuilder sb, Sequence seq, String name) {
-        TestPlan plan = seq.plan;
         StringBuilder calls = new StringBuilder();
-        for (CallBlock b : plan.getCallBlocks()) {
+        for (in.ac.iiitb.plproject.ir.CallBlock b : seq.plan.getCallBlocks()) {
             if (calls.length() > 0) calls.append(" -> ");
             calls.append(b.getOperationName());
         }
         sb.append("\n    // sequence: ").append(calls).append('\n');
         sb.append("    @Test(timeout = ").append(TEST_TIMEOUT_MILLIS).append(")\n");
         sb.append("    public void ").append(name).append("() {\n");
-        if (plan.isHasState()) {
-            sb.append("        Helper.reset();\n");
-        }
-        for (CallBlock block : plan.getCallBlocks()) {
-            sb.append("\n        // call ").append(block.getIndex()).append(": ")
-              .append(block.getOperationName()).append('\n');
-            printParamLiterals(sb, block, seq.vector);
-            printPreconditionChecks(sb, block);
-            printSnapshots(sb, block);
-            printCall(sb, block);
-            printPostconditionAssertions(sb, block);
+        for (Stmt s : seq.concrete) {
+            if (s instanceof Stmt.Reset) {
+                sb.append("        Helper.reset();\n");
+            } else if (s instanceof Stmt.Comment) {
+                sb.append("\n        ").append(s).append('\n');
+            } else if (s instanceof Stmt.Assign) {
+                sb.append("        ").append(assignment((Stmt.Assign) s)).append('\n');
+            } else if (s instanceof Stmt.Assume) {
+                Stmt.Assume a = (Stmt.Assume) s;
+                sb.append("        assertTrue(")
+                  .append(javaString("PRE " + a.block.getOperationName() + ": " + a.clause.getOriginalText()))
+                  .append(", ").append(a.clause.getJavaExpr()).append(");\n");
+            } else if (s instanceof Stmt.Assert) {
+                Stmt.Assert a = (Stmt.Assert) s;
+                sb.append("        assertTrue(")
+                  .append(javaString("POST " + a.block.getOperationName() + ": " + a.clause.getOriginalText()))
+                  .append(", ").append(a.clause.getJavaExpr()).append(");\n");
+            } else {
+                throw new IllegalStateException("not a concrete test case: it still has " + s);
+            }
         }
         sb.append("    }\n");
     }
 
-    private static void printParamLiterals(StringBuilder sb, CallBlock block, InputVector vector) {
-        for (ParamSlot p : block.getParams()) {
-            sb.append("        ").append(p.getType()).append(' ').append(p.getSlotName())
-              .append(" = ").append(vector.literalFor(p.getSlotName())).append(";\n");
-        }
+    /** {@code T x = e;}, or {@code Helper.op(args);} for a call with no stored result. */
+    static String assignment(Stmt.Assign a) {
+        String rhs = java(a.expr);
+        if (a.var == null) return rhs + ";";
+        return a.type + " " + a.var + " = " + rhs + ";";
     }
 
-    private static void printPreconditionChecks(StringBuilder sb, CallBlock block) {
-        for (Clause c : block.getPreconditions()) {
-            sb.append("        assertTrue(")
-              .append(javaString("PRE " + block.getOperationName() + ": " + c.getOriginalText()))
-              .append(", ").append(c.getJavaExpr()).append(");\n");
+    /** An ATC expression as Java: an API call becomes a real call to {@code Helper}. */
+    static String java(Expr e) {
+        if (e instanceof Expr.Call) {
+            Expr.Call c = (Expr.Call) e;
+            StringBuilder sb = new StringBuilder(c.api ? "Helper." : "").append(c.function).append('(');
+            for (int i = 0; i < c.args.size(); i++) {
+                if (i > 0) sb.append(", ");
+                sb.append(java(c.args.get(i)));
+            }
+            return sb.append(')').toString();
         }
-    }
-
-    private static void printSnapshots(StringBuilder sb, CallBlock block) {
-        for (Snapshot s : block.getSnapshots()) {
-            sb.append("        ").append(s.getType()).append(' ').append(s.getLocalName())
-              .append(" = Helper.").append(s.getStateVarName()).append(";\n");
-        }
-    }
-
-    private static void printCall(StringBuilder sb, CallBlock block) {
-        sb.append("        ");
-        if (block.isStoresResult()) {
-            sb.append(block.getReturnType()).append(' ').append(block.getResultVarName()).append(" = ");
-        }
-        sb.append("Helper.").append(block.getOperationName()).append('(')
-          .append(block.argumentList()).append(");\n");
-    }
-
-    private static void printPostconditionAssertions(StringBuilder sb, CallBlock block) {
-        for (Clause c : block.getPostconditions()) {
-            if (c.isTautological()) continue;
-            sb.append("        assertTrue(")
-              .append(javaString("POST " + block.getOperationName() + ": " + c.getOriginalText()))
-              .append(", ").append(c.getJavaExpr()).append(");\n");
-        }
+        return e.toString();
     }
 
     private static String javaString(String s) {

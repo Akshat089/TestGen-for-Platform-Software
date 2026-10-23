@@ -1,0 +1,262 @@
+# generated test strings — mathlib (family size 260, phase 1 2391s)
+# name	status	spf_ms	rounds	sequence	inputs	detail
+mathlib-001	PASSED	14652	5	power -> abs -> factorial -> factorial -> gcd	{c0_base=1, c0_exponent=0, c1_x=11, c2_n=0, c3_n=0, c4_a=1, c4_b=1}	
+mathlib-002	PASSED	12142	5	abs -> factorial -> gcd -> gcd -> power	{c0_x=7, c1_n=0, c2_a=1, c2_b=1, c3_a=1, c3_b=1, c4_base=1, c4_exponent=0}	
+mathlib-003	PASSED	13877	6	abs -> gcd -> power -> factorial -> factorial -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_n=0, c4_n=0, c5_n=0}	
+mathlib-004	PASSED	16357	6	factorial -> abs -> gcd -> factorial -> factorial -> power	{c0_n=0, c1_x=9, c2_a=1, c2_b=1, c3_n=0, c4_n=0, c5_base=1, c5_exponent=0}	
+mathlib-005	PASSED	5608	2	gcd -> power	{c0_a=1, c0_b=1, c1_base=1, c1_exponent=0}	
+mathlib-006	PASSED	5207	2	abs -> factorial	{c0_x=7, c1_n=0}	
+mathlib-007	PASSED	13847	5	abs -> gcd -> abs -> power -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_x=13, c3_base=1, c3_exponent=0, c4_n=0}	
+mathlib-008	PASSED	10339	5	abs -> power -> gcd -> factorial -> abs	{c0_x=7, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1, c3_n=0, c4_x=19}	
+mathlib-009	PASSED	10388	5	abs -> abs -> gcd -> power -> factorial	{c0_x=7, c1_x=9, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_n=0}	
+mathlib-010	PASSED	8797	4	power -> gcd -> abs -> factorial	{c0_base=1, c0_exponent=0, c1_a=1, c1_b=1, c2_x=15, c3_n=0}	
+mathlib-011	PASSED	9463	3	abs -> power -> factorial	{c0_x=7, c1_base=1, c1_exponent=0, c2_n=0}	
+mathlib-012	PASSED	10785	5	factorial -> factorial -> abs -> abs -> power	{c0_n=0, c1_n=0, c2_x=11, c3_x=13, c4_base=1, c4_exponent=0}	
+mathlib-013	PASSED	10924	5	gcd -> factorial -> gcd -> power -> gcd	{c0_a=1, c0_b=1, c1_n=0, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_a=1, c4_b=1}	
+mathlib-014	PASSED	8117	2	power -> factorial	{c0_base=1, c0_exponent=0, c1_n=0}	
+mathlib-015	PASSED	8874	4	abs -> gcd -> factorial -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_n=0, c3_n=0}	
+mathlib-016	PASSED	13366	6	factorial -> abs -> gcd -> power -> abs -> abs	{c0_n=0, c1_x=9, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_x=19, c5_x=21}	
+mathlib-017	PASSED	7301	3	abs -> gcd -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_n=0}	
+mathlib-018	PASSED	10968	4	abs -> gcd -> power -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_n=0}	
+mathlib-019	PASSED	8583	4	abs -> abs -> power -> factorial	{c0_x=7, c1_x=9, c2_base=1, c2_exponent=0, c3_n=0}	
+mathlib-020	PASSED	10107	5	gcd -> abs -> abs -> factorial -> power	{c0_a=1, c0_b=1, c1_x=11, c2_x=13, c3_n=0, c4_base=1, c4_exponent=0}	
+mathlib-021	PASSED	14218	5	abs -> gcd -> power -> factorial -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_n=0, c4_n=0}	
+mathlib-022	PASSED	13711	4	abs -> power -> gcd -> factorial	{c0_x=7, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1, c3_n=0}	
+mathlib-023	PASSED	18386	5	abs -> gcd -> power -> power -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_base=1, c3_exponent=0, c4_n=0}	
+mathlib-024	PASSED	9419	4	abs -> abs -> gcd -> factorial	{c0_x=7, c1_x=9, c2_a=1, c2_b=1, c3_n=0}	
+mathlib-025	PASSED	16118	7	factorial -> factorial -> factorial -> abs -> factorial -> gcd -> factorial	{c0_n=0, c1_n=0, c2_n=0, c3_x=13, c4_n=0, c5_a=1, c5_b=1, c6_n=0}	
+mathlib-026	PASSED	14453	4	factorial -> gcd -> power -> abs	{c0_n=0, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_x=17}	
+mathlib-027	PASSED	10017	4	abs -> power -> gcd -> power	{c0_x=7, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0}	
+mathlib-028	PASSED	12797	6	power -> gcd -> power -> abs -> abs -> abs	{c0_base=1, c0_exponent=0, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_x=19, c4_x=21, c5_x=23}	
+mathlib-029	PASSED	17710	7	abs -> gcd -> power -> gcd -> gcd -> factorial -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_a=1, c3_b=1, c4_a=1, c4_b=1, c5_n=0, c6_n=0}	
+mathlib-030	PASSED	13431	6	factorial -> abs -> power -> factorial -> gcd -> factorial	{c0_n=0, c1_x=9, c2_base=1, c2_exponent=0, c3_n=0, c4_a=1, c4_b=1, c5_n=0}	
+mathlib-031	PASSED	13018	5	abs -> gcd -> gcd -> power -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_n=0}	
+mathlib-032	PASSED	8601	4	abs -> gcd -> factorial -> power	{c0_x=7, c1_a=1, c1_b=1, c2_n=0, c3_base=1, c3_exponent=0}	
+mathlib-033	PASSED	13094	7	factorial -> power -> power -> factorial -> power -> power -> gcd	{c0_n=0, c1_base=1, c1_exponent=0, c2_base=1, c2_exponent=0, c3_n=0, c4_base=1, c4_exponent=0, c5_base=1, c5_exponent=0, c6_a=1, c6_b=1}	
+mathlib-034	PASSED	5349	2	power -> gcd	{c0_base=1, c0_exponent=0, c1_a=1, c1_b=1}	
+mathlib-035	PASSED	9472	3	power -> factorial -> factorial	{c0_base=1, c0_exponent=0, c1_n=0, c2_n=0}	
+mathlib-036	PASSED	11609	6	abs -> factorial -> power -> gcd -> power -> factorial	{c0_x=7, c1_n=0, c2_base=1, c2_exponent=0, c3_a=1, c3_b=1, c4_base=1, c4_exponent=0, c5_n=0}	
+mathlib-037	PASSED	8019	4	abs -> gcd -> gcd -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_n=0}	
+mathlib-038	PASSED	4738	2	gcd -> factorial	{c0_a=1, c0_b=1, c1_n=0}	
+mathlib-039	PASSED	9384	3	abs -> factorial -> gcd	{c0_x=7, c1_n=0, c2_a=1, c2_b=1}	
+mathlib-040	PASSED	6662	3	abs -> abs -> gcd	{c0_x=7, c1_x=9, c2_a=1, c2_b=1}	
+mathlib-041	PASSED	6612	3	gcd -> factorial -> power	{c0_a=1, c0_b=1, c1_n=0, c2_base=1, c2_exponent=0}	
+mathlib-042	PASSED	6640	3	factorial -> abs -> gcd	{c0_n=0, c1_x=9, c2_a=1, c2_b=1}	
+mathlib-043	PASSED	14698	6	abs -> gcd -> gcd -> factorial -> power -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_n=0, c4_base=1, c4_exponent=0, c5_n=0}	
+mathlib-044	PASSED	8163	4	abs -> factorial -> power -> gcd	{c0_x=7, c1_n=0, c2_base=1, c2_exponent=0, c3_a=1, c3_b=1}	
+mathlib-045	PASSED	12453	7	abs -> abs -> gcd -> gcd -> abs -> power -> factorial	{c0_x=7, c1_x=9, c2_a=1, c2_b=1, c3_a=1, c3_b=1, c4_x=19, c5_base=1, c5_exponent=0, c6_n=0}	
+mathlib-046	PASSED	8293	4	abs -> power -> power -> factorial	{c0_x=7, c1_base=1, c1_exponent=0, c2_base=1, c2_exponent=0, c3_n=0}	
+mathlib-047	PASSED	14155	6	power -> factorial -> factorial -> gcd -> factorial -> gcd	{c0_base=1, c0_exponent=0, c1_n=0, c2_n=0, c3_a=1, c3_b=1, c4_n=0, c5_a=1, c5_b=1}	
+mathlib-048	PASSED	10226	5	abs -> gcd -> factorial -> power -> gcd	{c0_x=7, c1_a=1, c1_b=1, c2_n=0, c3_base=1, c3_exponent=0, c4_a=1, c4_b=1}	
+mathlib-049	PASSED	9998	5	factorial -> abs -> gcd -> factorial -> abs	{c0_n=0, c1_x=9, c2_a=1, c2_b=1, c3_n=0, c4_x=17}	
+mathlib-050	PASSED	13407	5	power -> factorial -> gcd -> abs -> power	{c0_base=1, c0_exponent=0, c1_n=0, c2_a=1, c2_b=1, c3_x=17, c4_base=1, c4_exponent=0}	
+mathlib-051	PASSED	12388	6	abs -> gcd -> power -> power -> factorial -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_base=1, c3_exponent=0, c4_n=0, c5_n=0}	
+mathlib-052	PASSED	16687	7	factorial -> power -> gcd -> power -> gcd -> gcd -> power	{c0_n=0, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_a=1, c4_b=1, c5_a=1, c5_b=1, c6_base=1, c6_exponent=0}	
+mathlib-053	PASSED	9886	5	abs -> abs -> abs -> gcd -> factorial	{c0_x=7, c1_x=9, c2_x=11, c3_a=1, c3_b=1, c4_n=0}	
+mathlib-054	PASSED	11918	6	power -> power -> abs -> gcd -> power -> factorial	{c0_base=1, c0_exponent=0, c1_base=1, c1_exponent=0, c2_x=15, c3_a=1, c3_b=1, c4_base=1, c4_exponent=0, c5_n=0}	
+mathlib-055	PASSED	14243	6	abs -> gcd -> power -> factorial -> gcd -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_n=0, c4_a=1, c4_b=1, c5_n=0}	
+mathlib-056	PASSED	13290	7	gcd -> gcd -> power -> factorial -> power -> factorial -> gcd	{c0_a=1, c0_b=1, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_n=0, c4_base=1, c4_exponent=0, c5_n=0, c6_a=1, c6_b=1}	
+mathlib-057	PASSED	7734	4	abs -> abs -> gcd -> power	{c0_x=7, c1_x=9, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0}	
+mathlib-058	PASSED	11121	4	gcd -> abs -> power -> factorial	{c0_a=1, c0_b=1, c1_x=11, c2_base=1, c2_exponent=0, c3_n=0}	
+mathlib-059	PASSED	8312	4	gcd -> power -> factorial -> gcd	{c0_a=1, c0_b=1, c1_base=1, c1_exponent=0, c2_n=0, c3_a=1, c3_b=1}	
+mathlib-060	PASSED	5258	2	abs -> gcd	{c0_x=7, c1_a=1, c1_b=1}	
+mathlib-061	PASSED	11679	6	abs -> power -> gcd -> abs -> gcd -> factorial	{c0_x=7, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1, c3_x=17, c4_a=1, c4_b=1, c5_n=0}	
+mathlib-062	PASSED	14062	6	factorial -> gcd -> abs -> gcd -> factorial -> abs	{c0_n=0, c1_a=1, c1_b=1, c2_x=13, c3_a=1, c3_b=1, c4_n=0, c5_x=21}	
+mathlib-063	PASSED	13138	7	gcd -> gcd -> abs -> power -> power -> gcd -> power	{c0_a=1, c0_b=1, c1_a=1, c1_b=1, c2_x=15, c3_base=1, c3_exponent=0, c4_base=1, c4_exponent=0, c5_a=1, c5_b=1, c6_base=1, c6_exponent=0}	
+mathlib-064	PASSED	6296	3	gcd -> power -> factorial	{c0_a=1, c0_b=1, c1_base=1, c1_exponent=0, c2_n=0}	
+mathlib-065	PASSED	12277	5	abs -> gcd -> power -> gcd -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_a=1, c3_b=1, c4_n=0}	
+mathlib-066	PASSED	7995	4	gcd -> gcd -> gcd -> power	{c0_a=1, c0_b=1, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0}	
+mathlib-067	PASSED	10065	4	gcd -> gcd -> power -> factorial	{c0_a=1, c0_b=1, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_n=0}	
+mathlib-068	PASSED	11279	5	gcd -> gcd -> abs -> factorial -> power	{c0_a=1, c0_b=1, c1_a=1, c1_b=1, c2_x=15, c3_n=0, c4_base=1, c4_exponent=0}	
+mathlib-069	PASSED	13709	6	abs -> abs -> abs -> gcd -> power -> factorial	{c0_x=7, c1_x=9, c2_x=11, c3_a=1, c3_b=1, c4_base=1, c4_exponent=0, c5_n=0}	
+mathlib-070	PASSED	9231	5	gcd -> gcd -> power -> gcd -> gcd	{c0_a=1, c0_b=1, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_a=1, c3_b=1, c4_a=1, c4_b=1}	
+mathlib-071	PASSED	13132	5	power -> abs -> gcd -> power -> factorial	{c0_base=1, c0_exponent=0, c1_x=11, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_n=0}	
+mathlib-072	PASSED	15631	4	gcd -> power -> power -> factorial	{c0_a=1, c0_b=1, c1_base=1, c1_exponent=0, c2_base=1, c2_exponent=0, c3_n=0}	
+mathlib-073	PASSED	13793	5	gcd -> abs -> power -> factorial -> power	{c0_a=1, c0_b=1, c1_x=11, c2_base=1, c2_exponent=0, c3_n=0, c4_base=1, c4_exponent=0}	
+mathlib-074	PASSED	17885	6	abs -> gcd -> gcd -> power -> abs -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_x=21, c5_n=0}	
+mathlib-075	PASSED	8362	3	factorial -> power -> gcd	{c0_n=0, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1}	
+mathlib-076	PASSED	11415	4	power -> power -> gcd -> abs	{c0_base=1, c0_exponent=0, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1, c3_x=19}	
+mathlib-077	PASSED	18031	7	factorial -> power -> factorial -> gcd -> abs -> abs -> factorial	{c0_n=0, c1_base=1, c1_exponent=0, c2_n=0, c3_a=1, c3_b=1, c4_x=19, c5_x=21, c6_n=0}	
+mathlib-078	PASSED	9597	5	gcd -> abs -> gcd -> power -> factorial	{c0_a=1, c0_b=1, c1_x=11, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_n=0}	
+mathlib-079	PASSED	11347	6	abs -> abs -> gcd -> power -> power -> factorial	{c0_x=7, c1_x=9, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_base=1, c4_exponent=0, c5_n=0}	
+mathlib-080	PASSED	9507	5	gcd -> abs -> abs -> power -> factorial	{c0_a=1, c0_b=1, c1_x=11, c2_x=13, c3_base=1, c3_exponent=0, c4_n=0}	
+mathlib-081	PASSED	13550	5	gcd -> gcd -> gcd -> abs -> power	{c0_a=1, c0_b=1, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_x=19, c4_base=1, c4_exponent=0}	
+mathlib-082	PASSED	10844	6	gcd -> power -> gcd -> power -> abs -> factorial	{c0_a=1, c0_b=1, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_x=23, c5_n=0}	
+mathlib-083	PASSED	10689	6	power -> abs -> gcd -> gcd -> power -> factorial	{c0_base=1, c0_exponent=0, c1_x=11, c2_a=1, c2_b=1, c3_a=1, c3_b=1, c4_base=1, c4_exponent=0, c5_n=0}	
+mathlib-084	PASSED	15497	7	abs -> abs -> power -> gcd -> power -> factorial -> factorial	{c0_x=7, c1_x=9, c2_base=1, c2_exponent=0, c3_a=1, c3_b=1, c4_base=1, c4_exponent=0, c5_n=0, c6_n=0}	
+mathlib-085	PASSED	4708	2	power -> power	{c0_base=1, c0_exponent=0, c1_base=1, c1_exponent=0}	
+mathlib-086	PASSED	6212	3	abs -> factorial -> abs	{c0_x=7, c1_n=0, c2_x=11}	
+mathlib-087	PASSED	12568	7	abs -> gcd -> abs -> factorial -> gcd -> power -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_x=13, c3_n=0, c4_a=1, c4_b=1, c5_base=1, c5_exponent=0, c6_n=0}	
+mathlib-088	PASSED	7263	2	gcd -> gcd	{c0_a=1, c0_b=1, c1_a=1, c1_b=1}	
+mathlib-089	PASSED	12604	7	abs -> power -> power -> gcd -> abs -> power -> power	{c0_x=7, c1_base=1, c1_exponent=0, c2_base=1, c2_exponent=0, c3_a=1, c3_b=1, c4_x=21, c5_base=1, c5_exponent=0, c6_base=1, c6_exponent=0}	
+mathlib-090	PASSED	5927	3	abs -> gcd -> power	{c0_x=7, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0}	
+mathlib-091	PASSED	9178	5	abs -> power -> power -> power -> gcd	{c0_x=7, c1_base=1, c1_exponent=0, c2_base=1, c2_exponent=0, c3_base=1, c3_exponent=0, c4_a=1, c4_b=1}	
+mathlib-092	PASSED	12315	5	abs -> abs -> gcd -> factorial -> power	{c0_x=7, c1_x=9, c2_a=1, c2_b=1, c3_n=0, c4_base=1, c4_exponent=0}	
+mathlib-093	PASSED	7749	4	abs -> factorial -> abs -> gcd	{c0_x=7, c1_n=0, c2_x=11, c3_a=1, c3_b=1}	
+mathlib-094	PASSED	7986	4	abs -> gcd -> abs -> power	{c0_x=7, c1_a=1, c1_b=1, c2_x=13, c3_base=1, c3_exponent=0}	
+mathlib-095	PASSED	7638	4	abs -> power -> factorial -> factorial	{c0_x=7, c1_base=1, c1_exponent=0, c2_n=0, c3_n=0}	
+mathlib-096	PASSED	13737	6	abs -> gcd -> power -> abs -> factorial -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_x=17, c4_n=0, c5_n=0}	
+mathlib-097	PASSED	6365	3	gcd -> abs -> power	{c0_a=1, c0_b=1, c1_x=11, c2_base=1, c2_exponent=0}	
+mathlib-098	PASSED	12809	7	gcd -> factorial -> factorial -> gcd -> power -> factorial -> abs	{c0_a=1, c0_b=1, c1_n=0, c2_n=0, c3_a=1, c3_b=1, c4_base=1, c4_exponent=0, c5_n=0, c6_x=25}	
+mathlib-099	PASSED	11779	4	factorial -> abs -> power -> abs	{c0_n=0, c1_x=9, c2_base=1, c2_exponent=0, c3_x=15}	
+mathlib-100	PASSED	13761	7	abs -> gcd -> power -> factorial -> factorial -> gcd -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_n=0, c4_n=0, c5_a=1, c5_b=1, c6_n=0}	
+mathlib-101	PASSED	9216	5	abs -> gcd -> gcd -> gcd -> power	{c0_x=7, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_a=1, c3_b=1, c4_base=1, c4_exponent=0}	
+mathlib-102	PASSED	9112	3	power -> abs -> factorial	{c0_base=1, c0_exponent=0, c1_x=11, c2_n=0}	
+mathlib-103	PASSED	9415	5	abs -> factorial -> factorial -> power -> gcd	{c0_x=7, c1_n=0, c2_n=0, c3_base=1, c3_exponent=0, c4_a=1, c4_b=1}	
+mathlib-104	PASSED	8182	4	abs -> gcd -> gcd -> gcd	{c0_x=7, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_a=1, c3_b=1}	
+mathlib-105	PASSED	9900	5	abs -> power -> gcd -> abs -> factorial	{c0_x=7, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1, c3_x=17, c4_n=0}	
+mathlib-106	PASSED	13554	6	gcd -> factorial -> gcd -> power -> gcd -> factorial	{c0_a=1, c0_b=1, c1_n=0, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_a=1, c4_b=1, c5_n=0}	
+mathlib-107	PASSED	6570	3	factorial -> gcd -> factorial	{c0_n=0, c1_a=1, c1_b=1, c2_n=0}	
+mathlib-108	PASSED	9007	5	abs -> power -> gcd -> power -> factorial	{c0_x=7, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_n=0}	
+mathlib-109	PASSED	12475	5	abs -> factorial -> gcd -> factorial -> power	{c0_x=7, c1_n=0, c2_a=1, c2_b=1, c3_n=0, c4_base=1, c4_exponent=0}	
+mathlib-110	PASSED	9292	5	abs -> abs -> factorial -> power -> gcd	{c0_x=7, c1_x=9, c2_n=0, c3_base=1, c3_exponent=0, c4_a=1, c4_b=1}	
+mathlib-111	PASSED	9762	5	abs -> gcd -> gcd -> abs -> power	{c0_x=7, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_x=17, c4_base=1, c4_exponent=0}	
+mathlib-112	PASSED	9059	5	power -> power -> factorial -> abs -> abs	{c0_base=1, c0_exponent=0, c1_base=1, c1_exponent=0, c2_n=0, c3_x=17, c4_x=19}	
+mathlib-113	PASSED	14846	6	power -> gcd -> power -> power -> abs -> power	{c0_base=1, c0_exponent=0, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_base=1, c3_exponent=0, c4_x=23, c5_base=1, c5_exponent=0}	
+mathlib-114	PASSED	11332	6	abs -> gcd -> power -> gcd -> power -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_a=1, c3_b=1, c4_base=1, c4_exponent=0, c5_n=0}	
+mathlib-115	PASSED	8294	4	factorial -> abs -> gcd -> power	{c0_n=0, c1_x=9, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0}	
+mathlib-116	PASSED	12769	5	abs -> power -> power -> power -> factorial	{c0_x=7, c1_base=1, c1_exponent=0, c2_base=1, c2_exponent=0, c3_base=1, c3_exponent=0, c4_n=0}	
+mathlib-117	PASSED	4543	2	abs -> power	{c0_x=7, c1_base=1, c1_exponent=0}	
+mathlib-118	PASSED	13414	7	abs -> power -> power -> gcd -> abs -> factorial -> power	{c0_x=7, c1_base=1, c1_exponent=0, c2_base=1, c2_exponent=0, c3_a=1, c3_b=1, c4_x=21, c5_n=0, c6_base=1, c6_exponent=0}	
+mathlib-119	PASSED	12423	5	factorial -> gcd -> power -> abs -> factorial	{c0_n=0, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_x=17, c4_n=0}	
+mathlib-120	PASSED	9806	5	gcd -> power -> abs -> gcd -> factorial	{c0_a=1, c0_b=1, c1_base=1, c1_exponent=0, c2_x=15, c3_a=1, c3_b=1, c4_n=0}	
+mathlib-121	PASSED	9642	5	abs -> power -> power -> gcd -> factorial	{c0_x=7, c1_base=1, c1_exponent=0, c2_base=1, c2_exponent=0, c3_a=1, c3_b=1, c4_n=0}	
+mathlib-122	PASSED	11824	6	abs -> gcd -> gcd -> power -> factorial -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_n=0, c5_n=0}	
+mathlib-123	PASSED	11843	6	factorial -> gcd -> abs -> factorial -> power -> factorial	{c0_n=0, c1_a=1, c1_b=1, c2_x=13, c3_n=0, c4_base=1, c4_exponent=0, c5_n=0}	
+mathlib-124	PASSED	11350	6	abs -> abs -> gcd -> power -> factorial -> power	{c0_x=7, c1_x=9, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_n=0, c5_base=1, c5_exponent=0}	
+mathlib-125	PASSED	12429	5	factorial -> abs -> power -> gcd -> factorial	{c0_n=0, c1_x=9, c2_base=1, c2_exponent=0, c3_a=1, c3_b=1, c4_n=0}	
+mathlib-126	PASSED	12460	7	abs -> gcd -> power -> power -> power -> power -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_base=1, c3_exponent=0, c4_base=1, c4_exponent=0, c5_base=1, c5_exponent=0, c6_n=0}	
+mathlib-127	PASSED	11087	6	power -> gcd -> factorial -> abs -> factorial -> factorial	{c0_base=1, c0_exponent=0, c1_a=1, c1_b=1, c2_n=0, c3_x=17, c4_n=0, c5_n=0}	
+mathlib-128	PASSED	11255	4	factorial -> gcd -> abs -> factorial	{c0_n=0, c1_a=1, c1_b=1, c2_x=13, c3_n=0}	
+mathlib-129	PASSED	11059	6	abs -> abs -> gcd -> power -> abs -> factorial	{c0_x=7, c1_x=9, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_x=19, c5_n=0}	
+mathlib-130	PASSED	11483	6	gcd -> abs -> abs -> factorial -> gcd -> gcd	{c0_a=1, c0_b=1, c1_x=11, c2_x=13, c3_n=0, c4_a=1, c4_b=1, c5_a=1, c5_b=1}	
+mathlib-131	PASSED	13798	6	abs -> power -> factorial -> factorial -> gcd -> factorial	{c0_x=7, c1_base=1, c1_exponent=0, c2_n=0, c3_n=0, c4_a=1, c4_b=1, c5_n=0}	
+mathlib-132	PASSED	7759	4	power -> abs -> power -> factorial	{c0_base=1, c0_exponent=0, c1_x=11, c2_base=1, c2_exponent=0, c3_n=0}	
+mathlib-133	PASSED	10995	6	abs -> gcd -> factorial -> factorial -> power -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_n=0, c3_n=0, c4_base=1, c4_exponent=0, c5_n=0}	
+mathlib-134	PASSED	15718	7	gcd -> power -> gcd -> gcd -> factorial -> gcd -> power	{c0_a=1, c0_b=1, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1, c3_a=1, c3_b=1, c4_n=0, c5_a=1, c5_b=1, c6_base=1, c6_exponent=0}	
+mathlib-135	PASSED	7672	4	gcd -> abs -> gcd -> abs	{c0_a=1, c0_b=1, c1_x=11, c2_a=1, c2_b=1, c3_x=17}	
+mathlib-136	PASSED	7922	4	abs -> abs -> power -> gcd	{c0_x=7, c1_x=9, c2_base=1, c2_exponent=0, c3_a=1, c3_b=1}	
+mathlib-137	PASSED	9340	5	gcd -> power -> gcd -> factorial -> abs	{c0_a=1, c0_b=1, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1, c3_n=0, c4_x=21}	
+mathlib-138	PASSED	14184	6	abs -> power -> gcd -> factorial -> factorial -> factorial	{c0_x=7, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1, c3_n=0, c4_n=0, c5_n=0}	
+mathlib-139	PASSED	6235	3	gcd -> abs -> gcd	{c0_a=1, c0_b=1, c1_x=11, c2_a=1, c2_b=1}	
+mathlib-140	PASSED	7855	4	factorial -> abs -> gcd -> factorial	{c0_n=0, c1_x=9, c2_a=1, c2_b=1, c3_n=0}	
+mathlib-141	PASSED	9130	5	abs -> factorial -> power -> gcd -> gcd	{c0_x=7, c1_n=0, c2_base=1, c2_exponent=0, c3_a=1, c3_b=1, c4_a=1, c4_b=1}	
+mathlib-142	PASSED	15896	7	power -> power -> gcd -> power -> power -> factorial -> abs	{c0_base=1, c0_exponent=0, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_base=1, c4_exponent=0, c5_n=0, c6_x=29}	
+mathlib-143	PASSED	9697	5	factorial -> factorial -> abs -> power -> gcd	{c0_n=0, c1_n=0, c2_x=11, c3_base=1, c3_exponent=0, c4_a=1, c4_b=1}	
+mathlib-144	PASSED	9063	4	factorial -> power -> power -> power	{c0_n=0, c1_base=1, c1_exponent=0, c2_base=1, c2_exponent=0, c3_base=1, c3_exponent=0}	
+mathlib-145	PASSED	13667	6	abs -> factorial -> gcd -> power -> factorial -> power	{c0_x=7, c1_n=0, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_n=0, c5_base=1, c5_exponent=0}	
+mathlib-146	PASSED	9477	5	abs -> abs -> power -> factorial -> factorial	{c0_x=7, c1_x=9, c2_base=1, c2_exponent=0, c3_n=0, c4_n=0}	
+mathlib-147	PASSED	9222	5	gcd -> gcd -> power -> power -> factorial	{c0_a=1, c0_b=1, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_base=1, c3_exponent=0, c4_n=0}	
+mathlib-148	PASSED	4257	2	gcd -> abs	{c0_a=1, c0_b=1, c1_x=11}	
+mathlib-149	PASSED	11580	5	factorial -> gcd -> abs -> abs -> abs	{c0_n=0, c1_a=1, c1_b=1, c2_x=13, c3_x=15, c4_x=17}	
+mathlib-150	PASSED	7263	4	factorial -> power -> gcd -> abs	{c0_n=0, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1, c3_x=17}	
+mathlib-151	PASSED	7174	4	abs -> gcd -> power -> power	{c0_x=7, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_base=1, c3_exponent=0}	
+mathlib-152	PASSED	8995	5	abs -> abs -> gcd -> gcd -> gcd	{c0_x=7, c1_x=9, c2_a=1, c2_b=1, c3_a=1, c3_b=1, c4_a=1, c4_b=1}	
+mathlib-153	PASSED	14923	7	gcd -> power -> abs -> power -> factorial -> abs -> power	{c0_a=1, c0_b=1, c1_base=1, c1_exponent=0, c2_x=15, c3_base=1, c3_exponent=0, c4_n=0, c5_x=23, c6_base=1, c6_exponent=0}	
+mathlib-154	PASSED	5853	3	factorial -> abs -> factorial	{c0_n=0, c1_x=9, c2_n=0}	
+mathlib-155	PASSED	6737	4	abs -> power -> abs -> factorial	{c0_x=7, c1_base=1, c1_exponent=0, c2_x=13, c3_n=0}	
+mathlib-156	PASSED	9520	6	gcd -> abs -> power -> power -> abs -> power	{c0_a=1, c0_b=1, c1_x=11, c2_base=1, c2_exponent=0, c3_base=1, c3_exponent=0, c4_x=21, c5_base=1, c5_exponent=0}	
+mathlib-157	PASSED	12548	6	abs -> abs -> power -> gcd -> factorial -> factorial	{c0_x=7, c1_x=9, c2_base=1, c2_exponent=0, c3_a=1, c3_b=1, c4_n=0, c5_n=0}	
+mathlib-158	PASSED	9371	6	abs -> gcd -> power -> power -> power -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_base=1, c3_exponent=0, c4_base=1, c4_exponent=0, c5_n=0}	
+mathlib-159	PASSED	5530	3	factorial -> gcd -> abs	{c0_n=0, c1_a=1, c1_b=1, c2_x=13}	
+mathlib-160	PASSED	15054	7	abs -> gcd -> factorial -> power -> factorial -> factorial -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_n=0, c3_base=1, c3_exponent=0, c4_n=0, c5_n=0, c6_n=0}	
+mathlib-161	PASSED	10878	7	factorial -> gcd -> gcd -> factorial -> gcd -> factorial -> gcd	{c0_n=0, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_n=0, c4_a=1, c4_b=1, c5_n=0, c6_a=1, c6_b=1}	
+mathlib-162	PASSED	6819	4	factorial -> gcd -> power -> factorial	{c0_n=0, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_n=0}	
+mathlib-163	PASSED	7068	4	gcd -> power -> factorial -> abs	{c0_a=1, c0_b=1, c1_base=1, c1_exponent=0, c2_n=0, c3_x=17}	
+mathlib-164	PASSED	9941	4	power -> abs -> gcd -> power	{c0_base=1, c0_exponent=0, c1_x=11, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0}	
+mathlib-165	PASSED	10459	7	gcd -> power -> abs -> gcd -> abs -> gcd -> factorial	{c0_a=1, c0_b=1, c1_base=1, c1_exponent=0, c2_x=15, c3_a=1, c3_b=1, c4_x=21, c5_a=1, c5_b=1, c6_n=0}	
+mathlib-166	PASSED	7488	5	abs -> abs -> gcd -> gcd -> factorial	{c0_x=7, c1_x=9, c2_a=1, c2_b=1, c3_a=1, c3_b=1, c4_n=0}	
+mathlib-167	PASSED	4951	3	gcd -> power -> power	{c0_a=1, c0_b=1, c1_base=1, c1_exponent=0, c2_base=1, c2_exponent=0}	
+mathlib-168	PASSED	13125	7	factorial -> power -> abs -> factorial -> gcd -> abs -> factorial	{c0_n=0, c1_base=1, c1_exponent=0, c2_x=13, c3_n=0, c4_a=1, c4_b=1, c5_x=21, c6_n=0}	
+mathlib-169	PASSED	10713	7	gcd -> abs -> gcd -> power -> power -> gcd -> factorial	{c0_a=1, c0_b=1, c1_x=11, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_base=1, c4_exponent=0, c5_a=1, c5_b=1, c6_n=0}	
+mathlib-170	PASSED	8414	5	abs -> gcd -> abs -> gcd -> power	{c0_x=7, c1_a=1, c1_b=1, c2_x=13, c3_a=1, c3_b=1, c4_base=1, c4_exponent=0}	
+mathlib-171	PASSED	4445	2	abs -> abs	{c0_x=7, c1_x=9}	
+mathlib-172	PASSED	10679	5	gcd -> abs -> power -> factorial -> factorial	{c0_a=1, c0_b=1, c1_x=11, c2_base=1, c2_exponent=0, c3_n=0, c4_n=0}	
+mathlib-173	PASSED	10317	7	abs -> gcd -> gcd -> abs -> power -> power -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_x=17, c4_base=1, c4_exponent=0, c5_base=1, c5_exponent=0, c6_n=0}	
+mathlib-174	PASSED	9813	6	factorial -> abs -> abs -> gcd -> power -> abs	{c0_n=0, c1_x=9, c2_x=11, c3_a=1, c3_b=1, c4_base=1, c4_exponent=0, c5_x=21}	
+mathlib-175	PASSED	7705	5	gcd -> abs -> power -> abs -> factorial	{c0_a=1, c0_b=1, c1_x=11, c2_base=1, c2_exponent=0, c3_x=17, c4_n=0}	
+mathlib-176	PASSED	9478	4	abs -> gcd -> gcd -> power	{c0_x=7, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0}	
+mathlib-177	PASSED	8757	6	power -> abs -> abs -> factorial -> abs -> gcd	{c0_base=1, c0_exponent=0, c1_x=11, c2_x=13, c3_n=0, c4_x=17, c5_a=1, c5_b=1}	
+mathlib-178	PASSED	5010	3	abs -> factorial -> factorial	{c0_x=7, c1_n=0, c2_n=0}	
+mathlib-179	PASSED	6411	4	gcd -> gcd -> factorial -> power	{c0_a=1, c0_b=1, c1_a=1, c1_b=1, c2_n=0, c3_base=1, c3_exponent=0}	
+mathlib-180	PASSED	6193	4	gcd -> factorial -> factorial -> gcd	{c0_a=1, c0_b=1, c1_n=0, c2_n=0, c3_a=1, c3_b=1}	
+mathlib-181	PASSED	7962	3	gcd -> power -> abs	{c0_a=1, c0_b=1, c1_base=1, c1_exponent=0, c2_x=15}	
+mathlib-182	PASSED	7590	5	abs -> gcd -> factorial -> power -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_n=0, c3_base=1, c3_exponent=0, c4_n=0}	
+mathlib-183	PASSED	7573	5	power -> abs -> power -> gcd -> abs	{c0_base=1, c0_exponent=0, c1_x=11, c2_base=1, c2_exponent=0, c3_a=1, c3_b=1, c4_x=21}	
+mathlib-184	PASSED	7391	5	abs -> factorial -> abs -> gcd -> factorial	{c0_x=7, c1_n=0, c2_x=11, c3_a=1, c3_b=1, c4_n=0}	
+mathlib-185	PASSED	7452	5	abs -> factorial -> power -> factorial -> gcd	{c0_x=7, c1_n=0, c2_base=1, c2_exponent=0, c3_n=0, c4_a=1, c4_b=1}	
+mathlib-186	PASSED	6437	4	factorial -> factorial -> factorial -> abs	{c0_n=0, c1_n=0, c2_n=0, c3_x=13}	
+mathlib-187	PASSED	16106	7	gcd -> abs -> power -> gcd -> factorial -> power -> power	{c0_a=1, c0_b=1, c1_x=11, c2_base=1, c2_exponent=0, c3_a=1, c3_b=1, c4_n=0, c5_base=1, c5_exponent=0, c6_base=1, c6_exponent=0}	
+mathlib-188	PASSED	10149	7	abs -> gcd -> power -> power -> power -> factorial -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_base=1, c3_exponent=0, c4_base=1, c4_exponent=0, c5_n=0, c6_n=0}	
+mathlib-189	PASSED	10459	7	factorial -> power -> factorial -> power -> gcd -> power -> power	{c0_n=0, c1_base=1, c1_exponent=0, c2_n=0, c3_base=1, c3_exponent=0, c4_a=1, c4_b=1, c5_base=1, c5_exponent=0, c6_base=1, c6_exponent=0}	
+mathlib-190	PASSED	9301	4	power -> power -> abs -> power	{c0_base=1, c0_exponent=0, c1_base=1, c1_exponent=0, c2_x=15, c3_base=1, c3_exponent=0}	
+mathlib-191	PASSED	8863	6	power -> power -> gcd -> abs -> factorial -> factorial	{c0_base=1, c0_exponent=0, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1, c3_x=19, c4_n=0, c5_n=0}	
+mathlib-192	PASSED	6343	4	power -> factorial -> power -> factorial	{c0_base=1, c0_exponent=0, c1_n=0, c2_base=1, c2_exponent=0, c3_n=0}	
+mathlib-193	PASSED	6508	4	gcd -> power -> abs -> power	{c0_a=1, c0_b=1, c1_base=1, c1_exponent=0, c2_x=15, c3_base=1, c3_exponent=0}	
+mathlib-194	PASSED	5281	4	factorial -> abs -> abs -> factorial	{c0_n=0, c1_x=9, c2_x=11, c3_n=0}	
+mathlib-195	PASSED	8103	4	power -> power -> factorial -> abs	{c0_base=1, c0_exponent=0, c1_base=1, c1_exponent=0, c2_n=0, c3_x=17}	
+mathlib-196	PASSED	3004	2	power -> abs	{c0_base=1, c0_exponent=0, c1_x=11}	
+mathlib-197	PASSED	6279	5	gcd -> gcd -> power -> factorial -> factorial	{c0_a=1, c0_b=1, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_n=0, c4_n=0}	
+mathlib-198	PASSED	6119	5	abs -> power -> factorial -> gcd -> factorial	{c0_x=7, c1_base=1, c1_exponent=0, c2_n=0, c3_a=1, c3_b=1, c4_n=0}	
+mathlib-199	PASSED	7272	6	abs -> factorial -> power -> abs -> factorial -> abs	{c0_x=7, c1_n=0, c2_base=1, c2_exponent=0, c3_x=15, c4_n=0, c5_x=19}	
+mathlib-200	PASSED	6193	5	power -> abs -> gcd -> power -> power	{c0_base=1, c0_exponent=0, c1_x=11, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_base=1, c4_exponent=0}	
+mathlib-201	PASSED	8046	4	power -> gcd -> factorial -> factorial	{c0_base=1, c0_exponent=0, c1_a=1, c1_b=1, c2_n=0, c3_n=0}	
+mathlib-202	PASSED	7413	6	abs -> gcd -> gcd -> power -> power -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_base=1, c4_exponent=0, c5_n=0}	
+mathlib-203	PASSED	4084	3	power -> gcd -> factorial	{c0_base=1, c0_exponent=0, c1_a=1, c1_b=1, c2_n=0}	
+mathlib-204	PASSED	5205	4	factorial -> factorial -> gcd -> abs	{c0_n=0, c1_n=0, c2_a=1, c2_b=1, c3_x=15}	
+mathlib-205	PASSED	5133	4	abs -> power -> power -> abs	{c0_x=7, c1_base=1, c1_exponent=0, c2_base=1, c2_exponent=0, c3_x=17}	
+mathlib-206	PASSED	5134	4	power -> power -> factorial -> power	{c0_base=1, c0_exponent=0, c1_base=1, c1_exponent=0, c2_n=0, c3_base=1, c3_exponent=0}	
+mathlib-207	PASSED	9183	5	factorial -> gcd -> power -> abs -> abs	{c0_n=0, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_x=17, c4_x=19}	
+mathlib-208	PASSED	5270	4	gcd -> power -> factorial -> factorial	{c0_a=1, c0_b=1, c1_base=1, c1_exponent=0, c2_n=0, c3_n=0}	
+mathlib-209	PASSED	6283	5	abs -> factorial -> gcd -> power -> factorial	{c0_x=7, c1_n=0, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_n=0}	
+mathlib-210	PASSED	7391	6	abs -> gcd -> factorial -> power -> gcd -> power	{c0_x=7, c1_a=1, c1_b=1, c2_n=0, c3_base=1, c3_exponent=0, c4_a=1, c4_b=1, c5_base=1, c5_exponent=0}	
+mathlib-211	PASSED	8334	7	abs -> gcd -> power -> factorial -> factorial -> abs -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_n=0, c4_n=0, c5_x=21, c6_n=0}	
+mathlib-212	PASSED	11320	7	factorial -> factorial -> gcd -> abs -> power -> factorial -> power	{c0_n=0, c1_n=0, c2_a=1, c2_b=1, c3_x=15, c4_base=1, c4_exponent=0, c5_n=0, c6_base=1, c6_exponent=0}	
+mathlib-213	PASSED	7481	6	gcd -> abs -> abs -> gcd -> power -> factorial	{c0_a=1, c0_b=1, c1_x=11, c2_x=13, c3_a=1, c3_b=1, c4_base=1, c4_exponent=0, c5_n=0}	
+mathlib-214	PASSED	6234	5	gcd -> abs -> power -> factorial -> gcd	{c0_a=1, c0_b=1, c1_x=11, c2_base=1, c2_exponent=0, c3_n=0, c4_a=1, c4_b=1}	
+mathlib-215	PASSED	6372	5	power -> abs -> power -> power -> abs	{c0_base=1, c0_exponent=0, c1_x=11, c2_base=1, c2_exponent=0, c3_base=1, c3_exponent=0, c4_x=21}	
+mathlib-216	PASSED	11531	7	abs -> gcd -> gcd -> power -> gcd -> factorial -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_a=1, c4_b=1, c5_n=0, c6_n=0}	
+mathlib-217	PASSED	4684	4	power -> gcd -> power -> factorial	{c0_base=1, c0_exponent=0, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_n=0}	
+mathlib-218	PASSED	2744	2	factorial -> abs	{c0_n=0, c1_x=9}	
+mathlib-219	PASSED	5771	5	factorial -> gcd -> gcd -> power -> abs	{c0_n=0, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_x=21}	
+mathlib-220	PASSED	4986	4	factorial -> abs -> power -> gcd	{c0_n=0, c1_x=9, c2_base=1, c2_exponent=0, c3_a=1, c3_b=1}	
+mathlib-221	PASSED	4906	4	factorial -> gcd -> gcd -> abs	{c0_n=0, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_x=17}	
+mathlib-222	PASSED	4885	4	factorial -> abs -> factorial -> abs	{c0_n=0, c1_x=9, c2_n=0, c3_x=13}	
+mathlib-223	PASSED	9922	6	gcd -> gcd -> factorial -> factorial -> power -> gcd	{c0_a=1, c0_b=1, c1_a=1, c1_b=1, c2_n=0, c3_n=0, c4_base=1, c4_exponent=0, c5_a=1, c5_b=1}	
+mathlib-224	PASSED	7045	6	abs -> gcd -> gcd -> gcd -> power -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_a=1, c3_b=1, c4_base=1, c4_exponent=0, c5_n=0}	
+mathlib-225	PASSED	7970	7	power -> gcd -> abs -> abs -> gcd -> power -> factorial	{c0_base=1, c0_exponent=0, c1_a=1, c1_b=1, c2_x=15, c3_x=17, c4_a=1, c4_b=1, c5_base=1, c5_exponent=0, c6_n=0}	
+mathlib-226	PASSED	7853	7	abs -> gcd -> abs -> factorial -> factorial -> factorial -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_x=13, c3_n=0, c4_n=0, c5_n=0, c6_n=0}	
+mathlib-227	PASSED	8508	5	factorial -> factorial -> factorial -> factorial -> power	{c0_n=0, c1_n=0, c2_n=0, c3_n=0, c4_base=1, c4_exponent=0}	
+mathlib-228	PASSED	3738	3	gcd -> gcd -> gcd	{c0_a=1, c0_b=1, c1_a=1, c1_b=1, c2_a=1, c2_b=1}	
+mathlib-229	PASSED	5155	5	abs -> factorial -> abs -> abs -> power	{c0_x=7, c1_n=0, c2_x=11, c3_x=13, c4_base=1, c4_exponent=0}	
+mathlib-230	PASSED	5134	5	power -> abs -> gcd -> abs -> factorial	{c0_base=1, c0_exponent=0, c1_x=11, c2_a=1, c2_b=1, c3_x=17, c4_n=0}	
+mathlib-231	PASSED	5380	6	gcd -> gcd -> abs -> gcd -> power -> factorial	{c0_a=1, c0_b=1, c1_a=1, c1_b=1, c2_x=15, c3_a=1, c3_b=1, c4_base=1, c4_exponent=0, c5_n=0}	
+mathlib-232	PASSED	4624	5	gcd -> abs -> gcd -> factorial -> factorial	{c0_a=1, c0_b=1, c1_x=11, c2_a=1, c2_b=1, c3_n=0, c4_n=0}	
+mathlib-233	PASSED	3299	3	abs -> factorial -> power	{c0_x=7, c1_n=0, c2_base=1, c2_exponent=0}	
+mathlib-234	PASSED	6425	3	gcd -> gcd -> factorial	{c0_a=1, c0_b=1, c1_a=1, c1_b=1, c2_n=0}	
+mathlib-235	PASSED	5852	6	abs -> factorial -> power -> abs -> gcd -> gcd	{c0_x=7, c1_n=0, c2_base=1, c2_exponent=0, c3_x=15, c4_a=1, c4_b=1, c5_a=1, c5_b=1}	
+mathlib-236	PASSED	6694	7	factorial -> factorial -> abs -> gcd -> gcd -> factorial -> power	{c0_n=0, c1_n=0, c2_x=11, c3_a=1, c3_b=1, c4_a=1, c4_b=1, c5_n=0, c6_base=1, c6_exponent=0}	
+mathlib-237	PASSED	5038	5	power -> power -> gcd -> gcd -> factorial	{c0_base=1, c0_exponent=0, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1, c3_a=1, c3_b=1, c4_n=0}	
+mathlib-238	PASSED	4696	6	abs -> abs -> gcd -> gcd -> power -> factorial	{c0_x=7, c1_x=9, c2_a=1, c2_b=1, c3_a=1, c3_b=1, c4_base=1, c4_exponent=0, c5_n=0}	
+mathlib-239	PASSED	5350	7	power -> gcd -> power -> abs -> abs -> abs -> gcd	{c0_base=1, c0_exponent=0, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_x=19, c4_x=21, c5_x=23, c6_a=1, c6_b=1}	
+mathlib-240	PASSED	6915	5	abs -> gcd -> factorial -> factorial -> power	{c0_x=7, c1_a=1, c1_b=1, c2_n=0, c3_n=0, c4_base=1, c4_exponent=0}	
+mathlib-241	PASSED	3999	5	abs -> factorial -> gcd -> factorial -> factorial	{c0_x=7, c1_n=0, c2_a=1, c2_b=1, c3_n=0, c4_n=0}	
+mathlib-242	PASSED	4702	6	abs -> gcd -> factorial -> abs -> power -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_n=0, c3_x=15, c4_base=1, c4_exponent=0, c5_n=0}	
+mathlib-243	PASSED	5738	7	power -> power -> gcd -> factorial -> power -> gcd -> abs	{c0_base=1, c0_exponent=0, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1, c3_n=0, c4_base=1, c4_exponent=0, c5_a=1, c5_b=1, c6_x=29}	
+mathlib-244	PASSED	4071	5	gcd -> factorial -> power -> factorial -> factorial	{c0_a=1, c0_b=1, c1_n=0, c2_base=1, c2_exponent=0, c3_n=0, c4_n=0}	
+mathlib-245	PASSED	3404	4	factorial -> gcd -> abs -> power	{c0_n=0, c1_a=1, c1_b=1, c2_x=13, c3_base=1, c3_exponent=0}	
+mathlib-246	PASSED	5576	7	abs -> gcd -> factorial -> gcd -> power -> power -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_n=0, c3_a=1, c3_b=1, c4_base=1, c4_exponent=0, c5_base=1, c5_exponent=0, c6_n=0}	
+mathlib-247	PASSED	7766	6	abs -> abs -> gcd -> factorial -> factorial -> abs	{c0_x=7, c1_x=9, c2_a=1, c2_b=1, c3_n=0, c4_n=0, c5_x=19}	
+mathlib-248	PASSED	4357	6	abs -> power -> power -> abs -> abs -> abs	{c0_x=7, c1_base=1, c1_exponent=0, c2_base=1, c2_exponent=0, c3_x=17, c4_x=19, c5_x=21}	
+mathlib-249	PASSED	3656	5	factorial -> abs -> gcd -> power -> abs	{c0_n=0, c1_x=9, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_x=19}	
+mathlib-250	PASSED	4885	7	abs -> gcd -> gcd -> power -> power -> gcd -> factorial	{c0_x=7, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_base=1, c4_exponent=0, c5_a=1, c5_b=1, c6_n=0}	
+mathlib-251	PASSED	4308	6	abs -> gcd -> power -> abs -> factorial -> power	{c0_x=7, c1_a=1, c1_b=1, c2_base=1, c2_exponent=0, c3_x=17, c4_n=0, c5_base=1, c5_exponent=0}	
+mathlib-252	PASSED	4389	6	factorial -> gcd -> factorial -> gcd -> gcd -> factorial	{c0_n=0, c1_a=1, c1_b=1, c2_n=0, c3_a=1, c3_b=1, c4_a=1, c4_b=1, c5_n=0}	
+mathlib-253	PASSED	4181	6	abs -> abs -> gcd -> power -> factorial -> factorial	{c0_x=7, c1_x=9, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_n=0, c5_n=0}	
+mathlib-254	PASSED	4740	7	abs -> abs -> abs -> gcd -> power -> power -> factorial	{c0_x=7, c1_x=9, c2_x=11, c3_a=1, c3_b=1, c4_base=1, c4_exponent=0, c5_base=1, c5_exponent=0, c6_n=0}	
+mathlib-255	PASSED	7079	6	abs -> power -> gcd -> power -> power -> factorial	{c0_x=7, c1_base=1, c1_exponent=0, c2_a=1, c2_b=1, c3_base=1, c3_exponent=0, c4_base=1, c4_exponent=0, c5_n=0}	
+mathlib-256	PASSED	2578	3	gcd -> factorial -> factorial	{c0_a=1, c0_b=1, c1_n=0, c2_n=0}	
+mathlib-257	PASSED	4107	6	gcd -> factorial -> factorial -> power -> gcd -> abs	{c0_a=1, c0_b=1, c1_n=0, c2_n=0, c3_base=1, c3_exponent=0, c4_a=1, c4_b=1, c5_x=23}	
+mathlib-258	PASSED	3312	3	factorial -> factorial -> factorial	{c0_n=0, c1_n=0, c2_n=0}	
+mathlib-259	PASSED	4254	4	gcd -> power -> power -> abs	{c0_a=1, c0_b=1, c1_base=1, c1_exponent=0, c2_base=1, c2_exponent=0, c3_x=19}	
+mathlib-260	PASSED	6612	7	factorial -> gcd -> gcd -> factorial -> gcd -> gcd -> abs	{c0_n=0, c1_a=1, c1_b=1, c2_a=1, c2_b=1, c3_n=0, c4_a=1, c4_b=1, c5_a=1, c5_b=1, c6_x=27}	

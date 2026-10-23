@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 # Runs every mutation set through the whole pipeline and reports the score.
 #
-# For each mutant in mutations/*.mutants:
-#   1. seed the fault into a private copy of the library
-#   2. re-run the real pipeline from the spec file: checks -> IR -> real SPF
-#      -> GeneratedATCs.java (symbolic driver) -> GeneratedATCsTest.java (JUnit)
-#   3. compile and run the generated JUnit class against the mutated library
-#   4. see whether any generated assertion rejects the fault
+# For each library, the test for its checked-in sequence is generated ONCE on
+# the correct library (checks -> IR -> ATC -> genCTC, each round's ready calls
+# run on the real library inside SPF -> GeneratedATCsTest.java) and compiled
+# once. Then, for each mutant in mutations/*.mutants:
+#   1. seed the fault into a private copy of the library and compile it
+#   2. run that same compiled test, unchanged, against the mutated library
+#   3. killed if a PRE or POST assertion fails, the library throws, or the
+#      test times out
 #
 # Exits non-zero when a mutant contradicts what its mutation set declared —
 # either it could not be seeded, or `expect:` disagrees with what happened.

@@ -1,0 +1,187 @@
+# generated mutants — orderservice (phases 2+3 39s, library total 984s)
+# id	status	kill_kind	operator	method	file	killed-by-family	family_kill_kind	detail
+ORDERSERVICE_GEN_SDL_1	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_SDL_1/Helper.java:118: error: cannot find symbol
+ORDERSERVICE_GEN_SEI_2	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_SEI_2/Helper.java:54: error: <identifier> expected
+ORDERSERVICE_GEN_SDL_3	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_SDL_3/Helper.java:119: error: cannot find symbol
+ORDERSERVICE_GEN_SEI_4	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_SEI_4/Helper.java:55: error: <identifier> expected
+ORDERSERVICE_GEN_SDL_5	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_SDL_5/Helper.java:120: error: cannot find symbol
+ORDERSERVICE_GEN_SEI_6	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_SEI_6/Helper.java:56: error: <identifier> expected
+ORDERSERVICE_GEN_SDL_7	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_SDL_7/Helper.java:121: error: cannot find symbol
+ORDERSERVICE_GEN_SEI_8	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_SEI_8/Helper.java:57: error: <identifier> expected
+ORDERSERVICE_GEN_CRP_9	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+ORDERSERVICE_GEN_CRP_10	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+ORDERSERVICE_GEN_CRP_11	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+ORDERSERVICE_GEN_CRP_12	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+ORDERSERVICE_GEN_CRP_13	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+ORDERSERVICE_GEN_CRP_14	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+ORDERSERVICE_GEN_CRP_15	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+ORDERSERVICE_GEN_CRP_16	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+ORDERSERVICE_GEN_CRP_17	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
+ORDERSERVICE_GEN_SDL_18	KILLED	POST	statement-deletion	restock	Helper.java	-	-	killed by POST: POST restock: Stock.containsKey(sku)
+ORDERSERVICE_GEN_STR_19	KILLED	POST	statement-replacement	restock	Helper.java	-	-	killed by POST: POST restock: stockUnits == \old(stockUnits) + quantity
+ORDERSERVICE_GEN_ARP_20	INVALID	-	argument-replacement	restock	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_ARP_20/Helper.java:67: error: incompatible types: int cannot be converted to String
+ORDERSERVICE_GEN_SEI_21	SURVIVED	-	side-effect-insertion	restock	Helper.java	-	-	the test passes
+ORDERSERVICE_GEN_SDL_22	KILLED	POST	statement-deletion	restock	Helper.java	-	-	killed by POST: POST restock: stockUnits == \old(stockUnits) + quantity
+ORDERSERVICE_GEN_SEI_23	KILLED	POST	side-effect-insertion	restock	Helper.java	-	-	killed by POST: POST restock: stockUnits == \old(stockUnits) + quantity
+ORDERSERVICE_GEN_SDL_24	KILLED	POST	statement-deletion	placeOrder	Helper.java	-	-	killed by POST: POST placeOrder: stockUnits == \old(stockUnits) - quantity
+ORDERSERVICE_GEN_STR_25	KILLED	POST	statement-replacement	placeOrder	Helper.java	-	-	killed by POST: POST placeOrder: stockUnits == \old(stockUnits) - quantity
+ORDERSERVICE_GEN_ARP_26	INVALID	-	argument-replacement	placeOrder	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_ARP_26/Helper.java:78: error: incompatible types: int cannot be converted to String
+ORDERSERVICE_GEN_SEI_27	SURVIVED	-	side-effect-insertion	placeOrder	Helper.java	-	-	the test passes
+ORDERSERVICE_GEN_ARP_28	INVALID	-	argument-replacement	placeOrder	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_ARP_28/Helper.java:79: error: incompatible types: int cannot be converted to String
+ORDERSERVICE_GEN_UOI_29	KILLED	POST	unary-operator-insertion	placeOrder	Helper.java	-	-	killed by POST: POST placeOrder: Open.containsKey(orderId)
+ORDERSERVICE_GEN_ABS_30	KILLED	POST	absolute-value-insertion	placeOrder	Helper.java	-	-	killed by POST: POST placeOrder: Open.containsKey(orderId)
+ORDERSERVICE_GEN_RVR_31	KILLED	POST	return-value-replacement	placeOrder	Helper.java	-	-	killed by POST: POST placeOrder: Open.containsKey(orderId)
+ORDERSERVICE_GEN_RVR_32	SURVIVED	-	return-value-replacement	placeOrder	Helper.java	GeneratedATCsTest_orderservice_057	POST	the test passes
+ORDERSERVICE_GEN_RVR_33	KILLED	POST	return-value-replacement	placeOrder	Helper.java	-	-	killed by POST: POST placeOrder: Open.containsKey(orderId)
+ORDERSERVICE_GEN_SEI_34	KILLED	POST	side-effect-insertion	placeOrder	Helper.java	-	-	killed by POST: POST placeOrder: stockUnits == \old(stockUnits) - quantity
+ORDERSERVICE_GEN_SDL_35	KILLED	POST	statement-deletion	ship	Helper.java	-	-	killed by POST: POST ship: Shipped.containsKey(orderId)
+ORDERSERVICE_GEN_STR_36	KILLED	POST	statement-replacement	ship	Helper.java	-	-	killed by POST: POST ship: events == \old(events) + 1
+ORDERSERVICE_GEN_ARP_37	KILLED	POST	argument-replacement	ship	Helper.java	-	-	killed by POST: POST ship: Shipped.containsKey(orderId)
+ORDERSERVICE_GEN_ARP_38	KILLED	POST	argument-replacement	ship	Helper.java	-	-	killed by POST: POST ship: Shipped.containsKey(orderId)
+ORDERSERVICE_GEN_SEI_39	SURVIVED	-	side-effect-insertion	ship	Helper.java	-	-	the test passes
+ORDERSERVICE_GEN_ARP_40	SURVIVED	-	argument-replacement	stockLevel	Helper.java	GeneratedATCsTest_orderservice_002	POST	the test passes
+ORDERSERVICE_GEN_ARP_41	INVALID	-	argument-replacement	stockLevel	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_ARP_41/Helper.java:101: error: bad operand types for binary operator '-'
+ORDERSERVICE_GEN_UOI_42	SURVIVED	-	unary-operator-insertion	stockLevel	Helper.java	GeneratedATCsTest_orderservice_002	POST	the test passes
+ORDERSERVICE_GEN_ABS_43	SURVIVED	-	absolute-value-insertion	stockLevel	Helper.java	GeneratedATCsTest_orderservice_002	POST	the test passes
+ORDERSERVICE_GEN_RVR_44	SURVIVED	-	return-value-replacement	stockLevel	Helper.java	GeneratedATCsTest_orderservice_002	POST	the test passes
+ORDERSERVICE_GEN_RVR_45	KILLED	POST	return-value-replacement	stockLevel	Helper.java	-	-	killed by POST: POST stockLevel: level == Stock.get(sku)
+ORDERSERVICE_GEN_RVR_46	KILLED	POST	return-value-replacement	stockLevel	Helper.java	-	-	killed by POST: POST stockLevel: level == Stock.get(sku)
+ORDERSERVICE_GEN_SEI_47	KILLED	POST	side-effect-insertion	stockLevel	Helper.java	-	-	killed by POST: POST stockLevel: stockUnits == \old(stockUnits)
+ORDERSERVICE_GEN_SDL_48	INVALID	-	statement-deletion	-	Catalogue.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_SDL_48/Helper.java:54: error: cannot find symbol
+ORDERSERVICE_GEN_SEI_49	INVALID	-	side-effect-insertion	-	Catalogue.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_SEI_49/Catalogue.java:20: error: <identifier> expected
+ORDERSERVICE_GEN_CRP_50	SURVIVED	-	constant-replacement	-	Catalogue.java	-	-	the test passes
+ORDERSERVICE_GEN_CRP_51	SURVIVED	-	constant-replacement	-	Catalogue.java	-	-	the test passes
+ORDERSERVICE_GEN_ARP_52	KILLED	POST	argument-replacement	level	Catalogue.java	-	-	killed by POST: POST stockLevel: level == Stock.get(sku)
+ORDERSERVICE_GEN_ARP_53	INVALID	-	argument-replacement	level	Catalogue.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_ARP_53/Catalogue.java:25: error: bad operand types for binary operator '-'
+ORDERSERVICE_GEN_MCR_54	KILLED	EXCEPTION	method-call-replacement	level	Catalogue.java	-	-	killed by EXCEPTION: java.lang.NullPointerException
+ORDERSERVICE_GEN_ROR_55	INVALID	-	relational-operator-replacement	level	Catalogue.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_ROR_55/Catalogue.java:26: error: bad operand types for binary operator '<='
+ORDERSERVICE_GEN_ROR_56	INVALID	-	relational-operator-replacement	level	Catalogue.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_ROR_56/Catalogue.java:26: error: bad operand types for binary operator '>='
+ORDERSERVICE_GEN_ROR_57	KILLED	EXCEPTION	relational-operator-replacement	level	Catalogue.java	-	-	killed by EXCEPTION: java.lang.NullPointerException
+ORDERSERVICE_GEN_ROR_58	INVALID	-	relational-operator-replacement	level	Catalogue.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_ROR_58/Catalogue.java:26: error: bad operand types for binary operator '<'
+ORDERSERVICE_GEN_ROR_59	INVALID	-	relational-operator-replacement	level	Catalogue.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_ROR_59/Catalogue.java:26: error: bad operand types for binary operator '>'
+ORDERSERVICE_GEN_CRP_60	SURVIVED	-	constant-replacement	level	Catalogue.java	-	-	the test passes
+ORDERSERVICE_GEN_CRP_61	KILLED	PRE	constant-replacement	level	Catalogue.java	-	-	killed by PRE: PRE placeOrder: Stock.get(sku) >= quantity
+ORDERSERVICE_GEN_RVR_62	KILLED	POST	return-value-replacement	level	Catalogue.java	-	-	killed by POST: POST stockLevel: level == Stock.get(sku)
+ORDERSERVICE_GEN_RVR_63	KILLED	POST	return-value-replacement	level	Catalogue.java	-	-	killed by POST: POST stockLevel: level == Stock.get(sku)
+ORDERSERVICE_GEN_RVR_64	KILLED	PRE	return-value-replacement	level	Catalogue.java	-	-	killed by PRE: PRE placeOrder: Stock.get(sku) >= quantity
+ORDERSERVICE_GEN_SEI_65	KILLED	POST	side-effect-insertion	level	Catalogue.java	-	-	killed by POST: POST restock: stockUnits == \old(stockUnits) + quantity
+ORDERSERVICE_GEN_AOR_66	KILLED	PRE	arithmetic-operator-replacement	restock	Catalogue.java	-	-	killed by PRE: PRE placeOrder: Stock.get(sku) >= quantity
+ORDERSERVICE_GEN_AOR_67	KILLED	PRE	arithmetic-operator-replacement	restock	Catalogue.java	-	-	killed by PRE: PRE placeOrder: Stock.get(sku) >= quantity
+ORDERSERVICE_GEN_AOR_68	KILLED	PRE	arithmetic-operator-replacement	restock	Catalogue.java	-	-	killed by PRE: PRE placeOrder: Stock.get(sku) >= quantity
+ORDERSERVICE_GEN_AOR_69	KILLED	PRE	arithmetic-operator-replacement	restock	Catalogue.java	-	-	killed by PRE: PRE placeOrder: Stock.get(sku) >= quantity
+ORDERSERVICE_GEN_SDL_70	KILLED	POST	statement-deletion	restock	Catalogue.java	-	-	killed by POST: POST restock: Stock.containsKey(sku)
+ORDERSERVICE_GEN_STR_71	SURVIVED	-	statement-replacement	restock	Catalogue.java	-	-	the test passes
+ORDERSERVICE_GEN_MCR_72	SURVIVED	-	method-call-replacement	restock	Catalogue.java	-	-	the test passes
+ORDERSERVICE_GEN_SEI_73	KILLED	POST	side-effect-insertion	restock	Catalogue.java	-	-	killed by POST: POST restock: stockUnits == \old(stockUnits) + quantity
+ORDERSERVICE_GEN_AOR_74	KILLED	POST	arithmetic-operator-replacement	restock	Catalogue.java	-	-	killed by POST: POST restock: stockUnits == \old(stockUnits) + quantity
+ORDERSERVICE_GEN_AOR_75	KILLED	POST	arithmetic-operator-replacement	restock	Catalogue.java	-	-	killed by POST: POST restock: stockUnits == \old(stockUnits) + quantity
+ORDERSERVICE_GEN_AOR_76	KILLED	POST	arithmetic-operator-replacement	restock	Catalogue.java	-	-	killed by POST: POST restock: stockUnits == \old(stockUnits) + quantity
+ORDERSERVICE_GEN_AOR_77	KILLED	POST	arithmetic-operator-replacement	restock	Catalogue.java	-	-	killed by POST: POST restock: stockUnits == \old(stockUnits) + quantity
+ORDERSERVICE_GEN_AOI_78	KILLED	POST	arithmetic-operator-insertion	restock	Catalogue.java	-	-	killed by POST: POST restock: stockUnits == \old(stockUnits) + quantity
+ORDERSERVICE_GEN_AOI_79	KILLED	POST	arithmetic-operator-insertion	restock	Catalogue.java	-	-	killed by POST: POST restock: stockUnits == \old(stockUnits) + quantity
+ORDERSERVICE_GEN_UOI_80	KILLED	POST	unary-operator-insertion	restock	Catalogue.java	-	-	killed by POST: POST restock: stockUnits == \old(stockUnits) + quantity
+ORDERSERVICE_GEN_ABS_81	KILLED	POST	absolute-value-insertion	restock	Catalogue.java	-	-	killed by POST: POST restock: stockUnits == \old(stockUnits) + quantity
+ORDERSERVICE_GEN_SDL_82	KILLED	POST	statement-deletion	restock	Catalogue.java	-	-	killed by POST: POST restock: stockUnits == \old(stockUnits) + quantity
+ORDERSERVICE_GEN_AOR_83	SURVIVED	-	arithmetic-operator-replacement	take	Catalogue.java	-	-	the test passes
+ORDERSERVICE_GEN_AOR_84	SURVIVED	-	arithmetic-operator-replacement	take	Catalogue.java	-	-	the test passes
+ORDERSERVICE_GEN_AOR_85	SURVIVED	-	arithmetic-operator-replacement	take	Catalogue.java	-	-	the test passes
+ORDERSERVICE_GEN_AOR_86	SURVIVED	-	arithmetic-operator-replacement	take	Catalogue.java	-	-	the test passes
+ORDERSERVICE_GEN_SDL_87	SURVIVED	-	statement-deletion	take	Catalogue.java	-	-	the test passes
+ORDERSERVICE_GEN_STR_88	KILLED	POST	statement-replacement	take	Catalogue.java	-	-	killed by POST: POST stockLevel: level >= 0
+ORDERSERVICE_GEN_MCR_89	SURVIVED	-	method-call-replacement	take	Catalogue.java	-	-	the test passes
+ORDERSERVICE_GEN_SEI_90	KILLED	POST	side-effect-insertion	take	Catalogue.java	-	-	killed by POST: POST placeOrder: stockUnits == \old(stockUnits) - quantity
+ORDERSERVICE_GEN_AOR_91	KILLED	POST	arithmetic-operator-replacement	take	Catalogue.java	-	-	killed by POST: POST placeOrder: stockUnits == \old(stockUnits) - quantity
+ORDERSERVICE_GEN_AOR_92	KILLED	POST	arithmetic-operator-replacement	take	Catalogue.java	-	-	killed by POST: POST placeOrder: stockUnits == \old(stockUnits) - quantity
+ORDERSERVICE_GEN_AOR_93	KILLED	POST	arithmetic-operator-replacement	take	Catalogue.java	-	-	killed by POST: POST placeOrder: stockUnits == \old(stockUnits) - quantity
+ORDERSERVICE_GEN_AOR_94	SURVIVED	-	arithmetic-operator-replacement	take	Catalogue.java	GeneratedATCsTest_orderservice_006	POST	the test passes
+ORDERSERVICE_GEN_AOI_95	KILLED	POST	arithmetic-operator-insertion	take	Catalogue.java	-	-	killed by POST: POST placeOrder: stockUnits == \old(stockUnits) - quantity
+ORDERSERVICE_GEN_AOI_96	KILLED	POST	arithmetic-operator-insertion	take	Catalogue.java	-	-	killed by POST: POST placeOrder: stockUnits == \old(stockUnits) - quantity
+ORDERSERVICE_GEN_UOI_97	SURVIVED	-	unary-operator-insertion	take	Catalogue.java	GeneratedATCsTest_orderservice_006	POST	the test passes
+ORDERSERVICE_GEN_ABS_98	SURVIVED	-	absolute-value-insertion	take	Catalogue.java	GeneratedATCsTest_orderservice_006	POST	the test passes
+ORDERSERVICE_GEN_SDL_99	KILLED	POST	statement-deletion	take	Catalogue.java	-	-	killed by POST: POST placeOrder: stockUnits == \old(stockUnits) - quantity
+ORDERSERVICE_GEN_SDL_100	INVALID	-	statement-deletion	-	Ledger.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_SDL_100/Helper.java:55: error: cannot find symbol
+ORDERSERVICE_GEN_SEI_101	INVALID	-	side-effect-insertion	-	Ledger.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_SEI_101/Ledger.java:21: error: <identifier> expected
+ORDERSERVICE_GEN_SDL_102	INVALID	-	statement-deletion	-	Ledger.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_SDL_102/Helper.java:56: error: cannot find symbol
+ORDERSERVICE_GEN_SEI_103	INVALID	-	side-effect-insertion	-	Ledger.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_SEI_103/Ledger.java:22: error: <identifier> expected
+ORDERSERVICE_GEN_CRP_104	SURVIVED	-	constant-replacement	-	Ledger.java	-	-	the test passes
+ORDERSERVICE_GEN_CRP_105	SURVIVED	-	constant-replacement	-	Ledger.java	-	-	the test passes
+ORDERSERVICE_GEN_CRP_106	SURVIVED	-	constant-replacement	-	Ledger.java	-	-	the test passes
+ORDERSERVICE_GEN_CRP_107	SURVIVED	-	constant-replacement	-	Ledger.java	-	-	the test passes
+ORDERSERVICE_GEN_CRP_108	SURVIVED	-	constant-replacement	-	Ledger.java	-	-	the test passes
+ORDERSERVICE_GEN_VRO_109	KILLED	PRE	variable-replacement	open	Ledger.java	-	-	killed by PRE: PRE ship: Open.containsKey(orderId)
+ORDERSERVICE_GEN_AOR_110	KILLED	POST	arithmetic-operator-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: nextOrderId == \old(nextOrderId) + 1
+ORDERSERVICE_GEN_AOR_111	KILLED	POST	arithmetic-operator-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: nextOrderId == \old(nextOrderId) + 1
+ORDERSERVICE_GEN_AOR_112	KILLED	POST	arithmetic-operator-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: nextOrderId == \old(nextOrderId) + 1
+ORDERSERVICE_GEN_AOR_113	KILLED	POST	arithmetic-operator-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: nextOrderId == \old(nextOrderId) + 1
+ORDERSERVICE_GEN_AOI_114	KILLED	POST	arithmetic-operator-insertion	open	Ledger.java	-	-	killed by POST: POST placeOrder: nextOrderId == \old(nextOrderId) + 1
+ORDERSERVICE_GEN_AOI_115	KILLED	POST	arithmetic-operator-insertion	open	Ledger.java	-	-	killed by POST: POST placeOrder: nextOrderId == \old(nextOrderId) + 1
+ORDERSERVICE_GEN_UOI_116	KILLED	POST	unary-operator-insertion	open	Ledger.java	-	-	killed by POST: POST placeOrder: nextOrderId == \old(nextOrderId) + 1
+ORDERSERVICE_GEN_ABS_117	KILLED	POST	absolute-value-insertion	open	Ledger.java	-	-	killed by POST: POST placeOrder: nextOrderId == \old(nextOrderId) + 1
+ORDERSERVICE_GEN_CRP_118	KILLED	POST	constant-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: nextOrderId == \old(nextOrderId) + 1
+ORDERSERVICE_GEN_CRP_119	KILLED	POST	constant-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: nextOrderId == \old(nextOrderId) + 1
+ORDERSERVICE_GEN_CRP_120	KILLED	POST	constant-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: nextOrderId == \old(nextOrderId) + 1
+ORDERSERVICE_GEN_SDL_121	KILLED	POST	statement-deletion	open	Ledger.java	-	-	killed by POST: POST placeOrder: nextOrderId == \old(nextOrderId) + 1
+ORDERSERVICE_GEN_SEI_122	KILLED	POST	side-effect-insertion	open	Ledger.java	-	-	killed by POST: POST placeOrder: orderedUnits == \old(orderedUnits) + quantity
+ORDERSERVICE_GEN_VRO_123	KILLED	POST	variable-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: orderedUnits == \old(orderedUnits) + quantity
+ORDERSERVICE_GEN_VRO_124	KILLED	POST	variable-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: nextOrderId == \old(nextOrderId) + 1
+ORDERSERVICE_GEN_SDL_125	KILLED	POST	statement-deletion	open	Ledger.java	-	-	killed by POST: POST placeOrder: Open.containsKey(orderId)
+ORDERSERVICE_GEN_STR_126	SURVIVED	-	statement-replacement	open	Ledger.java	-	-	the test passes
+ORDERSERVICE_GEN_ARP_127	INVALID	-	argument-replacement	open	Ledger.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_ARP_127/Ledger.java:35: error: incompatible types: String cannot be converted to Integer
+ORDERSERVICE_GEN_MCR_128	SURVIVED	-	method-call-replacement	open	Ledger.java	-	-	the test passes
+ORDERSERVICE_GEN_SEI_129	KILLED	POST	side-effect-insertion	open	Ledger.java	-	-	killed by POST: POST placeOrder: orderedUnits == \old(orderedUnits) + quantity
+ORDERSERVICE_GEN_VRO_130	KILLED	POST	variable-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: Open.containsKey(orderId)
+ORDERSERVICE_GEN_AOR_131	KILLED	POST	arithmetic-operator-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: orderedUnits == \old(orderedUnits) + quantity
+ORDERSERVICE_GEN_AOR_132	KILLED	POST	arithmetic-operator-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: orderedUnits == \old(orderedUnits) + quantity
+ORDERSERVICE_GEN_AOR_133	KILLED	POST	arithmetic-operator-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: orderedUnits == \old(orderedUnits) + quantity
+ORDERSERVICE_GEN_AOR_134	KILLED	POST	arithmetic-operator-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: orderedUnits == \old(orderedUnits) + quantity
+ORDERSERVICE_GEN_AOI_135	KILLED	POST	arithmetic-operator-insertion	open	Ledger.java	-	-	killed by POST: POST placeOrder: orderedUnits == \old(orderedUnits) + quantity
+ORDERSERVICE_GEN_AOI_136	KILLED	POST	arithmetic-operator-insertion	open	Ledger.java	-	-	killed by POST: POST placeOrder: orderedUnits == \old(orderedUnits) + quantity
+ORDERSERVICE_GEN_UOI_137	KILLED	POST	unary-operator-insertion	open	Ledger.java	-	-	killed by POST: POST placeOrder: orderedUnits == \old(orderedUnits) + quantity
+ORDERSERVICE_GEN_ABS_138	KILLED	POST	absolute-value-insertion	open	Ledger.java	-	-	killed by POST: POST placeOrder: orderedUnits == \old(orderedUnits) + quantity
+ORDERSERVICE_GEN_SDL_139	KILLED	POST	statement-deletion	open	Ledger.java	-	-	killed by POST: POST placeOrder: orderedUnits == \old(orderedUnits) + quantity
+ORDERSERVICE_GEN_VRO_140	KILLED	POST	variable-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: orderedUnits == \old(orderedUnits) + quantity
+ORDERSERVICE_GEN_VRO_141	KILLED	POST	variable-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: orderedUnits == \old(orderedUnits) + quantity
+ORDERSERVICE_GEN_SDL_142	KILLED	POST	statement-deletion	open	Ledger.java	-	-	killed by POST: POST placeOrder: events == \old(events) + 1
+ORDERSERVICE_GEN_STR_143	KILLED	POST	statement-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: events == \old(events) + 1
+ORDERSERVICE_GEN_SEI_144	KILLED	POST	side-effect-insertion	open	Ledger.java	-	-	killed by POST: POST placeOrder: orderedUnits == \old(orderedUnits) + quantity
+ORDERSERVICE_GEN_UOI_145	KILLED	POST	unary-operator-insertion	open	Ledger.java	-	-	killed by POST: POST placeOrder: Open.containsKey(orderId)
+ORDERSERVICE_GEN_ABS_146	KILLED	POST	absolute-value-insertion	open	Ledger.java	-	-	killed by POST: POST placeOrder: Open.containsKey(orderId)
+ORDERSERVICE_GEN_RVR_147	KILLED	POST	return-value-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: Open.containsKey(orderId)
+ORDERSERVICE_GEN_RVR_148	SURVIVED	-	return-value-replacement	open	Ledger.java	GeneratedATCsTest_orderservice_057	POST	the test passes
+ORDERSERVICE_GEN_RVR_149	KILLED	POST	return-value-replacement	open	Ledger.java	-	-	killed by POST: POST placeOrder: Open.containsKey(orderId)
+ORDERSERVICE_GEN_SEI_150	KILLED	POST	side-effect-insertion	open	Ledger.java	-	-	killed by POST: POST placeOrder: orderedUnits == \old(orderedUnits) + quantity
+ORDERSERVICE_GEN_ARP_151	KILLED	POST	argument-replacement	ship	Ledger.java	-	-	killed by POST: POST ship: !Open.containsKey(orderId)
+ORDERSERVICE_GEN_ARP_152	KILLED	POST	argument-replacement	ship	Ledger.java	-	-	killed by POST: POST ship: !Open.containsKey(orderId)
+ORDERSERVICE_GEN_MCR_153	KILLED	POST	method-call-replacement	ship	Ledger.java	-	-	killed by POST: POST ship: !Open.containsKey(orderId)
+ORDERSERVICE_GEN_VRO_154	KILLED	POST	variable-replacement	ship	Ledger.java	-	-	killed by POST: POST ship: !Open.containsKey(orderId)
+ORDERSERVICE_GEN_SDL_155	KILLED	POST	statement-deletion	ship	Ledger.java	-	-	killed by POST: POST ship: Shipped.containsKey(orderId)
+ORDERSERVICE_GEN_STR_156	SURVIVED	-	statement-replacement	ship	Ledger.java	-	-	the test passes
+ORDERSERVICE_GEN_ARP_157	INVALID	-	argument-replacement	ship	Ledger.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_ARP_157/Ledger.java:44: error: incompatible types: String cannot be converted to Integer
+ORDERSERVICE_GEN_MCR_158	SURVIVED	-	method-call-replacement	ship	Ledger.java	-	-	the test passes
+ORDERSERVICE_GEN_SEI_159	KILLED	POST	side-effect-insertion	ship	Ledger.java	-	-	killed by POST: POST ship: orderedUnits == \old(orderedUnits)
+ORDERSERVICE_GEN_VRO_160	KILLED	POST	variable-replacement	ship	Ledger.java	-	-	killed by POST: POST ship: Shipped.containsKey(orderId)
+ORDERSERVICE_GEN_SDL_161	KILLED	POST	statement-deletion	ship	Ledger.java	-	-	killed by POST: POST ship: events == \old(events) + 1
+ORDERSERVICE_GEN_STR_162	KILLED	POST	statement-replacement	ship	Ledger.java	-	-	killed by POST: POST ship: events == \old(events) + 1
+ORDERSERVICE_GEN_SEI_163	KILLED	POST	side-effect-insertion	ship	Ledger.java	-	-	killed by POST: POST ship: orderedUnits == \old(orderedUnits)
+ORDERSERVICE_GEN_SDL_164	INVALID	-	statement-deletion	-	Audit.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_SDL_164/Helper.java:57: error: cannot find symbol
+ORDERSERVICE_GEN_SEI_165	INVALID	-	side-effect-insertion	-	Audit.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_SEI_165/Audit.java:18: error: <identifier> expected
+ORDERSERVICE_GEN_CRP_166	SURVIVED	-	constant-replacement	-	Audit.java	-	-	the test passes
+ORDERSERVICE_GEN_CRP_167	SURVIVED	-	constant-replacement	-	Audit.java	-	-	the test passes
+ORDERSERVICE_GEN_SDL_168	SURVIVED	-	statement-deletion	record	Audit.java	-	-	the test passes
+ORDERSERVICE_GEN_STR_169	SURVIVED	-	statement-replacement	record	Audit.java	-	-	the test passes
+ORDERSERVICE_GEN_ARP_170	SURVIVED	-	argument-replacement	record	Audit.java	-	-	the test passes
+ORDERSERVICE_GEN_ARP_171	INVALID	-	argument-replacement	record	Audit.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_ARP_171/Audit.java:23: error: bad operand types for binary operator '-'
+ORDERSERVICE_GEN_MCR_172	SURVIVED	-	method-call-replacement	record	Audit.java	-	-	the test passes
+ORDERSERVICE_GEN_SEI_173	KILLED	POST	side-effect-insertion	record	Audit.java	-	-	killed by POST: POST placeOrder: events == \old(events) + 1
+ORDERSERVICE_GEN_AOR_174	KILLED	POST	arithmetic-operator-replacement	record	Audit.java	-	-	killed by POST: POST placeOrder: events == \old(events) + 1
+ORDERSERVICE_GEN_AOR_175	KILLED	POST	arithmetic-operator-replacement	record	Audit.java	-	-	killed by POST: POST placeOrder: events == \old(events) + 1
+ORDERSERVICE_GEN_AOR_176	KILLED	POST	arithmetic-operator-replacement	record	Audit.java	-	-	killed by POST: POST placeOrder: events == \old(events) + 1
+ORDERSERVICE_GEN_AOR_177	KILLED	POST	arithmetic-operator-replacement	record	Audit.java	-	-	killed by POST: POST placeOrder: events == \old(events) + 1
+ORDERSERVICE_GEN_AOI_178	KILLED	POST	arithmetic-operator-insertion	record	Audit.java	-	-	killed by POST: POST placeOrder: events == \old(events) + 1
+ORDERSERVICE_GEN_AOI_179	KILLED	POST	arithmetic-operator-insertion	record	Audit.java	-	-	killed by POST: POST placeOrder: events == \old(events) + 1
+ORDERSERVICE_GEN_UOI_180	KILLED	POST	unary-operator-insertion	record	Audit.java	-	-	killed by POST: POST placeOrder: events == \old(events) + 1
+ORDERSERVICE_GEN_ABS_181	KILLED	POST	absolute-value-insertion	record	Audit.java	-	-	killed by POST: POST placeOrder: events == \old(events) + 1
+ORDERSERVICE_GEN_CRP_182	KILLED	POST	constant-replacement	record	Audit.java	-	-	killed by POST: POST placeOrder: events == \old(events) + 1
+ORDERSERVICE_GEN_CRP_183	KILLED	POST	constant-replacement	record	Audit.java	-	-	killed by POST: POST placeOrder: events == \old(events) + 1
+ORDERSERVICE_GEN_CRP_184	KILLED	POST	constant-replacement	record	Audit.java	-	-	killed by POST: POST placeOrder: events == \old(events) + 1
+ORDERSERVICE_GEN_SDL_185	KILLED	POST	statement-deletion	record	Audit.java	-	-	killed by POST: POST placeOrder: events == \old(events) + 1

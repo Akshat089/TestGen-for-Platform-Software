@@ -1,0 +1,150 @@
+# ../specs/Stack.spec + ../specs/Stack.tests (StackDryRun)
+
+== ATC t ==
+// starting state: the library's real state after Helper.reset()
+// call 0: push
+old0_size := Helper.size
+c0_elem := input<String>()
+assume(c0_elem != null)
+push(c0_elem)
+assert(Helper.size == old0_size + 1)
+assert(Helper.top == c0_elem)
+// call 1: push
+old1_size := Helper.size
+c1_elem := input<String>()
+assume(c1_elem != null)
+push(c1_elem)
+assert(Helper.size == old1_size + 1)
+assert(Helper.top == c1_elem)
+// call 2: pop
+old2_size := Helper.size
+assume(Helper.size > 0)
+c2_result := pop()
+assert(Helper.size == old2_size - 1)
+// call 3: peek
+old3_size := Helper.size
+assume(Helper.size > 0)
+c3_result := peek()
+assert(c3_result == Helper.top)
+assert(Helper.size == old3_size)
+
+== round 0: t' = rewriteATC(t, []) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: push
+old0_size := Helper.size
+c0_elem := input<String>()
+assume(c0_elem != null)
+push(c0_elem)
+assert(Helper.size == old0_size + 1)
+assert(Helper.top == c0_elem)
+// call 1: push
+old1_size := Helper.size
+c1_elem := input<String>()
+assume(c1_elem != null)
+push(c1_elem)
+assert(Helper.size == old1_size + 1)
+assert(Helper.top == c1_elem)
+// call 2: pop
+old2_size := Helper.size
+assume(Helper.size > 0)
+c2_result := pop()
+assert(Helper.size == old2_size - 1)
+// call 3: peek
+old3_size := Helper.size
+assume(Helper.size > 0)
+c3_result := peek()
+assert(c3_result == Helper.top)
+assert(Helper.size == old3_size)
+-- symex: 5 ready statement(s), stopped at push(c0_elem)
+-- pc = (c0_elem != null)
+-- L' = ["s1"]
+
+== round 1: t' = rewriteATC(t, ["s1"]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: push
+old0_size := Helper.size
+c0_elem := "s1"
+assume(c0_elem != null)
+push(c0_elem)
+assert(Helper.size == old0_size + 1)
+assert(Helper.top == c0_elem)
+// call 1: push
+old1_size := Helper.size
+c1_elem := input<String>()
+assume(c1_elem != null)
+push(c1_elem)
+assert(Helper.size == old1_size + 1)
+assert(Helper.top == c1_elem)
+// call 2: pop
+old2_size := Helper.size
+assume(Helper.size > 0)
+c2_result := pop()
+assert(Helper.size == old2_size - 1)
+// call 3: peek
+old3_size := Helper.size
+assume(Helper.size > 0)
+c3_result := peek()
+assert(c3_result == Helper.top)
+assert(Helper.size == old3_size)
+-- symex: 12 ready statement(s), stopped at push(c1_elem)
+-- pc = ("s1" != null) && (c1_elem != null)
+-- L' = ["s2"]
+
+== round 2: t' = rewriteATC(t, ["s2"]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: push
+old0_size := Helper.size
+c0_elem := "s1"
+assume(c0_elem != null)
+push(c0_elem)
+assert(Helper.size == old0_size + 1)
+assert(Helper.top == c0_elem)
+// call 1: push
+old1_size := Helper.size
+c1_elem := "s2"
+assume(c1_elem != null)
+push(c1_elem)
+assert(Helper.size == old1_size + 1)
+assert(Helper.top == c1_elem)
+// call 2: pop
+old2_size := Helper.size
+assume(Helper.size > 0)
+c2_result := pop()
+assert(Helper.size == old2_size - 1)
+// call 3: peek
+old3_size := Helper.size
+assume(Helper.size > 0)
+c3_result := peek()
+assert(c3_result == Helper.top)
+assert(Helper.size == old3_size)
+-- symex: 26 ready statement(s), all of t' ran
+-- pc = ("s1" != null) && ("s2" != null) && (Helper.size > 0) && (Helper.size > 0)
+-- L' = []
+
+== concrete test case ==
+// starting state: the library's real state after Helper.reset()
+// call 0: push
+old0_size := Helper.size
+c0_elem := "s1"
+assume(c0_elem != null)
+push(c0_elem)
+assert(Helper.size == old0_size + 1)
+assert(Helper.top == c0_elem)
+// call 1: push
+old1_size := Helper.size
+c1_elem := "s2"
+assume(c1_elem != null)
+push(c1_elem)
+assert(Helper.size == old1_size + 1)
+assert(Helper.top == c1_elem)
+// call 2: pop
+old2_size := Helper.size
+assume(Helper.size > 0)
+c2_result := pop()
+assert(Helper.size == old2_size - 1)
+// call 3: peek
+old3_size := Helper.size
+assume(Helper.size > 0)
+c3_result := peek()
+assert(c3_result == Helper.top)
+assert(Helper.size == old3_size)

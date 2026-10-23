@@ -1,0 +1,205 @@
+# ../specs/LinkedList.spec + ../specs/LinkedList.tests (LinkedListDryRun)
+
+== ATC t ==
+// starting state: the library's real state after Helper.reset()
+// call 0: addFirst
+old0_size := Helper.size
+c0_value := input<Integer>()
+assume(c0_value != null)
+addFirst(c0_value)
+assert(Helper.head == c0_value)
+assert(Helper.L.contains(c0_value))
+assert(Helper.size == old0_size + 1)
+// call 1: addLast
+old1_size := Helper.size
+c1_value := input<Integer>()
+assume(c1_value != null)
+addLast(c1_value)
+assert(Helper.tail == c1_value)
+assert(Helper.L.contains(c1_value))
+assert(Helper.size == old1_size + 1)
+// call 2: removeFirst
+old2_head := Helper.head
+old2_size := Helper.size
+assume(Helper.size > 0)
+c2_result := removeFirst()
+assert(c2_result == old2_head)
+assert(Helper.size == old2_size - 1)
+// call 3: indexOf
+c3_value := input<Integer>()
+assume(Helper.size > 0)
+c3_result := indexOf(c3_value)
+assert(c3_result >= -1)
+assert(c3_result < Helper.size)
+
+== round 0: t' = rewriteATC(t, []) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: addFirst
+old0_size := Helper.size
+c0_value := input<Integer>()
+assume(c0_value != null)
+addFirst(c0_value)
+assert(Helper.head == c0_value)
+assert(Helper.L.contains(c0_value))
+assert(Helper.size == old0_size + 1)
+// call 1: addLast
+old1_size := Helper.size
+c1_value := input<Integer>()
+assume(c1_value != null)
+addLast(c1_value)
+assert(Helper.tail == c1_value)
+assert(Helper.L.contains(c1_value))
+assert(Helper.size == old1_size + 1)
+// call 2: removeFirst
+old2_head := Helper.head
+old2_size := Helper.size
+assume(Helper.size > 0)
+c2_result := removeFirst()
+assert(c2_result == old2_head)
+assert(Helper.size == old2_size - 1)
+// call 3: indexOf
+c3_value := input<Integer>()
+assume(Helper.size > 0)
+c3_result := indexOf(c3_value)
+assert(c3_result >= -1)
+assert(c3_result < Helper.size)
+-- symex: 5 ready statement(s), stopped at addFirst(c0_value)
+-- pc = (c0_value != null)
+-- L' = [7]
+
+== round 1: t' = rewriteATC(t, [7]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: addFirst
+old0_size := Helper.size
+c0_value := 7
+assume(c0_value != null)
+addFirst(c0_value)
+assert(Helper.head == c0_value)
+assert(Helper.L.contains(c0_value))
+assert(Helper.size == old0_size + 1)
+// call 1: addLast
+old1_size := Helper.size
+c1_value := input<Integer>()
+assume(c1_value != null)
+addLast(c1_value)
+assert(Helper.tail == c1_value)
+assert(Helper.L.contains(c1_value))
+assert(Helper.size == old1_size + 1)
+// call 2: removeFirst
+old2_head := Helper.head
+old2_size := Helper.size
+assume(Helper.size > 0)
+c2_result := removeFirst()
+assert(c2_result == old2_head)
+assert(Helper.size == old2_size - 1)
+// call 3: indexOf
+c3_value := input<Integer>()
+assume(Helper.size > 0)
+c3_result := indexOf(c3_value)
+assert(c3_result >= -1)
+assert(c3_result < Helper.size)
+-- symex: 13 ready statement(s), stopped at addLast(c1_value)
+-- pc = (7 != null) && (c1_value != null)
+-- L' = [9]
+
+== round 2: t' = rewriteATC(t, [9]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: addFirst
+old0_size := Helper.size
+c0_value := 7
+assume(c0_value != null)
+addFirst(c0_value)
+assert(Helper.head == c0_value)
+assert(Helper.L.contains(c0_value))
+assert(Helper.size == old0_size + 1)
+// call 1: addLast
+old1_size := Helper.size
+c1_value := 9
+assume(c1_value != null)
+addLast(c1_value)
+assert(Helper.tail == c1_value)
+assert(Helper.L.contains(c1_value))
+assert(Helper.size == old1_size + 1)
+// call 2: removeFirst
+old2_head := Helper.head
+old2_size := Helper.size
+assume(Helper.size > 0)
+c2_result := removeFirst()
+assert(c2_result == old2_head)
+assert(Helper.size == old2_size - 1)
+// call 3: indexOf
+c3_value := input<Integer>()
+assume(Helper.size > 0)
+c3_result := indexOf(c3_value)
+assert(c3_result >= -1)
+assert(c3_result < Helper.size)
+-- symex: 27 ready statement(s), stopped at c3_result := indexOf(c3_value)
+-- pc = (7 != null) && (9 != null) && (Helper.size > 0) && (Helper.size > 0)
+-- L' = [11]
+
+== round 3: t' = rewriteATC(t, [11]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: addFirst
+old0_size := Helper.size
+c0_value := 7
+assume(c0_value != null)
+addFirst(c0_value)
+assert(Helper.head == c0_value)
+assert(Helper.L.contains(c0_value))
+assert(Helper.size == old0_size + 1)
+// call 1: addLast
+old1_size := Helper.size
+c1_value := 9
+assume(c1_value != null)
+addLast(c1_value)
+assert(Helper.tail == c1_value)
+assert(Helper.L.contains(c1_value))
+assert(Helper.size == old1_size + 1)
+// call 2: removeFirst
+old2_head := Helper.head
+old2_size := Helper.size
+assume(Helper.size > 0)
+c2_result := removeFirst()
+assert(c2_result == old2_head)
+assert(Helper.size == old2_size - 1)
+// call 3: indexOf
+c3_value := 11
+assume(Helper.size > 0)
+c3_result := indexOf(c3_value)
+assert(c3_result >= -1)
+assert(c3_result < Helper.size)
+-- symex: 30 ready statement(s), all of t' ran
+-- pc = (7 != null) && (9 != null) && (Helper.size > 0) && (Helper.size > 0)
+-- L' = []
+
+== concrete test case ==
+// starting state: the library's real state after Helper.reset()
+// call 0: addFirst
+old0_size := Helper.size
+c0_value := 7
+assume(c0_value != null)
+addFirst(c0_value)
+assert(Helper.head == c0_value)
+assert(Helper.L.contains(c0_value))
+assert(Helper.size == old0_size + 1)
+// call 1: addLast
+old1_size := Helper.size
+c1_value := 9
+assume(c1_value != null)
+addLast(c1_value)
+assert(Helper.tail == c1_value)
+assert(Helper.L.contains(c1_value))
+assert(Helper.size == old1_size + 1)
+// call 2: removeFirst
+old2_head := Helper.head
+old2_size := Helper.size
+assume(Helper.size > 0)
+c2_result := removeFirst()
+assert(c2_result == old2_head)
+assert(Helper.size == old2_size - 1)
+// call 3: indexOf
+c3_value := 11
+assume(Helper.size > 0)
+c3_result := indexOf(c3_value)
+assert(c3_result >= -1)
+assert(c3_result < Helper.size)

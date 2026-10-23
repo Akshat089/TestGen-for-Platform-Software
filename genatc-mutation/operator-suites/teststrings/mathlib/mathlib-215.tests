@@ -1,0 +1,3 @@
+test MathlibGenerated215 {
+    sequence: power -> abs -> power -> power -> abs;
+}

@@ -1,9 +1,3 @@
 test TaskqueueGenerated184 {
-    sequence: getResult -> cancelTask -> cancelTask;
-
-    inputs {
-        getResult[0].taskId = 7;
-        cancelTask[1].taskId = 2;
-        cancelTask[2].taskId = 3;
-    }
+    sequence: cancelTask -> cancelTask -> submit -> submit -> getResult -> submit -> getResult;
 }

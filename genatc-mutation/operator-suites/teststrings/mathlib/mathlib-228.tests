@@ -1,0 +1,3 @@
+test MathlibGenerated228 {
+    sequence: gcd -> gcd -> gcd;
+}

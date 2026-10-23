@@ -1,0 +1,205 @@
+# ../specs/StringSet.spec + ../specs/StringSet.tests (StringSetDryRun)
+
+== ATC t ==
+// starting state: the library's real state after Helper.reset()
+// call 0: add
+c0_elem := input<String>()
+assume(c0_elem != null)
+c0_result := add(c0_elem)
+assert(Helper.E.contains(c0_elem))
+// call 1: add
+c1_elem := input<String>()
+assume(c1_elem != null)
+c1_result := add(c1_elem)
+assert(Helper.E.contains(c1_elem))
+// call 2: contains
+old2_size := Helper.size
+c2_elem := input<String>()
+assume(c2_elem != null)
+c2_result := contains(c2_elem)
+assert(c2_result == Helper.E.contains(c2_elem))
+assert(Helper.size == old2_size)
+// call 3: remove
+old3_size := Helper.size
+c3_elem := input<String>()
+assume(Helper.E.contains(c3_elem))
+remove(c3_elem)
+assert(!Helper.E.contains(c3_elem))
+assert(Helper.size == old3_size - 1)
+
+== round 0: t' = rewriteATC(t, []) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: add
+c0_elem := input<String>()
+assume(c0_elem != null)
+c0_result := add(c0_elem)
+assert(Helper.E.contains(c0_elem))
+// call 1: add
+c1_elem := input<String>()
+assume(c1_elem != null)
+c1_result := add(c1_elem)
+assert(Helper.E.contains(c1_elem))
+// call 2: contains
+old2_size := Helper.size
+c2_elem := input<String>()
+assume(c2_elem != null)
+c2_result := contains(c2_elem)
+assert(c2_result == Helper.E.contains(c2_elem))
+assert(Helper.size == old2_size)
+// call 3: remove
+old3_size := Helper.size
+c3_elem := input<String>()
+assume(Helper.E.contains(c3_elem))
+remove(c3_elem)
+assert(!Helper.E.contains(c3_elem))
+assert(Helper.size == old3_size - 1)
+-- symex: 4 ready statement(s), stopped at c0_result := add(c0_elem)
+-- pc = (c0_elem != null)
+-- L' = ["s1"]
+
+== round 1: t' = rewriteATC(t, ["s1"]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: add
+c0_elem := "s1"
+assume(c0_elem != null)
+c0_result := add(c0_elem)
+assert(Helper.E.contains(c0_elem))
+// call 1: add
+c1_elem := input<String>()
+assume(c1_elem != null)
+c1_result := add(c1_elem)
+assert(Helper.E.contains(c1_elem))
+// call 2: contains
+old2_size := Helper.size
+c2_elem := input<String>()
+assume(c2_elem != null)
+c2_result := contains(c2_elem)
+assert(c2_result == Helper.E.contains(c2_elem))
+assert(Helper.size == old2_size)
+// call 3: remove
+old3_size := Helper.size
+c3_elem := input<String>()
+assume(Helper.E.contains(c3_elem))
+remove(c3_elem)
+assert(!Helper.E.contains(c3_elem))
+assert(Helper.size == old3_size - 1)
+-- symex: 9 ready statement(s), stopped at c1_result := add(c1_elem)
+-- pc = ("s1" != null) && (c1_elem != null)
+-- L' = ["s2"]
+
+== round 2: t' = rewriteATC(t, ["s2"]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: add
+c0_elem := "s1"
+assume(c0_elem != null)
+c0_result := add(c0_elem)
+assert(Helper.E.contains(c0_elem))
+// call 1: add
+c1_elem := "s2"
+assume(c1_elem != null)
+c1_result := add(c1_elem)
+assert(Helper.E.contains(c1_elem))
+// call 2: contains
+old2_size := Helper.size
+c2_elem := input<String>()
+assume(c2_elem != null)
+c2_result := contains(c2_elem)
+assert(c2_result == Helper.E.contains(c2_elem))
+assert(Helper.size == old2_size)
+// call 3: remove
+old3_size := Helper.size
+c3_elem := input<String>()
+assume(Helper.E.contains(c3_elem))
+remove(c3_elem)
+assert(!Helper.E.contains(c3_elem))
+assert(Helper.size == old3_size - 1)
+-- symex: 15 ready statement(s), stopped at c2_result := contains(c2_elem)
+-- pc = ("s1" != null) && ("s2" != null) && (c2_elem != null)
+-- L' = ["s3"]
+
+== round 3: t' = rewriteATC(t, ["s3"]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: add
+c0_elem := "s1"
+assume(c0_elem != null)
+c0_result := add(c0_elem)
+assert(Helper.E.contains(c0_elem))
+// call 1: add
+c1_elem := "s2"
+assume(c1_elem != null)
+c1_result := add(c1_elem)
+assert(Helper.E.contains(c1_elem))
+// call 2: contains
+old2_size := Helper.size
+c2_elem := "s3"
+assume(c2_elem != null)
+c2_result := contains(c2_elem)
+assert(c2_result == Helper.E.contains(c2_elem))
+assert(Helper.size == old2_size)
+// call 3: remove
+old3_size := Helper.size
+c3_elem := input<String>()
+assume(Helper.E.contains(c3_elem))
+remove(c3_elem)
+assert(!Helper.E.contains(c3_elem))
+assert(Helper.size == old3_size - 1)
+-- symex: 22 ready statement(s), stopped at remove(c3_elem)
+-- pc = ("s1" != null) && ("s2" != null) && ("s3" != null) && (Helper.E.contains(c3_elem))
+-- L' = ["s1"]
+
+== round 4: t' = rewriteATC(t, ["s1"]) ==
+// starting state: the library's real state after Helper.reset()
+// call 0: add
+c0_elem := "s1"
+assume(c0_elem != null)
+c0_result := add(c0_elem)
+assert(Helper.E.contains(c0_elem))
+// call 1: add
+c1_elem := "s2"
+assume(c1_elem != null)
+c1_result := add(c1_elem)
+assert(Helper.E.contains(c1_elem))
+// call 2: contains
+old2_size := Helper.size
+c2_elem := "s3"
+assume(c2_elem != null)
+c2_result := contains(c2_elem)
+assert(c2_result == Helper.E.contains(c2_elem))
+assert(Helper.size == old2_size)
+// call 3: remove
+old3_size := Helper.size
+c3_elem := "s1"
+assume(Helper.E.contains(c3_elem))
+remove(c3_elem)
+assert(!Helper.E.contains(c3_elem))
+assert(Helper.size == old3_size - 1)
+-- symex: 25 ready statement(s), all of t' ran
+-- pc = ("s1" != null) && ("s2" != null) && ("s3" != null) && (Helper.E.contains("s1"))
+-- L' = []
+
+== concrete test case ==
+// starting state: the library's real state after Helper.reset()
+// call 0: add
+c0_elem := "s1"
+assume(c0_elem != null)
+c0_result := add(c0_elem)
+assert(Helper.E.contains(c0_elem))
+// call 1: add
+c1_elem := "s2"
+assume(c1_elem != null)
+c1_result := add(c1_elem)
+assert(Helper.E.contains(c1_elem))
+// call 2: contains
+old2_size := Helper.size
+c2_elem := "s3"
+assume(c2_elem != null)
+c2_result := contains(c2_elem)
+assert(c2_result == Helper.E.contains(c2_elem))
+assert(Helper.size == old2_size)
+// call 3: remove
+old3_size := Helper.size
+c3_elem := "s1"
+assume(Helper.E.contains(c3_elem))
+remove(c3_elem)
+assert(!Helper.E.contains(c3_elem))
+assert(Helper.size == old3_size - 1)

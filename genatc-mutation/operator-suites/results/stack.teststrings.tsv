@@ -1,0 +1,262 @@
+# generated test strings — stack (family size 260, phase 1 983s)
+# name	status	spf_ms	rounds	sequence	inputs	detail
+stack-001	INCORRECT_SEQUENCE	4666	1	push -> pop -> pop -> pop -> push -> peek	-	INCORRECT SEQUENCE: call 2 (pop): size > 0
+stack-002	INCORRECT_SEQUENCE	4216	1	push -> pop -> peek -> peek	-	INCORRECT SEQUENCE: call 2 (peek): size > 0
+stack-003	INCORRECT_SEQUENCE	1972	0	pop -> peek -> pop -> push -> push -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-004	INCORRECT_SEQUENCE	4810	0	peek -> pop -> push -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-005	INCORRECT_SEQUENCE	3852	1	push -> pop -> peek	-	INCORRECT SEQUENCE: call 2 (peek): size > 0
+stack-006	PASSED	8769	3	push -> push -> push -> pop -> peek	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+stack-007	INCORRECT_SEQUENCE	1928	0	peek -> push -> push -> pop -> peek -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-008	PASSED	7926	3	push -> push -> pop -> peek -> push -> peek	{c0_elem="s1", c1_elem="s2", c4_elem="s3"}	
+stack-009	INCORRECT_SEQUENCE	5964	2	push -> pop -> push -> pop -> pop -> peek	-	INCORRECT SEQUENCE: call 4 (pop): size > 0
+stack-010	PASSED	8886	2	push -> push -> pop -> peek -> peek	{c0_elem="s1", c1_elem="s2"}	
+stack-011	INCORRECT_SEQUENCE	1625	0	peek -> push -> peek -> pop -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-012	INCORRECT_SEQUENCE	1516	0	peek -> push -> push -> pop -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-013	PASSED	5691	2	push -> push -> pop	{c0_elem="s1", c1_elem="s2"}	
+stack-014	PASSED	5192	2	push -> push -> peek	{c0_elem="s1", c1_elem="s2"}	
+stack-015	INCORRECT_SEQUENCE	1621	0	pop -> push -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-016	PASSED	7150	3	push -> push -> push -> peek	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+stack-017	PASSED	8326	2	push -> push -> pop -> peek	{c0_elem="s1", c1_elem="s2"}	
+stack-018	PASSED	5428	2	push -> push -> pop -> peek -> peek -> peek -> peek	{c0_elem="s1", c1_elem="s2"}	
+stack-019	INCORRECT_SEQUENCE	5268	2	push -> push -> pop -> pop -> peek	-	INCORRECT SEQUENCE: call 4 (peek): size > 0
+stack-020	INCORRECT_SEQUENCE	1550	0	pop -> push	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-021	PASSED	5470	2	push -> push	{c0_elem="s1", c1_elem="s2"}	
+stack-022	INCORRECT_SEQUENCE	1745	0	peek -> push -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-023	INCORRECT_SEQUENCE	1651	0	peek -> pop -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-024	PASSED	5285	2	push -> push -> peek -> pop	{c0_elem="s1", c1_elem="s2"}	
+stack-025	INCORRECT_SEQUENCE	1645	0	pop -> pop -> push	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-026	PASSED	11741	4	push -> peek -> push -> push -> push -> pop -> peek	{c0_elem="s1", c2_elem="s2", c3_elem="s3", c4_elem="s1"}	
+stack-027	PASSED	3483	1	push -> peek	{c0_elem="s1"}	
+stack-028	INCORRECT_SEQUENCE	1846	0	pop -> peek -> peek -> push -> pop -> peek -> pop	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-029	INCORRECT_SEQUENCE	1578	0	peek -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-030	INCORRECT_SEQUENCE	1738	0	peek -> push -> peek -> push -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-031	PASSED	9275	4	push -> push -> push -> pop -> push -> peek	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c4_elem="s1"}	
+stack-032	INCORRECT_SEQUENCE	5349	2	push -> push -> pop -> pop -> pop -> peek	-	INCORRECT SEQUENCE: call 4 (pop): size > 0
+stack-033	INCORRECT_SEQUENCE	1536	0	peek -> push -> push -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-034	INCORRECT_SEQUENCE	1804	0	pop -> push -> push -> push -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-035	INCORRECT_SEQUENCE	4742	0	peek -> peek -> push -> pop	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-036	FAILED	0	0	pop -> peek -> pop	-	PRE: PRE pop: size > 0
+stack-037	INCORRECT_SEQUENCE	1628	0	pop -> pop -> pop -> push -> push -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-038	INCORRECT_SEQUENCE	1663	0	peek -> peek -> push -> peek -> pop -> peek -> pop	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-039	INCORRECT_SEQUENCE	3307	1	push -> pop -> pop -> peek	-	INCORRECT SEQUENCE: call 2 (pop): size > 0
+stack-040	INCORRECT_SEQUENCE	1806	0	peek -> push -> pop -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-041	INCORRECT_SEQUENCE	1703	0	peek -> push -> pop -> pop -> push -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-042	INCORRECT_SEQUENCE	1730	0	pop -> push -> push -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-043	PASSED	7834	3	push -> pop -> push -> push -> peek	{c0_elem="s1", c2_elem="s2", c3_elem="s3"}	
+stack-044	INCORRECT_SEQUENCE	3789	1	push -> pop -> pop	-	INCORRECT SEQUENCE: call 2 (pop): size > 0
+stack-045	PASSED	11720	4	push -> push -> push -> push -> peek	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+stack-046	PASSED	7229	3	push -> push -> push	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+stack-047	PASSED	5652	2	push -> peek -> pop -> push	{c0_elem="s1", c3_elem="s2"}	
+stack-048	PASSED	10123	5	push -> push -> push -> push -> pop -> push	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c5_elem="s2"}	
+stack-049	INCORRECT_SEQUENCE	1668	0	pop -> push -> push -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-050	INCORRECT_SEQUENCE	1641	0	peek -> peek -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-051	PASSED	8315	2	push -> pop -> push -> peek	{c0_elem="s1", c2_elem="s2"}	
+stack-052	PASSED	4680	1	push -> peek -> pop	{c0_elem="s1"}	
+stack-053	FAILED	0	0	pop -> peek	-	PRE: PRE pop: size > 0
+stack-054	INCORRECT_SEQUENCE	2249	0	pop -> peek -> push -> pop -> push -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-055	INCORRECT_SEQUENCE	6783	1	push -> peek -> pop -> peek	-	INCORRECT SEQUENCE: call 3 (peek): size > 0
+stack-056	INCORRECT_SEQUENCE	2630	0	pop -> push -> push -> peek -> peek -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-057	INCORRECT_SEQUENCE	5275	1	push -> pop -> peek -> pop -> push	-	INCORRECT SEQUENCE: call 2 (peek): size > 0
+stack-058	PASSED	15570	4	push -> push -> push -> push -> pop -> peek	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+stack-059	PASSED	7782	3	push -> push -> push -> pop -> pop -> peek	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+stack-060	PASSED	5309	2	push -> peek -> push -> pop -> peek	{c0_elem="s1", c2_elem="s2"}	
+stack-061	PASSED	4256	1	push -> peek -> peek -> peek	{c0_elem="s1"}	
+stack-062	INCORRECT_SEQUENCE	4526	1	push -> pop -> pop -> push -> peek	-	INCORRECT SEQUENCE: call 2 (pop): size > 0
+stack-063	PASSED	12707	3	push -> peek -> push -> push -> pop -> peek	{c0_elem="s1", c2_elem="s2", c3_elem="s3"}	
+stack-064	PASSED	8705	3	push -> push -> push -> pop	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+stack-065	INCORRECT_SEQUENCE	1592	0	pop -> pop -> peek -> pop -> pop -> push -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-066	INCORRECT_SEQUENCE	1583	0	peek -> push -> pop -> push -> push -> push -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-067	PASSED	7712	3	push -> push -> push -> pop -> peek -> peek -> peek	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+stack-068	PASSED	7743	3	push -> push -> peek -> push -> pop	{c0_elem="s1", c1_elem="s2", c3_elem="s3"}	
+stack-069	PASSED	8314	2	push -> push -> peek -> pop -> peek	{c0_elem="s1", c1_elem="s2"}	
+stack-070	PASSED	7690	3	push -> pop -> push -> push -> pop -> peek	{c0_elem="s1", c2_elem="s2", c3_elem="s3"}	
+stack-071	PASSED	5640	2	push -> push -> peek -> peek -> pop -> peek -> peek	{c0_elem="s1", c1_elem="s2"}	
+stack-072	PASSED	8381	3	push -> peek -> push -> peek -> push -> peek	{c0_elem="s1", c2_elem="s2", c4_elem="s3"}	
+stack-073	INCORRECT_SEQUENCE	3507	1	push -> pop -> peek -> push	-	INCORRECT SEQUENCE: call 2 (peek): size > 0
+stack-074	INCORRECT_SEQUENCE	1473	0	peek -> pop -> push -> push -> pop -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-075	FAILED	0	0	pop -> pop	-	PRE: PRE pop: size > 0
+stack-076	PASSED	10103	3	push -> pop -> push -> push	{c0_elem="s1", c2_elem="s2", c3_elem="s3"}	
+stack-077	INCORRECT_SEQUENCE	1581	0	peek -> pop -> push -> pop -> peek -> push -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-078	PASSED	4677	2	push -> peek -> peek -> peek -> pop -> push	{c0_elem="s1", c5_elem="s2"}	
+stack-079	PASSED	6988	3	push -> push -> push -> pop -> peek -> pop -> peek	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+stack-080	INCORRECT_SEQUENCE	1668	0	pop -> push -> peek -> push -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-081	FAILED	0	0	pop -> pop -> peek	-	PRE: PRE pop: size > 0
+stack-082	INCORRECT_SEQUENCE	5226	2	push -> push -> pop -> pop -> peek -> peek	-	INCORRECT SEQUENCE: call 4 (peek): size > 0
+stack-083	INCORRECT_SEQUENCE	3261	1	push -> pop -> peek -> pop -> pop -> peek	-	INCORRECT SEQUENCE: call 2 (peek): size > 0
+stack-084	INCORRECT_SEQUENCE	1615	0	pop -> push -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-085	PASSED	8324	2	push -> push -> pop -> pop	{c0_elem="s1", c1_elem="s2"}	
+stack-086	INCORRECT_SEQUENCE	1589	0	peek -> peek -> push -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-087	INCORRECT_SEQUENCE	1719	0	peek -> push -> pop	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-088	INCORRECT_SEQUENCE	1694	0	peek -> pop -> peek -> push -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-089	INCORRECT_SEQUENCE	1499	0	peek -> peek -> peek -> pop -> pop -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-090	INCORRECT_SEQUENCE	1516	0	pop -> push -> push -> push -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-091	PASSED	6864	3	push -> push -> push -> pop -> pop	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+stack-092	FAILED	0	0	peek -> peek -> pop -> peek -> peek -> peek	-	PRE: PRE peek: size > 0
+stack-093	INCORRECT_SEQUENCE	1459	0	pop -> push -> pop -> push -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-094	INCORRECT_SEQUENCE	3208	1	push -> peek -> pop -> pop -> pop -> pop	-	INCORRECT SEQUENCE: call 3 (pop): size > 0
+stack-095	PASSED	5012	2	push -> pop -> push -> peek -> pop	{c0_elem="s1", c2_elem="s2"}	
+stack-096	INCORRECT_SEQUENCE	1546	0	peek -> push -> pop -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-097	INCORRECT_SEQUENCE	6036	1	push -> pop -> pop -> peek -> pop -> push	-	INCORRECT SEQUENCE: call 2 (pop): size > 0
+stack-098	PASSED	3295	1	push -> peek -> peek	{c0_elem="s1"}	
+stack-099	PASSED	8340	4	push -> pop -> push -> push -> push	{c0_elem="s1", c2_elem="s2", c3_elem="s3", c4_elem="s1"}	
+stack-100	INCORRECT_SEQUENCE	1574	0	peek -> push -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-101	PASSED	6930	3	push -> push -> peek -> peek -> pop -> push	{c0_elem="s1", c1_elem="s2", c5_elem="s3"}	
+stack-102	INCORRECT_SEQUENCE	1524	0	pop -> push -> pop	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-103	FAILED	0	0	pop -> pop -> peek -> peek -> pop	-	PRE: PRE pop: size > 0
+stack-104	INCORRECT_SEQUENCE	5235	2	push -> pop -> push -> pop -> peek	-	INCORRECT SEQUENCE: call 4 (peek): size > 0
+stack-105	PASSED	9478	3	push -> push -> peek -> pop -> push	{c0_elem="s1", c1_elem="s2", c4_elem="s3"}	
+stack-106	INCORRECT_SEQUENCE	1528	0	pop -> peek -> push -> pop -> push	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-107	PASSED	6887	3	push -> push -> push -> pop -> peek -> peek	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+stack-108	PASSED	4929	2	push -> push -> pop -> peek -> peek -> peek	{c0_elem="s1", c1_elem="s2"}	
+stack-109	PASSED	6807	3	push -> push -> pop -> push	{c0_elem="s1", c1_elem="s2", c3_elem="s3"}	
+stack-110	INCORRECT_SEQUENCE	1453	0	peek -> pop -> peek -> push -> pop -> push -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-111	FAILED	0	0	peek -> pop	-	PRE: PRE peek: size > 0
+stack-112	INCORRECT_SEQUENCE	1387	0	pop -> push -> pop -> push -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-113	INCORRECT_SEQUENCE	1581	0	peek -> push -> peek -> push -> peek -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-114	INCORRECT_SEQUENCE	1478	0	peek -> pop -> push -> peek -> pop -> pop	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-115	PASSED	7954	2	push -> push -> peek -> peek	{c0_elem="s1", c1_elem="s2"}	
+stack-116	INCORRECT_SEQUENCE	3014	1	push -> peek -> pop -> peek -> push	-	INCORRECT SEQUENCE: call 3 (peek): size > 0
+stack-117	INCORRECT_SEQUENCE	3247	1	push -> pop -> pop -> push -> push -> peek -> peek	-	INCORRECT SEQUENCE: call 2 (pop): size > 0
+stack-118	INCORRECT_SEQUENCE	1398	0	peek -> push -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-119	INCORRECT_SEQUENCE	1552	0	pop -> pop -> peek -> push -> pop -> push -> pop	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-120	INCORRECT_SEQUENCE	1786	0	pop -> push -> pop -> push -> push	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-121	PASSED	6822	3	push -> push -> pop -> push -> peek	{c0_elem="s1", c1_elem="s2", c3_elem="s3"}	
+stack-122	PASSED	4853	2	push -> push -> pop -> peek -> peek -> pop	{c0_elem="s1", c1_elem="s2"}	
+stack-123	INCORRECT_SEQUENCE	1535	0	peek -> peek -> pop -> pop -> push -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-124	FAILED	0	0	peek -> peek	-	PRE: PRE peek: size > 0
+stack-125	INCORRECT_SEQUENCE	1474	0	pop -> push -> peek -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-126	INCORRECT_SEQUENCE	1522	0	pop -> push -> push	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-127	PASSED	10370	3	push -> peek -> pop -> push -> peek -> push	{c0_elem="s1", c3_elem="s2", c5_elem="s3"}	
+stack-128	INCORRECT_SEQUENCE	3677	1	push -> peek -> pop -> peek -> peek -> push -> pop	-	INCORRECT SEQUENCE: call 3 (peek): size > 0
+stack-129	INCORRECT_SEQUENCE	1528	0	pop -> push -> push -> pop	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-130	INCORRECT_SEQUENCE	3274	1	push -> pop -> peek -> push -> pop -> peek	-	INCORRECT SEQUENCE: call 2 (peek): size > 0
+stack-131	INCORRECT_SEQUENCE	1489	0	pop -> pop -> push -> peek -> peek -> push	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-132	FAILED	0	0	peek -> peek -> pop -> pop	-	PRE: PRE peek: size > 0
+stack-133	FAILED	0	0	pop -> pop -> pop	-	PRE: PRE pop: size > 0
+stack-134	INCORRECT_SEQUENCE	1656	0	pop -> pop -> peek -> push -> pop -> peek -> push	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-135	INCORRECT_SEQUENCE	1648	0	pop -> pop -> push -> pop -> push -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-136	INCORRECT_SEQUENCE	5355	2	push -> peek -> push -> pop -> pop -> peek	-	INCORRECT SEQUENCE: call 5 (peek): size > 0
+stack-137	PASSED	7332	3	push -> push -> peek -> push	{c0_elem="s1", c1_elem="s2", c3_elem="s3"}	
+stack-138	FAILED	0	0	pop -> pop -> pop -> peek	-	PRE: PRE pop: size > 0
+stack-139	INCORRECT_SEQUENCE	1689	0	pop -> peek -> push -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-140	INCORRECT_SEQUENCE	4573	0	peek -> peek -> push -> peek -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-141	INCORRECT_SEQUENCE	1664	0	peek -> pop -> push -> pop -> pop -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-142	PASSED	3457	1	push -> peek -> peek -> pop	{c0_elem="s1"}	
+stack-143	INCORRECT_SEQUENCE	5155	2	push -> push -> pop -> pop -> peek -> pop	-	INCORRECT SEQUENCE: call 4 (peek): size > 0
+stack-144	INCORRECT_SEQUENCE	1716	0	peek -> push -> push -> peek -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-145	PASSED	7118	3	push -> push -> push -> peek -> pop	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+stack-146	INCORRECT_SEQUENCE	1671	0	peek -> pop -> push -> push -> pop -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-147	INCORRECT_SEQUENCE	1493	0	peek -> peek -> push -> pop -> pop -> pop -> pop	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-148	PASSED	6604	3	push -> push -> push -> peek -> peek -> pop	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+stack-149	INCORRECT_SEQUENCE	1431	0	peek -> push -> pop -> peek -> peek -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-150	PASSED	11176	4	push -> peek -> push -> push -> pop -> push	{c0_elem="s1", c2_elem="s2", c3_elem="s3", c5_elem="s1"}	
+stack-151	FAILED	0	0	pop -> peek -> peek -> pop	-	PRE: PRE pop: size > 0
+stack-152	INCORRECT_SEQUENCE	4727	2	push -> push -> peek -> peek -> pop -> pop -> pop	-	INCORRECT SEQUENCE: call 6 (pop): size > 0
+stack-153	INCORRECT_SEQUENCE	1536	0	peek -> push -> pop -> push -> pop -> pop	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-154	INCORRECT_SEQUENCE	1713	0	pop -> pop -> peek -> pop -> push -> push	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-155	INCORRECT_SEQUENCE	1544	0	pop -> peek -> pop -> push	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-156	FAILED	0	0	peek -> pop -> pop -> peek	-	PRE: PRE peek: size > 0
+stack-157	PASSED	8697	4	push -> push -> peek -> push -> push -> pop -> peek	{c0_elem="s1", c1_elem="s2", c3_elem="s3", c4_elem="s1"}	
+stack-158	INCORRECT_SEQUENCE	3111	1	push -> pop -> peek -> peek -> peek	-	INCORRECT SEQUENCE: call 2 (peek): size > 0
+stack-159	PASSED	7975	2	push -> pop -> push	{c0_elem="s1", c2_elem="s2"}	
+stack-160	PASSED	3119	1	push -> pop	{c0_elem="s1"}	
+stack-161	PASSED	5440	2	push -> peek -> push -> pop	{c0_elem="s1", c2_elem="s2"}	
+stack-162	FAILED	0	0	pop -> peek -> peek -> pop -> peek -> pop	-	PRE: PRE pop: size > 0
+stack-163	INCORRECT_SEQUENCE	1740	0	pop -> push -> peek -> pop	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-164	INCORRECT_SEQUENCE	1633	0	peek -> push -> pop -> push -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-165	PASSED	4960	2	push -> peek -> pop -> push -> peek	{c0_elem="s1", c3_elem="s2"}	
+stack-166	INCORRECT_SEQUENCE	1486	0	pop -> peek -> peek -> push -> pop -> pop	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-167	INCORRECT_SEQUENCE	1518	0	peek -> peek -> push -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-168	FAILED	0	0	pop -> peek -> peek	-	PRE: PRE pop: size > 0
+stack-169	INCORRECT_SEQUENCE	1534	0	peek -> push -> push -> peek -> push -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-170	INCORRECT_SEQUENCE	3389	1	push -> peek -> pop -> pop -> push	-	INCORRECT SEQUENCE: call 3 (pop): size > 0
+stack-171	FAILED	0	0	peek -> pop -> peek	-	PRE: PRE peek: size > 0
+stack-172	INCORRECT_SEQUENCE	1465	0	pop -> push -> pop -> peek -> push	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-173	INCORRECT_SEQUENCE	1483	0	pop -> pop -> push -> push -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-174	PASSED	11048	4	push -> push -> push -> push -> pop -> pop -> peek	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+stack-175	INCORRECT_SEQUENCE	1445	0	peek -> peek -> peek -> push -> pop -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-176	FAILED	0	0	pop -> pop -> peek -> peek -> pop -> peek	-	PRE: PRE pop: size > 0
+stack-177	INCORRECT_SEQUENCE	1518	0	peek -> push -> peek -> peek -> push -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-178	INCORRECT_SEQUENCE	1349	0	peek -> pop -> push -> pop -> push -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-179	INCORRECT_SEQUENCE	1613	0	pop -> peek -> push	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-180	INCORRECT_SEQUENCE	1619	0	pop -> peek -> push -> peek -> push	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-181	INCORRECT_SEQUENCE	1563	0	pop -> push -> push -> push	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-182	PASSED	5111	2	push -> peek -> push	{c0_elem="s1", c2_elem="s2"}	
+stack-183	INCORRECT_SEQUENCE	1391	0	pop -> peek -> push -> push -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-184	INCORRECT_SEQUENCE	1454	0	pop -> push -> pop -> peek -> pop -> peek -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-185	INCORRECT_SEQUENCE	1565	0	peek -> peek -> push -> push -> pop -> peek -> pop	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-186	INCORRECT_SEQUENCE	1535	0	peek -> peek -> peek -> push -> peek -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-187	INCORRECT_SEQUENCE	1467	0	pop -> pop -> peek -> pop -> peek -> push -> push	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-188	INCORRECT_SEQUENCE	2981	1	push -> pop -> pop -> push -> pop -> pop -> pop	-	INCORRECT SEQUENCE: call 2 (pop): size > 0
+stack-189	PASSED	9336	3	push -> peek -> pop -> push -> push	{c0_elem="s1", c3_elem="s2", c4_elem="s3"}	
+stack-190	INCORRECT_SEQUENCE	3317	1	push -> pop -> peek -> push -> pop	-	INCORRECT SEQUENCE: call 2 (peek): size > 0
+stack-191	PASSED	7795	3	push -> push -> peek -> push -> peek -> pop	{c0_elem="s1", c1_elem="s2", c3_elem="s3"}	
+stack-192	INCORRECT_SEQUENCE	1929	0	peek -> push -> push -> push -> peek -> pop	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-193	INCORRECT_SEQUENCE	1932	0	peek -> peek -> push -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-194	INCORRECT_SEQUENCE	3559	1	push -> peek -> pop -> pop -> pop -> push	-	INCORRECT SEQUENCE: call 3 (pop): size > 0
+stack-195	PASSED	7368	3	push -> push -> push -> peek -> pop -> pop	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+stack-196	FAILED	0	0	peek -> pop -> pop	-	PRE: PRE peek: size > 0
+stack-197	INCORRECT_SEQUENCE	1532	0	peek -> push -> peek -> pop	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-198	INCORRECT_SEQUENCE	4361	0	peek -> peek -> push -> push -> pop -> peek -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-199	FAILED	0	0	peek -> peek -> pop -> peek	-	PRE: PRE peek: size > 0
+stack-200	PASSED	6120	3	push -> push -> pop -> pop -> push -> peek	{c0_elem="s1", c1_elem="s2", c4_elem="s3"}	
+stack-201	INCORRECT_SEQUENCE	1290	0	peek -> peek -> push -> peek -> peek -> peek -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-202	INCORRECT_SEQUENCE	3101	1	push -> pop -> peek -> push -> peek	-	INCORRECT SEQUENCE: call 2 (peek): size > 0
+stack-203	INCORRECT_SEQUENCE	1402	0	peek -> push -> pop -> pop -> pop -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-204	INCORRECT_SEQUENCE	1454	0	peek -> peek -> push -> pop -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-205	INCORRECT_SEQUENCE	3194	1	push -> pop -> peek -> pop -> peek -> push	-	INCORRECT SEQUENCE: call 2 (peek): size > 0
+stack-206	INCORRECT_SEQUENCE	3078	1	push -> pop -> pop -> pop -> peek	-	INCORRECT SEQUENCE: call 2 (pop): size > 0
+stack-207	INCORRECT_SEQUENCE	2089	0	peek -> push -> pop -> peek -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-208	FAILED	0	0	pop -> pop -> peek -> pop -> peek -> peek -> pop	-	PRE: PRE pop: size > 0
+stack-209	INCORRECT_SEQUENCE	2029	0	peek -> push -> push -> push -> pop	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-210	PASSED	10833	2	push -> peek -> pop -> push -> pop	{c0_elem="s1", c3_elem="s2"}	
+stack-211	INCORRECT_SEQUENCE	4022	1	push -> peek -> pop -> pop -> peek -> pop -> peek	-	INCORRECT SEQUENCE: call 3 (pop): size > 0
+stack-212	INCORRECT_SEQUENCE	2298	0	peek -> push -> peek -> pop -> pop	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-213	PASSED	12378	4	push -> push -> push -> push -> peek -> pop	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1"}	
+stack-214	INCORRECT_SEQUENCE	2155	0	peek -> peek -> pop -> pop -> pop -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-215	INCORRECT_SEQUENCE	7296	2	push -> push -> pop -> peek -> pop -> pop -> peek	-	INCORRECT SEQUENCE: call 5 (pop): size > 0
+stack-216	INCORRECT_SEQUENCE	2193	0	pop -> push -> push -> peek -> pop -> push	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-217	INCORRECT_SEQUENCE	5047	0	peek -> push -> push -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-218	INCORRECT_SEQUENCE	2180	0	peek -> push -> push -> peek -> peek -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-219	INCORRECT_SEQUENCE	4122	1	push -> pop -> pop -> push -> peek -> peek	-	INCORRECT SEQUENCE: call 2 (pop): size > 0
+stack-220	INCORRECT_SEQUENCE	1964	0	pop -> peek -> peek -> push -> pop	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-221	INCORRECT_SEQUENCE	2084	0	peek -> push -> push -> pop -> pop	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-222	INCORRECT_SEQUENCE	6685	2	push -> pop -> push -> peek -> pop -> peek -> peek	-	INCORRECT SEQUENCE: call 5 (peek): size > 0
+stack-223	INCORRECT_SEQUENCE	2127	0	peek -> pop -> push -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-224	INCORRECT_SEQUENCE	1999	0	peek -> peek -> push -> push -> pop -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-225	INCORRECT_SEQUENCE	2178	0	pop -> peek -> peek -> push -> peek -> peek -> pop	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-226	PASSED	11416	3	push -> pop -> push -> peek -> push -> peek	{c0_elem="s1", c2_elem="s2", c4_elem="s3"}	
+stack-227	INCORRECT_SEQUENCE	1565	0	pop -> peek -> peek -> push	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-228	PASSED	7962	3	push -> peek -> push -> peek -> pop -> push	{c0_elem="s1", c2_elem="s2", c5_elem="s3"}	
+stack-229	INCORRECT_SEQUENCE	1532	0	peek -> pop -> peek -> push -> peek -> peek -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-230	INCORRECT_SEQUENCE	1533	0	peek -> push -> pop -> push -> peek -> pop	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-231	PASSED	7074	3	push -> push -> pop -> push -> pop -> peek	{c0_elem="s1", c1_elem="s2", c3_elem="s3"}	
+stack-232	INCORRECT_SEQUENCE	1474	0	pop -> push -> peek -> push	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-233	PASSED	6614	3	push -> push -> push -> peek -> peek	{c0_elem="s1", c1_elem="s2", c2_elem="s3"}	
+stack-234	FAILED	0	0	peek -> peek -> pop -> pop -> peek -> pop	-	PRE: PRE peek: size > 0
+stack-235	INCORRECT_SEQUENCE	1375	0	peek -> push -> push -> push -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-236	INCORRECT_SEQUENCE	1441	0	pop -> pop -> push -> push -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-237	INCORRECT_SEQUENCE	1433	0	pop -> peek -> peek -> push -> push -> pop	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-238	INCORRECT_SEQUENCE	1431	0	peek -> push -> pop -> pop -> push	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-239	PASSED	6692	3	push -> peek -> push -> pop -> push	{c0_elem="s1", c2_elem="s2", c4_elem="s3"}	
+stack-240	INCORRECT_SEQUENCE	1528	0	peek -> peek -> pop -> push -> push -> pop -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-241	PASSED	10319	3	push -> push -> pop -> peek -> push -> pop -> peek	{c0_elem="s1", c1_elem="s2", c4_elem="s3"}	
+stack-242	INCORRECT_SEQUENCE	1366	0	pop -> peek -> peek -> peek -> push -> push	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-243	PASSED	6569	3	push -> peek -> push -> push -> pop	{c0_elem="s1", c2_elem="s2", c3_elem="s3"}	
+stack-244	INCORRECT_SEQUENCE	1574	0	pop -> push -> peek -> peek -> push -> pop -> pop	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-245	PASSED	7579	4	push -> push -> push -> peek -> pop -> push -> peek	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c5_elem="s1"}	
+stack-246	PASSED	10612	6	push -> push -> push -> push -> pop -> push -> push	{c0_elem="s1", c1_elem="s2", c2_elem="s3", c3_elem="s1", c5_elem="s2", c6_elem="s3"}	
+stack-247	PASSED	7657	2	push -> pop -> push -> pop	{c0_elem="s1", c2_elem="s2"}	
+stack-248	INCORRECT_SEQUENCE	4783	2	push -> push -> pop -> peek -> pop -> peek	-	INCORRECT SEQUENCE: call 5 (peek): size > 0
+stack-249	FAILED	0	0	peek -> pop -> pop -> pop -> peek	-	PRE: PRE peek: size > 0
+stack-250	INCORRECT_SEQUENCE	1498	0	pop -> push -> push -> peek -> pop	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-251	PASSED	7586	4	push -> pop -> push -> push -> push -> peek	{c0_elem="s1", c2_elem="s2", c3_elem="s3", c4_elem="s1"}	
+stack-252	INCORRECT_SEQUENCE	2945	1	push -> pop -> pop -> push -> pop -> peek -> peek	-	INCORRECT SEQUENCE: call 2 (pop): size > 0
+stack-253	INCORRECT_SEQUENCE	5043	2	push -> push -> pop -> pop -> pop -> peek -> peek	-	INCORRECT SEQUENCE: call 4 (pop): size > 0
+stack-254	FAILED	0	0	peek -> pop -> peek -> peek	-	PRE: PRE peek: size > 0
+stack-255	INCORRECT_SEQUENCE	1401	0	pop -> push -> push -> peek -> peek	-	INCORRECT SEQUENCE: call 0 (pop): size > 0
+stack-256	INCORRECT_SEQUENCE	1550	0	peek -> push -> peek -> push -> push -> push -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-257	FAILED	0	0	peek -> peek -> peek	-	PRE: PRE peek: size > 0
+stack-258	INCORRECT_SEQUENCE	2898	1	push -> peek -> pop -> pop -> peek	-	INCORRECT SEQUENCE: call 3 (pop): size > 0
+stack-259	INCORRECT_SEQUENCE	1384	0	peek -> push -> push -> pop -> push -> peek	-	INCORRECT SEQUENCE: call 0 (peek): size > 0
+stack-260	INCORRECT_SEQUENCE	6189	1	push -> pop -> pop -> push -> push -> peek	-	INCORRECT SEQUENCE: call 2 (pop): size > 0

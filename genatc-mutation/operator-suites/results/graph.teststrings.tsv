@@ -1,0 +1,262 @@
+# generated test strings — graph (family size 260, phase 1 1972s)
+# name	status	spf_ms	rounds	sequence	inputs	detail
+graph-001	INCORRECT_SEQUENCE	2661	0	addEdge -> addVertex -> addVertex -> addEdge -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-002	PASSED	18802	6	addVertex -> addVertex -> addEdge -> addEdge -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_from="s2", c3_to="s1", c4_name="s1", c5_from="s2", c5_to="s1"}	
+graph-003	PASSED	16064	7	addVertex -> addVertex -> addVertex -> addEdge -> degree -> hasEdge -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s3", c3_from="s1", c3_to="s2", c4_name="s3", c5_from="s1", c5_to="s2", c6_from="s3", c6_to="s1"}	
+graph-004	PASSED	18978	7	addVertex -> addVertex -> addEdge -> hasEdge -> hasEdge -> degree -> degree	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_from="s2", c3_to="s1", c4_from="s1", c4_to="s2", c5_name="s1", c6_name="s1"}	
+graph-005	PASSED	13052	6	addVertex -> addVertex -> addEdge -> degree -> addVertex -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2", c4_name="s3", c5_from="s1", c5_to="s2"}	
+graph-006	PASSED	17793	7	addVertex -> hasEdge -> addVertex -> addVertex -> addEdge -> degree -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_name="s2", c4_from="s1", c4_to="s1", c5_name="s2", c6_from="s1", c6_to="s1"}	
+graph-007	PASSED	9435	4	addVertex -> addEdge -> degree -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_from="s1", c3_to="s1"}	
+graph-008	PASSED	15810	6	addVertex -> addVertex -> addEdge -> degree -> hasEdge -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2", c4_from="s1", c4_to="s1", c5_from="s2", c5_to="s1"}	
+graph-009	PASSED	11067	5	addVertex -> addVertex -> addEdge -> hasEdge -> degree	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_from="s2", c3_to="s1", c4_name="s1"}	
+graph-010	PASSED	13553	6	addVertex -> addVertex -> hasEdge -> addEdge -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_from="s2", c3_to="s1", c4_name="s1", c5_from="s2", c5_to="s1"}	
+graph-011	PASSED	14148	5	addVertex -> degree -> addVertex -> addEdge -> hasEdge	{c0_name="s1", c1_name="s1", c2_name="s3", c3_from="s1", c3_to="s3", c4_from="s3", c4_to="s1"}	
+graph-012	INCORRECT_SEQUENCE	1754	0	degree -> addVertex -> addVertex -> addEdge -> degree	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-013	INCORRECT_SEQUENCE	2110	0	hasEdge -> hasEdge -> addVertex -> addEdge -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-014	PASSED	16268	7	addVertex -> degree -> degree -> addVertex -> addEdge -> degree -> hasEdge	{c0_name="s1", c1_name="s1", c2_name="s1", c3_name="s1", c4_from="s1", c4_to="s1", c5_name="s1", c6_from="s1", c6_to="s1"}	
+graph-015	PASSED	17750	7	addVertex -> addVertex -> addEdge -> degree -> addVertex -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2", c4_name="s3", c5_name="s1", c6_from="s2", c6_to="s3"}	
+graph-016	INCORRECT_SEQUENCE	1902	0	addEdge -> degree -> addEdge -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-017	INCORRECT_SEQUENCE	1921	0	addEdge -> addVertex -> degree -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-018	PASSED	15258	7	addVertex -> addVertex -> addEdge -> degree -> hasEdge -> hasEdge -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2", c4_from="s1", c4_to="s1", c5_from="s2", c5_to="s1", c6_from="s1", c6_to="s2"}	
+graph-019	PASSED	10614	3	addVertex -> addVertex -> degree	{c0_name="s1", c1_name="s2", c2_name="s1"}	
+graph-020	INCORRECT_SEQUENCE	2771	0	addEdge -> addEdge -> addEdge -> addEdge -> addVertex -> addVertex	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-021	PASSED	23209	7	addVertex -> addVertex -> addVertex -> addVertex -> addEdge -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s3", c3_name="s1", c4_from="s2", c4_to="s3", c5_name="s1", c6_from="s2", c6_to="s3"}	
+graph-022	PASSED	18148	6	addVertex -> addVertex -> addEdge -> degree -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2", c4_name="s1", c5_from="s1", c5_to="s2"}	
+graph-023	INCORRECT_SEQUENCE	1926	0	degree -> addVertex -> addVertex -> addVertex -> hasEdge -> addEdge -> degree	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-024	PASSED	12978	5	addVertex -> degree -> addEdge -> degree -> addVertex	{c0_name="s1", c1_name="s1", c2_from="s1", c2_to="s1", c3_name="s1", c4_name="s3"}	
+graph-025	INCORRECT_SEQUENCE	3344	0	hasEdge -> degree -> addVertex -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-026	INCORRECT_SEQUENCE	5957	0	hasEdge -> hasEdge -> degree	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-027	PASSED	11226	4	addVertex -> addEdge -> addVertex -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_from="s1", c3_to="s1"}	
+graph-028	PASSED	14033	6	addVertex -> addVertex -> hasEdge -> addVertex -> addVertex -> addVertex	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2", c4_name="s3", c5_name="s1"}	
+graph-029	INCORRECT_SEQUENCE	1870	0	addEdge -> addVertex -> addVertex -> degree -> hasEdge -> addEdge -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-030	PASSED	17708	7	addVertex -> addVertex -> hasEdge -> addEdge -> degree -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_from="s2", c3_to="s1", c4_name="s1", c5_name="s2", c6_from="s1", c6_to="s1"}	
+graph-031	INCORRECT_SEQUENCE	2791	0	addEdge -> addVertex -> addEdge -> degree -> addVertex -> addEdge -> addVertex	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-032	PASSED	15373	7	addVertex -> addVertex -> addEdge -> degree -> degree -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2", c4_name="s1", c5_name="s1", c6_from="s2", c6_to="s1"}	
+graph-033	PASSED	16926	7	addVertex -> degree -> addVertex -> addEdge -> degree -> hasEdge -> hasEdge	{c0_name="s1", c1_name="s1", c2_name="s3", c3_from="s1", c3_to="s3", c4_name="s3", c5_from="s1", c5_to="s3", c6_from="s3", c6_to="s1"}	
+graph-034	PASSED	10536	5	addVertex -> hasEdge -> addEdge -> degree -> addVertex	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_name="s1", c4_name="s1"}	
+graph-035	PASSED	16920	7	addVertex -> addVertex -> addEdge -> addEdge -> addVertex -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_from="s2", c3_to="s1", c4_name="s1", c5_name="s2", c6_from="s1", c6_to="s1"}	
+graph-036	INCORRECT_SEQUENCE	1687	0	addEdge -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-037	PASSED	6722	3	addVertex -> hasEdge -> degree	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1"}	
+graph-038	PASSED	8513	4	addVertex -> addVertex -> addEdge -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_from="s2", c3_to="s1"}	
+graph-039	INCORRECT_SEQUENCE	1859	0	degree -> degree	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-040	INCORRECT_SEQUENCE	1725	0	hasEdge -> addVertex -> addEdge -> addVertex	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-041	PASSED	16397	7	addVertex -> addVertex -> addVertex -> addEdge -> degree -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s3", c3_from="s1", c3_to="s2", c4_name="s3", c5_name="s1", c6_from="s2", c6_to="s3"}	
+graph-042	PASSED	8713	4	addVertex -> addEdge -> addEdge -> degree	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_name="s1"}	
+graph-043	INCORRECT_SEQUENCE	1907	0	hasEdge -> addVertex -> degree	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-044	INCORRECT_SEQUENCE	1734	0	degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-045	INCORRECT_SEQUENCE	1905	0	hasEdge -> addVertex -> hasEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-046	PASSED	17103	7	addVertex -> addVertex -> hasEdge -> addEdge -> degree -> hasEdge -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_from="s2", c3_to="s1", c4_name="s1", c5_from="s2", c5_to="s1", c6_from="s1", c6_to="s2"}	
+graph-047	PASSED	8588	4	addVertex -> addVertex -> addEdge -> degree	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2"}	
+graph-048	PASSED	5055	2	addVertex -> addVertex	{c0_name="s1", c1_name="s2"}	
+graph-049	PASSED	12402	6	addVertex -> addEdge -> degree -> addEdge -> hasEdge -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_from="s1", c3_to="s1", c4_from="s1", c4_to="s1", c5_from="s1", c5_to="s1"}	
+graph-050	PASSED	15222	6	addVertex -> addEdge -> addVertex -> addEdge -> degree -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_from="s1", c3_to="s1", c4_name="s1", c5_from="s1", c5_to="s1"}	
+graph-051	PASSED	12556	6	addVertex -> addVertex -> addVertex -> addVertex -> addEdge -> degree	{c0_name="s1", c1_name="s2", c2_name="s3", c3_name="s1", c4_from="s2", c4_to="s3", c5_name="s1"}	
+graph-052	PASSED	16207	6	addVertex -> addVertex -> addEdge -> addEdge -> hasEdge -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_from="s2", c3_to="s1", c4_from="s1", c4_to="s2", c5_from="s1", c5_to="s1"}	
+graph-053	PASSED	10519	5	addVertex -> addVertex -> degree -> addEdge -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s1", c3_from="s1", c3_to="s2", c4_from="s1", c4_to="s1"}	
+graph-054	PASSED	15069	7	addVertex -> addVertex -> addVertex -> addEdge -> degree -> addVertex -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s3", c3_from="s1", c3_to="s2", c4_name="s3", c5_name="s1", c6_from="s2", c6_to="s3"}	
+graph-055	PASSED	5267	2	addVertex -> addEdge	{c0_name="s1", c1_from="s1", c1_to="s1"}	
+graph-056	INCORRECT_SEQUENCE	4620	0	degree -> degree -> degree -> addEdge -> degree	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-057	PASSED	9886	5	addVertex -> hasEdge -> degree -> addVertex -> degree	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_name="s2", c4_name="s1"}	
+graph-058	PASSED	12170	6	addVertex -> addVertex -> addEdge -> degree -> addEdge -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2", c4_from="s1", c4_to="s1", c5_from="s2", c5_to="s1"}	
+graph-059	PASSED	15002	6	addVertex -> addVertex -> addVertex -> addEdge -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s3", c3_from="s1", c3_to="s2", c4_name="s3", c5_from="s1", c5_to="s2"}	
+graph-060	INCORRECT_SEQUENCE	1940	0	addEdge -> degree	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-061	PASSED	13984	7	addVertex -> addVertex -> degree -> addEdge -> degree -> hasEdge -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s1", c3_from="s1", c3_to="s2", c4_name="s1", c5_from="s1", c5_to="s2", c6_from="s1", c6_to="s1"}	
+graph-062	PASSED	16782	7	addVertex -> addVertex -> addVertex -> addEdge -> addVertex -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s3", c3_from="s1", c3_to="s2", c4_name="s3", c5_name="s1", c6_from="s2", c6_to="s3"}	
+graph-063	PASSED	12539	6	addVertex -> addVertex -> addVertex -> addVertex -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s3", c3_name="s1", c4_name="s2", c5_from="s3", c5_to="s1"}	
+graph-064	INCORRECT_SEQUENCE	1762	0	addEdge -> addVertex -> addVertex	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-065	PASSED	14113	7	addVertex -> addVertex -> addEdge -> addEdge -> addEdge -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_from="s2", c3_to="s1", c4_from="s1", c4_to="s2", c5_name="s1", c6_from="s1", c6_to="s2"}	
+graph-066	INCORRECT_SEQUENCE	1763	0	hasEdge -> addEdge -> hasEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-067	PASSED	12466	5	addVertex -> addVertex -> degree -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s1", c3_name="s1", c4_from="s2", c4_to="s1"}	
+graph-068	PASSED	11615	6	addVertex -> degree -> addVertex -> addEdge -> addVertex -> hasEdge	{c0_name="s1", c1_name="s1", c2_name="s3", c3_from="s1", c3_to="s3", c4_name="s3", c5_from="s1", c5_to="s3"}	
+graph-069	INCORRECT_SEQUENCE	1667	0	degree -> degree -> addEdge	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-070	INCORRECT_SEQUENCE	1725	0	addEdge -> degree -> hasEdge -> degree	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-071	PASSED	12827	5	addVertex -> addVertex -> addEdge -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2", c4_from="s1", c4_to="s1"}	
+graph-072	PASSED	8042	4	addVertex -> hasEdge -> addEdge -> addVertex	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_name="s3"}	
+graph-073	PASSED	12753	5	addVertex -> addEdge -> addVertex -> degree -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_name="s1", c4_from="s1", c4_to="s1"}	
+graph-074	INCORRECT_SEQUENCE	2008	0	hasEdge -> addEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-075	INCORRECT_SEQUENCE	2179	0	hasEdge -> degree -> degree -> addVertex	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-076	PASSED	13459	5	addVertex -> addEdge -> addEdge -> addEdge -> degree	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_from="s1", c3_to="s1", c4_name="s1"}	
+graph-077	PASSED	11442	6	addVertex -> addEdge -> addEdge -> addVertex -> degree -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_name="s3", c4_name="s1", c5_from="s3", c5_to="s3"}	
+graph-078	PASSED	12638	5	addVertex -> degree -> degree -> addVertex -> degree	{c0_name="s1", c1_name="s1", c2_name="s1", c3_name="s1", c4_name="s1"}	
+graph-079	INCORRECT_SEQUENCE	2876	0	hasEdge -> addEdge -> addVertex -> degree -> addVertex	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-080	INCORRECT_SEQUENCE	5281	0	hasEdge -> hasEdge -> hasEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-081	INCORRECT_SEQUENCE	2257	0	addEdge -> addEdge -> addVertex -> addVertex -> addEdge -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-082	PASSED	15330	5	addVertex -> addVertex -> addVertex -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s3", c3_name="s1", c4_from="s2", c4_to="s3"}	
+graph-083	PASSED	22429	7	addVertex -> hasEdge -> hasEdge -> addVertex -> degree -> hasEdge -> degree	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_name="s3", c4_name="s1", c5_from="s3", c5_to="s3", c6_name="s1"}	
+graph-084	PASSED	9032	3	addVertex -> hasEdge -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1"}	
+graph-085	PASSED	20926	7	addVertex -> addVertex -> hasEdge -> hasEdge -> addEdge -> degree -> addVertex	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_from="s2", c3_to="s1", c4_from="s1", c4_to="s2", c5_name="s1", c6_name="s1"}	
+graph-086	INCORRECT_SEQUENCE	1790	0	hasEdge -> degree -> addVertex -> degree -> addEdge -> addEdge -> addEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-087	INCORRECT_SEQUENCE	2269	0	addEdge -> degree -> degree -> addVertex	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-088	PASSED	11438	5	addVertex -> addVertex -> addVertex -> hasEdge -> addEdge	{c0_name="s1", c1_name="s2", c2_name="s3", c3_from="s1", c3_to="s2", c4_from="s3", c4_to="s1"}	
+graph-089	INCORRECT_SEQUENCE	1781	0	addEdge -> addVertex -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-090	PASSED	10596	5	addVertex -> addEdge -> degree -> degree -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_name="s1", c4_from="s1", c4_to="s1"}	
+graph-091	PASSED	7926	4	addVertex -> addVertex -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s1", c3_from="s1", c3_to="s2"}	
+graph-092	INCORRECT_SEQUENCE	1813	0	hasEdge -> degree -> addEdge -> degree	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-093	PASSED	14045	5	addVertex -> addEdge -> addEdge -> addVertex -> degree	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_name="s3", c4_name="s1"}	
+graph-094	INCORRECT_SEQUENCE	1694	0	degree -> addVertex -> addEdge	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-095	INCORRECT_SEQUENCE	2002	0	hasEdge -> hasEdge -> addVertex	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-096	INCORRECT_SEQUENCE	1696	0	addEdge -> hasEdge -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-097	INCORRECT_SEQUENCE	1700	0	addEdge -> addVertex -> addEdge -> addVertex -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-098	PASSED	11014	6	addVertex -> degree -> addEdge -> addVertex -> addVertex -> hasEdge	{c0_name="s1", c1_name="s1", c2_from="s1", c2_to="s1", c3_name="s2", c4_name="s3", c5_from="s1", c5_to="s2"}	
+graph-099	PASSED	16108	7	addVertex -> addEdge -> addEdge -> addVertex -> addVertex -> degree -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_name="s3", c4_name="s1", c5_name="s3", c6_from="s3", c6_to="s1"}	
+graph-100	INCORRECT_SEQUENCE	1693	0	addEdge -> addVertex -> degree -> hasEdge -> addEdge -> degree -> addEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-101	PASSED	9672	5	addVertex -> addVertex -> degree -> addEdge -> addEdge	{c0_name="s1", c1_name="s2", c2_name="s1", c3_from="s1", c3_to="s2", c4_from="s1", c4_to="s1"}	
+graph-102	PASSED	6028	3	addVertex -> addEdge -> degree	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1"}	
+graph-103	INCORRECT_SEQUENCE	1748	0	degree -> addVertex -> addEdge -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-104	PASSED	11171	6	addVertex -> addVertex -> addEdge -> hasEdge -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_from="s2", c3_to="s1", c4_name="s1", c5_from="s2", c5_to="s1"}	
+graph-105	PASSED	13123	5	addVertex -> degree -> addVertex -> addEdge -> degree	{c0_name="s1", c1_name="s1", c2_name="s3", c3_from="s1", c3_to="s3", c4_name="s3"}	
+graph-106	INCORRECT_SEQUENCE	1762	0	addEdge -> hasEdge -> hasEdge -> degree -> degree -> addEdge -> addVertex	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-107	PASSED	11211	6	addVertex -> addEdge -> degree -> hasEdge -> hasEdge -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_from="s1", c3_to="s1", c4_from="s1", c4_to="s1", c5_from="s1", c5_to="s1"}	
+graph-108	PASSED	9561	5	addVertex -> addVertex -> addEdge -> addVertex -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2", c4_from="s1", c4_to="s1"}	
+graph-109	PASSED	12619	5	addVertex -> addVertex -> hasEdge -> degree -> addVertex	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2", c4_name="s3"}	
+graph-110	PASSED	8380	4	addVertex -> hasEdge -> hasEdge -> addVertex	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_name="s3"}	
+graph-111	INCORRECT_SEQUENCE	1846	0	hasEdge -> addVertex -> degree -> addVertex -> hasEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-112	PASSED	12004	6	addVertex -> addEdge -> addEdge -> addEdge -> hasEdge -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_from="s1", c3_to="s1", c4_from="s1", c4_to="s1", c5_from="s1", c5_to="s1"}	
+graph-113	PASSED	16231	7	addVertex -> hasEdge -> degree -> hasEdge -> degree -> addVertex -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_from="s1", c3_to="s1", c4_name="s1", c5_name="s2", c6_from="s1", c6_to="s1"}	
+graph-114	PASSED	10449	5	addVertex -> degree -> addEdge -> addVertex -> hasEdge	{c0_name="s1", c1_name="s1", c2_from="s1", c2_to="s1", c3_name="s2", c4_from="s1", c4_to="s1"}	
+graph-115	INCORRECT_SEQUENCE	1662	0	degree -> addVertex -> hasEdge -> addVertex -> hasEdge	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-116	INCORRECT_SEQUENCE	1604	0	degree -> degree -> hasEdge -> hasEdge -> degree	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-117	PASSED	15510	6	addVertex -> degree -> addVertex -> addVertex -> addEdge -> degree	{c0_name="s1", c1_name="s1", c2_name="s3", c3_name="s1", c4_from="s3", c4_to="s3", c5_name="s1"}	
+graph-118	PASSED	12833	6	addVertex -> addVertex -> addEdge -> addEdge -> addEdge -> degree	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_from="s2", c3_to="s1", c4_from="s1", c4_to="s2", c5_name="s1"}	
+graph-119	PASSED	10876	6	addVertex -> addVertex -> addVertex -> degree -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s3", c3_name="s1", c4_name="s2", c5_from="s3", c5_to="s1"}	
+graph-120	INCORRECT_SEQUENCE	2005	0	hasEdge -> addVertex -> addVertex -> addVertex -> addEdge -> degree	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-121	PASSED	12507	5	addVertex -> addVertex -> addVertex -> addEdge -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s3", c3_from="s1", c3_to="s2", c4_from="s3", c4_to="s1"}	
+graph-122	INCORRECT_SEQUENCE	1676	0	hasEdge -> hasEdge -> degree -> degree -> degree -> hasEdge -> addEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-123	INCORRECT_SEQUENCE	1899	0	hasEdge -> addVertex -> addEdge -> degree -> addVertex	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-124	PASSED	11802	6	addVertex -> addEdge -> addVertex -> degree -> degree -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_name="s1", c4_name="s1", c5_from="s1", c5_to="s1"}	
+graph-125	INCORRECT_SEQUENCE	1907	0	hasEdge -> hasEdge -> hasEdge -> addVertex	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-126	INCORRECT_SEQUENCE	1832	0	degree -> hasEdge -> addEdge -> addEdge	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-127	PASSED	12823	5	addVertex -> addVertex -> hasEdge -> degree -> addEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2", c4_from="s1", c4_to="s1"}	
+graph-128	INCORRECT_SEQUENCE	1609	0	hasEdge -> degree -> degree -> addEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-129	PASSED	8433	4	addVertex -> addVertex -> hasEdge -> degree	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2"}	
+graph-130	INCORRECT_SEQUENCE	1748	0	addEdge -> addEdge -> addVertex -> addVertex -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-131	INCORRECT_SEQUENCE	1737	0	addEdge -> addVertex	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-132	PASSED	16477	7	addVertex -> addVertex -> degree -> hasEdge -> hasEdge -> addEdge -> addEdge	{c0_name="s1", c1_name="s2", c2_name="s1", c3_from="s1", c3_to="s2", c4_from="s1", c4_to="s1", c5_from="s2", c5_to="s1", c6_from="s1", c6_to="s2"}	
+graph-133	PASSED	6912	3	addVertex -> hasEdge -> addVertex	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1"}	
+graph-134	PASSED	10325	5	addVertex -> addEdge -> degree -> addEdge -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_from="s1", c3_to="s1", c4_from="s1", c4_to="s1"}	
+graph-135	PASSED	13422	7	addVertex -> addVertex -> addVertex -> addEdge -> hasEdge -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s3", c3_from="s1", c3_to="s2", c4_from="s3", c4_to="s1", c5_name="s2", c6_from="s3", c6_to="s1"}	
+graph-136	PASSED	15144	6	addVertex -> degree -> addVertex -> addEdge -> hasEdge -> hasEdge	{c0_name="s1", c1_name="s1", c2_name="s3", c3_from="s1", c3_to="s3", c4_from="s3", c4_to="s1", c5_from="s3", c5_to="s3"}	
+graph-137	INCORRECT_SEQUENCE	1644	0	degree -> degree -> addEdge -> addVertex -> hasEdge	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-138	PASSED	14173	7	addVertex -> hasEdge -> hasEdge -> hasEdge -> degree -> degree -> addVertex	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_from="s1", c3_to="s1", c4_name="s1", c5_name="s1", c6_name="s1"}	
+graph-139	PASSED	15014	6	addVertex -> hasEdge -> hasEdge -> addVertex -> addEdge -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_name="s3", c4_from="s1", c4_to="s3", c5_from="s3", c5_to="s1"}	
+graph-140	PASSED	11079	5	addVertex -> hasEdge -> addEdge -> degree -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_name="s1", c4_from="s1", c4_to="s1"}	
+graph-141	PASSED	10159	5	addVertex -> degree -> addEdge -> addEdge -> addVertex	{c0_name="s1", c1_name="s1", c2_from="s1", c2_to="s1", c3_from="s1", c3_to="s1", c4_name="s1"}	
+graph-142	PASSED	9502	3	addVertex -> degree -> degree	{c0_name="s1", c1_name="s1", c2_name="s1"}	
+graph-143	INCORRECT_SEQUENCE	1570	0	degree -> degree -> addVertex -> addEdge -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-144	PASSED	11940	6	addVertex -> addVertex -> degree -> addEdge -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s1", c3_from="s1", c3_to="s2", c4_name="s1", c5_from="s1", c5_to="s2"}	
+graph-145	INCORRECT_SEQUENCE	1891	0	hasEdge -> degree -> hasEdge -> degree -> addEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-146	INCORRECT_SEQUENCE	1769	0	addEdge -> addVertex -> addVertex -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-147	INCORRECT_SEQUENCE	1876	0	degree -> degree -> addVertex -> addVertex -> addEdge -> addVertex -> addEdge	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-148	INCORRECT_SEQUENCE	1884	0	addEdge -> addVertex -> addVertex -> addVertex -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-149	PASSED	17464	7	addVertex -> addVertex -> addVertex -> degree -> hasEdge -> addEdge -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s3", c3_name="s1", c4_from="s2", c4_to="s3", c5_from="s1", c5_to="s2", c6_from="s3", c6_to="s1"}	
+graph-150	INCORRECT_SEQUENCE	1824	0	addEdge -> addEdge -> hasEdge -> addVertex	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-151	INCORRECT_SEQUENCE	1835	0	hasEdge -> degree	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-152	INCORRECT_SEQUENCE	1669	0	degree -> addEdge -> hasEdge	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-153	INCORRECT_SEQUENCE	1795	0	addEdge -> addVertex -> addVertex -> addVertex -> degree	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-154	INCORRECT_SEQUENCE	1592	0	degree -> addVertex -> addVertex -> hasEdge	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-155	INCORRECT_SEQUENCE	1661	0	addEdge -> degree -> addEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-156	INCORRECT_SEQUENCE	1674	0	degree -> addVertex -> hasEdge -> addVertex -> addVertex -> addEdge -> addEdge	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-157	PASSED	11655	6	addVertex -> addEdge -> degree -> addVertex -> addVertex -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_name="s2", c4_name="s3", c5_from="s1", c5_to="s2"}	
+graph-158	PASSED	9543	3	addVertex -> addVertex -> addEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1"}	
+graph-159	PASSED	13266	7	addVertex -> addVertex -> addEdge -> addVertex -> addEdge -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2", c4_from="s1", c4_to="s1", c5_name="s2", c6_from="s1", c6_to="s1"}	
+graph-160	PASSED	11371	6	addVertex -> addEdge -> degree -> degree -> degree -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_name="s1", c4_name="s1", c5_from="s1", c5_to="s1"}	
+graph-161	PASSED	15034	6	addVertex -> hasEdge -> addVertex -> addEdge -> degree -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_from="s1", c3_to="s1", c4_name="s1", c5_from="s1", c5_to="s1"}	
+graph-162	INCORRECT_SEQUENCE	1639	0	degree -> hasEdge -> hasEdge -> hasEdge -> degree	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-163	INCORRECT_SEQUENCE	1639	0	addEdge -> addVertex -> addVertex -> hasEdge -> addEdge -> addEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-164	INCORRECT_SEQUENCE	1821	0	addEdge -> addVertex -> degree -> degree -> hasEdge -> hasEdge -> addEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-165	INCORRECT_SEQUENCE	1815	0	addEdge -> addVertex -> addVertex -> degree	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-166	PASSED	10882	5	addVertex -> degree -> addVertex -> degree -> degree	{c0_name="s1", c1_name="s1", c2_name="s3", c3_name="s1", c4_name="s3"}	
+graph-167	INCORRECT_SEQUENCE	1601	0	degree -> hasEdge -> addEdge -> addVertex -> addVertex -> addVertex -> hasEdge	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-168	INCORRECT_SEQUENCE	1835	0	addEdge -> addVertex -> addEdge -> degree -> addVertex -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-169	INCORRECT_SEQUENCE	4622	0	addEdge -> addVertex -> addVertex -> addVertex -> hasEdge -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-170	PASSED	11617	6	addVertex -> addEdge -> addVertex -> degree -> hasEdge -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_name="s1", c4_from="s1", c4_to="s1", c5_from="s1", c5_to="s1"}	
+graph-171	PASSED	13682	7	addVertex -> hasEdge -> hasEdge -> addEdge -> addEdge -> degree -> addVertex	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_from="s1", c3_to="s1", c4_from="s1", c4_to="s1", c5_name="s1", c6_name="s2"}	
+graph-172	INCORRECT_SEQUENCE	1799	0	addEdge -> degree -> addEdge -> degree	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-173	PASSED	15960	7	addVertex -> degree -> addVertex -> addEdge -> hasEdge -> addVertex -> hasEdge	{c0_name="s1", c1_name="s1", c2_name="s3", c3_from="s1", c3_to="s3", c4_from="s3", c4_to="s1", c5_name="s2", c6_from="s3", c6_to="s1"}	
+graph-174	PASSED	9599	5	addVertex -> degree -> degree -> degree -> addVertex	{c0_name="s1", c1_name="s1", c2_name="s1", c3_name="s1", c4_name="s2"}	
+graph-175	PASSED	9657	5	addVertex -> addEdge -> hasEdge -> degree -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_name="s1", c4_from="s1", c4_to="s1"}	
+graph-176	PASSED	16029	7	addVertex -> addVertex -> addVertex -> addVertex -> degree -> addEdge -> degree	{c0_name="s1", c1_name="s2", c2_name="s3", c3_name="s1", c4_name="s2", c5_from="s3", c5_to="s1", c6_name="s2"}	
+graph-177	INCORRECT_SEQUENCE	1701	0	hasEdge -> degree -> addVertex -> addEdge -> degree -> addVertex -> hasEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-178	INCORRECT_SEQUENCE	1610	0	addEdge -> addEdge -> addEdge -> hasEdge -> degree -> degree -> addEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-179	INCORRECT_SEQUENCE	1743	0	degree -> addVertex -> degree -> addEdge -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-180	INCORRECT_SEQUENCE	1744	0	addEdge -> addEdge -> hasEdge -> addVertex -> addEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-181	INCORRECT_SEQUENCE	1599	0	hasEdge -> addVertex	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-182	INCORRECT_SEQUENCE	1833	0	hasEdge -> hasEdge -> addEdge -> hasEdge -> degree -> hasEdge -> degree	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-183	INCORRECT_SEQUENCE	1624	0	addEdge -> degree -> addVertex -> hasEdge -> addVertex -> degree	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-184	PASSED	16264	7	addVertex -> addEdge -> degree -> degree -> hasEdge -> addEdge -> addVertex	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_name="s1", c4_from="s1", c4_to="s1", c5_from="s1", c5_to="s1", c6_name="s1"}	
+graph-185	PASSED	10006	5	addVertex -> addVertex -> addEdge -> addVertex -> addVertex	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2", c4_name="s3"}	
+graph-186	INCORRECT_SEQUENCE	1819	0	hasEdge -> addVertex -> addVertex -> degree -> addVertex	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-187	INCORRECT_SEQUENCE	1726	0	addEdge -> hasEdge -> addEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-188	PASSED	12397	6	addVertex -> addVertex -> addEdge -> degree -> hasEdge -> degree	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2", c4_from="s1", c4_to="s1", c5_name="s2"}	
+graph-189	PASSED	16375	7	addVertex -> degree -> addEdge -> addEdge -> addVertex -> hasEdge -> hasEdge	{c0_name="s1", c1_name="s1", c2_from="s1", c2_to="s1", c3_from="s1", c3_to="s1", c4_name="s1", c5_from="s1", c5_to="s1", c6_from="s1", c6_to="s1"}	
+graph-190	PASSED	13534	7	addVertex -> addVertex -> hasEdge -> addEdge -> degree -> addEdge -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_from="s2", c3_to="s1", c4_name="s1", c5_from="s2", c5_to="s1", c6_from="s1", c6_to="s2"}	
+graph-191	PASSED	9143	5	addVertex -> addVertex -> addEdge -> degree -> degree	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2", c4_name="s1"}	
+graph-192	INCORRECT_SEQUENCE	4622	0	addEdge -> addVertex -> addVertex -> degree -> addEdge -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-193	PASSED	5934	3	addVertex -> addEdge -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1"}	
+graph-194	PASSED	10584	6	addVertex -> degree -> addVertex -> addEdge -> degree -> hasEdge	{c0_name="s1", c1_name="s1", c2_name="s3", c3_from="s1", c3_to="s3", c4_name="s3", c5_from="s1", c5_to="s3"}	
+graph-195	INCORRECT_SEQUENCE	1671	0	hasEdge -> degree -> addVertex -> degree -> hasEdge -> addVertex	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-196	PASSED	12691	7	addVertex -> addEdge -> degree -> addEdge -> degree -> addVertex -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_from="s1", c3_to="s1", c4_name="s1", c5_name="s2", c6_from="s1", c6_to="s1"}	
+graph-197	PASSED	12512	5	addVertex -> hasEdge -> degree -> addEdge -> addEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_from="s1", c3_to="s1", c4_from="s1", c4_to="s1"}	
+graph-198	INCORRECT_SEQUENCE	1612	0	hasEdge -> degree -> degree -> addVertex -> degree	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-199	INCORRECT_SEQUENCE	1548	0	degree -> addEdge -> addEdge	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-200	PASSED	10112	6	addVertex -> addVertex -> addEdge -> addVertex -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_name="s2", c4_name="s1", c5_from="s1", c5_to="s2"}	
+graph-201	INCORRECT_SEQUENCE	1417	0	hasEdge -> addVertex -> addEdge -> degree	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-202	PASSED	12826	6	addVertex -> addVertex -> degree -> degree -> degree -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s1", c3_name="s1", c4_name="s2", c5_from="s1", c5_to="s1"}	
+graph-203	INCORRECT_SEQUENCE	1581	0	addEdge -> degree -> hasEdge -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-204	INCORRECT_SEQUENCE	1527	0	hasEdge -> addVertex -> addVertex -> addEdge -> degree -> addVertex	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-205	INCORRECT_SEQUENCE	1465	0	degree -> addEdge	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-206	INCORRECT_SEQUENCE	1424	0	addEdge -> degree -> addEdge -> addVertex -> hasEdge -> addVertex	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-207	PASSED	10053	6	addVertex -> hasEdge -> addVertex -> hasEdge -> degree -> addEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_from="s1", c3_to="s1", c4_name="s1", c5_from="s1", c5_to="s1"}	
+graph-208	INCORRECT_SEQUENCE	1509	0	hasEdge -> addEdge -> addEdge -> addVertex	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-209	INCORRECT_SEQUENCE	1582	0	addEdge -> hasEdge -> degree -> degree -> addVertex -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-210	PASSED	15583	7	addVertex -> degree -> addVertex -> degree -> addEdge -> addEdge -> degree	{c0_name="s1", c1_name="s1", c2_name="s3", c3_name="s1", c4_from="s3", c4_to="s3", c5_from="s1", c5_to="s3", c6_name="s3"}	
+graph-211	PASSED	10055	6	addVertex -> degree -> addVertex -> addVertex -> addVertex -> addVertex	{c0_name="s1", c1_name="s1", c2_name="s3", c3_name="s1", c4_name="s2", c5_name="s3"}	
+graph-212	INCORRECT_SEQUENCE	1533	0	addEdge -> hasEdge -> addVertex -> addEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-213	PASSED	10208	6	addVertex -> addVertex -> addEdge -> hasEdge -> hasEdge -> degree	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_from="s2", c3_to="s1", c4_from="s1", c4_to="s2", c5_name="s1"}	
+graph-214	PASSED	13123	6	addVertex -> hasEdge -> addEdge -> hasEdge -> degree -> addVertex	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_from="s1", c3_to="s1", c4_name="s1", c5_name="s3"}	
+graph-215	INCORRECT_SEQUENCE	1619	0	addEdge -> hasEdge -> degree	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-216	PASSED	6880	4	addVertex -> degree -> degree -> hasEdge	{c0_name="s1", c1_name="s1", c2_name="s1", c3_from="s1", c3_to="s1"}	
+graph-217	PASSED	9256	6	addVertex -> hasEdge -> addEdge -> degree -> degree -> addVertex	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_name="s1", c4_name="s1", c5_name="s2"}	
+graph-218	PASSED	6882	4	addVertex -> degree -> addEdge -> hasEdge	{c0_name="s1", c1_name="s1", c2_from="s1", c2_to="s1", c3_from="s1", c3_to="s1"}	
+graph-219	INCORRECT_SEQUENCE	1385	0	hasEdge -> addVertex -> degree -> addVertex -> addEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-220	INCORRECT_SEQUENCE	1390	0	hasEdge -> addEdge -> addVertex -> addVertex -> addVertex	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-221	INCORRECT_SEQUENCE	1342	0	hasEdge -> hasEdge -> addEdge -> addEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-222	PASSED	13750	7	addVertex -> degree -> addVertex -> addVertex -> hasEdge -> degree -> addVertex	{c0_name="s1", c1_name="s1", c2_name="s3", c3_name="s1", c4_from="s3", c4_to="s3", c5_name="s1", c6_name="s2"}	
+graph-223	PASSED	7509	4	addVertex -> addEdge -> hasEdge -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_from="s1", c3_to="s1"}	
+graph-224	INCORRECT_SEQUENCE	1475	0	hasEdge -> addVertex -> addEdge -> addEdge -> degree -> degree -> addVertex	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-225	PASSED	9158	5	addVertex -> addVertex -> addVertex -> addEdge -> degree	{c0_name="s1", c1_name="s2", c2_name="s3", c3_from="s1", c3_to="s2", c4_name="s3"}	
+graph-226	PASSED	11093	5	addVertex -> addVertex -> addEdge -> addEdge -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_from="s2", c3_to="s1", c4_from="s1", c4_to="s2"}	
+graph-227	PASSED	6813	4	addVertex -> addEdge -> hasEdge -> degree	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_name="s1"}	
+graph-228	PASSED	4063	2	addVertex -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1"}	
+graph-229	PASSED	7304	4	addVertex -> addVertex -> addVertex -> addVertex	{c0_name="s1", c1_name="s2", c2_name="s3", c3_name="s1"}	
+graph-230	PASSED	8360	5	addVertex -> addEdge -> degree -> hasEdge -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_from="s1", c3_to="s1", c4_from="s1", c4_to="s1"}	
+graph-231	INCORRECT_SEQUENCE	1385	0	hasEdge -> addEdge -> degree -> addVertex -> hasEdge -> addVertex	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-232	PASSED	12624	6	addVertex -> addEdge -> degree -> addVertex -> hasEdge -> hasEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_name="s2", c4_from="s1", c4_to="s1", c5_from="s2", c5_to="s1"}	
+graph-233	INCORRECT_SEQUENCE	1389	0	addEdge -> addEdge -> hasEdge -> addEdge -> addVertex -> addEdge -> addVertex	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-234	INCORRECT_SEQUENCE	1339	0	hasEdge -> addVertex -> addEdge -> hasEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-235	INCORRECT_SEQUENCE	1297	0	degree -> addEdge -> degree	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-236	PASSED	11015	7	addVertex -> hasEdge -> addVertex -> hasEdge -> addEdge -> hasEdge -> addEdge	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_from="s1", c3_to="s1", c4_from="s1", c4_to="s1", c5_from="s1", c5_to="s1", c6_from="s1", c6_to="s1"}	
+graph-237	INCORRECT_SEQUENCE	1521	0	hasEdge -> addEdge -> addVertex -> addEdge -> addEdge -> degree	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-238	PASSED	10856	5	addVertex -> addVertex -> hasEdge -> addEdge -> degree	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1", c3_from="s2", c3_to="s1", c4_name="s1"}	
+graph-239	INCORRECT_SEQUENCE	1321	0	degree -> addVertex -> addVertex -> hasEdge -> addEdge -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-240	INCORRECT_SEQUENCE	1435	0	addEdge -> hasEdge -> addVertex -> hasEdge -> hasEdge -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-241	PASSED	3875	2	addVertex -> degree	{c0_name="s1", c1_name="s1"}	
+graph-242	INCORRECT_SEQUENCE	1565	0	degree -> addVertex -> addVertex -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-243	INCORRECT_SEQUENCE	1350	0	hasEdge -> addVertex -> addEdge -> addEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-244	INCORRECT_SEQUENCE	1356	0	addEdge -> addVertex -> addVertex -> addEdge -> degree -> hasEdge -> hasEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-245	PASSED	10680	7	addVertex -> degree -> degree -> addEdge -> degree -> addVertex -> addEdge	{c0_name="s1", c1_name="s1", c2_name="s1", c3_from="s1", c3_to="s1", c4_name="s1", c5_name="s1", c6_from="s1", c6_to="s1"}	
+graph-246	PASSED	6621	4	addVertex -> hasEdge -> addVertex -> degree	{c0_name="s1", c1_from="s1", c1_to="s1", c2_name="s1", c3_name="s1"}	
+graph-247	PASSED	9072	6	addVertex -> addVertex -> degree -> hasEdge -> degree -> addEdge	{c0_name="s1", c1_name="s2", c2_name="s1", c3_from="s1", c3_to="s2", c4_name="s1", c5_from="s1", c5_to="s2"}	
+graph-248	PASSED	9295	5	addVertex -> addVertex -> degree -> addVertex -> hasEdge	{c0_name="s1", c1_name="s2", c2_name="s1", c3_name="s1", c4_from="s2", c4_to="s1"}	
+graph-249	INCORRECT_SEQUENCE	5719	0	degree -> addEdge -> hasEdge -> degree	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-250	INCORRECT_SEQUENCE	1442	0	addEdge -> addVertex -> degree -> addVertex -> degree	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-251	PASSED	5508	3	addVertex -> addVertex -> hasEdge	{c0_name="s1", c1_name="s2", c2_from="s1", c2_to="s1"}	
+graph-252	PASSED	10868	7	addVertex -> hasEdge -> addEdge -> addEdge -> degree -> degree -> addVertex	{c0_name="s1", c1_from="s1", c1_to="s1", c2_from="s1", c2_to="s1", c3_from="s1", c3_to="s1", c4_name="s1", c5_name="s1", c6_name="s1"}	
+graph-253	INCORRECT_SEQUENCE	1421	0	addEdge -> addEdge -> addEdge	-	INCORRECT SEQUENCE: call 0 (addEdge): V.contains(from)
+graph-254	INCORRECT_SEQUENCE	1488	0	hasEdge -> addVertex -> addVertex -> addVertex -> addEdge -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-255	INCORRECT_SEQUENCE	1394	0	degree -> hasEdge -> addVertex -> hasEdge -> degree -> degree	-	INCORRECT SEQUENCE: call 0 (degree): V.contains(name)
+graph-256	INCORRECT_SEQUENCE	1405	0	hasEdge -> addEdge -> addEdge -> degree	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-257	INCORRECT_SEQUENCE	1557	0	hasEdge -> addVertex -> addVertex -> hasEdge -> addEdge -> degree -> addVertex	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-258	INCORRECT_SEQUENCE	1360	0	hasEdge -> addVertex -> hasEdge -> addEdge -> hasEdge -> degree -> addVertex	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-259	INCORRECT_SEQUENCE	1366	0	hasEdge -> degree -> addVertex -> addVertex -> addEdge -> addVertex -> hasEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)
+graph-260	INCORRECT_SEQUENCE	1352	0	hasEdge -> addVertex -> addVertex -> addEdge -> degree -> hasEdge	-	INCORRECT SEQUENCE: call 0 (hasEdge): V.contains(from)

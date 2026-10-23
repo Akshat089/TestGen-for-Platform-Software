@@ -1,8 +1,3 @@
 test TaskqueueGenerated215 {
-    sequence: submit -> submit -> getResult -> cancelTask -> cancelTask;
-
-    inputs {
-        submit[0].payload = "render-report";
-        submit[1].payload = "beta";
-    }
+    sequence: getResult -> cancelTask -> submit -> submit;
 }

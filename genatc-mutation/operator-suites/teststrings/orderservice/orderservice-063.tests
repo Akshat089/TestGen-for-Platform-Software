@@ -1,0 +1,3 @@
+test OrderserviceGenerated63 {
+    sequence: ship -> ship -> ship -> ship -> restock -> restock -> placeOrder;
+}
