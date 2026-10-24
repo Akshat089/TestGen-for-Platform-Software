@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Builds the generator, regenerates every registered library through the
+# Builds the generator and regenerates every registered library through the
 # TestGen pipeline (checks -> IR -> abstract test case -> genCTC: each round
 # rewriteATC, then symex on real SPF with every ready call running on the real
 # library -> the concrete test case -> JUnit), runs each generated JUnit class
