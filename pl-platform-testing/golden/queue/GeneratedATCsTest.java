@@ -17,7 +17,7 @@ public class GeneratedATCsTest {
 
         // call 0: enqueue
         int old0_size = Helper.size;
-        String c0_elem = "s1";
+        String c0_elem = "s7";
         assertTrue("PRE enqueue: elem != null", c0_elem != null);
         Helper.enqueue(c0_elem);
         assertTrue("POST enqueue: size == \\old(size) + 1", Helper.size == old0_size + 1);
@@ -25,7 +25,7 @@ public class GeneratedATCsTest {
 
         // call 1: enqueue
         int old1_size = Helper.size;
-        String c1_elem = "s2";
+        String c1_elem = "s9";
         assertTrue("PRE enqueue: elem != null", c1_elem != null);
         Helper.enqueue(c1_elem);
         assertTrue("POST enqueue: size == \\old(size) + 1", Helper.size == old1_size + 1);

@@ -7,11 +7,7 @@ import gov.nasa.jpf.search.Search;
 import gov.nasa.jpf.symbc.numeric.PCChoiceGenerator;
 import gov.nasa.jpf.symbc.numeric.PathCondition;
 import gov.nasa.jpf.vm.ChoiceGenerator;
-import gov.nasa.jpf.vm.ClassInfo;
-import gov.nasa.jpf.vm.ClassLoaderInfo;
-import gov.nasa.jpf.vm.ElementInfo;
 import gov.nasa.jpf.vm.Instruction;
-import gov.nasa.jpf.vm.MJIEnv;
 import gov.nasa.jpf.vm.MethodInfo;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
@@ -27,7 +23,7 @@ import java.util.Map;
  * Step 5's data source: at the end of every COMPLETED path, solves the path
  * condition and writes one JSON line naming every symbolic variable the
  * solver assigned a value — {@code {"event":"path","path":N,"sat":true,
- * "vars":{"c0_elem$idx":"0", ...}}}. This is the whole of rule 7: no console
+ * "vars":{"c0_elem$id":"3", ...}}}. This is the whole of rule 7: no console
  * text is parsed anywhere downstream of this file, just this one JSON-lines
  * file, written directly from jpf-symbc's own {@link PathCondition} API
  * ({@code solve()} then {@code header.getVarVals(...)}) rather than its
@@ -37,10 +33,6 @@ import java.util.Map;
  * a branch short, via JPF's own {@link Search#getSearchConstraint()} — again
  * a structured getter, not scraped text — so a depth cutoff can be reported
  * distinctly from "no path reaches the end" (rule 10).
- *
- * <p>Each completed path also carries the driver's {@code picks} field: the
- * candidate every pooled input picked on that path. JPF restores static fields
- * on backtracking, so the field always holds the current path's picks.
  *
  * <p>Deliberately generic: it has no idea what a "call block" or a "parameter
  * slot" is. {@code SpfSymexEngine} maps the {@code c<i>_<param>} names in its
@@ -139,8 +131,7 @@ public class PathVectorListener extends PropertyListenerAdapter {
         if (!(cg instanceof PCChoiceGenerator)) {
             // no symbolic decision on this path at all: nothing is constrained,
             // every value is free
-            out.println("{\"event\":\"path\",\"path\":" + pathId + ",\"sat\":true,\"vars\":{},\"picks\":"
-                    + picks(vm) + "}");
+            out.println("{\"event\":\"path\",\"path\":" + pathId + ",\"sat\":true,\"vars\":{}}");
             out.flush();
             if (stopAtFirstPath) search.terminate();
             return;
@@ -160,29 +151,10 @@ public class PathVectorListener extends PropertyListenerAdapter {
             first = false;
             sb.append(jsonString(e.getKey())).append(":").append(jsonString(String.valueOf(e.getValue())));
         }
-        sb.append("},\"picks\":").append(picks(vm)).append("}");
+        sb.append("}}");
         out.println(sb);
         out.flush();
         if (sat && stopAtFirstPath) search.terminate();
-    }
-
-    /** The driver's {@code picks} field as a JSON object, input name -&gt; picked value. */
-    private static String picks(VM vm) {
-        StringBuilder sb = new StringBuilder("{");
-        ClassInfo driver = ClassLoaderInfo.getCurrentSystemClassLoader()
-                .tryGetResolvedClassInfo(DRIVER_CLASS);
-        if (driver != null) {
-            ElementInfo statics = driver.getStaticElementInfo();
-            int ref = statics.getReferenceField("picks");
-            String text = ref == MJIEnv.NULL ? "" : vm.getHeap().get(ref).asString();
-            for (String pick : text.split("\u001e")) {
-                int sep = pick.indexOf('\u001f');
-                if (sep < 0) continue;
-                if (sb.length() > 1) sb.append(",");
-                sb.append(jsonString(pick.substring(0, sep))).append(":").append(jsonString(pick.substring(sep + 1)));
-            }
-        }
-        return sb.append("}").toString();
     }
 
     @Override

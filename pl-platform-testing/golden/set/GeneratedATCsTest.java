@@ -16,20 +16,20 @@ public class GeneratedATCsTest {
         Helper.reset();
 
         // call 0: add
-        String c0_elem = "s1";
+        String c0_elem = "s7";
         assertTrue("PRE add: elem != null", c0_elem != null);
         boolean c0_result = Helper.add(c0_elem);
         assertTrue("POST add: E.contains(elem)", Helper.E.contains(c0_elem));
 
         // call 1: add
-        String c1_elem = "s2";
+        String c1_elem = "s9";
         assertTrue("PRE add: elem != null", c1_elem != null);
         boolean c1_result = Helper.add(c1_elem);
         assertTrue("POST add: E.contains(elem)", Helper.E.contains(c1_elem));
 
         // call 2: contains
         int old2_size = Helper.size;
-        String c2_elem = "s3";
+        String c2_elem = "s11";
         assertTrue("PRE contains: elem != null", c2_elem != null);
         boolean c2_result = Helper.contains(c2_elem);
         assertTrue("POST contains: present == E.contains(elem)", c2_result == Helper.E.contains(c2_elem));
@@ -37,7 +37,7 @@ public class GeneratedATCsTest {
 
         // call 3: remove
         int old3_size = Helper.size;
-        String c3_elem = "s1";
+        String c3_elem = "s7";
         assertTrue("PRE remove: E.contains(elem)", Helper.E.contains(c3_elem));
         Helper.remove(c3_elem);
         assertTrue("POST remove: !E.contains(elem)", !Helper.E.contains(c3_elem));

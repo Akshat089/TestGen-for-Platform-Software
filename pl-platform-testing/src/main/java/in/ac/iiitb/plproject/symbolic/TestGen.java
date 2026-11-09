@@ -321,7 +321,7 @@ public final class TestGen {
     public static final class Result {
         public enum Status {
             GENERATED, INCORRECT_SEQUENCE, SOLVER_ERROR, TIMEOUT, LIBRARY_EXCEPTION, BLACK_BOX_VIOLATION,
-            NO_PROGRESS, COMPILE_ERROR
+            NO_PROGRESS, COMPILE_ERROR, UNSUPPORTED
         }
 
         public final Status status;

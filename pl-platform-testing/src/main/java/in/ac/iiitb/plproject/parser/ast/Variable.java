@@ -6,8 +6,8 @@ package in.ac.iiitb.plproject.parser.ast;
  * <p>Earlier revisions of this class also classified a variable as
  * CLIENT_INPUT or SERVER_OUTPUT so a later call could receive an earlier
  * call's return value as an argument. The new design has no such threading —
- * every argument of every call is chosen by SPF (or, for a type SPF's solver
- * cannot handle, drawn from a small concrete pool) — so that classification is
+ * every argument of every call is chosen by SPF (a String as an integer id)
+ * — so that classification is
  * gone. A {@code Variable} is now just a name, a declared type, and whether
  * {@code null} is a legal value.
  */

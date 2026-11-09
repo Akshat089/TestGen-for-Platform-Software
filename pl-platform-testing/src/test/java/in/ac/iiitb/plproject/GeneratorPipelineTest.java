@@ -14,6 +14,7 @@ import in.ac.iiitb.plproject.parser.ast.TestStringAst;
 import in.ac.iiitb.plproject.spf.SpfConfig;
 import in.ac.iiitb.plproject.spf.SpfSymexEngine;
 import in.ac.iiitb.plproject.symbolic.Expr;
+import in.ac.iiitb.plproject.symbolic.IntegerModel;
 import in.ac.iiitb.plproject.symbolic.JUnitPrinter;
 import in.ac.iiitb.plproject.symbolic.Sigma;
 import in.ac.iiitb.plproject.symbolic.Solution;
@@ -33,7 +34,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -89,10 +92,9 @@ public class GeneratorPipelineTest {
     }
 
     /**
-     * The ATC with every input command filled by rewriteATC, with NO SPF: a
-     * pooled input takes its pool's first entry, a symbolic one
-     * {@link TypeSupport#unconstrainedLiteral}. Enough to drive the JUnit
-     * printer for every structural check in this file.
+     * The ATC with every input command filled by rewriteATC, with NO SPF: each
+     * input takes {@link TypeSupport#unconstrainedLiteral}. Enough to drive the
+     * JUnit printer for every structural check in this file.
      */
     private static List<Stmt> syntheticConcrete(TestPlan plan) {
         List<Stmt> atc = TestGen.getATC(plan);
@@ -100,9 +102,7 @@ public class GeneratorPipelineTest {
         for (Stmt s : atc) {
             if (!(s instanceof Stmt.Input)) continue;
             Stmt.Input in = (Stmt.Input) s;
-            ParamSlot p = in.slot;
-            values.add(p.isPooled() ? TypeSupport.literal(p.getType(), p.getPool().get(0))
-                                    : TypeSupport.unconstrainedLiteral(p.getType(), in.ordinal));
+            values.add(TypeSupport.unconstrainedLiteral(in.slot.getType(), in.ordinal));
         }
         return TestGen.rewriteATC(atc, values);
     }
@@ -204,7 +204,7 @@ public class GeneratorPipelineTest {
     }
 
     private static Stmt.Input input(String var) {
-        ParamSlot slot = new ParamSlot(0, var, "int", in.ac.iiitb.plproject.ir.ParamKind.SYMBOLIC, null, null, null);
+        ParamSlot slot = new ParamSlot(0, var, "int", in.ac.iiitb.plproject.ir.ParamKind.SYMBOLIC);
         return new Stmt.Input(var, "int", slot, null, 0);
     }
 
@@ -362,18 +362,174 @@ public class GeneratorPipelineTest {
         assertFalse(junitOf(plan).contains("reset()"));
     }
 
-    // ── which inputs are pooled, and against what ───────────────────────────
+    // ── the integer model: no pool, strings are ids, membership is equalities ──
 
     @Test
-    public void membershipPreconditionsMakeTheRealCollectionACandidateSource() throws IOException {
-        TestPlan plan = buildPlan("TaskQueue");
-        ParamSlot taskId = plan.getCallBlocks().get(1).getParams().get(0);
-        assertTrue(taskId.isPooled());
-        assertEquals(Collections.singletonList("Tasks"), taskId.getMembership());
+    public void noPoolCodeIsLeft() throws IOException {
+        List<Path> sources = new ArrayList<Path>();
+        try (java.util.stream.Stream<Path> files = Files.walk(Paths.get("src/main/java"))) {
+            files.filter(f -> f.toString().endsWith(".java")).forEach(sources::add);
+        }
+        assertFalse(sources.isEmpty());
+        Pattern pool = Pattern.compile("(?i)pool|\\bpick\\(|candidates");
+        for (Path f : sources) {
+            Matcher m = pool.matcher(read(f.toString()));
+            if (m.find()) fail(f + " still mentions the pool: " + m.group());
+        }
+        for (String[] lib : SUPPORTED) {
+            for (CallBlock block : buildPlan(lib[0]).getCallBlocks()) {
+                for (ParamSlot p : block.getParams()) {
+                    assertEquals(lib[1] + ": " + p, "String".equals(p.getType().trim()), p.isStringId());
+                    assertEquals(lib[1] + ": " + p, !"String".equals(p.getType().trim()), p.isSymbolic());
+                }
+            }
+        }
+    }
 
-        TestPlan tickets = buildPlan("TicketService");
-        ParamSlot numSeats = tickets.getCallBlocks().get(1).getParams().get(0);
-        assertTrue("a number never used as a key stays symbolic", numSeats.isSymbolic());
+    private static final Map<String, String> STATE = new LinkedHashMap<String, String>();
+    static {
+        STATE.put("Tasks", "Map<Integer,String>");
+        STATE.put("Holds", "Map<Integer,String>");
+        STATE.put("E", "Set<String>");
+        STATE.put("Adj", "Map<String,List<String>>");
+    }
+
+    private static Map<String, String> symbolic(String... nameType) {
+        Map<String, String> m = new LinkedHashMap<String, String>();
+        for (int i = 0; i < nameType.length; i += 2) m.put(nameType[i], nameType[i + 1]);
+        return m;
+    }
+
+    @Test
+    public void containsKeyOnASymbolicKeyIsAnEqualityDisjunctionOverTheConcreteKeys() throws Exception {
+        assertEquals("ok = memberKey(c1_taskId, Helper.Tasks);", IntegerModel.assume(
+                "Helper.Tasks.containsKey(c1_taskId)", symbolic("c1_taskId", "Integer"), STATE));
+        assertEquals("ok = !memberKey(c1_taskId, Helper.Tasks);", IntegerModel.assume(
+                "!Helper.Tasks.containsKey(c1_taskId)", symbolic("c1_taskId", "Integer"), STATE));
+        assertEquals("a concrete key is evaluated normally", "ok = Helper.Tasks.containsKey(c1_taskId);",
+                IntegerModel.assume("Helper.Tasks.containsKey(c1_taskId)", symbolic(), STATE));
+        assertEquals("ok = memberStr(c2_elem$id, c2_elem$nonNull, Helper.E);", IntegerModel.assume(
+                "Helper.E.contains(c2_elem)", symbolic("c2_elem", "String"), STATE));
+        assertEquals("ok = false; scan: for (Object k$0 : elements(Helper.Holds)) if (isKey(c2_seatHoldId, k$0)"
+                + " && isStr(c2_email$id, c2_email$nonNull, Helper.Holds.get(k$0))) { ok = true; break scan; }",
+                IntegerModel.assume("c2_email == Helper.Holds.get(c2_seatHoldId)",
+                        symbolic("c2_seatHoldId", "Integer", "c2_email", "String"), STATE));
+        assertEquals("ok = false; scan: for (Object k$0 : elements(Helper.Adj)) if (isStr(a$id, a$nonNull, k$0)"
+                + " && memberStr(b$id, b$nonNull, Helper.Adj.get(k$0))) { ok = true; break scan; }",
+                IntegerModel.assume("Helper.Adj.get(a).contains(b)", symbolic("a", "String", "b", "String"),
+                        STATE));
+
+        // the driver's own members, run on a concrete collection: one == per key, k == 1 || k == 2 || k == 5
+        Assume.assumeTrue("scripts/setup-spf.sh has not been run on this machine", spfInstalled());
+        Path dir = Files.createTempDirectory("membership");
+        Path lib = dir.resolve("Helper.java");
+        Files.write(lib, ("package " + TestPlan.GENERATED_PACKAGE + ";\n"
+                + "public class Helper {\n"
+                + "    public static java.util.Map<Integer, String> Tasks = new java.util.HashMap<Integer, String>();\n"
+                + "    static { Tasks.put(1, \"a\"); Tasks.put(2, \"b\"); Tasks.put(5, \"c\"); }\n"
+                + "}\n").getBytes(StandardCharsets.UTF_8));
+        String driver = "package " + TestPlan.GENERATED_PACKAGE + ";\n"
+                + "import gov.nasa.jpf.symbc.Debug;\nimport gov.nasa.jpf.vm.Verify;\n"
+                + "public class " + TestPlan.SYMBOLIC_CLASS + " {\n"
+                + "    public static void main(String[] args) {\n"
+                + "        boolean ok;\n"
+                + "        Integer k = new Integer(Debug.makeSymbolicInteger(\"k\"));\n"
+                + "        try { " + IntegerModel.assume("Helper.Tasks.containsKey(k)", symbolic("k", "Integer"),
+                        STATE) + " } catch (RuntimeException e) { ok = false; } Verify.ignoreIf(!ok);\n"
+                + "    }\n" + IntegerModel.RUNTIME + "}\n";
+        SpfSymexEngine.RawRun run = SpfSymexEngine.runDriver(driver, Collections.singletonList(lib.toString()),
+                Files.createTempDirectory("membership-run").toFile(), SpfConfig.DEFAULT);
+        assertNull(run.compileError, run.compileError);
+        assertNull(run.blackBox, run.blackBox);
+        String solved = null;
+        for (in.ac.iiitb.plproject.spf.PathVector p : run.events) {
+            if (p.getEvent() == in.ac.iiitb.plproject.spf.PathVector.Event.PATH && p.isSat()) solved = p.getVars().get("k");
+        }
+        assertNotNull("SPF solved the membership", solved);
+        assertTrue("k is one of the concrete keys, got " + solved, Arrays.asList("1", "2", "5").contains(solved));
+    }
+
+    @Test
+    public void aStringInputIsSolvedAsAnIntegerId() throws Exception {
+        TestPlan plan = stackPlan("push -> pop");
+        List<Stmt> atc = TestGen.getATC(plan);
+        Stmt.Input elem = null;
+        for (Stmt s : atc) if (s instanceof Stmt.Input) elem = (Stmt.Input) s;
+        assertTrue(elem.slot.isStringId());
+        final String[] driver = new String[1];
+        TestGen.symex(atc, TestGen.typeEnv(plan), prefix -> {
+            driver[0] = SymbolicDriverPrinter.print(plan, prefix, 0).source;
+            return Solution.values(Arrays.asList("\"s7\""), 0, null);
+        });
+        assertTrue(driver[0], driver[0].contains("int c0_elem$id = Debug.makeSymbolicInteger(\"c0_elem$id\");"
+                + " boolean c0_elem$nonNull = Debug.makeSymbolicBoolean(\"c0_elem$nonNull\");"));
+        assertTrue(driver[0].contains("try { ok = c0_elem$nonNull; }"));
+        assertEquals("ok = c0_elem$nonNull;", IntegerModel.assume("c0_elem != null", symbolic("c0_elem", "String"),
+                plan.getStateVars()));
+        assertEquals("ok = sameStr(x$id, x$nonNull, y$id, y$nonNull);", IntegerModel.assume("x.equals(y)",
+                symbolic("x", "String", "y", "String"), plan.getStateVars()));
+        assertEquals("ok = !isStr(x$id, x$nonNull, Helper.top);", IntegerModel.assume("x != Helper.top",
+                symbolic("x", "String"), plan.getStateVars()));
+
+        Map<String, String> vars = new LinkedHashMap<String, String>();
+        vars.put("c0_elem$id", "42");
+        vars.put("c0_elem$nonNull", "1");
+        assertEquals("solved id k is the literal \"s\" + k", "\"s42\"", valueOf(elem, vars));
+        vars.put("c0_elem$id", "-3");
+        assertEquals("\"s-3\"", valueOf(elem, vars));
+        vars.put("c0_elem$nonNull", "0");
+        assertEquals("null", valueOf(elem, vars));
+        assertEquals("a free id is small, distinct and non-zero", "\"s7\"",
+                valueOf(elem, new LinkedHashMap<String, String>()));
+    }
+
+    private static String valueOf(Stmt.Input input, Map<String, String> vars) throws Exception {
+        java.lang.reflect.Method m = SpfSymexEngine.class.getDeclaredMethod("valueOf", Stmt.Input.class,
+                in.ac.iiitb.plproject.spf.PathVector.class);
+        m.setAccessible(true);
+        return (String) m.invoke(null, input, in.ac.iiitb.plproject.spf.PathVector.path(1, true, vars));
+    }
+
+    @Test
+    public void aStringOperationStopsGenerationWithAnUnsupportedError() {
+        String specText = "state { int n; }\n"
+                + "spec greet {\n"
+                + "    signature: void greet(String name);\n"
+                + "    requires:  name.length() > 0;\n"
+                + "    ensures:   n == \\old(n) + 1;\n"
+                + "}\n";
+        JmlSpecAst spec = SpecToAstConverter.convertSpecToAst(specText, "greet.spec");
+        TestPlan plan = IrBuilder.build(spec, TestStringParser.parse("greet"), "greet.spec", "<seq>");
+        List<Stmt> atc = TestGen.getATC(plan);
+        TestGen.Result result = TestGen.genCTC(atc, Collections.<String>emptyList(), TestGen.typeEnv(plan),
+                prefix -> {
+                    try {
+                        SymbolicDriverPrinter.print(plan, prefix, 0);
+                        return Solution.values(Collections.<String>emptyList(), 0, null);
+                    } catch (IntegerModel.Unsupported e) {
+                        return Solution.failure(Solution.Kind.UNSUPPORTED, e.getMessage(), 0, null);
+                    }
+                });
+        assertEquals(TestGen.Result.Status.UNSUPPORTED, result.status);
+        assertEquals("UNSUPPORTED: unsupported string operation length in c0_name.length() > 0;"
+                + " needs a string solver", result.detail);
+        for (String op : new String[] { "charAt(0) == 'a'", "substring(1) == null", "startsWith(\"a\")",
+                                        "concat(\"a\") != null", "indexOf(\"a\") > 0" }) {
+            try {
+                IntegerModel.assume("x." + op, symbolic("x", "String"), plan.getStateVars());
+                fail(op + " must be rejected");
+            } catch (IntegerModel.Unsupported e) {
+                String name = op.substring(0, op.indexOf('('));
+                assertEquals("unsupported string operation " + name + " in x." + op + "; needs a string solver",
+                        e.getMessage());
+            }
+        }
+        try {
+            IntegerModel.assume("Helper.L.indexOf(x) >= 0", symbolic("x", "int"), Collections.singletonMap("L", "List<Integer>"));
+            fail("a collection call that is not membership cannot be expanded");
+        } catch (IntegerModel.Unsupported e) {
+            assertTrue(e.getMessage(), e.getMessage().startsWith("unsupported membership clause Helper.L.indexOf(x)"));
+        }
     }
 
     @Test
@@ -389,7 +545,8 @@ public class GeneratorPipelineTest {
         assertTrue(driver.contains("String c0_elem = \"s1\";"));
         assertTrue(driver.contains("Helper.push(c0_elem);"));
         assertTrue(driver.contains("String c1_result = Helper.pop();"));
-        assertTrue(driver.contains("String c2_elem = (String) pick(\"c2_elem\""));
+        assertTrue(driver.contains("int c2_elem$id = Debug.makeSymbolicInteger(\"c2_elem$id\");"));
+        assertFalse("no String object exists for a symbolic string", driver.contains("String c2_elem"));
         assertFalse("the program ends before the not-ready call", driver.contains("Helper.push(c2_elem)"));
         assertTrue(driver.contains("Verify.ignoreIf(!ok);"));
     }
@@ -421,7 +578,6 @@ public class GeneratorPipelineTest {
             String driver = "package " + TestPlan.GENERATED_PACKAGE + ";\n"
                     + "import gov.nasa.jpf.symbc.Debug;\n"
                     + "public class " + TestPlan.SYMBOLIC_CLASS + " {\n"
-                    + "    static String picks = \"\";\n"
                     + "    public static void main(String[] args) { " + c[1] + " }\n"
                     + "}\n";
             SpfSymexEngine.RawRun run = SpfSymexEngine.runDriver(driver, libs,
@@ -457,6 +613,21 @@ public class GeneratorPipelineTest {
     }
 
     @Test
+    public void idLibrariesStillGenerateTestsThatPassOnTheCorrectLibrary() throws Exception {
+        Assume.assumeTrue("scripts/setup-spf.sh has not been run on this machine", spfInstalled());
+        for (LibraryRegistry.Entry base : Arrays.asList(LibraryRegistry.TASKQUEUE, LibraryRegistry.TICKETSERVICE,
+                                                        LibraryRegistry.ORDERSERVICE)) {
+            Path outDir = Files.createTempDirectory(base.key + "-out");
+            LibraryRegistry.Entry entry = LibraryRegistry.variantOf(base, base.librarySourcePaths, base.testsPath,
+                    outDir.toString());
+            GenatcMain.LibraryOutcome outcome = GenatcMain.runOne(entry);
+            assertEquals(base.key + ": " + outcome.detail, "GENERATED", outcome.status);
+            assertEquals(base.key, 1, outcome.testsGenerated);
+            assertTrue(base.key + ": " + outcome.junitFailures, outcome.junitFailures.isEmpty());
+        }
+    }
+
+    @Test
     public void genCtcTakesOneRoundPerCallWithArguments() throws Exception {
         Assume.assumeTrue("scripts/setup-spf.sh has not been run on this machine", spfInstalled());
         TestPlan plan = stackPlan("push -> push -> pop");
@@ -470,10 +641,11 @@ public class GeneratorPipelineTest {
         assertEquals("the first symex call, then one per round", 3, result.symexRuns());
         assertFalse("the concrete test case has no input command", TestGen.isAbstract(result.concrete));
         for (TestGen.Round r : result.rounds) assertEquals(Solution.Kind.VALUES, r.solution.kind);
-        assertEquals(Arrays.asList("\"s1\""), result.rounds.get(0).solution.values);
-        assertEquals(Arrays.asList("\"s2\""), result.rounds.get(1).solution.values);
+        assertEquals("a free string id: small and non-zero", Arrays.asList("\"s7\""),
+                result.rounds.get(0).solution.values);
+        assertEquals("distinct from the first", Arrays.asList("\"s9\""), result.rounds.get(1).solution.values);
         assertEquals(Collections.<String>emptyList(), result.rounds.get(2).solution.values);
-        assertTrue(JUnitPrinter.print(plan, result.concrete).contains("String c1_elem = \"s2\";"));
+        assertTrue(JUnitPrinter.print(plan, result.concrete).contains("String c1_elem = \"s9\";"));
     }
 
     @Test

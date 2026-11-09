@@ -106,7 +106,7 @@ public final class ClauseText {
      *
      * @param text        the clause's original substring (one conjunct)
      * @param paramSlots  declared parameter name -&gt; printable slot reference
-     *                    (symbolic variable name, or pool-resolved literal access)
+     *                    (the slot's variable name)
      * @param stateVars   declared state variable names for this spec
      * @param resultAlias the name {@code \result} was bound to in this
      *                    postcondition ({@code \result == name}), or null

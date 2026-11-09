@@ -99,11 +99,11 @@ public final class LibraryRegistry {
             "StringSet.spec", "StringSet.tests", "set/Helper.java");
 
     public static final Entry HASHMAP = supported("hashmap",
-            "HashMap<String,Integer> — nullable result, key is a pooled String, no propagation needed",
+            "HashMap<String,Integer> — nullable result, key is a String id, no propagation needed",
             "HashMapLib.spec", "HashMapLib.tests", "hashmap/Helper.java");
 
     public static final Entry BST = supported("bst",
-            "BinarySearchTree — int key pooled (Set<Integer> lookup breaks the solver)",
+            "BinarySearchTree — int key, Set<Integer> membership expanded over the concrete keys",
             "BinarySearchTree.spec", "BinarySearchTree.tests", "bst/Helper.java");
 
     public static final Entry GRAPH = supported("graph",
@@ -111,7 +111,7 @@ public final class LibraryRegistry {
             "Graph.spec", "Graph.tests", "graph/Helper.java");
 
     public static final Entry LRUCACHE = supported("lrucache",
-            "LruCache — restore's precondition only needs an unused pooled key, not literally the evicted one",
+            "LruCache — restore's precondition only needs a key not in C, not literally the evicted one",
             "LruCache.spec", "LruCache.tests", "lrucache/Helper.java");
 
     public static final Entry TASKQUEUE = supported("taskqueue",

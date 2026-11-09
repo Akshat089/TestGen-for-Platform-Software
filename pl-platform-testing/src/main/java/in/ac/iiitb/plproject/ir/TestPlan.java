@@ -45,15 +45,4 @@ public class TestPlan {
     public boolean isHasState() { return hasState; }
     public Map<String, String> getStateVars() { return stateVars; }
     public List<CallBlock> getCallBlocks() { return callBlocks; }
-
-    /** Every pooled parameter across the whole plan. */
-    public List<ParamSlot> pooledParams() {
-        List<ParamSlot> out = new ArrayList<ParamSlot>();
-        for (CallBlock block : callBlocks) {
-            for (ParamSlot p : block.getParams()) {
-                if (p.isPooled()) out.add(p);
-            }
-        }
-        return out;
-    }
 }

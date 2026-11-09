@@ -12,27 +12,21 @@ import java.util.Set;
  * <p>Every parameter type across the fourteen libraries' {@code .spec} files
  * is a numeric/boolean primitive or wrapper, or {@code String}. {@code Debug}
  * has no symbolic factory for {@code float} at all, so a float parameter would
- * have neither a symbolic nor a concrete handling and is rejected outright by
- * the input checks (rule 13f) rather than silently approximated.
+ * have no symbolic handling and is rejected outright by the input checks
+ * (rule 13f) rather than silently approximated.
  *
- * <p>{@code String} is never made symbolic here: jpf-symbc's string decision
- * procedure is a separate, fragile configuration this project does not enable,
- * and (independent of the type) ANY value — String or otherwise — that a spec
- * uses as the key/element of a {@code Set}/{@code Map} {@code contains}/
- * {@code containsKey}/{@code get} lookup breaks both z3 and choco the same
- * way: confirmed by direct experiment, {@code java.util.HashMap}'s bit-spread
- * in {@code hashCode()} puts a bitwise shift into the path condition, and
- * neither solver accepts it ("Choco does not support bitwise SHIFT" /
- * "Error Z3"). {@link in.ac.iiitb.plproject.ir.IrBuilder} asks THIS class only
- * the type-level question; it decides the hash-key case itself by scanning
- * the spec for that usage.
+ * <p>{@code String} is never a symbolic string: jpf-symbc's string decision
+ * procedure is a separate, fragile configuration this project does not enable.
+ * A String input is an integer id plus a null flag instead
+ * ({@link IntegerModel}), and a membership test on a symbolic key — String or
+ * number — is expanded into equalities over the collection's concrete
+ * contents, because running {@code java.util.HashMap}'s {@code hashCode()}
+ * bit-spread on a symbolic value puts a shift into the path condition that
+ * neither solver accepts ("Choco does not support bitwise SHIFT" / "Error Z3").
  */
 public final class TypeSupport {
 
     private TypeSupport() {}
-
-    /** How many distinct literals a pooled parameter's shared pool holds. */
-    public static final int POOL_SIZE = 3;
 
     private static final Map<String, String> SYMBOLIC_FACTORY = new HashMap<String, String>();
     static {
@@ -68,14 +62,9 @@ public final class TypeSupport {
         return isNumericOrBooleanType(type);
     }
 
-    /** True for a type this generator pools instead of solving (currently: String). */
-    public static boolean isPooledType(String type) {
-        return "String".equals(trim(type));
-    }
-
-    /** True for a type with neither symbolic nor concrete handling (rule 13f). */
+    /** True for a type with no symbolic handling (rule 13f): neither a number/boolean nor a String id. */
     public static boolean isUnsupportedType(String type) {
-        return !isSymbolicallySolvable(type) && !isPooledType(type);
+        return !isSymbolicallySolvable(type) && !IntegerModel.isString(type);
     }
 
     public static boolean isBoxed(String type) {
@@ -157,7 +146,7 @@ public final class TypeSupport {
             case "char": case "Character":
                 return "'" + (char) ('a' + (ordinal % 26)) + "'";
             case "String":
-                return "\"u" + (ordinal + 1) + "\"";
+                return literal(t, "s" + (7 + 2 * ordinal));
             default:
                 return String.valueOf(7 + 2 * ordinal);
         }
@@ -167,7 +156,7 @@ public final class TypeSupport {
         return type == null ? null : type.trim();
     }
 
-    /** Formats a raw pool value ({@code "s1"}, {@code "101"}) as Java source of {@code type}. */
+    /** Formats a raw value ({@code s7}, {@code 101}) as Java source of {@code type}. */
     public static String literal(String type, String raw) {
         if ("String".equals(trim(type))) {
             return "\"" + raw.replace("\\", "\\\\").replace("\"", "\\\"") + "\"";
@@ -210,10 +199,5 @@ public final class TypeSupport {
         } catch (NumberFormatException e) {
             return (long) Double.parseDouble(v);
         }
-    }
-
-    /** The array element type to declare a shared literal pool with, for {@code type}. */
-    public static String poolArrayElementType(String type) {
-        return "String".equals(trim(type)) ? "String" : trim(type);
     }
 }

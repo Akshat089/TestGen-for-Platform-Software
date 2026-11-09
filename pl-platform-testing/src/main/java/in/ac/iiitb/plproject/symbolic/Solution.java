@@ -23,7 +23,9 @@ public final class Solution {
         /** A symbolic value reached the library (the black-box guard fired). */
         BLACK_BOX_VIOLATION,
         /** The printed driver did not compile — a generator bug or a state field the library lacks. */
-        COMPILE_ERROR
+        COMPILE_ERROR,
+        /** An assume the integer model cannot express (a string operation, a non-membership collection call). */
+        UNSUPPORTED
     }
 
     public final Kind kind;
@@ -71,6 +73,7 @@ public final class Solution {
             case TIMEOUT: return "TIMEOUT: " + detail;
             case LIBRARY_EXCEPTION: return "LIBRARY EXCEPTION: " + detail;
             case BLACK_BOX_VIOLATION: return "BLACK-BOX VIOLATION: " + detail;
+            case UNSUPPORTED: return "UNSUPPORTED: " + detail;
             default: return "DRIVER DID NOT COMPILE: " + detail;
         }
     }

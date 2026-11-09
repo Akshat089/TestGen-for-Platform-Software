@@ -17,7 +17,7 @@ public class GeneratedATCsTest {
 
         // call 0: insert
         int old0_size = Helper.size;
-        int c0_key = 101;
+        int c0_key = 7;
         assertTrue("PRE insert: !Keys.contains(key)", !Helper.Keys.contains(c0_key));
         Helper.insert(c0_key);
         assertTrue("POST insert: Keys.contains(key)", Helper.Keys.contains(c0_key));
@@ -25,7 +25,7 @@ public class GeneratedATCsTest {
 
         // call 1: insert
         int old1_size = Helper.size;
-        int c1_key = 103;
+        int c1_key = 0;
         assertTrue("PRE insert: !Keys.contains(key)", !Helper.Keys.contains(c1_key));
         Helper.insert(c1_key);
         assertTrue("POST insert: Keys.contains(key)", Helper.Keys.contains(c1_key));
@@ -33,7 +33,7 @@ public class GeneratedATCsTest {
 
         // call 2: insert
         int old2_size = Helper.size;
-        int c2_key = 105;
+        int c2_key = -1;
         assertTrue("PRE insert: !Keys.contains(key)", !Helper.Keys.contains(c2_key));
         Helper.insert(c2_key);
         assertTrue("POST insert: Keys.contains(key)", Helper.Keys.contains(c2_key));
@@ -41,7 +41,7 @@ public class GeneratedATCsTest {
 
         // call 3: contains
         int old3_size = Helper.size;
-        int c3_key = 101;
+        int c3_key = 13;
         assertTrue("PRE contains: size > 0", Helper.size > 0);
         boolean c3_result = Helper.contains(c3_key);
         assertTrue("POST contains: found == Keys.contains(key)", c3_result == Helper.Keys.contains(c3_key));
@@ -56,7 +56,7 @@ public class GeneratedATCsTest {
 
         // call 5: delete
         int old5_size = Helper.size;
-        int c5_key = 103;
+        int c5_key = -1;
         assertTrue("PRE delete: Keys.contains(key)", Helper.Keys.contains(c5_key));
         Helper.delete(c5_key);
         assertTrue("POST delete: !Keys.contains(key)", !Helper.Keys.contains(c5_key));

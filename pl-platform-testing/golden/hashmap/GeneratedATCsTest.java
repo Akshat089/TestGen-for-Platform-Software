@@ -16,7 +16,7 @@ public class GeneratedATCsTest {
         Helper.reset();
 
         // call 0: put
-        String c0_key = "s1";
+        String c0_key = "s7";
         Integer c0_value = 9;
         assertTrue("PRE put: key != null", c0_key != null);
         assertTrue("PRE put: value != null", c0_value != null);
@@ -24,7 +24,7 @@ public class GeneratedATCsTest {
         assertTrue("POST put: M.get(key) == value", Helper.M.get(c0_key) == c0_value);
 
         // call 1: put
-        String c1_key = "s3";
+        String c1_key = "s11";
         Integer c1_value = 13;
         assertTrue("PRE put: key != null", c1_key != null);
         assertTrue("PRE put: value != null", c1_value != null);
@@ -33,7 +33,7 @@ public class GeneratedATCsTest {
 
         // call 2: getOldValue
         int old2_size = Helper.size;
-        String c2_key = "s3";
+        String c2_key = "s11";
         assertTrue("PRE getOldValue: M.containsKey(key)", Helper.M.containsKey(c2_key));
         Integer c2_result = Helper.getOldValue(c2_key);
         assertTrue("POST getOldValue: curVal == M.get(key)", c2_result == Helper.M.get(c2_key));
@@ -41,7 +41,7 @@ public class GeneratedATCsTest {
 
         // call 3: remove
         int old3_size = Helper.size;
-        String c3_key = "s3";
+        String c3_key = "s11";
         assertTrue("PRE remove: M.containsKey(key)", Helper.M.containsKey(c3_key));
         Helper.remove(c3_key);
         assertTrue("POST remove: !M.containsKey(key)", !Helper.M.containsKey(c3_key));

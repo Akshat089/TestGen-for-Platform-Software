@@ -1,6 +1,7 @@
 package in.ac.iiitb.plproject.spf;
 
 import in.ac.iiitb.plproject.ir.TestPlan;
+import in.ac.iiitb.plproject.symbolic.IntegerModel;
 import in.ac.iiitb.plproject.symbolic.Solution;
 import in.ac.iiitb.plproject.symbolic.Stmt;
 import in.ac.iiitb.plproject.symbolic.SymbolicDriverPrinter;
@@ -45,7 +46,12 @@ public class SpfSymexEngine implements SymexEngine {
 
     @Override
     public Solution solve(TestGen.Prefix prefix) {
-        SymbolicDriverPrinter.Printed printed = SymbolicDriverPrinter.print(plan, prefix, round);
+        SymbolicDriverPrinter.Printed printed;
+        try {
+            printed = SymbolicDriverPrinter.print(plan, prefix, round);
+        } catch (IntegerModel.Unsupported e) {
+            return Solution.failure(Solution.Kind.UNSUPPORTED, e.getMessage(), 0, null);
+        }
         File dir = new File(workDir, "round" + round);
         round++;
         RawRun run;
@@ -83,7 +89,7 @@ public class SpfSymexEngine implements SymexEngine {
                     String value = valueOf(in, p);
                     if (value == null) {
                         return Solution.failure(Solution.Kind.SOLVER_ERROR,
-                                "the solved path has no pick for " + in.var, run.millis, program);
+                                "the solved path has no value for " + in.var, run.millis, program);
                     }
                     values.add(value);
                 }
@@ -126,14 +132,20 @@ public class SpfSymexEngine implements SymexEngine {
     }
 
     /**
-     * The value of one input on the solved path: a pooled input's pick, or the
-     * solver's value for a symbolic one. An input the path condition never
-     * mentions gets a small, distinct, non-zero literal.
+     * The value of one input on the solved path: the solver's value. A String
+     * is its null flag and id, written as {@code null} or {@code "s<id>"}. An input (or a string's id) the
+     * path condition never mentions gets a small, distinct, non-zero literal; a
+     * null flag it never mentions means not null.
      */
-    private static String valueOf(Stmt.Input in, PathVector path) {
-        if (in.slot.isPooled()) {
-            String raw = path.getPicks().get(in.var);
-            return raw == null ? null : TypeSupport.literal(in.type, raw);
+    static String valueOf(Stmt.Input in, PathVector path) {
+        if (IntegerModel.isString(in.type)) {
+            String nonNull = path.getVars().get(in.var + IntegerModel.NON_NULL);
+            boolean isNull = nonNull != null && "false".equals(TypeSupport.solverLiteral("boolean", nonNull));
+            String id = path.getVars().get(in.var + IntegerModel.ID);
+            if (isNull) return "null";
+            if (id == null) return TypeSupport.unconstrainedLiteral(in.type, in.ordinal);
+            return IntegerModel.stringLiteral(true, Long.parseLong(TypeSupport.solverLiteral("long", id)
+                    .replace("L", "")));
         }
         String raw = path.getVars().get(in.var);
         if (raw == null) return TypeSupport.unconstrainedLiteral(in.type, in.ordinal);

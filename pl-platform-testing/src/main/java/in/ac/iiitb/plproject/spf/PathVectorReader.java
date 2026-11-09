@@ -46,15 +46,7 @@ public final class PathVectorReader {
                     vars.put(e.getKey(), String.valueOf(e.getValue()));
                 }
             }
-            @SuppressWarnings("unchecked")
-            Map<String, Object> rawPicks = (Map<String, Object>) obj.get("picks");
-            Map<String, String> picks = new LinkedHashMap<String, String>();
-            if (rawPicks != null) {
-                for (Map.Entry<String, Object> e : rawPicks.entrySet()) {
-                    picks.put(e.getKey(), String.valueOf(e.getValue()));
-                }
-            }
-            return PathVector.path(pathId, sat, vars, picks);
+            return PathVector.path(pathId, sat, vars);
         } else if ("searchConstraintHit".equals(event)) {
             return PathVector.constraintHit((String) obj.get("detail"));
         } else if ("error".equals(event)) {

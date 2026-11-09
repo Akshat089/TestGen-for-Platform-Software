@@ -17,7 +17,7 @@ public class GeneratedATCsTest {
 
         // call 0: addVertex
         int old0_edgeCount = Helper.edgeCount;
-        String c0_name = "s1";
+        String c0_name = "s7";
         assertTrue("PRE addVertex: name != null", c0_name != null);
         Helper.addVertex(c0_name);
         assertTrue("POST addVertex: V.contains(name)", Helper.V.contains(c0_name));
@@ -25,7 +25,7 @@ public class GeneratedATCsTest {
 
         // call 1: addVertex
         int old1_edgeCount = Helper.edgeCount;
-        String c1_name = "s2";
+        String c1_name = "s9";
         assertTrue("PRE addVertex: name != null", c1_name != null);
         Helper.addVertex(c1_name);
         assertTrue("POST addVertex: V.contains(name)", Helper.V.contains(c1_name));
@@ -33,8 +33,8 @@ public class GeneratedATCsTest {
 
         // call 2: addEdge
         int old2_edgeCount = Helper.edgeCount;
-        String c2_from = "s1";
-        String c2_to = "s1";
+        String c2_from = "s7";
+        String c2_to = "s7";
         assertTrue("PRE addEdge: V.contains(from)", Helper.V.contains(c2_from));
         assertTrue("PRE addEdge: V.contains(to)", Helper.V.contains(c2_to));
         Helper.addEdge(c2_from, c2_to);
@@ -44,7 +44,7 @@ public class GeneratedATCsTest {
 
         // call 3: degree
         int old3_edgeCount = Helper.edgeCount;
-        String c3_name = "s2";
+        String c3_name = "s7";
         assertTrue("PRE degree: V.contains(name)", Helper.V.contains(c3_name));
         int c3_result = Helper.degree(c3_name);
         assertTrue("POST degree: vertexDegree == Adj.get(name).size()", c3_result == Helper.Adj.get(c3_name).size());
@@ -53,8 +53,8 @@ public class GeneratedATCsTest {
 
         // call 4: hasEdge
         int old4_edgeCount = Helper.edgeCount;
-        String c4_from = "s1";
-        String c4_to = "s1";
+        String c4_from = "s7";
+        String c4_to = "s7";
         assertTrue("PRE hasEdge: V.contains(from)", Helper.V.contains(c4_from));
         assertTrue("PRE hasEdge: V.contains(to)", Helper.V.contains(c4_to));
         boolean c4_result = Helper.hasEdge(c4_from, c4_to);
