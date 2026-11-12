@@ -1,11 +1,11 @@
-# generated mutants — hashmap (phases 2+3 13s, library total 1674s)
+# generated mutants — hashmap (phases 2+3 12s, library total 1597s)
 # id	status	kill_kind	operator	method	file	killed-by-family	family_kill_kind	detail
 HASHMAP_GEN_SDL_1	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/hashmap/HASHMAP_GEN_SDL_1/Helper.java:32: error: cannot find symbol
 HASHMAP_GEN_SEI_2	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/hashmap/HASHMAP_GEN_SEI_2/Helper.java:20: error: <identifier> expected
 HASHMAP_GEN_CRP_3	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
 HASHMAP_GEN_CRP_4	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
 HASHMAP_GEN_ARP_5	INVALID	-	argument-replacement	put	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/hashmap/HASHMAP_GEN_ARP_5/Helper.java:32: error: incompatible types: Integer cannot be converted to String
-HASHMAP_GEN_MCR_6	SURVIVED	-	method-call-replacement	put	Helper.java	GeneratedATCsTest_hashmap_014	POST	the test passes
+HASHMAP_GEN_MCR_6	SURVIVED	-	method-call-replacement	put	Helper.java	-	-	the test passes
 HASHMAP_GEN_AOI_7	KILLED	POST	arithmetic-operator-insertion	put	Helper.java	-	-	killed by POST: POST remove: size == \old(size) - 1
 HASHMAP_GEN_AOI_8	KILLED	POST	arithmetic-operator-insertion	put	Helper.java	-	-	killed by POST: POST remove: size == \old(size) - 1
 HASHMAP_GEN_UOI_9	KILLED	POST	unary-operator-insertion	put	Helper.java	-	-	killed by POST: POST remove: size == \old(size) - 1

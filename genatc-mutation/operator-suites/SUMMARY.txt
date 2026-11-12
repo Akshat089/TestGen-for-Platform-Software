@@ -2,56 +2,56 @@
 
 PHASE 1 — generated test strings
 library      family  passed  incorrect  failed   other  seconds
-stack           260      78        158      24       0      983
-queue           260      95        108      57       0     1038
-mathlib         260     260          0       0       0     2391
-arraylib        260     260          0       0       0     2169
-linkedlist      260     133        126       1       0     1546
-heap            260     114        127      19       0     1186
-set             260     135        125       0       0     1988
-hashmap         260      89        171       0       0     1645
-bst             260     110        149       1       0     1696
-graph           260     143        117       0       0     1972
-lrucache        260     189         71       0       0     2258
-taskqueue       260      66        194       0       0     1132
-ticketservice    260     118        142       0       0     1100
-orderservice    260      43        217       0       0      934
-ALL            3640    1833       1705     102       0
+stack           260      78        158      24       0      932
+queue           260      95        108      57       0      997
+mathlib         260     260          0       0       0     2229
+arraylib        260     260          0       0       0     2050
+linkedlist      260     133        126       1       0     1515
+heap            260     114        127      19       0     1169
+set             260     136        124       0       0     1847
+hashmap         260      94        166       0       0     1559
+bst             260     129        130       1       0     1637
+graph           260     143        117       0       0     1828
+lrucache        260     189         71       0       0     2085
+taskqueue       260      66        194       0       0     1319
+ticketservice    260     118        142       0       0     1004
+orderservice    260      43        217       0       0      948
+ALL            3640    1858       1680     102       0
 
 PHASE 2 and 3 — generated mutants, alone and against the family
 library       mutants   killed  survived  invalid    alone by family  with family  seconds
-stack              51       37        11        3    77.1%         6        89.6%       21
-queue              49       40         6        3    87.0%         1        89.1%       24
-mathlib           156       88        68        0    56.4%         4        59.0%      104
-arraylib           92       36        52        4    40.9%         3        44.3%       47
-linkedlist         84       20        42       22    32.3%         5        40.3%       51
-heap              215       92       120        3    43.4%        40        62.3%      163
-set                27       13         8        6    61.9%         2        71.4%        9
-hashmap            33       20         8        5    71.4%         1        75.0%       13
-bst               130       41        57       32    41.8%        27        69.4%       58
-graph              70       38        19       13    66.7%        10        84.2%       25
-lrucache           68       38        20       10    65.5%         8        79.3%       16
-taskqueue          50       28        16        6    63.6%         4        72.7%       17
-ticketservice      224      110        87       27    55.8%         6        58.9%       75
-orderservice      185      110        47       28    70.1%         9        75.8%       39
-ALL              1434      711       561      162    55.9%       126        65.8%
+stack              51       37        11        3    77.1%         6        89.6%       26
+queue              49       40         6        3    87.0%         1        89.1%       25
+mathlib           156       88        68        0    56.4%         4        59.0%       97
+arraylib           92       36        52        4    40.9%         3        44.3%       35
+linkedlist         84       20        42       22    32.3%         5        40.3%       45
+heap              215       92       120        3    43.4%        40        62.3%      164
+set                27       13         8        6    61.9%         0        61.9%        9
+hashmap            33       20         8        5    71.4%         0        71.4%       12
+bst               130       40        58       32    40.8%         2        42.9%       55
+graph              70       41        16       13    71.9%         1        73.7%       23
+lrucache           68       32        26       10    55.2%        12        75.9%       15
+taskqueue          50       28        16        6    63.6%         4        72.7%       26
+ticketservice      224      110        87       27    55.8%         6        58.9%       74
+orderservice      185      110        47       28    70.1%         9        75.8%       51
+ALL              1434      707       565      162    55.6%        93        62.9%
 
 BY OPERATOR
 operator                           abbr   mutants   killed  survived  invalid    alone with family
 arithmetic-operator-replacement    AOR        128       77        45        6    63.1%       68.0%
 arithmetic-operator-insertion      AOI         60       43        17        0    71.7%       75.0%
-relational-operator-replacement    ROR        155       43        72       40    37.4%       59.1%
+relational-operator-replacement    ROR        155       43        72       40    37.4%       49.6%
 conditional-operator-replacement   COR          3        3         0        0   100.0%      100.0%
-conditional-operator-insertion     COI         24       12        11        1    52.2%       73.9%
-unary-operator-insertion           UOI         56       41        15        0    73.2%       80.4%
+conditional-operator-insertion     COI         24       12        11        1    52.2%       65.2%
+unary-operator-insertion           UOI         56       42        14        0    75.0%       80.4%
 absolute-value-insertion           ABS         53       39        14        0    73.6%       79.2%
 constant-replacement               CRP        194       71       121        2    37.0%       41.7%
-condition-to-constant              CTC         32       14        18        0    43.8%       68.8%
+condition-to-constant              CTC         32       14        18        0    43.8%       56.3%
 loop-bound-replacement             LBR          8        2         6        0    25.0%       25.0%
-return-value-replacement           RVR         92       58        34        0    63.0%       73.9%
-statement-deletion                 SDL        136       67        37       32    64.4%       79.8%
+return-value-replacement           RVR         92       57        35        0    62.0%       69.6%
+statement-deletion                 SDL        136       68        36       32    65.4%       74.0%
 statement-replacement              STR         36       11        25        0    30.6%       30.6%
-argument-replacement               ARP        114       53        26       35    67.1%       82.3%
-method-call-replacement            MCR         75       49        24        2    67.1%       80.8%
-side-effect-insertion              SEI        165       76        59       30    56.3%       65.9%
+argument-replacement               ARP        114       53        26       35    67.1%       78.5%
+method-call-replacement            MCR         75       49        24        2    67.1%       74.0%
+side-effect-insertion              SEI        165       71        64       30    52.6%       64.4%
 variable-replacement               VRO        103       52        37       14    58.4%       61.8%

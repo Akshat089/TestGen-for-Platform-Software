@@ -1,3 +1,0 @@
-test QueueGenerated66 {
-    sequence: dequeue -> front -> dequeue -> isEmpty -> front -> enqueue;
-}

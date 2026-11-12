@@ -1,4 +1,4 @@
-# generated mutants — queue (phases 2+3 24s, library total 1074s)
+# generated mutants — queue (phases 2+3 25s, library total 1044s)
 # id	status	kill_kind	operator	method	file	killed-by-family	family_kill_kind	detail
 QUEUE_GEN_SDL_1	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/queue/QUEUE_GEN_SDL_1/Helper.java:32: error: cannot find symbol
 QUEUE_GEN_SEI_2	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/queue/QUEUE_GEN_SEI_2/Helper.java:26: error: <identifier> expected

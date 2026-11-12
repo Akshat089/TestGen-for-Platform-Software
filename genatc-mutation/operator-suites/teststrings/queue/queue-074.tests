@@ -1,3 +1,0 @@
-test QueueGenerated74 {
-    sequence: front -> front;
-}

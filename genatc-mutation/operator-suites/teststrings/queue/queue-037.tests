@@ -1,3 +1,0 @@
-test QueueGenerated37 {
-    sequence: enqueue -> enqueue;
-}

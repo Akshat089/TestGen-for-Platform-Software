@@ -1,4 +1,4 @@
-# generated mutants — mathlib (phases 2+3 104s, library total 2510s)
+# generated mutants — mathlib (phases 2+3 97s, library total 2351s)
 # id	status	kill_kind	operator	method	file	killed-by-family	family_kill_kind	detail
 MATHLIB_GEN_CRP_1	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
 MATHLIB_GEN_CRP_2	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes

@@ -1,3 +1,0 @@
-test QueueGenerated18 {
-    sequence: enqueue -> front -> enqueue -> dequeue -> front -> front;
-}

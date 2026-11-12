@@ -1,4 +1,4 @@
-# generated mutants — ticketservice (phases 2+3 75s, library total 1181s)
+# generated mutants — ticketservice (phases 2+3 74s, library total 1086s)
 # id	status	kill_kind	operator	method	file	killed-by-family	family_kill_kind	detail
 TICKETSERVICE_GEN_CRP_1	KILLED	PRE	constant-replacement	-	Helper.java	-	-	killed by PRE: PRE findAndHoldSeats: available >= numSeats
 TICKETSERVICE_GEN_CRP_2	SURVIVED	-	constant-replacement	-	Helper.java	GeneratedATCsTest_ticketservice_043	PRE	the test passes

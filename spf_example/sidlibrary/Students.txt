@@ -1,3 +1,0 @@
-ram,123,UG
-QWER,TYU,UG
-QWER,TYU,UG

@@ -1,4 +1,4 @@
-# generated mutants — linkedlist (phases 2+3 51s, library total 1610s)
+# generated mutants — linkedlist (phases 2+3 45s, library total 1583s)
 # id	status	kill_kind	operator	method	file	killed-by-family	family_kill_kind	detail
 LINKEDLIST_GEN_SDL_1	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_SDL_1/Helper.java:32: error: cannot find symbol
 LINKEDLIST_GEN_SEI_2	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/linkedlist/LINKEDLIST_GEN_SEI_2/Helper.java:30: error: <identifier> expected

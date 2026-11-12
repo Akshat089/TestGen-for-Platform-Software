@@ -1,4 +1,4 @@
-# generated mutants — taskqueue (phases 2+3 17s, library total 1156s)
+# generated mutants — taskqueue (phases 2+3 26s, library total 1369s)
 # id	status	kill_kind	operator	method	file	killed-by-family	family_kill_kind	detail
 TASKQUEUE_GEN_SDL_1	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/taskqueue/TASKQUEUE_GEN_SDL_1/Helper.java:38: error: cannot find symbol
 TASKQUEUE_GEN_SEI_2	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/taskqueue/TASKQUEUE_GEN_SEI_2/Helper.java:25: error: <identifier> expected

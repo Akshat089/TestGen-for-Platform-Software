@@ -1,3 +1,0 @@
-test StackGenerated243 {
-    sequence: push -> peek -> push -> push -> pop;
-}

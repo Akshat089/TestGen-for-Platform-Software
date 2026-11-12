@@ -1,4 +1,4 @@
-# generated mutants — orderservice (phases 2+3 39s, library total 984s)
+# generated mutants — orderservice (phases 2+3 51s, library total 1010s)
 # id	status	kill_kind	operator	method	file	killed-by-family	family_kill_kind	detail
 ORDERSERVICE_GEN_SDL_1	INVALID	-	statement-deletion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_SDL_1/Helper.java:118: error: cannot find symbol
 ORDERSERVICE_GEN_SEI_2	INVALID	-	side-effect-insertion	-	Helper.java	-	-	the mutated library does not compile: target/operator-suites/mutants/orderservice/ORDERSERVICE_GEN_SEI_2/Helper.java:54: error: <identifier> expected

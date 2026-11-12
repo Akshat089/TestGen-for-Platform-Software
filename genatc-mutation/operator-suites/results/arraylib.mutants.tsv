@@ -1,4 +1,4 @@
-# generated mutants — arraylib (phases 2+3 47s, library total 2232s)
+# generated mutants — arraylib (phases 2+3 35s, library total 2110s)
 # id	status	kill_kind	operator	method	file	killed-by-family	family_kill_kind	detail
 ARRAYLIB_GEN_CRP_1	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
 ARRAYLIB_GEN_CRP_2	SURVIVED	-	constant-replacement	-	Helper.java	-	-	the test passes
