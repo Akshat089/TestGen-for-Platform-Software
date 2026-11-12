@@ -1,0 +1,10 @@
+mvn -o install -DskipTests
+mvn -pl genatc-mutation dependency:copy-dependencies -DincludeScope=runtime -DoutputDirectory=target/lib
+cd genatc-mutation
+CP="target/genatc-mutation-1.0.0.jar:target/lib/*"
+
+java -cp "$CP" in.ac.iiitb.plproject.mutation.MutationRunner
+
+java -cp "$CP" in.ac.iiitb.plproject.mutation.GeneratedSuiteRunner
+
+java -cp "$CP" in.ac.iiitb.plproject.mutation.GeneratedSuiteRunner stack queue
