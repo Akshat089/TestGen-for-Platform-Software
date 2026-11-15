@@ -8,3 +8,12 @@ java -cp "$CP" in.ac.iiitb.plproject.mutation.MutationRunner
 java -cp "$CP" in.ac.iiitb.plproject.mutation.GeneratedSuiteRunner
 
 java -cp "$CP" in.ac.iiitb.plproject.mutation.GeneratedSuiteRunner stack queue
+
+
+
+
+
+
+mvn -o install -DskipTests
+cd pl-platform-testing
+java -cp "target/pl-platform-testing-1.0.0.jar:../genatc-mutation/target/lib/*"      in.ac.iiitb.plproject.atc.GenatcMain stack
