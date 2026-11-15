@@ -12,7 +12,7 @@
  * down.  sum takes no parameters at all, so block 3 appears in no binding.
  */
 test IntArrayDryRun {
-    sequence: set -> set -> get -> sum -> indexOf;
+    sequence: set -> set -> get -> sum -> indexOf -> set -> get -> get -> sum -> set -> set -> indexOf -> get -> sum -> set -> get -> indexOf -> sum -> set -> get -> set -> get -> sum -> indexOf;
 
     inputs {
         set[0].index = 0;
@@ -21,5 +21,26 @@ test IntArrayDryRun {
         set[1].value = 11;
         get[2].index = 1;
         indexOf[4].value = 11;
+        set[5].index = 2;
+        set[5].value = 5;
+        get[6].index = 2;
+        get[7].index = 0;
+        set[9].index = 3;
+        set[9].value = 9;
+        set[10].index = 0;
+        set[10].value = 4;
+        indexOf[11].value = 9;
+        get[12].index = 3;
+        set[14].index = 1;
+        set[14].value = 6;
+        get[15].index = 1;
+        indexOf[16].value = 6;
+        set[18].index = 2;
+        set[18].value = 8;
+        get[19].index = 2;
+        set[20].index = 3;
+        set[20].value = 2;
+        get[21].index = 3;
+        indexOf[23].value = 8;
     }
 }

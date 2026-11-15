@@ -22,7 +22,7 @@
  * instead of the least would pass anyway.
  */
 test LruCacheDryRun {
-    sequence: put -> put -> put -> get -> restore;
+    sequence: put -> put -> put -> get -> restore -> put -> get -> get -> restore -> put -> put -> get -> restore -> get -> put -> restore -> get -> put -> get -> restore -> put -> get -> restore -> get;
 
     inputs {
         put[0].key = "alpha";
@@ -33,5 +33,30 @@ test LruCacheDryRun {
         put[2].value = "3";
         get[3].key = "beta";
         restore[4].value = "1";
+        put[5].key = "delta";
+        put[5].value = "4";
+        get[6].key = "alpha";
+        get[7].key = "delta";
+        restore[8].value = "2";
+        put[9].key = "epsilon";
+        put[9].value = "5";
+        put[10].key = "zeta";
+        put[10].value = "6";
+        get[11].key = "epsilon";
+        restore[12].value = "2";
+        get[13].key = "beta";
+        put[14].key = "eta";
+        put[14].value = "7";
+        restore[15].value = "5";
+        get[16].key = "eta";
+        put[17].key = "theta";
+        put[17].value = "8";
+        get[18].key = "theta";
+        restore[19].value = "5";
+        put[20].key = "iota";
+        put[20].value = "9";
+        get[21].key = "iota";
+        restore[22].value = "8";
+        get[23].key = "theta";
     }
 }

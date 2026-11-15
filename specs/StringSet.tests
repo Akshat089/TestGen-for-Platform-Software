@@ -10,12 +10,32 @@
  * the set's answer, not the caller's.
  */
 test StringSetDryRun {
-    sequence: add -> add -> contains -> remove;
+    sequence: add -> add -> add -> contains -> remove -> add -> contains -> add -> remove -> remove -> add -> contains -> add -> add -> remove -> contains -> add -> remove -> contains -> add -> add -> remove -> contains -> remove;
 
     inputs {
         add[0].elem = "alpha";
-        add[1].elem = "alpha";
-        contains[2].elem = "alpha";
-        remove[3].elem = "alpha";
+        add[1].elem = "beta";
+        add[2].elem = "gamma";
+        contains[3].elem = "beta";
+        remove[4].elem = "alpha";
+        add[5].elem = "delta";
+        contains[6].elem = "alpha";
+        add[7].elem = "epsilon";
+        remove[8].elem = "beta";
+        remove[9].elem = "gamma";
+        add[10].elem = "zeta";
+        contains[11].elem = "zeta";
+        add[12].elem = "eta";
+        add[13].elem = "theta";
+        remove[14].elem = "delta";
+        contains[15].elem = "delta";
+        add[16].elem = "iota";
+        remove[17].elem = "epsilon";
+        contains[18].elem = "theta";
+        add[19].elem = "kappa";
+        add[20].elem = "lambda";
+        remove[21].elem = "zeta";
+        contains[22].elem = "kappa";
+        remove[23].elem = "eta";
     }
 }

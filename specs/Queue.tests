@@ -11,10 +11,17 @@
  * name front() without shadowing the field its own postcondition reads.
  */
 test QueueDryRun {
-    sequence: enqueue -> enqueue -> dequeue -> front -> isEmpty;
+    sequence: enqueue -> enqueue -> front -> isEmpty -> dequeue -> enqueue -> enqueue -> enqueue -> front -> dequeue -> dequeue -> isEmpty -> enqueue -> front -> dequeue -> enqueue -> enqueue -> isEmpty -> dequeue -> dequeue -> front -> dequeue -> enqueue -> isEmpty;
 
     inputs {
         enqueue[0].elem = "first";
         enqueue[1].elem = "second";
+        enqueue[5].elem = "third";
+        enqueue[6].elem = "fourth";
+        enqueue[7].elem = "fifth";
+        enqueue[12].elem = "sixth";
+        enqueue[15].elem = "seventh";
+        enqueue[16].elem = "eighth";
+        enqueue[22].elem = "ninth";
     }
 }

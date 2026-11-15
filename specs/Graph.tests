@@ -11,15 +11,43 @@
  * example: vertexDegree and connected are captured and dropped.
  */
 test GraphDryRun {
-    sequence: addVertex -> addVertex -> addEdge -> degree -> hasEdge;
+    sequence: addVertex -> addVertex -> addVertex -> addEdge -> addEdge -> degree -> hasEdge -> addVertex -> addEdge -> degree -> hasEdge -> addVertex -> addVertex -> addEdge -> addEdge -> degree -> degree -> hasEdge -> addEdge -> hasEdge -> degree -> addVertex -> addEdge -> degree;
 
     inputs {
         addVertex[0].name = "A";
         addVertex[1].name = "B";
-        addEdge[2].from = "A";
-        addEdge[2].to = "B";
-        degree[3].name = "A";
-        hasEdge[4].from = "A";
-        hasEdge[4].to = "B";
+        addVertex[2].name = "C";
+        addEdge[3].from = "A";
+        addEdge[3].to = "B";
+        addEdge[4].from = "B";
+        addEdge[4].to = "C";
+        degree[5].name = "B";
+        hasEdge[6].from = "A";
+        hasEdge[6].to = "C";
+        addVertex[7].name = "D";
+        addEdge[8].from = "C";
+        addEdge[8].to = "D";
+        degree[9].name = "C";
+        hasEdge[10].from = "A";
+        hasEdge[10].to = "B";
+        addVertex[11].name = "E";
+        addVertex[12].name = "F";
+        addEdge[13].from = "D";
+        addEdge[13].to = "E";
+        addEdge[14].from = "E";
+        addEdge[14].to = "F";
+        degree[15].name = "E";
+        degree[16].name = "A";
+        hasEdge[17].from = "D";
+        hasEdge[17].to = "F";
+        addEdge[18].from = "A";
+        addEdge[18].to = "F";
+        hasEdge[19].from = "A";
+        hasEdge[19].to = "F";
+        degree[20].name = "F";
+        addVertex[21].name = "G";
+        addEdge[22].from = "F";
+        addEdge[22].to = "G";
+        degree[23].name = "G";
     }
 }

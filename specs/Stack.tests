@@ -10,10 +10,18 @@
  * inputs block: they take no parameters, and what they return is SERVER_OUTPUT.
  */
 test StackDryRun {
-    sequence: push -> push -> pop -> peek;
+    sequence: push -> push -> push -> peek -> pop -> push -> push -> peek -> pop -> pop -> push -> push -> push -> peek -> pop -> pop -> pop -> push -> peek -> pop -> pop -> push -> peek -> pop;
 
     inputs {
         push[0].elem = "alpha";
         push[1].elem = "beta";
+        push[2].elem = "gamma";
+        push[5].elem = "delta";
+        push[6].elem = "epsilon";
+        push[10].elem = "zeta";
+        push[11].elem = "eta";
+        push[12].elem = "theta";
+        push[17].elem = "iota";
+        push[21].elem = "kappa";
     }
 }

@@ -12,7 +12,7 @@
  * rather than the library failing.
  */
 test BinarySearchTreeDryRun {
-    sequence: insert -> insert -> insert -> contains -> min -> delete;
+    sequence: insert -> insert -> insert -> contains -> min -> delete -> insert -> insert -> min -> contains -> delete -> delete -> insert -> insert -> insert -> min -> contains -> delete -> insert -> min -> delete -> contains -> delete -> min;
 
     inputs {
         insert[0].key = 50;
@@ -20,5 +20,19 @@ test BinarySearchTreeDryRun {
         insert[2].key = 70;
         contains[3].key = 30;
         delete[5].key = 30;
+        insert[6].key = 20;
+        insert[7].key = 60;
+        contains[9].key = 60;
+        delete[10].key = 70;
+        delete[11].key = 20;
+        insert[12].key = 40;
+        insert[13].key = 80;
+        insert[14].key = 10;
+        contains[16].key = 40;
+        delete[17].key = 50;
+        insert[18].key = 90;
+        delete[20].key = 10;
+        contains[21].key = 80;
+        delete[22].key = 60;
     }
 }

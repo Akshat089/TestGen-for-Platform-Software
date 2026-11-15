@@ -10,11 +10,19 @@
  * and the value each returns is the heap's answer, not the caller's.
  */
 test MinHeapDryRun {
-    sequence: insert -> insert -> insert -> peekMin -> extractMin;
+    sequence: insert -> insert -> insert -> peekMin -> extractMin -> insert -> peekMin -> insert -> extractMin -> extractMin -> insert -> insert -> peekMin -> extractMin -> insert -> insert -> insert -> peekMin -> extractMin -> extractMin -> peekMin -> extractMin -> insert -> peekMin;
 
     inputs {
         insert[0].value = 9;
         insert[1].value = 4;
         insert[2].value = 7;
+        insert[5].value = 2;
+        insert[7].value = 6;
+        insert[10].value = 8;
+        insert[11].value = 1;
+        insert[14].value = 5;
+        insert[15].value = 3;
+        insert[16].value = 10;
+        insert[22].value = 11;
     }
 }

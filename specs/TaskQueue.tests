@@ -7,9 +7,18 @@
  * would be rejected by the validator.
  */
 test TaskQueueDryRun {
-    sequence: submit -> getResult -> cancelTask;
+    sequence: submit -> submit -> getResult -> cancelTask -> submit -> getResult -> getResult -> submit -> cancelTask -> submit -> submit -> getResult -> cancelTask -> cancelTask -> submit -> getResult -> submit -> cancelTask -> getResult -> submit -> getResult -> cancelTask -> submit -> getResult;
 
     inputs {
         submit[0].payload = "render-report";
+        submit[1].payload = "send-email";
+        submit[4].payload = "resize-image";
+        submit[7].payload = "backup-db";
+        submit[9].payload = "index-search";
+        submit[10].payload = "compress-logs";
+        submit[14].payload = "sync-calendar";
+        submit[16].payload = "generate-invoice";
+        submit[19].payload = "clear-cache";
+        submit[22].payload = "export-csv";
     }
 }

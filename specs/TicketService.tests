@@ -17,11 +17,32 @@
  * reserveSeats' precondition requires the claimer to be the original holder.
  */
 test TicketServiceDryRun {
-    sequence: numSeatsAvailable -> findAndHoldSeats -> reserveSeats -> numSeatsAvailable;
+    sequence: numSeatsAvailable -> findAndHoldSeats -> reserveSeats -> numSeatsAvailable -> findAndHoldSeats -> findAndHoldSeats -> reserveSeats -> numSeatsAvailable -> reserveSeats -> findAndHoldSeats -> numSeatsAvailable -> findAndHoldSeats -> reserveSeats -> reserveSeats -> numSeatsAvailable -> findAndHoldSeats -> findAndHoldSeats -> numSeatsAvailable -> reserveSeats -> findAndHoldSeats -> reserveSeats -> reserveSeats -> numSeatsAvailable;
 
     inputs {
-        findAndHoldSeats[1].numSeats = 3;
+        findAndHoldSeats[1].numSeats = 2;
         findAndHoldSeats[1].customerEmail = "alice@example.com";
         reserveSeats[2].customerEmail = "alice@example.com";
+        findAndHoldSeats[4].numSeats = 1;
+        findAndHoldSeats[4].customerEmail = "bob@example.com";
+        findAndHoldSeats[5].numSeats = 2;
+        findAndHoldSeats[5].customerEmail = "carol@example.com";
+        reserveSeats[6].customerEmail = "bob@example.com";
+        reserveSeats[8].customerEmail = "carol@example.com";
+        findAndHoldSeats[9].numSeats = 1;
+        findAndHoldSeats[9].customerEmail = "dave@example.com";
+        findAndHoldSeats[11].numSeats = 1;
+        findAndHoldSeats[11].customerEmail = "erin@example.com";
+        reserveSeats[12].customerEmail = "dave@example.com";
+        reserveSeats[13].customerEmail = "erin@example.com";
+        findAndHoldSeats[15].numSeats = 1;
+        findAndHoldSeats[15].customerEmail = "frank@example.com";
+        findAndHoldSeats[16].numSeats = 2;
+        findAndHoldSeats[16].customerEmail = "grace@example.com";
+        reserveSeats[18].customerEmail = "frank@example.com";
+        findAndHoldSeats[19].numSeats = 1;
+        findAndHoldSeats[19].customerEmail = "heidi@example.com";
+        reserveSeats[20].customerEmail = "grace@example.com";
+        reserveSeats[21].customerEmail = "heidi@example.com";
     }
 }

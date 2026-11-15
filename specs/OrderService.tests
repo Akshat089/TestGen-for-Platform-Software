@@ -15,7 +15,7 @@
  * internal structure.
  */
 test OrderServiceDryRun {
-    sequence: restock -> placeOrder -> ship -> stockLevel;
+    sequence: restock -> placeOrder -> ship -> stockLevel -> restock -> restock -> placeOrder -> placeOrder -> stockLevel -> ship -> ship -> restock -> placeOrder -> stockLevel -> restock -> placeOrder -> ship -> ship -> stockLevel -> restock -> placeOrder -> stockLevel -> ship -> stockLevel;
 
     inputs {
         restock[0].sku = "widget";
@@ -23,5 +23,30 @@ test OrderServiceDryRun {
         placeOrder[1].sku = "widget";
         placeOrder[1].quantity = 4;
         stockLevel[3].sku = "widget";
+        restock[4].sku = "gadget";
+        restock[4].quantity = 5;
+        restock[5].sku = "bolt";
+        restock[5].quantity = 20;
+        placeOrder[6].sku = "gadget";
+        placeOrder[6].quantity = 2;
+        placeOrder[7].sku = "bolt";
+        placeOrder[7].quantity = 5;
+        stockLevel[8].sku = "bolt";
+        restock[11].sku = "widget";
+        restock[11].quantity = 3;
+        placeOrder[12].sku = "widget";
+        placeOrder[12].quantity = 6;
+        stockLevel[13].sku = "widget";
+        restock[14].sku = "nut";
+        restock[14].quantity = 8;
+        placeOrder[15].sku = "nut";
+        placeOrder[15].quantity = 8;
+        stockLevel[18].sku = "nut";
+        restock[19].sku = "gadget";
+        restock[19].quantity = 4;
+        placeOrder[20].sku = "gadget";
+        placeOrder[20].quantity = 7;
+        stockLevel[21].sku = "gadget";
+        stockLevel[23].sku = "bolt";
     }
 }

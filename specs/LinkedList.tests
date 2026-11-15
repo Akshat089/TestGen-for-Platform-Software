@@ -10,11 +10,24 @@
  * it returns is a SERVER_OUTPUT.
  */
 test LinkedListDryRun {
-    sequence: addFirst -> addLast -> removeFirst -> indexOf;
+    sequence: addFirst -> addLast -> addFirst -> indexOf -> removeFirst -> addLast -> addLast -> indexOf -> removeFirst -> removeFirst -> addFirst -> indexOf -> addLast -> addFirst -> removeFirst -> indexOf -> removeFirst -> addLast -> indexOf -> removeFirst -> removeFirst -> addFirst -> indexOf -> removeFirst;
 
     inputs {
         addFirst[0].value = 10;
         addLast[1].value = 20;
+        addFirst[2].value = 5;
         indexOf[3].value = 20;
+        addLast[5].value = 30;
+        addLast[6].value = 40;
+        indexOf[7].value = 40;
+        addFirst[10].value = 15;
+        indexOf[11].value = 15;
+        addLast[12].value = 45;
+        addFirst[13].value = 25;
+        indexOf[15].value = 45;
+        addLast[17].value = 50;
+        indexOf[18].value = 50;
+        addFirst[21].value = 35;
+        indexOf[22].value = 35;
     }
 }

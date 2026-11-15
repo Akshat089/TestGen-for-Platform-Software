@@ -1,0 +1,18 @@
+library          unit_test_created                                         spf_time_ms
+stack            yes                                                       8371
+queue            yes                                                       7035
+mathlib          yes                                                       17651
+arraylib         yes                                                       13174
+linkedlist       yes                                                       11212
+heap             yes                                                       7977
+set              yes                                                       16725
+hashmap          yes                                                       17506
+bst              yes                                                       13865
+graph            yes                                                       17792
+lrucache         yes                                                       18278
+taskqueue        yes                                                       18055
+ticketservice    yes                                                       12508
+orderservice     yes                                                       19157
+
+Depth: 24 calls per test string (ticketservice: 23).
+SPF settings (SpfConfig defaults): depth limit 300, time limit 60 s per round, integer range [-1000, 1000].

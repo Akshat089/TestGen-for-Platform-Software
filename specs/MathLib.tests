@@ -14,7 +14,7 @@
  * every block.
  */
 test MathLibDryRun {
-    sequence: abs -> gcd -> power -> factorial;
+    sequence: abs -> gcd -> power -> factorial -> abs -> gcd -> power -> factorial -> abs -> gcd -> power -> factorial -> abs -> gcd -> power -> factorial -> abs -> gcd -> power -> factorial -> abs -> gcd -> power -> factorial;
 
     inputs {
         abs[0].x = -17;
@@ -23,5 +23,35 @@ test MathLibDryRun {
         power[2].base = 3;
         power[2].exponent = 4;
         factorial[3].n = 5;
+        abs[4].x = 25;
+        gcd[5].a = 12;
+        gcd[5].b = 8;
+        power[6].base = 2;
+        power[6].exponent = 10;
+        factorial[7].n = 0;
+        abs[8].x = -3;
+        gcd[9].a = 100;
+        gcd[9].b = 75;
+        power[10].base = 5;
+        power[10].exponent = 3;
+        factorial[11].n = 3;
+        abs[12].x = 0;
+        gcd[13].a = 7;
+        gcd[13].b = 3;
+        power[14].base = 10;
+        power[14].exponent = 2;
+        factorial[15].n = 10;
+        abs[16].x = 42;
+        gcd[17].a = 36;
+        gcd[17].b = 24;
+        power[18].base = 7;
+        power[18].exponent = 0;
+        factorial[19].n = 1;
+        abs[20].x = -100;
+        gcd[21].a = 81;
+        gcd[21].b = 27;
+        power[22].base = 2;
+        power[22].exponent = 5;
+        factorial[23].n = 12;
     }
 }

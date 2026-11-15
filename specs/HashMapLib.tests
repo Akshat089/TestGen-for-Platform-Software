@@ -10,14 +10,43 @@
  * (key in dom(M)) hold when they run.
  */
 test HashMapDryRun {
-    sequence: put -> put -> getOldValue -> remove;
+    sequence: put -> put -> put -> getOldValue -> remove -> put -> getOldValue -> put -> remove -> remove -> put -> put -> getOldValue -> getOldValue -> remove -> put -> put -> remove -> getOldValue -> put -> remove -> getOldValue -> put -> remove;
 
     inputs {
-        put[0].key = "session";
-        put[0].value = 10;
-        put[1].key = "session";
-        put[1].value = 20;
-        getOldValue[2].key = "session";
-        remove[3].key = "session";
+        put[0].key = "key1";
+        put[0].value = 1;
+        put[1].key = "key2";
+        put[1].value = 2;
+        put[2].key = "key3";
+        put[2].value = 3;
+        getOldValue[3].key = "key2";
+        remove[4].key = "key1";
+        put[5].key = "key4";
+        put[5].value = 4;
+        getOldValue[6].key = "key4";
+        put[7].key = "key5";
+        put[7].value = 5;
+        remove[8].key = "key2";
+        remove[9].key = "key3";
+        put[10].key = "key6";
+        put[10].value = 6;
+        put[11].key = "key7";
+        put[11].value = 7;
+        getOldValue[12].key = "key6";
+        getOldValue[13].key = "key5";
+        remove[14].key = "key4";
+        put[15].key = "key8";
+        put[15].value = 8;
+        put[16].key = "key9";
+        put[16].value = 9;
+        remove[17].key = "key5";
+        getOldValue[18].key = "key8";
+        put[19].key = "key10";
+        put[19].value = 10;
+        remove[20].key = "key6";
+        getOldValue[21].key = "key7";
+        put[22].key = "key11";
+        put[22].value = 11;
+        remove[23].key = "key7";
     }
 }
