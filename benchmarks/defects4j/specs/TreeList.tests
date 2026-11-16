@@ -1,0 +1,17 @@
+/*
+ * DEFECTS4J — TreeList test strings.
+ *
+ * TreeListDryRun: build the list, read it, then walk an iterator forwards and
+ * backwards, removing once after previous() and once after next(), and read
+ * the list again at the end.
+ *
+ * RemoveAfterPrevious aims at Collections-20: next, next, previous, remove,
+ * then previous again.
+ */
+test TreeListDryRun {
+    sequence: add -> add -> add -> add -> get -> iterStart -> iterNext -> iterNext -> iterPrevious -> iterRemove -> iterPrevious -> iterNext -> iterNext -> iterRemove -> count -> get;
+}
+
+test RemoveAfterPrevious {
+    sequence: add -> add -> add -> add -> iterStart -> iterNext -> iterNext -> iterPrevious -> iterRemove -> iterPrevious -> count;
+}

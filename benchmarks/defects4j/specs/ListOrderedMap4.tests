@@ -1,0 +1,17 @@
+/*
+ * DEFECTS4J — ListOrderedMap (collections4) test strings.
+ *
+ * ListOrderedMapDryRun: fill the map with ordinary and null values, insert at
+ * positions, re-put new and existing keys through putAll(index, ...), then
+ * read, remove and count.
+ *
+ * PutAllOverNullValues aims at Collections-22: two keys holding null, then
+ * putAll at a position over those same keys.
+ */
+test ListOrderedMapDryRun {
+    sequence: put -> putNull -> put -> get -> putAt -> indexOf -> putAllAt -> putAllExistingAt -> get -> indexOf -> remove -> putNull -> count -> putAllExistingAt -> remove -> count;
+}
+
+test PutAllOverNullValues {
+    sequence: putNull -> putNull -> putAllExistingAt -> count;
+}

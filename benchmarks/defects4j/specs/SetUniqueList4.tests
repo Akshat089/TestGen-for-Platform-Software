@@ -1,0 +1,14 @@
+/*
+ * DEFECTS4J — SetUniqueList (collections4) test strings.
+ *
+ * SetUniqueListDryRun is the plan's 16-call string, as for 3.x.
+ * SubListIsUnmodifiable aims at Collections-21: build a list, take a non-empty
+ * view, try to remove through it, then read the parent's size.
+ */
+test SetUniqueListDryRun {
+    sequence: add -> add -> add -> add -> get -> set -> contains -> addAt -> removeAt -> indexOf -> setExisting -> add -> removeElement -> count -> contains -> add;
+}
+
+test SubListIsUnmodifiable {
+    sequence: add -> add -> add -> subList -> subRemoveAt -> count;
+}

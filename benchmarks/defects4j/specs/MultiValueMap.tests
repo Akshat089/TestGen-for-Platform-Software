@@ -1,0 +1,15 @@
+/*
+ * DEFECTS4J — MultiValueMap test strings.
+ *
+ * MultiValueMapDryRun: add values under new and existing keys, add pairs,
+ * read sizes and membership, drop a key and count again.
+ *
+ * FirstPutOfAKey aims at Collections-4: the very first put and putAll of a key.
+ */
+test MultiValueMapDryRun {
+    sequence: put -> put -> put -> sizeOf -> containsValue -> putAllPair -> sizeOf -> total -> removeKey -> put -> putAllPair -> containsValue -> total -> removeKey -> sizeOf -> total;
+}
+
+test FirstPutOfAKey {
+    sequence: put -> putAllPair -> total;
+}

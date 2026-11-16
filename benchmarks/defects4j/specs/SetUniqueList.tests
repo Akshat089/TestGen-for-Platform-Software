@@ -1,0 +1,33 @@
+/*
+ * DEFECTS4J — SetUniqueList (3.x) test strings.
+ *
+ * SetUniqueListDryRun is the benchmark plan's 16-call string: four adds build
+ * the list, then every operation runs at least once, set runs once with a new
+ * element and once (setExisting) with one already stored, and the reads
+ * (contains, count) come after the changes they should reflect.
+ *
+ * The four short strings each aim at one Defects4J bug. They are separate
+ * because each bug's "fixed" version still contains the OTHER bugs (for example
+ * Collections-5f has bugs 15 and 16, Collections-19f has bug 5), so a string
+ * that touches another bug's operation fails on that fixed version and is
+ * dropped there as a false alarm. Short strings keep the rest usable.
+ */
+test SetUniqueListDryRun {
+    sequence: add -> add -> add -> add -> get -> set -> contains -> addAt -> removeAt -> indexOf -> setExisting -> add -> removeElement -> count -> contains -> add;
+}
+
+test SetNewElement {
+    sequence: add -> add -> add -> set -> count;
+}
+
+test SetElementInPlace {
+    sequence: add -> add -> setExisting -> get -> count;
+}
+
+test AddAllInFront {
+    sequence: add -> addAllAt -> get -> count;
+}
+
+test SubListOfPrefix {
+    sequence: add -> add -> subList -> count;
+}

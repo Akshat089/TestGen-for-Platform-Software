@@ -1,0 +1,24 @@
+/*
+ * DEFECTS4J — StrBuilder test strings.
+ *
+ * StrBuilderDryRun: build some content, search it, pad, delete, truncate,
+ * clear, search again, and rebuild, so every removal is followed by a search.
+ *
+ * The short strings each aim at one bug. Lang-61's fixed version still has
+ * Lang-59, so a string that pads may be dropped there as a false alarm.
+ */
+test StrBuilderDryRun {
+    sequence: create -> append -> append -> append -> indexOf -> contains -> appendPadRight -> deleteFirst -> indexOf -> append -> setLength -> indexOf -> deleteAll -> clear -> indexOf -> append -> count;
+}
+
+test PadRightInSmallBuffer {
+    sequence: create -> append -> appendPadRight -> count;
+}
+
+test SearchAfterClear {
+    sequence: create -> append -> append -> clear -> indexOf -> contains -> count;
+}
+
+test SearchAfterDelete {
+    sequence: create -> append -> append -> deleteFirst -> indexOf -> count;
+}

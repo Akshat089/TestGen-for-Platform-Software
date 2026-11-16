@@ -1,0 +1,22 @@
+/*
+ * DEFECTS4J — Flat3Map test strings.
+ *
+ * Flat3MapDryRun is the plan's long string: three puts fill the flat fields,
+ * setValue and remove run in flat mode, three more puts cross into hash mode
+ * (5 entries), then reads, an overwrite and two more removes run there.
+ *
+ * The two short strings each aim at one Defects4J bug in flat mode. As for
+ * SetUniqueList, each bug's fixed version may still contain the other bug, so
+ * a string that fails on the fixed version is dropped there as a false alarm.
+ */
+test Flat3MapDryRun {
+    sequence: put -> put -> put -> get -> setValue -> remove -> put -> put -> put -> count -> get -> putExisting -> remove -> containsKey -> remove -> count;
+}
+
+test RemoveInFlatMode {
+    sequence: put -> put -> remove -> count;
+}
+
+test SetValueInFlatMode {
+    sequence: put -> put -> put -> setValue -> get -> count;
+}

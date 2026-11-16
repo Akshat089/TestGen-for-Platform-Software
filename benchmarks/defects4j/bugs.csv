@@ -1,0 +1,13 @@
+bug,class,issue,trigger_test,note
+Collections-1,org.apache.commons.collections.map.Flat3Map,COLLECTIONS-217,TestFlat3Map::testEntryIteratorSetValue2,"bug is in the entry iterator's setValue, so it needs an iterator adapter"
+Collections-5,org.apache.commons.collections.list.SetUniqueList,COLLECTIONS-249,TestSetUniqueList::testIntCollectionAddAll,addAll(index collection)
+Collections-6,org.apache.commons.collections.map.Flat3Map,COLLECTIONS-261,TestFlat3Map::testCollections261,remove(key) returns wrong value
+Collections-15,org.apache.commons.collections.list.SetUniqueList,COLLECTIONS-304,TestSetUniqueList::testCollections304,set(i e) leaves replaced element in the set
+Collections-16,org.apache.commons.collections.list.SetUniqueList,COLLECTIONS-307,TestSetUniqueList::testCollections307,subList uniqueness set
+Collections-19,org.apache.commons.collections.list.SetUniqueList,COLLECTIONS-444,SetUniqueListTest::testSetCollections444,set(i e) with e already at i
+Collections-21,org.apache.commons.collections4.list.SetUniqueList,COLLECTIONS-310,SetUniqueListTest::testSubListIsUnmodifiable,collections4; subList must be unmodifiable
+Lang-59,org.apache.commons.lang.text.StrBuilder,LANG-299,StrBuilderAppendInsertTest::testLang299,appendFixedWidthPadRight crashes when str is longer than width
+Lang-61,org.apache.commons.lang.text.StrBuilder,LANG-294,StrBuilderTest::testIndexOfLang294,indexOf/deleteAll look past the end of the content
+Collections-22,org.apache.commons.collections4.map.ListOrderedMap,COLLECTIONS-474,ListOrderedMapTest::testCOLLECTIONS_474_nullValues,putAll(index map) with null values
+Collections-20,org.apache.commons.collections.list.TreeList,COLLECTIONS-447,TreeListTest::testBugCollections447,list iterator remove after previous
+Collections-4,org.apache.commons.collections.map.MultiValueMap,COLLECTIONS-228,TestMultiValueMap::testPutWithSet,put reports a change the value collection did not make
