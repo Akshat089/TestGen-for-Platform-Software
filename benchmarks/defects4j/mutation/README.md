@@ -56,7 +56,13 @@ Scratch files go to `~/.cache/testgen-d4j-mutation` (set `MUT_WORK` to change it
    - `TZ=America/Los_Angeles`.
    
    A mutant is **KILLED** by a suite if any test fails or throws, or the JVM times out or crashes. Otherwise it **SURVIVED**. There is one row per pair in `<key>.rows.tsv`.
-7. **Report.**
+7. **Generated family (step 7, `./mutation.sh --family`).** `runner/.../atc/D4jFamily.java` does for each class what phase 1 does for your own libraries:
+   - `TestStringGenerator` draws 260 test strings from the spec, seeded with the class's long string only (never the bug-focused short ones), so the result stays blind;
+   - `TestCache` generates each one's test once on the fixed version, with SPF as usual, and runs it there;
+   - the passing tests become one more suite, `testgen-family`, run against every scored mutant under the same rules.
+   
+   The report adds "TestGen, long string + generated family (blind)" and "TestGen, all strings + generated family". `<key>.family.tsv` lists every test string with its status. Generation takes about 10 s per test string, 4 classes at a time.
+8. **Report.**
    - Randoop and EvoSuite are reported as the median of 10 seeds with min–max, plus "any of 10 seeds" for comparison with the real-bug table.
    - The total over all classes adds seed *i* of every class.
    - REPORT.md also gives per-operator scores, which mutants only one tool kills, and how each kill happened.

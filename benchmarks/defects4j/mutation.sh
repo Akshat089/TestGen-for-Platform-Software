@@ -3,9 +3,12 @@
 #   ./mutation.sh                     # all 7 classes
 #   ./mutation.sh treelist flat3map   # only these (keys below)
 #   ./mutation.sh --regen treelist    # regenerate the mutants first (otherwise mutation/<key>.mutants.tsv is reused)
+#   ./mutation.sh --family            # step 7: also generate TestGen's family of test strings (where missing) and run it
+# A generated family (in MUT_WORK/<key>/family-src) is run as the suite testgen-family whenever it exists.
 # Environment: THREADS (default: cores - 4), TIMEOUT (wall-clock seconds per test JVM, default 30),
 #              CAP (mutants per class, default 300), SEED (sample seed, default 1),
-#              MUT_WORK (scratch, default ~/.cache/testgen-d4j-mutation; keep it on the Linux file system).
+#              MUT_WORK (scratch, default ~/.cache/testgen-d4j-mutation; keep it on the Linux file system),
+#              FAMILY_SIZE (test strings per class, default 260), FAMILY_JOBS (classes generated at once, default 4).
 # Needs: TestGen built (mvn install), the bugs checked out and run.sh run once (outputs/<bug>/),
 #        and for the baselines: baselines/runs/<tool>/<bug>/b60-s<seed>/ from baselines.sh.
 # Results: mutation/<key>.* and, after all classes, mutation/REPORT.md (python3 mutation/report.py).
@@ -35,10 +38,10 @@ HAMCREST=$(find "$HOME/.m2/repository/org/hamcrest" -name 'hamcrest-core-1.3.jar
 EVORT="$D4J_HOME/framework/lib/test_generation/runtime/evosuite-standalone-runtime-1.1.0.jar"
 [[ -f "$EVORT" ]] || { echo "mutation.sh: EvoSuite runtime not found at $EVORT" >&2; exit 1; }
 
-# Build the two runner classes (in TestGen's mutation package, see runner/) and D4jMain.
+# Build the runner classes (in TestGen's mutation and atc packages, see runner/).
 mkdir -p "$HERE/build/mutation" "$HERE/build/runner"
-javac -nowarn -d "$HERE/build/runner" -cp "$PL:$JUNIT:$HAMCREST" \
-  "$HERE/runner/in/ac/iiitb/plproject/atc/D4jMain.java" || exit 1
+javac -nowarn -d "$HERE/build/runner" -cp "$PL:$GM:$JUNIT:$HAMCREST" \
+  "$HERE/runner/in/ac/iiitb/plproject/atc/D4jMain.java" "$HERE/runner/in/ac/iiitb/plproject/atc/D4jFamily.java" || exit 1
 javac -nowarn -d "$HERE/build/mutation" -cp "$PL:$GM:$JUNIT:$HAMCREST" \
   "$HERE"/runner/in/ac/iiitb/plproject/mutation/*.java || exit 1
 
@@ -59,12 +62,40 @@ classes=(
   "strbuilder      Lang-59        text/StrBuilder.java      StrBuilder"
 )
 
-regen=0; want=()
-for a in "$@"; do [[ "$a" == --regen ]] && regen=1 || want+=("$a"); done
+regen=0; family=0; want=()
+for a in "$@"; do
+  case "$a" in --regen) regen=1 ;; --family) family=1 ;; *) want+=("$a") ;; esac
+done
+selected() { (( ${#want[@]} == 0 )) || [[ " ${want[*]} " == *" $1 "* ]]; }
+long_tests() {   # $1 spec name, $2 output: the first (long) test block of specs/<spec>.tests
+  awk 'f==0 && /^test /{f=1} f==1{print} f==1 && /^}/{exit}' "$HERE/specs/$1.tests" > "$2"
+}
+
+# Step 7: TestGen's generated family per class (SPF, ~10 s per test string), FAMILY_JOBS classes at a time.
+if (( family )); then
+  for row in "${classes[@]}"; do
+    read -r key bug cls spec <<< "$row"
+    selected "$key" || continue
+    W="$MUT_WORK/$key"; mkdir -p "$W"
+    [[ -d "$W/family-src" && -f "$OUT/$key.family.tsv" ]] && continue
+    [[ -f "$HERE/outputs/$bug/fixed-sources.txt" ]] || { echo "  no outputs/$bug: run ./run.sh $bug first" >&2; continue; }
+    long_tests "$spec" "$W/long.tests"
+    while (( $(jobs -rp | wc -l) >= ${FAMILY_JOBS:-4} )); do wait -n; done
+    echo "family: generating for $key (log: $W/family.log)"
+    ( cd "$HERE" && java -cp "$HERE/build/runner:$PL:$GM:$JUNIT:$HAMCREST" in.ac.iiitb.plproject.atc.D4jFamily \
+        "$key" "specs/$spec.spec" "$W/long.tests" "outputs/$bug/fixed-sources.txt" "$W/family" \
+        "$W/family-src" "$OUT/$key.family.tsv" "${FAMILY_SIZE:-260}" ) > "$W/family.log" 2>&1 &
+  done
+  wait
+  for row in "${classes[@]}"; do
+    read -r key _ <<< "$row"; selected "$key" || continue
+    tail -1 "$MUT_WORK/$key/family.log" 2>/dev/null
+  done
+fi
 
 for row in "${classes[@]}"; do
   read -r key bug cls spec <<< "$row"
-  if (( ${#want[@]} )) && [[ ! " ${want[*]} " == *" $key "* ]]; then continue; fi
+  selected "$key" || continue
   echo "================ $key ($bug fixed) ================"
   srcs="$HERE/outputs/$bug/fixed-sources.txt"
   [[ -f "$srcs" ]] || { echo "  no $srcs: run ./run.sh $bug first" >&2; continue; }
@@ -83,7 +114,7 @@ for row in "${classes[@]}"; do
   [[ -f "$all" ]] || { echo "  no TestGen test at $all: run ./run.sh $bug first" >&2; continue; }
   long="$W/testgen-long/fixed/in/ac/iiitb/plproject/atc/generated/GeneratedATCsTest.java"
   if [[ ! -f "$long" ]]; then
-    awk 'f==0 && /^test /{f=1} f==1{print} f==1 && /^}/{exit}' "$HERE/specs/$spec.tests" > "$W/long.tests"
+    long_tests "$spec" "$W/long.tests"
     echo "  generating TestGen's long-string-only test ($(grep -o 'test [A-Za-z0-9_]*' "$W/long.tests"))"
     ( cd "$HERE" && java -cp "$HERE/build/runner:$PL:$JUNIT:$HAMCREST" in.ac.iiitb.plproject.atc.D4jMain \
         "$bug" "specs/$spec.spec" "$W/long.tests" "$W/testgen-long" "$srcs" "$srcs" ) > "$W/testgen-long.log" 2>&1
@@ -92,6 +123,9 @@ for row in "${classes[@]}"; do
   suites="$W/suites.tsv"
   printf 'testgen-long\ttestgen-long\t%s\n' "$long" > "$suites"
   printf 'testgen-all\ttestgen-all\t%s\n' "$all" >> "$suites"
+  if ls "$W/family-src"/*.java >/dev/null 2>&1; then
+    printf 'testgen-family\ttestgen-family\t%s\n' "$W/family-src" >> "$suites"
+  fi
 
   # 3. Randoop / EvoSuite suites from baselines.sh (generated on the same fixed version), one per seed
   project="${bug%-*}"

@@ -65,9 +65,25 @@ for key, title, version in KEYS:
             killed[r["suite"]].add(r["id"])
             kinds[r["tool"]][r["kind"]] += 1
     complete = all(seen[b["suite"]] >= set(sampled) for b in kept)
+    # step 7: the generated family, as a union with the long string (blind) and with all strings
+    has_family = any(b["suite"] == "testgen-family" for b in kept)
+    if has_family:
+        killed["testgen-long+family"] = killed["testgen-long"] | killed["testgen-family"]
+        killed["testgen-all+family"] = killed["testgen-all"] | killed["testgen-family"]
     data[key] = dict(title=title, version=version, rows=rows, status=status, base=base, muts=muts,
                      sampled=sampled, kept=kept, killed=killed, tool_of=tool_of, kinds=kinds,
-                     timeouts=timeouts, complete=complete)
+                     timeouts=timeouts, complete=complete, has_family=has_family)
+
+
+TG_ROWS = [("testgen-long", "TestGen, long string only"),
+           ("testgen-all", "TestGen, + short strings"),
+           ("testgen-long+family", "TestGen, long string + generated family (blind)"),
+           ("testgen-all+family", "TestGen, all strings + generated family")]
+ALL_FAMILY = bool(data) and all(d["has_family"] for d in data.values())
+
+
+def tg_has(d, suite):
+    return d["has_family"] if "family" in suite else suite in [b["suite"] for b in d["kept"]]
 
 
 def suites_of(d, tool):
@@ -80,9 +96,8 @@ def table_rows(d, ids):
     ids = set(ids)
     n = len(ids)
     out = []
-    for suite, label in (("testgen-long", "TestGen, long string only"),
-                         ("testgen-all", "TestGen, + short strings")):
-        if suite in [b["suite"] for b in d["kept"]]:
+    for suite, label in TG_ROWS:
+        if tg_has(d, suite):
             k = len(d["killed"][suite] & ids)
             out.append((label, n, str(k), pct(k, n)))
     for tool, name in (("randoop", "Randoop"), ("evosuite", "EvoSuite")):
@@ -125,7 +140,9 @@ def total_rows(ids_by_key):
     """Rows over all classes for the mutant ids chosen per class; seeds add up seed i of every class."""
     n = sum(len(v) for v in ids_by_key.values())
     out = []
-    for suite, label in (("testgen-long", "TestGen, long string only"), ("testgen-all", "TestGen, + short strings")):
+    for suite, label in TG_ROWS:
+        if "family" in suite and not ALL_FAMILY:
+            continue
         k = sum(len(data[key]["killed"][suite] & ids) for key, ids in ids_by_key.items())
         out.append((label, n, str(k), pct(k, n)))
     for tool, name in (("randoop", "Randoop"), ("evosuite", "EvoSuite")):
@@ -158,9 +175,11 @@ lines.append("")
 # per class summary
 lines.append("### Per class, mutation score")
 lines.append("")
-hdr = "| Class (version) | Mutants | TestGen long | TestGen + short | Randoop median (min–max) | EvoSuite median (min–max) |"
+fam_col = any(d["has_family"] for d in data.values())
+hdr = ("| Class (version) | Mutants | TestGen long | TestGen + short | " + ("TestGen long + family | " if fam_col else "")
+       + "Randoop median (min–max) | EvoSuite median (min–max) |")
 lines.append(hdr)
-lines.append("| --- | --- | --- | --- | --- | --- |")
+lines.append("| --- " * (hdr.count("|") - 1) + "|")
 for key, d in data.items():
     t = {r[0]: r for r in table_rows(d, d["sampled"])}
     def g(prefix):
@@ -169,7 +188,8 @@ for key, d in data.items():
                 return r[3]
         return "–"
     lines.append(f"| {d['title']} ({d['version']}) | {len(d['sampled'])} | {g('TestGen, long')} | "
-                 f"{g('TestGen, +')} | {g('Randoop, median')} | {g('EvoSuite, median')} |")
+                 f"{g('TestGen, +')} | " + (f"{g('TestGen, long string +')} | " if fam_col else "")
+                 + f"{g('Randoop, median')} | {g('EvoSuite, median')} |")
 lines.append("")
 
 # direct scope
@@ -199,6 +219,14 @@ for key, d in data.items():
                  f"{c.get('INVALID', 0)} INVALID (do not compile), {c.get('TCE', 0)} TCE (byte-identical to the "
                  f"original), {c.get('NOT_APPLICABLE', 0) + c.get('ERROR', 0)} not applicable; "
                  f"{c.get('VALID', 0)} valid, {len(d['sampled'])} scored.")
+    fam = tsv(os.path.join(D, f"{key}.family.tsv"))
+    if fam:
+        fc = Counter(r["status"] for r in fam)
+        other = len(fam) - fc.get("PASSED", 0) - fc.get("INCORRECT_SEQUENCE", 0) - fc.get("FAILED", 0)
+        lines.append("")
+        lines.append(f"Generated family (step 7): {len(fam)} test strings; {fc.get('PASSED', 0)} pass on the fixed "
+                     f"version and are kept, {fc.get('INCORRECT_SEQUENCE', 0)} rejected as impossible orders, "
+                     f"{fc.get('FAILED', 0)} fail on the fixed version, {other} other (solver error, timeout, ...).")
     dropped = [b for b in d["base"] if b["status"] != "KEPT"]
     notes = [b for b in d["base"] if b["status"] == "KEPT" and b["reason"]]
     if dropped:
@@ -214,8 +242,10 @@ for key, d in data.items():
 # ── per operator ──
 lines.append("## Per operator (all classes)")
 lines.append("")
-lines.append("| Operator | Mutants | TestGen long | TestGen + short | Randoop median | Randoop any | EvoSuite median | EvoSuite any |")
-lines.append("| --- | --- | --- | --- | --- | --- | --- | --- |")
+ophdr = ("| Operator | Mutants | TestGen long | TestGen + short | " + ("TestGen long + family | " if ALL_FAMILY else "")
+         + "Randoop median | Randoop any | EvoSuite median | EvoSuite any |")
+lines.append(ophdr)
+lines.append("| --- " * (ophdr.count("|") - 1) + "|")
 ops = defaultdict(list)
 for key, d in data.items():
     for i in d["sampled"]:
@@ -226,6 +256,8 @@ for op in sorted(ops, key=lambda o: -len(ops[o])):
     def k_suite(s):
         return sum(1 for key, i in items if i in data[key]["killed"].get(s, set()))
     cells = [pct(k_suite("testgen-long"), n), pct(k_suite("testgen-all"), n)]
+    if ALL_FAMILY:
+        cells.append(pct(k_suite("testgen-long+family"), n))
     for tool in SEEDED:
         seeds = sorted({s.split("-s")[-1] for d in data.values() for s in suites_of(d, tool)}, key=int)
         if not seeds:
@@ -277,7 +309,7 @@ allk = defaultdict(Counter)
 for d in data.values():
     for t, c in d["kinds"].items():
         allk[t].update(c)
-for t in ("testgen-long", "testgen-all", "randoop", "evosuite"):
+for t in ("testgen-long", "testgen-all", "testgen-family", "randoop", "evosuite"):
     if t in allk:
         lines.append(f"| {t} | " + " | ".join(str(allk[t].get(k, 0)) for k in ("PRE", "POST", "EXCEPTION", "TIMEOUT", "CRASH")) + " |")
 lines.append("")
