@@ -112,6 +112,10 @@ only shows for a different value. The contracts can express every one of them.
   set, and the next `removeElement` precondition (`L.contains(e)`) can no
   longer be met.
 
+## Mutation testing on the same classes
+
+`./mutation.sh` plants Mothra mutants in the 7 real classes and runs TestGen's, Randoop's and EvoSuite's suites against the same mutants. See [mutation/README.md](mutation/README.md) for the method and [mutation/REPORT.md](mutation/REPORT.md) for the results.
+
 ## Notes on the bugs
 
 - Bugs 1-19 are in Commons Collections 3.x (`org.apache.commons.collections`),

@@ -1,0 +1,108 @@
+id	verdict	reason
+SETUNIQUELIST_GEN_ROR_51	equivalent	add never shrinks the list, so sizeBefore < size() iff sizeBefore != size()
+SETUNIQUELIST_GEN_STR_70	equivalent	adding to a Set twice is the same as once
+SETUNIQUELIST_GEN_ROR_96	equivalent	indexOf returns >= -1, so pos > -1 iff pos != -1
+SETUNIQUELIST_GEN_ROR_112	equivalent	indexOf returns >= -1, so pos <= -1 iff pos == -1
+SETUNIQUELIST_GEN_STR_130	equivalent	the list holds each element once, so a second remove(object) finds nothing
+SETUNIQUELIST_GEN_STR_140	equivalent	removing from a Set twice is the same as once
+SETUNIQUELIST_GEN_MCR_215	not	new HashSet(list.hashCode()) throws IllegalArgumentException when the hash code is negative
+SETUNIQUELIST_GEN_SDL_217	not	subList's uniqueness set stays empty; TestGen's subList(0,0) is empty, so its check subTrackedSize == subSize still holds
+SETUNIQUELIST_GEN_STR_218	equivalent	addAll of the same list into a Set twice is the same as once
+SETUNIQUELIST4_GEN_ROR_51	equivalent	add never shrinks the list, so sizeBefore < size() iff sizeBefore != size()
+SETUNIQUELIST4_GEN_STR_70	equivalent	adding to a Set twice is the same as once
+SETUNIQUELIST4_GEN_ROR_96	equivalent	indexOf returns >= -1, so pos > -1 iff pos != -1
+SETUNIQUELIST4_GEN_STR_125	equivalent	the list holds each element once, so a second remove(object) finds nothing
+SETUNIQUELIST4_GEN_STR_135	equivalent	removing from a Set twice is the same as once
+SETUNIQUELIST4_GEN_CTC_206	equivalent	for a HashSet the else branch builds a HashSet by reflection; same set, same contents
+SETUNIQUELIST4_GEN_COI_204	not	for a non-HashSet set (e.g. TreeSet) the view gets a HashSet instead of the set's own class
+SETUNIQUELIST4_GEN_MCR_210	not	new HashSet(list.hashCode()) throws IllegalArgumentException when the hash code is negative
+SETUNIQUELIST4_GEN_SDL_212	not	subList's uniqueness set stays empty, so the view accepts duplicates
+SETUNIQUELIST4_GEN_STR_213	equivalent	addAll of the same list into a Set twice is the same as once
+FLAT3MAP_GEN_CTC_60	equivalent	with size 0 the switch has no case 0 and get returns null either way (key is non-null here)
+FLAT3MAP_GEN_ROR_55	equivalent	size is never negative, so size != 0 iff size > 0
+FLAT3MAP_GEN_ROR_63	equivalent	equal keys have equal hash codes, so key.equals(key3) already decides
+FLAT3MAP_GEN_ROR_72	equivalent	equal keys have equal hash codes, so key.equals(key2) already decides
+FLAT3MAP_GEN_ROR_227	not	putting the 3rd key again misses it and converts the map to a HashedMap: same contents, different iteration order
+FLAT3MAP_GEN_CTC_231	not	putting the 3rd key again misses it and converts the map to a HashedMap: same contents, different iteration order
+FLAT3MAP_GEN_ROR_235	equivalent	equal keys have equal hash codes, so key.equals(key2) already decides
+FLAT3MAP_GEN_CRP_286	not	a null key gets hash1 = 1, which changes the map's hashCode()
+FLAT3MAP_GEN_STR_323	equivalent	putting the same entry into the delegate map twice is the same as once
+FLAT3MAP_GEN_ABS_344	equivalent	-Math.abs(0) is 0
+FLAT3MAP_GEN_CRP_349	equivalent	the hash fields are unused in delegate mode and rewritten by every put in flat mode
+FLAT3MAP_GEN_CRP_465	not	an empty map returns an EntrySetIterator instead of EmptyIterator (different class and exception messages)
+FLAT3MAP_GEN_CRP_503	not	entry hashCode() of a null key changes
+FLAT3MAP_GEN_CRP_510	not	entry hashCode() of a null value changes
+FLAT3MAP_GEN_CTC_642	not	equals() stops checking that the other map has key2, e.g. {a=1,b=null} equals {a=1,c=null}
+FLAT3MAP_GEN_RVR_698	not	hashCode() of a map in delegate mode becomes 1
+FLAT3MAP_GEN_RVR_697	not	hashCode() of a map in delegate mode becomes 0
+FLAT3MAP_GEN_SDL_709	not	hashCode() of a 3-entry map leaves out the 3rd entry
+FLAT3MAP_GEN_CRP_723	not	hashCode() changes when the 1st value is null
+FLAT3MAP_GEN_ABS_727	not	hashCode() changes sign when it is positive
+MULTIVALUEMAP_GEN_CRP_71	equivalent	createCollection ignores its size argument
+MULTIVALUEMAP_GEN_CRP_73	equivalent	createCollection ignores its size argument
+MULTIVALUEMAP_GEN_CRP_72	equivalent	createCollection ignores its size argument
+MULTIVALUEMAP_GEN_CRP_86	not	with a collection factory whose collections ignore add, an empty collection is stored and put returns true
+MULTIVALUEMAP_GEN_ROR_80	not	with a collection factory whose collections ignore add, an empty collection is stored and put returns true
+MULTIVALUEMAP_GEN_CTC_87	not	with a collection factory whose collections ignore add, an empty collection is stored and put returns true
+MULTIVALUEMAP_GEN_ROR_82	equivalent	a collection size is never negative, so != 0 iff > 0
+MULTIVALUEMAP_GEN_MCR_92	not	putIfAbsent keeps an existing key->null entry of a decorated map that put would replace
+MULTIVALUEMAP_GEN_ABS_119	equivalent	-Math.abs(0) is 0
+MULTIVALUEMAP_GEN_RVR_125	not	size(key) returns 1 for a key with 2 or more values
+MULTIVALUEMAP_GEN_ROR_133	equivalent	a collection size is never negative, so <= 0 iff == 0
+MULTIVALUEMAP_GEN_MCR_149	equivalent	createCollection ignores its size argument
+MULTIVALUEMAP_GEN_RVR_157	not	with a Set collection factory, addAll of values already present returns false; the mutant returns true
+MULTIVALUEMAP_GEN_RVR_181	not	values().size() becomes 1
+MULTIVALUEMAP_GEN_STR_184	equivalent	clearing twice is the same as once
+MULTIVALUEMAP_GEN_SDL_183	not	values().clear() no longer clears the map
+TREELIST_GEN_ABS_44	equivalent	-Math.abs(-1) is -1
+TREELIST_GEN_SDL_127	not	a node inserted in the middle loses its link to the next node, which breaks next()
+TREELIST_GEN_STR_235	equivalent	writing the same values into the same array slots twice
+TREELIST_GEN_STR_241	equivalent	writing the same values into the same array slots twice
+TREELIST_GEN_CRP_351	equivalent	the case == 0 returned just above, so > -1 iff > 0
+TREELIST_GEN_CRP_402	equivalent	both arms of the ternary are now 0, and inside relativePosition > 0 the original also adds 0
+TREELIST_GEN_CRP_398	not	when relativePosition == 1 the left child's position is off by one
+TREELIST_GEN_CRP_401	not	the left child's position is off by one whenever this branch runs
+TREELIST_GEN_ROR_395	not	inside relativePosition > 0, == 0 is false, so 1 is added: off by one
+TREELIST_GEN_STR_407	equivalent	setRight(null, right) is idempotent and max() returns the same node after it
+TREELIST_GEN_SDL_426	not	the right subtree's minimum loses its link to the previous node, which breaks previous()
+TREELIST_GEN_ROR_430	not	balanced nodes are now deleted from the right, whose code lacks the left branch's double-link special case (not proven safe)
+TREELIST_GEN_CRP_436	not	balanced nodes are now deleted from the right, whose code lacks the left branch's double-link special case (not proven safe)
+TREELIST_GEN_SDL_444	not	the previous-link of the replacing node is not updated
+TREELIST_GEN_CTC_461	not	drops the double-link special case the code comments describe
+TREELIST_GEN_CRP_490	not	an extra rotation leaves the tree unbalanced, so a later balance() can throw "tree inconsistent!"
+TREELIST_GEN_CRP_506	not	a missing double rotation leaves the tree unbalanced, so a later balance() can throw "tree inconsistent!"
+TREELIST_GEN_CRP_523	equivalent	getOffset(null) is only reached for movedNode, whose offset setOffset(null, ...) then ignores
+TREELIST_GEN_RVR_532	equivalent	no caller uses setOffset's return value
+TREELIST_GEN_CRP_542	not	leaf heights change, so balancing decisions change
+LISTORDEREDMAP4_GEN_MCR_115	not	re-putting an existing key with a non-null value no longer replaces the value
+LISTORDEREDMAP4_GEN_MCR_117	equivalent	the key is absent here, so putIfAbsent behaves as put (both return null)
+LISTORDEREDMAP4_GEN_RVR_123	equivalent	the key is absent here, so put returns null anyway
+LISTORDEREDMAP4_GEN_COI_126	not	putAll(index, map) advances the index for existing keys instead of new ones
+LISTORDEREDMAP4_GEN_CTC_129	not	putAll(index, map) never advances the index for new keys
+LISTORDEREDMAP4_GEN_CTC_128	not	putAll(index, map) always advances the index (the Collections-22 area)
+LISTORDEREDMAP4_GEN_UOI_127	not	putAll(index, map) advances the index for existing keys instead of new ones
+LISTORDEREDMAP4_GEN_CRP_141	not	after an existing key the next key goes one slot too far
+LISTORDEREDMAP4_GEN_AOI_135	not	after an existing key the next key goes one slot too far
+LISTORDEREDMAP4_GEN_STR_148	equivalent	insertOrder holds each key once, so a second remove finds nothing
+LISTORDEREDMAP4_GEN_MCR_220	equivalent	the key is put again two lines later with the new value; order is kept in insertOrder, not the map
+LISTORDEREDMAP4_GEN_ROR_231	not	when pos > index the index is wrongly decremented
+STRBUILDER_GEN_ROR_94	equivalent	this branch runs only when length > size, so i != newEnd iff i < newEnd
+STRBUILDER_GEN_SDL_100	not	growing with setLength exposes stale characters left by an earlier delete instead of '\0'
+STRBUILDER_GEN_ROR_325	equivalent	a string length is never negative
+STRBUILDER_GEN_ROR_323	equivalent	appending "" through the main branch copies nothing and adds 0 to size
+STRBUILDER_GEN_STR_663	equivalent	copying the same chars to the same place twice
+STRBUILDER_GEN_ROR_928	not	deleteAll only removes occurrences at index 0
+STRBUILDER_GEN_AOI_941	not	deleteAll deletes one character too early from the 2nd occurrence on
+STRBUILDER_GEN_CRP_1405	equivalent	indexOf(String, int) turns a negative start into 0
+STRBUILDER_GEN_CTC_1443	equivalent	when startIndex >= size the loop does not run and -1 is returned anyway
+STRBUILDER_GEN_ROR_1437	equivalent	when startIndex > size the loop does not run and -1 is returned anyway
+STRBUILDER_GEN_ROR_1440	equivalent	when startIndex == size the loop does not run and -1 is returned anyway
+STRBUILDER_GEN_ROR_1447	equivalent	startIndex < size here, so i != size iff i < size
+STRBUILDER_GEN_CRP_1457	equivalent	indexOf(String, int) turns a negative start into 0
+STRBUILDER_GEN_CTC_1485	equivalent	the general loop finds a 1-character string at the same index as the shortcut
+STRBUILDER_GEN_CRP_1500	equivalent	for "" the general loop returns startIndex too (startIndex < size here)
+STRBUILDER_GEN_CRP_1499	equivalent	strLen == 1 returned just above, so "" goes through the general loop, which returns startIndex
+STRBUILDER_GEN_CTC_1515	equivalent	when strLen > size the loop bound is <= 0 and -1 is returned anyway
+STRBUILDER_GEN_CRP_1526	not	the search reads one character past the end: stale text can match (the Lang-61 kind of bug)
+STRBUILDER_GEN_ROR_1530	not	when startIndex > len the loop runs past the end
+STRBUILDER_GEN_ROR_1527	not	the search reads one character past the end: stale text can match (the Lang-61 kind of bug)

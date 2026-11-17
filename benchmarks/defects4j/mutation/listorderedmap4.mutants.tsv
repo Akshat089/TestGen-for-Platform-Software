@@ -1,0 +1,96 @@
+id	line	operator	abbr	method	direct	find	replace
+LISTORDEREDMAP4_GEN_SDL_1	86	statement-deletion	SDL	ListOrderedMap.<init-fields>	indirect	private final List<K> insertOrder = new ArrayList<K>();	
+LISTORDEREDMAP4_GEN_SDL_12	112	statement-deletion	SDL	ListOrderedMap.<init>()	direct	this(new HashMap<K, V>());	
+LISTORDEREDMAP4_GEN_SDL_13	122	statement-deletion	SDL	ListOrderedMap.<init>(Map)	indirect	super(map);	
+LISTORDEREDMAP4_GEN_SDL_14	123	statement-deletion	SDL	ListOrderedMap.<init>(Map)	indirect	insertOrder.addAll(decorated().keySet());	
+LISTORDEREDMAP4_GEN_STR_15	123	statement-replacement	STR	ListOrderedMap.<init>(Map)	indirect	insertOrder.addAll(decorated().keySet());	insertOrder.addAll(decorated().keySet()); insertOrder.addAll(decorated().keySet());
+LISTORDEREDMAP4_GEN_COI_107	219	conditional-operator-insertion	COI	ListOrderedMap.put(Object,Object)	direct	if (decorated().containsKey(key)) {	if (!(decorated().containsKey(key))) {
+LISTORDEREDMAP4_GEN_CTC_108	219	condition-to-constant	CTC	ListOrderedMap.put(Object,Object)	direct	if (decorated().containsKey(key)) {	if (true) {
+LISTORDEREDMAP4_GEN_CTC_109	219	condition-to-constant	CTC	ListOrderedMap.put(Object,Object)	direct	if (decorated().containsKey(key)) {	if (false) {
+LISTORDEREDMAP4_GEN_ARP_110	219	argument-replacement	ARP	ListOrderedMap.put(Object,Object)	direct	if (decorated().containsKey(key)) {	if (decorated().containsKey(key + 1)) {
+LISTORDEREDMAP4_GEN_ARP_111	219	argument-replacement	ARP	ListOrderedMap.put(Object,Object)	direct	if (decorated().containsKey(key)) {	if (decorated().containsKey(key - 1)) {
+LISTORDEREDMAP4_GEN_MCR_112	219	method-call-replacement	MCR	ListOrderedMap.put(Object,Object)	direct	if (decorated().containsKey(key)) {	if (decorated().containsValue(key)) {
+LISTORDEREDMAP4_GEN_RVR_113	221	return-value-replacement	RVR	ListOrderedMap.put(Object,Object)	direct	return decorated().put(key, value);	return null;
+LISTORDEREDMAP4_GEN_ARP_114	221	argument-replacement	ARP	ListOrderedMap.put(Object,Object)	direct	return decorated().put(key, value);	return decorated().put(value, key);
+LISTORDEREDMAP4_GEN_MCR_115	221	method-call-replacement	MCR	ListOrderedMap.put(Object,Object)	direct	return decorated().put(key, value);	return decorated().putIfAbsent(key, value);
+LISTORDEREDMAP4_GEN_ARP_116	224	argument-replacement	ARP	ListOrderedMap.put(Object,Object)	direct	final V result = decorated().put(key, value);	final V result = decorated().put(value, key);
+LISTORDEREDMAP4_GEN_MCR_117	224	method-call-replacement	MCR	ListOrderedMap.put(Object,Object)	direct	final V result = decorated().put(key, value);	final V result = decorated().putIfAbsent(key, value);
+LISTORDEREDMAP4_GEN_SDL_118	225	statement-deletion	SDL	ListOrderedMap.put(Object,Object)	direct	insertOrder.add(key);	
+LISTORDEREDMAP4_GEN_STR_119	225	statement-replacement	STR	ListOrderedMap.put(Object,Object)	direct	insertOrder.add(key);	insertOrder.add(key); insertOrder.add(key);
+LISTORDEREDMAP4_GEN_ARP_120	225	argument-replacement	ARP	ListOrderedMap.put(Object,Object)	direct	insertOrder.add(key);	insertOrder.add(key + 1);
+LISTORDEREDMAP4_GEN_ARP_121	225	argument-replacement	ARP	ListOrderedMap.put(Object,Object)	direct	insertOrder.add(key);	insertOrder.add(key - 1);
+LISTORDEREDMAP4_GEN_MCR_122	225	method-call-replacement	MCR	ListOrderedMap.put(Object,Object)	direct	insertOrder.add(key);	insertOrder.contains(key);
+LISTORDEREDMAP4_GEN_RVR_123	226	return-value-replacement	RVR	ListOrderedMap.put(Object,Object)	direct	return result;	return null;
+LISTORDEREDMAP4_GEN_SDL_125	250	statement-deletion	SDL	ListOrderedMap.putAll(int,Map)	direct	put(index, entry.getKey(), entry.getValue());	
+LISTORDEREDMAP4_GEN_COI_126	251	conditional-operator-insertion	COI	ListOrderedMap.putAll(int,Map)	direct	if (!contains) {	if (!(!contains)) {
+LISTORDEREDMAP4_GEN_UOI_127	251	unary-operator-insertion	UOI	ListOrderedMap.putAll(int,Map)	direct	if (!contains) {	if (contains) {
+LISTORDEREDMAP4_GEN_CTC_128	251	condition-to-constant	CTC	ListOrderedMap.putAll(int,Map)	direct	if (!contains) {	if (true) {
+LISTORDEREDMAP4_GEN_CTC_129	251	condition-to-constant	CTC	ListOrderedMap.putAll(int,Map)	direct	if (!contains) {	if (false) {
+LISTORDEREDMAP4_GEN_SDL_130	253	statement-deletion	SDL	ListOrderedMap.putAll(int,Map)	direct	index++;	
+LISTORDEREDMAP4_GEN_AOR_131	256	arithmetic-operator-replacement	AOR	ListOrderedMap.putAll(int,Map)	direct	index = indexOf(entry.getKey()) + 1;	index = indexOf(entry.getKey()) - 1;
+LISTORDEREDMAP4_GEN_AOR_132	256	arithmetic-operator-replacement	AOR	ListOrderedMap.putAll(int,Map)	direct	index = indexOf(entry.getKey()) + 1;	index = indexOf(entry.getKey()) * 1;
+LISTORDEREDMAP4_GEN_AOR_133	256	arithmetic-operator-replacement	AOR	ListOrderedMap.putAll(int,Map)	direct	index = indexOf(entry.getKey()) + 1;	index = indexOf(entry.getKey()) / 1;
+LISTORDEREDMAP4_GEN_AOR_134	256	arithmetic-operator-replacement	AOR	ListOrderedMap.putAll(int,Map)	direct	index = indexOf(entry.getKey()) + 1;	index = indexOf(entry.getKey()) % 1;
+LISTORDEREDMAP4_GEN_AOI_135	256	arithmetic-operator-insertion	AOI	ListOrderedMap.putAll(int,Map)	direct	index = indexOf(entry.getKey()) + 1;	index = indexOf(entry.getKey()) + 1 + 1;
+LISTORDEREDMAP4_GEN_AOI_136	256	arithmetic-operator-insertion	AOI	ListOrderedMap.putAll(int,Map)	direct	index = indexOf(entry.getKey()) + 1;	index = indexOf(entry.getKey()) + 1 - 1;
+LISTORDEREDMAP4_GEN_UOI_137	256	unary-operator-insertion	UOI	ListOrderedMap.putAll(int,Map)	direct	index = indexOf(entry.getKey()) + 1;	index = -(indexOf(entry.getKey()) + 1);
+LISTORDEREDMAP4_GEN_ABS_138	256	absolute-value-insertion	ABS	ListOrderedMap.putAll(int,Map)	direct	index = indexOf(entry.getKey()) + 1;	index = -Math.abs(indexOf(entry.getKey()) + 1);
+LISTORDEREDMAP4_GEN_CRP_139	256	constant-replacement	CRP	ListOrderedMap.putAll(int,Map)	direct	index = indexOf(entry.getKey()) + 1;	index = indexOf(entry.getKey()) + 0;
+LISTORDEREDMAP4_GEN_CRP_140	256	constant-replacement	CRP	ListOrderedMap.putAll(int,Map)	direct	index = indexOf(entry.getKey()) + 1;	index = indexOf(entry.getKey()) + -1;
+LISTORDEREDMAP4_GEN_CRP_141	256	constant-replacement	CRP	ListOrderedMap.putAll(int,Map)	direct	index = indexOf(entry.getKey()) + 1;	index = indexOf(entry.getKey()) + 2;
+LISTORDEREDMAP4_GEN_SDL_142	256	statement-deletion	SDL	ListOrderedMap.putAll(int,Map)	direct	index = indexOf(entry.getKey()) + 1;	
+LISTORDEREDMAP4_GEN_SDL_143	265	statement-deletion	SDL	ListOrderedMap.remove(Object)	direct	result = decorated().remove(key);	
+LISTORDEREDMAP4_GEN_ARP_144	265	argument-replacement	ARP	ListOrderedMap.remove(Object)	direct	result = decorated().remove(key);	result = decorated().remove(key + 1);
+LISTORDEREDMAP4_GEN_ARP_145	265	argument-replacement	ARP	ListOrderedMap.remove(Object)	direct	result = decorated().remove(key);	result = decorated().remove(key - 1);
+LISTORDEREDMAP4_GEN_MCR_146	265	method-call-replacement	MCR	ListOrderedMap.remove(Object)	direct	result = decorated().remove(key);	result = decorated().get(key);
+LISTORDEREDMAP4_GEN_SDL_147	266	statement-deletion	SDL	ListOrderedMap.remove(Object)	direct	insertOrder.remove(key);	
+LISTORDEREDMAP4_GEN_STR_148	266	statement-replacement	STR	ListOrderedMap.remove(Object)	direct	insertOrder.remove(key);	insertOrder.remove(key); insertOrder.remove(key);
+LISTORDEREDMAP4_GEN_ARP_149	266	argument-replacement	ARP	ListOrderedMap.remove(Object)	direct	insertOrder.remove(key);	insertOrder.remove(key + 1);
+LISTORDEREDMAP4_GEN_ARP_150	266	argument-replacement	ARP	ListOrderedMap.remove(Object)	direct	insertOrder.remove(key);	insertOrder.remove(key - 1);
+LISTORDEREDMAP4_GEN_MCR_151	266	method-call-replacement	MCR	ListOrderedMap.remove(Object)	direct	insertOrder.remove(key);	insertOrder.get(key);
+LISTORDEREDMAP4_GEN_RVR_155	288	return-value-replacement	RVR	ListOrderedMap.keySet()	indirect	return new KeySetView<K>(this);	return null;
+LISTORDEREDMAP4_GEN_RVR_160	344	return-value-replacement	RVR	ListOrderedMap.entrySet()	indirect	return new EntrySetView<K, V>(this, this.insertOrder);	return null;
+LISTORDEREDMAP4_GEN_UOI_200	407	unary-operator-insertion	UOI	ListOrderedMap.indexOf(Object)	direct	return insertOrder.indexOf(key);	return -(insertOrder.indexOf(key));
+LISTORDEREDMAP4_GEN_ABS_201	407	absolute-value-insertion	ABS	ListOrderedMap.indexOf(Object)	direct	return insertOrder.indexOf(key);	return -Math.abs(insertOrder.indexOf(key));
+LISTORDEREDMAP4_GEN_RVR_202	407	return-value-replacement	RVR	ListOrderedMap.indexOf(Object)	direct	return insertOrder.indexOf(key);	return 0;
+LISTORDEREDMAP4_GEN_RVR_203	407	return-value-replacement	RVR	ListOrderedMap.indexOf(Object)	direct	return insertOrder.indexOf(key);	return 1;
+LISTORDEREDMAP4_GEN_RVR_204	407	return-value-replacement	RVR	ListOrderedMap.indexOf(Object)	direct	return insertOrder.indexOf(key);	return -1;
+LISTORDEREDMAP4_GEN_ARP_205	407	argument-replacement	ARP	ListOrderedMap.indexOf(Object)	direct	return insertOrder.indexOf(key);	return insertOrder.indexOf(key + 1);
+LISTORDEREDMAP4_GEN_ARP_206	407	argument-replacement	ARP	ListOrderedMap.indexOf(Object)	direct	return insertOrder.indexOf(key);	return insertOrder.indexOf(key - 1);
+LISTORDEREDMAP4_GEN_SDL_211	444	statement-deletion	SDL	ListOrderedMap.put(int,Object,Object)	direct	final Map<K, V> m = decorated();	
+LISTORDEREDMAP4_GEN_COI_212	445	conditional-operator-insertion	COI	ListOrderedMap.put(int,Object,Object)	direct	if (m.containsKey(key)) {	if (!(m.containsKey(key))) {
+LISTORDEREDMAP4_GEN_CTC_213	445	condition-to-constant	CTC	ListOrderedMap.put(int,Object,Object)	direct	if (m.containsKey(key)) {	if (true) {
+LISTORDEREDMAP4_GEN_CTC_214	445	condition-to-constant	CTC	ListOrderedMap.put(int,Object,Object)	direct	if (m.containsKey(key)) {	if (false) {
+LISTORDEREDMAP4_GEN_ARP_215	445	argument-replacement	ARP	ListOrderedMap.put(int,Object,Object)	direct	if (m.containsKey(key)) {	if (m.containsKey(key + 1)) {
+LISTORDEREDMAP4_GEN_ARP_216	445	argument-replacement	ARP	ListOrderedMap.put(int,Object,Object)	direct	if (m.containsKey(key)) {	if (m.containsKey(key - 1)) {
+LISTORDEREDMAP4_GEN_MCR_217	445	method-call-replacement	MCR	ListOrderedMap.put(int,Object,Object)	direct	if (m.containsKey(key)) {	if (m.containsValue(key)) {
+LISTORDEREDMAP4_GEN_ARP_218	446	argument-replacement	ARP	ListOrderedMap.put(int,Object,Object)	direct	final V result = m.remove(key);	final V result = m.remove(key + 1);
+LISTORDEREDMAP4_GEN_ARP_219	446	argument-replacement	ARP	ListOrderedMap.put(int,Object,Object)	direct	final V result = m.remove(key);	final V result = m.remove(key - 1);
+LISTORDEREDMAP4_GEN_MCR_220	446	method-call-replacement	MCR	ListOrderedMap.put(int,Object,Object)	direct	final V result = m.remove(key);	final V result = m.get(key);
+LISTORDEREDMAP4_GEN_ARP_221	447	argument-replacement	ARP	ListOrderedMap.put(int,Object,Object)	direct	final int pos = insertOrder.indexOf(key);	final int pos = insertOrder.indexOf(key + 1);
+LISTORDEREDMAP4_GEN_ARP_222	447	argument-replacement	ARP	ListOrderedMap.put(int,Object,Object)	direct	final int pos = insertOrder.indexOf(key);	final int pos = insertOrder.indexOf(key - 1);
+LISTORDEREDMAP4_GEN_SDL_223	448	statement-deletion	SDL	ListOrderedMap.put(int,Object,Object)	direct	insertOrder.remove(pos);	
+LISTORDEREDMAP4_GEN_STR_224	448	statement-replacement	STR	ListOrderedMap.put(int,Object,Object)	direct	insertOrder.remove(pos);	insertOrder.remove(pos); insertOrder.remove(pos);
+LISTORDEREDMAP4_GEN_ARP_225	448	argument-replacement	ARP	ListOrderedMap.put(int,Object,Object)	direct	insertOrder.remove(pos);	insertOrder.remove(pos + 1);
+LISTORDEREDMAP4_GEN_ARP_226	448	argument-replacement	ARP	ListOrderedMap.put(int,Object,Object)	direct	insertOrder.remove(pos);	insertOrder.remove(pos - 1);
+LISTORDEREDMAP4_GEN_MCR_227	448	method-call-replacement	MCR	ListOrderedMap.put(int,Object,Object)	direct	insertOrder.remove(pos);	insertOrder.get(pos);
+LISTORDEREDMAP4_GEN_ROR_228	449	relational-operator-replacement	ROR	ListOrderedMap.put(int,Object,Object)	direct	if (pos < index) {	if (pos <= index) {
+LISTORDEREDMAP4_GEN_ROR_229	449	relational-operator-replacement	ROR	ListOrderedMap.put(int,Object,Object)	direct	if (pos < index) {	if (pos >= index) {
+LISTORDEREDMAP4_GEN_ROR_230	449	relational-operator-replacement	ROR	ListOrderedMap.put(int,Object,Object)	direct	if (pos < index) {	if (pos == index) {
+LISTORDEREDMAP4_GEN_ROR_231	449	relational-operator-replacement	ROR	ListOrderedMap.put(int,Object,Object)	direct	if (pos < index) {	if (pos != index) {
+LISTORDEREDMAP4_GEN_ROR_232	449	relational-operator-replacement	ROR	ListOrderedMap.put(int,Object,Object)	direct	if (pos < index) {	if (pos > index) {
+LISTORDEREDMAP4_GEN_COI_233	449	conditional-operator-insertion	COI	ListOrderedMap.put(int,Object,Object)	direct	if (pos < index) {	if (!(pos < index)) {
+LISTORDEREDMAP4_GEN_CTC_234	449	condition-to-constant	CTC	ListOrderedMap.put(int,Object,Object)	direct	if (pos < index) {	if (true) {
+LISTORDEREDMAP4_GEN_CTC_235	449	condition-to-constant	CTC	ListOrderedMap.put(int,Object,Object)	direct	if (pos < index) {	if (false) {
+LISTORDEREDMAP4_GEN_SDL_236	450	statement-deletion	SDL	ListOrderedMap.put(int,Object,Object)	direct	index--;	
+LISTORDEREDMAP4_GEN_SDL_266	551	statement-deletion	SDL	ListOrderedMap.KeySetView.<init>(ListOrderedMap)	indirect	this.parent = (ListOrderedMap<K, Object>) parent;	
+LISTORDEREDMAP4_GEN_RVR_272	573	return-value-replacement	RVR	ListOrderedMap.KeySetView.iterator().<anonymous org.apache.commons.collections4.iterators.AbstractUntypedIteratorDecorator>.next()	indirect	return getIterator().next().getKey();	return null;
+LISTORDEREDMAP4_GEN_SDL_276	587	statement-deletion	SDL	ListOrderedMap.EntrySetView.<init>(ListOrderedMap,List)	indirect	this.parent = parent;	
+LISTORDEREDMAP4_GEN_SDL_277	588	statement-deletion	SDL	ListOrderedMap.EntrySetView.<init>(ListOrderedMap,List)	indirect	this.insertOrder = insertOrder;	
+LISTORDEREDMAP4_GEN_RVR_336	656	return-value-replacement	RVR	ListOrderedMap.EntrySetView.iterator()	indirect	return new ListOrderedIterator<K, V>(parent, insertOrder);	return null;
+LISTORDEREDMAP4_GEN_SDL_337	666	statement-deletion	SDL	ListOrderedMap.ListOrderedIterator.<init>(ListOrderedMap,List)	indirect	super(insertOrder.iterator());	
+LISTORDEREDMAP4_GEN_SDL_338	671	statement-deletion	SDL	ListOrderedMap.ListOrderedIterator.next()	indirect	last = getIterator().next();	
+LISTORDEREDMAP4_GEN_RVR_339	672	return-value-replacement	RVR	ListOrderedMap.ListOrderedIterator.next()	indirect	return new ListOrderedMapEntry<K, V>(parent, last);	return null;
+LISTORDEREDMAP4_GEN_SDL_348	687	statement-deletion	SDL	ListOrderedMap.ListOrderedMapEntry.<init>(ListOrderedMap,Object)	indirect	super(key, null);	
+LISTORDEREDMAP4_GEN_RVR_349	693	return-value-replacement	RVR	ListOrderedMap.ListOrderedMapEntry.getValue()	indirect	return parent.get(getKey());	return null;
+LISTORDEREDMAP4_GEN_MCR_350	693	method-call-replacement	MCR	ListOrderedMap.ListOrderedMapEntry.getValue()	indirect	return parent.get(getKey());	return parent.remove(getKey());

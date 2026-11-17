@@ -1,0 +1,2802 @@
+/*
+ * GENERATED MUTATION SUITE — strbuilder
+ *
+ * Produced by OperatorMutantGenerator from:
+ *   /mnt/c/Codes/TestGen-for-Platform-Software/benchmarks/defects4j/work/Lang-59f/src/java/org/apache/commons/lang/text/StrBuilder.java
+ *
+ * DO NOT EDIT. Regenerate with benchmarks/defects4j/mutation.sh --regen strbuilder
+ * Each mutant is planted at the line in strbuilder.mutants.tsv, not by `in:`.
+ *
+ * Every operator in MutationOperator is applied to every line of the library
+ * that admits it, so this file is what the specification is measured against
+ * when nobody is choosing the faults. It is the counterpart of the
+ * hand-written set in mutations/strbuilder.mutants:
+ * that one asks whether the suite catches the faults we thought of, this one
+ * asks what fraction of all faults of each KIND it catches.
+ *
+ * `expect` is absent throughout: a generated mutant carries no prediction,
+ * and some of these are equivalent to the original and cannot be killed by
+ * anyone. The run measures; it does not check a declaration.
+ */
+
+mutant STRBUILDER_GEN_CRP_1 {
+    description: the literal 32 becomes 0, in StrBuilder.<clinit> at line 75
+    operator:    constant-replacement
+    in:          <clinit>
+    file:        StrBuilder.java
+    find:        static final int CAPACITY = 32;
+    replace:     static final int CAPACITY = 0;
+}
+
+mutant STRBUILDER_GEN_CRP_2 {
+    description: the literal 32 becomes 1, in StrBuilder.<clinit> at line 75
+    operator:    constant-replacement
+    in:          <clinit>
+    file:        StrBuilder.java
+    find:        static final int CAPACITY = 32;
+    replace:     static final int CAPACITY = 1;
+}
+
+mutant STRBUILDER_GEN_CRP_3 {
+    description: the literal 32 becomes -1, in StrBuilder.<clinit> at line 75
+    operator:    constant-replacement
+    in:          <clinit>
+    file:        StrBuilder.java
+    find:        static final int CAPACITY = 32;
+    replace:     static final int CAPACITY = -1;
+}
+
+mutant STRBUILDER_GEN_CRP_4 {
+    description: the literal 32 becomes 33, in StrBuilder.<clinit> at line 75
+    operator:    constant-replacement
+    in:          <clinit>
+    file:        StrBuilder.java
+    find:        static final int CAPACITY = 32;
+    replace:     static final int CAPACITY = 33;
+}
+
+mutant STRBUILDER_GEN_CRP_5 {
+    description: the literal 32 becomes 31, in StrBuilder.<clinit> at line 75
+    operator:    constant-replacement
+    in:          <clinit>
+    file:        StrBuilder.java
+    find:        static final int CAPACITY = 32;
+    replace:     static final int CAPACITY = 31;
+}
+
+mutant STRBUILDER_GEN_SDL_10 {
+    description: the statement is removed, in StrBuilder.<init>() at line 98
+    operator:    statement-deletion
+    in:          <init>
+    file:        StrBuilder.java
+    find:        this(CAPACITY);
+    replace:     
+}
+
+mutant STRBUILDER_GEN_SDL_11 {
+    description: the statement is removed, in StrBuilder.<init>(int) at line 107
+    operator:    statement-deletion
+    in:          <init>
+    file:        StrBuilder.java
+    find:        super();
+    replace:     
+}
+
+mutant STRBUILDER_GEN_ROR_12 {
+    description: <= becomes >=, in StrBuilder.<init>(int) at line 108
+    operator:    relational-operator-replacement
+    in:          <init>
+    file:        StrBuilder.java
+    find:        if (initialCapacity <= 0) {
+    replace:     if (initialCapacity >= 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_13 {
+    description: <= becomes ==, in StrBuilder.<init>(int) at line 108
+    operator:    relational-operator-replacement
+    in:          <init>
+    file:        StrBuilder.java
+    find:        if (initialCapacity <= 0) {
+    replace:     if (initialCapacity == 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_14 {
+    description: <= becomes !=, in StrBuilder.<init>(int) at line 108
+    operator:    relational-operator-replacement
+    in:          <init>
+    file:        StrBuilder.java
+    find:        if (initialCapacity <= 0) {
+    replace:     if (initialCapacity != 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_15 {
+    description: <= becomes <, in StrBuilder.<init>(int) at line 108
+    operator:    relational-operator-replacement
+    in:          <init>
+    file:        StrBuilder.java
+    find:        if (initialCapacity <= 0) {
+    replace:     if (initialCapacity < 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_16 {
+    description: <= becomes >, in StrBuilder.<init>(int) at line 108
+    operator:    relational-operator-replacement
+    in:          <init>
+    file:        StrBuilder.java
+    find:        if (initialCapacity <= 0) {
+    replace:     if (initialCapacity > 0) {
+}
+
+mutant STRBUILDER_GEN_COI_17 {
+    description: the guard is negated, in StrBuilder.<init>(int) at line 108
+    operator:    conditional-operator-insertion
+    in:          <init>
+    file:        StrBuilder.java
+    find:        if (initialCapacity <= 0) {
+    replace:     if (!(initialCapacity <= 0)) {
+}
+
+mutant STRBUILDER_GEN_CRP_18 {
+    description: the literal 0 becomes 1, in StrBuilder.<init>(int) at line 108
+    operator:    constant-replacement
+    in:          <init>
+    file:        StrBuilder.java
+    find:        if (initialCapacity <= 0) {
+    replace:     if (initialCapacity <= 1) {
+}
+
+mutant STRBUILDER_GEN_CRP_19 {
+    description: the literal 0 becomes -1, in StrBuilder.<init>(int) at line 108
+    operator:    constant-replacement
+    in:          <init>
+    file:        StrBuilder.java
+    find:        if (initialCapacity <= 0) {
+    replace:     if (initialCapacity <= -1) {
+}
+
+mutant STRBUILDER_GEN_CTC_20 {
+    description: the branch is always taken, in StrBuilder.<init>(int) at line 108
+    operator:    condition-to-constant
+    in:          <init>
+    file:        StrBuilder.java
+    find:        if (initialCapacity <= 0) {
+    replace:     if (true) {
+}
+
+mutant STRBUILDER_GEN_CTC_21 {
+    description: the branch is never taken, in StrBuilder.<init>(int) at line 108
+    operator:    condition-to-constant
+    in:          <init>
+    file:        StrBuilder.java
+    find:        if (initialCapacity <= 0) {
+    replace:     if (false) {
+}
+
+mutant STRBUILDER_GEN_SDL_22 {
+    description: the statement is removed, in StrBuilder.<init>(int) at line 109
+    operator:    statement-deletion
+    in:          <init>
+    file:        StrBuilder.java
+    find:        initialCapacity = CAPACITY;
+    replace:     
+}
+
+mutant STRBUILDER_GEN_SDL_23 {
+    description: the statement is removed, in StrBuilder.<init>(int) at line 111
+    operator:    statement-deletion
+    in:          <init>
+    file:        StrBuilder.java
+    find:        buffer = new char[initialCapacity];
+    replace:     
+}
+
+mutant STRBUILDER_GEN_RVR_42 {
+    description: the answer becomes null, in StrBuilder.getNullText() at line 158
+    operator:    return-value-replacement
+    in:          getNullText
+    file:        StrBuilder.java
+    find:        return nullText;
+    replace:     return null;
+}
+
+mutant STRBUILDER_GEN_UOI_61 {
+    description: the returned value is negated, in StrBuilder.length() at line 182
+    operator:    unary-operator-insertion
+    in:          length
+    file:        StrBuilder.java
+    find:        return size;
+    replace:     return -(size);
+}
+
+mutant STRBUILDER_GEN_ABS_62 {
+    description: the returned value is forced negative, in StrBuilder.length() at line 182
+    operator:    absolute-value-insertion
+    in:          length
+    file:        StrBuilder.java
+    find:        return size;
+    replace:     return -Math.abs(size);
+}
+
+mutant STRBUILDER_GEN_RVR_63 {
+    description: the answer becomes 0, in StrBuilder.length() at line 182
+    operator:    return-value-replacement
+    in:          length
+    file:        StrBuilder.java
+    find:        return size;
+    replace:     return 0;
+}
+
+mutant STRBUILDER_GEN_RVR_64 {
+    description: the answer becomes 1, in StrBuilder.length() at line 182
+    operator:    return-value-replacement
+    in:          length
+    file:        StrBuilder.java
+    find:        return size;
+    replace:     return 1;
+}
+
+mutant STRBUILDER_GEN_RVR_65 {
+    description: the answer becomes -1, in StrBuilder.length() at line 182
+    operator:    return-value-replacement
+    in:          length
+    file:        StrBuilder.java
+    find:        return size;
+    replace:     return -1;
+}
+
+mutant STRBUILDER_GEN_ROR_66 {
+    description: < becomes <=, in StrBuilder.setLength(int) at line 194
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        if (length < 0) {
+    replace:     if (length <= 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_67 {
+    description: < becomes >=, in StrBuilder.setLength(int) at line 194
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        if (length < 0) {
+    replace:     if (length >= 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_68 {
+    description: < becomes ==, in StrBuilder.setLength(int) at line 194
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        if (length < 0) {
+    replace:     if (length == 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_69 {
+    description: < becomes !=, in StrBuilder.setLength(int) at line 194
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        if (length < 0) {
+    replace:     if (length != 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_70 {
+    description: < becomes >, in StrBuilder.setLength(int) at line 194
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        if (length < 0) {
+    replace:     if (length > 0) {
+}
+
+mutant STRBUILDER_GEN_COI_71 {
+    description: the guard is negated, in StrBuilder.setLength(int) at line 194
+    operator:    conditional-operator-insertion
+    in:          setLength
+    file:        StrBuilder.java
+    find:        if (length < 0) {
+    replace:     if (!(length < 0)) {
+}
+
+mutant STRBUILDER_GEN_CRP_72 {
+    description: the literal 0 becomes 1, in StrBuilder.setLength(int) at line 194
+    operator:    constant-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        if (length < 0) {
+    replace:     if (length < 1) {
+}
+
+mutant STRBUILDER_GEN_CRP_73 {
+    description: the literal 0 becomes -1, in StrBuilder.setLength(int) at line 194
+    operator:    constant-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        if (length < 0) {
+    replace:     if (length < -1) {
+}
+
+mutant STRBUILDER_GEN_CTC_74 {
+    description: the branch is always taken, in StrBuilder.setLength(int) at line 194
+    operator:    condition-to-constant
+    in:          setLength
+    file:        StrBuilder.java
+    find:        if (length < 0) {
+    replace:     if (true) {
+}
+
+mutant STRBUILDER_GEN_CTC_75 {
+    description: the branch is never taken, in StrBuilder.setLength(int) at line 194
+    operator:    condition-to-constant
+    in:          setLength
+    file:        StrBuilder.java
+    find:        if (length < 0) {
+    replace:     if (false) {
+}
+
+mutant STRBUILDER_GEN_SDL_76 {
+    description: the statement is removed, in StrBuilder.setLength(int) at line 195
+    operator:    statement-deletion
+    in:          setLength
+    file:        StrBuilder.java
+    find:        throw new StringIndexOutOfBoundsException(length);
+    replace:     
+}
+
+mutant STRBUILDER_GEN_ROR_77 {
+    description: < becomes <=, in StrBuilder.setLength(int) at line 197
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        if (length < size) {
+    replace:     if (length <= size) {
+}
+
+mutant STRBUILDER_GEN_ROR_78 {
+    description: < becomes >=, in StrBuilder.setLength(int) at line 197
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        if (length < size) {
+    replace:     if (length >= size) {
+}
+
+mutant STRBUILDER_GEN_ROR_79 {
+    description: < becomes ==, in StrBuilder.setLength(int) at line 197
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        if (length < size) {
+    replace:     if (length == size) {
+}
+
+mutant STRBUILDER_GEN_ROR_80 {
+    description: < becomes !=, in StrBuilder.setLength(int) at line 197
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        if (length < size) {
+    replace:     if (length != size) {
+}
+
+mutant STRBUILDER_GEN_ROR_81 {
+    description: < becomes >, in StrBuilder.setLength(int) at line 197
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        if (length < size) {
+    replace:     if (length > size) {
+}
+
+mutant STRBUILDER_GEN_COI_82 {
+    description: the guard is negated, in StrBuilder.setLength(int) at line 197
+    operator:    conditional-operator-insertion
+    in:          setLength
+    file:        StrBuilder.java
+    find:        if (length < size) {
+    replace:     if (!(length < size)) {
+}
+
+mutant STRBUILDER_GEN_CTC_83 {
+    description: the branch is always taken, in StrBuilder.setLength(int) at line 197
+    operator:    condition-to-constant
+    in:          setLength
+    file:        StrBuilder.java
+    find:        if (length < size) {
+    replace:     if (true) {
+}
+
+mutant STRBUILDER_GEN_CTC_84 {
+    description: the branch is never taken, in StrBuilder.setLength(int) at line 197
+    operator:    condition-to-constant
+    in:          setLength
+    file:        StrBuilder.java
+    find:        if (length < size) {
+    replace:     if (false) {
+}
+
+mutant STRBUILDER_GEN_ROR_85 {
+    description: > becomes <=, in StrBuilder.setLength(int) at line 199
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        } else if (length > size) {
+    replace:     } else if (length <= size) {
+}
+
+mutant STRBUILDER_GEN_ROR_86 {
+    description: > becomes >=, in StrBuilder.setLength(int) at line 199
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        } else if (length > size) {
+    replace:     } else if (length >= size) {
+}
+
+mutant STRBUILDER_GEN_ROR_87 {
+    description: > becomes ==, in StrBuilder.setLength(int) at line 199
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        } else if (length > size) {
+    replace:     } else if (length == size) {
+}
+
+mutant STRBUILDER_GEN_ROR_88 {
+    description: > becomes !=, in StrBuilder.setLength(int) at line 199
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        } else if (length > size) {
+    replace:     } else if (length != size) {
+}
+
+mutant STRBUILDER_GEN_ROR_89 {
+    description: > becomes <, in StrBuilder.setLength(int) at line 199
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        } else if (length > size) {
+    replace:     } else if (length < size) {
+}
+
+mutant STRBUILDER_GEN_SDL_90 {
+    description: the statement is removed, in StrBuilder.setLength(int) at line 200
+    operator:    statement-deletion
+    in:          setLength
+    file:        StrBuilder.java
+    find:        ensureCapacity(length);
+    replace:     
+}
+
+mutant STRBUILDER_GEN_ROR_91 {
+    description: < becomes <=, in StrBuilder.setLength(int) at line 204
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        for (int i = oldEnd; i < newEnd; i++) {
+    replace:     for (int i = oldEnd; i <= newEnd; i++) {
+}
+
+mutant STRBUILDER_GEN_ROR_92 {
+    description: < becomes >=, in StrBuilder.setLength(int) at line 204
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        for (int i = oldEnd; i < newEnd; i++) {
+    replace:     for (int i = oldEnd; i >= newEnd; i++) {
+}
+
+mutant STRBUILDER_GEN_ROR_93 {
+    description: < becomes ==, in StrBuilder.setLength(int) at line 204
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        for (int i = oldEnd; i < newEnd; i++) {
+    replace:     for (int i = oldEnd; i == newEnd; i++) {
+}
+
+mutant STRBUILDER_GEN_ROR_94 {
+    description: < becomes !=, in StrBuilder.setLength(int) at line 204
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        for (int i = oldEnd; i < newEnd; i++) {
+    replace:     for (int i = oldEnd; i != newEnd; i++) {
+}
+
+mutant STRBUILDER_GEN_ROR_95 {
+    description: < becomes >, in StrBuilder.setLength(int) at line 204
+    operator:    relational-operator-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        for (int i = oldEnd; i < newEnd; i++) {
+    replace:     for (int i = oldEnd; i > newEnd; i++) {
+}
+
+mutant STRBUILDER_GEN_LBR_96 {
+    description: the loop starts one later, in StrBuilder.setLength(int) at line 204
+    operator:    loop-bound-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        for (int i = oldEnd; i < newEnd; i++) {
+    replace:     for (int i = oldEnd + 1; i < newEnd; i++) {
+}
+
+mutant STRBUILDER_GEN_LBR_97 {
+    description: the loop starts one earlier, in StrBuilder.setLength(int) at line 204
+    operator:    loop-bound-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        for (int i = oldEnd; i < newEnd; i++) {
+    replace:     for (int i = oldEnd - 1; i < newEnd; i++) {
+}
+
+mutant STRBUILDER_GEN_CRP_98 {
+    description: the literal 0 becomes 1, in StrBuilder.setLength(int) at line 205
+    operator:    constant-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        buffer[i] = '\0';
+    replace:     buffer[i] = '\1';
+}
+
+mutant STRBUILDER_GEN_CRP_99 {
+    description: the literal 0 becomes -1, in StrBuilder.setLength(int) at line 205
+    operator:    constant-replacement
+    in:          setLength
+    file:        StrBuilder.java
+    find:        buffer[i] = '\0';
+    replace:     buffer[i] = '\-1';
+}
+
+mutant STRBUILDER_GEN_SDL_100 {
+    description: the statement is removed, in StrBuilder.setLength(int) at line 205
+    operator:    statement-deletion
+    in:          setLength
+    file:        StrBuilder.java
+    find:        buffer[i] = '\0';
+    replace:     
+}
+
+mutant STRBUILDER_GEN_ROR_106 {
+    description: > becomes <=, in StrBuilder.ensureCapacity(int) at line 228
+    operator:    relational-operator-replacement
+    in:          ensureCapacity
+    file:        StrBuilder.java
+    find:        if (capacity > buffer.length) {
+    replace:     if (capacity <= buffer.length) {
+}
+
+mutant STRBUILDER_GEN_ROR_107 {
+    description: > becomes >=, in StrBuilder.ensureCapacity(int) at line 228
+    operator:    relational-operator-replacement
+    in:          ensureCapacity
+    file:        StrBuilder.java
+    find:        if (capacity > buffer.length) {
+    replace:     if (capacity >= buffer.length) {
+}
+
+mutant STRBUILDER_GEN_ROR_108 {
+    description: > becomes ==, in StrBuilder.ensureCapacity(int) at line 228
+    operator:    relational-operator-replacement
+    in:          ensureCapacity
+    file:        StrBuilder.java
+    find:        if (capacity > buffer.length) {
+    replace:     if (capacity == buffer.length) {
+}
+
+mutant STRBUILDER_GEN_ROR_109 {
+    description: > becomes !=, in StrBuilder.ensureCapacity(int) at line 228
+    operator:    relational-operator-replacement
+    in:          ensureCapacity
+    file:        StrBuilder.java
+    find:        if (capacity > buffer.length) {
+    replace:     if (capacity != buffer.length) {
+}
+
+mutant STRBUILDER_GEN_ROR_110 {
+    description: > becomes <, in StrBuilder.ensureCapacity(int) at line 228
+    operator:    relational-operator-replacement
+    in:          ensureCapacity
+    file:        StrBuilder.java
+    find:        if (capacity > buffer.length) {
+    replace:     if (capacity < buffer.length) {
+}
+
+mutant STRBUILDER_GEN_COI_111 {
+    description: the guard is negated, in StrBuilder.ensureCapacity(int) at line 228
+    operator:    conditional-operator-insertion
+    in:          ensureCapacity
+    file:        StrBuilder.java
+    find:        if (capacity > buffer.length) {
+    replace:     if (!(capacity > buffer.length)) {
+}
+
+mutant STRBUILDER_GEN_CTC_112 {
+    description: the branch is always taken, in StrBuilder.ensureCapacity(int) at line 228
+    operator:    condition-to-constant
+    in:          ensureCapacity
+    file:        StrBuilder.java
+    find:        if (capacity > buffer.length) {
+    replace:     if (true) {
+}
+
+mutant STRBUILDER_GEN_CTC_113 {
+    description: the branch is never taken, in StrBuilder.ensureCapacity(int) at line 228
+    operator:    condition-to-constant
+    in:          ensureCapacity
+    file:        StrBuilder.java
+    find:        if (capacity > buffer.length) {
+    replace:     if (false) {
+}
+
+mutant STRBUILDER_GEN_SDL_114 {
+    description: the statement is removed, in StrBuilder.ensureCapacity(int) at line 230
+    operator:    statement-deletion
+    in:          ensureCapacity
+    file:        StrBuilder.java
+    find:        buffer = new char[capacity];
+    replace:     
+}
+
+mutant STRBUILDER_GEN_CRP_115 {
+    description: the literal 0 becomes 1, in StrBuilder.ensureCapacity(int) at line 231
+    operator:    constant-replacement
+    in:          ensureCapacity
+    file:        StrBuilder.java
+    find:        System.arraycopy(old, 0, buffer, 0, size);
+    replace:     System.arraycopy(old, 1, buffer, 0, size);
+}
+
+mutant STRBUILDER_GEN_CRP_116 {
+    description: the literal 0 becomes -1, in StrBuilder.ensureCapacity(int) at line 231
+    operator:    constant-replacement
+    in:          ensureCapacity
+    file:        StrBuilder.java
+    find:        System.arraycopy(old, 0, buffer, 0, size);
+    replace:     System.arraycopy(old, -1, buffer, 0, size);
+}
+
+mutant STRBUILDER_GEN_CRP_117 {
+    description: the literal 0 becomes 1, in StrBuilder.ensureCapacity(int) at line 231
+    operator:    constant-replacement
+    in:          ensureCapacity
+    file:        StrBuilder.java
+    find:        System.arraycopy(old, 0, buffer, 0, size);
+    replace:     System.arraycopy(old, 0, buffer, 1, size);
+}
+
+mutant STRBUILDER_GEN_CRP_118 {
+    description: the literal 0 becomes -1, in StrBuilder.ensureCapacity(int) at line 231
+    operator:    constant-replacement
+    in:          ensureCapacity
+    file:        StrBuilder.java
+    find:        System.arraycopy(old, 0, buffer, 0, size);
+    replace:     System.arraycopy(old, 0, buffer, -1, size);
+}
+
+mutant STRBUILDER_GEN_SDL_119 {
+    description: the statement is removed, in StrBuilder.ensureCapacity(int) at line 231
+    operator:    statement-deletion
+    in:          ensureCapacity
+    file:        StrBuilder.java
+    find:        System.arraycopy(old, 0, buffer, 0, size);
+    replace:     
+}
+
+mutant STRBUILDER_GEN_STR_120 {
+    description: the statement runs twice, in StrBuilder.ensureCapacity(int) at line 231
+    operator:    statement-replacement
+    in:          ensureCapacity
+    file:        StrBuilder.java
+    find:        System.arraycopy(old, 0, buffer, 0, size);
+    replace:     System.arraycopy(old, 0, buffer, 0, size); System.arraycopy(old, 0, buffer, 0, size);
+}
+
+mutant STRBUILDER_GEN_CRP_139 {
+    description: the literal 0 becomes 1, in StrBuilder.clear() at line 287
+    operator:    constant-replacement
+    in:          clear
+    file:        StrBuilder.java
+    find:        size = 0;
+    replace:     size = 1;
+}
+
+mutant STRBUILDER_GEN_CRP_140 {
+    description: the literal 0 becomes -1, in StrBuilder.clear() at line 287
+    operator:    constant-replacement
+    in:          clear
+    file:        StrBuilder.java
+    find:        size = 0;
+    replace:     size = -1;
+}
+
+mutant STRBUILDER_GEN_SDL_141 {
+    description: the statement is removed, in StrBuilder.clear() at line 287
+    operator:    statement-deletion
+    in:          clear
+    file:        StrBuilder.java
+    find:        size = 0;
+    replace:     
+}
+
+mutant STRBUILDER_GEN_ROR_303 {
+    description: == becomes <=, in StrBuilder.appendNull() at line 441
+    operator:    relational-operator-replacement
+    in:          appendNull
+    file:        StrBuilder.java
+    find:        if (nullText == null)  {
+    replace:     if (nullText <= null)  {
+}
+
+mutant STRBUILDER_GEN_ROR_304 {
+    description: == becomes >=, in StrBuilder.appendNull() at line 441
+    operator:    relational-operator-replacement
+    in:          appendNull
+    file:        StrBuilder.java
+    find:        if (nullText == null)  {
+    replace:     if (nullText >= null)  {
+}
+
+mutant STRBUILDER_GEN_ROR_305 {
+    description: == becomes !=, in StrBuilder.appendNull() at line 441
+    operator:    relational-operator-replacement
+    in:          appendNull
+    file:        StrBuilder.java
+    find:        if (nullText == null)  {
+    replace:     if (nullText != null)  {
+}
+
+mutant STRBUILDER_GEN_ROR_306 {
+    description: == becomes <, in StrBuilder.appendNull() at line 441
+    operator:    relational-operator-replacement
+    in:          appendNull
+    file:        StrBuilder.java
+    find:        if (nullText == null)  {
+    replace:     if (nullText < null)  {
+}
+
+mutant STRBUILDER_GEN_ROR_307 {
+    description: == becomes >, in StrBuilder.appendNull() at line 441
+    operator:    relational-operator-replacement
+    in:          appendNull
+    file:        StrBuilder.java
+    find:        if (nullText == null)  {
+    replace:     if (nullText > null)  {
+}
+
+mutant STRBUILDER_GEN_COI_308 {
+    description: the guard is negated, in StrBuilder.appendNull() at line 441
+    operator:    conditional-operator-insertion
+    in:          appendNull
+    file:        StrBuilder.java
+    find:        if (nullText == null)  {
+    replace:     if (!(nullText == null)) {
+}
+
+mutant STRBUILDER_GEN_CTC_309 {
+    description: the branch is always taken, in StrBuilder.appendNull() at line 441
+    operator:    condition-to-constant
+    in:          appendNull
+    file:        StrBuilder.java
+    find:        if (nullText == null)  {
+    replace:     if (true) {
+}
+
+mutant STRBUILDER_GEN_CTC_310 {
+    description: the branch is never taken, in StrBuilder.appendNull() at line 441
+    operator:    condition-to-constant
+    in:          appendNull
+    file:        StrBuilder.java
+    find:        if (nullText == null)  {
+    replace:     if (false) {
+}
+
+mutant STRBUILDER_GEN_RVR_311 {
+    description: the answer becomes null, in StrBuilder.appendNull() at line 444
+    operator:    return-value-replacement
+    in:          appendNull
+    file:        StrBuilder.java
+    find:        return append(nullText);
+    replace:     return null;
+}
+
+mutant STRBUILDER_GEN_ROR_322 {
+    description: > becomes <=, in StrBuilder.append(String) at line 473
+    operator:    relational-operator-replacement
+    in:          append
+    file:        StrBuilder.java
+    find:        if (strLen > 0) {
+    replace:     if (strLen <= 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_323 {
+    description: > becomes >=, in StrBuilder.append(String) at line 473
+    operator:    relational-operator-replacement
+    in:          append
+    file:        StrBuilder.java
+    find:        if (strLen > 0) {
+    replace:     if (strLen >= 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_324 {
+    description: > becomes ==, in StrBuilder.append(String) at line 473
+    operator:    relational-operator-replacement
+    in:          append
+    file:        StrBuilder.java
+    find:        if (strLen > 0) {
+    replace:     if (strLen == 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_325 {
+    description: > becomes !=, in StrBuilder.append(String) at line 473
+    operator:    relational-operator-replacement
+    in:          append
+    file:        StrBuilder.java
+    find:        if (strLen > 0) {
+    replace:     if (strLen != 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_326 {
+    description: > becomes <, in StrBuilder.append(String) at line 473
+    operator:    relational-operator-replacement
+    in:          append
+    file:        StrBuilder.java
+    find:        if (strLen > 0) {
+    replace:     if (strLen < 0) {
+}
+
+mutant STRBUILDER_GEN_COI_327 {
+    description: the guard is negated, in StrBuilder.append(String) at line 473
+    operator:    conditional-operator-insertion
+    in:          append
+    file:        StrBuilder.java
+    find:        if (strLen > 0) {
+    replace:     if (!(strLen > 0)) {
+}
+
+mutant STRBUILDER_GEN_CRP_328 {
+    description: the literal 0 becomes 1, in StrBuilder.append(String) at line 473
+    operator:    constant-replacement
+    in:          append
+    file:        StrBuilder.java
+    find:        if (strLen > 0) {
+    replace:     if (strLen > 1) {
+}
+
+mutant STRBUILDER_GEN_CRP_329 {
+    description: the literal 0 becomes -1, in StrBuilder.append(String) at line 473
+    operator:    constant-replacement
+    in:          append
+    file:        StrBuilder.java
+    find:        if (strLen > 0) {
+    replace:     if (strLen > -1) {
+}
+
+mutant STRBUILDER_GEN_CTC_330 {
+    description: the branch is always taken, in StrBuilder.append(String) at line 473
+    operator:    condition-to-constant
+    in:          append
+    file:        StrBuilder.java
+    find:        if (strLen > 0) {
+    replace:     if (true) {
+}
+
+mutant STRBUILDER_GEN_CTC_331 {
+    description: the branch is never taken, in StrBuilder.append(String) at line 473
+    operator:    condition-to-constant
+    in:          append
+    file:        StrBuilder.java
+    find:        if (strLen > 0) {
+    replace:     if (false) {
+}
+
+mutant STRBUILDER_GEN_AOR_332 {
+    description: + becomes -, in StrBuilder.append(String) at line 475
+    operator:    arithmetic-operator-replacement
+    in:          append
+    file:        StrBuilder.java
+    find:        ensureCapacity(len + strLen);
+    replace:     ensureCapacity(len - strLen);
+}
+
+mutant STRBUILDER_GEN_AOR_333 {
+    description: + becomes *, in StrBuilder.append(String) at line 475
+    operator:    arithmetic-operator-replacement
+    in:          append
+    file:        StrBuilder.java
+    find:        ensureCapacity(len + strLen);
+    replace:     ensureCapacity(len * strLen);
+}
+
+mutant STRBUILDER_GEN_AOR_334 {
+    description: + becomes /, in StrBuilder.append(String) at line 475
+    operator:    arithmetic-operator-replacement
+    in:          append
+    file:        StrBuilder.java
+    find:        ensureCapacity(len + strLen);
+    replace:     ensureCapacity(len / strLen);
+}
+
+mutant STRBUILDER_GEN_AOR_335 {
+    description: + becomes %, in StrBuilder.append(String) at line 475
+    operator:    arithmetic-operator-replacement
+    in:          append
+    file:        StrBuilder.java
+    find:        ensureCapacity(len + strLen);
+    replace:     ensureCapacity(len % strLen);
+}
+
+mutant STRBUILDER_GEN_SDL_336 {
+    description: the statement is removed, in StrBuilder.append(String) at line 475
+    operator:    statement-deletion
+    in:          append
+    file:        StrBuilder.java
+    find:        ensureCapacity(len + strLen);
+    replace:     
+}
+
+mutant STRBUILDER_GEN_CRP_337 {
+    description: the literal 0 becomes 1, in StrBuilder.append(String) at line 476
+    operator:    constant-replacement
+    in:          append
+    file:        StrBuilder.java
+    find:        str.getChars(0, strLen, buffer, len);
+    replace:     str.getChars(1, strLen, buffer, len);
+}
+
+mutant STRBUILDER_GEN_CRP_338 {
+    description: the literal 0 becomes -1, in StrBuilder.append(String) at line 476
+    operator:    constant-replacement
+    in:          append
+    file:        StrBuilder.java
+    find:        str.getChars(0, strLen, buffer, len);
+    replace:     str.getChars(-1, strLen, buffer, len);
+}
+
+mutant STRBUILDER_GEN_SDL_339 {
+    description: the statement is removed, in StrBuilder.append(String) at line 476
+    operator:    statement-deletion
+    in:          append
+    file:        StrBuilder.java
+    find:        str.getChars(0, strLen, buffer, len);
+    replace:     
+}
+
+mutant STRBUILDER_GEN_STR_340 {
+    description: the statement runs twice, in StrBuilder.append(String) at line 476
+    operator:    statement-replacement
+    in:          append
+    file:        StrBuilder.java
+    find:        str.getChars(0, strLen, buffer, len);
+    replace:     str.getChars(0, strLen, buffer, len); str.getChars(0, strLen, buffer, len);
+}
+
+mutant STRBUILDER_GEN_SDL_341 {
+    description: the statement is removed, in StrBuilder.append(String) at line 477
+    operator:    statement-deletion
+    in:          append
+    file:        StrBuilder.java
+    find:        size += strLen;
+    replace:     
+}
+
+mutant STRBUILDER_GEN_CRP_656 {
+    description: the literal 0 becomes 1, in StrBuilder.appendFixedWidthPadRight(Object,int,char) at line 884
+    operator:    constant-replacement
+    in:          appendFixedWidthPadRight
+    file:        StrBuilder.java
+    find:        str.getChars(0, width, buffer, size);
+    replace:     str.getChars(1, width, buffer, size);
+}
+
+mutant STRBUILDER_GEN_CRP_657 {
+    description: the literal 0 becomes -1, in StrBuilder.appendFixedWidthPadRight(Object,int,char) at line 884
+    operator:    constant-replacement
+    in:          appendFixedWidthPadRight
+    file:        StrBuilder.java
+    find:        str.getChars(0, width, buffer, size);
+    replace:     str.getChars(-1, width, buffer, size);
+}
+
+mutant STRBUILDER_GEN_SDL_658 {
+    description: the statement is removed, in StrBuilder.appendFixedWidthPadRight(Object,int,char) at line 884
+    operator:    statement-deletion
+    in:          appendFixedWidthPadRight
+    file:        StrBuilder.java
+    find:        str.getChars(0, width, buffer, size);
+    replace:     
+}
+
+mutant STRBUILDER_GEN_STR_659 {
+    description: the statement runs twice, in StrBuilder.appendFixedWidthPadRight(Object,int,char) at line 884
+    operator:    statement-replacement
+    in:          appendFixedWidthPadRight
+    file:        StrBuilder.java
+    find:        str.getChars(0, width, buffer, size);
+    replace:     str.getChars(0, width, buffer, size); str.getChars(0, width, buffer, size);
+}
+
+mutant STRBUILDER_GEN_CRP_660 {
+    description: the literal 0 becomes 1, in StrBuilder.appendFixedWidthPadRight(Object,int,char) at line 887
+    operator:    constant-replacement
+    in:          appendFixedWidthPadRight
+    file:        StrBuilder.java
+    find:        str.getChars(0, strLen, buffer, size);
+    replace:     str.getChars(1, strLen, buffer, size);
+}
+
+mutant STRBUILDER_GEN_CRP_661 {
+    description: the literal 0 becomes -1, in StrBuilder.appendFixedWidthPadRight(Object,int,char) at line 887
+    operator:    constant-replacement
+    in:          appendFixedWidthPadRight
+    file:        StrBuilder.java
+    find:        str.getChars(0, strLen, buffer, size);
+    replace:     str.getChars(-1, strLen, buffer, size);
+}
+
+mutant STRBUILDER_GEN_SDL_662 {
+    description: the statement is removed, in StrBuilder.appendFixedWidthPadRight(Object,int,char) at line 887
+    operator:    statement-deletion
+    in:          appendFixedWidthPadRight
+    file:        StrBuilder.java
+    find:        str.getChars(0, strLen, buffer, size);
+    replace:     
+}
+
+mutant STRBUILDER_GEN_STR_663 {
+    description: the statement runs twice, in StrBuilder.appendFixedWidthPadRight(Object,int,char) at line 887
+    operator:    statement-replacement
+    in:          appendFixedWidthPadRight
+    file:        StrBuilder.java
+    find:        str.getChars(0, strLen, buffer, size);
+    replace:     str.getChars(0, strLen, buffer, size); str.getChars(0, strLen, buffer, size);
+}
+
+mutant STRBUILDER_GEN_AOR_664 {
+    description: + becomes -, in StrBuilder.appendFixedWidthPadRight(Object,int,char) at line 889
+    operator:    arithmetic-operator-replacement
+    in:          appendFixedWidthPadRight
+    file:        StrBuilder.java
+    find:        buffer[size + strLen + i] = padChar;
+    replace:     buffer[size - strLen + i] = padChar;
+}
+
+mutant STRBUILDER_GEN_AOR_665 {
+    description: + becomes *, in StrBuilder.appendFixedWidthPadRight(Object,int,char) at line 889
+    operator:    arithmetic-operator-replacement
+    in:          appendFixedWidthPadRight
+    file:        StrBuilder.java
+    find:        buffer[size + strLen + i] = padChar;
+    replace:     buffer[size * strLen + i] = padChar;
+}
+
+mutant STRBUILDER_GEN_AOR_666 {
+    description: + becomes /, in StrBuilder.appendFixedWidthPadRight(Object,int,char) at line 889
+    operator:    arithmetic-operator-replacement
+    in:          appendFixedWidthPadRight
+    file:        StrBuilder.java
+    find:        buffer[size + strLen + i] = padChar;
+    replace:     buffer[size / strLen + i] = padChar;
+}
+
+mutant STRBUILDER_GEN_AOR_667 {
+    description: + becomes %, in StrBuilder.appendFixedWidthPadRight(Object,int,char) at line 889
+    operator:    arithmetic-operator-replacement
+    in:          appendFixedWidthPadRight
+    file:        StrBuilder.java
+    find:        buffer[size + strLen + i] = padChar;
+    replace:     buffer[size % strLen + i] = padChar;
+}
+
+mutant STRBUILDER_GEN_AOR_668 {
+    description: + becomes -, in StrBuilder.appendFixedWidthPadRight(Object,int,char) at line 889
+    operator:    arithmetic-operator-replacement
+    in:          appendFixedWidthPadRight
+    file:        StrBuilder.java
+    find:        buffer[size + strLen + i] = padChar;
+    replace:     buffer[size + strLen - i] = padChar;
+}
+
+mutant STRBUILDER_GEN_AOR_669 {
+    description: + becomes *, in StrBuilder.appendFixedWidthPadRight(Object,int,char) at line 889
+    operator:    arithmetic-operator-replacement
+    in:          appendFixedWidthPadRight
+    file:        StrBuilder.java
+    find:        buffer[size + strLen + i] = padChar;
+    replace:     buffer[size + strLen * i] = padChar;
+}
+
+mutant STRBUILDER_GEN_AOR_670 {
+    description: + becomes /, in StrBuilder.appendFixedWidthPadRight(Object,int,char) at line 889
+    operator:    arithmetic-operator-replacement
+    in:          appendFixedWidthPadRight
+    file:        StrBuilder.java
+    find:        buffer[size + strLen + i] = padChar;
+    replace:     buffer[size + strLen / i] = padChar;
+}
+
+mutant STRBUILDER_GEN_AOR_671 {
+    description: + becomes %, in StrBuilder.appendFixedWidthPadRight(Object,int,char) at line 889
+    operator:    arithmetic-operator-replacement
+    in:          appendFixedWidthPadRight
+    file:        StrBuilder.java
+    find:        buffer[size + strLen + i] = padChar;
+    replace:     buffer[size + strLen % i] = padChar;
+}
+
+mutant STRBUILDER_GEN_SDL_672 {
+    description: the statement is removed, in StrBuilder.appendFixedWidthPadRight(Object,int,char) at line 889
+    operator:    statement-deletion
+    in:          appendFixedWidthPadRight
+    file:        StrBuilder.java
+    find:        buffer[size + strLen + i] = padChar;
+    replace:     
+}
+
+mutant STRBUILDER_GEN_AOR_861 {
+    description: - becomes +, in StrBuilder.deleteImpl(int,int,int) at line 1114
+    operator:    arithmetic-operator-replacement
+    in:          deleteImpl
+    file:        StrBuilder.java
+    find:        System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex);
+    replace:     System.arraycopy(buffer, endIndex, buffer, startIndex, size + endIndex);
+}
+
+mutant STRBUILDER_GEN_AOR_862 {
+    description: - becomes *, in StrBuilder.deleteImpl(int,int,int) at line 1114
+    operator:    arithmetic-operator-replacement
+    in:          deleteImpl
+    file:        StrBuilder.java
+    find:        System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex);
+    replace:     System.arraycopy(buffer, endIndex, buffer, startIndex, size * endIndex);
+}
+
+mutant STRBUILDER_GEN_AOR_863 {
+    description: - becomes /, in StrBuilder.deleteImpl(int,int,int) at line 1114
+    operator:    arithmetic-operator-replacement
+    in:          deleteImpl
+    file:        StrBuilder.java
+    find:        System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex);
+    replace:     System.arraycopy(buffer, endIndex, buffer, startIndex, size / endIndex);
+}
+
+mutant STRBUILDER_GEN_AOR_864 {
+    description: - becomes %, in StrBuilder.deleteImpl(int,int,int) at line 1114
+    operator:    arithmetic-operator-replacement
+    in:          deleteImpl
+    file:        StrBuilder.java
+    find:        System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex);
+    replace:     System.arraycopy(buffer, endIndex, buffer, startIndex, size % endIndex);
+}
+
+mutant STRBUILDER_GEN_SDL_865 {
+    description: the statement is removed, in StrBuilder.deleteImpl(int,int,int) at line 1114
+    operator:    statement-deletion
+    in:          deleteImpl
+    file:        StrBuilder.java
+    find:        System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex);
+    replace:     
+}
+
+mutant STRBUILDER_GEN_STR_866 {
+    description: the statement runs twice, in StrBuilder.deleteImpl(int,int,int) at line 1114
+    operator:    statement-replacement
+    in:          deleteImpl
+    file:        StrBuilder.java
+    find:        System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex);
+    replace:     System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex); System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex);
+}
+
+mutant STRBUILDER_GEN_SDL_867 {
+    description: the statement is removed, in StrBuilder.deleteImpl(int,int,int) at line 1115
+    operator:    statement-deletion
+    in:          deleteImpl
+    file:        StrBuilder.java
+    find:        size -= len;
+    replace:     
+}
+
+mutant STRBUILDER_GEN_ROR_918 {
+    description: == becomes <=, in StrBuilder.deleteAll(String) at line 1184
+    operator:    relational-operator-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        int len = (str == null ? 0 : str.length());
+    replace:     int len = (str <= null ? 0 : str.length());
+}
+
+mutant STRBUILDER_GEN_ROR_919 {
+    description: == becomes >=, in StrBuilder.deleteAll(String) at line 1184
+    operator:    relational-operator-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        int len = (str == null ? 0 : str.length());
+    replace:     int len = (str >= null ? 0 : str.length());
+}
+
+mutant STRBUILDER_GEN_ROR_920 {
+    description: == becomes !=, in StrBuilder.deleteAll(String) at line 1184
+    operator:    relational-operator-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        int len = (str == null ? 0 : str.length());
+    replace:     int len = (str != null ? 0 : str.length());
+}
+
+mutant STRBUILDER_GEN_ROR_921 {
+    description: == becomes <, in StrBuilder.deleteAll(String) at line 1184
+    operator:    relational-operator-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        int len = (str == null ? 0 : str.length());
+    replace:     int len = (str < null ? 0 : str.length());
+}
+
+mutant STRBUILDER_GEN_ROR_922 {
+    description: == becomes >, in StrBuilder.deleteAll(String) at line 1184
+    operator:    relational-operator-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        int len = (str == null ? 0 : str.length());
+    replace:     int len = (str > null ? 0 : str.length());
+}
+
+mutant STRBUILDER_GEN_CRP_923 {
+    description: the literal 0 becomes 1, in StrBuilder.deleteAll(String) at line 1184
+    operator:    constant-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        int len = (str == null ? 0 : str.length());
+    replace:     int len = (str == null ? 1 : str.length());
+}
+
+mutant STRBUILDER_GEN_CRP_924 {
+    description: the literal 0 becomes -1, in StrBuilder.deleteAll(String) at line 1184
+    operator:    constant-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        int len = (str == null ? 0 : str.length());
+    replace:     int len = (str == null ? -1 : str.length());
+}
+
+mutant STRBUILDER_GEN_CRP_925 {
+    description: the literal 0 becomes 1, in StrBuilder.deleteAll(String) at line 1186
+    operator:    constant-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        int index = indexOf(str, 0);
+    replace:     int index = indexOf(str, 1);
+}
+
+mutant STRBUILDER_GEN_CRP_926 {
+    description: the literal 0 becomes -1, in StrBuilder.deleteAll(String) at line 1186
+    operator:    constant-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        int index = indexOf(str, 0);
+    replace:     int index = indexOf(str, -1);
+}
+
+mutant STRBUILDER_GEN_ROR_927 {
+    description: >= becomes <=, in StrBuilder.deleteAll(String) at line 1187
+    operator:    relational-operator-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        while (index >= 0) {
+    replace:     while (index <= 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_928 {
+    description: >= becomes ==, in StrBuilder.deleteAll(String) at line 1187
+    operator:    relational-operator-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        while (index >= 0) {
+    replace:     while (index == 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_929 {
+    description: >= becomes !=, in StrBuilder.deleteAll(String) at line 1187
+    operator:    relational-operator-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        while (index >= 0) {
+    replace:     while (index != 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_930 {
+    description: >= becomes <, in StrBuilder.deleteAll(String) at line 1187
+    operator:    relational-operator-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        while (index >= 0) {
+    replace:     while (index < 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_931 {
+    description: >= becomes >, in StrBuilder.deleteAll(String) at line 1187
+    operator:    relational-operator-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        while (index >= 0) {
+    replace:     while (index > 0) {
+}
+
+mutant STRBUILDER_GEN_COI_932 {
+    description: the guard is negated, in StrBuilder.deleteAll(String) at line 1187
+    operator:    conditional-operator-insertion
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        while (index >= 0) {
+    replace:     while (!(index >= 0)) {
+}
+
+mutant STRBUILDER_GEN_CRP_933 {
+    description: the literal 0 becomes 1, in StrBuilder.deleteAll(String) at line 1187
+    operator:    constant-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        while (index >= 0) {
+    replace:     while (index >= 1) {
+}
+
+mutant STRBUILDER_GEN_CRP_934 {
+    description: the literal 0 becomes -1, in StrBuilder.deleteAll(String) at line 1187
+    operator:    constant-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        while (index >= 0) {
+    replace:     while (index >= -1) {
+}
+
+mutant STRBUILDER_GEN_AOR_935 {
+    description: + becomes -, in StrBuilder.deleteAll(String) at line 1188
+    operator:    arithmetic-operator-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        deleteImpl(index, index + len, len);
+    replace:     deleteImpl(index, index - len, len);
+}
+
+mutant STRBUILDER_GEN_AOR_936 {
+    description: + becomes *, in StrBuilder.deleteAll(String) at line 1188
+    operator:    arithmetic-operator-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        deleteImpl(index, index + len, len);
+    replace:     deleteImpl(index, index * len, len);
+}
+
+mutant STRBUILDER_GEN_AOR_937 {
+    description: + becomes /, in StrBuilder.deleteAll(String) at line 1188
+    operator:    arithmetic-operator-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        deleteImpl(index, index + len, len);
+    replace:     deleteImpl(index, index / len, len);
+}
+
+mutant STRBUILDER_GEN_AOR_938 {
+    description: + becomes %, in StrBuilder.deleteAll(String) at line 1188
+    operator:    arithmetic-operator-replacement
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        deleteImpl(index, index + len, len);
+    replace:     deleteImpl(index, index % len, len);
+}
+
+mutant STRBUILDER_GEN_SDL_939 {
+    description: the statement is removed, in StrBuilder.deleteAll(String) at line 1188
+    operator:    statement-deletion
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        deleteImpl(index, index + len, len);
+    replace:     
+}
+
+mutant STRBUILDER_GEN_AOI_940 {
+    description: the value assigned to index is shifted by + 1, in StrBuilder.deleteAll(String) at line 1189
+    operator:    arithmetic-operator-insertion
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        index = indexOf(str, index);
+    replace:     index = indexOf(str, index) + 1;
+}
+
+mutant STRBUILDER_GEN_AOI_941 {
+    description: the value assigned to index is shifted by - 1, in StrBuilder.deleteAll(String) at line 1189
+    operator:    arithmetic-operator-insertion
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        index = indexOf(str, index);
+    replace:     index = indexOf(str, index) - 1;
+}
+
+mutant STRBUILDER_GEN_SDL_942 {
+    description: the statement is removed, in StrBuilder.deleteAll(String) at line 1189
+    operator:    statement-deletion
+    in:          deleteAll
+    file:        StrBuilder.java
+    find:        index = indexOf(str, index);
+    replace:     
+}
+
+mutant STRBUILDER_GEN_ROR_943 {
+    description: >= becomes <=, in StrBuilder.deleteFirst(String) at line 1205
+    operator:    relational-operator-replacement
+    in:          deleteFirst
+    file:        StrBuilder.java
+    find:        if (index >= 0) {
+    replace:     if (index <= 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_944 {
+    description: >= becomes ==, in StrBuilder.deleteFirst(String) at line 1205
+    operator:    relational-operator-replacement
+    in:          deleteFirst
+    file:        StrBuilder.java
+    find:        if (index >= 0) {
+    replace:     if (index == 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_945 {
+    description: >= becomes !=, in StrBuilder.deleteFirst(String) at line 1205
+    operator:    relational-operator-replacement
+    in:          deleteFirst
+    file:        StrBuilder.java
+    find:        if (index >= 0) {
+    replace:     if (index != 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_946 {
+    description: >= becomes <, in StrBuilder.deleteFirst(String) at line 1205
+    operator:    relational-operator-replacement
+    in:          deleteFirst
+    file:        StrBuilder.java
+    find:        if (index >= 0) {
+    replace:     if (index < 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_947 {
+    description: >= becomes >, in StrBuilder.deleteFirst(String) at line 1205
+    operator:    relational-operator-replacement
+    in:          deleteFirst
+    file:        StrBuilder.java
+    find:        if (index >= 0) {
+    replace:     if (index > 0) {
+}
+
+mutant STRBUILDER_GEN_COI_948 {
+    description: the guard is negated, in StrBuilder.deleteFirst(String) at line 1205
+    operator:    conditional-operator-insertion
+    in:          deleteFirst
+    file:        StrBuilder.java
+    find:        if (index >= 0) {
+    replace:     if (!(index >= 0)) {
+}
+
+mutant STRBUILDER_GEN_CRP_949 {
+    description: the literal 0 becomes 1, in StrBuilder.deleteFirst(String) at line 1205
+    operator:    constant-replacement
+    in:          deleteFirst
+    file:        StrBuilder.java
+    find:        if (index >= 0) {
+    replace:     if (index >= 1) {
+}
+
+mutant STRBUILDER_GEN_CRP_950 {
+    description: the literal 0 becomes -1, in StrBuilder.deleteFirst(String) at line 1205
+    operator:    constant-replacement
+    in:          deleteFirst
+    file:        StrBuilder.java
+    find:        if (index >= 0) {
+    replace:     if (index >= -1) {
+}
+
+mutant STRBUILDER_GEN_CTC_951 {
+    description: the branch is always taken, in StrBuilder.deleteFirst(String) at line 1205
+    operator:    condition-to-constant
+    in:          deleteFirst
+    file:        StrBuilder.java
+    find:        if (index >= 0) {
+    replace:     if (true) {
+}
+
+mutant STRBUILDER_GEN_CTC_952 {
+    description: the branch is never taken, in StrBuilder.deleteFirst(String) at line 1205
+    operator:    condition-to-constant
+    in:          deleteFirst
+    file:        StrBuilder.java
+    find:        if (index >= 0) {
+    replace:     if (false) {
+}
+
+mutant STRBUILDER_GEN_ROR_1399 {
+    description: >= becomes <=, in StrBuilder.contains(String) at line 1688
+    operator:    relational-operator-replacement
+    in:          contains
+    file:        StrBuilder.java
+    find:        return indexOf(str, 0) >= 0;
+    replace:     return indexOf(str, 0) <= 0;
+}
+
+mutant STRBUILDER_GEN_ROR_1400 {
+    description: >= becomes ==, in StrBuilder.contains(String) at line 1688
+    operator:    relational-operator-replacement
+    in:          contains
+    file:        StrBuilder.java
+    find:        return indexOf(str, 0) >= 0;
+    replace:     return indexOf(str, 0) == 0;
+}
+
+mutant STRBUILDER_GEN_ROR_1401 {
+    description: >= becomes !=, in StrBuilder.contains(String) at line 1688
+    operator:    relational-operator-replacement
+    in:          contains
+    file:        StrBuilder.java
+    find:        return indexOf(str, 0) >= 0;
+    replace:     return indexOf(str, 0) != 0;
+}
+
+mutant STRBUILDER_GEN_ROR_1402 {
+    description: >= becomes <, in StrBuilder.contains(String) at line 1688
+    operator:    relational-operator-replacement
+    in:          contains
+    file:        StrBuilder.java
+    find:        return indexOf(str, 0) >= 0;
+    replace:     return indexOf(str, 0) < 0;
+}
+
+mutant STRBUILDER_GEN_ROR_1403 {
+    description: >= becomes >, in StrBuilder.contains(String) at line 1688
+    operator:    relational-operator-replacement
+    in:          contains
+    file:        StrBuilder.java
+    find:        return indexOf(str, 0) >= 0;
+    replace:     return indexOf(str, 0) > 0;
+}
+
+mutant STRBUILDER_GEN_CRP_1404 {
+    description: the literal 0 becomes 1, in StrBuilder.contains(String) at line 1688
+    operator:    constant-replacement
+    in:          contains
+    file:        StrBuilder.java
+    find:        return indexOf(str, 0) >= 0;
+    replace:     return indexOf(str, 1) >= 0;
+}
+
+mutant STRBUILDER_GEN_CRP_1405 {
+    description: the literal 0 becomes -1, in StrBuilder.contains(String) at line 1688
+    operator:    constant-replacement
+    in:          contains
+    file:        StrBuilder.java
+    find:        return indexOf(str, 0) >= 0;
+    replace:     return indexOf(str, -1) >= 0;
+}
+
+mutant STRBUILDER_GEN_CRP_1406 {
+    description: the literal 0 becomes 1, in StrBuilder.contains(String) at line 1688
+    operator:    constant-replacement
+    in:          contains
+    file:        StrBuilder.java
+    find:        return indexOf(str, 0) >= 0;
+    replace:     return indexOf(str, 0) >= 1;
+}
+
+mutant STRBUILDER_GEN_CRP_1407 {
+    description: the literal 0 becomes -1, in StrBuilder.contains(String) at line 1688
+    operator:    constant-replacement
+    in:          contains
+    file:        StrBuilder.java
+    find:        return indexOf(str, 0) >= 0;
+    replace:     return indexOf(str, 0) >= -1;
+}
+
+mutant STRBUILDER_GEN_RVR_1408 {
+    description: the answer is always true, in StrBuilder.contains(String) at line 1688
+    operator:    return-value-replacement
+    in:          contains
+    file:        StrBuilder.java
+    find:        return indexOf(str, 0) >= 0;
+    replace:     return true;
+}
+
+mutant STRBUILDER_GEN_RVR_1409 {
+    description: the answer is always false, in StrBuilder.contains(String) at line 1688
+    operator:    return-value-replacement
+    in:          contains
+    file:        StrBuilder.java
+    find:        return indexOf(str, 0) >= 0;
+    replace:     return false;
+}
+
+mutant STRBUILDER_GEN_ROR_1426 {
+    description: < becomes <=, in StrBuilder.indexOf(char,int) at line 1725
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        startIndex = (startIndex < 0 ? 0 : startIndex);
+    replace:     startIndex = (startIndex <= 0 ? 0 : startIndex);
+}
+
+mutant STRBUILDER_GEN_ROR_1427 {
+    description: < becomes >=, in StrBuilder.indexOf(char,int) at line 1725
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        startIndex = (startIndex < 0 ? 0 : startIndex);
+    replace:     startIndex = (startIndex >= 0 ? 0 : startIndex);
+}
+
+mutant STRBUILDER_GEN_ROR_1428 {
+    description: < becomes ==, in StrBuilder.indexOf(char,int) at line 1725
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        startIndex = (startIndex < 0 ? 0 : startIndex);
+    replace:     startIndex = (startIndex == 0 ? 0 : startIndex);
+}
+
+mutant STRBUILDER_GEN_ROR_1429 {
+    description: < becomes !=, in StrBuilder.indexOf(char,int) at line 1725
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        startIndex = (startIndex < 0 ? 0 : startIndex);
+    replace:     startIndex = (startIndex != 0 ? 0 : startIndex);
+}
+
+mutant STRBUILDER_GEN_ROR_1430 {
+    description: < becomes >, in StrBuilder.indexOf(char,int) at line 1725
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        startIndex = (startIndex < 0 ? 0 : startIndex);
+    replace:     startIndex = (startIndex > 0 ? 0 : startIndex);
+}
+
+mutant STRBUILDER_GEN_CRP_1431 {
+    description: the literal 0 becomes 1, in StrBuilder.indexOf(char,int) at line 1725
+    operator:    constant-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        startIndex = (startIndex < 0 ? 0 : startIndex);
+    replace:     startIndex = (startIndex < 1 ? 0 : startIndex);
+}
+
+mutant STRBUILDER_GEN_CRP_1432 {
+    description: the literal 0 becomes -1, in StrBuilder.indexOf(char,int) at line 1725
+    operator:    constant-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        startIndex = (startIndex < 0 ? 0 : startIndex);
+    replace:     startIndex = (startIndex < -1 ? 0 : startIndex);
+}
+
+mutant STRBUILDER_GEN_CRP_1433 {
+    description: the literal 0 becomes 1, in StrBuilder.indexOf(char,int) at line 1725
+    operator:    constant-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        startIndex = (startIndex < 0 ? 0 : startIndex);
+    replace:     startIndex = (startIndex < 0 ? 1 : startIndex);
+}
+
+mutant STRBUILDER_GEN_CRP_1434 {
+    description: the literal 0 becomes -1, in StrBuilder.indexOf(char,int) at line 1725
+    operator:    constant-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        startIndex = (startIndex < 0 ? 0 : startIndex);
+    replace:     startIndex = (startIndex < 0 ? -1 : startIndex);
+}
+
+mutant STRBUILDER_GEN_SDL_1435 {
+    description: the statement is removed, in StrBuilder.indexOf(char,int) at line 1725
+    operator:    statement-deletion
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        startIndex = (startIndex < 0 ? 0 : startIndex);
+    replace:     
+}
+
+mutant STRBUILDER_GEN_ROR_1436 {
+    description: >= becomes <=, in StrBuilder.indexOf(char,int) at line 1726
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (startIndex >= size) {
+    replace:     if (startIndex <= size) {
+}
+
+mutant STRBUILDER_GEN_ROR_1437 {
+    description: >= becomes ==, in StrBuilder.indexOf(char,int) at line 1726
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (startIndex >= size) {
+    replace:     if (startIndex == size) {
+}
+
+mutant STRBUILDER_GEN_ROR_1438 {
+    description: >= becomes !=, in StrBuilder.indexOf(char,int) at line 1726
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (startIndex >= size) {
+    replace:     if (startIndex != size) {
+}
+
+mutant STRBUILDER_GEN_ROR_1439 {
+    description: >= becomes <, in StrBuilder.indexOf(char,int) at line 1726
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (startIndex >= size) {
+    replace:     if (startIndex < size) {
+}
+
+mutant STRBUILDER_GEN_ROR_1440 {
+    description: >= becomes >, in StrBuilder.indexOf(char,int) at line 1726
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (startIndex >= size) {
+    replace:     if (startIndex > size) {
+}
+
+mutant STRBUILDER_GEN_COI_1441 {
+    description: the guard is negated, in StrBuilder.indexOf(char,int) at line 1726
+    operator:    conditional-operator-insertion
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (startIndex >= size) {
+    replace:     if (!(startIndex >= size)) {
+}
+
+mutant STRBUILDER_GEN_CTC_1442 {
+    description: the branch is always taken, in StrBuilder.indexOf(char,int) at line 1726
+    operator:    condition-to-constant
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (startIndex >= size) {
+    replace:     if (true) {
+}
+
+mutant STRBUILDER_GEN_CTC_1443 {
+    description: the branch is never taken, in StrBuilder.indexOf(char,int) at line 1726
+    operator:    condition-to-constant
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (startIndex >= size) {
+    replace:     if (false) {
+}
+
+mutant STRBUILDER_GEN_ROR_1444 {
+    description: < becomes <=, in StrBuilder.indexOf(char,int) at line 1730
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int i = startIndex; i < size; i++) {
+    replace:     for (int i = startIndex; i <= size; i++) {
+}
+
+mutant STRBUILDER_GEN_ROR_1445 {
+    description: < becomes >=, in StrBuilder.indexOf(char,int) at line 1730
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int i = startIndex; i < size; i++) {
+    replace:     for (int i = startIndex; i >= size; i++) {
+}
+
+mutant STRBUILDER_GEN_ROR_1446 {
+    description: < becomes ==, in StrBuilder.indexOf(char,int) at line 1730
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int i = startIndex; i < size; i++) {
+    replace:     for (int i = startIndex; i == size; i++) {
+}
+
+mutant STRBUILDER_GEN_ROR_1447 {
+    description: < becomes !=, in StrBuilder.indexOf(char,int) at line 1730
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int i = startIndex; i < size; i++) {
+    replace:     for (int i = startIndex; i != size; i++) {
+}
+
+mutant STRBUILDER_GEN_ROR_1448 {
+    description: < becomes >, in StrBuilder.indexOf(char,int) at line 1730
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int i = startIndex; i < size; i++) {
+    replace:     for (int i = startIndex; i > size; i++) {
+}
+
+mutant STRBUILDER_GEN_LBR_1449 {
+    description: the loop starts one later, in StrBuilder.indexOf(char,int) at line 1730
+    operator:    loop-bound-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int i = startIndex; i < size; i++) {
+    replace:     for (int i = startIndex + 1; i < size; i++) {
+}
+
+mutant STRBUILDER_GEN_LBR_1450 {
+    description: the loop starts one earlier, in StrBuilder.indexOf(char,int) at line 1730
+    operator:    loop-bound-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int i = startIndex; i < size; i++) {
+    replace:     for (int i = startIndex - 1; i < size; i++) {
+}
+
+mutant STRBUILDER_GEN_UOI_1451 {
+    description: the returned value is negated, in StrBuilder.indexOf(char,int) at line 1732
+    operator:    unary-operator-insertion
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return i;
+    replace:     return -(i);
+}
+
+mutant STRBUILDER_GEN_ABS_1452 {
+    description: the returned value is forced negative, in StrBuilder.indexOf(char,int) at line 1732
+    operator:    absolute-value-insertion
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return i;
+    replace:     return -Math.abs(i);
+}
+
+mutant STRBUILDER_GEN_RVR_1453 {
+    description: the answer becomes 0, in StrBuilder.indexOf(char,int) at line 1732
+    operator:    return-value-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return i;
+    replace:     return 0;
+}
+
+mutant STRBUILDER_GEN_RVR_1454 {
+    description: the answer becomes 1, in StrBuilder.indexOf(char,int) at line 1732
+    operator:    return-value-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return i;
+    replace:     return 1;
+}
+
+mutant STRBUILDER_GEN_RVR_1455 {
+    description: the answer becomes -1, in StrBuilder.indexOf(char,int) at line 1732
+    operator:    return-value-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return i;
+    replace:     return -1;
+}
+
+mutant STRBUILDER_GEN_CRP_1456 {
+    description: the literal 0 becomes 1, in StrBuilder.indexOf(String) at line 1747
+    operator:    constant-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return indexOf(str, 0);
+    replace:     return indexOf(str, 1);
+}
+
+mutant STRBUILDER_GEN_CRP_1457 {
+    description: the literal 0 becomes -1, in StrBuilder.indexOf(String) at line 1747
+    operator:    constant-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return indexOf(str, 0);
+    replace:     return indexOf(str, -1);
+}
+
+mutant STRBUILDER_GEN_RVR_1458 {
+    description: the answer becomes 0, in StrBuilder.indexOf(String) at line 1747
+    operator:    return-value-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return indexOf(str, 0);
+    replace:     return 0;
+}
+
+mutant STRBUILDER_GEN_RVR_1459 {
+    description: the answer becomes 1, in StrBuilder.indexOf(String) at line 1747
+    operator:    return-value-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return indexOf(str, 0);
+    replace:     return 1;
+}
+
+mutant STRBUILDER_GEN_RVR_1460 {
+    description: the answer becomes -1, in StrBuilder.indexOf(String) at line 1747
+    operator:    return-value-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return indexOf(str, 0);
+    replace:     return -1;
+}
+
+mutant STRBUILDER_GEN_ROR_1461 {
+    description: >= becomes <=, in StrBuilder.indexOf(String,int) at line 1762
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str == null || startIndex >= size) {
+    replace:     if (str == null || startIndex <= size) {
+}
+
+mutant STRBUILDER_GEN_ROR_1462 {
+    description: >= becomes ==, in StrBuilder.indexOf(String,int) at line 1762
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str == null || startIndex >= size) {
+    replace:     if (str == null || startIndex == size) {
+}
+
+mutant STRBUILDER_GEN_ROR_1463 {
+    description: >= becomes !=, in StrBuilder.indexOf(String,int) at line 1762
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str == null || startIndex >= size) {
+    replace:     if (str == null || startIndex != size) {
+}
+
+mutant STRBUILDER_GEN_ROR_1464 {
+    description: >= becomes <, in StrBuilder.indexOf(String,int) at line 1762
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str == null || startIndex >= size) {
+    replace:     if (str == null || startIndex < size) {
+}
+
+mutant STRBUILDER_GEN_ROR_1465 {
+    description: >= becomes >, in StrBuilder.indexOf(String,int) at line 1762
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str == null || startIndex >= size) {
+    replace:     if (str == null || startIndex > size) {
+}
+
+mutant STRBUILDER_GEN_ROR_1466 {
+    description: == becomes <=, in StrBuilder.indexOf(String,int) at line 1762
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str == null || startIndex >= size) {
+    replace:     if (str <= null || startIndex >= size) {
+}
+
+mutant STRBUILDER_GEN_ROR_1467 {
+    description: == becomes >=, in StrBuilder.indexOf(String,int) at line 1762
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str == null || startIndex >= size) {
+    replace:     if (str >= null || startIndex >= size) {
+}
+
+mutant STRBUILDER_GEN_ROR_1468 {
+    description: == becomes !=, in StrBuilder.indexOf(String,int) at line 1762
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str == null || startIndex >= size) {
+    replace:     if (str != null || startIndex >= size) {
+}
+
+mutant STRBUILDER_GEN_ROR_1469 {
+    description: == becomes <, in StrBuilder.indexOf(String,int) at line 1762
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str == null || startIndex >= size) {
+    replace:     if (str < null || startIndex >= size) {
+}
+
+mutant STRBUILDER_GEN_ROR_1470 {
+    description: == becomes >, in StrBuilder.indexOf(String,int) at line 1762
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str == null || startIndex >= size) {
+    replace:     if (str > null || startIndex >= size) {
+}
+
+mutant STRBUILDER_GEN_COR_1471 {
+    description: || becomes &&, in StrBuilder.indexOf(String,int) at line 1762
+    operator:    conditional-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str == null || startIndex >= size) {
+    replace:     if (str == null && startIndex >= size) {
+}
+
+mutant STRBUILDER_GEN_COI_1472 {
+    description: the guard is negated, in StrBuilder.indexOf(String,int) at line 1762
+    operator:    conditional-operator-insertion
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str == null || startIndex >= size) {
+    replace:     if (!(str == null || startIndex >= size)) {
+}
+
+mutant STRBUILDER_GEN_CTC_1473 {
+    description: the branch is always taken, in StrBuilder.indexOf(String,int) at line 1762
+    operator:    condition-to-constant
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str == null || startIndex >= size) {
+    replace:     if (true) {
+}
+
+mutant STRBUILDER_GEN_CTC_1474 {
+    description: the branch is never taken, in StrBuilder.indexOf(String,int) at line 1762
+    operator:    condition-to-constant
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str == null || startIndex >= size) {
+    replace:     if (false) {
+}
+
+mutant STRBUILDER_GEN_ROR_1475 {
+    description: == becomes <=, in StrBuilder.indexOf(String,int) at line 1766
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 1) {
+    replace:     if (strLen <= 1) {
+}
+
+mutant STRBUILDER_GEN_ROR_1476 {
+    description: == becomes >=, in StrBuilder.indexOf(String,int) at line 1766
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 1) {
+    replace:     if (strLen >= 1) {
+}
+
+mutant STRBUILDER_GEN_ROR_1477 {
+    description: == becomes !=, in StrBuilder.indexOf(String,int) at line 1766
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 1) {
+    replace:     if (strLen != 1) {
+}
+
+mutant STRBUILDER_GEN_ROR_1478 {
+    description: == becomes <, in StrBuilder.indexOf(String,int) at line 1766
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 1) {
+    replace:     if (strLen < 1) {
+}
+
+mutant STRBUILDER_GEN_ROR_1479 {
+    description: == becomes >, in StrBuilder.indexOf(String,int) at line 1766
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 1) {
+    replace:     if (strLen > 1) {
+}
+
+mutant STRBUILDER_GEN_COI_1480 {
+    description: the guard is negated, in StrBuilder.indexOf(String,int) at line 1766
+    operator:    conditional-operator-insertion
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 1) {
+    replace:     if (!(strLen == 1)) {
+}
+
+mutant STRBUILDER_GEN_CRP_1481 {
+    description: the literal 1 becomes 0, in StrBuilder.indexOf(String,int) at line 1766
+    operator:    constant-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 1) {
+    replace:     if (strLen == 0) {
+}
+
+mutant STRBUILDER_GEN_CRP_1482 {
+    description: the literal 1 becomes -1, in StrBuilder.indexOf(String,int) at line 1766
+    operator:    constant-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 1) {
+    replace:     if (strLen == -1) {
+}
+
+mutant STRBUILDER_GEN_CRP_1483 {
+    description: the literal 1 becomes 2, in StrBuilder.indexOf(String,int) at line 1766
+    operator:    constant-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 1) {
+    replace:     if (strLen == 2) {
+}
+
+mutant STRBUILDER_GEN_CTC_1484 {
+    description: the branch is always taken, in StrBuilder.indexOf(String,int) at line 1766
+    operator:    condition-to-constant
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 1) {
+    replace:     if (true) {
+}
+
+mutant STRBUILDER_GEN_CTC_1485 {
+    description: the branch is never taken, in StrBuilder.indexOf(String,int) at line 1766
+    operator:    condition-to-constant
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 1) {
+    replace:     if (false) {
+}
+
+mutant STRBUILDER_GEN_CRP_1486 {
+    description: the literal 0 becomes 1, in StrBuilder.indexOf(String,int) at line 1767
+    operator:    constant-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return indexOf(str.charAt(0), startIndex);
+    replace:     return indexOf(str.charAt(1), startIndex);
+}
+
+mutant STRBUILDER_GEN_CRP_1487 {
+    description: the literal 0 becomes -1, in StrBuilder.indexOf(String,int) at line 1767
+    operator:    constant-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return indexOf(str.charAt(0), startIndex);
+    replace:     return indexOf(str.charAt(-1), startIndex);
+}
+
+mutant STRBUILDER_GEN_RVR_1488 {
+    description: the answer becomes 0, in StrBuilder.indexOf(String,int) at line 1767
+    operator:    return-value-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return indexOf(str.charAt(0), startIndex);
+    replace:     return 0;
+}
+
+mutant STRBUILDER_GEN_RVR_1489 {
+    description: the answer becomes 1, in StrBuilder.indexOf(String,int) at line 1767
+    operator:    return-value-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return indexOf(str.charAt(0), startIndex);
+    replace:     return 1;
+}
+
+mutant STRBUILDER_GEN_RVR_1490 {
+    description: the answer becomes -1, in StrBuilder.indexOf(String,int) at line 1767
+    operator:    return-value-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return indexOf(str.charAt(0), startIndex);
+    replace:     return -1;
+}
+
+mutant STRBUILDER_GEN_ARP_1491 {
+    description: the argument to charAt() is shifted by + 1, in StrBuilder.indexOf(String,int) at line 1767
+    operator:    argument-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return indexOf(str.charAt(0), startIndex);
+    replace:     return indexOf(str.charAt(0 + 1), startIndex);
+}
+
+mutant STRBUILDER_GEN_ARP_1492 {
+    description: the argument to charAt() is shifted by - 1, in StrBuilder.indexOf(String,int) at line 1767
+    operator:    argument-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return indexOf(str.charAt(0), startIndex);
+    replace:     return indexOf(str.charAt(0 - 1), startIndex);
+}
+
+mutant STRBUILDER_GEN_ROR_1493 {
+    description: == becomes <=, in StrBuilder.indexOf(String,int) at line 1769
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 0) {
+    replace:     if (strLen <= 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_1494 {
+    description: == becomes >=, in StrBuilder.indexOf(String,int) at line 1769
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 0) {
+    replace:     if (strLen >= 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_1495 {
+    description: == becomes !=, in StrBuilder.indexOf(String,int) at line 1769
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 0) {
+    replace:     if (strLen != 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_1496 {
+    description: == becomes <, in StrBuilder.indexOf(String,int) at line 1769
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 0) {
+    replace:     if (strLen < 0) {
+}
+
+mutant STRBUILDER_GEN_ROR_1497 {
+    description: == becomes >, in StrBuilder.indexOf(String,int) at line 1769
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 0) {
+    replace:     if (strLen > 0) {
+}
+
+mutant STRBUILDER_GEN_COI_1498 {
+    description: the guard is negated, in StrBuilder.indexOf(String,int) at line 1769
+    operator:    conditional-operator-insertion
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 0) {
+    replace:     if (!(strLen == 0)) {
+}
+
+mutant STRBUILDER_GEN_CRP_1499 {
+    description: the literal 0 becomes 1, in StrBuilder.indexOf(String,int) at line 1769
+    operator:    constant-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 0) {
+    replace:     if (strLen == 1) {
+}
+
+mutant STRBUILDER_GEN_CRP_1500 {
+    description: the literal 0 becomes -1, in StrBuilder.indexOf(String,int) at line 1769
+    operator:    constant-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 0) {
+    replace:     if (strLen == -1) {
+}
+
+mutant STRBUILDER_GEN_CTC_1501 {
+    description: the branch is always taken, in StrBuilder.indexOf(String,int) at line 1769
+    operator:    condition-to-constant
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 0) {
+    replace:     if (true) {
+}
+
+mutant STRBUILDER_GEN_CTC_1502 {
+    description: the branch is never taken, in StrBuilder.indexOf(String,int) at line 1769
+    operator:    condition-to-constant
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen == 0) {
+    replace:     if (false) {
+}
+
+mutant STRBUILDER_GEN_UOI_1503 {
+    description: the returned value is negated, in StrBuilder.indexOf(String,int) at line 1770
+    operator:    unary-operator-insertion
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return startIndex;
+    replace:     return -(startIndex);
+}
+
+mutant STRBUILDER_GEN_ABS_1504 {
+    description: the returned value is forced negative, in StrBuilder.indexOf(String,int) at line 1770
+    operator:    absolute-value-insertion
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return startIndex;
+    replace:     return -Math.abs(startIndex);
+}
+
+mutant STRBUILDER_GEN_RVR_1505 {
+    description: the answer becomes 0, in StrBuilder.indexOf(String,int) at line 1770
+    operator:    return-value-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return startIndex;
+    replace:     return 0;
+}
+
+mutant STRBUILDER_GEN_RVR_1506 {
+    description: the answer becomes 1, in StrBuilder.indexOf(String,int) at line 1770
+    operator:    return-value-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return startIndex;
+    replace:     return 1;
+}
+
+mutant STRBUILDER_GEN_RVR_1507 {
+    description: the answer becomes -1, in StrBuilder.indexOf(String,int) at line 1770
+    operator:    return-value-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        return startIndex;
+    replace:     return -1;
+}
+
+mutant STRBUILDER_GEN_ROR_1508 {
+    description: > becomes <=, in StrBuilder.indexOf(String,int) at line 1772
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen > size) {
+    replace:     if (strLen <= size) {
+}
+
+mutant STRBUILDER_GEN_ROR_1509 {
+    description: > becomes >=, in StrBuilder.indexOf(String,int) at line 1772
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen > size) {
+    replace:     if (strLen >= size) {
+}
+
+mutant STRBUILDER_GEN_ROR_1510 {
+    description: > becomes ==, in StrBuilder.indexOf(String,int) at line 1772
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen > size) {
+    replace:     if (strLen == size) {
+}
+
+mutant STRBUILDER_GEN_ROR_1511 {
+    description: > becomes !=, in StrBuilder.indexOf(String,int) at line 1772
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen > size) {
+    replace:     if (strLen != size) {
+}
+
+mutant STRBUILDER_GEN_ROR_1512 {
+    description: > becomes <, in StrBuilder.indexOf(String,int) at line 1772
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen > size) {
+    replace:     if (strLen < size) {
+}
+
+mutant STRBUILDER_GEN_COI_1513 {
+    description: the guard is negated, in StrBuilder.indexOf(String,int) at line 1772
+    operator:    conditional-operator-insertion
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen > size) {
+    replace:     if (!(strLen > size)) {
+}
+
+mutant STRBUILDER_GEN_CTC_1514 {
+    description: the branch is always taken, in StrBuilder.indexOf(String,int) at line 1772
+    operator:    condition-to-constant
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen > size) {
+    replace:     if (true) {
+}
+
+mutant STRBUILDER_GEN_CTC_1515 {
+    description: the branch is never taken, in StrBuilder.indexOf(String,int) at line 1772
+    operator:    condition-to-constant
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (strLen > size) {
+    replace:     if (false) {
+}
+
+mutant STRBUILDER_GEN_AOR_1516 {
+    description: + becomes -, in StrBuilder.indexOf(String,int) at line 1776
+    operator:    arithmetic-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        int len = size - strLen + 1;
+    replace:     int len = size - strLen - 1;
+}
+
+mutant STRBUILDER_GEN_AOR_1517 {
+    description: + becomes *, in StrBuilder.indexOf(String,int) at line 1776
+    operator:    arithmetic-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        int len = size - strLen + 1;
+    replace:     int len = size - strLen * 1;
+}
+
+mutant STRBUILDER_GEN_AOR_1518 {
+    description: + becomes /, in StrBuilder.indexOf(String,int) at line 1776
+    operator:    arithmetic-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        int len = size - strLen + 1;
+    replace:     int len = size - strLen / 1;
+}
+
+mutant STRBUILDER_GEN_AOR_1519 {
+    description: + becomes %, in StrBuilder.indexOf(String,int) at line 1776
+    operator:    arithmetic-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        int len = size - strLen + 1;
+    replace:     int len = size - strLen % 1;
+}
+
+mutant STRBUILDER_GEN_AOR_1520 {
+    description: - becomes +, in StrBuilder.indexOf(String,int) at line 1776
+    operator:    arithmetic-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        int len = size - strLen + 1;
+    replace:     int len = size + strLen + 1;
+}
+
+mutant STRBUILDER_GEN_AOR_1521 {
+    description: - becomes *, in StrBuilder.indexOf(String,int) at line 1776
+    operator:    arithmetic-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        int len = size - strLen + 1;
+    replace:     int len = size * strLen + 1;
+}
+
+mutant STRBUILDER_GEN_AOR_1522 {
+    description: - becomes /, in StrBuilder.indexOf(String,int) at line 1776
+    operator:    arithmetic-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        int len = size - strLen + 1;
+    replace:     int len = size / strLen + 1;
+}
+
+mutant STRBUILDER_GEN_AOR_1523 {
+    description: - becomes %, in StrBuilder.indexOf(String,int) at line 1776
+    operator:    arithmetic-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        int len = size - strLen + 1;
+    replace:     int len = size % strLen + 1;
+}
+
+mutant STRBUILDER_GEN_CRP_1524 {
+    description: the literal 1 becomes 0, in StrBuilder.indexOf(String,int) at line 1776
+    operator:    constant-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        int len = size - strLen + 1;
+    replace:     int len = size - strLen + 0;
+}
+
+mutant STRBUILDER_GEN_CRP_1525 {
+    description: the literal 1 becomes -1, in StrBuilder.indexOf(String,int) at line 1776
+    operator:    constant-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        int len = size - strLen + 1;
+    replace:     int len = size - strLen + -1;
+}
+
+mutant STRBUILDER_GEN_CRP_1526 {
+    description: the literal 1 becomes 2, in StrBuilder.indexOf(String,int) at line 1776
+    operator:    constant-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        int len = size - strLen + 1;
+    replace:     int len = size - strLen + 2;
+}
+
+mutant STRBUILDER_GEN_ROR_1527 {
+    description: < becomes <=, in StrBuilder.indexOf(String,int) at line 1778
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int i = startIndex; i < len; i++) {
+    replace:     for (int i = startIndex; i <= len; i++) {
+}
+
+mutant STRBUILDER_GEN_ROR_1528 {
+    description: < becomes >=, in StrBuilder.indexOf(String,int) at line 1778
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int i = startIndex; i < len; i++) {
+    replace:     for (int i = startIndex; i >= len; i++) {
+}
+
+mutant STRBUILDER_GEN_ROR_1529 {
+    description: < becomes ==, in StrBuilder.indexOf(String,int) at line 1778
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int i = startIndex; i < len; i++) {
+    replace:     for (int i = startIndex; i == len; i++) {
+}
+
+mutant STRBUILDER_GEN_ROR_1530 {
+    description: < becomes !=, in StrBuilder.indexOf(String,int) at line 1778
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int i = startIndex; i < len; i++) {
+    replace:     for (int i = startIndex; i != len; i++) {
+}
+
+mutant STRBUILDER_GEN_ROR_1531 {
+    description: < becomes >, in StrBuilder.indexOf(String,int) at line 1778
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int i = startIndex; i < len; i++) {
+    replace:     for (int i = startIndex; i > len; i++) {
+}
+
+mutant STRBUILDER_GEN_LBR_1532 {
+    description: the loop starts one later, in StrBuilder.indexOf(String,int) at line 1778
+    operator:    loop-bound-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int i = startIndex; i < len; i++) {
+    replace:     for (int i = startIndex + 1; i < len; i++) {
+}
+
+mutant STRBUILDER_GEN_LBR_1533 {
+    description: the loop starts one earlier, in StrBuilder.indexOf(String,int) at line 1778
+    operator:    loop-bound-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int i = startIndex; i < len; i++) {
+    replace:     for (int i = startIndex - 1; i < len; i++) {
+}
+
+mutant STRBUILDER_GEN_ROR_1534 {
+    description: < becomes <=, in StrBuilder.indexOf(String,int) at line 1779
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int j = 0; j < strLen; j++) {
+    replace:     for (int j = 0; j <= strLen; j++) {
+}
+
+mutant STRBUILDER_GEN_ROR_1535 {
+    description: < becomes >=, in StrBuilder.indexOf(String,int) at line 1779
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int j = 0; j < strLen; j++) {
+    replace:     for (int j = 0; j >= strLen; j++) {
+}
+
+mutant STRBUILDER_GEN_ROR_1536 {
+    description: < becomes ==, in StrBuilder.indexOf(String,int) at line 1779
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int j = 0; j < strLen; j++) {
+    replace:     for (int j = 0; j == strLen; j++) {
+}
+
+mutant STRBUILDER_GEN_ROR_1537 {
+    description: < becomes !=, in StrBuilder.indexOf(String,int) at line 1779
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int j = 0; j < strLen; j++) {
+    replace:     for (int j = 0; j != strLen; j++) {
+}
+
+mutant STRBUILDER_GEN_ROR_1538 {
+    description: < becomes >, in StrBuilder.indexOf(String,int) at line 1779
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int j = 0; j < strLen; j++) {
+    replace:     for (int j = 0; j > strLen; j++) {
+}
+
+mutant STRBUILDER_GEN_CRP_1539 {
+    description: the literal 0 becomes 1, in StrBuilder.indexOf(String,int) at line 1779
+    operator:    constant-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int j = 0; j < strLen; j++) {
+    replace:     for (int j = 1; j < strLen; j++) {
+}
+
+mutant STRBUILDER_GEN_CRP_1540 {
+    description: the literal 0 becomes -1, in StrBuilder.indexOf(String,int) at line 1779
+    operator:    constant-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int j = 0; j < strLen; j++) {
+    replace:     for (int j = -1; j < strLen; j++) {
+}
+
+mutant STRBUILDER_GEN_LBR_1541 {
+    description: the loop starts one later, in StrBuilder.indexOf(String,int) at line 1779
+    operator:    loop-bound-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int j = 0; j < strLen; j++) {
+    replace:     for (int j = 0 + 1; j < strLen; j++) {
+}
+
+mutant STRBUILDER_GEN_LBR_1542 {
+    description: the loop starts one earlier, in StrBuilder.indexOf(String,int) at line 1779
+    operator:    loop-bound-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        for (int j = 0; j < strLen; j++) {
+    replace:     for (int j = 0 - 1; j < strLen; j++) {
+}
+
+mutant STRBUILDER_GEN_AOR_1543 {
+    description: + becomes -, in StrBuilder.indexOf(String,int) at line 1780
+    operator:    arithmetic-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str.charAt(j) != thisBuf[i + j]) {
+    replace:     if (str.charAt(j) != thisBuf[i - j]) {
+}
+
+mutant STRBUILDER_GEN_AOR_1544 {
+    description: + becomes *, in StrBuilder.indexOf(String,int) at line 1780
+    operator:    arithmetic-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str.charAt(j) != thisBuf[i + j]) {
+    replace:     if (str.charAt(j) != thisBuf[i * j]) {
+}
+
+mutant STRBUILDER_GEN_AOR_1545 {
+    description: + becomes /, in StrBuilder.indexOf(String,int) at line 1780
+    operator:    arithmetic-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str.charAt(j) != thisBuf[i + j]) {
+    replace:     if (str.charAt(j) != thisBuf[i / j]) {
+}
+
+mutant STRBUILDER_GEN_AOR_1546 {
+    description: + becomes %, in StrBuilder.indexOf(String,int) at line 1780
+    operator:    arithmetic-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str.charAt(j) != thisBuf[i + j]) {
+    replace:     if (str.charAt(j) != thisBuf[i % j]) {
+}
+
+mutant STRBUILDER_GEN_ROR_1547 {
+    description: != becomes <=, in StrBuilder.indexOf(String,int) at line 1780
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str.charAt(j) != thisBuf[i + j]) {
+    replace:     if (str.charAt(j) <= thisBuf[i + j]) {
+}
+
+mutant STRBUILDER_GEN_ROR_1548 {
+    description: != becomes >=, in StrBuilder.indexOf(String,int) at line 1780
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str.charAt(j) != thisBuf[i + j]) {
+    replace:     if (str.charAt(j) >= thisBuf[i + j]) {
+}
+
+mutant STRBUILDER_GEN_ROR_1549 {
+    description: != becomes ==, in StrBuilder.indexOf(String,int) at line 1780
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str.charAt(j) != thisBuf[i + j]) {
+    replace:     if (str.charAt(j) == thisBuf[i + j]) {
+}
+
+mutant STRBUILDER_GEN_ROR_1550 {
+    description: != becomes <, in StrBuilder.indexOf(String,int) at line 1780
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str.charAt(j) != thisBuf[i + j]) {
+    replace:     if (str.charAt(j) < thisBuf[i + j]) {
+}
+
+mutant STRBUILDER_GEN_ROR_1551 {
+    description: != becomes >, in StrBuilder.indexOf(String,int) at line 1780
+    operator:    relational-operator-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str.charAt(j) != thisBuf[i + j]) {
+    replace:     if (str.charAt(j) > thisBuf[i + j]) {
+}
+
+mutant STRBUILDER_GEN_COI_1552 {
+    description: the guard is negated, in StrBuilder.indexOf(String,int) at line 1780
+    operator:    conditional-operator-insertion
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str.charAt(j) != thisBuf[i + j]) {
+    replace:     if (!(str.charAt(j) != thisBuf[i + j])) {
+}
+
+mutant STRBUILDER_GEN_CTC_1553 {
+    description: the branch is always taken, in StrBuilder.indexOf(String,int) at line 1780
+    operator:    condition-to-constant
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str.charAt(j) != thisBuf[i + j]) {
+    replace:     if (true) {
+}
+
+mutant STRBUILDER_GEN_CTC_1554 {
+    description: the branch is never taken, in StrBuilder.indexOf(String,int) at line 1780
+    operator:    condition-to-constant
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str.charAt(j) != thisBuf[i + j]) {
+    replace:     if (false) {
+}
+
+mutant STRBUILDER_GEN_ARP_1555 {
+    description: the argument to charAt() is shifted by + 1, in StrBuilder.indexOf(String,int) at line 1780
+    operator:    argument-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str.charAt(j) != thisBuf[i + j]) {
+    replace:     if (str.charAt(j + 1) != thisBuf[i + j]) {
+}
+
+mutant STRBUILDER_GEN_ARP_1556 {
+    description: the argument to charAt() is shifted by - 1, in StrBuilder.indexOf(String,int) at line 1780
+    operator:    argument-replacement
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        if (str.charAt(j) != thisBuf[i + j]) {
+    replace:     if (str.charAt(j - 1) != thisBuf[i + j]) {
+}
+
+mutant STRBUILDER_GEN_SDL_1557 {
+    description: the statement is removed, in StrBuilder.indexOf(String,int) at line 1781
+    operator:    statement-deletion
+    in:          indexOf
+    file:        StrBuilder.java
+    find:        continue outer;
+    replace:     
+}
+

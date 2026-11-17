@@ -1,0 +1,138 @@
+id	line	operator	abbr	method	direct	find	replace
+MULTIVALUEMAP_GEN_RVR_3	77	return-value-replacement	RVR	MultiValueMap.decorate(Map)	direct	return new MultiValueMap(map, new ReflectionFactory(ArrayList.class));	return null;
+MULTIVALUEMAP_GEN_SDL_7	119	statement-deletion	SDL	MultiValueMap.<init>(Map,Factory)	indirect	super(map);	
+MULTIVALUEMAP_GEN_ROR_8	120	relational-operator-replacement	ROR	MultiValueMap.<init>(Map,Factory)	indirect	if (collectionFactory == null) {	if (collectionFactory <= null) {
+MULTIVALUEMAP_GEN_ROR_9	120	relational-operator-replacement	ROR	MultiValueMap.<init>(Map,Factory)	indirect	if (collectionFactory == null) {	if (collectionFactory >= null) {
+MULTIVALUEMAP_GEN_ROR_10	120	relational-operator-replacement	ROR	MultiValueMap.<init>(Map,Factory)	indirect	if (collectionFactory == null) {	if (collectionFactory != null) {
+MULTIVALUEMAP_GEN_ROR_11	120	relational-operator-replacement	ROR	MultiValueMap.<init>(Map,Factory)	indirect	if (collectionFactory == null) {	if (collectionFactory < null) {
+MULTIVALUEMAP_GEN_ROR_12	120	relational-operator-replacement	ROR	MultiValueMap.<init>(Map,Factory)	indirect	if (collectionFactory == null) {	if (collectionFactory > null) {
+MULTIVALUEMAP_GEN_COI_13	120	conditional-operator-insertion	COI	MultiValueMap.<init>(Map,Factory)	indirect	if (collectionFactory == null) {	if (!(collectionFactory == null)) {
+MULTIVALUEMAP_GEN_CTC_14	120	condition-to-constant	CTC	MultiValueMap.<init>(Map,Factory)	indirect	if (collectionFactory == null) {	if (true) {
+MULTIVALUEMAP_GEN_CTC_15	120	condition-to-constant	CTC	MultiValueMap.<init>(Map,Factory)	indirect	if (collectionFactory == null) {	if (false) {
+MULTIVALUEMAP_GEN_SDL_16	121	statement-deletion	SDL	MultiValueMap.<init>(Map,Factory)	indirect	throw new IllegalArgumentException("The factory must not be null");	
+MULTIVALUEMAP_GEN_SDL_17	123	statement-deletion	SDL	MultiValueMap.<init>(Map,Factory)	indirect	this.collectionFactory = collectionFactory;	
+MULTIVALUEMAP_GEN_SDL_18	139	statement-deletion	SDL	MultiValueMap.clear()	indirect	getMap().clear();	
+MULTIVALUEMAP_GEN_ROR_59	207	relational-operator-replacement	ROR	MultiValueMap.put(Object,Object)	direct	if (coll == null) {	if (coll <= null) {
+MULTIVALUEMAP_GEN_ROR_60	207	relational-operator-replacement	ROR	MultiValueMap.put(Object,Object)	direct	if (coll == null) {	if (coll >= null) {
+MULTIVALUEMAP_GEN_ROR_61	207	relational-operator-replacement	ROR	MultiValueMap.put(Object,Object)	direct	if (coll == null) {	if (coll != null) {
+MULTIVALUEMAP_GEN_ROR_62	207	relational-operator-replacement	ROR	MultiValueMap.put(Object,Object)	direct	if (coll == null) {	if (coll < null) {
+MULTIVALUEMAP_GEN_ROR_63	207	relational-operator-replacement	ROR	MultiValueMap.put(Object,Object)	direct	if (coll == null) {	if (coll > null) {
+MULTIVALUEMAP_GEN_COI_64	207	conditional-operator-insertion	COI	MultiValueMap.put(Object,Object)	direct	if (coll == null) {	if (!(coll == null)) {
+MULTIVALUEMAP_GEN_CTC_65	207	condition-to-constant	CTC	MultiValueMap.put(Object,Object)	direct	if (coll == null) {	if (true) {
+MULTIVALUEMAP_GEN_CTC_66	207	condition-to-constant	CTC	MultiValueMap.put(Object,Object)	direct	if (coll == null) {	if (false) {
+MULTIVALUEMAP_GEN_AOR_67	208	arithmetic-operator-replacement	AOR	MultiValueMap.put(Object,Object)	direct	coll = createCollection(1);  // might produce a non-empty collection	coll = createCollection(1);  // might produce a non+empty collection
+MULTIVALUEMAP_GEN_AOR_68	208	arithmetic-operator-replacement	AOR	MultiValueMap.put(Object,Object)	direct	coll = createCollection(1);  // might produce a non-empty collection	coll = createCollection(1);  // might produce a non*empty collection
+MULTIVALUEMAP_GEN_AOR_69	208	arithmetic-operator-replacement	AOR	MultiValueMap.put(Object,Object)	direct	coll = createCollection(1);  // might produce a non-empty collection	coll = createCollection(1);  // might produce a non/empty collection
+MULTIVALUEMAP_GEN_AOR_70	208	arithmetic-operator-replacement	AOR	MultiValueMap.put(Object,Object)	direct	coll = createCollection(1);  // might produce a non-empty collection	coll = createCollection(1);  // might produce a non%empty collection
+MULTIVALUEMAP_GEN_CRP_71	208	constant-replacement	CRP	MultiValueMap.put(Object,Object)	direct	coll = createCollection(1);  // might produce a non-empty collection	coll = createCollection(0);  // might produce a non-empty collection
+MULTIVALUEMAP_GEN_CRP_72	208	constant-replacement	CRP	MultiValueMap.put(Object,Object)	direct	coll = createCollection(1);  // might produce a non-empty collection	coll = createCollection(-1);  // might produce a non-empty collection
+MULTIVALUEMAP_GEN_CRP_73	208	constant-replacement	CRP	MultiValueMap.put(Object,Object)	direct	coll = createCollection(1);  // might produce a non-empty collection	coll = createCollection(2);  // might produce a non-empty collection
+MULTIVALUEMAP_GEN_SDL_74	209	statement-deletion	SDL	MultiValueMap.put(Object,Object)	direct	coll.add(value);	
+MULTIVALUEMAP_GEN_STR_75	209	statement-replacement	STR	MultiValueMap.put(Object,Object)	direct	coll.add(value);	coll.add(value); coll.add(value);
+MULTIVALUEMAP_GEN_ARP_76	209	argument-replacement	ARP	MultiValueMap.put(Object,Object)	direct	coll.add(value);	coll.add(value + 1);
+MULTIVALUEMAP_GEN_ARP_77	209	argument-replacement	ARP	MultiValueMap.put(Object,Object)	direct	coll.add(value);	coll.add(value - 1);
+MULTIVALUEMAP_GEN_MCR_78	209	method-call-replacement	MCR	MultiValueMap.put(Object,Object)	direct	coll.add(value);	coll.contains(value);
+MULTIVALUEMAP_GEN_ROR_79	210	relational-operator-replacement	ROR	MultiValueMap.put(Object,Object)	direct	if (coll.size() > 0) {	if (coll.size() <= 0) {
+MULTIVALUEMAP_GEN_ROR_80	210	relational-operator-replacement	ROR	MultiValueMap.put(Object,Object)	direct	if (coll.size() > 0) {	if (coll.size() >= 0) {
+MULTIVALUEMAP_GEN_ROR_81	210	relational-operator-replacement	ROR	MultiValueMap.put(Object,Object)	direct	if (coll.size() > 0) {	if (coll.size() == 0) {
+MULTIVALUEMAP_GEN_ROR_82	210	relational-operator-replacement	ROR	MultiValueMap.put(Object,Object)	direct	if (coll.size() > 0) {	if (coll.size() != 0) {
+MULTIVALUEMAP_GEN_ROR_83	210	relational-operator-replacement	ROR	MultiValueMap.put(Object,Object)	direct	if (coll.size() > 0) {	if (coll.size() < 0) {
+MULTIVALUEMAP_GEN_COI_84	210	conditional-operator-insertion	COI	MultiValueMap.put(Object,Object)	direct	if (coll.size() > 0) {	if (!(coll.size() > 0)) {
+MULTIVALUEMAP_GEN_CRP_85	210	constant-replacement	CRP	MultiValueMap.put(Object,Object)	direct	if (coll.size() > 0) {	if (coll.size() > 1) {
+MULTIVALUEMAP_GEN_CRP_86	210	constant-replacement	CRP	MultiValueMap.put(Object,Object)	direct	if (coll.size() > 0) {	if (coll.size() > -1) {
+MULTIVALUEMAP_GEN_CTC_87	210	condition-to-constant	CTC	MultiValueMap.put(Object,Object)	direct	if (coll.size() > 0) {	if (true) {
+MULTIVALUEMAP_GEN_CTC_88	210	condition-to-constant	CTC	MultiValueMap.put(Object,Object)	direct	if (coll.size() > 0) {	if (false) {
+MULTIVALUEMAP_GEN_MCR_89	210	method-call-replacement	MCR	MultiValueMap.put(Object,Object)	direct	if (coll.size() > 0) {	if (coll.hashCode() > 0) {
+MULTIVALUEMAP_GEN_SDL_90	212	statement-deletion	SDL	MultiValueMap.put(Object,Object)	direct	getMap().put(key, coll);	
+MULTIVALUEMAP_GEN_ARP_91	212	argument-replacement	ARP	MultiValueMap.put(Object,Object)	direct	getMap().put(key, coll);	getMap().put(coll, key);
+MULTIVALUEMAP_GEN_MCR_92	212	method-call-replacement	MCR	MultiValueMap.put(Object,Object)	direct	getMap().put(key, coll);	getMap().putIfAbsent(key, coll);
+MULTIVALUEMAP_GEN_SDL_93	216	statement-deletion	SDL	MultiValueMap.put(Object,Object)	direct	result = coll.add(value);	
+MULTIVALUEMAP_GEN_ARP_94	216	argument-replacement	ARP	MultiValueMap.put(Object,Object)	direct	result = coll.add(value);	result = coll.add(value + 1);
+MULTIVALUEMAP_GEN_ARP_95	216	argument-replacement	ARP	MultiValueMap.put(Object,Object)	direct	result = coll.add(value);	result = coll.add(value - 1);
+MULTIVALUEMAP_GEN_MCR_96	216	method-call-replacement	MCR	MultiValueMap.put(Object,Object)	direct	result = coll.add(value);	result = coll.contains(value);
+MULTIVALUEMAP_GEN_RVR_97	218	return-value-replacement	RVR	MultiValueMap.put(Object,Object)	direct	return (result ? value : null);	return null;
+MULTIVALUEMAP_GEN_ROR_103	256	relational-operator-replacement	ROR	MultiValueMap.values()	indirect	return (vs != null ? vs : (values = new Values()));	return (vs <= null ? vs : (values = new Values()));
+MULTIVALUEMAP_GEN_ROR_104	256	relational-operator-replacement	ROR	MultiValueMap.values()	indirect	return (vs != null ? vs : (values = new Values()));	return (vs >= null ? vs : (values = new Values()));
+MULTIVALUEMAP_GEN_ROR_105	256	relational-operator-replacement	ROR	MultiValueMap.values()	indirect	return (vs != null ? vs : (values = new Values()));	return (vs == null ? vs : (values = new Values()));
+MULTIVALUEMAP_GEN_ROR_106	256	relational-operator-replacement	ROR	MultiValueMap.values()	indirect	return (vs != null ? vs : (values = new Values()));	return (vs < null ? vs : (values = new Values()));
+MULTIVALUEMAP_GEN_ROR_107	256	relational-operator-replacement	ROR	MultiValueMap.values()	indirect	return (vs != null ? vs : (values = new Values()));	return (vs > null ? vs : (values = new Values()));
+MULTIVALUEMAP_GEN_RVR_108	256	return-value-replacement	RVR	MultiValueMap.values()	indirect	return (vs != null ? vs : (values = new Values()));	return null;
+MULTIVALUEMAP_GEN_RVR_109	268	return-value-replacement	RVR	MultiValueMap.containsValue(Object,Object)	direct	return false;	return true;
+MULTIVALUEMAP_GEN_RVR_110	270	return-value-replacement	RVR	MultiValueMap.containsValue(Object,Object)	direct	return coll.contains(value);	return true;
+MULTIVALUEMAP_GEN_RVR_111	270	return-value-replacement	RVR	MultiValueMap.containsValue(Object,Object)	direct	return coll.contains(value);	return false;
+MULTIVALUEMAP_GEN_ARP_112	270	argument-replacement	ARP	MultiValueMap.containsValue(Object,Object)	direct	return coll.contains(value);	return coll.contains(value + 1);
+MULTIVALUEMAP_GEN_ARP_113	270	argument-replacement	ARP	MultiValueMap.containsValue(Object,Object)	direct	return coll.contains(value);	return coll.contains(value - 1);
+MULTIVALUEMAP_GEN_RVR_114	281	return-value-replacement	RVR	MultiValueMap.getCollection(Object)	indirect	return (Collection) getMap().get(key);	return null;
+MULTIVALUEMAP_GEN_ARP_115	281	argument-replacement	ARP	MultiValueMap.getCollection(Object)	indirect	return (Collection) getMap().get(key);	return (Collection) getMap().get(key + 1);
+MULTIVALUEMAP_GEN_ARP_116	281	argument-replacement	ARP	MultiValueMap.getCollection(Object)	indirect	return (Collection) getMap().get(key);	return (Collection) getMap().get(key - 1);
+MULTIVALUEMAP_GEN_MCR_117	281	method-call-replacement	MCR	MultiValueMap.getCollection(Object)	indirect	return (Collection) getMap().get(key);	return (Collection) getMap().remove(key);
+MULTIVALUEMAP_GEN_UOI_118	293	unary-operator-insertion	UOI	MultiValueMap.size(Object)	direct	return 0;	return -(0);
+MULTIVALUEMAP_GEN_ABS_119	293	absolute-value-insertion	ABS	MultiValueMap.size(Object)	direct	return 0;	return -Math.abs(0);
+MULTIVALUEMAP_GEN_CRP_120	293	constant-replacement	CRP	MultiValueMap.size(Object)	direct	return 0;	return 1;
+MULTIVALUEMAP_GEN_CRP_121	293	constant-replacement	CRP	MultiValueMap.size(Object)	direct	return 0;	return -1;
+MULTIVALUEMAP_GEN_UOI_122	295	unary-operator-insertion	UOI	MultiValueMap.size(Object)	direct	return coll.size();	return -(coll.size());
+MULTIVALUEMAP_GEN_ABS_123	295	absolute-value-insertion	ABS	MultiValueMap.size(Object)	direct	return coll.size();	return -Math.abs(coll.size());
+MULTIVALUEMAP_GEN_RVR_124	295	return-value-replacement	RVR	MultiValueMap.size(Object)	direct	return coll.size();	return 0;
+MULTIVALUEMAP_GEN_RVR_125	295	return-value-replacement	RVR	MultiValueMap.size(Object)	direct	return coll.size();	return 1;
+MULTIVALUEMAP_GEN_RVR_126	295	return-value-replacement	RVR	MultiValueMap.size(Object)	direct	return coll.size();	return -1;
+MULTIVALUEMAP_GEN_MCR_127	295	method-call-replacement	MCR	MultiValueMap.size(Object)	direct	return coll.size();	return coll.hashCode();
+MULTIVALUEMAP_GEN_ROR_128	307	relational-operator-replacement	ROR	MultiValueMap.putAll(Object,Collection)	direct	if (values == null || values.size() == 0) {	if (values <= null || values.size() == 0) {
+MULTIVALUEMAP_GEN_ROR_129	307	relational-operator-replacement	ROR	MultiValueMap.putAll(Object,Collection)	direct	if (values == null || values.size() == 0) {	if (values >= null || values.size() == 0) {
+MULTIVALUEMAP_GEN_ROR_130	307	relational-operator-replacement	ROR	MultiValueMap.putAll(Object,Collection)	direct	if (values == null || values.size() == 0) {	if (values != null || values.size() == 0) {
+MULTIVALUEMAP_GEN_ROR_131	307	relational-operator-replacement	ROR	MultiValueMap.putAll(Object,Collection)	direct	if (values == null || values.size() == 0) {	if (values < null || values.size() == 0) {
+MULTIVALUEMAP_GEN_ROR_132	307	relational-operator-replacement	ROR	MultiValueMap.putAll(Object,Collection)	direct	if (values == null || values.size() == 0) {	if (values > null || values.size() == 0) {
+MULTIVALUEMAP_GEN_ROR_133	307	relational-operator-replacement	ROR	MultiValueMap.putAll(Object,Collection)	direct	if (values == null || values.size() == 0) {	if (values == null || values.size() <= 0) {
+MULTIVALUEMAP_GEN_ROR_134	307	relational-operator-replacement	ROR	MultiValueMap.putAll(Object,Collection)	direct	if (values == null || values.size() == 0) {	if (values == null || values.size() >= 0) {
+MULTIVALUEMAP_GEN_ROR_135	307	relational-operator-replacement	ROR	MultiValueMap.putAll(Object,Collection)	direct	if (values == null || values.size() == 0) {	if (values == null || values.size() != 0) {
+MULTIVALUEMAP_GEN_ROR_136	307	relational-operator-replacement	ROR	MultiValueMap.putAll(Object,Collection)	direct	if (values == null || values.size() == 0) {	if (values == null || values.size() < 0) {
+MULTIVALUEMAP_GEN_ROR_137	307	relational-operator-replacement	ROR	MultiValueMap.putAll(Object,Collection)	direct	if (values == null || values.size() == 0) {	if (values == null || values.size() > 0) {
+MULTIVALUEMAP_GEN_COR_138	307	conditional-operator-replacement	COR	MultiValueMap.putAll(Object,Collection)	direct	if (values == null || values.size() == 0) {	if (values == null && values.size() == 0) {
+MULTIVALUEMAP_GEN_COI_139	307	conditional-operator-insertion	COI	MultiValueMap.putAll(Object,Collection)	direct	if (values == null || values.size() == 0) {	if (!(values == null || values.size() == 0)) {
+MULTIVALUEMAP_GEN_CRP_140	307	constant-replacement	CRP	MultiValueMap.putAll(Object,Collection)	direct	if (values == null || values.size() == 0) {	if (values == null || values.size() == 1) {
+MULTIVALUEMAP_GEN_CRP_141	307	constant-replacement	CRP	MultiValueMap.putAll(Object,Collection)	direct	if (values == null || values.size() == 0) {	if (values == null || values.size() == -1) {
+MULTIVALUEMAP_GEN_CTC_142	307	condition-to-constant	CTC	MultiValueMap.putAll(Object,Collection)	direct	if (values == null || values.size() == 0) {	if (true) {
+MULTIVALUEMAP_GEN_CTC_143	307	condition-to-constant	CTC	MultiValueMap.putAll(Object,Collection)	direct	if (values == null || values.size() == 0) {	if (false) {
+MULTIVALUEMAP_GEN_MCR_144	307	method-call-replacement	MCR	MultiValueMap.putAll(Object,Collection)	direct	if (values == null || values.size() == 0) {	if (values == null || values.hashCode() == 0) {
+MULTIVALUEMAP_GEN_AOR_145	313	arithmetic-operator-replacement	AOR	MultiValueMap.putAll(Object,Collection)	direct	coll = createCollection(values.size());  // might produce a non-empty collection	coll = createCollection(values.size());  // might produce a non+empty collection
+MULTIVALUEMAP_GEN_AOR_146	313	arithmetic-operator-replacement	AOR	MultiValueMap.putAll(Object,Collection)	direct	coll = createCollection(values.size());  // might produce a non-empty collection	coll = createCollection(values.size());  // might produce a non*empty collection
+MULTIVALUEMAP_GEN_AOR_147	313	arithmetic-operator-replacement	AOR	MultiValueMap.putAll(Object,Collection)	direct	coll = createCollection(values.size());  // might produce a non-empty collection	coll = createCollection(values.size());  // might produce a non/empty collection
+MULTIVALUEMAP_GEN_AOR_148	313	arithmetic-operator-replacement	AOR	MultiValueMap.putAll(Object,Collection)	direct	coll = createCollection(values.size());  // might produce a non-empty collection	coll = createCollection(values.size());  // might produce a non%empty collection
+MULTIVALUEMAP_GEN_MCR_149	313	method-call-replacement	MCR	MultiValueMap.putAll(Object,Collection)	direct	coll = createCollection(values.size());  // might produce a non-empty collection	coll = createCollection(values.hashCode());  // might produce a non-empty collection
+MULTIVALUEMAP_GEN_SDL_150	314	statement-deletion	SDL	MultiValueMap.putAll(Object,Collection)	direct	coll.addAll(values);	
+MULTIVALUEMAP_GEN_STR_151	314	statement-replacement	STR	MultiValueMap.putAll(Object,Collection)	direct	coll.addAll(values);	coll.addAll(values); coll.addAll(values);
+MULTIVALUEMAP_GEN_ARP_152	314	argument-replacement	ARP	MultiValueMap.putAll(Object,Collection)	direct	coll.addAll(values);	coll.addAll(values + 1);
+MULTIVALUEMAP_GEN_ARP_153	314	argument-replacement	ARP	MultiValueMap.putAll(Object,Collection)	direct	coll.addAll(values);	coll.addAll(values - 1);
+MULTIVALUEMAP_GEN_SDL_154	321	statement-deletion	SDL	MultiValueMap.putAll(Object,Collection)	direct	result = coll.addAll(values);	
+MULTIVALUEMAP_GEN_ARP_155	321	argument-replacement	ARP	MultiValueMap.putAll(Object,Collection)	direct	result = coll.addAll(values);	result = coll.addAll(values + 1);
+MULTIVALUEMAP_GEN_ARP_156	321	argument-replacement	ARP	MultiValueMap.putAll(Object,Collection)	direct	result = coll.addAll(values);	result = coll.addAll(values - 1);
+MULTIVALUEMAP_GEN_RVR_157	323	return-value-replacement	RVR	MultiValueMap.putAll(Object,Collection)	direct	return result;	return true;
+MULTIVALUEMAP_GEN_RVR_158	323	return-value-replacement	RVR	MultiValueMap.putAll(Object,Collection)	direct	return result;	return false;
+MULTIVALUEMAP_GEN_CRP_165	346	constant-replacement	CRP	MultiValueMap.totalSize()	direct	int total = 0;	int total = 1;
+MULTIVALUEMAP_GEN_CRP_166	346	constant-replacement	CRP	MultiValueMap.totalSize()	direct	int total = 0;	int total = -1;
+MULTIVALUEMAP_GEN_SDL_167	350	statement-deletion	SDL	MultiValueMap.totalSize()	direct	total += coll.size();	
+MULTIVALUEMAP_GEN_MCR_168	350	method-call-replacement	MCR	MultiValueMap.totalSize()	direct	total += coll.size();	total += coll.hashCode();
+MULTIVALUEMAP_GEN_UOI_169	352	unary-operator-insertion	UOI	MultiValueMap.totalSize()	direct	return total;	return -(total);
+MULTIVALUEMAP_GEN_ABS_170	352	absolute-value-insertion	ABS	MultiValueMap.totalSize()	direct	return total;	return -Math.abs(total);
+MULTIVALUEMAP_GEN_RVR_171	352	return-value-replacement	RVR	MultiValueMap.totalSize()	direct	return total;	return 0;
+MULTIVALUEMAP_GEN_RVR_172	352	return-value-replacement	RVR	MultiValueMap.totalSize()	direct	return total;	return 1;
+MULTIVALUEMAP_GEN_RVR_173	352	return-value-replacement	RVR	MultiValueMap.totalSize()	direct	return total;	return -1;
+MULTIVALUEMAP_GEN_RVR_174	366	return-value-replacement	RVR	MultiValueMap.createCollection(int)	indirect	return (Collection) collectionFactory.create();	return null;
+MULTIVALUEMAP_GEN_SDL_175	377	statement-deletion	SDL	MultiValueMap.Values.iterator()	indirect	chain.addIterator(new ValuesIterator(it.next()));	
+MULTIVALUEMAP_GEN_STR_176	377	statement-replacement	STR	MultiValueMap.Values.iterator()	indirect	chain.addIterator(new ValuesIterator(it.next()));	chain.addIterator(new ValuesIterator(it.next())); chain.addIterator(new ValuesIterator(it.next()));
+MULTIVALUEMAP_GEN_RVR_177	379	return-value-replacement	RVR	MultiValueMap.Values.iterator()	indirect	return chain;	return null;
+MULTIVALUEMAP_GEN_UOI_178	383	unary-operator-insertion	UOI	MultiValueMap.Values.size()	indirect	return totalSize();	return -(totalSize());
+MULTIVALUEMAP_GEN_ABS_179	383	absolute-value-insertion	ABS	MultiValueMap.Values.size()	indirect	return totalSize();	return -Math.abs(totalSize());
+MULTIVALUEMAP_GEN_RVR_180	383	return-value-replacement	RVR	MultiValueMap.Values.size()	indirect	return totalSize();	return 0;
+MULTIVALUEMAP_GEN_RVR_181	383	return-value-replacement	RVR	MultiValueMap.Values.size()	indirect	return totalSize();	return 1;
+MULTIVALUEMAP_GEN_RVR_182	383	return-value-replacement	RVR	MultiValueMap.Values.size()	indirect	return totalSize();	return -1;
+MULTIVALUEMAP_GEN_SDL_183	387	statement-deletion	SDL	MultiValueMap.Values.clear()	indirect	MultiValueMap.this.clear();	
+MULTIVALUEMAP_GEN_STR_184	387	statement-replacement	STR	MultiValueMap.Values.clear()	indirect	MultiValueMap.this.clear();	MultiValueMap.this.clear(); MultiValueMap.this.clear();
+MULTIVALUEMAP_GEN_SDL_188	400	statement-deletion	SDL	MultiValueMap.ValuesIterator.<init>(Object)	indirect	this.key = key;	
+MULTIVALUEMAP_GEN_SDL_189	401	statement-deletion	SDL	MultiValueMap.ValuesIterator.<init>(Object)	indirect	this.values = getCollection(key);	
+MULTIVALUEMAP_GEN_SDL_190	402	statement-deletion	SDL	MultiValueMap.ValuesIterator.<init>(Object)	indirect	this.iterator = values.iterator();	
+MULTIVALUEMAP_GEN_RVR_203	413	return-value-replacement	RVR	MultiValueMap.ValuesIterator.hasNext()	indirect	return iterator.hasNext();	return true;
+MULTIVALUEMAP_GEN_RVR_204	413	return-value-replacement	RVR	MultiValueMap.ValuesIterator.hasNext()	indirect	return iterator.hasNext();	return false;
+MULTIVALUEMAP_GEN_RVR_205	417	return-value-replacement	RVR	MultiValueMap.ValuesIterator.next()	indirect	return iterator.next();	return null;
+MULTIVALUEMAP_GEN_SDL_207	428	statement-deletion	SDL	MultiValueMap.ReflectionFactory.<init>(Class)	indirect	this.clazz = clazz;	
+MULTIVALUEMAP_GEN_RVR_208	433	return-value-replacement	RVR	MultiValueMap.ReflectionFactory.create()	indirect	return clazz.newInstance();	return null;
+MULTIVALUEMAP_GEN_SDL_209	435	statement-deletion	SDL	MultiValueMap.ReflectionFactory.create()	indirect	throw new FunctorException("Cannot instantiate class: " + clazz, ex);	

@@ -1,0 +1,723 @@
+id	line	operator	abbr	method	direct	find	replace
+TREELIST_GEN_SDL_3	73	statement-deletion	SDL	TreeList.<init>()	direct	super();	
+TREELIST_GEN_AOR_5	96	arithmetic-operator-replacement	AOR	TreeList.get(int)	direct	checkInterval(index, 0, size() - 1);	checkInterval(index, 0, size() + 1);
+TREELIST_GEN_AOR_6	96	arithmetic-operator-replacement	AOR	TreeList.get(int)	direct	checkInterval(index, 0, size() - 1);	checkInterval(index, 0, size() * 1);
+TREELIST_GEN_AOR_7	96	arithmetic-operator-replacement	AOR	TreeList.get(int)	direct	checkInterval(index, 0, size() - 1);	checkInterval(index, 0, size() / 1);
+TREELIST_GEN_AOR_8	96	arithmetic-operator-replacement	AOR	TreeList.get(int)	direct	checkInterval(index, 0, size() - 1);	checkInterval(index, 0, size() % 1);
+TREELIST_GEN_CRP_9	96	constant-replacement	CRP	TreeList.get(int)	direct	checkInterval(index, 0, size() - 1);	checkInterval(index, 1, size() - 1);
+TREELIST_GEN_CRP_10	96	constant-replacement	CRP	TreeList.get(int)	direct	checkInterval(index, 0, size() - 1);	checkInterval(index, -1, size() - 1);
+TREELIST_GEN_CRP_11	96	constant-replacement	CRP	TreeList.get(int)	direct	checkInterval(index, 0, size() - 1);	checkInterval(index, 0, size() - 0);
+TREELIST_GEN_CRP_12	96	constant-replacement	CRP	TreeList.get(int)	direct	checkInterval(index, 0, size() - 1);	checkInterval(index, 0, size() - -1);
+TREELIST_GEN_CRP_13	96	constant-replacement	CRP	TreeList.get(int)	direct	checkInterval(index, 0, size() - 1);	checkInterval(index, 0, size() - 2);
+TREELIST_GEN_SDL_14	96	statement-deletion	SDL	TreeList.get(int)	direct	checkInterval(index, 0, size() - 1);	
+TREELIST_GEN_RVR_15	97	return-value-replacement	RVR	TreeList.get(int)	direct	return root.get(index).getValue();	return null;
+TREELIST_GEN_ARP_16	97	argument-replacement	ARP	TreeList.get(int)	direct	return root.get(index).getValue();	return root.get(index + 1).getValue();
+TREELIST_GEN_ARP_17	97	argument-replacement	ARP	TreeList.get(int)	direct	return root.get(index).getValue();	return root.get(index - 1).getValue();
+TREELIST_GEN_MCR_18	97	method-call-replacement	MCR	TreeList.get(int)	direct	return root.get(index).getValue();	return root.remove(index).getValue();
+TREELIST_GEN_UOI_19	107	unary-operator-insertion	UOI	TreeList.size()	direct	return size;	return -(size);
+TREELIST_GEN_ABS_20	107	absolute-value-insertion	ABS	TreeList.size()	direct	return size;	return -Math.abs(size);
+TREELIST_GEN_RVR_21	107	return-value-replacement	RVR	TreeList.size()	direct	return size;	return 0;
+TREELIST_GEN_RVR_22	107	return-value-replacement	RVR	TreeList.size()	direct	return size;	return 1;
+TREELIST_GEN_RVR_23	107	return-value-replacement	RVR	TreeList.size()	direct	return size;	return -1;
+TREELIST_GEN_CRP_24	118	constant-replacement	CRP	TreeList.iterator()	indirect	return listIterator(0);	return listIterator(1);
+TREELIST_GEN_CRP_25	118	constant-replacement	CRP	TreeList.iterator()	indirect	return listIterator(0);	return listIterator(-1);
+TREELIST_GEN_RVR_26	118	return-value-replacement	RVR	TreeList.iterator()	indirect	return listIterator(0);	return null;
+TREELIST_GEN_CRP_27	142	constant-replacement	CRP	TreeList.listIterator(int)	direct	checkInterval(fromIndex, 0, size());	checkInterval(fromIndex, 1, size());
+TREELIST_GEN_CRP_28	142	constant-replacement	CRP	TreeList.listIterator(int)	direct	checkInterval(fromIndex, 0, size());	checkInterval(fromIndex, -1, size());
+TREELIST_GEN_SDL_29	142	statement-deletion	SDL	TreeList.listIterator(int)	direct	checkInterval(fromIndex, 0, size());	
+TREELIST_GEN_RVR_30	143	return-value-replacement	RVR	TreeList.listIterator(int)	direct	return new TreeListIterator<E>(this, fromIndex);	return null;
+TREELIST_GEN_ROR_31	155	relational-operator-replacement	ROR	TreeList.indexOf(Object)	indirect	if (root == null) {	if (root <= null) {
+TREELIST_GEN_ROR_32	155	relational-operator-replacement	ROR	TreeList.indexOf(Object)	indirect	if (root == null) {	if (root >= null) {
+TREELIST_GEN_ROR_33	155	relational-operator-replacement	ROR	TreeList.indexOf(Object)	indirect	if (root == null) {	if (root != null) {
+TREELIST_GEN_ROR_34	155	relational-operator-replacement	ROR	TreeList.indexOf(Object)	indirect	if (root == null) {	if (root < null) {
+TREELIST_GEN_ROR_35	155	relational-operator-replacement	ROR	TreeList.indexOf(Object)	indirect	if (root == null) {	if (root > null) {
+TREELIST_GEN_COI_36	155	conditional-operator-insertion	COI	TreeList.indexOf(Object)	indirect	if (root == null) {	if (!(root == null)) {
+TREELIST_GEN_CTC_37	155	condition-to-constant	CTC	TreeList.indexOf(Object)	indirect	if (root == null) {	if (true) {
+TREELIST_GEN_CTC_38	155	condition-to-constant	CTC	TreeList.indexOf(Object)	indirect	if (root == null) {	if (false) {
+TREELIST_GEN_AOR_39	156	arithmetic-operator-replacement	AOR	TreeList.indexOf(Object)	indirect	return -1;	return +1;
+TREELIST_GEN_AOR_40	156	arithmetic-operator-replacement	AOR	TreeList.indexOf(Object)	indirect	return -1;	return *1;
+TREELIST_GEN_AOR_41	156	arithmetic-operator-replacement	AOR	TreeList.indexOf(Object)	indirect	return -1;	return /1;
+TREELIST_GEN_AOR_42	156	arithmetic-operator-replacement	AOR	TreeList.indexOf(Object)	indirect	return -1;	return %1;
+TREELIST_GEN_UOI_43	156	unary-operator-insertion	UOI	TreeList.indexOf(Object)	indirect	return -1;	return -(-1);
+TREELIST_GEN_ABS_44	156	absolute-value-insertion	ABS	TreeList.indexOf(Object)	indirect	return -1;	return -Math.abs(-1);
+TREELIST_GEN_CRP_45	156	constant-replacement	CRP	TreeList.indexOf(Object)	indirect	return -1;	return -0;
+TREELIST_GEN_CRP_46	156	constant-replacement	CRP	TreeList.indexOf(Object)	indirect	return -1;	return --1;
+TREELIST_GEN_CRP_47	156	constant-replacement	CRP	TreeList.indexOf(Object)	indirect	return -1;	return -2;
+TREELIST_GEN_RVR_48	156	return-value-replacement	RVR	TreeList.indexOf(Object)	indirect	return -1;	return 0;
+TREELIST_GEN_RVR_49	156	return-value-replacement	RVR	TreeList.indexOf(Object)	indirect	return -1;	return 1;
+TREELIST_GEN_RVR_50	158	return-value-replacement	RVR	TreeList.indexOf(Object)	indirect	return root.indexOf(object, root.relativePosition);	return 0;
+TREELIST_GEN_RVR_51	158	return-value-replacement	RVR	TreeList.indexOf(Object)	indirect	return root.indexOf(object, root.relativePosition);	return 1;
+TREELIST_GEN_RVR_52	158	return-value-replacement	RVR	TreeList.indexOf(Object)	indirect	return root.indexOf(object, root.relativePosition);	return -1;
+TREELIST_GEN_ARP_53	158	argument-replacement	ARP	TreeList.indexOf(Object)	indirect	return root.indexOf(object, root.relativePosition);	return root.indexOf(root.relativePosition, object);
+TREELIST_GEN_ROR_54	169	relational-operator-replacement	ROR	TreeList.contains(Object)	indirect	return indexOf(object) >= 0;	return indexOf(object) <= 0;
+TREELIST_GEN_ROR_55	169	relational-operator-replacement	ROR	TreeList.contains(Object)	indirect	return indexOf(object) >= 0;	return indexOf(object) == 0;
+TREELIST_GEN_ROR_56	169	relational-operator-replacement	ROR	TreeList.contains(Object)	indirect	return indexOf(object) >= 0;	return indexOf(object) != 0;
+TREELIST_GEN_ROR_57	169	relational-operator-replacement	ROR	TreeList.contains(Object)	indirect	return indexOf(object) >= 0;	return indexOf(object) < 0;
+TREELIST_GEN_ROR_58	169	relational-operator-replacement	ROR	TreeList.contains(Object)	indirect	return indexOf(object) >= 0;	return indexOf(object) > 0;
+TREELIST_GEN_CRP_59	169	constant-replacement	CRP	TreeList.contains(Object)	indirect	return indexOf(object) >= 0;	return indexOf(object) >= 1;
+TREELIST_GEN_CRP_60	169	constant-replacement	CRP	TreeList.contains(Object)	indirect	return indexOf(object) >= 0;	return indexOf(object) >= -1;
+TREELIST_GEN_RVR_61	169	return-value-replacement	RVR	TreeList.contains(Object)	indirect	return indexOf(object) >= 0;	return true;
+TREELIST_GEN_RVR_62	169	return-value-replacement	RVR	TreeList.contains(Object)	indirect	return indexOf(object) >= 0;	return false;
+TREELIST_GEN_ROR_63	181	relational-operator-replacement	ROR	TreeList.toArray()	indirect	if (root != null) {	if (root <= null) {
+TREELIST_GEN_ROR_64	181	relational-operator-replacement	ROR	TreeList.toArray()	indirect	if (root != null) {	if (root >= null) {
+TREELIST_GEN_ROR_65	181	relational-operator-replacement	ROR	TreeList.toArray()	indirect	if (root != null) {	if (root == null) {
+TREELIST_GEN_ROR_66	181	relational-operator-replacement	ROR	TreeList.toArray()	indirect	if (root != null) {	if (root < null) {
+TREELIST_GEN_ROR_67	181	relational-operator-replacement	ROR	TreeList.toArray()	indirect	if (root != null) {	if (root > null) {
+TREELIST_GEN_COI_68	181	conditional-operator-insertion	COI	TreeList.toArray()	indirect	if (root != null) {	if (!(root != null)) {
+TREELIST_GEN_CTC_69	181	condition-to-constant	CTC	TreeList.toArray()	indirect	if (root != null) {	if (true) {
+TREELIST_GEN_CTC_70	181	condition-to-constant	CTC	TreeList.toArray()	indirect	if (root != null) {	if (false) {
+TREELIST_GEN_SDL_71	182	statement-deletion	SDL	TreeList.toArray()	indirect	root.toArray(array, root.relativePosition);	
+TREELIST_GEN_STR_72	182	statement-replacement	STR	TreeList.toArray()	indirect	root.toArray(array, root.relativePosition);	root.toArray(array, root.relativePosition); root.toArray(array, root.relativePosition);
+TREELIST_GEN_ARP_73	182	argument-replacement	ARP	TreeList.toArray()	indirect	root.toArray(array, root.relativePosition);	root.toArray(root.relativePosition, array);
+TREELIST_GEN_RVR_74	184	return-value-replacement	RVR	TreeList.toArray()	indirect	return array;	return null;
+TREELIST_GEN_SDL_75	196	statement-deletion	SDL	TreeList.add(int,Object)	indirect	modCount++;	
+TREELIST_GEN_CRP_76	197	constant-replacement	CRP	TreeList.add(int,Object)	indirect	checkInterval(index, 0, size());	checkInterval(index, 1, size());
+TREELIST_GEN_CRP_77	197	constant-replacement	CRP	TreeList.add(int,Object)	indirect	checkInterval(index, 0, size());	checkInterval(index, -1, size());
+TREELIST_GEN_SDL_78	197	statement-deletion	SDL	TreeList.add(int,Object)	indirect	checkInterval(index, 0, size());	
+TREELIST_GEN_SDL_79	199	statement-deletion	SDL	TreeList.add(int,Object)	indirect	root = new AVLNode<E>(index, obj, null, null);	
+TREELIST_GEN_SDL_80	201	statement-deletion	SDL	TreeList.add(int,Object)	indirect	root = root.insert(index, obj);	
+TREELIST_GEN_ARP_81	201	argument-replacement	ARP	TreeList.add(int,Object)	indirect	root = root.insert(index, obj);	root = root.insert(obj, index);
+TREELIST_GEN_SDL_82	203	statement-deletion	SDL	TreeList.add(int,Object)	indirect	size++;	
+TREELIST_GEN_SDL_83	217	statement-deletion	SDL	TreeList.set(int,Object)	indirect	final AVLNode<E> node = root.get(index);	
+TREELIST_GEN_ARP_84	217	argument-replacement	ARP	TreeList.set(int,Object)	indirect	final AVLNode<E> node = root.get(index);	final AVLNode<E> node = root.get(index + 1);
+TREELIST_GEN_ARP_85	217	argument-replacement	ARP	TreeList.set(int,Object)	indirect	final AVLNode<E> node = root.get(index);	final AVLNode<E> node = root.get(index - 1);
+TREELIST_GEN_MCR_86	217	method-call-replacement	MCR	TreeList.set(int,Object)	indirect	final AVLNode<E> node = root.get(index);	final AVLNode<E> node = root.remove(index);
+TREELIST_GEN_SDL_87	219	statement-deletion	SDL	TreeList.set(int,Object)	indirect	node.setValue(obj);	
+TREELIST_GEN_STR_88	219	statement-replacement	STR	TreeList.set(int,Object)	indirect	node.setValue(obj);	node.setValue(obj); node.setValue(obj);
+TREELIST_GEN_ARP_89	219	argument-replacement	ARP	TreeList.set(int,Object)	indirect	node.setValue(obj);	node.setValue(obj + 1);
+TREELIST_GEN_ARP_90	219	argument-replacement	ARP	TreeList.set(int,Object)	indirect	node.setValue(obj);	node.setValue(obj - 1);
+TREELIST_GEN_RVR_91	220	return-value-replacement	RVR	TreeList.set(int,Object)	indirect	return result;	return null;
+TREELIST_GEN_SDL_92	234	statement-deletion	SDL	TreeList.remove(int)	indirect	root = root.remove(index);	
+TREELIST_GEN_ARP_93	234	argument-replacement	ARP	TreeList.remove(int)	indirect	root = root.remove(index);	root = root.remove(index + 1);
+TREELIST_GEN_ARP_94	234	argument-replacement	ARP	TreeList.remove(int)	indirect	root = root.remove(index);	root = root.remove(index - 1);
+TREELIST_GEN_MCR_95	234	method-call-replacement	MCR	TreeList.remove(int)	indirect	root = root.remove(index);	root = root.get(index);
+TREELIST_GEN_SDL_96	235	statement-deletion	SDL	TreeList.remove(int)	indirect	size--;	
+TREELIST_GEN_SDL_97	245	statement-deletion	SDL	TreeList.clear()	indirect	root = null;	
+TREELIST_GEN_CRP_98	246	constant-replacement	CRP	TreeList.clear()	indirect	size = 0;	size = 1;
+TREELIST_GEN_CRP_99	246	constant-replacement	CRP	TreeList.clear()	indirect	size = 0;	size = -1;
+TREELIST_GEN_SDL_100	246	statement-deletion	SDL	TreeList.clear()	indirect	size = 0;	
+TREELIST_GEN_ROR_101	259	relational-operator-replacement	ROR	TreeList.checkInterval(int,int,int)	indirect	if (index < startIndex || index > endIndex) {	if (index <= startIndex || index > endIndex) {
+TREELIST_GEN_ROR_102	259	relational-operator-replacement	ROR	TreeList.checkInterval(int,int,int)	indirect	if (index < startIndex || index > endIndex) {	if (index >= startIndex || index > endIndex) {
+TREELIST_GEN_ROR_103	259	relational-operator-replacement	ROR	TreeList.checkInterval(int,int,int)	indirect	if (index < startIndex || index > endIndex) {	if (index == startIndex || index > endIndex) {
+TREELIST_GEN_ROR_104	259	relational-operator-replacement	ROR	TreeList.checkInterval(int,int,int)	indirect	if (index < startIndex || index > endIndex) {	if (index != startIndex || index > endIndex) {
+TREELIST_GEN_ROR_105	259	relational-operator-replacement	ROR	TreeList.checkInterval(int,int,int)	indirect	if (index < startIndex || index > endIndex) {	if (index > startIndex || index > endIndex) {
+TREELIST_GEN_ROR_106	259	relational-operator-replacement	ROR	TreeList.checkInterval(int,int,int)	indirect	if (index < startIndex || index > endIndex) {	if (index < startIndex || index <= endIndex) {
+TREELIST_GEN_ROR_107	259	relational-operator-replacement	ROR	TreeList.checkInterval(int,int,int)	indirect	if (index < startIndex || index > endIndex) {	if (index < startIndex || index >= endIndex) {
+TREELIST_GEN_ROR_108	259	relational-operator-replacement	ROR	TreeList.checkInterval(int,int,int)	indirect	if (index < startIndex || index > endIndex) {	if (index < startIndex || index == endIndex) {
+TREELIST_GEN_ROR_109	259	relational-operator-replacement	ROR	TreeList.checkInterval(int,int,int)	indirect	if (index < startIndex || index > endIndex) {	if (index < startIndex || index != endIndex) {
+TREELIST_GEN_ROR_110	259	relational-operator-replacement	ROR	TreeList.checkInterval(int,int,int)	indirect	if (index < startIndex || index > endIndex) {	if (index < startIndex || index < endIndex) {
+TREELIST_GEN_COR_111	259	conditional-operator-replacement	COR	TreeList.checkInterval(int,int,int)	indirect	if (index < startIndex || index > endIndex) {	if (index < startIndex && index > endIndex) {
+TREELIST_GEN_COI_112	259	conditional-operator-insertion	COI	TreeList.checkInterval(int,int,int)	indirect	if (index < startIndex || index > endIndex) {	if (!(index < startIndex || index > endIndex)) {
+TREELIST_GEN_CTC_113	259	condition-to-constant	CTC	TreeList.checkInterval(int,int,int)	indirect	if (index < startIndex || index > endIndex) {	if (true) {
+TREELIST_GEN_CTC_114	259	condition-to-constant	CTC	TreeList.checkInterval(int,int,int)	indirect	if (index < startIndex || index > endIndex) {	if (false) {
+TREELIST_GEN_SDL_115	260	statement-deletion	SDL	TreeList.checkInterval(int,int,int)	indirect	throw new IndexOutOfBoundsException("Invalid index:" + index + ", size=" + size());	
+TREELIST_GEN_SDL_123	303	statement-deletion	SDL	TreeList.AVLNode.<init>(int,Object,AVLNode,AVLNode)	indirect	this.relativePosition = relativePosition;	
+TREELIST_GEN_SDL_124	304	statement-deletion	SDL	TreeList.AVLNode.<init>(int,Object,AVLNode,AVLNode)	indirect	value = obj;	
+TREELIST_GEN_SDL_125	305	statement-deletion	SDL	TreeList.AVLNode.<init>(int,Object,AVLNode,AVLNode)	indirect	rightIsNext = true;	
+TREELIST_GEN_SDL_126	306	statement-deletion	SDL	TreeList.AVLNode.<init>(int,Object,AVLNode,AVLNode)	indirect	leftIsPrevious = true;	
+TREELIST_GEN_SDL_127	307	statement-deletion	SDL	TreeList.AVLNode.<init>(int,Object,AVLNode,AVLNode)	indirect	right = rightFollower;	
+TREELIST_GEN_SDL_128	308	statement-deletion	SDL	TreeList.AVLNode.<init>(int,Object,AVLNode,AVLNode)	indirect	left = leftFollower;	
+TREELIST_GEN_RVR_129	317	return-value-replacement	RVR	TreeList.AVLNode.getValue()	indirect	return value;	return null;
+TREELIST_GEN_SDL_130	326	statement-deletion	SDL	TreeList.AVLNode.setValue(Object)	indirect	this.value = obj;	
+TREELIST_GEN_AOR_131	334	arithmetic-operator-replacement	AOR	TreeList.AVLNode.get(int)	indirect	final int indexRelativeToMe = index - relativePosition;	final int indexRelativeToMe = index + relativePosition;
+TREELIST_GEN_AOR_132	334	arithmetic-operator-replacement	AOR	TreeList.AVLNode.get(int)	indirect	final int indexRelativeToMe = index - relativePosition;	final int indexRelativeToMe = index * relativePosition;
+TREELIST_GEN_AOR_133	334	arithmetic-operator-replacement	AOR	TreeList.AVLNode.get(int)	indirect	final int indexRelativeToMe = index - relativePosition;	final int indexRelativeToMe = index / relativePosition;
+TREELIST_GEN_AOR_134	334	arithmetic-operator-replacement	AOR	TreeList.AVLNode.get(int)	indirect	final int indexRelativeToMe = index - relativePosition;	final int indexRelativeToMe = index % relativePosition;
+TREELIST_GEN_ROR_135	336	relational-operator-replacement	ROR	TreeList.AVLNode.get(int)	indirect	if (indexRelativeToMe == 0) {	if (indexRelativeToMe <= 0) {
+TREELIST_GEN_ROR_136	336	relational-operator-replacement	ROR	TreeList.AVLNode.get(int)	indirect	if (indexRelativeToMe == 0) {	if (indexRelativeToMe >= 0) {
+TREELIST_GEN_ROR_137	336	relational-operator-replacement	ROR	TreeList.AVLNode.get(int)	indirect	if (indexRelativeToMe == 0) {	if (indexRelativeToMe != 0) {
+TREELIST_GEN_ROR_138	336	relational-operator-replacement	ROR	TreeList.AVLNode.get(int)	indirect	if (indexRelativeToMe == 0) {	if (indexRelativeToMe < 0) {
+TREELIST_GEN_ROR_139	336	relational-operator-replacement	ROR	TreeList.AVLNode.get(int)	indirect	if (indexRelativeToMe == 0) {	if (indexRelativeToMe > 0) {
+TREELIST_GEN_COI_140	336	conditional-operator-insertion	COI	TreeList.AVLNode.get(int)	indirect	if (indexRelativeToMe == 0) {	if (!(indexRelativeToMe == 0)) {
+TREELIST_GEN_CRP_141	336	constant-replacement	CRP	TreeList.AVLNode.get(int)	indirect	if (indexRelativeToMe == 0) {	if (indexRelativeToMe == 1) {
+TREELIST_GEN_CRP_142	336	constant-replacement	CRP	TreeList.AVLNode.get(int)	indirect	if (indexRelativeToMe == 0) {	if (indexRelativeToMe == -1) {
+TREELIST_GEN_CTC_143	336	condition-to-constant	CTC	TreeList.AVLNode.get(int)	indirect	if (indexRelativeToMe == 0) {	if (true) {
+TREELIST_GEN_CTC_144	336	condition-to-constant	CTC	TreeList.AVLNode.get(int)	indirect	if (indexRelativeToMe == 0) {	if (false) {
+TREELIST_GEN_RVR_145	337	return-value-replacement	RVR	TreeList.AVLNode.get(int)	indirect	return this;	return null;
+TREELIST_GEN_ROR_146	340	relational-operator-replacement	ROR	TreeList.AVLNode.get(int)	indirect	final AVLNode<E> nextNode = indexRelativeToMe < 0 ? getLeftSubTree() : getRightSubTree();	final AVLNode<E> nextNode = indexRelativeToMe <= 0 ? getLeftSubTree() : getRightSubTree();
+TREELIST_GEN_ROR_147	340	relational-operator-replacement	ROR	TreeList.AVLNode.get(int)	indirect	final AVLNode<E> nextNode = indexRelativeToMe < 0 ? getLeftSubTree() : getRightSubTree();	final AVLNode<E> nextNode = indexRelativeToMe >= 0 ? getLeftSubTree() : getRightSubTree();
+TREELIST_GEN_ROR_148	340	relational-operator-replacement	ROR	TreeList.AVLNode.get(int)	indirect	final AVLNode<E> nextNode = indexRelativeToMe < 0 ? getLeftSubTree() : getRightSubTree();	final AVLNode<E> nextNode = indexRelativeToMe == 0 ? getLeftSubTree() : getRightSubTree();
+TREELIST_GEN_ROR_149	340	relational-operator-replacement	ROR	TreeList.AVLNode.get(int)	indirect	final AVLNode<E> nextNode = indexRelativeToMe < 0 ? getLeftSubTree() : getRightSubTree();	final AVLNode<E> nextNode = indexRelativeToMe != 0 ? getLeftSubTree() : getRightSubTree();
+TREELIST_GEN_ROR_150	340	relational-operator-replacement	ROR	TreeList.AVLNode.get(int)	indirect	final AVLNode<E> nextNode = indexRelativeToMe < 0 ? getLeftSubTree() : getRightSubTree();	final AVLNode<E> nextNode = indexRelativeToMe > 0 ? getLeftSubTree() : getRightSubTree();
+TREELIST_GEN_CRP_151	340	constant-replacement	CRP	TreeList.AVLNode.get(int)	indirect	final AVLNode<E> nextNode = indexRelativeToMe < 0 ? getLeftSubTree() : getRightSubTree();	final AVLNode<E> nextNode = indexRelativeToMe < 1 ? getLeftSubTree() : getRightSubTree();
+TREELIST_GEN_CRP_152	340	constant-replacement	CRP	TreeList.AVLNode.get(int)	indirect	final AVLNode<E> nextNode = indexRelativeToMe < 0 ? getLeftSubTree() : getRightSubTree();	final AVLNode<E> nextNode = indexRelativeToMe < -1 ? getLeftSubTree() : getRightSubTree();
+TREELIST_GEN_SDL_153	340	statement-deletion	SDL	TreeList.AVLNode.get(int)	indirect	final AVLNode<E> nextNode = indexRelativeToMe < 0 ? getLeftSubTree() : getRightSubTree();	
+TREELIST_GEN_ROR_154	341	relational-operator-replacement	ROR	TreeList.AVLNode.get(int)	indirect	if (nextNode == null) {	if (nextNode <= null) {
+TREELIST_GEN_ROR_155	341	relational-operator-replacement	ROR	TreeList.AVLNode.get(int)	indirect	if (nextNode == null) {	if (nextNode >= null) {
+TREELIST_GEN_ROR_156	341	relational-operator-replacement	ROR	TreeList.AVLNode.get(int)	indirect	if (nextNode == null) {	if (nextNode != null) {
+TREELIST_GEN_ROR_157	341	relational-operator-replacement	ROR	TreeList.AVLNode.get(int)	indirect	if (nextNode == null) {	if (nextNode < null) {
+TREELIST_GEN_ROR_158	341	relational-operator-replacement	ROR	TreeList.AVLNode.get(int)	indirect	if (nextNode == null) {	if (nextNode > null) {
+TREELIST_GEN_COI_159	341	conditional-operator-insertion	COI	TreeList.AVLNode.get(int)	indirect	if (nextNode == null) {	if (!(nextNode == null)) {
+TREELIST_GEN_CTC_160	341	condition-to-constant	CTC	TreeList.AVLNode.get(int)	indirect	if (nextNode == null) {	if (true) {
+TREELIST_GEN_CTC_161	341	condition-to-constant	CTC	TreeList.AVLNode.get(int)	indirect	if (nextNode == null) {	if (false) {
+TREELIST_GEN_RVR_162	344	return-value-replacement	RVR	TreeList.AVLNode.get(int)	indirect	return nextNode.get(indexRelativeToMe);	return null;
+TREELIST_GEN_ARP_163	344	argument-replacement	ARP	TreeList.AVLNode.get(int)	indirect	return nextNode.get(indexRelativeToMe);	return nextNode.get(indexRelativeToMe + 1);
+TREELIST_GEN_ARP_164	344	argument-replacement	ARP	TreeList.AVLNode.get(int)	indirect	return nextNode.get(indexRelativeToMe);	return nextNode.get(indexRelativeToMe - 1);
+TREELIST_GEN_MCR_165	344	method-call-replacement	MCR	TreeList.AVLNode.get(int)	indirect	return nextNode.get(indexRelativeToMe);	return nextNode.remove(indexRelativeToMe);
+TREELIST_GEN_ROR_166	351	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (getLeftSubTree() != null) {	if (getLeftSubTree() <= null) {
+TREELIST_GEN_ROR_167	351	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (getLeftSubTree() != null) {	if (getLeftSubTree() >= null) {
+TREELIST_GEN_ROR_168	351	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (getLeftSubTree() != null) {	if (getLeftSubTree() == null) {
+TREELIST_GEN_ROR_169	351	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (getLeftSubTree() != null) {	if (getLeftSubTree() < null) {
+TREELIST_GEN_ROR_170	351	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (getLeftSubTree() != null) {	if (getLeftSubTree() > null) {
+TREELIST_GEN_COI_171	351	conditional-operator-insertion	COI	TreeList.AVLNode.indexOf(Object,int)	indirect	if (getLeftSubTree() != null) {	if (!(getLeftSubTree() != null)) {
+TREELIST_GEN_CTC_172	351	condition-to-constant	CTC	TreeList.AVLNode.indexOf(Object,int)	indirect	if (getLeftSubTree() != null) {	if (true) {
+TREELIST_GEN_CTC_173	351	condition-to-constant	CTC	TreeList.AVLNode.indexOf(Object,int)	indirect	if (getLeftSubTree() != null) {	if (false) {
+TREELIST_GEN_AOR_174	352	arithmetic-operator-replacement	AOR	TreeList.AVLNode.indexOf(Object,int)	indirect	final int result = left.indexOf(object, index + left.relativePosition);	final int result = left.indexOf(object, index - left.relativePosition);
+TREELIST_GEN_AOR_175	352	arithmetic-operator-replacement	AOR	TreeList.AVLNode.indexOf(Object,int)	indirect	final int result = left.indexOf(object, index + left.relativePosition);	final int result = left.indexOf(object, index * left.relativePosition);
+TREELIST_GEN_AOR_176	352	arithmetic-operator-replacement	AOR	TreeList.AVLNode.indexOf(Object,int)	indirect	final int result = left.indexOf(object, index + left.relativePosition);	final int result = left.indexOf(object, index / left.relativePosition);
+TREELIST_GEN_AOR_177	352	arithmetic-operator-replacement	AOR	TreeList.AVLNode.indexOf(Object,int)	indirect	final int result = left.indexOf(object, index + left.relativePosition);	final int result = left.indexOf(object, index % left.relativePosition);
+TREELIST_GEN_ROR_178	353	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (result != -1) {	if (result <= -1) {
+TREELIST_GEN_ROR_179	353	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (result != -1) {	if (result >= -1) {
+TREELIST_GEN_ROR_180	353	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (result != -1) {	if (result == -1) {
+TREELIST_GEN_ROR_181	353	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (result != -1) {	if (result < -1) {
+TREELIST_GEN_ROR_182	353	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (result != -1) {	if (result > -1) {
+TREELIST_GEN_COI_183	353	conditional-operator-insertion	COI	TreeList.AVLNode.indexOf(Object,int)	indirect	if (result != -1) {	if (!(result != -1)) {
+TREELIST_GEN_CRP_184	353	constant-replacement	CRP	TreeList.AVLNode.indexOf(Object,int)	indirect	if (result != -1) {	if (result != -0) {
+TREELIST_GEN_CRP_185	353	constant-replacement	CRP	TreeList.AVLNode.indexOf(Object,int)	indirect	if (result != -1) {	if (result != --1) {
+TREELIST_GEN_CRP_186	353	constant-replacement	CRP	TreeList.AVLNode.indexOf(Object,int)	indirect	if (result != -1) {	if (result != -2) {
+TREELIST_GEN_CTC_187	353	condition-to-constant	CTC	TreeList.AVLNode.indexOf(Object,int)	indirect	if (result != -1) {	if (true) {
+TREELIST_GEN_CTC_188	353	condition-to-constant	CTC	TreeList.AVLNode.indexOf(Object,int)	indirect	if (result != -1) {	if (false) {
+TREELIST_GEN_UOI_189	354	unary-operator-insertion	UOI	TreeList.AVLNode.indexOf(Object,int)	indirect	return result;	return -(result);
+TREELIST_GEN_ABS_190	354	absolute-value-insertion	ABS	TreeList.AVLNode.indexOf(Object,int)	indirect	return result;	return -Math.abs(result);
+TREELIST_GEN_RVR_191	354	return-value-replacement	RVR	TreeList.AVLNode.indexOf(Object,int)	indirect	return result;	return 0;
+TREELIST_GEN_RVR_192	354	return-value-replacement	RVR	TreeList.AVLNode.indexOf(Object,int)	indirect	return result;	return 1;
+TREELIST_GEN_RVR_193	354	return-value-replacement	RVR	TreeList.AVLNode.indexOf(Object,int)	indirect	return result;	return -1;
+TREELIST_GEN_ROR_194	357	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (value == null ? value == object : value.equals(object)) {	if (value <= null ? value == object : value.equals(object)) {
+TREELIST_GEN_ROR_195	357	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (value == null ? value == object : value.equals(object)) {	if (value >= null ? value == object : value.equals(object)) {
+TREELIST_GEN_ROR_196	357	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (value == null ? value == object : value.equals(object)) {	if (value != null ? value == object : value.equals(object)) {
+TREELIST_GEN_ROR_197	357	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (value == null ? value == object : value.equals(object)) {	if (value < null ? value == object : value.equals(object)) {
+TREELIST_GEN_ROR_198	357	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (value == null ? value == object : value.equals(object)) {	if (value > null ? value == object : value.equals(object)) {
+TREELIST_GEN_ROR_199	357	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (value == null ? value == object : value.equals(object)) {	if (value == null ? value <= object : value.equals(object)) {
+TREELIST_GEN_ROR_200	357	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (value == null ? value == object : value.equals(object)) {	if (value == null ? value >= object : value.equals(object)) {
+TREELIST_GEN_ROR_201	357	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (value == null ? value == object : value.equals(object)) {	if (value == null ? value != object : value.equals(object)) {
+TREELIST_GEN_ROR_202	357	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (value == null ? value == object : value.equals(object)) {	if (value == null ? value < object : value.equals(object)) {
+TREELIST_GEN_ROR_203	357	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (value == null ? value == object : value.equals(object)) {	if (value == null ? value > object : value.equals(object)) {
+TREELIST_GEN_COI_204	357	conditional-operator-insertion	COI	TreeList.AVLNode.indexOf(Object,int)	indirect	if (value == null ? value == object : value.equals(object)) {	if (!(value == null ? value == object : value.equals(object))) {
+TREELIST_GEN_CTC_205	357	condition-to-constant	CTC	TreeList.AVLNode.indexOf(Object,int)	indirect	if (value == null ? value == object : value.equals(object)) {	if (true) {
+TREELIST_GEN_CTC_206	357	condition-to-constant	CTC	TreeList.AVLNode.indexOf(Object,int)	indirect	if (value == null ? value == object : value.equals(object)) {	if (false) {
+TREELIST_GEN_ARP_207	357	argument-replacement	ARP	TreeList.AVLNode.indexOf(Object,int)	indirect	if (value == null ? value == object : value.equals(object)) {	if (value == null ? value == object : value.equals(object + 1)) {
+TREELIST_GEN_ARP_208	357	argument-replacement	ARP	TreeList.AVLNode.indexOf(Object,int)	indirect	if (value == null ? value == object : value.equals(object)) {	if (value == null ? value == object : value.equals(object - 1)) {
+TREELIST_GEN_UOI_209	358	unary-operator-insertion	UOI	TreeList.AVLNode.indexOf(Object,int)	indirect	return index;	return -(index);
+TREELIST_GEN_ABS_210	358	absolute-value-insertion	ABS	TreeList.AVLNode.indexOf(Object,int)	indirect	return index;	return -Math.abs(index);
+TREELIST_GEN_RVR_211	358	return-value-replacement	RVR	TreeList.AVLNode.indexOf(Object,int)	indirect	return index;	return 0;
+TREELIST_GEN_RVR_212	358	return-value-replacement	RVR	TreeList.AVLNode.indexOf(Object,int)	indirect	return index;	return 1;
+TREELIST_GEN_RVR_213	358	return-value-replacement	RVR	TreeList.AVLNode.indexOf(Object,int)	indirect	return index;	return -1;
+TREELIST_GEN_ROR_214	360	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (getRightSubTree() != null) {	if (getRightSubTree() <= null) {
+TREELIST_GEN_ROR_215	360	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (getRightSubTree() != null) {	if (getRightSubTree() >= null) {
+TREELIST_GEN_ROR_216	360	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (getRightSubTree() != null) {	if (getRightSubTree() == null) {
+TREELIST_GEN_ROR_217	360	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (getRightSubTree() != null) {	if (getRightSubTree() < null) {
+TREELIST_GEN_ROR_218	360	relational-operator-replacement	ROR	TreeList.AVLNode.indexOf(Object,int)	indirect	if (getRightSubTree() != null) {	if (getRightSubTree() > null) {
+TREELIST_GEN_COI_219	360	conditional-operator-insertion	COI	TreeList.AVLNode.indexOf(Object,int)	indirect	if (getRightSubTree() != null) {	if (!(getRightSubTree() != null)) {
+TREELIST_GEN_CTC_220	360	condition-to-constant	CTC	TreeList.AVLNode.indexOf(Object,int)	indirect	if (getRightSubTree() != null) {	if (true) {
+TREELIST_GEN_CTC_221	360	condition-to-constant	CTC	TreeList.AVLNode.indexOf(Object,int)	indirect	if (getRightSubTree() != null) {	if (false) {
+TREELIST_GEN_AOR_222	361	arithmetic-operator-replacement	AOR	TreeList.AVLNode.indexOf(Object,int)	indirect	return right.indexOf(object, index + right.relativePosition);	return right.indexOf(object, index - right.relativePosition);
+TREELIST_GEN_AOR_223	361	arithmetic-operator-replacement	AOR	TreeList.AVLNode.indexOf(Object,int)	indirect	return right.indexOf(object, index + right.relativePosition);	return right.indexOf(object, index * right.relativePosition);
+TREELIST_GEN_AOR_224	361	arithmetic-operator-replacement	AOR	TreeList.AVLNode.indexOf(Object,int)	indirect	return right.indexOf(object, index + right.relativePosition);	return right.indexOf(object, index / right.relativePosition);
+TREELIST_GEN_AOR_225	361	arithmetic-operator-replacement	AOR	TreeList.AVLNode.indexOf(Object,int)	indirect	return right.indexOf(object, index + right.relativePosition);	return right.indexOf(object, index % right.relativePosition);
+TREELIST_GEN_RVR_226	361	return-value-replacement	RVR	TreeList.AVLNode.indexOf(Object,int)	indirect	return right.indexOf(object, index + right.relativePosition);	return 0;
+TREELIST_GEN_RVR_227	361	return-value-replacement	RVR	TreeList.AVLNode.indexOf(Object,int)	indirect	return right.indexOf(object, index + right.relativePosition);	return 1;
+TREELIST_GEN_RVR_228	361	return-value-replacement	RVR	TreeList.AVLNode.indexOf(Object,int)	indirect	return right.indexOf(object, index + right.relativePosition);	return -1;
+TREELIST_GEN_SDL_229	373	statement-deletion	SDL	TreeList.AVLNode.toArray(Object[],int)	indirect	array[index] = value;	
+TREELIST_GEN_AOR_230	375	arithmetic-operator-replacement	AOR	TreeList.AVLNode.toArray(Object[],int)	indirect	left.toArray(array, index + left.relativePosition);	left.toArray(array, index - left.relativePosition);
+TREELIST_GEN_AOR_231	375	arithmetic-operator-replacement	AOR	TreeList.AVLNode.toArray(Object[],int)	indirect	left.toArray(array, index + left.relativePosition);	left.toArray(array, index * left.relativePosition);
+TREELIST_GEN_AOR_232	375	arithmetic-operator-replacement	AOR	TreeList.AVLNode.toArray(Object[],int)	indirect	left.toArray(array, index + left.relativePosition);	left.toArray(array, index / left.relativePosition);
+TREELIST_GEN_AOR_233	375	arithmetic-operator-replacement	AOR	TreeList.AVLNode.toArray(Object[],int)	indirect	left.toArray(array, index + left.relativePosition);	left.toArray(array, index % left.relativePosition);
+TREELIST_GEN_SDL_234	375	statement-deletion	SDL	TreeList.AVLNode.toArray(Object[],int)	indirect	left.toArray(array, index + left.relativePosition);	
+TREELIST_GEN_STR_235	375	statement-replacement	STR	TreeList.AVLNode.toArray(Object[],int)	indirect	left.toArray(array, index + left.relativePosition);	left.toArray(array, index + left.relativePosition); left.toArray(array, index + left.relativePosition);
+TREELIST_GEN_AOR_236	378	arithmetic-operator-replacement	AOR	TreeList.AVLNode.toArray(Object[],int)	indirect	right.toArray(array, index + right.relativePosition);	right.toArray(array, index - right.relativePosition);
+TREELIST_GEN_AOR_237	378	arithmetic-operator-replacement	AOR	TreeList.AVLNode.toArray(Object[],int)	indirect	right.toArray(array, index + right.relativePosition);	right.toArray(array, index * right.relativePosition);
+TREELIST_GEN_AOR_238	378	arithmetic-operator-replacement	AOR	TreeList.AVLNode.toArray(Object[],int)	indirect	right.toArray(array, index + right.relativePosition);	right.toArray(array, index / right.relativePosition);
+TREELIST_GEN_AOR_239	378	arithmetic-operator-replacement	AOR	TreeList.AVLNode.toArray(Object[],int)	indirect	right.toArray(array, index + right.relativePosition);	right.toArray(array, index % right.relativePosition);
+TREELIST_GEN_SDL_240	378	statement-deletion	SDL	TreeList.AVLNode.toArray(Object[],int)	indirect	right.toArray(array, index + right.relativePosition);	
+TREELIST_GEN_STR_241	378	statement-replacement	STR	TreeList.AVLNode.toArray(Object[],int)	indirect	right.toArray(array, index + right.relativePosition);	right.toArray(array, index + right.relativePosition); right.toArray(array, index + right.relativePosition);
+TREELIST_GEN_ROR_242	388	relational-operator-replacement	ROR	TreeList.AVLNode.next()	indirect	if (rightIsNext || right == null) {	if (rightIsNext || right <= null) {
+TREELIST_GEN_ROR_243	388	relational-operator-replacement	ROR	TreeList.AVLNode.next()	indirect	if (rightIsNext || right == null) {	if (rightIsNext || right >= null) {
+TREELIST_GEN_ROR_244	388	relational-operator-replacement	ROR	TreeList.AVLNode.next()	indirect	if (rightIsNext || right == null) {	if (rightIsNext || right != null) {
+TREELIST_GEN_ROR_245	388	relational-operator-replacement	ROR	TreeList.AVLNode.next()	indirect	if (rightIsNext || right == null) {	if (rightIsNext || right < null) {
+TREELIST_GEN_ROR_246	388	relational-operator-replacement	ROR	TreeList.AVLNode.next()	indirect	if (rightIsNext || right == null) {	if (rightIsNext || right > null) {
+TREELIST_GEN_COR_247	388	conditional-operator-replacement	COR	TreeList.AVLNode.next()	indirect	if (rightIsNext || right == null) {	if (rightIsNext && right == null) {
+TREELIST_GEN_COI_248	388	conditional-operator-insertion	COI	TreeList.AVLNode.next()	indirect	if (rightIsNext || right == null) {	if (!(rightIsNext || right == null)) {
+TREELIST_GEN_CTC_249	388	condition-to-constant	CTC	TreeList.AVLNode.next()	indirect	if (rightIsNext || right == null) {	if (true) {
+TREELIST_GEN_CTC_250	388	condition-to-constant	CTC	TreeList.AVLNode.next()	indirect	if (rightIsNext || right == null) {	if (false) {
+TREELIST_GEN_RVR_251	389	return-value-replacement	RVR	TreeList.AVLNode.next()	indirect	return right;	return null;
+TREELIST_GEN_RVR_252	391	return-value-replacement	RVR	TreeList.AVLNode.next()	indirect	return right.min();	return null;
+TREELIST_GEN_ROR_253	400	relational-operator-replacement	ROR	TreeList.AVLNode.previous()	indirect	if (leftIsPrevious || left == null) {	if (leftIsPrevious || left <= null) {
+TREELIST_GEN_ROR_254	400	relational-operator-replacement	ROR	TreeList.AVLNode.previous()	indirect	if (leftIsPrevious || left == null) {	if (leftIsPrevious || left >= null) {
+TREELIST_GEN_ROR_255	400	relational-operator-replacement	ROR	TreeList.AVLNode.previous()	indirect	if (leftIsPrevious || left == null) {	if (leftIsPrevious || left != null) {
+TREELIST_GEN_ROR_256	400	relational-operator-replacement	ROR	TreeList.AVLNode.previous()	indirect	if (leftIsPrevious || left == null) {	if (leftIsPrevious || left < null) {
+TREELIST_GEN_ROR_257	400	relational-operator-replacement	ROR	TreeList.AVLNode.previous()	indirect	if (leftIsPrevious || left == null) {	if (leftIsPrevious || left > null) {
+TREELIST_GEN_COR_258	400	conditional-operator-replacement	COR	TreeList.AVLNode.previous()	indirect	if (leftIsPrevious || left == null) {	if (leftIsPrevious && left == null) {
+TREELIST_GEN_COI_259	400	conditional-operator-insertion	COI	TreeList.AVLNode.previous()	indirect	if (leftIsPrevious || left == null) {	if (!(leftIsPrevious || left == null)) {
+TREELIST_GEN_CTC_260	400	condition-to-constant	CTC	TreeList.AVLNode.previous()	indirect	if (leftIsPrevious || left == null) {	if (true) {
+TREELIST_GEN_CTC_261	400	condition-to-constant	CTC	TreeList.AVLNode.previous()	indirect	if (leftIsPrevious || left == null) {	if (false) {
+TREELIST_GEN_RVR_262	401	return-value-replacement	RVR	TreeList.AVLNode.previous()	indirect	return left;	return null;
+TREELIST_GEN_RVR_263	403	return-value-replacement	RVR	TreeList.AVLNode.previous()	indirect	return left.max();	return null;
+TREELIST_GEN_ROR_264	416	relational-operator-replacement	ROR	TreeList.AVLNode.insert(int,Object)	indirect	if (indexRelativeToMe <= 0) {	if (indexRelativeToMe >= 0) {
+TREELIST_GEN_ROR_265	416	relational-operator-replacement	ROR	TreeList.AVLNode.insert(int,Object)	indirect	if (indexRelativeToMe <= 0) {	if (indexRelativeToMe == 0) {
+TREELIST_GEN_ROR_266	416	relational-operator-replacement	ROR	TreeList.AVLNode.insert(int,Object)	indirect	if (indexRelativeToMe <= 0) {	if (indexRelativeToMe != 0) {
+TREELIST_GEN_ROR_267	416	relational-operator-replacement	ROR	TreeList.AVLNode.insert(int,Object)	indirect	if (indexRelativeToMe <= 0) {	if (indexRelativeToMe < 0) {
+TREELIST_GEN_ROR_268	416	relational-operator-replacement	ROR	TreeList.AVLNode.insert(int,Object)	indirect	if (indexRelativeToMe <= 0) {	if (indexRelativeToMe > 0) {
+TREELIST_GEN_COI_269	416	conditional-operator-insertion	COI	TreeList.AVLNode.insert(int,Object)	indirect	if (indexRelativeToMe <= 0) {	if (!(indexRelativeToMe <= 0)) {
+TREELIST_GEN_CRP_270	416	constant-replacement	CRP	TreeList.AVLNode.insert(int,Object)	indirect	if (indexRelativeToMe <= 0) {	if (indexRelativeToMe <= 1) {
+TREELIST_GEN_CRP_271	416	constant-replacement	CRP	TreeList.AVLNode.insert(int,Object)	indirect	if (indexRelativeToMe <= 0) {	if (indexRelativeToMe <= -1) {
+TREELIST_GEN_CTC_272	416	condition-to-constant	CTC	TreeList.AVLNode.insert(int,Object)	indirect	if (indexRelativeToMe <= 0) {	if (true) {
+TREELIST_GEN_CTC_273	416	condition-to-constant	CTC	TreeList.AVLNode.insert(int,Object)	indirect	if (indexRelativeToMe <= 0) {	if (false) {
+TREELIST_GEN_RVR_274	417	return-value-replacement	RVR	TreeList.AVLNode.insert(int,Object)	indirect	return insertOnLeft(indexRelativeToMe, obj);	return null;
+TREELIST_GEN_RVR_275	419	return-value-replacement	RVR	TreeList.AVLNode.insert(int,Object)	indirect	return insertOnRight(indexRelativeToMe, obj);	return null;
+TREELIST_GEN_ROR_276	423	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	if (getLeftSubTree() == null) {	if (getLeftSubTree() <= null) {
+TREELIST_GEN_ROR_277	423	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	if (getLeftSubTree() == null) {	if (getLeftSubTree() >= null) {
+TREELIST_GEN_ROR_278	423	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	if (getLeftSubTree() == null) {	if (getLeftSubTree() != null) {
+TREELIST_GEN_ROR_279	423	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	if (getLeftSubTree() == null) {	if (getLeftSubTree() < null) {
+TREELIST_GEN_ROR_280	423	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	if (getLeftSubTree() == null) {	if (getLeftSubTree() > null) {
+TREELIST_GEN_COI_281	423	conditional-operator-insertion	COI	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	if (getLeftSubTree() == null) {	if (!(getLeftSubTree() == null)) {
+TREELIST_GEN_CTC_282	423	condition-to-constant	CTC	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	if (getLeftSubTree() == null) {	if (true) {
+TREELIST_GEN_CTC_283	423	condition-to-constant	CTC	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	if (getLeftSubTree() == null) {	if (false) {
+TREELIST_GEN_CRP_284	424	constant-replacement	CRP	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	setLeft(new AVLNode<E>(-1, obj, this, left), null);	setLeft(new AVLNode<E>(-0, obj, this, left), null);
+TREELIST_GEN_CRP_285	424	constant-replacement	CRP	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	setLeft(new AVLNode<E>(-1, obj, this, left), null);	setLeft(new AVLNode<E>(--1, obj, this, left), null);
+TREELIST_GEN_CRP_286	424	constant-replacement	CRP	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	setLeft(new AVLNode<E>(-1, obj, this, left), null);	setLeft(new AVLNode<E>(-2, obj, this, left), null);
+TREELIST_GEN_SDL_287	424	statement-deletion	SDL	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	setLeft(new AVLNode<E>(-1, obj, this, left), null);	
+TREELIST_GEN_SDL_288	426	statement-deletion	SDL	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	setLeft(left.insert(indexRelativeToMe, obj), null);	
+TREELIST_GEN_ARP_289	426	argument-replacement	ARP	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	setLeft(left.insert(indexRelativeToMe, obj), null);	setLeft(left.insert(obj, indexRelativeToMe), null);
+TREELIST_GEN_ROR_290	429	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	if (relativePosition >= 0) {	if (relativePosition <= 0) {
+TREELIST_GEN_ROR_291	429	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	if (relativePosition >= 0) {	if (relativePosition == 0) {
+TREELIST_GEN_ROR_292	429	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	if (relativePosition >= 0) {	if (relativePosition != 0) {
+TREELIST_GEN_ROR_293	429	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	if (relativePosition >= 0) {	if (relativePosition < 0) {
+TREELIST_GEN_ROR_294	429	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	if (relativePosition >= 0) {	if (relativePosition > 0) {
+TREELIST_GEN_COI_295	429	conditional-operator-insertion	COI	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	if (relativePosition >= 0) {	if (!(relativePosition >= 0)) {
+TREELIST_GEN_CRP_296	429	constant-replacement	CRP	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	if (relativePosition >= 0) {	if (relativePosition >= 1) {
+TREELIST_GEN_CRP_297	429	constant-replacement	CRP	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	if (relativePosition >= 0) {	if (relativePosition >= -1) {
+TREELIST_GEN_CTC_298	429	condition-to-constant	CTC	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	if (relativePosition >= 0) {	if (true) {
+TREELIST_GEN_CTC_299	429	condition-to-constant	CTC	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	if (relativePosition >= 0) {	if (false) {
+TREELIST_GEN_SDL_300	430	statement-deletion	SDL	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	relativePosition++;	
+TREELIST_GEN_SDL_301	432	statement-deletion	SDL	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	AVLNode<E> ret = balance();	
+TREELIST_GEN_SDL_302	433	statement-deletion	SDL	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	recalcHeight();	
+TREELIST_GEN_RVR_303	434	return-value-replacement	RVR	TreeList.AVLNode.insertOnLeft(int,Object)	indirect	return ret;	return null;
+TREELIST_GEN_ROR_304	438	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnRight(int,Object)	indirect	if (getRightSubTree() == null) {	if (getRightSubTree() <= null) {
+TREELIST_GEN_ROR_305	438	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnRight(int,Object)	indirect	if (getRightSubTree() == null) {	if (getRightSubTree() >= null) {
+TREELIST_GEN_ROR_306	438	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnRight(int,Object)	indirect	if (getRightSubTree() == null) {	if (getRightSubTree() != null) {
+TREELIST_GEN_ROR_307	438	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnRight(int,Object)	indirect	if (getRightSubTree() == null) {	if (getRightSubTree() < null) {
+TREELIST_GEN_ROR_308	438	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnRight(int,Object)	indirect	if (getRightSubTree() == null) {	if (getRightSubTree() > null) {
+TREELIST_GEN_COI_309	438	conditional-operator-insertion	COI	TreeList.AVLNode.insertOnRight(int,Object)	indirect	if (getRightSubTree() == null) {	if (!(getRightSubTree() == null)) {
+TREELIST_GEN_CTC_310	438	condition-to-constant	CTC	TreeList.AVLNode.insertOnRight(int,Object)	indirect	if (getRightSubTree() == null) {	if (true) {
+TREELIST_GEN_CTC_311	438	condition-to-constant	CTC	TreeList.AVLNode.insertOnRight(int,Object)	indirect	if (getRightSubTree() == null) {	if (false) {
+TREELIST_GEN_CRP_312	439	constant-replacement	CRP	TreeList.AVLNode.insertOnRight(int,Object)	indirect	setRight(new AVLNode<E>(+1, obj, right, this), null);	setRight(new AVLNode<E>(+0, obj, right, this), null);
+TREELIST_GEN_CRP_313	439	constant-replacement	CRP	TreeList.AVLNode.insertOnRight(int,Object)	indirect	setRight(new AVLNode<E>(+1, obj, right, this), null);	setRight(new AVLNode<E>(+-1, obj, right, this), null);
+TREELIST_GEN_CRP_314	439	constant-replacement	CRP	TreeList.AVLNode.insertOnRight(int,Object)	indirect	setRight(new AVLNode<E>(+1, obj, right, this), null);	setRight(new AVLNode<E>(+2, obj, right, this), null);
+TREELIST_GEN_SDL_315	439	statement-deletion	SDL	TreeList.AVLNode.insertOnRight(int,Object)	indirect	setRight(new AVLNode<E>(+1, obj, right, this), null);	
+TREELIST_GEN_SDL_316	441	statement-deletion	SDL	TreeList.AVLNode.insertOnRight(int,Object)	indirect	setRight(right.insert(indexRelativeToMe, obj), null);	
+TREELIST_GEN_ARP_317	441	argument-replacement	ARP	TreeList.AVLNode.insertOnRight(int,Object)	indirect	setRight(right.insert(indexRelativeToMe, obj), null);	setRight(right.insert(obj, indexRelativeToMe), null);
+TREELIST_GEN_ROR_318	443	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnRight(int,Object)	indirect	if (relativePosition < 0) {	if (relativePosition <= 0) {
+TREELIST_GEN_ROR_319	443	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnRight(int,Object)	indirect	if (relativePosition < 0) {	if (relativePosition >= 0) {
+TREELIST_GEN_ROR_320	443	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnRight(int,Object)	indirect	if (relativePosition < 0) {	if (relativePosition == 0) {
+TREELIST_GEN_ROR_321	443	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnRight(int,Object)	indirect	if (relativePosition < 0) {	if (relativePosition != 0) {
+TREELIST_GEN_ROR_322	443	relational-operator-replacement	ROR	TreeList.AVLNode.insertOnRight(int,Object)	indirect	if (relativePosition < 0) {	if (relativePosition > 0) {
+TREELIST_GEN_COI_323	443	conditional-operator-insertion	COI	TreeList.AVLNode.insertOnRight(int,Object)	indirect	if (relativePosition < 0) {	if (!(relativePosition < 0)) {
+TREELIST_GEN_CRP_324	443	constant-replacement	CRP	TreeList.AVLNode.insertOnRight(int,Object)	indirect	if (relativePosition < 0) {	if (relativePosition < 1) {
+TREELIST_GEN_CRP_325	443	constant-replacement	CRP	TreeList.AVLNode.insertOnRight(int,Object)	indirect	if (relativePosition < 0) {	if (relativePosition < -1) {
+TREELIST_GEN_CTC_326	443	condition-to-constant	CTC	TreeList.AVLNode.insertOnRight(int,Object)	indirect	if (relativePosition < 0) {	if (true) {
+TREELIST_GEN_CTC_327	443	condition-to-constant	CTC	TreeList.AVLNode.insertOnRight(int,Object)	indirect	if (relativePosition < 0) {	if (false) {
+TREELIST_GEN_SDL_328	444	statement-deletion	SDL	TreeList.AVLNode.insertOnRight(int,Object)	indirect	relativePosition--;	
+TREELIST_GEN_RVR_329	456	return-value-replacement	RVR	TreeList.AVLNode.getLeftSubTree()	indirect	return leftIsPrevious ? null : left;	return null;
+TREELIST_GEN_RVR_330	463	return-value-replacement	RVR	TreeList.AVLNode.getRightSubTree()	indirect	return rightIsNext ? null : right;	return null;
+TREELIST_GEN_ROR_331	472	relational-operator-replacement	ROR	TreeList.AVLNode.max()	indirect	return getRightSubTree() == null ? this : right.max();	return getRightSubTree() <= null ? this : right.max();
+TREELIST_GEN_ROR_332	472	relational-operator-replacement	ROR	TreeList.AVLNode.max()	indirect	return getRightSubTree() == null ? this : right.max();	return getRightSubTree() >= null ? this : right.max();
+TREELIST_GEN_ROR_333	472	relational-operator-replacement	ROR	TreeList.AVLNode.max()	indirect	return getRightSubTree() == null ? this : right.max();	return getRightSubTree() != null ? this : right.max();
+TREELIST_GEN_ROR_334	472	relational-operator-replacement	ROR	TreeList.AVLNode.max()	indirect	return getRightSubTree() == null ? this : right.max();	return getRightSubTree() < null ? this : right.max();
+TREELIST_GEN_ROR_335	472	relational-operator-replacement	ROR	TreeList.AVLNode.max()	indirect	return getRightSubTree() == null ? this : right.max();	return getRightSubTree() > null ? this : right.max();
+TREELIST_GEN_RVR_336	472	return-value-replacement	RVR	TreeList.AVLNode.max()	indirect	return getRightSubTree() == null ? this : right.max();	return null;
+TREELIST_GEN_ROR_337	481	relational-operator-replacement	ROR	TreeList.AVLNode.min()	indirect	return getLeftSubTree() == null ? this : left.min();	return getLeftSubTree() <= null ? this : left.min();
+TREELIST_GEN_ROR_338	481	relational-operator-replacement	ROR	TreeList.AVLNode.min()	indirect	return getLeftSubTree() == null ? this : left.min();	return getLeftSubTree() >= null ? this : left.min();
+TREELIST_GEN_ROR_339	481	relational-operator-replacement	ROR	TreeList.AVLNode.min()	indirect	return getLeftSubTree() == null ? this : left.min();	return getLeftSubTree() != null ? this : left.min();
+TREELIST_GEN_ROR_340	481	relational-operator-replacement	ROR	TreeList.AVLNode.min()	indirect	return getLeftSubTree() == null ? this : left.min();	return getLeftSubTree() < null ? this : left.min();
+TREELIST_GEN_ROR_341	481	relational-operator-replacement	ROR	TreeList.AVLNode.min()	indirect	return getLeftSubTree() == null ? this : left.min();	return getLeftSubTree() > null ? this : left.min();
+TREELIST_GEN_RVR_342	481	return-value-replacement	RVR	TreeList.AVLNode.min()	indirect	return getLeftSubTree() == null ? this : left.min();	return null;
+TREELIST_GEN_RVR_343	494	return-value-replacement	RVR	TreeList.AVLNode.remove(int)	indirect	return removeSelf();	return null;
+TREELIST_GEN_ROR_344	496	relational-operator-replacement	ROR	TreeList.AVLNode.remove(int)	indirect	if (indexRelativeToMe > 0) {	if (indexRelativeToMe <= 0) {
+TREELIST_GEN_ROR_345	496	relational-operator-replacement	ROR	TreeList.AVLNode.remove(int)	indirect	if (indexRelativeToMe > 0) {	if (indexRelativeToMe >= 0) {
+TREELIST_GEN_ROR_346	496	relational-operator-replacement	ROR	TreeList.AVLNode.remove(int)	indirect	if (indexRelativeToMe > 0) {	if (indexRelativeToMe == 0) {
+TREELIST_GEN_ROR_347	496	relational-operator-replacement	ROR	TreeList.AVLNode.remove(int)	indirect	if (indexRelativeToMe > 0) {	if (indexRelativeToMe != 0) {
+TREELIST_GEN_ROR_348	496	relational-operator-replacement	ROR	TreeList.AVLNode.remove(int)	indirect	if (indexRelativeToMe > 0) {	if (indexRelativeToMe < 0) {
+TREELIST_GEN_COI_349	496	conditional-operator-insertion	COI	TreeList.AVLNode.remove(int)	indirect	if (indexRelativeToMe > 0) {	if (!(indexRelativeToMe > 0)) {
+TREELIST_GEN_CRP_350	496	constant-replacement	CRP	TreeList.AVLNode.remove(int)	indirect	if (indexRelativeToMe > 0) {	if (indexRelativeToMe > 1) {
+TREELIST_GEN_CRP_351	496	constant-replacement	CRP	TreeList.AVLNode.remove(int)	indirect	if (indexRelativeToMe > 0) {	if (indexRelativeToMe > -1) {
+TREELIST_GEN_CTC_352	496	condition-to-constant	CTC	TreeList.AVLNode.remove(int)	indirect	if (indexRelativeToMe > 0) {	if (true) {
+TREELIST_GEN_CTC_353	496	condition-to-constant	CTC	TreeList.AVLNode.remove(int)	indirect	if (indexRelativeToMe > 0) {	if (false) {
+TREELIST_GEN_SDL_354	497	statement-deletion	SDL	TreeList.AVLNode.remove(int)	indirect	setRight(right.remove(indexRelativeToMe), right.right);	
+TREELIST_GEN_ARP_355	497	argument-replacement	ARP	TreeList.AVLNode.remove(int)	indirect	setRight(right.remove(indexRelativeToMe), right.right);	setRight(right.remove(indexRelativeToMe + 1), right.right);
+TREELIST_GEN_ARP_356	497	argument-replacement	ARP	TreeList.AVLNode.remove(int)	indirect	setRight(right.remove(indexRelativeToMe), right.right);	setRight(right.remove(indexRelativeToMe - 1), right.right);
+TREELIST_GEN_MCR_357	497	method-call-replacement	MCR	TreeList.AVLNode.remove(int)	indirect	setRight(right.remove(indexRelativeToMe), right.right);	setRight(right.get(indexRelativeToMe), right.right);
+TREELIST_GEN_SDL_358	502	statement-deletion	SDL	TreeList.AVLNode.remove(int)	indirect	setLeft(left.remove(indexRelativeToMe), left.left);	
+TREELIST_GEN_ARP_359	502	argument-replacement	ARP	TreeList.AVLNode.remove(int)	indirect	setLeft(left.remove(indexRelativeToMe), left.left);	setLeft(left.remove(indexRelativeToMe + 1), left.left);
+TREELIST_GEN_ARP_360	502	argument-replacement	ARP	TreeList.AVLNode.remove(int)	indirect	setLeft(left.remove(indexRelativeToMe), left.left);	setLeft(left.remove(indexRelativeToMe - 1), left.left);
+TREELIST_GEN_MCR_361	502	method-call-replacement	MCR	TreeList.AVLNode.remove(int)	indirect	setLeft(left.remove(indexRelativeToMe), left.left);	setLeft(left.get(indexRelativeToMe), left.left);
+TREELIST_GEN_ROR_362	503	relational-operator-replacement	ROR	TreeList.AVLNode.remove(int)	indirect	if (relativePosition > 0) {	if (relativePosition <= 0) {
+TREELIST_GEN_ROR_363	503	relational-operator-replacement	ROR	TreeList.AVLNode.remove(int)	indirect	if (relativePosition > 0) {	if (relativePosition >= 0) {
+TREELIST_GEN_ROR_364	503	relational-operator-replacement	ROR	TreeList.AVLNode.remove(int)	indirect	if (relativePosition > 0) {	if (relativePosition == 0) {
+TREELIST_GEN_ROR_365	503	relational-operator-replacement	ROR	TreeList.AVLNode.remove(int)	indirect	if (relativePosition > 0) {	if (relativePosition != 0) {
+TREELIST_GEN_ROR_366	503	relational-operator-replacement	ROR	TreeList.AVLNode.remove(int)	indirect	if (relativePosition > 0) {	if (relativePosition < 0) {
+TREELIST_GEN_COI_367	503	conditional-operator-insertion	COI	TreeList.AVLNode.remove(int)	indirect	if (relativePosition > 0) {	if (!(relativePosition > 0)) {
+TREELIST_GEN_CRP_368	503	constant-replacement	CRP	TreeList.AVLNode.remove(int)	indirect	if (relativePosition > 0) {	if (relativePosition > 1) {
+TREELIST_GEN_CRP_369	503	constant-replacement	CRP	TreeList.AVLNode.remove(int)	indirect	if (relativePosition > 0) {	if (relativePosition > -1) {
+TREELIST_GEN_CTC_370	503	condition-to-constant	CTC	TreeList.AVLNode.remove(int)	indirect	if (relativePosition > 0) {	if (true) {
+TREELIST_GEN_CTC_371	503	condition-to-constant	CTC	TreeList.AVLNode.remove(int)	indirect	if (relativePosition > 0) {	if (false) {
+TREELIST_GEN_RVR_372	508	return-value-replacement	RVR	TreeList.AVLNode.remove(int)	indirect	return balance();	return null;
+TREELIST_GEN_SDL_373	515	statement-deletion	SDL	TreeList.AVLNode.removeMax()	indirect	setRight(right.removeMax(), right.right);	
+TREELIST_GEN_SDL_374	527	statement-deletion	SDL	TreeList.AVLNode.removeMin()	indirect	setLeft(left.removeMin(), left.left);	
+TREELIST_GEN_ROR_375	541	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (getRightSubTree() == null && getLeftSubTree() == null) {	if (getRightSubTree() <= null && getLeftSubTree() == null) {
+TREELIST_GEN_ROR_376	541	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (getRightSubTree() == null && getLeftSubTree() == null) {	if (getRightSubTree() >= null && getLeftSubTree() == null) {
+TREELIST_GEN_ROR_377	541	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (getRightSubTree() == null && getLeftSubTree() == null) {	if (getRightSubTree() != null && getLeftSubTree() == null) {
+TREELIST_GEN_ROR_378	541	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (getRightSubTree() == null && getLeftSubTree() == null) {	if (getRightSubTree() < null && getLeftSubTree() == null) {
+TREELIST_GEN_ROR_379	541	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (getRightSubTree() == null && getLeftSubTree() == null) {	if (getRightSubTree() > null && getLeftSubTree() == null) {
+TREELIST_GEN_ROR_380	541	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (getRightSubTree() == null && getLeftSubTree() == null) {	if (getRightSubTree() == null && getLeftSubTree() <= null) {
+TREELIST_GEN_ROR_381	541	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (getRightSubTree() == null && getLeftSubTree() == null) {	if (getRightSubTree() == null && getLeftSubTree() >= null) {
+TREELIST_GEN_ROR_382	541	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (getRightSubTree() == null && getLeftSubTree() == null) {	if (getRightSubTree() == null && getLeftSubTree() != null) {
+TREELIST_GEN_ROR_383	541	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (getRightSubTree() == null && getLeftSubTree() == null) {	if (getRightSubTree() == null && getLeftSubTree() < null) {
+TREELIST_GEN_ROR_384	541	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (getRightSubTree() == null && getLeftSubTree() == null) {	if (getRightSubTree() == null && getLeftSubTree() > null) {
+TREELIST_GEN_COR_385	541	conditional-operator-replacement	COR	TreeList.AVLNode.removeSelf()	indirect	if (getRightSubTree() == null && getLeftSubTree() == null) {	if (getRightSubTree() == null || getLeftSubTree() == null) {
+TREELIST_GEN_COI_386	541	conditional-operator-insertion	COI	TreeList.AVLNode.removeSelf()	indirect	if (getRightSubTree() == null && getLeftSubTree() == null) {	if (!(getRightSubTree() == null && getLeftSubTree() == null)) {
+TREELIST_GEN_CTC_387	541	condition-to-constant	CTC	TreeList.AVLNode.removeSelf()	indirect	if (getRightSubTree() == null && getLeftSubTree() == null) {	if (true) {
+TREELIST_GEN_CTC_388	541	condition-to-constant	CTC	TreeList.AVLNode.removeSelf()	indirect	if (getRightSubTree() == null && getLeftSubTree() == null) {	if (false) {
+TREELIST_GEN_AOR_389	546	arithmetic-operator-replacement	AOR	TreeList.AVLNode.removeSelf()	indirect	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 1);	left.relativePosition += relativePosition - (relativePosition > 0 ? 0 : 1);
+TREELIST_GEN_AOR_390	546	arithmetic-operator-replacement	AOR	TreeList.AVLNode.removeSelf()	indirect	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 1);	left.relativePosition += relativePosition * (relativePosition > 0 ? 0 : 1);
+TREELIST_GEN_AOR_391	546	arithmetic-operator-replacement	AOR	TreeList.AVLNode.removeSelf()	indirect	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 1);	left.relativePosition += relativePosition / (relativePosition > 0 ? 0 : 1);
+TREELIST_GEN_AOR_392	546	arithmetic-operator-replacement	AOR	TreeList.AVLNode.removeSelf()	indirect	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 1);	left.relativePosition += relativePosition % (relativePosition > 0 ? 0 : 1);
+TREELIST_GEN_ROR_393	546	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 1);	left.relativePosition += relativePosition + (relativePosition <= 0 ? 0 : 1);
+TREELIST_GEN_ROR_394	546	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 1);	left.relativePosition += relativePosition + (relativePosition >= 0 ? 0 : 1);
+TREELIST_GEN_ROR_395	546	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 1);	left.relativePosition += relativePosition + (relativePosition == 0 ? 0 : 1);
+TREELIST_GEN_ROR_396	546	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 1);	left.relativePosition += relativePosition + (relativePosition != 0 ? 0 : 1);
+TREELIST_GEN_ROR_397	546	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 1);	left.relativePosition += relativePosition + (relativePosition < 0 ? 0 : 1);
+TREELIST_GEN_CRP_398	546	constant-replacement	CRP	TreeList.AVLNode.removeSelf()	indirect	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 1);	left.relativePosition += relativePosition + (relativePosition > 1 ? 0 : 1);
+TREELIST_GEN_CRP_399	546	constant-replacement	CRP	TreeList.AVLNode.removeSelf()	indirect	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 1);	left.relativePosition += relativePosition + (relativePosition > -1 ? 0 : 1);
+TREELIST_GEN_CRP_400	546	constant-replacement	CRP	TreeList.AVLNode.removeSelf()	indirect	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 1);	left.relativePosition += relativePosition + (relativePosition > 0 ? 1 : 1);
+TREELIST_GEN_CRP_401	546	constant-replacement	CRP	TreeList.AVLNode.removeSelf()	indirect	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 1);	left.relativePosition += relativePosition + (relativePosition > 0 ? -1 : 1);
+TREELIST_GEN_CRP_402	546	constant-replacement	CRP	TreeList.AVLNode.removeSelf()	indirect	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 1);	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 0);
+TREELIST_GEN_CRP_403	546	constant-replacement	CRP	TreeList.AVLNode.removeSelf()	indirect	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 1);	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : -1);
+TREELIST_GEN_CRP_404	546	constant-replacement	CRP	TreeList.AVLNode.removeSelf()	indirect	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 1);	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 2);
+TREELIST_GEN_SDL_405	546	statement-deletion	SDL	TreeList.AVLNode.removeSelf()	indirect	left.relativePosition += relativePosition + (relativePosition > 0 ? 0 : 1);	
+TREELIST_GEN_SDL_406	548	statement-deletion	SDL	TreeList.AVLNode.removeSelf()	indirect	left.max().setRight(null, right);	
+TREELIST_GEN_STR_407	548	statement-replacement	STR	TreeList.AVLNode.removeSelf()	indirect	left.max().setRight(null, right);	left.max().setRight(null, right); left.max().setRight(null, right);
+TREELIST_GEN_ARP_408	548	argument-replacement	ARP	TreeList.AVLNode.removeSelf()	indirect	left.max().setRight(null, right);	left.max().setRight(right, null);
+TREELIST_GEN_AOR_409	552	arithmetic-operator-replacement	AOR	TreeList.AVLNode.removeSelf()	indirect	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 1);	right.relativePosition += relativePosition + (relativePosition < 0 ? 0 : 1);
+TREELIST_GEN_AOR_410	552	arithmetic-operator-replacement	AOR	TreeList.AVLNode.removeSelf()	indirect	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 1);	right.relativePosition += relativePosition * (relativePosition < 0 ? 0 : 1);
+TREELIST_GEN_AOR_411	552	arithmetic-operator-replacement	AOR	TreeList.AVLNode.removeSelf()	indirect	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 1);	right.relativePosition += relativePosition / (relativePosition < 0 ? 0 : 1);
+TREELIST_GEN_AOR_412	552	arithmetic-operator-replacement	AOR	TreeList.AVLNode.removeSelf()	indirect	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 1);	right.relativePosition += relativePosition % (relativePosition < 0 ? 0 : 1);
+TREELIST_GEN_ROR_413	552	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 1);	right.relativePosition += relativePosition - (relativePosition <= 0 ? 0 : 1);
+TREELIST_GEN_ROR_414	552	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 1);	right.relativePosition += relativePosition - (relativePosition >= 0 ? 0 : 1);
+TREELIST_GEN_ROR_415	552	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 1);	right.relativePosition += relativePosition - (relativePosition == 0 ? 0 : 1);
+TREELIST_GEN_ROR_416	552	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 1);	right.relativePosition += relativePosition - (relativePosition != 0 ? 0 : 1);
+TREELIST_GEN_ROR_417	552	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 1);	right.relativePosition += relativePosition - (relativePosition > 0 ? 0 : 1);
+TREELIST_GEN_CRP_418	552	constant-replacement	CRP	TreeList.AVLNode.removeSelf()	indirect	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 1);	right.relativePosition += relativePosition - (relativePosition < 1 ? 0 : 1);
+TREELIST_GEN_CRP_419	552	constant-replacement	CRP	TreeList.AVLNode.removeSelf()	indirect	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 1);	right.relativePosition += relativePosition - (relativePosition < -1 ? 0 : 1);
+TREELIST_GEN_CRP_420	552	constant-replacement	CRP	TreeList.AVLNode.removeSelf()	indirect	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 1);	right.relativePosition += relativePosition - (relativePosition < 0 ? 1 : 1);
+TREELIST_GEN_CRP_421	552	constant-replacement	CRP	TreeList.AVLNode.removeSelf()	indirect	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 1);	right.relativePosition += relativePosition - (relativePosition < 0 ? -1 : 1);
+TREELIST_GEN_CRP_422	552	constant-replacement	CRP	TreeList.AVLNode.removeSelf()	indirect	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 1);	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 0);
+TREELIST_GEN_CRP_423	552	constant-replacement	CRP	TreeList.AVLNode.removeSelf()	indirect	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 1);	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : -1);
+TREELIST_GEN_CRP_424	552	constant-replacement	CRP	TreeList.AVLNode.removeSelf()	indirect	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 1);	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 2);
+TREELIST_GEN_SDL_425	552	statement-deletion	SDL	TreeList.AVLNode.removeSelf()	indirect	right.relativePosition += relativePosition - (relativePosition < 0 ? 0 : 1);	
+TREELIST_GEN_SDL_426	553	statement-deletion	SDL	TreeList.AVLNode.removeSelf()	indirect	right.min().setLeft(null, left);	
+TREELIST_GEN_STR_427	553	statement-replacement	STR	TreeList.AVLNode.removeSelf()	indirect	right.min().setLeft(null, left);	right.min().setLeft(null, left); right.min().setLeft(null, left);
+TREELIST_GEN_ARP_428	553	argument-replacement	ARP	TreeList.AVLNode.removeSelf()	indirect	right.min().setLeft(null, left);	right.min().setLeft(left, null);
+TREELIST_GEN_ROR_429	557	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (heightRightMinusLeft() > 0) {	if (heightRightMinusLeft() <= 0) {
+TREELIST_GEN_ROR_430	557	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (heightRightMinusLeft() > 0) {	if (heightRightMinusLeft() >= 0) {
+TREELIST_GEN_ROR_431	557	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (heightRightMinusLeft() > 0) {	if (heightRightMinusLeft() == 0) {
+TREELIST_GEN_ROR_432	557	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (heightRightMinusLeft() > 0) {	if (heightRightMinusLeft() != 0) {
+TREELIST_GEN_ROR_433	557	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (heightRightMinusLeft() > 0) {	if (heightRightMinusLeft() < 0) {
+TREELIST_GEN_COI_434	557	conditional-operator-insertion	COI	TreeList.AVLNode.removeSelf()	indirect	if (heightRightMinusLeft() > 0) {	if (!(heightRightMinusLeft() > 0)) {
+TREELIST_GEN_CRP_435	557	constant-replacement	CRP	TreeList.AVLNode.removeSelf()	indirect	if (heightRightMinusLeft() > 0) {	if (heightRightMinusLeft() > 1) {
+TREELIST_GEN_CRP_436	557	constant-replacement	CRP	TreeList.AVLNode.removeSelf()	indirect	if (heightRightMinusLeft() > 0) {	if (heightRightMinusLeft() > -1) {
+TREELIST_GEN_CTC_437	557	condition-to-constant	CTC	TreeList.AVLNode.removeSelf()	indirect	if (heightRightMinusLeft() > 0) {	if (true) {
+TREELIST_GEN_CTC_438	557	condition-to-constant	CTC	TreeList.AVLNode.removeSelf()	indirect	if (heightRightMinusLeft() > 0) {	if (false) {
+TREELIST_GEN_SDL_439	559	statement-deletion	SDL	TreeList.AVLNode.removeSelf()	indirect	final AVLNode<E> rightMin = right.min();	
+TREELIST_GEN_SDL_440	560	statement-deletion	SDL	TreeList.AVLNode.removeSelf()	indirect	value = rightMin.value;	
+TREELIST_GEN_COI_441	561	conditional-operator-insertion	COI	TreeList.AVLNode.removeSelf()	indirect	if (leftIsPrevious) {	if (!(leftIsPrevious)) {
+TREELIST_GEN_CTC_442	561	condition-to-constant	CTC	TreeList.AVLNode.removeSelf()	indirect	if (leftIsPrevious) {	if (true) {
+TREELIST_GEN_CTC_443	561	condition-to-constant	CTC	TreeList.AVLNode.removeSelf()	indirect	if (leftIsPrevious) {	if (false) {
+TREELIST_GEN_SDL_444	562	statement-deletion	SDL	TreeList.AVLNode.removeSelf()	indirect	left = rightMin.left;	
+TREELIST_GEN_SDL_445	564	statement-deletion	SDL	TreeList.AVLNode.removeSelf()	indirect	right = right.removeMin();	
+TREELIST_GEN_SDL_446	570	statement-deletion	SDL	TreeList.AVLNode.removeSelf()	indirect	final AVLNode<E> leftMax = left.max();	
+TREELIST_GEN_SDL_447	571	statement-deletion	SDL	TreeList.AVLNode.removeSelf()	indirect	value = leftMax.value;	
+TREELIST_GEN_COI_448	572	conditional-operator-insertion	COI	TreeList.AVLNode.removeSelf()	indirect	if (rightIsNext) {	if (!(rightIsNext)) {
+TREELIST_GEN_CTC_449	572	condition-to-constant	CTC	TreeList.AVLNode.removeSelf()	indirect	if (rightIsNext) {	if (true) {
+TREELIST_GEN_CTC_450	572	condition-to-constant	CTC	TreeList.AVLNode.removeSelf()	indirect	if (rightIsNext) {	if (false) {
+TREELIST_GEN_SDL_451	573	statement-deletion	SDL	TreeList.AVLNode.removeSelf()	indirect	right = leftMax.right;	
+TREELIST_GEN_SDL_452	575	statement-deletion	SDL	TreeList.AVLNode.removeSelf()	indirect	final AVLNode<E> leftPrevious = left.left;	
+TREELIST_GEN_SDL_453	576	statement-deletion	SDL	TreeList.AVLNode.removeSelf()	indirect	left = left.removeMax();	
+TREELIST_GEN_ROR_454	577	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (left == null) {	if (left <= null) {
+TREELIST_GEN_ROR_455	577	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (left == null) {	if (left >= null) {
+TREELIST_GEN_ROR_456	577	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (left == null) {	if (left != null) {
+TREELIST_GEN_ROR_457	577	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (left == null) {	if (left < null) {
+TREELIST_GEN_ROR_458	577	relational-operator-replacement	ROR	TreeList.AVLNode.removeSelf()	indirect	if (left == null) {	if (left > null) {
+TREELIST_GEN_COI_459	577	conditional-operator-insertion	COI	TreeList.AVLNode.removeSelf()	indirect	if (left == null) {	if (!(left == null)) {
+TREELIST_GEN_CTC_460	577	condition-to-constant	CTC	TreeList.AVLNode.removeSelf()	indirect	if (left == null) {	if (true) {
+TREELIST_GEN_CTC_461	577	condition-to-constant	CTC	TreeList.AVLNode.removeSelf()	indirect	if (left == null) {	if (false) {
+TREELIST_GEN_SDL_462	580	statement-deletion	SDL	TreeList.AVLNode.removeSelf()	indirect	left = leftPrevious;	
+TREELIST_GEN_CRP_463	597	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	case 1 :	case 0 :
+TREELIST_GEN_CRP_464	597	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	case 1 :	case -1 :
+TREELIST_GEN_CRP_465	597	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	case 1 :	case 2 :
+TREELIST_GEN_CRP_466	598	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	case 0 :	case 1 :
+TREELIST_GEN_CRP_467	598	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	case 0 :	case -1 :
+TREELIST_GEN_AOR_468	599	arithmetic-operator-replacement	AOR	TreeList.AVLNode.balance()	indirect	case -1 :	case +1 :
+TREELIST_GEN_AOR_469	599	arithmetic-operator-replacement	AOR	TreeList.AVLNode.balance()	indirect	case -1 :	case *1 :
+TREELIST_GEN_AOR_470	599	arithmetic-operator-replacement	AOR	TreeList.AVLNode.balance()	indirect	case -1 :	case /1 :
+TREELIST_GEN_AOR_471	599	arithmetic-operator-replacement	AOR	TreeList.AVLNode.balance()	indirect	case -1 :	case %1 :
+TREELIST_GEN_CRP_472	599	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	case -1 :	case -0 :
+TREELIST_GEN_CRP_473	599	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	case -1 :	case --1 :
+TREELIST_GEN_CRP_474	599	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	case -1 :	case -2 :
+TREELIST_GEN_AOR_475	601	arithmetic-operator-replacement	AOR	TreeList.AVLNode.balance()	indirect	case -2 :	case +2 :
+TREELIST_GEN_AOR_476	601	arithmetic-operator-replacement	AOR	TreeList.AVLNode.balance()	indirect	case -2 :	case *2 :
+TREELIST_GEN_AOR_477	601	arithmetic-operator-replacement	AOR	TreeList.AVLNode.balance()	indirect	case -2 :	case /2 :
+TREELIST_GEN_AOR_478	601	arithmetic-operator-replacement	AOR	TreeList.AVLNode.balance()	indirect	case -2 :	case %2 :
+TREELIST_GEN_CRP_479	601	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	case -2 :	case -0 :
+TREELIST_GEN_CRP_480	601	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	case -2 :	case -1 :
+TREELIST_GEN_CRP_481	601	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	case -2 :	case --1 :
+TREELIST_GEN_CRP_482	601	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	case -2 :	case -3 :
+TREELIST_GEN_ROR_483	602	relational-operator-replacement	ROR	TreeList.AVLNode.balance()	indirect	if (left.heightRightMinusLeft() > 0) {	if (left.heightRightMinusLeft() <= 0) {
+TREELIST_GEN_ROR_484	602	relational-operator-replacement	ROR	TreeList.AVLNode.balance()	indirect	if (left.heightRightMinusLeft() > 0) {	if (left.heightRightMinusLeft() >= 0) {
+TREELIST_GEN_ROR_485	602	relational-operator-replacement	ROR	TreeList.AVLNode.balance()	indirect	if (left.heightRightMinusLeft() > 0) {	if (left.heightRightMinusLeft() == 0) {
+TREELIST_GEN_ROR_486	602	relational-operator-replacement	ROR	TreeList.AVLNode.balance()	indirect	if (left.heightRightMinusLeft() > 0) {	if (left.heightRightMinusLeft() != 0) {
+TREELIST_GEN_ROR_487	602	relational-operator-replacement	ROR	TreeList.AVLNode.balance()	indirect	if (left.heightRightMinusLeft() > 0) {	if (left.heightRightMinusLeft() < 0) {
+TREELIST_GEN_COI_488	602	conditional-operator-insertion	COI	TreeList.AVLNode.balance()	indirect	if (left.heightRightMinusLeft() > 0) {	if (!(left.heightRightMinusLeft() > 0)) {
+TREELIST_GEN_CRP_489	602	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	if (left.heightRightMinusLeft() > 0) {	if (left.heightRightMinusLeft() > 1) {
+TREELIST_GEN_CRP_490	602	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	if (left.heightRightMinusLeft() > 0) {	if (left.heightRightMinusLeft() > -1) {
+TREELIST_GEN_CTC_491	602	condition-to-constant	CTC	TreeList.AVLNode.balance()	indirect	if (left.heightRightMinusLeft() > 0) {	if (true) {
+TREELIST_GEN_CTC_492	602	condition-to-constant	CTC	TreeList.AVLNode.balance()	indirect	if (left.heightRightMinusLeft() > 0) {	if (false) {
+TREELIST_GEN_SDL_493	603	statement-deletion	SDL	TreeList.AVLNode.balance()	indirect	setLeft(left.rotateLeft(), null);	
+TREELIST_GEN_RVR_494	605	return-value-replacement	RVR	TreeList.AVLNode.balance()	indirect	return rotateRight();	return null;
+TREELIST_GEN_CRP_495	606	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	case 2 :	case 0 :
+TREELIST_GEN_CRP_496	606	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	case 2 :	case 1 :
+TREELIST_GEN_CRP_497	606	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	case 2 :	case -1 :
+TREELIST_GEN_CRP_498	606	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	case 2 :	case 3 :
+TREELIST_GEN_ROR_499	607	relational-operator-replacement	ROR	TreeList.AVLNode.balance()	indirect	if (right.heightRightMinusLeft() < 0) {	if (right.heightRightMinusLeft() <= 0) {
+TREELIST_GEN_ROR_500	607	relational-operator-replacement	ROR	TreeList.AVLNode.balance()	indirect	if (right.heightRightMinusLeft() < 0) {	if (right.heightRightMinusLeft() >= 0) {
+TREELIST_GEN_ROR_501	607	relational-operator-replacement	ROR	TreeList.AVLNode.balance()	indirect	if (right.heightRightMinusLeft() < 0) {	if (right.heightRightMinusLeft() == 0) {
+TREELIST_GEN_ROR_502	607	relational-operator-replacement	ROR	TreeList.AVLNode.balance()	indirect	if (right.heightRightMinusLeft() < 0) {	if (right.heightRightMinusLeft() != 0) {
+TREELIST_GEN_ROR_503	607	relational-operator-replacement	ROR	TreeList.AVLNode.balance()	indirect	if (right.heightRightMinusLeft() < 0) {	if (right.heightRightMinusLeft() > 0) {
+TREELIST_GEN_COI_504	607	conditional-operator-insertion	COI	TreeList.AVLNode.balance()	indirect	if (right.heightRightMinusLeft() < 0) {	if (!(right.heightRightMinusLeft() < 0)) {
+TREELIST_GEN_CRP_505	607	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	if (right.heightRightMinusLeft() < 0) {	if (right.heightRightMinusLeft() < 1) {
+TREELIST_GEN_CRP_506	607	constant-replacement	CRP	TreeList.AVLNode.balance()	indirect	if (right.heightRightMinusLeft() < 0) {	if (right.heightRightMinusLeft() < -1) {
+TREELIST_GEN_CTC_507	607	condition-to-constant	CTC	TreeList.AVLNode.balance()	indirect	if (right.heightRightMinusLeft() < 0) {	if (true) {
+TREELIST_GEN_CTC_508	607	condition-to-constant	CTC	TreeList.AVLNode.balance()	indirect	if (right.heightRightMinusLeft() < 0) {	if (false) {
+TREELIST_GEN_SDL_509	608	statement-deletion	SDL	TreeList.AVLNode.balance()	indirect	setRight(right.rotateRight(), null);	
+TREELIST_GEN_RVR_510	610	return-value-replacement	RVR	TreeList.AVLNode.balance()	indirect	return rotateLeft();	return null;
+TREELIST_GEN_SDL_511	612	statement-deletion	SDL	TreeList.AVLNode.balance()	indirect	throw new RuntimeException("tree inconsistent!");	
+TREELIST_GEN_ROR_512	620	relational-operator-replacement	ROR	TreeList.AVLNode.getOffset(AVLNode)	indirect	if (node == null) {	if (node <= null) {
+TREELIST_GEN_ROR_513	620	relational-operator-replacement	ROR	TreeList.AVLNode.getOffset(AVLNode)	indirect	if (node == null) {	if (node >= null) {
+TREELIST_GEN_ROR_514	620	relational-operator-replacement	ROR	TreeList.AVLNode.getOffset(AVLNode)	indirect	if (node == null) {	if (node != null) {
+TREELIST_GEN_ROR_515	620	relational-operator-replacement	ROR	TreeList.AVLNode.getOffset(AVLNode)	indirect	if (node == null) {	if (node < null) {
+TREELIST_GEN_ROR_516	620	relational-operator-replacement	ROR	TreeList.AVLNode.getOffset(AVLNode)	indirect	if (node == null) {	if (node > null) {
+TREELIST_GEN_COI_517	620	conditional-operator-insertion	COI	TreeList.AVLNode.getOffset(AVLNode)	indirect	if (node == null) {	if (!(node == null)) {
+TREELIST_GEN_CTC_518	620	condition-to-constant	CTC	TreeList.AVLNode.getOffset(AVLNode)	indirect	if (node == null) {	if (true) {
+TREELIST_GEN_CTC_519	620	condition-to-constant	CTC	TreeList.AVLNode.getOffset(AVLNode)	indirect	if (node == null) {	if (false) {
+TREELIST_GEN_UOI_520	621	unary-operator-insertion	UOI	TreeList.AVLNode.getOffset(AVLNode)	indirect	return 0;	return -(0);
+TREELIST_GEN_ABS_521	621	absolute-value-insertion	ABS	TreeList.AVLNode.getOffset(AVLNode)	indirect	return 0;	return -Math.abs(0);
+TREELIST_GEN_CRP_522	621	constant-replacement	CRP	TreeList.AVLNode.getOffset(AVLNode)	indirect	return 0;	return 1;
+TREELIST_GEN_CRP_523	621	constant-replacement	CRP	TreeList.AVLNode.getOffset(AVLNode)	indirect	return 0;	return -1;
+TREELIST_GEN_UOI_524	623	unary-operator-insertion	UOI	TreeList.AVLNode.getOffset(AVLNode)	indirect	return node.relativePosition;	return -(node.relativePosition);
+TREELIST_GEN_ABS_525	623	absolute-value-insertion	ABS	TreeList.AVLNode.getOffset(AVLNode)	indirect	return node.relativePosition;	return -Math.abs(node.relativePosition);
+TREELIST_GEN_RVR_526	623	return-value-replacement	RVR	TreeList.AVLNode.getOffset(AVLNode)	indirect	return node.relativePosition;	return 0;
+TREELIST_GEN_RVR_527	623	return-value-replacement	RVR	TreeList.AVLNode.getOffset(AVLNode)	indirect	return node.relativePosition;	return 1;
+TREELIST_GEN_RVR_528	623	return-value-replacement	RVR	TreeList.AVLNode.getOffset(AVLNode)	indirect	return node.relativePosition;	return -1;
+TREELIST_GEN_SDL_529	634	statement-deletion	SDL	TreeList.AVLNode.setOffset(AVLNode,int)	indirect	node.relativePosition = newOffest;	
+TREELIST_GEN_UOI_530	635	unary-operator-insertion	UOI	TreeList.AVLNode.setOffset(AVLNode,int)	indirect	return oldOffset;	return -(oldOffset);
+TREELIST_GEN_ABS_531	635	absolute-value-insertion	ABS	TreeList.AVLNode.setOffset(AVLNode,int)	indirect	return oldOffset;	return -Math.abs(oldOffset);
+TREELIST_GEN_RVR_532	635	return-value-replacement	RVR	TreeList.AVLNode.setOffset(AVLNode,int)	indirect	return oldOffset;	return 0;
+TREELIST_GEN_RVR_533	635	return-value-replacement	RVR	TreeList.AVLNode.setOffset(AVLNode,int)	indirect	return oldOffset;	return 1;
+TREELIST_GEN_RVR_534	635	return-value-replacement	RVR	TreeList.AVLNode.setOffset(AVLNode,int)	indirect	return oldOffset;	return -1;
+TREELIST_GEN_ROR_535	643	relational-operator-replacement	ROR	TreeList.AVLNode.recalcHeight()	indirect	getLeftSubTree() == null ? -1 : getLeftSubTree().height,	getLeftSubTree() <= null ? -1 : getLeftSubTree().height,
+TREELIST_GEN_ROR_536	643	relational-operator-replacement	ROR	TreeList.AVLNode.recalcHeight()	indirect	getLeftSubTree() == null ? -1 : getLeftSubTree().height,	getLeftSubTree() >= null ? -1 : getLeftSubTree().height,
+TREELIST_GEN_ROR_537	643	relational-operator-replacement	ROR	TreeList.AVLNode.recalcHeight()	indirect	getLeftSubTree() == null ? -1 : getLeftSubTree().height,	getLeftSubTree() != null ? -1 : getLeftSubTree().height,
+TREELIST_GEN_ROR_538	643	relational-operator-replacement	ROR	TreeList.AVLNode.recalcHeight()	indirect	getLeftSubTree() == null ? -1 : getLeftSubTree().height,	getLeftSubTree() < null ? -1 : getLeftSubTree().height,
+TREELIST_GEN_ROR_539	643	relational-operator-replacement	ROR	TreeList.AVLNode.recalcHeight()	indirect	getLeftSubTree() == null ? -1 : getLeftSubTree().height,	getLeftSubTree() > null ? -1 : getLeftSubTree().height,
+TREELIST_GEN_CRP_540	643	constant-replacement	CRP	TreeList.AVLNode.recalcHeight()	indirect	getLeftSubTree() == null ? -1 : getLeftSubTree().height,	getLeftSubTree() == null ? -0 : getLeftSubTree().height,
+TREELIST_GEN_CRP_541	643	constant-replacement	CRP	TreeList.AVLNode.recalcHeight()	indirect	getLeftSubTree() == null ? -1 : getLeftSubTree().height,	getLeftSubTree() == null ? --1 : getLeftSubTree().height,
+TREELIST_GEN_CRP_542	643	constant-replacement	CRP	TreeList.AVLNode.recalcHeight()	indirect	getLeftSubTree() == null ? -1 : getLeftSubTree().height,	getLeftSubTree() == null ? -2 : getLeftSubTree().height,
+TREELIST_GEN_AOR_543	644	arithmetic-operator-replacement	AOR	TreeList.AVLNode.recalcHeight()	indirect	getRightSubTree() == null ? -1 : getRightSubTree().height) + 1;	getRightSubTree() == null ? -1 : getRightSubTree().height) - 1;
+TREELIST_GEN_AOR_544	644	arithmetic-operator-replacement	AOR	TreeList.AVLNode.recalcHeight()	indirect	getRightSubTree() == null ? -1 : getRightSubTree().height) + 1;	getRightSubTree() == null ? -1 : getRightSubTree().height) * 1;
+TREELIST_GEN_AOR_545	644	arithmetic-operator-replacement	AOR	TreeList.AVLNode.recalcHeight()	indirect	getRightSubTree() == null ? -1 : getRightSubTree().height) + 1;	getRightSubTree() == null ? -1 : getRightSubTree().height) / 1;
+TREELIST_GEN_AOR_546	644	arithmetic-operator-replacement	AOR	TreeList.AVLNode.recalcHeight()	indirect	getRightSubTree() == null ? -1 : getRightSubTree().height) + 1;	getRightSubTree() == null ? -1 : getRightSubTree().height) % 1;
+TREELIST_GEN_ROR_547	644	relational-operator-replacement	ROR	TreeList.AVLNode.recalcHeight()	indirect	getRightSubTree() == null ? -1 : getRightSubTree().height) + 1;	getRightSubTree() <= null ? -1 : getRightSubTree().height) + 1;
+TREELIST_GEN_ROR_548	644	relational-operator-replacement	ROR	TreeList.AVLNode.recalcHeight()	indirect	getRightSubTree() == null ? -1 : getRightSubTree().height) + 1;	getRightSubTree() >= null ? -1 : getRightSubTree().height) + 1;
+TREELIST_GEN_ROR_549	644	relational-operator-replacement	ROR	TreeList.AVLNode.recalcHeight()	indirect	getRightSubTree() == null ? -1 : getRightSubTree().height) + 1;	getRightSubTree() != null ? -1 : getRightSubTree().height) + 1;
+TREELIST_GEN_ROR_550	644	relational-operator-replacement	ROR	TreeList.AVLNode.recalcHeight()	indirect	getRightSubTree() == null ? -1 : getRightSubTree().height) + 1;	getRightSubTree() < null ? -1 : getRightSubTree().height) + 1;
+TREELIST_GEN_ROR_551	644	relational-operator-replacement	ROR	TreeList.AVLNode.recalcHeight()	indirect	getRightSubTree() == null ? -1 : getRightSubTree().height) + 1;	getRightSubTree() > null ? -1 : getRightSubTree().height) + 1;
+TREELIST_GEN_CRP_552	644	constant-replacement	CRP	TreeList.AVLNode.recalcHeight()	indirect	getRightSubTree() == null ? -1 : getRightSubTree().height) + 1;	getRightSubTree() == null ? -0 : getRightSubTree().height) + 1;
+TREELIST_GEN_CRP_553	644	constant-replacement	CRP	TreeList.AVLNode.recalcHeight()	indirect	getRightSubTree() == null ? -1 : getRightSubTree().height) + 1;	getRightSubTree() == null ? --1 : getRightSubTree().height) + 1;
+TREELIST_GEN_CRP_554	644	constant-replacement	CRP	TreeList.AVLNode.recalcHeight()	indirect	getRightSubTree() == null ? -1 : getRightSubTree().height) + 1;	getRightSubTree() == null ? -2 : getRightSubTree().height) + 1;
+TREELIST_GEN_CRP_555	644	constant-replacement	CRP	TreeList.AVLNode.recalcHeight()	indirect	getRightSubTree() == null ? -1 : getRightSubTree().height) + 1;	getRightSubTree() == null ? -1 : getRightSubTree().height) + 0;
+TREELIST_GEN_CRP_556	644	constant-replacement	CRP	TreeList.AVLNode.recalcHeight()	indirect	getRightSubTree() == null ? -1 : getRightSubTree().height) + 1;	getRightSubTree() == null ? -1 : getRightSubTree().height) + -1;
+TREELIST_GEN_CRP_557	644	constant-replacement	CRP	TreeList.AVLNode.recalcHeight()	indirect	getRightSubTree() == null ? -1 : getRightSubTree().height) + 1;	getRightSubTree() == null ? -1 : getRightSubTree().height) + 2;
+TREELIST_GEN_SDL_558	644	statement-deletion	SDL	TreeList.AVLNode.recalcHeight()	indirect	getRightSubTree() == null ? -1 : getRightSubTree().height) + 1;	
+TREELIST_GEN_ROR_559	651	relational-operator-replacement	ROR	TreeList.AVLNode.getHeight(AVLNode)	indirect	return node == null ? -1 : node.height;	return node <= null ? -1 : node.height;
+TREELIST_GEN_ROR_560	651	relational-operator-replacement	ROR	TreeList.AVLNode.getHeight(AVLNode)	indirect	return node == null ? -1 : node.height;	return node >= null ? -1 : node.height;
+TREELIST_GEN_ROR_561	651	relational-operator-replacement	ROR	TreeList.AVLNode.getHeight(AVLNode)	indirect	return node == null ? -1 : node.height;	return node != null ? -1 : node.height;
+TREELIST_GEN_ROR_562	651	relational-operator-replacement	ROR	TreeList.AVLNode.getHeight(AVLNode)	indirect	return node == null ? -1 : node.height;	return node < null ? -1 : node.height;
+TREELIST_GEN_ROR_563	651	relational-operator-replacement	ROR	TreeList.AVLNode.getHeight(AVLNode)	indirect	return node == null ? -1 : node.height;	return node > null ? -1 : node.height;
+TREELIST_GEN_CRP_564	651	constant-replacement	CRP	TreeList.AVLNode.getHeight(AVLNode)	indirect	return node == null ? -1 : node.height;	return node == null ? -0 : node.height;
+TREELIST_GEN_CRP_565	651	constant-replacement	CRP	TreeList.AVLNode.getHeight(AVLNode)	indirect	return node == null ? -1 : node.height;	return node == null ? --1 : node.height;
+TREELIST_GEN_CRP_566	651	constant-replacement	CRP	TreeList.AVLNode.getHeight(AVLNode)	indirect	return node == null ? -1 : node.height;	return node == null ? -2 : node.height;
+TREELIST_GEN_RVR_567	651	return-value-replacement	RVR	TreeList.AVLNode.getHeight(AVLNode)	indirect	return node == null ? -1 : node.height;	return 0;
+TREELIST_GEN_RVR_568	651	return-value-replacement	RVR	TreeList.AVLNode.getHeight(AVLNode)	indirect	return node == null ? -1 : node.height;	return 1;
+TREELIST_GEN_RVR_569	651	return-value-replacement	RVR	TreeList.AVLNode.getHeight(AVLNode)	indirect	return node == null ? -1 : node.height;	return -1;
+TREELIST_GEN_AOR_570	658	arithmetic-operator-replacement	AOR	TreeList.AVLNode.heightRightMinusLeft()	indirect	return getHeight(getRightSubTree()) - getHeight(getLeftSubTree());	return getHeight(getRightSubTree()) + getHeight(getLeftSubTree());
+TREELIST_GEN_AOR_571	658	arithmetic-operator-replacement	AOR	TreeList.AVLNode.heightRightMinusLeft()	indirect	return getHeight(getRightSubTree()) - getHeight(getLeftSubTree());	return getHeight(getRightSubTree()) * getHeight(getLeftSubTree());
+TREELIST_GEN_AOR_572	658	arithmetic-operator-replacement	AOR	TreeList.AVLNode.heightRightMinusLeft()	indirect	return getHeight(getRightSubTree()) - getHeight(getLeftSubTree());	return getHeight(getRightSubTree()) / getHeight(getLeftSubTree());
+TREELIST_GEN_AOR_573	658	arithmetic-operator-replacement	AOR	TreeList.AVLNode.heightRightMinusLeft()	indirect	return getHeight(getRightSubTree()) - getHeight(getLeftSubTree());	return getHeight(getRightSubTree()) % getHeight(getLeftSubTree());
+TREELIST_GEN_UOI_574	658	unary-operator-insertion	UOI	TreeList.AVLNode.heightRightMinusLeft()	indirect	return getHeight(getRightSubTree()) - getHeight(getLeftSubTree());	return -(getHeight(getRightSubTree()) - getHeight(getLeftSubTree()));
+TREELIST_GEN_ABS_575	658	absolute-value-insertion	ABS	TreeList.AVLNode.heightRightMinusLeft()	indirect	return getHeight(getRightSubTree()) - getHeight(getLeftSubTree());	return -Math.abs(getHeight(getRightSubTree()) - getHeight(getLeftSubTree()));
+TREELIST_GEN_RVR_576	658	return-value-replacement	RVR	TreeList.AVLNode.heightRightMinusLeft()	indirect	return getHeight(getRightSubTree()) - getHeight(getLeftSubTree());	return 0;
+TREELIST_GEN_RVR_577	658	return-value-replacement	RVR	TreeList.AVLNode.heightRightMinusLeft()	indirect	return getHeight(getRightSubTree()) - getHeight(getLeftSubTree());	return 1;
+TREELIST_GEN_RVR_578	658	return-value-replacement	RVR	TreeList.AVLNode.heightRightMinusLeft()	indirect	return getHeight(getRightSubTree()) - getHeight(getLeftSubTree());	return -1;
+TREELIST_GEN_UOI_579	662	unary-operator-insertion	UOI	TreeList.AVLNode.rotateLeft()	indirect	final AVLNode<E> newTop = right; // can't be faedelung!	final AVLNode<E> newTop = right; // can't be faedelung
+TREELIST_GEN_SDL_580	663	statement-deletion	SDL	TreeList.AVLNode.rotateLeft()	indirect	final AVLNode<E> movedNode = getRightSubTree().getLeftSubTree();	
+TREELIST_GEN_AOR_581	665	arithmetic-operator-replacement	AOR	TreeList.AVLNode.rotateLeft()	indirect	final int newTopPosition = relativePosition + getOffset(newTop);	final int newTopPosition = relativePosition - getOffset(newTop);
+TREELIST_GEN_AOR_582	665	arithmetic-operator-replacement	AOR	TreeList.AVLNode.rotateLeft()	indirect	final int newTopPosition = relativePosition + getOffset(newTop);	final int newTopPosition = relativePosition * getOffset(newTop);
+TREELIST_GEN_AOR_583	665	arithmetic-operator-replacement	AOR	TreeList.AVLNode.rotateLeft()	indirect	final int newTopPosition = relativePosition + getOffset(newTop);	final int newTopPosition = relativePosition / getOffset(newTop);
+TREELIST_GEN_AOR_584	665	arithmetic-operator-replacement	AOR	TreeList.AVLNode.rotateLeft()	indirect	final int newTopPosition = relativePosition + getOffset(newTop);	final int newTopPosition = relativePosition % getOffset(newTop);
+TREELIST_GEN_AOR_585	667	arithmetic-operator-replacement	AOR	TreeList.AVLNode.rotateLeft()	indirect	final int movedPosition = getOffset(newTop) + getOffset(movedNode);	final int movedPosition = getOffset(newTop) - getOffset(movedNode);
+TREELIST_GEN_AOR_586	667	arithmetic-operator-replacement	AOR	TreeList.AVLNode.rotateLeft()	indirect	final int movedPosition = getOffset(newTop) + getOffset(movedNode);	final int movedPosition = getOffset(newTop) * getOffset(movedNode);
+TREELIST_GEN_AOR_587	667	arithmetic-operator-replacement	AOR	TreeList.AVLNode.rotateLeft()	indirect	final int movedPosition = getOffset(newTop) + getOffset(movedNode);	final int movedPosition = getOffset(newTop) / getOffset(movedNode);
+TREELIST_GEN_AOR_588	667	arithmetic-operator-replacement	AOR	TreeList.AVLNode.rotateLeft()	indirect	final int movedPosition = getOffset(newTop) + getOffset(movedNode);	final int movedPosition = getOffset(newTop) % getOffset(movedNode);
+TREELIST_GEN_SDL_589	669	statement-deletion	SDL	TreeList.AVLNode.rotateLeft()	indirect	setRight(movedNode, newTop);	
+TREELIST_GEN_SDL_590	670	statement-deletion	SDL	TreeList.AVLNode.rotateLeft()	indirect	newTop.setLeft(this, null);	
+TREELIST_GEN_STR_591	670	statement-replacement	STR	TreeList.AVLNode.rotateLeft()	indirect	newTop.setLeft(this, null);	newTop.setLeft(this, null); newTop.setLeft(this, null);
+TREELIST_GEN_ARP_592	670	argument-replacement	ARP	TreeList.AVLNode.rotateLeft()	indirect	newTop.setLeft(this, null);	newTop.setLeft(null, this);
+TREELIST_GEN_SDL_593	672	statement-deletion	SDL	TreeList.AVLNode.rotateLeft()	indirect	setOffset(newTop, newTopPosition);	
+TREELIST_GEN_SDL_594	673	statement-deletion	SDL	TreeList.AVLNode.rotateLeft()	indirect	setOffset(this, myNewPosition);	
+TREELIST_GEN_SDL_595	674	statement-deletion	SDL	TreeList.AVLNode.rotateLeft()	indirect	setOffset(movedNode, movedPosition);	
+TREELIST_GEN_RVR_596	675	return-value-replacement	RVR	TreeList.AVLNode.rotateLeft()	indirect	return newTop;	return null;
+TREELIST_GEN_SDL_597	680	statement-deletion	SDL	TreeList.AVLNode.rotateRight()	indirect	final AVLNode<E> movedNode = getLeftSubTree().getRightSubTree();	
+TREELIST_GEN_SDL_598	686	statement-deletion	SDL	TreeList.AVLNode.rotateRight()	indirect	setLeft(movedNode, newTop);	
+TREELIST_GEN_SDL_599	687	statement-deletion	SDL	TreeList.AVLNode.rotateRight()	indirect	newTop.setRight(this, null);	
+TREELIST_GEN_STR_600	687	statement-replacement	STR	TreeList.AVLNode.rotateRight()	indirect	newTop.setRight(this, null);	newTop.setRight(this, null); newTop.setRight(this, null);
+TREELIST_GEN_ARP_601	687	argument-replacement	ARP	TreeList.AVLNode.rotateRight()	indirect	newTop.setRight(this, null);	newTop.setRight(null, this);
+TREELIST_GEN_ROR_602	702	relational-operator-replacement	ROR	TreeList.AVLNode.setLeft(AVLNode,AVLNode)	indirect	leftIsPrevious = node == null;	leftIsPrevious = node <= null;
+TREELIST_GEN_ROR_603	702	relational-operator-replacement	ROR	TreeList.AVLNode.setLeft(AVLNode,AVLNode)	indirect	leftIsPrevious = node == null;	leftIsPrevious = node >= null;
+TREELIST_GEN_ROR_604	702	relational-operator-replacement	ROR	TreeList.AVLNode.setLeft(AVLNode,AVLNode)	indirect	leftIsPrevious = node == null;	leftIsPrevious = node != null;
+TREELIST_GEN_ROR_605	702	relational-operator-replacement	ROR	TreeList.AVLNode.setLeft(AVLNode,AVLNode)	indirect	leftIsPrevious = node == null;	leftIsPrevious = node < null;
+TREELIST_GEN_ROR_606	702	relational-operator-replacement	ROR	TreeList.AVLNode.setLeft(AVLNode,AVLNode)	indirect	leftIsPrevious = node == null;	leftIsPrevious = node > null;
+TREELIST_GEN_SDL_607	702	statement-deletion	SDL	TreeList.AVLNode.setLeft(AVLNode,AVLNode)	indirect	leftIsPrevious = node == null;	
+TREELIST_GEN_SDL_608	703	statement-deletion	SDL	TreeList.AVLNode.setLeft(AVLNode,AVLNode)	indirect	left = leftIsPrevious ? previous : node;	
+TREELIST_GEN_ROR_609	714	relational-operator-replacement	ROR	TreeList.AVLNode.setRight(AVLNode,AVLNode)	indirect	rightIsNext = node == null;	rightIsNext = node <= null;
+TREELIST_GEN_ROR_610	714	relational-operator-replacement	ROR	TreeList.AVLNode.setRight(AVLNode,AVLNode)	indirect	rightIsNext = node == null;	rightIsNext = node >= null;
+TREELIST_GEN_ROR_611	714	relational-operator-replacement	ROR	TreeList.AVLNode.setRight(AVLNode,AVLNode)	indirect	rightIsNext = node == null;	rightIsNext = node != null;
+TREELIST_GEN_ROR_612	714	relational-operator-replacement	ROR	TreeList.AVLNode.setRight(AVLNode,AVLNode)	indirect	rightIsNext = node == null;	rightIsNext = node < null;
+TREELIST_GEN_ROR_613	714	relational-operator-replacement	ROR	TreeList.AVLNode.setRight(AVLNode,AVLNode)	indirect	rightIsNext = node == null;	rightIsNext = node > null;
+TREELIST_GEN_SDL_614	714	statement-deletion	SDL	TreeList.AVLNode.setRight(AVLNode,AVLNode)	indirect	rightIsNext = node == null;	
+TREELIST_GEN_SDL_615	715	statement-deletion	SDL	TreeList.AVLNode.setRight(AVLNode,AVLNode)	indirect	right = rightIsNext ? next : node;	
+TREELIST_GEN_SDL_639	831	statement-deletion	SDL	TreeList.TreeListIterator.<init>(TreeList,int)	indirect	this.parent = parent;	
+TREELIST_GEN_SDL_640	832	statement-deletion	SDL	TreeList.TreeListIterator.<init>(TreeList,int)	indirect	this.expectedModCount = parent.modCount;	
+TREELIST_GEN_ROR_641	833	relational-operator-replacement	ROR	TreeList.TreeListIterator.<init>(TreeList,int)	indirect	this.next = parent.root == null ? null : parent.root.get(fromIndex);	this.next = parent.root <= null ? null : parent.root.get(fromIndex);
+TREELIST_GEN_ROR_642	833	relational-operator-replacement	ROR	TreeList.TreeListIterator.<init>(TreeList,int)	indirect	this.next = parent.root == null ? null : parent.root.get(fromIndex);	this.next = parent.root >= null ? null : parent.root.get(fromIndex);
+TREELIST_GEN_ROR_643	833	relational-operator-replacement	ROR	TreeList.TreeListIterator.<init>(TreeList,int)	indirect	this.next = parent.root == null ? null : parent.root.get(fromIndex);	this.next = parent.root != null ? null : parent.root.get(fromIndex);
+TREELIST_GEN_ROR_644	833	relational-operator-replacement	ROR	TreeList.TreeListIterator.<init>(TreeList,int)	indirect	this.next = parent.root == null ? null : parent.root.get(fromIndex);	this.next = parent.root < null ? null : parent.root.get(fromIndex);
+TREELIST_GEN_ROR_645	833	relational-operator-replacement	ROR	TreeList.TreeListIterator.<init>(TreeList,int)	indirect	this.next = parent.root == null ? null : parent.root.get(fromIndex);	this.next = parent.root > null ? null : parent.root.get(fromIndex);
+TREELIST_GEN_SDL_646	833	statement-deletion	SDL	TreeList.TreeListIterator.<init>(TreeList,int)	indirect	this.next = parent.root == null ? null : parent.root.get(fromIndex);	
+TREELIST_GEN_ARP_647	833	argument-replacement	ARP	TreeList.TreeListIterator.<init>(TreeList,int)	indirect	this.next = parent.root == null ? null : parent.root.get(fromIndex);	this.next = parent.root == null ? null : parent.root.get(fromIndex + 1);
+TREELIST_GEN_ARP_648	833	argument-replacement	ARP	TreeList.TreeListIterator.<init>(TreeList,int)	indirect	this.next = parent.root == null ? null : parent.root.get(fromIndex);	this.next = parent.root == null ? null : parent.root.get(fromIndex - 1);
+TREELIST_GEN_MCR_649	833	method-call-replacement	MCR	TreeList.TreeListIterator.<init>(TreeList,int)	indirect	this.next = parent.root == null ? null : parent.root.get(fromIndex);	this.next = parent.root == null ? null : parent.root.remove(fromIndex);
+TREELIST_GEN_SDL_650	834	statement-deletion	SDL	TreeList.TreeListIterator.<init>(TreeList,int)	indirect	this.nextIndex = fromIndex;	
+TREELIST_GEN_CRP_651	835	constant-replacement	CRP	TreeList.TreeListIterator.<init>(TreeList,int)	indirect	this.currentIndex = -1;	this.currentIndex = -0;
+TREELIST_GEN_CRP_652	835	constant-replacement	CRP	TreeList.TreeListIterator.<init>(TreeList,int)	indirect	this.currentIndex = -1;	this.currentIndex = --1;
+TREELIST_GEN_CRP_653	835	constant-replacement	CRP	TreeList.TreeListIterator.<init>(TreeList,int)	indirect	this.currentIndex = -1;	this.currentIndex = -2;
+TREELIST_GEN_SDL_654	835	statement-deletion	SDL	TreeList.TreeListIterator.<init>(TreeList,int)	indirect	this.currentIndex = -1;	
+TREELIST_GEN_ROR_655	846	relational-operator-replacement	ROR	TreeList.TreeListIterator.checkModCount()	indirect	if (parent.modCount != expectedModCount) {	if (parent.modCount <= expectedModCount) {
+TREELIST_GEN_ROR_656	846	relational-operator-replacement	ROR	TreeList.TreeListIterator.checkModCount()	indirect	if (parent.modCount != expectedModCount) {	if (parent.modCount >= expectedModCount) {
+TREELIST_GEN_ROR_657	846	relational-operator-replacement	ROR	TreeList.TreeListIterator.checkModCount()	indirect	if (parent.modCount != expectedModCount) {	if (parent.modCount == expectedModCount) {
+TREELIST_GEN_ROR_658	846	relational-operator-replacement	ROR	TreeList.TreeListIterator.checkModCount()	indirect	if (parent.modCount != expectedModCount) {	if (parent.modCount < expectedModCount) {
+TREELIST_GEN_ROR_659	846	relational-operator-replacement	ROR	TreeList.TreeListIterator.checkModCount()	indirect	if (parent.modCount != expectedModCount) {	if (parent.modCount > expectedModCount) {
+TREELIST_GEN_COI_660	846	conditional-operator-insertion	COI	TreeList.TreeListIterator.checkModCount()	indirect	if (parent.modCount != expectedModCount) {	if (!(parent.modCount != expectedModCount)) {
+TREELIST_GEN_CTC_661	846	condition-to-constant	CTC	TreeList.TreeListIterator.checkModCount()	indirect	if (parent.modCount != expectedModCount) {	if (true) {
+TREELIST_GEN_CTC_662	846	condition-to-constant	CTC	TreeList.TreeListIterator.checkModCount()	indirect	if (parent.modCount != expectedModCount) {	if (false) {
+TREELIST_GEN_SDL_663	847	statement-deletion	SDL	TreeList.TreeListIterator.checkModCount()	indirect	throw new ConcurrentModificationException();	
+TREELIST_GEN_ROR_664	852	relational-operator-replacement	ROR	TreeList.TreeListIterator.hasNext()	indirect	return nextIndex < parent.size();	return nextIndex <= parent.size();
+TREELIST_GEN_ROR_665	852	relational-operator-replacement	ROR	TreeList.TreeListIterator.hasNext()	indirect	return nextIndex < parent.size();	return nextIndex >= parent.size();
+TREELIST_GEN_ROR_666	852	relational-operator-replacement	ROR	TreeList.TreeListIterator.hasNext()	indirect	return nextIndex < parent.size();	return nextIndex == parent.size();
+TREELIST_GEN_ROR_667	852	relational-operator-replacement	ROR	TreeList.TreeListIterator.hasNext()	indirect	return nextIndex < parent.size();	return nextIndex != parent.size();
+TREELIST_GEN_ROR_668	852	relational-operator-replacement	ROR	TreeList.TreeListIterator.hasNext()	indirect	return nextIndex < parent.size();	return nextIndex > parent.size();
+TREELIST_GEN_RVR_669	852	return-value-replacement	RVR	TreeList.TreeListIterator.hasNext()	indirect	return nextIndex < parent.size();	return true;
+TREELIST_GEN_RVR_670	852	return-value-replacement	RVR	TreeList.TreeListIterator.hasNext()	indirect	return nextIndex < parent.size();	return false;
+TREELIST_GEN_MCR_671	852	method-call-replacement	MCR	TreeList.TreeListIterator.hasNext()	indirect	return nextIndex < parent.size();	return nextIndex < parent.hashCode();
+TREELIST_GEN_SDL_672	856	statement-deletion	SDL	TreeList.TreeListIterator.next()	direct	checkModCount();	
+TREELIST_GEN_COI_673	857	conditional-operator-insertion	COI	TreeList.TreeListIterator.next()	direct	if (!hasNext()) {	if (!(!hasNext())) {
+TREELIST_GEN_UOI_674	857	unary-operator-insertion	UOI	TreeList.TreeListIterator.next()	direct	if (!hasNext()) {	if (hasNext()) {
+TREELIST_GEN_CTC_675	857	condition-to-constant	CTC	TreeList.TreeListIterator.next()	direct	if (!hasNext()) {	if (true) {
+TREELIST_GEN_CTC_676	857	condition-to-constant	CTC	TreeList.TreeListIterator.next()	direct	if (!hasNext()) {	if (false) {
+TREELIST_GEN_SDL_677	858	statement-deletion	SDL	TreeList.TreeListIterator.next()	direct	throw new NoSuchElementException("No element at index " + nextIndex + ".");	
+TREELIST_GEN_ROR_678	860	relational-operator-replacement	ROR	TreeList.TreeListIterator.next()	direct	if (next == null) {	if (next <= null) {
+TREELIST_GEN_ROR_679	860	relational-operator-replacement	ROR	TreeList.TreeListIterator.next()	direct	if (next == null) {	if (next >= null) {
+TREELIST_GEN_ROR_680	860	relational-operator-replacement	ROR	TreeList.TreeListIterator.next()	direct	if (next == null) {	if (next != null) {
+TREELIST_GEN_ROR_681	860	relational-operator-replacement	ROR	TreeList.TreeListIterator.next()	direct	if (next == null) {	if (next < null) {
+TREELIST_GEN_ROR_682	860	relational-operator-replacement	ROR	TreeList.TreeListIterator.next()	direct	if (next == null) {	if (next > null) {
+TREELIST_GEN_COI_683	860	conditional-operator-insertion	COI	TreeList.TreeListIterator.next()	direct	if (next == null) {	if (!(next == null)) {
+TREELIST_GEN_CTC_684	860	condition-to-constant	CTC	TreeList.TreeListIterator.next()	direct	if (next == null) {	if (true) {
+TREELIST_GEN_CTC_685	860	condition-to-constant	CTC	TreeList.TreeListIterator.next()	direct	if (next == null) {	if (false) {
+TREELIST_GEN_SDL_686	861	statement-deletion	SDL	TreeList.TreeListIterator.next()	direct	next = parent.root.get(nextIndex);	
+TREELIST_GEN_ARP_687	861	argument-replacement	ARP	TreeList.TreeListIterator.next()	direct	next = parent.root.get(nextIndex);	next = parent.root.get(nextIndex + 1);
+TREELIST_GEN_ARP_688	861	argument-replacement	ARP	TreeList.TreeListIterator.next()	direct	next = parent.root.get(nextIndex);	next = parent.root.get(nextIndex - 1);
+TREELIST_GEN_MCR_689	861	method-call-replacement	MCR	TreeList.TreeListIterator.next()	direct	next = parent.root.get(nextIndex);	next = parent.root.remove(nextIndex);
+TREELIST_GEN_SDL_690	864	statement-deletion	SDL	TreeList.TreeListIterator.next()	direct	current = next;	
+TREELIST_GEN_SDL_691	865	statement-deletion	SDL	TreeList.TreeListIterator.next()	direct	currentIndex = nextIndex++;	
+TREELIST_GEN_SDL_692	866	statement-deletion	SDL	TreeList.TreeListIterator.next()	direct	next = next.next();	
+TREELIST_GEN_ROR_693	871	relational-operator-replacement	ROR	TreeList.TreeListIterator.hasPrevious()	indirect	return nextIndex > 0;	return nextIndex <= 0;
+TREELIST_GEN_ROR_694	871	relational-operator-replacement	ROR	TreeList.TreeListIterator.hasPrevious()	indirect	return nextIndex > 0;	return nextIndex >= 0;
+TREELIST_GEN_ROR_695	871	relational-operator-replacement	ROR	TreeList.TreeListIterator.hasPrevious()	indirect	return nextIndex > 0;	return nextIndex == 0;
+TREELIST_GEN_ROR_696	871	relational-operator-replacement	ROR	TreeList.TreeListIterator.hasPrevious()	indirect	return nextIndex > 0;	return nextIndex != 0;
+TREELIST_GEN_ROR_697	871	relational-operator-replacement	ROR	TreeList.TreeListIterator.hasPrevious()	indirect	return nextIndex > 0;	return nextIndex < 0;
+TREELIST_GEN_CRP_698	871	constant-replacement	CRP	TreeList.TreeListIterator.hasPrevious()	indirect	return nextIndex > 0;	return nextIndex > 1;
+TREELIST_GEN_CRP_699	871	constant-replacement	CRP	TreeList.TreeListIterator.hasPrevious()	indirect	return nextIndex > 0;	return nextIndex > -1;
+TREELIST_GEN_RVR_700	871	return-value-replacement	RVR	TreeList.TreeListIterator.hasPrevious()	indirect	return nextIndex > 0;	return true;
+TREELIST_GEN_RVR_701	871	return-value-replacement	RVR	TreeList.TreeListIterator.hasPrevious()	indirect	return nextIndex > 0;	return false;
+TREELIST_GEN_COI_702	876	conditional-operator-insertion	COI	TreeList.TreeListIterator.previous()	direct	if (!hasPrevious()) {	if (!(!hasPrevious())) {
+TREELIST_GEN_UOI_703	876	unary-operator-insertion	UOI	TreeList.TreeListIterator.previous()	direct	if (!hasPrevious()) {	if (hasPrevious()) {
+TREELIST_GEN_CTC_704	876	condition-to-constant	CTC	TreeList.TreeListIterator.previous()	direct	if (!hasPrevious()) {	if (true) {
+TREELIST_GEN_CTC_705	876	condition-to-constant	CTC	TreeList.TreeListIterator.previous()	direct	if (!hasPrevious()) {	if (false) {
+TREELIST_GEN_SDL_706	877	statement-deletion	SDL	TreeList.TreeListIterator.previous()	direct	throw new NoSuchElementException("Already at start of list.");	
+TREELIST_GEN_AOR_707	880	arithmetic-operator-replacement	AOR	TreeList.TreeListIterator.previous()	direct	next = parent.root.get(nextIndex - 1);	next = parent.root.get(nextIndex + 1);
+TREELIST_GEN_AOR_708	880	arithmetic-operator-replacement	AOR	TreeList.TreeListIterator.previous()	direct	next = parent.root.get(nextIndex - 1);	next = parent.root.get(nextIndex * 1);
+TREELIST_GEN_AOR_709	880	arithmetic-operator-replacement	AOR	TreeList.TreeListIterator.previous()	direct	next = parent.root.get(nextIndex - 1);	next = parent.root.get(nextIndex / 1);
+TREELIST_GEN_AOR_710	880	arithmetic-operator-replacement	AOR	TreeList.TreeListIterator.previous()	direct	next = parent.root.get(nextIndex - 1);	next = parent.root.get(nextIndex % 1);
+TREELIST_GEN_CRP_711	880	constant-replacement	CRP	TreeList.TreeListIterator.previous()	direct	next = parent.root.get(nextIndex - 1);	next = parent.root.get(nextIndex - 0);
+TREELIST_GEN_CRP_712	880	constant-replacement	CRP	TreeList.TreeListIterator.previous()	direct	next = parent.root.get(nextIndex - 1);	next = parent.root.get(nextIndex - -1);
+TREELIST_GEN_CRP_713	880	constant-replacement	CRP	TreeList.TreeListIterator.previous()	direct	next = parent.root.get(nextIndex - 1);	next = parent.root.get(nextIndex - 2);
+TREELIST_GEN_SDL_714	880	statement-deletion	SDL	TreeList.TreeListIterator.previous()	direct	next = parent.root.get(nextIndex - 1);	
+TREELIST_GEN_MCR_715	880	method-call-replacement	MCR	TreeList.TreeListIterator.previous()	direct	next = parent.root.get(nextIndex - 1);	next = parent.root.remove(nextIndex - 1);
+TREELIST_GEN_SDL_716	882	statement-deletion	SDL	TreeList.TreeListIterator.previous()	direct	next = next.previous();	
+TREELIST_GEN_SDL_717	886	statement-deletion	SDL	TreeList.TreeListIterator.previous()	direct	currentIndex = --nextIndex;	
+TREELIST_GEN_UOI_718	891	unary-operator-insertion	UOI	TreeList.TreeListIterator.nextIndex()	direct	return nextIndex;	return -(nextIndex);
+TREELIST_GEN_ABS_719	891	absolute-value-insertion	ABS	TreeList.TreeListIterator.nextIndex()	direct	return nextIndex;	return -Math.abs(nextIndex);
+TREELIST_GEN_RVR_720	891	return-value-replacement	RVR	TreeList.TreeListIterator.nextIndex()	direct	return nextIndex;	return 0;
+TREELIST_GEN_RVR_721	891	return-value-replacement	RVR	TreeList.TreeListIterator.nextIndex()	direct	return nextIndex;	return 1;
+TREELIST_GEN_RVR_722	891	return-value-replacement	RVR	TreeList.TreeListIterator.nextIndex()	direct	return nextIndex;	return -1;
+TREELIST_GEN_ROR_735	900	relational-operator-replacement	ROR	TreeList.TreeListIterator.remove()	direct	if (currentIndex == -1) {	if (currentIndex <= -1) {
+TREELIST_GEN_ROR_736	900	relational-operator-replacement	ROR	TreeList.TreeListIterator.remove()	direct	if (currentIndex == -1) {	if (currentIndex >= -1) {
+TREELIST_GEN_ROR_737	900	relational-operator-replacement	ROR	TreeList.TreeListIterator.remove()	direct	if (currentIndex == -1) {	if (currentIndex != -1) {
+TREELIST_GEN_ROR_738	900	relational-operator-replacement	ROR	TreeList.TreeListIterator.remove()	direct	if (currentIndex == -1) {	if (currentIndex < -1) {
+TREELIST_GEN_ROR_739	900	relational-operator-replacement	ROR	TreeList.TreeListIterator.remove()	direct	if (currentIndex == -1) {	if (currentIndex > -1) {
+TREELIST_GEN_COI_740	900	conditional-operator-insertion	COI	TreeList.TreeListIterator.remove()	direct	if (currentIndex == -1) {	if (!(currentIndex == -1)) {
+TREELIST_GEN_CRP_741	900	constant-replacement	CRP	TreeList.TreeListIterator.remove()	direct	if (currentIndex == -1) {	if (currentIndex == -0) {
+TREELIST_GEN_CRP_742	900	constant-replacement	CRP	TreeList.TreeListIterator.remove()	direct	if (currentIndex == -1) {	if (currentIndex == --1) {
+TREELIST_GEN_CRP_743	900	constant-replacement	CRP	TreeList.TreeListIterator.remove()	direct	if (currentIndex == -1) {	if (currentIndex == -2) {
+TREELIST_GEN_CTC_744	900	condition-to-constant	CTC	TreeList.TreeListIterator.remove()	direct	if (currentIndex == -1) {	if (true) {
+TREELIST_GEN_CTC_745	900	condition-to-constant	CTC	TreeList.TreeListIterator.remove()	direct	if (currentIndex == -1) {	if (false) {
+TREELIST_GEN_SDL_746	901	statement-deletion	SDL	TreeList.TreeListIterator.remove()	direct	throw new IllegalStateException();	
+TREELIST_GEN_SDL_747	903	statement-deletion	SDL	TreeList.TreeListIterator.remove()	direct	parent.remove(currentIndex);	
+TREELIST_GEN_STR_748	903	statement-replacement	STR	TreeList.TreeListIterator.remove()	direct	parent.remove(currentIndex);	parent.remove(currentIndex); parent.remove(currentIndex);
+TREELIST_GEN_ARP_749	903	argument-replacement	ARP	TreeList.TreeListIterator.remove()	direct	parent.remove(currentIndex);	parent.remove(currentIndex + 1);
+TREELIST_GEN_ARP_750	903	argument-replacement	ARP	TreeList.TreeListIterator.remove()	direct	parent.remove(currentIndex);	parent.remove(currentIndex - 1);
+TREELIST_GEN_MCR_751	903	method-call-replacement	MCR	TreeList.TreeListIterator.remove()	direct	parent.remove(currentIndex);	parent.get(currentIndex);
+TREELIST_GEN_ROR_752	904	relational-operator-replacement	ROR	TreeList.TreeListIterator.remove()	direct	if (nextIndex != currentIndex) {	if (nextIndex <= currentIndex) {
+TREELIST_GEN_ROR_753	904	relational-operator-replacement	ROR	TreeList.TreeListIterator.remove()	direct	if (nextIndex != currentIndex) {	if (nextIndex >= currentIndex) {
+TREELIST_GEN_ROR_754	904	relational-operator-replacement	ROR	TreeList.TreeListIterator.remove()	direct	if (nextIndex != currentIndex) {	if (nextIndex == currentIndex) {
+TREELIST_GEN_ROR_755	904	relational-operator-replacement	ROR	TreeList.TreeListIterator.remove()	direct	if (nextIndex != currentIndex) {	if (nextIndex < currentIndex) {
+TREELIST_GEN_ROR_756	904	relational-operator-replacement	ROR	TreeList.TreeListIterator.remove()	direct	if (nextIndex != currentIndex) {	if (nextIndex > currentIndex) {
+TREELIST_GEN_COI_757	904	conditional-operator-insertion	COI	TreeList.TreeListIterator.remove()	direct	if (nextIndex != currentIndex) {	if (!(nextIndex != currentIndex)) {
+TREELIST_GEN_CTC_758	904	condition-to-constant	CTC	TreeList.TreeListIterator.remove()	direct	if (nextIndex != currentIndex) {	if (true) {
+TREELIST_GEN_CTC_759	904	condition-to-constant	CTC	TreeList.TreeListIterator.remove()	direct	if (nextIndex != currentIndex) {	if (false) {
+TREELIST_GEN_SDL_760	906	statement-deletion	SDL	TreeList.TreeListIterator.remove()	direct	nextIndex--;	
+TREELIST_GEN_SDL_761	910	statement-deletion	SDL	TreeList.TreeListIterator.remove()	direct	next = null;	
+TREELIST_GEN_SDL_762	911	statement-deletion	SDL	TreeList.TreeListIterator.remove()	direct	current = null;	
+TREELIST_GEN_CRP_763	912	constant-replacement	CRP	TreeList.TreeListIterator.remove()	direct	currentIndex = -1;	currentIndex = -0;
+TREELIST_GEN_CRP_764	912	constant-replacement	CRP	TreeList.TreeListIterator.remove()	direct	currentIndex = -1;	currentIndex = --1;
+TREELIST_GEN_CRP_765	912	constant-replacement	CRP	TreeList.TreeListIterator.remove()	direct	currentIndex = -1;	currentIndex = -2;
+TREELIST_GEN_SDL_766	912	statement-deletion	SDL	TreeList.TreeListIterator.remove()	direct	currentIndex = -1;	
+TREELIST_GEN_SDL_767	913	statement-deletion	SDL	TreeList.TreeListIterator.remove()	direct	expectedModCount++;	

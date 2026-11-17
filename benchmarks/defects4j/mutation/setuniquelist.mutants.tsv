@@ -1,0 +1,137 @@
+id	line	operator	abbr	method	direct	find	replace
+SETUNIQUELIST_GEN_SDL_33	102	statement-deletion	SDL	SetUniqueList.<init>(List,Set)	direct	super(list);	
+SETUNIQUELIST_GEN_ROR_34	103	relational-operator-replacement	ROR	SetUniqueList.<init>(List,Set)	direct	if (set == null) {	if (set <= null) {
+SETUNIQUELIST_GEN_ROR_35	103	relational-operator-replacement	ROR	SetUniqueList.<init>(List,Set)	direct	if (set == null) {	if (set >= null) {
+SETUNIQUELIST_GEN_ROR_36	103	relational-operator-replacement	ROR	SetUniqueList.<init>(List,Set)	direct	if (set == null) {	if (set != null) {
+SETUNIQUELIST_GEN_ROR_37	103	relational-operator-replacement	ROR	SetUniqueList.<init>(List,Set)	direct	if (set == null) {	if (set < null) {
+SETUNIQUELIST_GEN_ROR_38	103	relational-operator-replacement	ROR	SetUniqueList.<init>(List,Set)	direct	if (set == null) {	if (set > null) {
+SETUNIQUELIST_GEN_COI_39	103	conditional-operator-insertion	COI	SetUniqueList.<init>(List,Set)	direct	if (set == null) {	if (!(set == null)) {
+SETUNIQUELIST_GEN_CTC_40	103	condition-to-constant	CTC	SetUniqueList.<init>(List,Set)	direct	if (set == null) {	if (true) {
+SETUNIQUELIST_GEN_CTC_41	103	condition-to-constant	CTC	SetUniqueList.<init>(List,Set)	direct	if (set == null) {	if (false) {
+SETUNIQUELIST_GEN_SDL_42	104	statement-deletion	SDL	SetUniqueList.<init>(List,Set)	direct	throw new IllegalArgumentException("Set must not be null");	
+SETUNIQUELIST_GEN_SDL_43	106	statement-deletion	SDL	SetUniqueList.<init>(List,Set)	direct	this.set = set;	
+SETUNIQUELIST_GEN_RVR_44	116	return-value-replacement	RVR	SetUniqueList.asSet()	direct	return UnmodifiableSet.unmodifiableSet(set);	return null;
+SETUNIQUELIST_GEN_ARP_45	116	argument-replacement	ARP	SetUniqueList.asSet()	direct	return UnmodifiableSet.unmodifiableSet(set);	return UnmodifiableSet.unmodifiableSet(set + 1);
+SETUNIQUELIST_GEN_ARP_46	116	argument-replacement	ARP	SetUniqueList.asSet()	direct	return UnmodifiableSet.unmodifiableSet(set);	return UnmodifiableSet.unmodifiableSet(set - 1);
+SETUNIQUELIST_GEN_SDL_47	137	statement-deletion	SDL	SetUniqueList.add(Object)	direct	add(size(), object);	
+SETUNIQUELIST_GEN_ROR_48	140	relational-operator-replacement	ROR	SetUniqueList.add(Object)	direct	return sizeBefore != size();	return sizeBefore <= size();
+SETUNIQUELIST_GEN_ROR_49	140	relational-operator-replacement	ROR	SetUniqueList.add(Object)	direct	return sizeBefore != size();	return sizeBefore >= size();
+SETUNIQUELIST_GEN_ROR_50	140	relational-operator-replacement	ROR	SetUniqueList.add(Object)	direct	return sizeBefore != size();	return sizeBefore == size();
+SETUNIQUELIST_GEN_ROR_51	140	relational-operator-replacement	ROR	SetUniqueList.add(Object)	direct	return sizeBefore != size();	return sizeBefore < size();
+SETUNIQUELIST_GEN_ROR_52	140	relational-operator-replacement	ROR	SetUniqueList.add(Object)	direct	return sizeBefore != size();	return sizeBefore > size();
+SETUNIQUELIST_GEN_RVR_53	140	return-value-replacement	RVR	SetUniqueList.add(Object)	direct	return sizeBefore != size();	return true;
+SETUNIQUELIST_GEN_RVR_54	140	return-value-replacement	RVR	SetUniqueList.add(Object)	direct	return sizeBefore != size();	return false;
+SETUNIQUELIST_GEN_ROR_55	159	relational-operator-replacement	ROR	SetUniqueList.add(int,Object)	direct	if (set.contains(object) == false) {	if (set.contains(object) <= false) {
+SETUNIQUELIST_GEN_ROR_56	159	relational-operator-replacement	ROR	SetUniqueList.add(int,Object)	direct	if (set.contains(object) == false) {	if (set.contains(object) >= false) {
+SETUNIQUELIST_GEN_ROR_57	159	relational-operator-replacement	ROR	SetUniqueList.add(int,Object)	direct	if (set.contains(object) == false) {	if (set.contains(object) != false) {
+SETUNIQUELIST_GEN_ROR_58	159	relational-operator-replacement	ROR	SetUniqueList.add(int,Object)	direct	if (set.contains(object) == false) {	if (set.contains(object) < false) {
+SETUNIQUELIST_GEN_ROR_59	159	relational-operator-replacement	ROR	SetUniqueList.add(int,Object)	direct	if (set.contains(object) == false) {	if (set.contains(object) > false) {
+SETUNIQUELIST_GEN_COI_60	159	conditional-operator-insertion	COI	SetUniqueList.add(int,Object)	direct	if (set.contains(object) == false) {	if (!(set.contains(object) == false)) {
+SETUNIQUELIST_GEN_CTC_61	159	condition-to-constant	CTC	SetUniqueList.add(int,Object)	direct	if (set.contains(object) == false) {	if (true) {
+SETUNIQUELIST_GEN_CTC_62	159	condition-to-constant	CTC	SetUniqueList.add(int,Object)	direct	if (set.contains(object) == false) {	if (false) {
+SETUNIQUELIST_GEN_ARP_63	159	argument-replacement	ARP	SetUniqueList.add(int,Object)	direct	if (set.contains(object) == false) {	if (set.contains(object + 1) == false) {
+SETUNIQUELIST_GEN_ARP_64	159	argument-replacement	ARP	SetUniqueList.add(int,Object)	direct	if (set.contains(object) == false) {	if (set.contains(object - 1) == false) {
+SETUNIQUELIST_GEN_SDL_65	160	statement-deletion	SDL	SetUniqueList.add(int,Object)	direct	super.add(index, object);	
+SETUNIQUELIST_GEN_STR_66	160	statement-replacement	STR	SetUniqueList.add(int,Object)	direct	super.add(index, object);	super.add(index, object); super.add(index, object);
+SETUNIQUELIST_GEN_ARP_67	160	argument-replacement	ARP	SetUniqueList.add(int,Object)	direct	super.add(index, object);	super.add(object, index);
+SETUNIQUELIST_GEN_MCR_68	160	method-call-replacement	MCR	SetUniqueList.add(int,Object)	direct	super.add(index, object);	super.contains(index, object);
+SETUNIQUELIST_GEN_SDL_69	161	statement-deletion	SDL	SetUniqueList.add(int,Object)	direct	set.add(object);	
+SETUNIQUELIST_GEN_STR_70	161	statement-replacement	STR	SetUniqueList.add(int,Object)	direct	set.add(object);	set.add(object); set.add(object);
+SETUNIQUELIST_GEN_ARP_71	161	argument-replacement	ARP	SetUniqueList.add(int,Object)	direct	set.add(object);	set.add(object + 1);
+SETUNIQUELIST_GEN_ARP_72	161	argument-replacement	ARP	SetUniqueList.add(int,Object)	direct	set.add(object);	set.add(object - 1);
+SETUNIQUELIST_GEN_MCR_73	161	method-call-replacement	MCR	SetUniqueList.add(int,Object)	direct	set.add(object);	set.contains(object);
+SETUNIQUELIST_GEN_SDL_76	203	statement-deletion	SDL	SetUniqueList.addAll(int,Collection)	direct	final List<E> temp = new ArrayList<E>();	
+SETUNIQUELIST_GEN_COI_77	205	conditional-operator-insertion	COI	SetUniqueList.addAll(int,Collection)	direct	if (set.add(e)) {	if (!(set.add(e))) {
+SETUNIQUELIST_GEN_CTC_78	205	condition-to-constant	CTC	SetUniqueList.addAll(int,Collection)	direct	if (set.add(e)) {	if (true) {
+SETUNIQUELIST_GEN_CTC_79	205	condition-to-constant	CTC	SetUniqueList.addAll(int,Collection)	direct	if (set.add(e)) {	if (false) {
+SETUNIQUELIST_GEN_ARP_80	205	argument-replacement	ARP	SetUniqueList.addAll(int,Collection)	direct	if (set.add(e)) {	if (set.add(e + 1)) {
+SETUNIQUELIST_GEN_ARP_81	205	argument-replacement	ARP	SetUniqueList.addAll(int,Collection)	direct	if (set.add(e)) {	if (set.add(e - 1)) {
+SETUNIQUELIST_GEN_MCR_82	205	method-call-replacement	MCR	SetUniqueList.addAll(int,Collection)	direct	if (set.add(e)) {	if (set.contains(e)) {
+SETUNIQUELIST_GEN_SDL_83	206	statement-deletion	SDL	SetUniqueList.addAll(int,Collection)	direct	temp.add(e);	
+SETUNIQUELIST_GEN_STR_84	206	statement-replacement	STR	SetUniqueList.addAll(int,Collection)	direct	temp.add(e);	temp.add(e); temp.add(e);
+SETUNIQUELIST_GEN_ARP_85	206	argument-replacement	ARP	SetUniqueList.addAll(int,Collection)	direct	temp.add(e);	temp.add(e + 1);
+SETUNIQUELIST_GEN_ARP_86	206	argument-replacement	ARP	SetUniqueList.addAll(int,Collection)	direct	temp.add(e);	temp.add(e - 1);
+SETUNIQUELIST_GEN_MCR_87	206	method-call-replacement	MCR	SetUniqueList.addAll(int,Collection)	direct	temp.add(e);	temp.contains(e);
+SETUNIQUELIST_GEN_RVR_88	209	return-value-replacement	RVR	SetUniqueList.addAll(int,Collection)	direct	return super.addAll(index, temp);	return true;
+SETUNIQUELIST_GEN_RVR_89	209	return-value-replacement	RVR	SetUniqueList.addAll(int,Collection)	direct	return super.addAll(index, temp);	return false;
+SETUNIQUELIST_GEN_ARP_90	209	argument-replacement	ARP	SetUniqueList.addAll(int,Collection)	direct	return super.addAll(index, temp);	return super.addAll(temp, index);
+SETUNIQUELIST_GEN_ARP_91	229	argument-replacement	ARP	SetUniqueList.set(int,Object)	direct	final E removed = super.set(index, object);	final E removed = super.set(object, index);
+SETUNIQUELIST_GEN_ROR_92	231	relational-operator-replacement	ROR	SetUniqueList.set(int,Object)	direct	if (pos != -1 && pos != index) {	if (pos <= -1 && pos != index) {
+SETUNIQUELIST_GEN_ROR_93	231	relational-operator-replacement	ROR	SetUniqueList.set(int,Object)	direct	if (pos != -1 && pos != index) {	if (pos >= -1 && pos != index) {
+SETUNIQUELIST_GEN_ROR_94	231	relational-operator-replacement	ROR	SetUniqueList.set(int,Object)	direct	if (pos != -1 && pos != index) {	if (pos == -1 && pos != index) {
+SETUNIQUELIST_GEN_ROR_95	231	relational-operator-replacement	ROR	SetUniqueList.set(int,Object)	direct	if (pos != -1 && pos != index) {	if (pos < -1 && pos != index) {
+SETUNIQUELIST_GEN_ROR_96	231	relational-operator-replacement	ROR	SetUniqueList.set(int,Object)	direct	if (pos != -1 && pos != index) {	if (pos > -1 && pos != index) {
+SETUNIQUELIST_GEN_ROR_97	231	relational-operator-replacement	ROR	SetUniqueList.set(int,Object)	direct	if (pos != -1 && pos != index) {	if (pos != -1 && pos <= index) {
+SETUNIQUELIST_GEN_ROR_98	231	relational-operator-replacement	ROR	SetUniqueList.set(int,Object)	direct	if (pos != -1 && pos != index) {	if (pos != -1 && pos >= index) {
+SETUNIQUELIST_GEN_ROR_99	231	relational-operator-replacement	ROR	SetUniqueList.set(int,Object)	direct	if (pos != -1 && pos != index) {	if (pos != -1 && pos == index) {
+SETUNIQUELIST_GEN_ROR_100	231	relational-operator-replacement	ROR	SetUniqueList.set(int,Object)	direct	if (pos != -1 && pos != index) {	if (pos != -1 && pos < index) {
+SETUNIQUELIST_GEN_ROR_101	231	relational-operator-replacement	ROR	SetUniqueList.set(int,Object)	direct	if (pos != -1 && pos != index) {	if (pos != -1 && pos > index) {
+SETUNIQUELIST_GEN_COR_102	231	conditional-operator-replacement	COR	SetUniqueList.set(int,Object)	direct	if (pos != -1 && pos != index) {	if (pos != -1 || pos != index) {
+SETUNIQUELIST_GEN_COI_103	231	conditional-operator-insertion	COI	SetUniqueList.set(int,Object)	direct	if (pos != -1 && pos != index) {	if (!(pos != -1 && pos != index)) {
+SETUNIQUELIST_GEN_CRP_104	231	constant-replacement	CRP	SetUniqueList.set(int,Object)	direct	if (pos != -1 && pos != index) {	if (pos != -0 && pos != index) {
+SETUNIQUELIST_GEN_CRP_105	231	constant-replacement	CRP	SetUniqueList.set(int,Object)	direct	if (pos != -1 && pos != index) {	if (pos != --1 && pos != index) {
+SETUNIQUELIST_GEN_CRP_106	231	constant-replacement	CRP	SetUniqueList.set(int,Object)	direct	if (pos != -1 && pos != index) {	if (pos != -2 && pos != index) {
+SETUNIQUELIST_GEN_CTC_107	231	condition-to-constant	CTC	SetUniqueList.set(int,Object)	direct	if (pos != -1 && pos != index) {	if (true) {
+SETUNIQUELIST_GEN_CTC_108	231	condition-to-constant	CTC	SetUniqueList.set(int,Object)	direct	if (pos != -1 && pos != index) {	if (false) {
+SETUNIQUELIST_GEN_ARP_109	234	argument-replacement	ARP	SetUniqueList.set(int,Object)	direct	super.remove(pos); // remove the duplicate by index	super.remove(pos + 1); // remove the duplicate by index
+SETUNIQUELIST_GEN_ARP_110	234	argument-replacement	ARP	SetUniqueList.set(int,Object)	direct	super.remove(pos); // remove the duplicate by index	super.remove(pos - 1); // remove the duplicate by index
+SETUNIQUELIST_GEN_MCR_111	234	method-call-replacement	MCR	SetUniqueList.set(int,Object)	direct	super.remove(pos); // remove the duplicate by index	super.get(pos); // remove the duplicate by index
+SETUNIQUELIST_GEN_ROR_112	236	relational-operator-replacement	ROR	SetUniqueList.set(int,Object)	direct	} else if (pos == -1) {	} else if (pos <= -1) {
+SETUNIQUELIST_GEN_ROR_113	236	relational-operator-replacement	ROR	SetUniqueList.set(int,Object)	direct	} else if (pos == -1) {	} else if (pos >= -1) {
+SETUNIQUELIST_GEN_ROR_114	236	relational-operator-replacement	ROR	SetUniqueList.set(int,Object)	direct	} else if (pos == -1) {	} else if (pos != -1) {
+SETUNIQUELIST_GEN_ROR_115	236	relational-operator-replacement	ROR	SetUniqueList.set(int,Object)	direct	} else if (pos == -1) {	} else if (pos < -1) {
+SETUNIQUELIST_GEN_ROR_116	236	relational-operator-replacement	ROR	SetUniqueList.set(int,Object)	direct	} else if (pos == -1) {	} else if (pos > -1) {
+SETUNIQUELIST_GEN_CRP_117	236	constant-replacement	CRP	SetUniqueList.set(int,Object)	direct	} else if (pos == -1) {	} else if (pos == -0) {
+SETUNIQUELIST_GEN_CRP_118	236	constant-replacement	CRP	SetUniqueList.set(int,Object)	direct	} else if (pos == -1) {	} else if (pos == --1) {
+SETUNIQUELIST_GEN_CRP_119	236	constant-replacement	CRP	SetUniqueList.set(int,Object)	direct	} else if (pos == -1) {	} else if (pos == -2) {
+SETUNIQUELIST_GEN_ARP_120	237	argument-replacement	ARP	SetUniqueList.set(int,Object)	direct	set.add(object); // add the new item to the unique set	set.add(object + 1); // add the new item to the unique set
+SETUNIQUELIST_GEN_ARP_121	237	argument-replacement	ARP	SetUniqueList.set(int,Object)	direct	set.add(object); // add the new item to the unique set	set.add(object - 1); // add the new item to the unique set
+SETUNIQUELIST_GEN_MCR_122	237	method-call-replacement	MCR	SetUniqueList.set(int,Object)	direct	set.add(object); // add the new item to the unique set	set.contains(object); // add the new item to the unique set
+SETUNIQUELIST_GEN_ARP_123	246	argument-replacement	ARP	SetUniqueList.remove(Object)	direct	final boolean result = set.remove(object);	final boolean result = set.remove(object + 1);
+SETUNIQUELIST_GEN_ARP_124	246	argument-replacement	ARP	SetUniqueList.remove(Object)	direct	final boolean result = set.remove(object);	final boolean result = set.remove(object - 1);
+SETUNIQUELIST_GEN_MCR_125	246	method-call-replacement	MCR	SetUniqueList.remove(Object)	direct	final boolean result = set.remove(object);	final boolean result = set.get(object);
+SETUNIQUELIST_GEN_COI_126	247	conditional-operator-insertion	COI	SetUniqueList.remove(Object)	direct	if (result) {	if (!(result)) {
+SETUNIQUELIST_GEN_CTC_127	247	condition-to-constant	CTC	SetUniqueList.remove(Object)	direct	if (result) {	if (true) {
+SETUNIQUELIST_GEN_CTC_128	247	condition-to-constant	CTC	SetUniqueList.remove(Object)	direct	if (result) {	if (false) {
+SETUNIQUELIST_GEN_SDL_129	248	statement-deletion	SDL	SetUniqueList.remove(Object)	direct	super.remove(object);	
+SETUNIQUELIST_GEN_STR_130	248	statement-replacement	STR	SetUniqueList.remove(Object)	direct	super.remove(object);	super.remove(object); super.remove(object);
+SETUNIQUELIST_GEN_ARP_131	248	argument-replacement	ARP	SetUniqueList.remove(Object)	direct	super.remove(object);	super.remove(object + 1);
+SETUNIQUELIST_GEN_ARP_132	248	argument-replacement	ARP	SetUniqueList.remove(Object)	direct	super.remove(object);	super.remove(object - 1);
+SETUNIQUELIST_GEN_MCR_133	248	method-call-replacement	MCR	SetUniqueList.remove(Object)	direct	super.remove(object);	super.get(object);
+SETUNIQUELIST_GEN_RVR_134	250	return-value-replacement	RVR	SetUniqueList.remove(Object)	direct	return result;	return true;
+SETUNIQUELIST_GEN_RVR_135	250	return-value-replacement	RVR	SetUniqueList.remove(Object)	direct	return result;	return false;
+SETUNIQUELIST_GEN_ARP_136	255	argument-replacement	ARP	SetUniqueList.remove(int)	direct	final E result = super.remove(index);	final E result = super.remove(index + 1);
+SETUNIQUELIST_GEN_ARP_137	255	argument-replacement	ARP	SetUniqueList.remove(int)	direct	final E result = super.remove(index);	final E result = super.remove(index - 1);
+SETUNIQUELIST_GEN_MCR_138	255	method-call-replacement	MCR	SetUniqueList.remove(int)	direct	final E result = super.remove(index);	final E result = super.get(index);
+SETUNIQUELIST_GEN_SDL_139	256	statement-deletion	SDL	SetUniqueList.remove(int)	direct	set.remove(result);	
+SETUNIQUELIST_GEN_STR_140	256	statement-replacement	STR	SetUniqueList.remove(int)	direct	set.remove(result);	set.remove(result); set.remove(result);
+SETUNIQUELIST_GEN_ARP_141	256	argument-replacement	ARP	SetUniqueList.remove(int)	direct	set.remove(result);	set.remove(result + 1);
+SETUNIQUELIST_GEN_ARP_142	256	argument-replacement	ARP	SetUniqueList.remove(int)	direct	set.remove(result);	set.remove(result - 1);
+SETUNIQUELIST_GEN_MCR_143	256	method-call-replacement	MCR	SetUniqueList.remove(int)	direct	set.remove(result);	set.get(result);
+SETUNIQUELIST_GEN_RVR_144	257	return-value-replacement	RVR	SetUniqueList.remove(int)	direct	return result;	return null;
+SETUNIQUELIST_GEN_RVR_191	300	return-value-replacement	RVR	SetUniqueList.contains(Object)	direct	return set.contains(object);	return true;
+SETUNIQUELIST_GEN_RVR_192	300	return-value-replacement	RVR	SetUniqueList.contains(Object)	direct	return set.contains(object);	return false;
+SETUNIQUELIST_GEN_ARP_193	300	argument-replacement	ARP	SetUniqueList.contains(Object)	direct	return set.contains(object);	return set.contains(object + 1);
+SETUNIQUELIST_GEN_ARP_194	300	argument-replacement	ARP	SetUniqueList.contains(Object)	direct	return set.contains(object);	return set.contains(object - 1);
+SETUNIQUELIST_GEN_RVR_199	310	return-value-replacement	RVR	SetUniqueList.iterator()	indirect	return new SetListIterator<E>(super.iterator(), set);	return null;
+SETUNIQUELIST_GEN_SDL_204	325	statement-deletion	SDL	SetUniqueList.subList(int,int)	direct	final List<E> superSubList = super.subList(fromIndex, toIndex);	
+SETUNIQUELIST_GEN_ARP_205	325	argument-replacement	ARP	SetUniqueList.subList(int,int)	direct	final List<E> superSubList = super.subList(fromIndex, toIndex);	final List<E> superSubList = super.subList(toIndex, fromIndex);
+SETUNIQUELIST_GEN_SDL_206	326	statement-deletion	SDL	SetUniqueList.subList(int,int)	direct	final Set<E> subSet = createSetBasedOnList(set, superSubList);	
+SETUNIQUELIST_GEN_RVR_207	327	return-value-replacement	RVR	SetUniqueList.subList(int,int)	direct	return new SetUniqueList<E>(superSubList, subSet);	return null;
+SETUNIQUELIST_GEN_SDL_208	343	statement-deletion	SDL	SetUniqueList.createSetBasedOnList(Set,List)	indirect	Set<E> subSet;	
+SETUNIQUELIST_GEN_COI_209	344	conditional-operator-insertion	COI	SetUniqueList.createSetBasedOnList(Set,List)	indirect	if (set.getClass().equals(HashSet.class)) {	if (!(set.getClass().equals(HashSet.class))) {
+SETUNIQUELIST_GEN_CTC_210	344	condition-to-constant	CTC	SetUniqueList.createSetBasedOnList(Set,List)	indirect	if (set.getClass().equals(HashSet.class)) {	if (true) {
+SETUNIQUELIST_GEN_CTC_211	344	condition-to-constant	CTC	SetUniqueList.createSetBasedOnList(Set,List)	indirect	if (set.getClass().equals(HashSet.class)) {	if (false) {
+SETUNIQUELIST_GEN_ARP_212	344	argument-replacement	ARP	SetUniqueList.createSetBasedOnList(Set,List)	indirect	if (set.getClass().equals(HashSet.class)) {	if (set.getClass().equals(HashSet.class + 1)) {
+SETUNIQUELIST_GEN_ARP_213	344	argument-replacement	ARP	SetUniqueList.createSetBasedOnList(Set,List)	indirect	if (set.getClass().equals(HashSet.class)) {	if (set.getClass().equals(HashSet.class - 1)) {
+SETUNIQUELIST_GEN_SDL_214	345	statement-deletion	SDL	SetUniqueList.createSetBasedOnList(Set,List)	indirect	subSet = new HashSet<E>(list.size());	
+SETUNIQUELIST_GEN_MCR_215	345	method-call-replacement	MCR	SetUniqueList.createSetBasedOnList(Set,List)	indirect	subSet = new HashSet<E>(list.size());	subSet = new HashSet<E>(list.hashCode());
+SETUNIQUELIST_GEN_SDL_216	348	statement-deletion	SDL	SetUniqueList.createSetBasedOnList(Set,List)	indirect	subSet = set.getClass().newInstance();	
+SETUNIQUELIST_GEN_SDL_217	355	statement-deletion	SDL	SetUniqueList.createSetBasedOnList(Set,List)	indirect	subSet.addAll(list);	
+SETUNIQUELIST_GEN_STR_218	355	statement-replacement	STR	SetUniqueList.createSetBasedOnList(Set,List)	indirect	subSet.addAll(list);	subSet.addAll(list); subSet.addAll(list);
+SETUNIQUELIST_GEN_ARP_219	355	argument-replacement	ARP	SetUniqueList.createSetBasedOnList(Set,List)	indirect	subSet.addAll(list);	subSet.addAll(list + 1);
+SETUNIQUELIST_GEN_ARP_220	355	argument-replacement	ARP	SetUniqueList.createSetBasedOnList(Set,List)	indirect	subSet.addAll(list);	subSet.addAll(list - 1);
+SETUNIQUELIST_GEN_RVR_221	356	return-value-replacement	RVR	SetUniqueList.createSetBasedOnList(Set,List)	indirect	return subSet;	return null;
+SETUNIQUELIST_GEN_SDL_222	369	statement-deletion	SDL	SetUniqueList.SetListIterator.<init>(Iterator,Set)	indirect	super(it);	
+SETUNIQUELIST_GEN_SDL_223	375	statement-deletion	SDL	SetUniqueList.SetListIterator.next()	indirect	last = super.next();	
+SETUNIQUELIST_GEN_RVR_224	376	return-value-replacement	RVR	SetUniqueList.SetListIterator.next()	indirect	return last;	return null;

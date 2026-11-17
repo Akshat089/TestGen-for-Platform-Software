@@ -1,0 +1,4719 @@
+/*
+ * GENERATED MUTATION SUITE — flat3map
+ *
+ * Produced by OperatorMutantGenerator from:
+ *   /mnt/c/Codes/TestGen-for-Platform-Software/benchmarks/defects4j/work/Collections-6f/src/java/org/apache/commons/collections/map/Flat3Map.java
+ *
+ * DO NOT EDIT. Regenerate with benchmarks/defects4j/mutation.sh --regen flat3map
+ * Each mutant is planted at the line in flat3map.mutants.tsv, not by `in:`.
+ *
+ * Every operator in MutationOperator is applied to every line of the library
+ * that admits it, so this file is what the specification is measured against
+ * when nobody is choosing the faults. It is the counterpart of the
+ * hand-written set in mutations/flat3map.mutants:
+ * that one asks whether the suite catches the faults we thought of, this one
+ * asks what fraction of all faults of each KIND it catches.
+ *
+ * `expect` is absent throughout: a generated mutant carries no prediction,
+ * and some of these are equivalent to the original and cannot be killed by
+ * anyone. The run measures; it does not check a declaration.
+ */
+
+mutant FLAT3MAP_GEN_SDL_12 {
+    description: the statement is removed, in Flat3Map.<init>() at line 107
+    operator:    statement-deletion
+    in:          <init>
+    file:        Flat3Map.java
+    find:        super();
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ROR_14 {
+    description: != becomes <=, in Flat3Map.get(Object) at line 129
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (delegateMap != null) {
+    replace:     if (delegateMap <= null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_15 {
+    description: != becomes >=, in Flat3Map.get(Object) at line 129
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (delegateMap != null) {
+    replace:     if (delegateMap >= null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_16 {
+    description: != becomes ==, in Flat3Map.get(Object) at line 129
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (delegateMap != null) {
+    replace:     if (delegateMap == null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_17 {
+    description: != becomes <, in Flat3Map.get(Object) at line 129
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (delegateMap != null) {
+    replace:     if (delegateMap < null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_18 {
+    description: != becomes >, in Flat3Map.get(Object) at line 129
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (delegateMap != null) {
+    replace:     if (delegateMap > null) {
+}
+
+mutant FLAT3MAP_GEN_COI_19 {
+    description: the guard is negated, in Flat3Map.get(Object) at line 129
+    operator:    conditional-operator-insertion
+    in:          get
+    file:        Flat3Map.java
+    find:        if (delegateMap != null) {
+    replace:     if (!(delegateMap != null)) {
+}
+
+mutant FLAT3MAP_GEN_CTC_20 {
+    description: the branch is always taken, in Flat3Map.get(Object) at line 129
+    operator:    condition-to-constant
+    in:          get
+    file:        Flat3Map.java
+    find:        if (delegateMap != null) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_21 {
+    description: the branch is never taken, in Flat3Map.get(Object) at line 129
+    operator:    condition-to-constant
+    in:          get
+    file:        Flat3Map.java
+    find:        if (delegateMap != null) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_RVR_22 {
+    description: the answer becomes null, in Flat3Map.get(Object) at line 130
+    operator:    return-value-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        return delegateMap.get(key);
+    replace:     return null;
+}
+
+mutant FLAT3MAP_GEN_ARP_23 {
+    description: the argument to get() is shifted by + 1, in Flat3Map.get(Object) at line 130
+    operator:    argument-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        return delegateMap.get(key);
+    replace:     return delegateMap.get(key + 1);
+}
+
+mutant FLAT3MAP_GEN_ARP_24 {
+    description: the argument to get() is shifted by - 1, in Flat3Map.get(Object) at line 130
+    operator:    argument-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        return delegateMap.get(key);
+    replace:     return delegateMap.get(key - 1);
+}
+
+mutant FLAT3MAP_GEN_MCR_25 {
+    description: .get( becomes .remove(, in Flat3Map.get(Object) at line 130
+    operator:    method-call-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        return delegateMap.get(key);
+    replace:     return delegateMap.remove(key);
+}
+
+mutant FLAT3MAP_GEN_ROR_26 {
+    description: == becomes <=, in Flat3Map.get(Object) at line 132
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key == null) {
+    replace:     if (key <= null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_27 {
+    description: == becomes >=, in Flat3Map.get(Object) at line 132
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key == null) {
+    replace:     if (key >= null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_28 {
+    description: == becomes !=, in Flat3Map.get(Object) at line 132
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key == null) {
+    replace:     if (key != null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_29 {
+    description: == becomes <, in Flat3Map.get(Object) at line 132
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key == null) {
+    replace:     if (key < null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_30 {
+    description: == becomes >, in Flat3Map.get(Object) at line 132
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key == null) {
+    replace:     if (key > null) {
+}
+
+mutant FLAT3MAP_GEN_COI_31 {
+    description: the guard is negated, in Flat3Map.get(Object) at line 132
+    operator:    conditional-operator-insertion
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key == null) {
+    replace:     if (!(key == null)) {
+}
+
+mutant FLAT3MAP_GEN_CTC_32 {
+    description: the branch is always taken, in Flat3Map.get(Object) at line 132
+    operator:    condition-to-constant
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key == null) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_33 {
+    description: the branch is never taken, in Flat3Map.get(Object) at line 132
+    operator:    condition-to-constant
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key == null) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_34 {
+    description: == becomes <=, in Flat3Map.get(Object) at line 136
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key3 == null) return value3;
+    replace:     if (key3 <= null) return value3;
+}
+
+mutant FLAT3MAP_GEN_ROR_35 {
+    description: == becomes >=, in Flat3Map.get(Object) at line 136
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key3 == null) return value3;
+    replace:     if (key3 >= null) return value3;
+}
+
+mutant FLAT3MAP_GEN_ROR_36 {
+    description: == becomes !=, in Flat3Map.get(Object) at line 136
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key3 == null) return value3;
+    replace:     if (key3 != null) return value3;
+}
+
+mutant FLAT3MAP_GEN_ROR_37 {
+    description: == becomes <, in Flat3Map.get(Object) at line 136
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key3 == null) return value3;
+    replace:     if (key3 < null) return value3;
+}
+
+mutant FLAT3MAP_GEN_ROR_38 {
+    description: == becomes >, in Flat3Map.get(Object) at line 136
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key3 == null) return value3;
+    replace:     if (key3 > null) return value3;
+}
+
+mutant FLAT3MAP_GEN_SDL_39 {
+    description: the statement is removed, in Flat3Map.get(Object) at line 136
+    operator:    statement-deletion
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key3 == null) return value3;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ROR_40 {
+    description: == becomes <=, in Flat3Map.get(Object) at line 138
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key2 == null) return value2;
+    replace:     if (key2 <= null) return value2;
+}
+
+mutant FLAT3MAP_GEN_ROR_41 {
+    description: == becomes >=, in Flat3Map.get(Object) at line 138
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key2 == null) return value2;
+    replace:     if (key2 >= null) return value2;
+}
+
+mutant FLAT3MAP_GEN_ROR_42 {
+    description: == becomes !=, in Flat3Map.get(Object) at line 138
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key2 == null) return value2;
+    replace:     if (key2 != null) return value2;
+}
+
+mutant FLAT3MAP_GEN_ROR_43 {
+    description: == becomes <, in Flat3Map.get(Object) at line 138
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key2 == null) return value2;
+    replace:     if (key2 < null) return value2;
+}
+
+mutant FLAT3MAP_GEN_ROR_44 {
+    description: == becomes >, in Flat3Map.get(Object) at line 138
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key2 == null) return value2;
+    replace:     if (key2 > null) return value2;
+}
+
+mutant FLAT3MAP_GEN_SDL_45 {
+    description: the statement is removed, in Flat3Map.get(Object) at line 138
+    operator:    statement-deletion
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key2 == null) return value2;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ROR_46 {
+    description: == becomes <=, in Flat3Map.get(Object) at line 140
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key1 == null) return value1;
+    replace:     if (key1 <= null) return value1;
+}
+
+mutant FLAT3MAP_GEN_ROR_47 {
+    description: == becomes >=, in Flat3Map.get(Object) at line 140
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key1 == null) return value1;
+    replace:     if (key1 >= null) return value1;
+}
+
+mutant FLAT3MAP_GEN_ROR_48 {
+    description: == becomes !=, in Flat3Map.get(Object) at line 140
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key1 == null) return value1;
+    replace:     if (key1 != null) return value1;
+}
+
+mutant FLAT3MAP_GEN_ROR_49 {
+    description: == becomes <, in Flat3Map.get(Object) at line 140
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key1 == null) return value1;
+    replace:     if (key1 < null) return value1;
+}
+
+mutant FLAT3MAP_GEN_ROR_50 {
+    description: == becomes >, in Flat3Map.get(Object) at line 140
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key1 == null) return value1;
+    replace:     if (key1 > null) return value1;
+}
+
+mutant FLAT3MAP_GEN_SDL_51 {
+    description: the statement is removed, in Flat3Map.get(Object) at line 140
+    operator:    statement-deletion
+    in:          get
+    file:        Flat3Map.java
+    find:        if (key1 == null) return value1;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ROR_52 {
+    description: > becomes <=, in Flat3Map.get(Object) at line 143
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (size > 0) {
+    replace:     if (size <= 0) {
+}
+
+mutant FLAT3MAP_GEN_ROR_53 {
+    description: > becomes >=, in Flat3Map.get(Object) at line 143
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (size > 0) {
+    replace:     if (size >= 0) {
+}
+
+mutant FLAT3MAP_GEN_ROR_54 {
+    description: > becomes ==, in Flat3Map.get(Object) at line 143
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (size > 0) {
+    replace:     if (size == 0) {
+}
+
+mutant FLAT3MAP_GEN_ROR_55 {
+    description: > becomes !=, in Flat3Map.get(Object) at line 143
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (size > 0) {
+    replace:     if (size != 0) {
+}
+
+mutant FLAT3MAP_GEN_ROR_56 {
+    description: > becomes <, in Flat3Map.get(Object) at line 143
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (size > 0) {
+    replace:     if (size < 0) {
+}
+
+mutant FLAT3MAP_GEN_COI_57 {
+    description: the guard is negated, in Flat3Map.get(Object) at line 143
+    operator:    conditional-operator-insertion
+    in:          get
+    file:        Flat3Map.java
+    find:        if (size > 0) {
+    replace:     if (!(size > 0)) {
+}
+
+mutant FLAT3MAP_GEN_CRP_58 {
+    description: the literal 0 becomes 1, in Flat3Map.get(Object) at line 143
+    operator:    constant-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (size > 0) {
+    replace:     if (size > 1) {
+}
+
+mutant FLAT3MAP_GEN_CRP_59 {
+    description: the literal 0 becomes -1, in Flat3Map.get(Object) at line 143
+    operator:    constant-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (size > 0) {
+    replace:     if (size > -1) {
+}
+
+mutant FLAT3MAP_GEN_CTC_60 {
+    description: the branch is always taken, in Flat3Map.get(Object) at line 143
+    operator:    condition-to-constant
+    in:          get
+    file:        Flat3Map.java
+    find:        if (size > 0) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_61 {
+    description: the branch is never taken, in Flat3Map.get(Object) at line 143
+    operator:    condition-to-constant
+    in:          get
+    file:        Flat3Map.java
+    find:        if (size > 0) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_62 {
+    description: == becomes <=, in Flat3Map.get(Object) at line 148
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) return value3;
+    replace:     if (hash3 <= hashCode && key.equals(key3)) return value3;
+}
+
+mutant FLAT3MAP_GEN_ROR_63 {
+    description: == becomes >=, in Flat3Map.get(Object) at line 148
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) return value3;
+    replace:     if (hash3 >= hashCode && key.equals(key3)) return value3;
+}
+
+mutant FLAT3MAP_GEN_ROR_64 {
+    description: == becomes !=, in Flat3Map.get(Object) at line 148
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) return value3;
+    replace:     if (hash3 != hashCode && key.equals(key3)) return value3;
+}
+
+mutant FLAT3MAP_GEN_ROR_65 {
+    description: == becomes <, in Flat3Map.get(Object) at line 148
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) return value3;
+    replace:     if (hash3 < hashCode && key.equals(key3)) return value3;
+}
+
+mutant FLAT3MAP_GEN_ROR_66 {
+    description: == becomes >, in Flat3Map.get(Object) at line 148
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) return value3;
+    replace:     if (hash3 > hashCode && key.equals(key3)) return value3;
+}
+
+mutant FLAT3MAP_GEN_COR_67 {
+    description: && becomes ||, in Flat3Map.get(Object) at line 148
+    operator:    conditional-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) return value3;
+    replace:     if (hash3 == hashCode || key.equals(key3)) return value3;
+}
+
+mutant FLAT3MAP_GEN_SDL_68 {
+    description: the statement is removed, in Flat3Map.get(Object) at line 148
+    operator:    statement-deletion
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) return value3;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ARP_69 {
+    description: the argument to equals() is shifted by + 1, in Flat3Map.get(Object) at line 148
+    operator:    argument-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) return value3;
+    replace:     if (hash3 == hashCode && key.equals(key3 + 1)) return value3;
+}
+
+mutant FLAT3MAP_GEN_ARP_70 {
+    description: the argument to equals() is shifted by - 1, in Flat3Map.get(Object) at line 148
+    operator:    argument-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) return value3;
+    replace:     if (hash3 == hashCode && key.equals(key3 - 1)) return value3;
+}
+
+mutant FLAT3MAP_GEN_ROR_71 {
+    description: == becomes <=, in Flat3Map.get(Object) at line 150
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) return value2;
+    replace:     if (hash2 <= hashCode && key.equals(key2)) return value2;
+}
+
+mutant FLAT3MAP_GEN_ROR_72 {
+    description: == becomes >=, in Flat3Map.get(Object) at line 150
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) return value2;
+    replace:     if (hash2 >= hashCode && key.equals(key2)) return value2;
+}
+
+mutant FLAT3MAP_GEN_ROR_73 {
+    description: == becomes !=, in Flat3Map.get(Object) at line 150
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) return value2;
+    replace:     if (hash2 != hashCode && key.equals(key2)) return value2;
+}
+
+mutant FLAT3MAP_GEN_ROR_74 {
+    description: == becomes <, in Flat3Map.get(Object) at line 150
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) return value2;
+    replace:     if (hash2 < hashCode && key.equals(key2)) return value2;
+}
+
+mutant FLAT3MAP_GEN_ROR_75 {
+    description: == becomes >, in Flat3Map.get(Object) at line 150
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) return value2;
+    replace:     if (hash2 > hashCode && key.equals(key2)) return value2;
+}
+
+mutant FLAT3MAP_GEN_COR_76 {
+    description: && becomes ||, in Flat3Map.get(Object) at line 150
+    operator:    conditional-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) return value2;
+    replace:     if (hash2 == hashCode || key.equals(key2)) return value2;
+}
+
+mutant FLAT3MAP_GEN_SDL_77 {
+    description: the statement is removed, in Flat3Map.get(Object) at line 150
+    operator:    statement-deletion
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) return value2;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ARP_78 {
+    description: the argument to equals() is shifted by + 1, in Flat3Map.get(Object) at line 150
+    operator:    argument-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) return value2;
+    replace:     if (hash2 == hashCode && key.equals(key2 + 1)) return value2;
+}
+
+mutant FLAT3MAP_GEN_ARP_79 {
+    description: the argument to equals() is shifted by - 1, in Flat3Map.get(Object) at line 150
+    operator:    argument-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) return value2;
+    replace:     if (hash2 == hashCode && key.equals(key2 - 1)) return value2;
+}
+
+mutant FLAT3MAP_GEN_ROR_80 {
+    description: == becomes <=, in Flat3Map.get(Object) at line 152
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) return value1;
+    replace:     if (hash1 <= hashCode && key.equals(key1)) return value1;
+}
+
+mutant FLAT3MAP_GEN_ROR_81 {
+    description: == becomes >=, in Flat3Map.get(Object) at line 152
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) return value1;
+    replace:     if (hash1 >= hashCode && key.equals(key1)) return value1;
+}
+
+mutant FLAT3MAP_GEN_ROR_82 {
+    description: == becomes !=, in Flat3Map.get(Object) at line 152
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) return value1;
+    replace:     if (hash1 != hashCode && key.equals(key1)) return value1;
+}
+
+mutant FLAT3MAP_GEN_ROR_83 {
+    description: == becomes <, in Flat3Map.get(Object) at line 152
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) return value1;
+    replace:     if (hash1 < hashCode && key.equals(key1)) return value1;
+}
+
+mutant FLAT3MAP_GEN_ROR_84 {
+    description: == becomes >, in Flat3Map.get(Object) at line 152
+    operator:    relational-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) return value1;
+    replace:     if (hash1 > hashCode && key.equals(key1)) return value1;
+}
+
+mutant FLAT3MAP_GEN_COR_85 {
+    description: && becomes ||, in Flat3Map.get(Object) at line 152
+    operator:    conditional-operator-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) return value1;
+    replace:     if (hash1 == hashCode || key.equals(key1)) return value1;
+}
+
+mutant FLAT3MAP_GEN_SDL_86 {
+    description: the statement is removed, in Flat3Map.get(Object) at line 152
+    operator:    statement-deletion
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) return value1;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ARP_87 {
+    description: the argument to equals() is shifted by + 1, in Flat3Map.get(Object) at line 152
+    operator:    argument-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) return value1;
+    replace:     if (hash1 == hashCode && key.equals(key1 + 1)) return value1;
+}
+
+mutant FLAT3MAP_GEN_ARP_88 {
+    description: the argument to equals() is shifted by - 1, in Flat3Map.get(Object) at line 152
+    operator:    argument-replacement
+    in:          get
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) return value1;
+    replace:     if (hash1 == hashCode && key.equals(key1 - 1)) return value1;
+}
+
+mutant FLAT3MAP_GEN_UOI_89 {
+    description: the returned value is negated, in Flat3Map.size() at line 166
+    operator:    unary-operator-insertion
+    in:          size
+    file:        Flat3Map.java
+    find:        return delegateMap.size();
+    replace:     return -(delegateMap.size());
+}
+
+mutant FLAT3MAP_GEN_ABS_90 {
+    description: the returned value is forced negative, in Flat3Map.size() at line 166
+    operator:    absolute-value-insertion
+    in:          size
+    file:        Flat3Map.java
+    find:        return delegateMap.size();
+    replace:     return -Math.abs(delegateMap.size());
+}
+
+mutant FLAT3MAP_GEN_RVR_91 {
+    description: the answer becomes 0, in Flat3Map.size() at line 166
+    operator:    return-value-replacement
+    in:          size
+    file:        Flat3Map.java
+    find:        return delegateMap.size();
+    replace:     return 0;
+}
+
+mutant FLAT3MAP_GEN_RVR_92 {
+    description: the answer becomes 1, in Flat3Map.size() at line 166
+    operator:    return-value-replacement
+    in:          size
+    file:        Flat3Map.java
+    find:        return delegateMap.size();
+    replace:     return 1;
+}
+
+mutant FLAT3MAP_GEN_RVR_93 {
+    description: the answer becomes -1, in Flat3Map.size() at line 166
+    operator:    return-value-replacement
+    in:          size
+    file:        Flat3Map.java
+    find:        return delegateMap.size();
+    replace:     return -1;
+}
+
+mutant FLAT3MAP_GEN_MCR_94 {
+    description: .size() becomes .hashCode(), in Flat3Map.size() at line 166
+    operator:    method-call-replacement
+    in:          size
+    file:        Flat3Map.java
+    find:        return delegateMap.size();
+    replace:     return delegateMap.hashCode();
+}
+
+mutant FLAT3MAP_GEN_UOI_95 {
+    description: the returned value is negated, in Flat3Map.size() at line 168
+    operator:    unary-operator-insertion
+    in:          size
+    file:        Flat3Map.java
+    find:        return size;
+    replace:     return -(size);
+}
+
+mutant FLAT3MAP_GEN_ABS_96 {
+    description: the returned value is forced negative, in Flat3Map.size() at line 168
+    operator:    absolute-value-insertion
+    in:          size
+    file:        Flat3Map.java
+    find:        return size;
+    replace:     return -Math.abs(size);
+}
+
+mutant FLAT3MAP_GEN_RVR_97 {
+    description: the answer becomes 0, in Flat3Map.size() at line 168
+    operator:    return-value-replacement
+    in:          size
+    file:        Flat3Map.java
+    find:        return size;
+    replace:     return 0;
+}
+
+mutant FLAT3MAP_GEN_RVR_98 {
+    description: the answer becomes 1, in Flat3Map.size() at line 168
+    operator:    return-value-replacement
+    in:          size
+    file:        Flat3Map.java
+    find:        return size;
+    replace:     return 1;
+}
+
+mutant FLAT3MAP_GEN_RVR_99 {
+    description: the answer becomes -1, in Flat3Map.size() at line 168
+    operator:    return-value-replacement
+    in:          size
+    file:        Flat3Map.java
+    find:        return size;
+    replace:     return -1;
+}
+
+mutant FLAT3MAP_GEN_RVR_109 {
+    description: the answer is always true, in Flat3Map.containsKey(Object) at line 189
+    operator:    return-value-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        return delegateMap.containsKey(key);
+    replace:     return true;
+}
+
+mutant FLAT3MAP_GEN_RVR_110 {
+    description: the answer is always false, in Flat3Map.containsKey(Object) at line 189
+    operator:    return-value-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        return delegateMap.containsKey(key);
+    replace:     return false;
+}
+
+mutant FLAT3MAP_GEN_ARP_111 {
+    description: the argument to containsKey() is shifted by + 1, in Flat3Map.containsKey(Object) at line 189
+    operator:    argument-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        return delegateMap.containsKey(key);
+    replace:     return delegateMap.containsKey(key + 1);
+}
+
+mutant FLAT3MAP_GEN_ARP_112 {
+    description: the argument to containsKey() is shifted by - 1, in Flat3Map.containsKey(Object) at line 189
+    operator:    argument-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        return delegateMap.containsKey(key);
+    replace:     return delegateMap.containsKey(key - 1);
+}
+
+mutant FLAT3MAP_GEN_MCR_113 {
+    description: .containsKey( becomes .containsValue(, in Flat3Map.containsKey(Object) at line 189
+    operator:    method-call-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        return delegateMap.containsKey(key);
+    replace:     return delegateMap.containsValue(key);
+}
+
+mutant FLAT3MAP_GEN_ROR_114 {
+    description: == becomes <=, in Flat3Map.containsKey(Object) at line 194
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (key3 == null) return true;
+    replace:     if (key3 <= null) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_115 {
+    description: == becomes >=, in Flat3Map.containsKey(Object) at line 194
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (key3 == null) return true;
+    replace:     if (key3 >= null) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_116 {
+    description: == becomes !=, in Flat3Map.containsKey(Object) at line 194
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (key3 == null) return true;
+    replace:     if (key3 != null) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_117 {
+    description: == becomes <, in Flat3Map.containsKey(Object) at line 194
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (key3 == null) return true;
+    replace:     if (key3 < null) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_118 {
+    description: == becomes >, in Flat3Map.containsKey(Object) at line 194
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (key3 == null) return true;
+    replace:     if (key3 > null) return true;
+}
+
+mutant FLAT3MAP_GEN_SDL_119 {
+    description: the statement is removed, in Flat3Map.containsKey(Object) at line 194
+    operator:    statement-deletion
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (key3 == null) return true;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ROR_120 {
+    description: == becomes <=, in Flat3Map.containsKey(Object) at line 196
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (key2 == null) return true;
+    replace:     if (key2 <= null) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_121 {
+    description: == becomes >=, in Flat3Map.containsKey(Object) at line 196
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (key2 == null) return true;
+    replace:     if (key2 >= null) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_122 {
+    description: == becomes !=, in Flat3Map.containsKey(Object) at line 196
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (key2 == null) return true;
+    replace:     if (key2 != null) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_123 {
+    description: == becomes <, in Flat3Map.containsKey(Object) at line 196
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (key2 == null) return true;
+    replace:     if (key2 < null) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_124 {
+    description: == becomes >, in Flat3Map.containsKey(Object) at line 196
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (key2 == null) return true;
+    replace:     if (key2 > null) return true;
+}
+
+mutant FLAT3MAP_GEN_SDL_125 {
+    description: the statement is removed, in Flat3Map.containsKey(Object) at line 196
+    operator:    statement-deletion
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (key2 == null) return true;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ROR_126 {
+    description: == becomes <=, in Flat3Map.containsKey(Object) at line 198
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (key1 == null) return true;
+    replace:     if (key1 <= null) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_127 {
+    description: == becomes >=, in Flat3Map.containsKey(Object) at line 198
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (key1 == null) return true;
+    replace:     if (key1 >= null) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_128 {
+    description: == becomes !=, in Flat3Map.containsKey(Object) at line 198
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (key1 == null) return true;
+    replace:     if (key1 != null) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_129 {
+    description: == becomes <, in Flat3Map.containsKey(Object) at line 198
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (key1 == null) return true;
+    replace:     if (key1 < null) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_130 {
+    description: == becomes >, in Flat3Map.containsKey(Object) at line 198
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (key1 == null) return true;
+    replace:     if (key1 > null) return true;
+}
+
+mutant FLAT3MAP_GEN_SDL_131 {
+    description: the statement is removed, in Flat3Map.containsKey(Object) at line 198
+    operator:    statement-deletion
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (key1 == null) return true;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ROR_132 {
+    description: == becomes <=, in Flat3Map.containsKey(Object) at line 205
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) return true;
+    replace:     if (hash3 <= hashCode && key.equals(key3)) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_133 {
+    description: == becomes >=, in Flat3Map.containsKey(Object) at line 205
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) return true;
+    replace:     if (hash3 >= hashCode && key.equals(key3)) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_134 {
+    description: == becomes !=, in Flat3Map.containsKey(Object) at line 205
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) return true;
+    replace:     if (hash3 != hashCode && key.equals(key3)) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_135 {
+    description: == becomes <, in Flat3Map.containsKey(Object) at line 205
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) return true;
+    replace:     if (hash3 < hashCode && key.equals(key3)) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_136 {
+    description: == becomes >, in Flat3Map.containsKey(Object) at line 205
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) return true;
+    replace:     if (hash3 > hashCode && key.equals(key3)) return true;
+}
+
+mutant FLAT3MAP_GEN_COR_137 {
+    description: && becomes ||, in Flat3Map.containsKey(Object) at line 205
+    operator:    conditional-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) return true;
+    replace:     if (hash3 == hashCode || key.equals(key3)) return true;
+}
+
+mutant FLAT3MAP_GEN_SDL_138 {
+    description: the statement is removed, in Flat3Map.containsKey(Object) at line 205
+    operator:    statement-deletion
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) return true;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ARP_139 {
+    description: the argument to equals() is shifted by + 1, in Flat3Map.containsKey(Object) at line 205
+    operator:    argument-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) return true;
+    replace:     if (hash3 == hashCode && key.equals(key3 + 1)) return true;
+}
+
+mutant FLAT3MAP_GEN_ARP_140 {
+    description: the argument to equals() is shifted by - 1, in Flat3Map.containsKey(Object) at line 205
+    operator:    argument-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) return true;
+    replace:     if (hash3 == hashCode && key.equals(key3 - 1)) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_141 {
+    description: == becomes <=, in Flat3Map.containsKey(Object) at line 207
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) return true;
+    replace:     if (hash2 <= hashCode && key.equals(key2)) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_142 {
+    description: == becomes >=, in Flat3Map.containsKey(Object) at line 207
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) return true;
+    replace:     if (hash2 >= hashCode && key.equals(key2)) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_143 {
+    description: == becomes !=, in Flat3Map.containsKey(Object) at line 207
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) return true;
+    replace:     if (hash2 != hashCode && key.equals(key2)) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_144 {
+    description: == becomes <, in Flat3Map.containsKey(Object) at line 207
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) return true;
+    replace:     if (hash2 < hashCode && key.equals(key2)) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_145 {
+    description: == becomes >, in Flat3Map.containsKey(Object) at line 207
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) return true;
+    replace:     if (hash2 > hashCode && key.equals(key2)) return true;
+}
+
+mutant FLAT3MAP_GEN_COR_146 {
+    description: && becomes ||, in Flat3Map.containsKey(Object) at line 207
+    operator:    conditional-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) return true;
+    replace:     if (hash2 == hashCode || key.equals(key2)) return true;
+}
+
+mutant FLAT3MAP_GEN_SDL_147 {
+    description: the statement is removed, in Flat3Map.containsKey(Object) at line 207
+    operator:    statement-deletion
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) return true;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ARP_148 {
+    description: the argument to equals() is shifted by + 1, in Flat3Map.containsKey(Object) at line 207
+    operator:    argument-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) return true;
+    replace:     if (hash2 == hashCode && key.equals(key2 + 1)) return true;
+}
+
+mutant FLAT3MAP_GEN_ARP_149 {
+    description: the argument to equals() is shifted by - 1, in Flat3Map.containsKey(Object) at line 207
+    operator:    argument-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) return true;
+    replace:     if (hash2 == hashCode && key.equals(key2 - 1)) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_150 {
+    description: == becomes <=, in Flat3Map.containsKey(Object) at line 209
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) return true;
+    replace:     if (hash1 <= hashCode && key.equals(key1)) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_151 {
+    description: == becomes >=, in Flat3Map.containsKey(Object) at line 209
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) return true;
+    replace:     if (hash1 >= hashCode && key.equals(key1)) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_152 {
+    description: == becomes !=, in Flat3Map.containsKey(Object) at line 209
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) return true;
+    replace:     if (hash1 != hashCode && key.equals(key1)) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_153 {
+    description: == becomes <, in Flat3Map.containsKey(Object) at line 209
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) return true;
+    replace:     if (hash1 < hashCode && key.equals(key1)) return true;
+}
+
+mutant FLAT3MAP_GEN_ROR_154 {
+    description: == becomes >, in Flat3Map.containsKey(Object) at line 209
+    operator:    relational-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) return true;
+    replace:     if (hash1 > hashCode && key.equals(key1)) return true;
+}
+
+mutant FLAT3MAP_GEN_COR_155 {
+    description: && becomes ||, in Flat3Map.containsKey(Object) at line 209
+    operator:    conditional-operator-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) return true;
+    replace:     if (hash1 == hashCode || key.equals(key1)) return true;
+}
+
+mutant FLAT3MAP_GEN_SDL_156 {
+    description: the statement is removed, in Flat3Map.containsKey(Object) at line 209
+    operator:    statement-deletion
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) return true;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ARP_157 {
+    description: the argument to equals() is shifted by + 1, in Flat3Map.containsKey(Object) at line 209
+    operator:    argument-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) return true;
+    replace:     if (hash1 == hashCode && key.equals(key1 + 1)) return true;
+}
+
+mutant FLAT3MAP_GEN_ARP_158 {
+    description: the argument to equals() is shifted by - 1, in Flat3Map.containsKey(Object) at line 209
+    operator:    argument-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) return true;
+    replace:     if (hash1 == hashCode && key.equals(key1 - 1)) return true;
+}
+
+mutant FLAT3MAP_GEN_RVR_159 {
+    description: the answer is always true, in Flat3Map.containsKey(Object) at line 213
+    operator:    return-value-replacement
+    in:          containsKey
+    file:        Flat3Map.java
+    find:        return false;
+    replace:     return true;
+}
+
+mutant FLAT3MAP_GEN_RVR_196 {
+    description: the answer becomes null, in Flat3Map.put(Object,Object) at line 258
+    operator:    return-value-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        return delegateMap.put(key, value);
+    replace:     return null;
+}
+
+mutant FLAT3MAP_GEN_ARP_197 {
+    description: the two arguments to put() are swapped, in Flat3Map.put(Object,Object) at line 258
+    operator:    argument-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        return delegateMap.put(key, value);
+    replace:     return delegateMap.put(value, key);
+}
+
+mutant FLAT3MAP_GEN_MCR_198 {
+    description: .put( becomes .putIfAbsent(, in Flat3Map.put(Object,Object) at line 258
+    operator:    method-call-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        return delegateMap.put(key, value);
+    replace:     return delegateMap.putIfAbsent(key, value);
+}
+
+mutant FLAT3MAP_GEN_ROR_199 {
+    description: == becomes <=, in Flat3Map.put(Object,Object) at line 264
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key3 == null) {
+    replace:     if (key3 <= null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_200 {
+    description: == becomes >=, in Flat3Map.put(Object,Object) at line 264
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key3 == null) {
+    replace:     if (key3 >= null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_201 {
+    description: == becomes !=, in Flat3Map.put(Object,Object) at line 264
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key3 == null) {
+    replace:     if (key3 != null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_202 {
+    description: == becomes <, in Flat3Map.put(Object,Object) at line 264
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key3 == null) {
+    replace:     if (key3 < null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_203 {
+    description: == becomes >, in Flat3Map.put(Object,Object) at line 264
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key3 == null) {
+    replace:     if (key3 > null) {
+}
+
+mutant FLAT3MAP_GEN_COI_204 {
+    description: the guard is negated, in Flat3Map.put(Object,Object) at line 264
+    operator:    conditional-operator-insertion
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key3 == null) {
+    replace:     if (!(key3 == null)) {
+}
+
+mutant FLAT3MAP_GEN_CTC_205 {
+    description: the branch is always taken, in Flat3Map.put(Object,Object) at line 264
+    operator:    condition-to-constant
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key3 == null) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_206 {
+    description: the branch is never taken, in Flat3Map.put(Object,Object) at line 264
+    operator:    condition-to-constant
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key3 == null) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_207 {
+    description: == becomes <=, in Flat3Map.put(Object,Object) at line 270
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key2 == null) {
+    replace:     if (key2 <= null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_208 {
+    description: == becomes >=, in Flat3Map.put(Object,Object) at line 270
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key2 == null) {
+    replace:     if (key2 >= null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_209 {
+    description: == becomes !=, in Flat3Map.put(Object,Object) at line 270
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key2 == null) {
+    replace:     if (key2 != null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_210 {
+    description: == becomes <, in Flat3Map.put(Object,Object) at line 270
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key2 == null) {
+    replace:     if (key2 < null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_211 {
+    description: == becomes >, in Flat3Map.put(Object,Object) at line 270
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key2 == null) {
+    replace:     if (key2 > null) {
+}
+
+mutant FLAT3MAP_GEN_COI_212 {
+    description: the guard is negated, in Flat3Map.put(Object,Object) at line 270
+    operator:    conditional-operator-insertion
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key2 == null) {
+    replace:     if (!(key2 == null)) {
+}
+
+mutant FLAT3MAP_GEN_CTC_213 {
+    description: the branch is always taken, in Flat3Map.put(Object,Object) at line 270
+    operator:    condition-to-constant
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key2 == null) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_214 {
+    description: the branch is never taken, in Flat3Map.put(Object,Object) at line 270
+    operator:    condition-to-constant
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key2 == null) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_215 {
+    description: == becomes <=, in Flat3Map.put(Object,Object) at line 276
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key1 == null) {
+    replace:     if (key1 <= null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_216 {
+    description: == becomes >=, in Flat3Map.put(Object,Object) at line 276
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key1 == null) {
+    replace:     if (key1 >= null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_217 {
+    description: == becomes !=, in Flat3Map.put(Object,Object) at line 276
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key1 == null) {
+    replace:     if (key1 != null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_218 {
+    description: == becomes <, in Flat3Map.put(Object,Object) at line 276
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key1 == null) {
+    replace:     if (key1 < null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_219 {
+    description: == becomes >, in Flat3Map.put(Object,Object) at line 276
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key1 == null) {
+    replace:     if (key1 > null) {
+}
+
+mutant FLAT3MAP_GEN_COI_220 {
+    description: the guard is negated, in Flat3Map.put(Object,Object) at line 276
+    operator:    conditional-operator-insertion
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key1 == null) {
+    replace:     if (!(key1 == null)) {
+}
+
+mutant FLAT3MAP_GEN_CTC_221 {
+    description: the branch is always taken, in Flat3Map.put(Object,Object) at line 276
+    operator:    condition-to-constant
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key1 == null) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_222 {
+    description: the branch is never taken, in Flat3Map.put(Object,Object) at line 276
+    operator:    condition-to-constant
+    in:          put
+    file:        Flat3Map.java
+    find:        if (key1 == null) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_223 {
+    description: == becomes <=, in Flat3Map.put(Object,Object) at line 287
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) {
+    replace:     if (hash3 <= hashCode && key.equals(key3)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_224 {
+    description: == becomes >=, in Flat3Map.put(Object,Object) at line 287
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) {
+    replace:     if (hash3 >= hashCode && key.equals(key3)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_225 {
+    description: == becomes !=, in Flat3Map.put(Object,Object) at line 287
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) {
+    replace:     if (hash3 != hashCode && key.equals(key3)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_226 {
+    description: == becomes <, in Flat3Map.put(Object,Object) at line 287
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) {
+    replace:     if (hash3 < hashCode && key.equals(key3)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_227 {
+    description: == becomes >, in Flat3Map.put(Object,Object) at line 287
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) {
+    replace:     if (hash3 > hashCode && key.equals(key3)) {
+}
+
+mutant FLAT3MAP_GEN_COR_228 {
+    description: && becomes ||, in Flat3Map.put(Object,Object) at line 287
+    operator:    conditional-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) {
+    replace:     if (hash3 == hashCode || key.equals(key3)) {
+}
+
+mutant FLAT3MAP_GEN_COI_229 {
+    description: the guard is negated, in Flat3Map.put(Object,Object) at line 287
+    operator:    conditional-operator-insertion
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) {
+    replace:     if (!(hash3 == hashCode && key.equals(key3))) {
+}
+
+mutant FLAT3MAP_GEN_CTC_230 {
+    description: the branch is always taken, in Flat3Map.put(Object,Object) at line 287
+    operator:    condition-to-constant
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_231 {
+    description: the branch is never taken, in Flat3Map.put(Object,Object) at line 287
+    operator:    condition-to-constant
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_ARP_232 {
+    description: the argument to equals() is shifted by + 1, in Flat3Map.put(Object,Object) at line 287
+    operator:    argument-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) {
+    replace:     if (hash3 == hashCode && key.equals(key3 + 1)) {
+}
+
+mutant FLAT3MAP_GEN_ARP_233 {
+    description: the argument to equals() is shifted by - 1, in Flat3Map.put(Object,Object) at line 287
+    operator:    argument-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash3 == hashCode && key.equals(key3)) {
+    replace:     if (hash3 == hashCode && key.equals(key3 - 1)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_234 {
+    description: == becomes <=, in Flat3Map.put(Object,Object) at line 293
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) {
+    replace:     if (hash2 <= hashCode && key.equals(key2)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_235 {
+    description: == becomes >=, in Flat3Map.put(Object,Object) at line 293
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) {
+    replace:     if (hash2 >= hashCode && key.equals(key2)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_236 {
+    description: == becomes !=, in Flat3Map.put(Object,Object) at line 293
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) {
+    replace:     if (hash2 != hashCode && key.equals(key2)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_237 {
+    description: == becomes <, in Flat3Map.put(Object,Object) at line 293
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) {
+    replace:     if (hash2 < hashCode && key.equals(key2)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_238 {
+    description: == becomes >, in Flat3Map.put(Object,Object) at line 293
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) {
+    replace:     if (hash2 > hashCode && key.equals(key2)) {
+}
+
+mutant FLAT3MAP_GEN_COR_239 {
+    description: && becomes ||, in Flat3Map.put(Object,Object) at line 293
+    operator:    conditional-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) {
+    replace:     if (hash2 == hashCode || key.equals(key2)) {
+}
+
+mutant FLAT3MAP_GEN_COI_240 {
+    description: the guard is negated, in Flat3Map.put(Object,Object) at line 293
+    operator:    conditional-operator-insertion
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) {
+    replace:     if (!(hash2 == hashCode && key.equals(key2))) {
+}
+
+mutant FLAT3MAP_GEN_CTC_241 {
+    description: the branch is always taken, in Flat3Map.put(Object,Object) at line 293
+    operator:    condition-to-constant
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_242 {
+    description: the branch is never taken, in Flat3Map.put(Object,Object) at line 293
+    operator:    condition-to-constant
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_ARP_243 {
+    description: the argument to equals() is shifted by + 1, in Flat3Map.put(Object,Object) at line 293
+    operator:    argument-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) {
+    replace:     if (hash2 == hashCode && key.equals(key2 + 1)) {
+}
+
+mutant FLAT3MAP_GEN_ARP_244 {
+    description: the argument to equals() is shifted by - 1, in Flat3Map.put(Object,Object) at line 293
+    operator:    argument-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash2 == hashCode && key.equals(key2)) {
+    replace:     if (hash2 == hashCode && key.equals(key2 - 1)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_245 {
+    description: == becomes <=, in Flat3Map.put(Object,Object) at line 299
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) {
+    replace:     if (hash1 <= hashCode && key.equals(key1)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_246 {
+    description: == becomes >=, in Flat3Map.put(Object,Object) at line 299
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) {
+    replace:     if (hash1 >= hashCode && key.equals(key1)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_247 {
+    description: == becomes !=, in Flat3Map.put(Object,Object) at line 299
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) {
+    replace:     if (hash1 != hashCode && key.equals(key1)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_248 {
+    description: == becomes <, in Flat3Map.put(Object,Object) at line 299
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) {
+    replace:     if (hash1 < hashCode && key.equals(key1)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_249 {
+    description: == becomes >, in Flat3Map.put(Object,Object) at line 299
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) {
+    replace:     if (hash1 > hashCode && key.equals(key1)) {
+}
+
+mutant FLAT3MAP_GEN_COR_250 {
+    description: && becomes ||, in Flat3Map.put(Object,Object) at line 299
+    operator:    conditional-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) {
+    replace:     if (hash1 == hashCode || key.equals(key1)) {
+}
+
+mutant FLAT3MAP_GEN_COI_251 {
+    description: the guard is negated, in Flat3Map.put(Object,Object) at line 299
+    operator:    conditional-operator-insertion
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) {
+    replace:     if (!(hash1 == hashCode && key.equals(key1))) {
+}
+
+mutant FLAT3MAP_GEN_CTC_252 {
+    description: the branch is always taken, in Flat3Map.put(Object,Object) at line 299
+    operator:    condition-to-constant
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_253 {
+    description: the branch is never taken, in Flat3Map.put(Object,Object) at line 299
+    operator:    condition-to-constant
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_ARP_254 {
+    description: the argument to equals() is shifted by + 1, in Flat3Map.put(Object,Object) at line 299
+    operator:    argument-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) {
+    replace:     if (hash1 == hashCode && key.equals(key1 + 1)) {
+}
+
+mutant FLAT3MAP_GEN_ARP_255 {
+    description: the argument to equals() is shifted by - 1, in Flat3Map.put(Object,Object) at line 299
+    operator:    argument-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        if (hash1 == hashCode && key.equals(key1)) {
+    replace:     if (hash1 == hashCode && key.equals(key1 - 1)) {
+}
+
+mutant FLAT3MAP_GEN_SDL_256 {
+    description: the statement is removed, in Flat3Map.put(Object,Object) at line 311
+    operator:    statement-deletion
+    in:          put
+    file:        Flat3Map.java
+    find:        convertToMap();
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_SDL_257 {
+    description: the statement is removed, in Flat3Map.put(Object,Object) at line 312
+    operator:    statement-deletion
+    in:          put
+    file:        Flat3Map.java
+    find:        delegateMap.put(key, value);
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_STR_258 {
+    description: the statement runs twice, in Flat3Map.put(Object,Object) at line 312
+    operator:    statement-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        delegateMap.put(key, value);
+    replace:     delegateMap.put(key, value); delegateMap.put(key, value);
+}
+
+mutant FLAT3MAP_GEN_ARP_259 {
+    description: the two arguments to put() are swapped, in Flat3Map.put(Object,Object) at line 312
+    operator:    argument-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        delegateMap.put(key, value);
+    replace:     delegateMap.put(value, key);
+}
+
+mutant FLAT3MAP_GEN_MCR_260 {
+    description: .put( becomes .putIfAbsent(, in Flat3Map.put(Object,Object) at line 312
+    operator:    method-call-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        delegateMap.put(key, value);
+    replace:     delegateMap.putIfAbsent(key, value);
+}
+
+mutant FLAT3MAP_GEN_ROR_261 {
+    description: == becomes <=, in Flat3Map.put(Object,Object) at line 315
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash3 = (key == null ? 0 : key.hashCode());
+    replace:     hash3 = (key <= null ? 0 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_ROR_262 {
+    description: == becomes >=, in Flat3Map.put(Object,Object) at line 315
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash3 = (key == null ? 0 : key.hashCode());
+    replace:     hash3 = (key >= null ? 0 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_ROR_263 {
+    description: == becomes !=, in Flat3Map.put(Object,Object) at line 315
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash3 = (key == null ? 0 : key.hashCode());
+    replace:     hash3 = (key != null ? 0 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_ROR_264 {
+    description: == becomes <, in Flat3Map.put(Object,Object) at line 315
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash3 = (key == null ? 0 : key.hashCode());
+    replace:     hash3 = (key < null ? 0 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_ROR_265 {
+    description: == becomes >, in Flat3Map.put(Object,Object) at line 315
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash3 = (key == null ? 0 : key.hashCode());
+    replace:     hash3 = (key > null ? 0 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_CRP_266 {
+    description: the literal 0 becomes 1, in Flat3Map.put(Object,Object) at line 315
+    operator:    constant-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash3 = (key == null ? 0 : key.hashCode());
+    replace:     hash3 = (key == null ? 1 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_CRP_267 {
+    description: the literal 0 becomes -1, in Flat3Map.put(Object,Object) at line 315
+    operator:    constant-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash3 = (key == null ? 0 : key.hashCode());
+    replace:     hash3 = (key == null ? -1 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_SDL_268 {
+    description: the statement is removed, in Flat3Map.put(Object,Object) at line 315
+    operator:    statement-deletion
+    in:          put
+    file:        Flat3Map.java
+    find:        hash3 = (key == null ? 0 : key.hashCode());
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_SDL_269 {
+    description: the statement is removed, in Flat3Map.put(Object,Object) at line 316
+    operator:    statement-deletion
+    in:          put
+    file:        Flat3Map.java
+    find:        key3 = key;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ROR_270 {
+    description: == becomes <=, in Flat3Map.put(Object,Object) at line 320
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash2 = (key == null ? 0 : key.hashCode());
+    replace:     hash2 = (key <= null ? 0 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_ROR_271 {
+    description: == becomes >=, in Flat3Map.put(Object,Object) at line 320
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash2 = (key == null ? 0 : key.hashCode());
+    replace:     hash2 = (key >= null ? 0 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_ROR_272 {
+    description: == becomes !=, in Flat3Map.put(Object,Object) at line 320
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash2 = (key == null ? 0 : key.hashCode());
+    replace:     hash2 = (key != null ? 0 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_ROR_273 {
+    description: == becomes <, in Flat3Map.put(Object,Object) at line 320
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash2 = (key == null ? 0 : key.hashCode());
+    replace:     hash2 = (key < null ? 0 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_ROR_274 {
+    description: == becomes >, in Flat3Map.put(Object,Object) at line 320
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash2 = (key == null ? 0 : key.hashCode());
+    replace:     hash2 = (key > null ? 0 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_CRP_275 {
+    description: the literal 0 becomes 1, in Flat3Map.put(Object,Object) at line 320
+    operator:    constant-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash2 = (key == null ? 0 : key.hashCode());
+    replace:     hash2 = (key == null ? 1 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_CRP_276 {
+    description: the literal 0 becomes -1, in Flat3Map.put(Object,Object) at line 320
+    operator:    constant-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash2 = (key == null ? 0 : key.hashCode());
+    replace:     hash2 = (key == null ? -1 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_SDL_277 {
+    description: the statement is removed, in Flat3Map.put(Object,Object) at line 320
+    operator:    statement-deletion
+    in:          put
+    file:        Flat3Map.java
+    find:        hash2 = (key == null ? 0 : key.hashCode());
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_SDL_278 {
+    description: the statement is removed, in Flat3Map.put(Object,Object) at line 321
+    operator:    statement-deletion
+    in:          put
+    file:        Flat3Map.java
+    find:        key2 = key;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_CRP_279 {
+    description: the literal 0 becomes 1, in Flat3Map.put(Object,Object) at line 324
+    operator:    constant-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        case 0:
+    replace:     case 1:
+}
+
+mutant FLAT3MAP_GEN_CRP_280 {
+    description: the literal 0 becomes -1, in Flat3Map.put(Object,Object) at line 324
+    operator:    constant-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        case 0:
+    replace:     case -1:
+}
+
+mutant FLAT3MAP_GEN_ROR_281 {
+    description: == becomes <=, in Flat3Map.put(Object,Object) at line 325
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash1 = (key == null ? 0 : key.hashCode());
+    replace:     hash1 = (key <= null ? 0 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_ROR_282 {
+    description: == becomes >=, in Flat3Map.put(Object,Object) at line 325
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash1 = (key == null ? 0 : key.hashCode());
+    replace:     hash1 = (key >= null ? 0 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_ROR_283 {
+    description: == becomes !=, in Flat3Map.put(Object,Object) at line 325
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash1 = (key == null ? 0 : key.hashCode());
+    replace:     hash1 = (key != null ? 0 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_ROR_284 {
+    description: == becomes <, in Flat3Map.put(Object,Object) at line 325
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash1 = (key == null ? 0 : key.hashCode());
+    replace:     hash1 = (key < null ? 0 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_ROR_285 {
+    description: == becomes >, in Flat3Map.put(Object,Object) at line 325
+    operator:    relational-operator-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash1 = (key == null ? 0 : key.hashCode());
+    replace:     hash1 = (key > null ? 0 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_CRP_286 {
+    description: the literal 0 becomes 1, in Flat3Map.put(Object,Object) at line 325
+    operator:    constant-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash1 = (key == null ? 0 : key.hashCode());
+    replace:     hash1 = (key == null ? 1 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_CRP_287 {
+    description: the literal 0 becomes -1, in Flat3Map.put(Object,Object) at line 325
+    operator:    constant-replacement
+    in:          put
+    file:        Flat3Map.java
+    find:        hash1 = (key == null ? 0 : key.hashCode());
+    replace:     hash1 = (key == null ? -1 : key.hashCode());
+}
+
+mutant FLAT3MAP_GEN_SDL_288 {
+    description: the statement is removed, in Flat3Map.put(Object,Object) at line 325
+    operator:    statement-deletion
+    in:          put
+    file:        Flat3Map.java
+    find:        hash1 = (key == null ? 0 : key.hashCode());
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_SDL_289 {
+    description: the statement is removed, in Flat3Map.put(Object,Object) at line 326
+    operator:    statement-deletion
+    in:          put
+    file:        Flat3Map.java
+    find:        key1 = key;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_SDL_290 {
+    description: the statement is removed, in Flat3Map.put(Object,Object) at line 330
+    operator:    statement-deletion
+    in:          put
+    file:        Flat3Map.java
+    find:        size++;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_SDL_316 {
+    description: the statement is removed, in Flat3Map.convertToMap() at line 364
+    operator:    statement-deletion
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        delegateMap = createDelegateMap();
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_CRP_317 {
+    description: the literal 3 becomes 0, in Flat3Map.convertToMap() at line 366
+    operator:    constant-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        case 3:
+    replace:     case 0:
+}
+
+mutant FLAT3MAP_GEN_CRP_318 {
+    description: the literal 3 becomes 1, in Flat3Map.convertToMap() at line 366
+    operator:    constant-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        case 3:
+    replace:     case 1:
+}
+
+mutant FLAT3MAP_GEN_CRP_319 {
+    description: the literal 3 becomes -1, in Flat3Map.convertToMap() at line 366
+    operator:    constant-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        case 3:
+    replace:     case -1:
+}
+
+mutant FLAT3MAP_GEN_CRP_320 {
+    description: the literal 3 becomes 4, in Flat3Map.convertToMap() at line 366
+    operator:    constant-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        case 3:
+    replace:     case 4:
+}
+
+mutant FLAT3MAP_GEN_CRP_321 {
+    description: the literal 3 becomes 2, in Flat3Map.convertToMap() at line 366
+    operator:    constant-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        case 3:
+    replace:     case 2:
+}
+
+mutant FLAT3MAP_GEN_SDL_322 {
+    description: the statement is removed, in Flat3Map.convertToMap() at line 367
+    operator:    statement-deletion
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        delegateMap.put(key3, value3);
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_STR_323 {
+    description: the statement runs twice, in Flat3Map.convertToMap() at line 367
+    operator:    statement-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        delegateMap.put(key3, value3);
+    replace:     delegateMap.put(key3, value3); delegateMap.put(key3, value3);
+}
+
+mutant FLAT3MAP_GEN_ARP_324 {
+    description: the two arguments to put() are swapped, in Flat3Map.convertToMap() at line 367
+    operator:    argument-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        delegateMap.put(key3, value3);
+    replace:     delegateMap.put(value3, key3);
+}
+
+mutant FLAT3MAP_GEN_MCR_325 {
+    description: .put( becomes .putIfAbsent(, in Flat3Map.convertToMap() at line 367
+    operator:    method-call-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        delegateMap.put(key3, value3);
+    replace:     delegateMap.putIfAbsent(key3, value3);
+}
+
+mutant FLAT3MAP_GEN_CRP_326 {
+    description: the literal 2 becomes 0, in Flat3Map.convertToMap() at line 368
+    operator:    constant-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        case 2:
+    replace:     case 0:
+}
+
+mutant FLAT3MAP_GEN_CRP_327 {
+    description: the literal 2 becomes 1, in Flat3Map.convertToMap() at line 368
+    operator:    constant-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        case 2:
+    replace:     case 1:
+}
+
+mutant FLAT3MAP_GEN_CRP_328 {
+    description: the literal 2 becomes -1, in Flat3Map.convertToMap() at line 368
+    operator:    constant-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        case 2:
+    replace:     case -1:
+}
+
+mutant FLAT3MAP_GEN_CRP_329 {
+    description: the literal 2 becomes 3, in Flat3Map.convertToMap() at line 368
+    operator:    constant-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        case 2:
+    replace:     case 3:
+}
+
+mutant FLAT3MAP_GEN_SDL_330 {
+    description: the statement is removed, in Flat3Map.convertToMap() at line 369
+    operator:    statement-deletion
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        delegateMap.put(key2, value2);
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_STR_331 {
+    description: the statement runs twice, in Flat3Map.convertToMap() at line 369
+    operator:    statement-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        delegateMap.put(key2, value2);
+    replace:     delegateMap.put(key2, value2); delegateMap.put(key2, value2);
+}
+
+mutant FLAT3MAP_GEN_ARP_332 {
+    description: the two arguments to put() are swapped, in Flat3Map.convertToMap() at line 369
+    operator:    argument-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        delegateMap.put(key2, value2);
+    replace:     delegateMap.put(value2, key2);
+}
+
+mutant FLAT3MAP_GEN_MCR_333 {
+    description: .put( becomes .putIfAbsent(, in Flat3Map.convertToMap() at line 369
+    operator:    method-call-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        delegateMap.put(key2, value2);
+    replace:     delegateMap.putIfAbsent(key2, value2);
+}
+
+mutant FLAT3MAP_GEN_CRP_334 {
+    description: the literal 1 becomes 0, in Flat3Map.convertToMap() at line 370
+    operator:    constant-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        case 1:
+    replace:     case 0:
+}
+
+mutant FLAT3MAP_GEN_CRP_335 {
+    description: the literal 1 becomes -1, in Flat3Map.convertToMap() at line 370
+    operator:    constant-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        case 1:
+    replace:     case -1:
+}
+
+mutant FLAT3MAP_GEN_CRP_336 {
+    description: the literal 1 becomes 2, in Flat3Map.convertToMap() at line 370
+    operator:    constant-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        case 1:
+    replace:     case 2:
+}
+
+mutant FLAT3MAP_GEN_SDL_337 {
+    description: the statement is removed, in Flat3Map.convertToMap() at line 371
+    operator:    statement-deletion
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        delegateMap.put(key1, value1);
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_STR_338 {
+    description: the statement runs twice, in Flat3Map.convertToMap() at line 371
+    operator:    statement-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        delegateMap.put(key1, value1);
+    replace:     delegateMap.put(key1, value1); delegateMap.put(key1, value1);
+}
+
+mutant FLAT3MAP_GEN_ARP_339 {
+    description: the two arguments to put() are swapped, in Flat3Map.convertToMap() at line 371
+    operator:    argument-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        delegateMap.put(key1, value1);
+    replace:     delegateMap.put(value1, key1);
+}
+
+mutant FLAT3MAP_GEN_MCR_340 {
+    description: .put( becomes .putIfAbsent(, in Flat3Map.convertToMap() at line 371
+    operator:    method-call-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        delegateMap.put(key1, value1);
+    replace:     delegateMap.putIfAbsent(key1, value1);
+}
+
+mutant FLAT3MAP_GEN_AOI_341 {
+    description: the value assigned to size is shifted by + 1, in Flat3Map.convertToMap() at line 374
+    operator:    arithmetic-operator-insertion
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        size = 0;
+    replace:     size = 0 + 1;
+}
+
+mutant FLAT3MAP_GEN_AOI_342 {
+    description: the value assigned to size is shifted by - 1, in Flat3Map.convertToMap() at line 374
+    operator:    arithmetic-operator-insertion
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        size = 0;
+    replace:     size = 0 - 1;
+}
+
+mutant FLAT3MAP_GEN_UOI_343 {
+    description: the value assigned to size is negated, in Flat3Map.convertToMap() at line 374
+    operator:    unary-operator-insertion
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        size = 0;
+    replace:     size = -(0);
+}
+
+mutant FLAT3MAP_GEN_ABS_344 {
+    description: the value assigned to size is forced negative, in Flat3Map.convertToMap() at line 374
+    operator:    absolute-value-insertion
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        size = 0;
+    replace:     size = -Math.abs(0);
+}
+
+mutant FLAT3MAP_GEN_CRP_345 {
+    description: the literal 0 becomes 1, in Flat3Map.convertToMap() at line 374
+    operator:    constant-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        size = 0;
+    replace:     size = 1;
+}
+
+mutant FLAT3MAP_GEN_CRP_346 {
+    description: the literal 0 becomes -1, in Flat3Map.convertToMap() at line 374
+    operator:    constant-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        size = 0;
+    replace:     size = -1;
+}
+
+mutant FLAT3MAP_GEN_SDL_347 {
+    description: the statement is removed, in Flat3Map.convertToMap() at line 374
+    operator:    statement-deletion
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        size = 0;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_CRP_348 {
+    description: the literal 0 becomes 1, in Flat3Map.convertToMap() at line 375
+    operator:    constant-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        hash1 = hash2 = hash3 = 0;
+    replace:     hash1 = hash2 = hash3 = 1;
+}
+
+mutant FLAT3MAP_GEN_CRP_349 {
+    description: the literal 0 becomes -1, in Flat3Map.convertToMap() at line 375
+    operator:    constant-replacement
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        hash1 = hash2 = hash3 = 0;
+    replace:     hash1 = hash2 = hash3 = -1;
+}
+
+mutant FLAT3MAP_GEN_SDL_350 {
+    description: the statement is removed, in Flat3Map.convertToMap() at line 375
+    operator:    statement-deletion
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        hash1 = hash2 = hash3 = 0;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_SDL_351 {
+    description: the statement is removed, in Flat3Map.convertToMap() at line 376
+    operator:    statement-deletion
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        key1 = key2 = key3 = null;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_SDL_352 {
+    description: the statement is removed, in Flat3Map.convertToMap() at line 377
+    operator:    statement-deletion
+    in:          convertToMap
+    file:        Flat3Map.java
+    find:        value1 = value2 = value3 = null;
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_RVR_353 {
+    description: the answer becomes null, in Flat3Map.createDelegateMap() at line 391
+    operator:    return-value-replacement
+    in:          createDelegateMap
+    file:        Flat3Map.java
+    find:        return new HashedMap();
+    replace:     return null;
+}
+
+mutant FLAT3MAP_GEN_RVR_354 {
+    description: the answer becomes null, in Flat3Map.remove(Object) at line 402
+    operator:    return-value-replacement
+    in:          remove
+    file:        Flat3Map.java
+    find:        return delegateMap.remove(key);
+    replace:     return null;
+}
+
+mutant FLAT3MAP_GEN_ARP_355 {
+    description: the argument to remove() is shifted by + 1, in Flat3Map.remove(Object) at line 402
+    operator:    argument-replacement
+    in:          remove
+    file:        Flat3Map.java
+    find:        return delegateMap.remove(key);
+    replace:     return delegateMap.remove(key + 1);
+}
+
+mutant FLAT3MAP_GEN_ARP_356 {
+    description: the argument to remove() is shifted by - 1, in Flat3Map.remove(Object) at line 402
+    operator:    argument-replacement
+    in:          remove
+    file:        Flat3Map.java
+    find:        return delegateMap.remove(key);
+    replace:     return delegateMap.remove(key - 1);
+}
+
+mutant FLAT3MAP_GEN_MCR_357 {
+    description: .remove( becomes .get(, in Flat3Map.remove(Object) at line 402
+    operator:    method-call-replacement
+    in:          remove
+    file:        Flat3Map.java
+    find:        return delegateMap.remove(key);
+    replace:     return delegateMap.get(key);
+}
+
+mutant FLAT3MAP_GEN_RVR_421 {
+    description: the answer becomes null, in Flat3Map.entrySet() at line 691
+    operator:    return-value-replacement
+    in:          entrySet
+    file:        Flat3Map.java
+    find:        return delegateMap.entrySet();
+    replace:     return null;
+}
+
+mutant FLAT3MAP_GEN_RVR_422 {
+    description: the answer becomes null, in Flat3Map.entrySet() at line 693
+    operator:    return-value-replacement
+    in:          entrySet
+    file:        Flat3Map.java
+    find:        return new EntrySet(this);
+    replace:     return null;
+}
+
+mutant FLAT3MAP_GEN_UOI_423 {
+    description: the returned value is negated, in Flat3Map.EntrySet.size() at line 708
+    operator:    unary-operator-insertion
+    in:          size
+    file:        Flat3Map.java
+    find:        return parent.size();
+    replace:     return -(parent.size());
+}
+
+mutant FLAT3MAP_GEN_ABS_424 {
+    description: the returned value is forced negative, in Flat3Map.EntrySet.size() at line 708
+    operator:    absolute-value-insertion
+    in:          size
+    file:        Flat3Map.java
+    find:        return parent.size();
+    replace:     return -Math.abs(parent.size());
+}
+
+mutant FLAT3MAP_GEN_RVR_425 {
+    description: the answer becomes 0, in Flat3Map.EntrySet.size() at line 708
+    operator:    return-value-replacement
+    in:          size
+    file:        Flat3Map.java
+    find:        return parent.size();
+    replace:     return 0;
+}
+
+mutant FLAT3MAP_GEN_RVR_426 {
+    description: the answer becomes 1, in Flat3Map.EntrySet.size() at line 708
+    operator:    return-value-replacement
+    in:          size
+    file:        Flat3Map.java
+    find:        return parent.size();
+    replace:     return 1;
+}
+
+mutant FLAT3MAP_GEN_RVR_427 {
+    description: the answer becomes -1, in Flat3Map.EntrySet.size() at line 708
+    operator:    return-value-replacement
+    in:          size
+    file:        Flat3Map.java
+    find:        return parent.size();
+    replace:     return -1;
+}
+
+mutant FLAT3MAP_GEN_MCR_428 {
+    description: .size() becomes .hashCode(), in Flat3Map.EntrySet.size() at line 708
+    operator:    method-call-replacement
+    in:          size
+    file:        Flat3Map.java
+    find:        return parent.size();
+    replace:     return parent.hashCode();
+}
+
+mutant FLAT3MAP_GEN_SDL_429 {
+    description: the statement is removed, in Flat3Map.EntrySet.clear() at line 712
+    operator:    statement-deletion
+    in:          clear
+    file:        Flat3Map.java
+    find:        parent.clear();
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_STR_430 {
+    description: the statement runs twice, in Flat3Map.EntrySet.clear() at line 712
+    operator:    statement-replacement
+    in:          clear
+    file:        Flat3Map.java
+    find:        parent.clear();
+    replace:     parent.clear(); parent.clear();
+}
+
+mutant FLAT3MAP_GEN_ROR_431 {
+    description: == becomes <=, in Flat3Map.EntrySet.remove(Object) at line 716
+    operator:    relational-operator-replacement
+    in:          remove
+    file:        Flat3Map.java
+    find:        if (obj instanceof Map.Entry == false) {
+    replace:     if (obj instanceof Map.Entry <= false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_432 {
+    description: == becomes >=, in Flat3Map.EntrySet.remove(Object) at line 716
+    operator:    relational-operator-replacement
+    in:          remove
+    file:        Flat3Map.java
+    find:        if (obj instanceof Map.Entry == false) {
+    replace:     if (obj instanceof Map.Entry >= false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_433 {
+    description: == becomes !=, in Flat3Map.EntrySet.remove(Object) at line 716
+    operator:    relational-operator-replacement
+    in:          remove
+    file:        Flat3Map.java
+    find:        if (obj instanceof Map.Entry == false) {
+    replace:     if (obj instanceof Map.Entry != false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_434 {
+    description: == becomes <, in Flat3Map.EntrySet.remove(Object) at line 716
+    operator:    relational-operator-replacement
+    in:          remove
+    file:        Flat3Map.java
+    find:        if (obj instanceof Map.Entry == false) {
+    replace:     if (obj instanceof Map.Entry < false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_435 {
+    description: == becomes >, in Flat3Map.EntrySet.remove(Object) at line 716
+    operator:    relational-operator-replacement
+    in:          remove
+    file:        Flat3Map.java
+    find:        if (obj instanceof Map.Entry == false) {
+    replace:     if (obj instanceof Map.Entry > false) {
+}
+
+mutant FLAT3MAP_GEN_COI_436 {
+    description: the guard is negated, in Flat3Map.EntrySet.remove(Object) at line 716
+    operator:    conditional-operator-insertion
+    in:          remove
+    file:        Flat3Map.java
+    find:        if (obj instanceof Map.Entry == false) {
+    replace:     if (!(obj instanceof Map.Entry == false)) {
+}
+
+mutant FLAT3MAP_GEN_CTC_437 {
+    description: the branch is always taken, in Flat3Map.EntrySet.remove(Object) at line 716
+    operator:    condition-to-constant
+    in:          remove
+    file:        Flat3Map.java
+    find:        if (obj instanceof Map.Entry == false) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_438 {
+    description: the branch is never taken, in Flat3Map.EntrySet.remove(Object) at line 716
+    operator:    condition-to-constant
+    in:          remove
+    file:        Flat3Map.java
+    find:        if (obj instanceof Map.Entry == false) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_ARP_439 {
+    description: the argument to containsKey() is shifted by + 1, in Flat3Map.EntrySet.remove(Object) at line 721
+    operator:    argument-replacement
+    in:          remove
+    file:        Flat3Map.java
+    find:        boolean result = parent.containsKey(key);
+    replace:     boolean result = parent.containsKey(key + 1);
+}
+
+mutant FLAT3MAP_GEN_ARP_440 {
+    description: the argument to containsKey() is shifted by - 1, in Flat3Map.EntrySet.remove(Object) at line 721
+    operator:    argument-replacement
+    in:          remove
+    file:        Flat3Map.java
+    find:        boolean result = parent.containsKey(key);
+    replace:     boolean result = parent.containsKey(key - 1);
+}
+
+mutant FLAT3MAP_GEN_MCR_441 {
+    description: .containsKey( becomes .containsValue(, in Flat3Map.EntrySet.remove(Object) at line 721
+    operator:    method-call-replacement
+    in:          remove
+    file:        Flat3Map.java
+    find:        boolean result = parent.containsKey(key);
+    replace:     boolean result = parent.containsValue(key);
+}
+
+mutant FLAT3MAP_GEN_SDL_442 {
+    description: the statement is removed, in Flat3Map.EntrySet.remove(Object) at line 722
+    operator:    statement-deletion
+    in:          remove
+    file:        Flat3Map.java
+    find:        parent.remove(key);
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_STR_443 {
+    description: the statement runs twice, in Flat3Map.EntrySet.remove(Object) at line 722
+    operator:    statement-replacement
+    in:          remove
+    file:        Flat3Map.java
+    find:        parent.remove(key);
+    replace:     parent.remove(key); parent.remove(key);
+}
+
+mutant FLAT3MAP_GEN_ARP_444 {
+    description: the argument to remove() is shifted by + 1, in Flat3Map.EntrySet.remove(Object) at line 722
+    operator:    argument-replacement
+    in:          remove
+    file:        Flat3Map.java
+    find:        parent.remove(key);
+    replace:     parent.remove(key + 1);
+}
+
+mutant FLAT3MAP_GEN_ARP_445 {
+    description: the argument to remove() is shifted by - 1, in Flat3Map.EntrySet.remove(Object) at line 722
+    operator:    argument-replacement
+    in:          remove
+    file:        Flat3Map.java
+    find:        parent.remove(key);
+    replace:     parent.remove(key - 1);
+}
+
+mutant FLAT3MAP_GEN_MCR_446 {
+    description: .remove( becomes .get(, in Flat3Map.EntrySet.remove(Object) at line 722
+    operator:    method-call-replacement
+    in:          remove
+    file:        Flat3Map.java
+    find:        parent.remove(key);
+    replace:     parent.get(key);
+}
+
+mutant FLAT3MAP_GEN_RVR_447 {
+    description: the answer is always true, in Flat3Map.EntrySet.remove(Object) at line 723
+    operator:    return-value-replacement
+    in:          remove
+    file:        Flat3Map.java
+    find:        return result;
+    replace:     return true;
+}
+
+mutant FLAT3MAP_GEN_RVR_448 {
+    description: the answer is always false, in Flat3Map.EntrySet.remove(Object) at line 723
+    operator:    return-value-replacement
+    in:          remove
+    file:        Flat3Map.java
+    find:        return result;
+    replace:     return false;
+}
+
+mutant FLAT3MAP_GEN_ROR_449 {
+    description: != becomes <=, in Flat3Map.EntrySet.iterator() at line 727
+    operator:    relational-operator-replacement
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.delegateMap != null) {
+    replace:     if (parent.delegateMap <= null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_450 {
+    description: != becomes >=, in Flat3Map.EntrySet.iterator() at line 727
+    operator:    relational-operator-replacement
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.delegateMap != null) {
+    replace:     if (parent.delegateMap >= null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_451 {
+    description: != becomes ==, in Flat3Map.EntrySet.iterator() at line 727
+    operator:    relational-operator-replacement
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.delegateMap != null) {
+    replace:     if (parent.delegateMap == null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_452 {
+    description: != becomes <, in Flat3Map.EntrySet.iterator() at line 727
+    operator:    relational-operator-replacement
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.delegateMap != null) {
+    replace:     if (parent.delegateMap < null) {
+}
+
+mutant FLAT3MAP_GEN_ROR_453 {
+    description: != becomes >, in Flat3Map.EntrySet.iterator() at line 727
+    operator:    relational-operator-replacement
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.delegateMap != null) {
+    replace:     if (parent.delegateMap > null) {
+}
+
+mutant FLAT3MAP_GEN_COI_454 {
+    description: the guard is negated, in Flat3Map.EntrySet.iterator() at line 727
+    operator:    conditional-operator-insertion
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.delegateMap != null) {
+    replace:     if (!(parent.delegateMap != null)) {
+}
+
+mutant FLAT3MAP_GEN_CTC_455 {
+    description: the branch is always taken, in Flat3Map.EntrySet.iterator() at line 727
+    operator:    condition-to-constant
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.delegateMap != null) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_456 {
+    description: the branch is never taken, in Flat3Map.EntrySet.iterator() at line 727
+    operator:    condition-to-constant
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.delegateMap != null) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_RVR_457 {
+    description: the answer becomes null, in Flat3Map.EntrySet.iterator() at line 728
+    operator:    return-value-replacement
+    in:          iterator
+    file:        Flat3Map.java
+    find:        return parent.delegateMap.entrySet().iterator();
+    replace:     return null;
+}
+
+mutant FLAT3MAP_GEN_ROR_458 {
+    description: == becomes <=, in Flat3Map.EntrySet.iterator() at line 730
+    operator:    relational-operator-replacement
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.size() == 0) {
+    replace:     if (parent.size() <= 0) {
+}
+
+mutant FLAT3MAP_GEN_ROR_459 {
+    description: == becomes >=, in Flat3Map.EntrySet.iterator() at line 730
+    operator:    relational-operator-replacement
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.size() == 0) {
+    replace:     if (parent.size() >= 0) {
+}
+
+mutant FLAT3MAP_GEN_ROR_460 {
+    description: == becomes !=, in Flat3Map.EntrySet.iterator() at line 730
+    operator:    relational-operator-replacement
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.size() == 0) {
+    replace:     if (parent.size() != 0) {
+}
+
+mutant FLAT3MAP_GEN_ROR_461 {
+    description: == becomes <, in Flat3Map.EntrySet.iterator() at line 730
+    operator:    relational-operator-replacement
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.size() == 0) {
+    replace:     if (parent.size() < 0) {
+}
+
+mutant FLAT3MAP_GEN_ROR_462 {
+    description: == becomes >, in Flat3Map.EntrySet.iterator() at line 730
+    operator:    relational-operator-replacement
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.size() == 0) {
+    replace:     if (parent.size() > 0) {
+}
+
+mutant FLAT3MAP_GEN_COI_463 {
+    description: the guard is negated, in Flat3Map.EntrySet.iterator() at line 730
+    operator:    conditional-operator-insertion
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.size() == 0) {
+    replace:     if (!(parent.size() == 0)) {
+}
+
+mutant FLAT3MAP_GEN_CRP_464 {
+    description: the literal 0 becomes 1, in Flat3Map.EntrySet.iterator() at line 730
+    operator:    constant-replacement
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.size() == 0) {
+    replace:     if (parent.size() == 1) {
+}
+
+mutant FLAT3MAP_GEN_CRP_465 {
+    description: the literal 0 becomes -1, in Flat3Map.EntrySet.iterator() at line 730
+    operator:    constant-replacement
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.size() == 0) {
+    replace:     if (parent.size() == -1) {
+}
+
+mutant FLAT3MAP_GEN_CTC_466 {
+    description: the branch is always taken, in Flat3Map.EntrySet.iterator() at line 730
+    operator:    condition-to-constant
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.size() == 0) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_467 {
+    description: the branch is never taken, in Flat3Map.EntrySet.iterator() at line 730
+    operator:    condition-to-constant
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.size() == 0) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_MCR_468 {
+    description: .size() becomes .hashCode(), in Flat3Map.EntrySet.iterator() at line 730
+    operator:    method-call-replacement
+    in:          iterator
+    file:        Flat3Map.java
+    find:        if (parent.size() == 0) {
+    replace:     if (parent.hashCode() == 0) {
+}
+
+mutant FLAT3MAP_GEN_RVR_469 {
+    description: the answer becomes null, in Flat3Map.EntrySet.iterator() at line 731
+    operator:    return-value-replacement
+    in:          iterator
+    file:        Flat3Map.java
+    find:        return EmptyIterator.INSTANCE;
+    replace:     return null;
+}
+
+mutant FLAT3MAP_GEN_RVR_470 {
+    description: the answer becomes null, in Flat3Map.EntrySet.iterator() at line 733
+    operator:    return-value-replacement
+    in:          iterator
+    file:        Flat3Map.java
+    find:        return new EntrySetIterator(parent);
+    replace:     return null;
+}
+
+mutant FLAT3MAP_GEN_RVR_471 {
+    description: the answer becomes null, in Flat3Map.EntrySetIterator.next() at line 760
+    operator:    return-value-replacement
+    in:          next
+    file:        Flat3Map.java
+    find:        return this;
+    replace:     return null;
+}
+
+mutant FLAT3MAP_GEN_ROR_472 {
+    description: == becomes <=, in Flat3Map.EntrySetIterator.equals(Object) at line 831
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&
+    replace:     return (key <= null ? other.getKey() == null : key.equals(other.getKey())) &&
+}
+
+mutant FLAT3MAP_GEN_ROR_473 {
+    description: == becomes >=, in Flat3Map.EntrySetIterator.equals(Object) at line 831
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&
+    replace:     return (key >= null ? other.getKey() == null : key.equals(other.getKey())) &&
+}
+
+mutant FLAT3MAP_GEN_ROR_474 {
+    description: == becomes !=, in Flat3Map.EntrySetIterator.equals(Object) at line 831
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&
+    replace:     return (key != null ? other.getKey() == null : key.equals(other.getKey())) &&
+}
+
+mutant FLAT3MAP_GEN_ROR_475 {
+    description: == becomes <, in Flat3Map.EntrySetIterator.equals(Object) at line 831
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&
+    replace:     return (key < null ? other.getKey() == null : key.equals(other.getKey())) &&
+}
+
+mutant FLAT3MAP_GEN_ROR_476 {
+    description: == becomes >, in Flat3Map.EntrySetIterator.equals(Object) at line 831
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&
+    replace:     return (key > null ? other.getKey() == null : key.equals(other.getKey())) &&
+}
+
+mutant FLAT3MAP_GEN_ROR_477 {
+    description: == becomes <=, in Flat3Map.EntrySetIterator.equals(Object) at line 831
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&
+    replace:     return (key == null ? other.getKey() <= null : key.equals(other.getKey())) &&
+}
+
+mutant FLAT3MAP_GEN_ROR_478 {
+    description: == becomes >=, in Flat3Map.EntrySetIterator.equals(Object) at line 831
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&
+    replace:     return (key == null ? other.getKey() >= null : key.equals(other.getKey())) &&
+}
+
+mutant FLAT3MAP_GEN_ROR_479 {
+    description: == becomes !=, in Flat3Map.EntrySetIterator.equals(Object) at line 831
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&
+    replace:     return (key == null ? other.getKey() != null : key.equals(other.getKey())) &&
+}
+
+mutant FLAT3MAP_GEN_ROR_480 {
+    description: == becomes <, in Flat3Map.EntrySetIterator.equals(Object) at line 831
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&
+    replace:     return (key == null ? other.getKey() < null : key.equals(other.getKey())) &&
+}
+
+mutant FLAT3MAP_GEN_ROR_481 {
+    description: == becomes >, in Flat3Map.EntrySetIterator.equals(Object) at line 831
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&
+    replace:     return (key == null ? other.getKey() > null : key.equals(other.getKey())) &&
+}
+
+mutant FLAT3MAP_GEN_COR_482 {
+    description: && becomes ||, in Flat3Map.EntrySetIterator.equals(Object) at line 831
+    operator:    conditional-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&
+    replace:     return (key == null ? other.getKey() == null : key.equals(other.getKey())) ||
+}
+
+mutant FLAT3MAP_GEN_ROR_483 {
+    description: == becomes <=, in Flat3Map.EntrySetIterator.equals(Object) at line 832
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        (value == null ? other.getValue() == null : value.equals(other.getValue()));
+    replace:     (value <= null ? other.getValue() == null : value.equals(other.getValue()));
+}
+
+mutant FLAT3MAP_GEN_ROR_484 {
+    description: == becomes >=, in Flat3Map.EntrySetIterator.equals(Object) at line 832
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        (value == null ? other.getValue() == null : value.equals(other.getValue()));
+    replace:     (value >= null ? other.getValue() == null : value.equals(other.getValue()));
+}
+
+mutant FLAT3MAP_GEN_ROR_485 {
+    description: == becomes !=, in Flat3Map.EntrySetIterator.equals(Object) at line 832
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        (value == null ? other.getValue() == null : value.equals(other.getValue()));
+    replace:     (value != null ? other.getValue() == null : value.equals(other.getValue()));
+}
+
+mutant FLAT3MAP_GEN_ROR_486 {
+    description: == becomes <, in Flat3Map.EntrySetIterator.equals(Object) at line 832
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        (value == null ? other.getValue() == null : value.equals(other.getValue()));
+    replace:     (value < null ? other.getValue() == null : value.equals(other.getValue()));
+}
+
+mutant FLAT3MAP_GEN_ROR_487 {
+    description: == becomes >, in Flat3Map.EntrySetIterator.equals(Object) at line 832
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        (value == null ? other.getValue() == null : value.equals(other.getValue()));
+    replace:     (value > null ? other.getValue() == null : value.equals(other.getValue()));
+}
+
+mutant FLAT3MAP_GEN_ROR_488 {
+    description: == becomes <=, in Flat3Map.EntrySetIterator.equals(Object) at line 832
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        (value == null ? other.getValue() == null : value.equals(other.getValue()));
+    replace:     (value == null ? other.getValue() <= null : value.equals(other.getValue()));
+}
+
+mutant FLAT3MAP_GEN_ROR_489 {
+    description: == becomes >=, in Flat3Map.EntrySetIterator.equals(Object) at line 832
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        (value == null ? other.getValue() == null : value.equals(other.getValue()));
+    replace:     (value == null ? other.getValue() >= null : value.equals(other.getValue()));
+}
+
+mutant FLAT3MAP_GEN_ROR_490 {
+    description: == becomes !=, in Flat3Map.EntrySetIterator.equals(Object) at line 832
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        (value == null ? other.getValue() == null : value.equals(other.getValue()));
+    replace:     (value == null ? other.getValue() != null : value.equals(other.getValue()));
+}
+
+mutant FLAT3MAP_GEN_ROR_491 {
+    description: == becomes <, in Flat3Map.EntrySetIterator.equals(Object) at line 832
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        (value == null ? other.getValue() == null : value.equals(other.getValue()));
+    replace:     (value == null ? other.getValue() < null : value.equals(other.getValue()));
+}
+
+mutant FLAT3MAP_GEN_ROR_492 {
+    description: == becomes >, in Flat3Map.EntrySetIterator.equals(Object) at line 832
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        (value == null ? other.getValue() == null : value.equals(other.getValue()));
+    replace:     (value == null ? other.getValue() > null : value.equals(other.getValue()));
+}
+
+mutant FLAT3MAP_GEN_SDL_493 {
+    description: the statement is removed, in Flat3Map.EntrySetIterator.equals(Object) at line 832
+    operator:    statement-deletion
+    in:          equals
+    file:        Flat3Map.java
+    find:        (value == null ? other.getValue() == null : value.equals(other.getValue()));
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_UOI_494 {
+    description: the returned value is negated, in Flat3Map.EntrySetIterator.hashCode() at line 837
+    operator:    unary-operator-insertion
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return 0;
+    replace:     return -(0);
+}
+
+mutant FLAT3MAP_GEN_ABS_495 {
+    description: the returned value is forced negative, in Flat3Map.EntrySetIterator.hashCode() at line 837
+    operator:    absolute-value-insertion
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return 0;
+    replace:     return -Math.abs(0);
+}
+
+mutant FLAT3MAP_GEN_CRP_496 {
+    description: the literal 0 becomes 1, in Flat3Map.EntrySetIterator.hashCode() at line 837
+    operator:    constant-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return 0;
+    replace:     return 1;
+}
+
+mutant FLAT3MAP_GEN_CRP_497 {
+    description: the literal 0 becomes -1, in Flat3Map.EntrySetIterator.hashCode() at line 837
+    operator:    constant-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return 0;
+    replace:     return -1;
+}
+
+mutant FLAT3MAP_GEN_ROR_498 {
+    description: == becomes <=, in Flat3Map.EntrySetIterator.hashCode() at line 841
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return (key == null ? 0 : key.hashCode()) ^
+    replace:     return (key <= null ? 0 : key.hashCode()) ^
+}
+
+mutant FLAT3MAP_GEN_ROR_499 {
+    description: == becomes >=, in Flat3Map.EntrySetIterator.hashCode() at line 841
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return (key == null ? 0 : key.hashCode()) ^
+    replace:     return (key >= null ? 0 : key.hashCode()) ^
+}
+
+mutant FLAT3MAP_GEN_ROR_500 {
+    description: == becomes !=, in Flat3Map.EntrySetIterator.hashCode() at line 841
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return (key == null ? 0 : key.hashCode()) ^
+    replace:     return (key != null ? 0 : key.hashCode()) ^
+}
+
+mutant FLAT3MAP_GEN_ROR_501 {
+    description: == becomes <, in Flat3Map.EntrySetIterator.hashCode() at line 841
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return (key == null ? 0 : key.hashCode()) ^
+    replace:     return (key < null ? 0 : key.hashCode()) ^
+}
+
+mutant FLAT3MAP_GEN_ROR_502 {
+    description: == becomes >, in Flat3Map.EntrySetIterator.hashCode() at line 841
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return (key == null ? 0 : key.hashCode()) ^
+    replace:     return (key > null ? 0 : key.hashCode()) ^
+}
+
+mutant FLAT3MAP_GEN_CRP_503 {
+    description: the literal 0 becomes 1, in Flat3Map.EntrySetIterator.hashCode() at line 841
+    operator:    constant-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return (key == null ? 0 : key.hashCode()) ^
+    replace:     return (key == null ? 1 : key.hashCode()) ^
+}
+
+mutant FLAT3MAP_GEN_CRP_504 {
+    description: the literal 0 becomes -1, in Flat3Map.EntrySetIterator.hashCode() at line 841
+    operator:    constant-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return (key == null ? 0 : key.hashCode()) ^
+    replace:     return (key == null ? -1 : key.hashCode()) ^
+}
+
+mutant FLAT3MAP_GEN_ROR_505 {
+    description: == becomes <=, in Flat3Map.EntrySetIterator.hashCode() at line 842
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        (value == null ? 0 : value.hashCode());
+    replace:     (value <= null ? 0 : value.hashCode());
+}
+
+mutant FLAT3MAP_GEN_ROR_506 {
+    description: == becomes >=, in Flat3Map.EntrySetIterator.hashCode() at line 842
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        (value == null ? 0 : value.hashCode());
+    replace:     (value >= null ? 0 : value.hashCode());
+}
+
+mutant FLAT3MAP_GEN_ROR_507 {
+    description: == becomes !=, in Flat3Map.EntrySetIterator.hashCode() at line 842
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        (value == null ? 0 : value.hashCode());
+    replace:     (value != null ? 0 : value.hashCode());
+}
+
+mutant FLAT3MAP_GEN_ROR_508 {
+    description: == becomes <, in Flat3Map.EntrySetIterator.hashCode() at line 842
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        (value == null ? 0 : value.hashCode());
+    replace:     (value < null ? 0 : value.hashCode());
+}
+
+mutant FLAT3MAP_GEN_ROR_509 {
+    description: == becomes >, in Flat3Map.EntrySetIterator.hashCode() at line 842
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        (value == null ? 0 : value.hashCode());
+    replace:     (value > null ? 0 : value.hashCode());
+}
+
+mutant FLAT3MAP_GEN_CRP_510 {
+    description: the literal 0 becomes 1, in Flat3Map.EntrySetIterator.hashCode() at line 842
+    operator:    constant-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        (value == null ? 0 : value.hashCode());
+    replace:     (value == null ? 1 : value.hashCode());
+}
+
+mutant FLAT3MAP_GEN_CRP_511 {
+    description: the literal 0 becomes -1, in Flat3Map.EntrySetIterator.hashCode() at line 842
+    operator:    constant-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        (value == null ? 0 : value.hashCode());
+    replace:     (value == null ? -1 : value.hashCode());
+}
+
+mutant FLAT3MAP_GEN_SDL_512 {
+    description: the statement is removed, in Flat3Map.EntrySetIterator.hashCode() at line 842
+    operator:    statement-deletion
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        (value == null ? 0 : value.hashCode());
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ROR_576 {
+    description: == becomes <=, in Flat3Map.equals(Object) at line 1039
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (obj == this) {
+    replace:     if (obj <= this) {
+}
+
+mutant FLAT3MAP_GEN_ROR_577 {
+    description: == becomes >=, in Flat3Map.equals(Object) at line 1039
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (obj == this) {
+    replace:     if (obj >= this) {
+}
+
+mutant FLAT3MAP_GEN_ROR_578 {
+    description: == becomes !=, in Flat3Map.equals(Object) at line 1039
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (obj == this) {
+    replace:     if (obj != this) {
+}
+
+mutant FLAT3MAP_GEN_ROR_579 {
+    description: == becomes <, in Flat3Map.equals(Object) at line 1039
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (obj == this) {
+    replace:     if (obj < this) {
+}
+
+mutant FLAT3MAP_GEN_ROR_580 {
+    description: == becomes >, in Flat3Map.equals(Object) at line 1039
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (obj == this) {
+    replace:     if (obj > this) {
+}
+
+mutant FLAT3MAP_GEN_COI_581 {
+    description: the guard is negated, in Flat3Map.equals(Object) at line 1039
+    operator:    conditional-operator-insertion
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (obj == this) {
+    replace:     if (!(obj == this)) {
+}
+
+mutant FLAT3MAP_GEN_CTC_582 {
+    description: the branch is always taken, in Flat3Map.equals(Object) at line 1039
+    operator:    condition-to-constant
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (obj == this) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_583 {
+    description: the branch is never taken, in Flat3Map.equals(Object) at line 1039
+    operator:    condition-to-constant
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (obj == this) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_RVR_584 {
+    description: the answer is always true, in Flat3Map.equals(Object) at line 1043
+    operator:    return-value-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        return delegateMap.equals(obj);
+    replace:     return true;
+}
+
+mutant FLAT3MAP_GEN_RVR_585 {
+    description: the answer is always false, in Flat3Map.equals(Object) at line 1043
+    operator:    return-value-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        return delegateMap.equals(obj);
+    replace:     return false;
+}
+
+mutant FLAT3MAP_GEN_ARP_586 {
+    description: the argument to equals() is shifted by + 1, in Flat3Map.equals(Object) at line 1043
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        return delegateMap.equals(obj);
+    replace:     return delegateMap.equals(obj + 1);
+}
+
+mutant FLAT3MAP_GEN_ARP_587 {
+    description: the argument to equals() is shifted by - 1, in Flat3Map.equals(Object) at line 1043
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        return delegateMap.equals(obj);
+    replace:     return delegateMap.equals(obj - 1);
+}
+
+mutant FLAT3MAP_GEN_ROR_588 {
+    description: == becomes <=, in Flat3Map.equals(Object) at line 1045
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (obj instanceof Map == false) {
+    replace:     if (obj instanceof Map <= false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_589 {
+    description: == becomes >=, in Flat3Map.equals(Object) at line 1045
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (obj instanceof Map == false) {
+    replace:     if (obj instanceof Map >= false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_590 {
+    description: == becomes !=, in Flat3Map.equals(Object) at line 1045
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (obj instanceof Map == false) {
+    replace:     if (obj instanceof Map != false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_591 {
+    description: == becomes <, in Flat3Map.equals(Object) at line 1045
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (obj instanceof Map == false) {
+    replace:     if (obj instanceof Map < false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_592 {
+    description: == becomes >, in Flat3Map.equals(Object) at line 1045
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (obj instanceof Map == false) {
+    replace:     if (obj instanceof Map > false) {
+}
+
+mutant FLAT3MAP_GEN_COI_593 {
+    description: the guard is negated, in Flat3Map.equals(Object) at line 1045
+    operator:    conditional-operator-insertion
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (obj instanceof Map == false) {
+    replace:     if (!(obj instanceof Map == false)) {
+}
+
+mutant FLAT3MAP_GEN_CTC_594 {
+    description: the branch is always taken, in Flat3Map.equals(Object) at line 1045
+    operator:    condition-to-constant
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (obj instanceof Map == false) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_595 {
+    description: the branch is never taken, in Flat3Map.equals(Object) at line 1045
+    operator:    condition-to-constant
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (obj instanceof Map == false) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_596 {
+    description: != becomes <=, in Flat3Map.equals(Object) at line 1049
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (size != other.size()) {
+    replace:     if (size <= other.size()) {
+}
+
+mutant FLAT3MAP_GEN_ROR_597 {
+    description: != becomes >=, in Flat3Map.equals(Object) at line 1049
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (size != other.size()) {
+    replace:     if (size >= other.size()) {
+}
+
+mutant FLAT3MAP_GEN_ROR_598 {
+    description: != becomes ==, in Flat3Map.equals(Object) at line 1049
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (size != other.size()) {
+    replace:     if (size == other.size()) {
+}
+
+mutant FLAT3MAP_GEN_ROR_599 {
+    description: != becomes <, in Flat3Map.equals(Object) at line 1049
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (size != other.size()) {
+    replace:     if (size < other.size()) {
+}
+
+mutant FLAT3MAP_GEN_ROR_600 {
+    description: != becomes >, in Flat3Map.equals(Object) at line 1049
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (size != other.size()) {
+    replace:     if (size > other.size()) {
+}
+
+mutant FLAT3MAP_GEN_COI_601 {
+    description: the guard is negated, in Flat3Map.equals(Object) at line 1049
+    operator:    conditional-operator-insertion
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (size != other.size()) {
+    replace:     if (!(size != other.size())) {
+}
+
+mutant FLAT3MAP_GEN_CTC_602 {
+    description: the branch is always taken, in Flat3Map.equals(Object) at line 1049
+    operator:    condition-to-constant
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (size != other.size()) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_603 {
+    description: the branch is never taken, in Flat3Map.equals(Object) at line 1049
+    operator:    condition-to-constant
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (size != other.size()) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_MCR_604 {
+    description: .size() becomes .hashCode(), in Flat3Map.equals(Object) at line 1049
+    operator:    method-call-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (size != other.size()) {
+    replace:     if (size != other.hashCode()) {
+}
+
+mutant FLAT3MAP_GEN_ROR_605 {
+    description: == becomes <=, in Flat3Map.equals(Object) at line 1056
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key3) == false) {
+    replace:     if (other.containsKey(key3) <= false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_606 {
+    description: == becomes >=, in Flat3Map.equals(Object) at line 1056
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key3) == false) {
+    replace:     if (other.containsKey(key3) >= false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_607 {
+    description: == becomes !=, in Flat3Map.equals(Object) at line 1056
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key3) == false) {
+    replace:     if (other.containsKey(key3) != false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_608 {
+    description: == becomes <, in Flat3Map.equals(Object) at line 1056
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key3) == false) {
+    replace:     if (other.containsKey(key3) < false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_609 {
+    description: == becomes >, in Flat3Map.equals(Object) at line 1056
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key3) == false) {
+    replace:     if (other.containsKey(key3) > false) {
+}
+
+mutant FLAT3MAP_GEN_COI_610 {
+    description: the guard is negated, in Flat3Map.equals(Object) at line 1056
+    operator:    conditional-operator-insertion
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key3) == false) {
+    replace:     if (!(other.containsKey(key3) == false)) {
+}
+
+mutant FLAT3MAP_GEN_CTC_611 {
+    description: the branch is always taken, in Flat3Map.equals(Object) at line 1056
+    operator:    condition-to-constant
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key3) == false) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_612 {
+    description: the branch is never taken, in Flat3Map.equals(Object) at line 1056
+    operator:    condition-to-constant
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key3) == false) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_ARP_613 {
+    description: the argument to containsKey() is shifted by + 1, in Flat3Map.equals(Object) at line 1056
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key3) == false) {
+    replace:     if (other.containsKey(key3 + 1) == false) {
+}
+
+mutant FLAT3MAP_GEN_ARP_614 {
+    description: the argument to containsKey() is shifted by - 1, in Flat3Map.equals(Object) at line 1056
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key3) == false) {
+    replace:     if (other.containsKey(key3 - 1) == false) {
+}
+
+mutant FLAT3MAP_GEN_MCR_615 {
+    description: .containsKey( becomes .containsValue(, in Flat3Map.equals(Object) at line 1056
+    operator:    method-call-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key3) == false) {
+    replace:     if (other.containsValue(key3) == false) {
+}
+
+mutant FLAT3MAP_GEN_SDL_616 {
+    description: the statement is removed, in Flat3Map.equals(Object) at line 1059
+    operator:    statement-deletion
+    in:          equals
+    file:        Flat3Map.java
+    find:        otherValue = other.get(key3);
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ARP_617 {
+    description: the argument to get() is shifted by + 1, in Flat3Map.equals(Object) at line 1059
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        otherValue = other.get(key3);
+    replace:     otherValue = other.get(key3 + 1);
+}
+
+mutant FLAT3MAP_GEN_ARP_618 {
+    description: the argument to get() is shifted by - 1, in Flat3Map.equals(Object) at line 1059
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        otherValue = other.get(key3);
+    replace:     otherValue = other.get(key3 - 1);
+}
+
+mutant FLAT3MAP_GEN_MCR_619 {
+    description: .get( becomes .remove(, in Flat3Map.equals(Object) at line 1059
+    operator:    method-call-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        otherValue = other.get(key3);
+    replace:     otherValue = other.remove(key3);
+}
+
+mutant FLAT3MAP_GEN_ROR_620 {
+    description: == becomes <=, in Flat3Map.equals(Object) at line 1060
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {
+    replace:     if (value3 <= null ? otherValue != null : !value3.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_621 {
+    description: == becomes >=, in Flat3Map.equals(Object) at line 1060
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {
+    replace:     if (value3 >= null ? otherValue != null : !value3.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_622 {
+    description: == becomes !=, in Flat3Map.equals(Object) at line 1060
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {
+    replace:     if (value3 != null ? otherValue != null : !value3.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_623 {
+    description: == becomes <, in Flat3Map.equals(Object) at line 1060
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {
+    replace:     if (value3 < null ? otherValue != null : !value3.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_624 {
+    description: == becomes >, in Flat3Map.equals(Object) at line 1060
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {
+    replace:     if (value3 > null ? otherValue != null : !value3.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_625 {
+    description: != becomes <=, in Flat3Map.equals(Object) at line 1060
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {
+    replace:     if (value3 == null ? otherValue <= null : !value3.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_626 {
+    description: != becomes >=, in Flat3Map.equals(Object) at line 1060
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {
+    replace:     if (value3 == null ? otherValue >= null : !value3.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_627 {
+    description: != becomes ==, in Flat3Map.equals(Object) at line 1060
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {
+    replace:     if (value3 == null ? otherValue == null : !value3.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_628 {
+    description: != becomes <, in Flat3Map.equals(Object) at line 1060
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {
+    replace:     if (value3 == null ? otherValue < null : !value3.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_629 {
+    description: != becomes >, in Flat3Map.equals(Object) at line 1060
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {
+    replace:     if (value3 == null ? otherValue > null : !value3.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_COI_630 {
+    description: the guard is negated, in Flat3Map.equals(Object) at line 1060
+    operator:    conditional-operator-insertion
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {
+    replace:     if (!(value3 == null ? otherValue != null : !value3.equals(otherValue))) {
+}
+
+mutant FLAT3MAP_GEN_CTC_631 {
+    description: the branch is always taken, in Flat3Map.equals(Object) at line 1060
+    operator:    condition-to-constant
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_632 {
+    description: the branch is never taken, in Flat3Map.equals(Object) at line 1060
+    operator:    condition-to-constant
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_ARP_633 {
+    description: the argument to equals() is shifted by + 1, in Flat3Map.equals(Object) at line 1060
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {
+    replace:     if (value3 == null ? otherValue != null : !value3.equals(otherValue + 1)) {
+}
+
+mutant FLAT3MAP_GEN_ARP_634 {
+    description: the argument to equals() is shifted by - 1, in Flat3Map.equals(Object) at line 1060
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {
+    replace:     if (value3 == null ? otherValue != null : !value3.equals(otherValue - 1)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_635 {
+    description: == becomes <=, in Flat3Map.equals(Object) at line 1064
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key2) == false) {
+    replace:     if (other.containsKey(key2) <= false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_636 {
+    description: == becomes >=, in Flat3Map.equals(Object) at line 1064
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key2) == false) {
+    replace:     if (other.containsKey(key2) >= false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_637 {
+    description: == becomes !=, in Flat3Map.equals(Object) at line 1064
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key2) == false) {
+    replace:     if (other.containsKey(key2) != false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_638 {
+    description: == becomes <, in Flat3Map.equals(Object) at line 1064
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key2) == false) {
+    replace:     if (other.containsKey(key2) < false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_639 {
+    description: == becomes >, in Flat3Map.equals(Object) at line 1064
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key2) == false) {
+    replace:     if (other.containsKey(key2) > false) {
+}
+
+mutant FLAT3MAP_GEN_COI_640 {
+    description: the guard is negated, in Flat3Map.equals(Object) at line 1064
+    operator:    conditional-operator-insertion
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key2) == false) {
+    replace:     if (!(other.containsKey(key2) == false)) {
+}
+
+mutant FLAT3MAP_GEN_CTC_641 {
+    description: the branch is always taken, in Flat3Map.equals(Object) at line 1064
+    operator:    condition-to-constant
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key2) == false) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_642 {
+    description: the branch is never taken, in Flat3Map.equals(Object) at line 1064
+    operator:    condition-to-constant
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key2) == false) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_ARP_643 {
+    description: the argument to containsKey() is shifted by + 1, in Flat3Map.equals(Object) at line 1064
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key2) == false) {
+    replace:     if (other.containsKey(key2 + 1) == false) {
+}
+
+mutant FLAT3MAP_GEN_ARP_644 {
+    description: the argument to containsKey() is shifted by - 1, in Flat3Map.equals(Object) at line 1064
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key2) == false) {
+    replace:     if (other.containsKey(key2 - 1) == false) {
+}
+
+mutant FLAT3MAP_GEN_MCR_645 {
+    description: .containsKey( becomes .containsValue(, in Flat3Map.equals(Object) at line 1064
+    operator:    method-call-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key2) == false) {
+    replace:     if (other.containsValue(key2) == false) {
+}
+
+mutant FLAT3MAP_GEN_SDL_646 {
+    description: the statement is removed, in Flat3Map.equals(Object) at line 1067
+    operator:    statement-deletion
+    in:          equals
+    file:        Flat3Map.java
+    find:        otherValue = other.get(key2);
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ARP_647 {
+    description: the argument to get() is shifted by + 1, in Flat3Map.equals(Object) at line 1067
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        otherValue = other.get(key2);
+    replace:     otherValue = other.get(key2 + 1);
+}
+
+mutant FLAT3MAP_GEN_ARP_648 {
+    description: the argument to get() is shifted by - 1, in Flat3Map.equals(Object) at line 1067
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        otherValue = other.get(key2);
+    replace:     otherValue = other.get(key2 - 1);
+}
+
+mutant FLAT3MAP_GEN_MCR_649 {
+    description: .get( becomes .remove(, in Flat3Map.equals(Object) at line 1067
+    operator:    method-call-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        otherValue = other.get(key2);
+    replace:     otherValue = other.remove(key2);
+}
+
+mutant FLAT3MAP_GEN_ROR_650 {
+    description: == becomes <=, in Flat3Map.equals(Object) at line 1068
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {
+    replace:     if (value2 <= null ? otherValue != null : !value2.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_651 {
+    description: == becomes >=, in Flat3Map.equals(Object) at line 1068
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {
+    replace:     if (value2 >= null ? otherValue != null : !value2.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_652 {
+    description: == becomes !=, in Flat3Map.equals(Object) at line 1068
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {
+    replace:     if (value2 != null ? otherValue != null : !value2.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_653 {
+    description: == becomes <, in Flat3Map.equals(Object) at line 1068
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {
+    replace:     if (value2 < null ? otherValue != null : !value2.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_654 {
+    description: == becomes >, in Flat3Map.equals(Object) at line 1068
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {
+    replace:     if (value2 > null ? otherValue != null : !value2.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_655 {
+    description: != becomes <=, in Flat3Map.equals(Object) at line 1068
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {
+    replace:     if (value2 == null ? otherValue <= null : !value2.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_656 {
+    description: != becomes >=, in Flat3Map.equals(Object) at line 1068
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {
+    replace:     if (value2 == null ? otherValue >= null : !value2.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_657 {
+    description: != becomes ==, in Flat3Map.equals(Object) at line 1068
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {
+    replace:     if (value2 == null ? otherValue == null : !value2.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_658 {
+    description: != becomes <, in Flat3Map.equals(Object) at line 1068
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {
+    replace:     if (value2 == null ? otherValue < null : !value2.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_659 {
+    description: != becomes >, in Flat3Map.equals(Object) at line 1068
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {
+    replace:     if (value2 == null ? otherValue > null : !value2.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_COI_660 {
+    description: the guard is negated, in Flat3Map.equals(Object) at line 1068
+    operator:    conditional-operator-insertion
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {
+    replace:     if (!(value2 == null ? otherValue != null : !value2.equals(otherValue))) {
+}
+
+mutant FLAT3MAP_GEN_CTC_661 {
+    description: the branch is always taken, in Flat3Map.equals(Object) at line 1068
+    operator:    condition-to-constant
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_662 {
+    description: the branch is never taken, in Flat3Map.equals(Object) at line 1068
+    operator:    condition-to-constant
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_ARP_663 {
+    description: the argument to equals() is shifted by + 1, in Flat3Map.equals(Object) at line 1068
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {
+    replace:     if (value2 == null ? otherValue != null : !value2.equals(otherValue + 1)) {
+}
+
+mutant FLAT3MAP_GEN_ARP_664 {
+    description: the argument to equals() is shifted by - 1, in Flat3Map.equals(Object) at line 1068
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {
+    replace:     if (value2 == null ? otherValue != null : !value2.equals(otherValue - 1)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_665 {
+    description: == becomes <=, in Flat3Map.equals(Object) at line 1072
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key1) == false) {
+    replace:     if (other.containsKey(key1) <= false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_666 {
+    description: == becomes >=, in Flat3Map.equals(Object) at line 1072
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key1) == false) {
+    replace:     if (other.containsKey(key1) >= false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_667 {
+    description: == becomes !=, in Flat3Map.equals(Object) at line 1072
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key1) == false) {
+    replace:     if (other.containsKey(key1) != false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_668 {
+    description: == becomes <, in Flat3Map.equals(Object) at line 1072
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key1) == false) {
+    replace:     if (other.containsKey(key1) < false) {
+}
+
+mutant FLAT3MAP_GEN_ROR_669 {
+    description: == becomes >, in Flat3Map.equals(Object) at line 1072
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key1) == false) {
+    replace:     if (other.containsKey(key1) > false) {
+}
+
+mutant FLAT3MAP_GEN_COI_670 {
+    description: the guard is negated, in Flat3Map.equals(Object) at line 1072
+    operator:    conditional-operator-insertion
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key1) == false) {
+    replace:     if (!(other.containsKey(key1) == false)) {
+}
+
+mutant FLAT3MAP_GEN_CTC_671 {
+    description: the branch is always taken, in Flat3Map.equals(Object) at line 1072
+    operator:    condition-to-constant
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key1) == false) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_672 {
+    description: the branch is never taken, in Flat3Map.equals(Object) at line 1072
+    operator:    condition-to-constant
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key1) == false) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_ARP_673 {
+    description: the argument to containsKey() is shifted by + 1, in Flat3Map.equals(Object) at line 1072
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key1) == false) {
+    replace:     if (other.containsKey(key1 + 1) == false) {
+}
+
+mutant FLAT3MAP_GEN_ARP_674 {
+    description: the argument to containsKey() is shifted by - 1, in Flat3Map.equals(Object) at line 1072
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key1) == false) {
+    replace:     if (other.containsKey(key1 - 1) == false) {
+}
+
+mutant FLAT3MAP_GEN_MCR_675 {
+    description: .containsKey( becomes .containsValue(, in Flat3Map.equals(Object) at line 1072
+    operator:    method-call-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (other.containsKey(key1) == false) {
+    replace:     if (other.containsValue(key1) == false) {
+}
+
+mutant FLAT3MAP_GEN_SDL_676 {
+    description: the statement is removed, in Flat3Map.equals(Object) at line 1075
+    operator:    statement-deletion
+    in:          equals
+    file:        Flat3Map.java
+    find:        otherValue = other.get(key1);
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ARP_677 {
+    description: the argument to get() is shifted by + 1, in Flat3Map.equals(Object) at line 1075
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        otherValue = other.get(key1);
+    replace:     otherValue = other.get(key1 + 1);
+}
+
+mutant FLAT3MAP_GEN_ARP_678 {
+    description: the argument to get() is shifted by - 1, in Flat3Map.equals(Object) at line 1075
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        otherValue = other.get(key1);
+    replace:     otherValue = other.get(key1 - 1);
+}
+
+mutant FLAT3MAP_GEN_MCR_679 {
+    description: .get( becomes .remove(, in Flat3Map.equals(Object) at line 1075
+    operator:    method-call-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        otherValue = other.get(key1);
+    replace:     otherValue = other.remove(key1);
+}
+
+mutant FLAT3MAP_GEN_ROR_680 {
+    description: == becomes <=, in Flat3Map.equals(Object) at line 1076
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {
+    replace:     if (value1 <= null ? otherValue != null : !value1.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_681 {
+    description: == becomes >=, in Flat3Map.equals(Object) at line 1076
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {
+    replace:     if (value1 >= null ? otherValue != null : !value1.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_682 {
+    description: == becomes !=, in Flat3Map.equals(Object) at line 1076
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {
+    replace:     if (value1 != null ? otherValue != null : !value1.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_683 {
+    description: == becomes <, in Flat3Map.equals(Object) at line 1076
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {
+    replace:     if (value1 < null ? otherValue != null : !value1.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_684 {
+    description: == becomes >, in Flat3Map.equals(Object) at line 1076
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {
+    replace:     if (value1 > null ? otherValue != null : !value1.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_685 {
+    description: != becomes <=, in Flat3Map.equals(Object) at line 1076
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {
+    replace:     if (value1 == null ? otherValue <= null : !value1.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_686 {
+    description: != becomes >=, in Flat3Map.equals(Object) at line 1076
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {
+    replace:     if (value1 == null ? otherValue >= null : !value1.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_687 {
+    description: != becomes ==, in Flat3Map.equals(Object) at line 1076
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {
+    replace:     if (value1 == null ? otherValue == null : !value1.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_688 {
+    description: != becomes <, in Flat3Map.equals(Object) at line 1076
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {
+    replace:     if (value1 == null ? otherValue < null : !value1.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_ROR_689 {
+    description: != becomes >, in Flat3Map.equals(Object) at line 1076
+    operator:    relational-operator-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {
+    replace:     if (value1 == null ? otherValue > null : !value1.equals(otherValue)) {
+}
+
+mutant FLAT3MAP_GEN_COI_690 {
+    description: the guard is negated, in Flat3Map.equals(Object) at line 1076
+    operator:    conditional-operator-insertion
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {
+    replace:     if (!(value1 == null ? otherValue != null : !value1.equals(otherValue))) {
+}
+
+mutant FLAT3MAP_GEN_CTC_691 {
+    description: the branch is always taken, in Flat3Map.equals(Object) at line 1076
+    operator:    condition-to-constant
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {
+    replace:     if (true) {
+}
+
+mutant FLAT3MAP_GEN_CTC_692 {
+    description: the branch is never taken, in Flat3Map.equals(Object) at line 1076
+    operator:    condition-to-constant
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {
+    replace:     if (false) {
+}
+
+mutant FLAT3MAP_GEN_ARP_693 {
+    description: the argument to equals() is shifted by + 1, in Flat3Map.equals(Object) at line 1076
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {
+    replace:     if (value1 == null ? otherValue != null : !value1.equals(otherValue + 1)) {
+}
+
+mutant FLAT3MAP_GEN_ARP_694 {
+    description: the argument to equals() is shifted by - 1, in Flat3Map.equals(Object) at line 1076
+    operator:    argument-replacement
+    in:          equals
+    file:        Flat3Map.java
+    find:        if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {
+    replace:     if (value1 == null ? otherValue != null : !value1.equals(otherValue - 1)) {
+}
+
+mutant FLAT3MAP_GEN_UOI_695 {
+    description: the returned value is negated, in Flat3Map.hashCode() at line 1091
+    operator:    unary-operator-insertion
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return delegateMap.hashCode();
+    replace:     return -(delegateMap.hashCode());
+}
+
+mutant FLAT3MAP_GEN_ABS_696 {
+    description: the returned value is forced negative, in Flat3Map.hashCode() at line 1091
+    operator:    absolute-value-insertion
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return delegateMap.hashCode();
+    replace:     return -Math.abs(delegateMap.hashCode());
+}
+
+mutant FLAT3MAP_GEN_RVR_697 {
+    description: the answer becomes 0, in Flat3Map.hashCode() at line 1091
+    operator:    return-value-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return delegateMap.hashCode();
+    replace:     return 0;
+}
+
+mutant FLAT3MAP_GEN_RVR_698 {
+    description: the answer becomes 1, in Flat3Map.hashCode() at line 1091
+    operator:    return-value-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return delegateMap.hashCode();
+    replace:     return 1;
+}
+
+mutant FLAT3MAP_GEN_RVR_699 {
+    description: the answer becomes -1, in Flat3Map.hashCode() at line 1091
+    operator:    return-value-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return delegateMap.hashCode();
+    replace:     return -1;
+}
+
+mutant FLAT3MAP_GEN_CRP_700 {
+    description: the literal 0 becomes 1, in Flat3Map.hashCode() at line 1093
+    operator:    constant-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        int total = 0;
+    replace:     int total = 1;
+}
+
+mutant FLAT3MAP_GEN_CRP_701 {
+    description: the literal 0 becomes -1, in Flat3Map.hashCode() at line 1093
+    operator:    constant-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        int total = 0;
+    replace:     int total = -1;
+}
+
+mutant FLAT3MAP_GEN_ROR_702 {
+    description: == becomes <=, in Flat3Map.hashCode() at line 1096
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash3 ^ (value3 == null ? 0 : value3.hashCode()));
+    replace:     total += (hash3 ^ (value3 <= null ? 0 : value3.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_ROR_703 {
+    description: == becomes >=, in Flat3Map.hashCode() at line 1096
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash3 ^ (value3 == null ? 0 : value3.hashCode()));
+    replace:     total += (hash3 ^ (value3 >= null ? 0 : value3.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_ROR_704 {
+    description: == becomes !=, in Flat3Map.hashCode() at line 1096
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash3 ^ (value3 == null ? 0 : value3.hashCode()));
+    replace:     total += (hash3 ^ (value3 != null ? 0 : value3.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_ROR_705 {
+    description: == becomes <, in Flat3Map.hashCode() at line 1096
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash3 ^ (value3 == null ? 0 : value3.hashCode()));
+    replace:     total += (hash3 ^ (value3 < null ? 0 : value3.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_ROR_706 {
+    description: == becomes >, in Flat3Map.hashCode() at line 1096
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash3 ^ (value3 == null ? 0 : value3.hashCode()));
+    replace:     total += (hash3 ^ (value3 > null ? 0 : value3.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_CRP_707 {
+    description: the literal 0 becomes 1, in Flat3Map.hashCode() at line 1096
+    operator:    constant-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash3 ^ (value3 == null ? 0 : value3.hashCode()));
+    replace:     total += (hash3 ^ (value3 == null ? 1 : value3.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_CRP_708 {
+    description: the literal 0 becomes -1, in Flat3Map.hashCode() at line 1096
+    operator:    constant-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash3 ^ (value3 == null ? 0 : value3.hashCode()));
+    replace:     total += (hash3 ^ (value3 == null ? -1 : value3.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_SDL_709 {
+    description: the statement is removed, in Flat3Map.hashCode() at line 1096
+    operator:    statement-deletion
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash3 ^ (value3 == null ? 0 : value3.hashCode()));
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ROR_710 {
+    description: == becomes <=, in Flat3Map.hashCode() at line 1098
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash2 ^ (value2 == null ? 0 : value2.hashCode()));
+    replace:     total += (hash2 ^ (value2 <= null ? 0 : value2.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_ROR_711 {
+    description: == becomes >=, in Flat3Map.hashCode() at line 1098
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash2 ^ (value2 == null ? 0 : value2.hashCode()));
+    replace:     total += (hash2 ^ (value2 >= null ? 0 : value2.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_ROR_712 {
+    description: == becomes !=, in Flat3Map.hashCode() at line 1098
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash2 ^ (value2 == null ? 0 : value2.hashCode()));
+    replace:     total += (hash2 ^ (value2 != null ? 0 : value2.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_ROR_713 {
+    description: == becomes <, in Flat3Map.hashCode() at line 1098
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash2 ^ (value2 == null ? 0 : value2.hashCode()));
+    replace:     total += (hash2 ^ (value2 < null ? 0 : value2.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_ROR_714 {
+    description: == becomes >, in Flat3Map.hashCode() at line 1098
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash2 ^ (value2 == null ? 0 : value2.hashCode()));
+    replace:     total += (hash2 ^ (value2 > null ? 0 : value2.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_CRP_715 {
+    description: the literal 0 becomes 1, in Flat3Map.hashCode() at line 1098
+    operator:    constant-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash2 ^ (value2 == null ? 0 : value2.hashCode()));
+    replace:     total += (hash2 ^ (value2 == null ? 1 : value2.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_CRP_716 {
+    description: the literal 0 becomes -1, in Flat3Map.hashCode() at line 1098
+    operator:    constant-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash2 ^ (value2 == null ? 0 : value2.hashCode()));
+    replace:     total += (hash2 ^ (value2 == null ? -1 : value2.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_SDL_717 {
+    description: the statement is removed, in Flat3Map.hashCode() at line 1098
+    operator:    statement-deletion
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash2 ^ (value2 == null ? 0 : value2.hashCode()));
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_ROR_718 {
+    description: == becomes <=, in Flat3Map.hashCode() at line 1100
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash1 ^ (value1 == null ? 0 : value1.hashCode()));
+    replace:     total += (hash1 ^ (value1 <= null ? 0 : value1.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_ROR_719 {
+    description: == becomes >=, in Flat3Map.hashCode() at line 1100
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash1 ^ (value1 == null ? 0 : value1.hashCode()));
+    replace:     total += (hash1 ^ (value1 >= null ? 0 : value1.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_ROR_720 {
+    description: == becomes !=, in Flat3Map.hashCode() at line 1100
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash1 ^ (value1 == null ? 0 : value1.hashCode()));
+    replace:     total += (hash1 ^ (value1 != null ? 0 : value1.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_ROR_721 {
+    description: == becomes <, in Flat3Map.hashCode() at line 1100
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash1 ^ (value1 == null ? 0 : value1.hashCode()));
+    replace:     total += (hash1 ^ (value1 < null ? 0 : value1.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_ROR_722 {
+    description: == becomes >, in Flat3Map.hashCode() at line 1100
+    operator:    relational-operator-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash1 ^ (value1 == null ? 0 : value1.hashCode()));
+    replace:     total += (hash1 ^ (value1 > null ? 0 : value1.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_CRP_723 {
+    description: the literal 0 becomes 1, in Flat3Map.hashCode() at line 1100
+    operator:    constant-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash1 ^ (value1 == null ? 0 : value1.hashCode()));
+    replace:     total += (hash1 ^ (value1 == null ? 1 : value1.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_CRP_724 {
+    description: the literal 0 becomes -1, in Flat3Map.hashCode() at line 1100
+    operator:    constant-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash1 ^ (value1 == null ? 0 : value1.hashCode()));
+    replace:     total += (hash1 ^ (value1 == null ? -1 : value1.hashCode()));
+}
+
+mutant FLAT3MAP_GEN_SDL_725 {
+    description: the statement is removed, in Flat3Map.hashCode() at line 1100
+    operator:    statement-deletion
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        total += (hash1 ^ (value1 == null ? 0 : value1.hashCode()));
+    replace:     
+}
+
+mutant FLAT3MAP_GEN_UOI_726 {
+    description: the returned value is negated, in Flat3Map.hashCode() at line 1102
+    operator:    unary-operator-insertion
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return total;
+    replace:     return -(total);
+}
+
+mutant FLAT3MAP_GEN_ABS_727 {
+    description: the returned value is forced negative, in Flat3Map.hashCode() at line 1102
+    operator:    absolute-value-insertion
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return total;
+    replace:     return -Math.abs(total);
+}
+
+mutant FLAT3MAP_GEN_RVR_728 {
+    description: the answer becomes 0, in Flat3Map.hashCode() at line 1102
+    operator:    return-value-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return total;
+    replace:     return 0;
+}
+
+mutant FLAT3MAP_GEN_RVR_729 {
+    description: the answer becomes 1, in Flat3Map.hashCode() at line 1102
+    operator:    return-value-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return total;
+    replace:     return 1;
+}
+
+mutant FLAT3MAP_GEN_RVR_730 {
+    description: the answer becomes -1, in Flat3Map.hashCode() at line 1102
+    operator:    return-value-replacement
+    in:          hashCode
+    file:        Flat3Map.java
+    find:        return total;
+    replace:     return -1;
+}
+

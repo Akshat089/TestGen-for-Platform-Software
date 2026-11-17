@@ -1,0 +1,523 @@
+id	line	operator	abbr	method	direct	find	replace
+FLAT3MAP_GEN_SDL_12	107	statement-deletion	SDL	Flat3Map.<init>()	direct	super();	
+FLAT3MAP_GEN_ROR_14	129	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (delegateMap != null) {	if (delegateMap <= null) {
+FLAT3MAP_GEN_ROR_15	129	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (delegateMap != null) {	if (delegateMap >= null) {
+FLAT3MAP_GEN_ROR_16	129	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (delegateMap != null) {	if (delegateMap == null) {
+FLAT3MAP_GEN_ROR_17	129	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (delegateMap != null) {	if (delegateMap < null) {
+FLAT3MAP_GEN_ROR_18	129	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (delegateMap != null) {	if (delegateMap > null) {
+FLAT3MAP_GEN_COI_19	129	conditional-operator-insertion	COI	Flat3Map.get(Object)	direct	if (delegateMap != null) {	if (!(delegateMap != null)) {
+FLAT3MAP_GEN_CTC_20	129	condition-to-constant	CTC	Flat3Map.get(Object)	direct	if (delegateMap != null) {	if (true) {
+FLAT3MAP_GEN_CTC_21	129	condition-to-constant	CTC	Flat3Map.get(Object)	direct	if (delegateMap != null) {	if (false) {
+FLAT3MAP_GEN_RVR_22	130	return-value-replacement	RVR	Flat3Map.get(Object)	direct	return delegateMap.get(key);	return null;
+FLAT3MAP_GEN_ARP_23	130	argument-replacement	ARP	Flat3Map.get(Object)	direct	return delegateMap.get(key);	return delegateMap.get(key + 1);
+FLAT3MAP_GEN_ARP_24	130	argument-replacement	ARP	Flat3Map.get(Object)	direct	return delegateMap.get(key);	return delegateMap.get(key - 1);
+FLAT3MAP_GEN_MCR_25	130	method-call-replacement	MCR	Flat3Map.get(Object)	direct	return delegateMap.get(key);	return delegateMap.remove(key);
+FLAT3MAP_GEN_ROR_26	132	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key == null) {	if (key <= null) {
+FLAT3MAP_GEN_ROR_27	132	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key == null) {	if (key >= null) {
+FLAT3MAP_GEN_ROR_28	132	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key == null) {	if (key != null) {
+FLAT3MAP_GEN_ROR_29	132	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key == null) {	if (key < null) {
+FLAT3MAP_GEN_ROR_30	132	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key == null) {	if (key > null) {
+FLAT3MAP_GEN_COI_31	132	conditional-operator-insertion	COI	Flat3Map.get(Object)	direct	if (key == null) {	if (!(key == null)) {
+FLAT3MAP_GEN_CTC_32	132	condition-to-constant	CTC	Flat3Map.get(Object)	direct	if (key == null) {	if (true) {
+FLAT3MAP_GEN_CTC_33	132	condition-to-constant	CTC	Flat3Map.get(Object)	direct	if (key == null) {	if (false) {
+FLAT3MAP_GEN_ROR_34	136	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key3 == null) return value3;	if (key3 <= null) return value3;
+FLAT3MAP_GEN_ROR_35	136	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key3 == null) return value3;	if (key3 >= null) return value3;
+FLAT3MAP_GEN_ROR_36	136	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key3 == null) return value3;	if (key3 != null) return value3;
+FLAT3MAP_GEN_ROR_37	136	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key3 == null) return value3;	if (key3 < null) return value3;
+FLAT3MAP_GEN_ROR_38	136	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key3 == null) return value3;	if (key3 > null) return value3;
+FLAT3MAP_GEN_SDL_39	136	statement-deletion	SDL	Flat3Map.get(Object)	direct	if (key3 == null) return value3;	
+FLAT3MAP_GEN_ROR_40	138	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key2 == null) return value2;	if (key2 <= null) return value2;
+FLAT3MAP_GEN_ROR_41	138	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key2 == null) return value2;	if (key2 >= null) return value2;
+FLAT3MAP_GEN_ROR_42	138	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key2 == null) return value2;	if (key2 != null) return value2;
+FLAT3MAP_GEN_ROR_43	138	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key2 == null) return value2;	if (key2 < null) return value2;
+FLAT3MAP_GEN_ROR_44	138	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key2 == null) return value2;	if (key2 > null) return value2;
+FLAT3MAP_GEN_SDL_45	138	statement-deletion	SDL	Flat3Map.get(Object)	direct	if (key2 == null) return value2;	
+FLAT3MAP_GEN_ROR_46	140	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key1 == null) return value1;	if (key1 <= null) return value1;
+FLAT3MAP_GEN_ROR_47	140	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key1 == null) return value1;	if (key1 >= null) return value1;
+FLAT3MAP_GEN_ROR_48	140	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key1 == null) return value1;	if (key1 != null) return value1;
+FLAT3MAP_GEN_ROR_49	140	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key1 == null) return value1;	if (key1 < null) return value1;
+FLAT3MAP_GEN_ROR_50	140	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (key1 == null) return value1;	if (key1 > null) return value1;
+FLAT3MAP_GEN_SDL_51	140	statement-deletion	SDL	Flat3Map.get(Object)	direct	if (key1 == null) return value1;	
+FLAT3MAP_GEN_ROR_52	143	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (size > 0) {	if (size <= 0) {
+FLAT3MAP_GEN_ROR_53	143	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (size > 0) {	if (size >= 0) {
+FLAT3MAP_GEN_ROR_54	143	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (size > 0) {	if (size == 0) {
+FLAT3MAP_GEN_ROR_55	143	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (size > 0) {	if (size != 0) {
+FLAT3MAP_GEN_ROR_56	143	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (size > 0) {	if (size < 0) {
+FLAT3MAP_GEN_COI_57	143	conditional-operator-insertion	COI	Flat3Map.get(Object)	direct	if (size > 0) {	if (!(size > 0)) {
+FLAT3MAP_GEN_CRP_58	143	constant-replacement	CRP	Flat3Map.get(Object)	direct	if (size > 0) {	if (size > 1) {
+FLAT3MAP_GEN_CRP_59	143	constant-replacement	CRP	Flat3Map.get(Object)	direct	if (size > 0) {	if (size > -1) {
+FLAT3MAP_GEN_CTC_60	143	condition-to-constant	CTC	Flat3Map.get(Object)	direct	if (size > 0) {	if (true) {
+FLAT3MAP_GEN_CTC_61	143	condition-to-constant	CTC	Flat3Map.get(Object)	direct	if (size > 0) {	if (false) {
+FLAT3MAP_GEN_ROR_62	148	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (hash3 == hashCode && key.equals(key3)) return value3;	if (hash3 <= hashCode && key.equals(key3)) return value3;
+FLAT3MAP_GEN_ROR_63	148	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (hash3 == hashCode && key.equals(key3)) return value3;	if (hash3 >= hashCode && key.equals(key3)) return value3;
+FLAT3MAP_GEN_ROR_64	148	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (hash3 == hashCode && key.equals(key3)) return value3;	if (hash3 != hashCode && key.equals(key3)) return value3;
+FLAT3MAP_GEN_ROR_65	148	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (hash3 == hashCode && key.equals(key3)) return value3;	if (hash3 < hashCode && key.equals(key3)) return value3;
+FLAT3MAP_GEN_ROR_66	148	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (hash3 == hashCode && key.equals(key3)) return value3;	if (hash3 > hashCode && key.equals(key3)) return value3;
+FLAT3MAP_GEN_COR_67	148	conditional-operator-replacement	COR	Flat3Map.get(Object)	direct	if (hash3 == hashCode && key.equals(key3)) return value3;	if (hash3 == hashCode || key.equals(key3)) return value3;
+FLAT3MAP_GEN_SDL_68	148	statement-deletion	SDL	Flat3Map.get(Object)	direct	if (hash3 == hashCode && key.equals(key3)) return value3;	
+FLAT3MAP_GEN_ARP_69	148	argument-replacement	ARP	Flat3Map.get(Object)	direct	if (hash3 == hashCode && key.equals(key3)) return value3;	if (hash3 == hashCode && key.equals(key3 + 1)) return value3;
+FLAT3MAP_GEN_ARP_70	148	argument-replacement	ARP	Flat3Map.get(Object)	direct	if (hash3 == hashCode && key.equals(key3)) return value3;	if (hash3 == hashCode && key.equals(key3 - 1)) return value3;
+FLAT3MAP_GEN_ROR_71	150	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (hash2 == hashCode && key.equals(key2)) return value2;	if (hash2 <= hashCode && key.equals(key2)) return value2;
+FLAT3MAP_GEN_ROR_72	150	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (hash2 == hashCode && key.equals(key2)) return value2;	if (hash2 >= hashCode && key.equals(key2)) return value2;
+FLAT3MAP_GEN_ROR_73	150	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (hash2 == hashCode && key.equals(key2)) return value2;	if (hash2 != hashCode && key.equals(key2)) return value2;
+FLAT3MAP_GEN_ROR_74	150	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (hash2 == hashCode && key.equals(key2)) return value2;	if (hash2 < hashCode && key.equals(key2)) return value2;
+FLAT3MAP_GEN_ROR_75	150	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (hash2 == hashCode && key.equals(key2)) return value2;	if (hash2 > hashCode && key.equals(key2)) return value2;
+FLAT3MAP_GEN_COR_76	150	conditional-operator-replacement	COR	Flat3Map.get(Object)	direct	if (hash2 == hashCode && key.equals(key2)) return value2;	if (hash2 == hashCode || key.equals(key2)) return value2;
+FLAT3MAP_GEN_SDL_77	150	statement-deletion	SDL	Flat3Map.get(Object)	direct	if (hash2 == hashCode && key.equals(key2)) return value2;	
+FLAT3MAP_GEN_ARP_78	150	argument-replacement	ARP	Flat3Map.get(Object)	direct	if (hash2 == hashCode && key.equals(key2)) return value2;	if (hash2 == hashCode && key.equals(key2 + 1)) return value2;
+FLAT3MAP_GEN_ARP_79	150	argument-replacement	ARP	Flat3Map.get(Object)	direct	if (hash2 == hashCode && key.equals(key2)) return value2;	if (hash2 == hashCode && key.equals(key2 - 1)) return value2;
+FLAT3MAP_GEN_ROR_80	152	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (hash1 == hashCode && key.equals(key1)) return value1;	if (hash1 <= hashCode && key.equals(key1)) return value1;
+FLAT3MAP_GEN_ROR_81	152	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (hash1 == hashCode && key.equals(key1)) return value1;	if (hash1 >= hashCode && key.equals(key1)) return value1;
+FLAT3MAP_GEN_ROR_82	152	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (hash1 == hashCode && key.equals(key1)) return value1;	if (hash1 != hashCode && key.equals(key1)) return value1;
+FLAT3MAP_GEN_ROR_83	152	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (hash1 == hashCode && key.equals(key1)) return value1;	if (hash1 < hashCode && key.equals(key1)) return value1;
+FLAT3MAP_GEN_ROR_84	152	relational-operator-replacement	ROR	Flat3Map.get(Object)	direct	if (hash1 == hashCode && key.equals(key1)) return value1;	if (hash1 > hashCode && key.equals(key1)) return value1;
+FLAT3MAP_GEN_COR_85	152	conditional-operator-replacement	COR	Flat3Map.get(Object)	direct	if (hash1 == hashCode && key.equals(key1)) return value1;	if (hash1 == hashCode || key.equals(key1)) return value1;
+FLAT3MAP_GEN_SDL_86	152	statement-deletion	SDL	Flat3Map.get(Object)	direct	if (hash1 == hashCode && key.equals(key1)) return value1;	
+FLAT3MAP_GEN_ARP_87	152	argument-replacement	ARP	Flat3Map.get(Object)	direct	if (hash1 == hashCode && key.equals(key1)) return value1;	if (hash1 == hashCode && key.equals(key1 + 1)) return value1;
+FLAT3MAP_GEN_ARP_88	152	argument-replacement	ARP	Flat3Map.get(Object)	direct	if (hash1 == hashCode && key.equals(key1)) return value1;	if (hash1 == hashCode && key.equals(key1 - 1)) return value1;
+FLAT3MAP_GEN_UOI_89	166	unary-operator-insertion	UOI	Flat3Map.size()	direct	return delegateMap.size();	return -(delegateMap.size());
+FLAT3MAP_GEN_ABS_90	166	absolute-value-insertion	ABS	Flat3Map.size()	direct	return delegateMap.size();	return -Math.abs(delegateMap.size());
+FLAT3MAP_GEN_RVR_91	166	return-value-replacement	RVR	Flat3Map.size()	direct	return delegateMap.size();	return 0;
+FLAT3MAP_GEN_RVR_92	166	return-value-replacement	RVR	Flat3Map.size()	direct	return delegateMap.size();	return 1;
+FLAT3MAP_GEN_RVR_93	166	return-value-replacement	RVR	Flat3Map.size()	direct	return delegateMap.size();	return -1;
+FLAT3MAP_GEN_MCR_94	166	method-call-replacement	MCR	Flat3Map.size()	direct	return delegateMap.size();	return delegateMap.hashCode();
+FLAT3MAP_GEN_UOI_95	168	unary-operator-insertion	UOI	Flat3Map.size()	direct	return size;	return -(size);
+FLAT3MAP_GEN_ABS_96	168	absolute-value-insertion	ABS	Flat3Map.size()	direct	return size;	return -Math.abs(size);
+FLAT3MAP_GEN_RVR_97	168	return-value-replacement	RVR	Flat3Map.size()	direct	return size;	return 0;
+FLAT3MAP_GEN_RVR_98	168	return-value-replacement	RVR	Flat3Map.size()	direct	return size;	return 1;
+FLAT3MAP_GEN_RVR_99	168	return-value-replacement	RVR	Flat3Map.size()	direct	return size;	return -1;
+FLAT3MAP_GEN_RVR_109	189	return-value-replacement	RVR	Flat3Map.containsKey(Object)	direct	return delegateMap.containsKey(key);	return true;
+FLAT3MAP_GEN_RVR_110	189	return-value-replacement	RVR	Flat3Map.containsKey(Object)	direct	return delegateMap.containsKey(key);	return false;
+FLAT3MAP_GEN_ARP_111	189	argument-replacement	ARP	Flat3Map.containsKey(Object)	direct	return delegateMap.containsKey(key);	return delegateMap.containsKey(key + 1);
+FLAT3MAP_GEN_ARP_112	189	argument-replacement	ARP	Flat3Map.containsKey(Object)	direct	return delegateMap.containsKey(key);	return delegateMap.containsKey(key - 1);
+FLAT3MAP_GEN_MCR_113	189	method-call-replacement	MCR	Flat3Map.containsKey(Object)	direct	return delegateMap.containsKey(key);	return delegateMap.containsValue(key);
+FLAT3MAP_GEN_ROR_114	194	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (key3 == null) return true;	if (key3 <= null) return true;
+FLAT3MAP_GEN_ROR_115	194	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (key3 == null) return true;	if (key3 >= null) return true;
+FLAT3MAP_GEN_ROR_116	194	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (key3 == null) return true;	if (key3 != null) return true;
+FLAT3MAP_GEN_ROR_117	194	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (key3 == null) return true;	if (key3 < null) return true;
+FLAT3MAP_GEN_ROR_118	194	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (key3 == null) return true;	if (key3 > null) return true;
+FLAT3MAP_GEN_SDL_119	194	statement-deletion	SDL	Flat3Map.containsKey(Object)	direct	if (key3 == null) return true;	
+FLAT3MAP_GEN_ROR_120	196	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (key2 == null) return true;	if (key2 <= null) return true;
+FLAT3MAP_GEN_ROR_121	196	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (key2 == null) return true;	if (key2 >= null) return true;
+FLAT3MAP_GEN_ROR_122	196	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (key2 == null) return true;	if (key2 != null) return true;
+FLAT3MAP_GEN_ROR_123	196	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (key2 == null) return true;	if (key2 < null) return true;
+FLAT3MAP_GEN_ROR_124	196	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (key2 == null) return true;	if (key2 > null) return true;
+FLAT3MAP_GEN_SDL_125	196	statement-deletion	SDL	Flat3Map.containsKey(Object)	direct	if (key2 == null) return true;	
+FLAT3MAP_GEN_ROR_126	198	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (key1 == null) return true;	if (key1 <= null) return true;
+FLAT3MAP_GEN_ROR_127	198	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (key1 == null) return true;	if (key1 >= null) return true;
+FLAT3MAP_GEN_ROR_128	198	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (key1 == null) return true;	if (key1 != null) return true;
+FLAT3MAP_GEN_ROR_129	198	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (key1 == null) return true;	if (key1 < null) return true;
+FLAT3MAP_GEN_ROR_130	198	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (key1 == null) return true;	if (key1 > null) return true;
+FLAT3MAP_GEN_SDL_131	198	statement-deletion	SDL	Flat3Map.containsKey(Object)	direct	if (key1 == null) return true;	
+FLAT3MAP_GEN_ROR_132	205	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (hash3 == hashCode && key.equals(key3)) return true;	if (hash3 <= hashCode && key.equals(key3)) return true;
+FLAT3MAP_GEN_ROR_133	205	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (hash3 == hashCode && key.equals(key3)) return true;	if (hash3 >= hashCode && key.equals(key3)) return true;
+FLAT3MAP_GEN_ROR_134	205	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (hash3 == hashCode && key.equals(key3)) return true;	if (hash3 != hashCode && key.equals(key3)) return true;
+FLAT3MAP_GEN_ROR_135	205	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (hash3 == hashCode && key.equals(key3)) return true;	if (hash3 < hashCode && key.equals(key3)) return true;
+FLAT3MAP_GEN_ROR_136	205	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (hash3 == hashCode && key.equals(key3)) return true;	if (hash3 > hashCode && key.equals(key3)) return true;
+FLAT3MAP_GEN_COR_137	205	conditional-operator-replacement	COR	Flat3Map.containsKey(Object)	direct	if (hash3 == hashCode && key.equals(key3)) return true;	if (hash3 == hashCode || key.equals(key3)) return true;
+FLAT3MAP_GEN_SDL_138	205	statement-deletion	SDL	Flat3Map.containsKey(Object)	direct	if (hash3 == hashCode && key.equals(key3)) return true;	
+FLAT3MAP_GEN_ARP_139	205	argument-replacement	ARP	Flat3Map.containsKey(Object)	direct	if (hash3 == hashCode && key.equals(key3)) return true;	if (hash3 == hashCode && key.equals(key3 + 1)) return true;
+FLAT3MAP_GEN_ARP_140	205	argument-replacement	ARP	Flat3Map.containsKey(Object)	direct	if (hash3 == hashCode && key.equals(key3)) return true;	if (hash3 == hashCode && key.equals(key3 - 1)) return true;
+FLAT3MAP_GEN_ROR_141	207	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (hash2 == hashCode && key.equals(key2)) return true;	if (hash2 <= hashCode && key.equals(key2)) return true;
+FLAT3MAP_GEN_ROR_142	207	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (hash2 == hashCode && key.equals(key2)) return true;	if (hash2 >= hashCode && key.equals(key2)) return true;
+FLAT3MAP_GEN_ROR_143	207	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (hash2 == hashCode && key.equals(key2)) return true;	if (hash2 != hashCode && key.equals(key2)) return true;
+FLAT3MAP_GEN_ROR_144	207	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (hash2 == hashCode && key.equals(key2)) return true;	if (hash2 < hashCode && key.equals(key2)) return true;
+FLAT3MAP_GEN_ROR_145	207	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (hash2 == hashCode && key.equals(key2)) return true;	if (hash2 > hashCode && key.equals(key2)) return true;
+FLAT3MAP_GEN_COR_146	207	conditional-operator-replacement	COR	Flat3Map.containsKey(Object)	direct	if (hash2 == hashCode && key.equals(key2)) return true;	if (hash2 == hashCode || key.equals(key2)) return true;
+FLAT3MAP_GEN_SDL_147	207	statement-deletion	SDL	Flat3Map.containsKey(Object)	direct	if (hash2 == hashCode && key.equals(key2)) return true;	
+FLAT3MAP_GEN_ARP_148	207	argument-replacement	ARP	Flat3Map.containsKey(Object)	direct	if (hash2 == hashCode && key.equals(key2)) return true;	if (hash2 == hashCode && key.equals(key2 + 1)) return true;
+FLAT3MAP_GEN_ARP_149	207	argument-replacement	ARP	Flat3Map.containsKey(Object)	direct	if (hash2 == hashCode && key.equals(key2)) return true;	if (hash2 == hashCode && key.equals(key2 - 1)) return true;
+FLAT3MAP_GEN_ROR_150	209	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (hash1 == hashCode && key.equals(key1)) return true;	if (hash1 <= hashCode && key.equals(key1)) return true;
+FLAT3MAP_GEN_ROR_151	209	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (hash1 == hashCode && key.equals(key1)) return true;	if (hash1 >= hashCode && key.equals(key1)) return true;
+FLAT3MAP_GEN_ROR_152	209	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (hash1 == hashCode && key.equals(key1)) return true;	if (hash1 != hashCode && key.equals(key1)) return true;
+FLAT3MAP_GEN_ROR_153	209	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (hash1 == hashCode && key.equals(key1)) return true;	if (hash1 < hashCode && key.equals(key1)) return true;
+FLAT3MAP_GEN_ROR_154	209	relational-operator-replacement	ROR	Flat3Map.containsKey(Object)	direct	if (hash1 == hashCode && key.equals(key1)) return true;	if (hash1 > hashCode && key.equals(key1)) return true;
+FLAT3MAP_GEN_COR_155	209	conditional-operator-replacement	COR	Flat3Map.containsKey(Object)	direct	if (hash1 == hashCode && key.equals(key1)) return true;	if (hash1 == hashCode || key.equals(key1)) return true;
+FLAT3MAP_GEN_SDL_156	209	statement-deletion	SDL	Flat3Map.containsKey(Object)	direct	if (hash1 == hashCode && key.equals(key1)) return true;	
+FLAT3MAP_GEN_ARP_157	209	argument-replacement	ARP	Flat3Map.containsKey(Object)	direct	if (hash1 == hashCode && key.equals(key1)) return true;	if (hash1 == hashCode && key.equals(key1 + 1)) return true;
+FLAT3MAP_GEN_ARP_158	209	argument-replacement	ARP	Flat3Map.containsKey(Object)	direct	if (hash1 == hashCode && key.equals(key1)) return true;	if (hash1 == hashCode && key.equals(key1 - 1)) return true;
+FLAT3MAP_GEN_RVR_159	213	return-value-replacement	RVR	Flat3Map.containsKey(Object)	direct	return false;	return true;
+FLAT3MAP_GEN_RVR_196	258	return-value-replacement	RVR	Flat3Map.put(Object,Object)	direct	return delegateMap.put(key, value);	return null;
+FLAT3MAP_GEN_ARP_197	258	argument-replacement	ARP	Flat3Map.put(Object,Object)	direct	return delegateMap.put(key, value);	return delegateMap.put(value, key);
+FLAT3MAP_GEN_MCR_198	258	method-call-replacement	MCR	Flat3Map.put(Object,Object)	direct	return delegateMap.put(key, value);	return delegateMap.putIfAbsent(key, value);
+FLAT3MAP_GEN_ROR_199	264	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (key3 == null) {	if (key3 <= null) {
+FLAT3MAP_GEN_ROR_200	264	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (key3 == null) {	if (key3 >= null) {
+FLAT3MAP_GEN_ROR_201	264	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (key3 == null) {	if (key3 != null) {
+FLAT3MAP_GEN_ROR_202	264	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (key3 == null) {	if (key3 < null) {
+FLAT3MAP_GEN_ROR_203	264	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (key3 == null) {	if (key3 > null) {
+FLAT3MAP_GEN_COI_204	264	conditional-operator-insertion	COI	Flat3Map.put(Object,Object)	direct	if (key3 == null) {	if (!(key3 == null)) {
+FLAT3MAP_GEN_CTC_205	264	condition-to-constant	CTC	Flat3Map.put(Object,Object)	direct	if (key3 == null) {	if (true) {
+FLAT3MAP_GEN_CTC_206	264	condition-to-constant	CTC	Flat3Map.put(Object,Object)	direct	if (key3 == null) {	if (false) {
+FLAT3MAP_GEN_ROR_207	270	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (key2 == null) {	if (key2 <= null) {
+FLAT3MAP_GEN_ROR_208	270	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (key2 == null) {	if (key2 >= null) {
+FLAT3MAP_GEN_ROR_209	270	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (key2 == null) {	if (key2 != null) {
+FLAT3MAP_GEN_ROR_210	270	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (key2 == null) {	if (key2 < null) {
+FLAT3MAP_GEN_ROR_211	270	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (key2 == null) {	if (key2 > null) {
+FLAT3MAP_GEN_COI_212	270	conditional-operator-insertion	COI	Flat3Map.put(Object,Object)	direct	if (key2 == null) {	if (!(key2 == null)) {
+FLAT3MAP_GEN_CTC_213	270	condition-to-constant	CTC	Flat3Map.put(Object,Object)	direct	if (key2 == null) {	if (true) {
+FLAT3MAP_GEN_CTC_214	270	condition-to-constant	CTC	Flat3Map.put(Object,Object)	direct	if (key2 == null) {	if (false) {
+FLAT3MAP_GEN_ROR_215	276	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (key1 == null) {	if (key1 <= null) {
+FLAT3MAP_GEN_ROR_216	276	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (key1 == null) {	if (key1 >= null) {
+FLAT3MAP_GEN_ROR_217	276	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (key1 == null) {	if (key1 != null) {
+FLAT3MAP_GEN_ROR_218	276	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (key1 == null) {	if (key1 < null) {
+FLAT3MAP_GEN_ROR_219	276	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (key1 == null) {	if (key1 > null) {
+FLAT3MAP_GEN_COI_220	276	conditional-operator-insertion	COI	Flat3Map.put(Object,Object)	direct	if (key1 == null) {	if (!(key1 == null)) {
+FLAT3MAP_GEN_CTC_221	276	condition-to-constant	CTC	Flat3Map.put(Object,Object)	direct	if (key1 == null) {	if (true) {
+FLAT3MAP_GEN_CTC_222	276	condition-to-constant	CTC	Flat3Map.put(Object,Object)	direct	if (key1 == null) {	if (false) {
+FLAT3MAP_GEN_ROR_223	287	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (hash3 == hashCode && key.equals(key3)) {	if (hash3 <= hashCode && key.equals(key3)) {
+FLAT3MAP_GEN_ROR_224	287	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (hash3 == hashCode && key.equals(key3)) {	if (hash3 >= hashCode && key.equals(key3)) {
+FLAT3MAP_GEN_ROR_225	287	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (hash3 == hashCode && key.equals(key3)) {	if (hash3 != hashCode && key.equals(key3)) {
+FLAT3MAP_GEN_ROR_226	287	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (hash3 == hashCode && key.equals(key3)) {	if (hash3 < hashCode && key.equals(key3)) {
+FLAT3MAP_GEN_ROR_227	287	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (hash3 == hashCode && key.equals(key3)) {	if (hash3 > hashCode && key.equals(key3)) {
+FLAT3MAP_GEN_COR_228	287	conditional-operator-replacement	COR	Flat3Map.put(Object,Object)	direct	if (hash3 == hashCode && key.equals(key3)) {	if (hash3 == hashCode || key.equals(key3)) {
+FLAT3MAP_GEN_COI_229	287	conditional-operator-insertion	COI	Flat3Map.put(Object,Object)	direct	if (hash3 == hashCode && key.equals(key3)) {	if (!(hash3 == hashCode && key.equals(key3))) {
+FLAT3MAP_GEN_CTC_230	287	condition-to-constant	CTC	Flat3Map.put(Object,Object)	direct	if (hash3 == hashCode && key.equals(key3)) {	if (true) {
+FLAT3MAP_GEN_CTC_231	287	condition-to-constant	CTC	Flat3Map.put(Object,Object)	direct	if (hash3 == hashCode && key.equals(key3)) {	if (false) {
+FLAT3MAP_GEN_ARP_232	287	argument-replacement	ARP	Flat3Map.put(Object,Object)	direct	if (hash3 == hashCode && key.equals(key3)) {	if (hash3 == hashCode && key.equals(key3 + 1)) {
+FLAT3MAP_GEN_ARP_233	287	argument-replacement	ARP	Flat3Map.put(Object,Object)	direct	if (hash3 == hashCode && key.equals(key3)) {	if (hash3 == hashCode && key.equals(key3 - 1)) {
+FLAT3MAP_GEN_ROR_234	293	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (hash2 == hashCode && key.equals(key2)) {	if (hash2 <= hashCode && key.equals(key2)) {
+FLAT3MAP_GEN_ROR_235	293	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (hash2 == hashCode && key.equals(key2)) {	if (hash2 >= hashCode && key.equals(key2)) {
+FLAT3MAP_GEN_ROR_236	293	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (hash2 == hashCode && key.equals(key2)) {	if (hash2 != hashCode && key.equals(key2)) {
+FLAT3MAP_GEN_ROR_237	293	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (hash2 == hashCode && key.equals(key2)) {	if (hash2 < hashCode && key.equals(key2)) {
+FLAT3MAP_GEN_ROR_238	293	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (hash2 == hashCode && key.equals(key2)) {	if (hash2 > hashCode && key.equals(key2)) {
+FLAT3MAP_GEN_COR_239	293	conditional-operator-replacement	COR	Flat3Map.put(Object,Object)	direct	if (hash2 == hashCode && key.equals(key2)) {	if (hash2 == hashCode || key.equals(key2)) {
+FLAT3MAP_GEN_COI_240	293	conditional-operator-insertion	COI	Flat3Map.put(Object,Object)	direct	if (hash2 == hashCode && key.equals(key2)) {	if (!(hash2 == hashCode && key.equals(key2))) {
+FLAT3MAP_GEN_CTC_241	293	condition-to-constant	CTC	Flat3Map.put(Object,Object)	direct	if (hash2 == hashCode && key.equals(key2)) {	if (true) {
+FLAT3MAP_GEN_CTC_242	293	condition-to-constant	CTC	Flat3Map.put(Object,Object)	direct	if (hash2 == hashCode && key.equals(key2)) {	if (false) {
+FLAT3MAP_GEN_ARP_243	293	argument-replacement	ARP	Flat3Map.put(Object,Object)	direct	if (hash2 == hashCode && key.equals(key2)) {	if (hash2 == hashCode && key.equals(key2 + 1)) {
+FLAT3MAP_GEN_ARP_244	293	argument-replacement	ARP	Flat3Map.put(Object,Object)	direct	if (hash2 == hashCode && key.equals(key2)) {	if (hash2 == hashCode && key.equals(key2 - 1)) {
+FLAT3MAP_GEN_ROR_245	299	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (hash1 == hashCode && key.equals(key1)) {	if (hash1 <= hashCode && key.equals(key1)) {
+FLAT3MAP_GEN_ROR_246	299	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (hash1 == hashCode && key.equals(key1)) {	if (hash1 >= hashCode && key.equals(key1)) {
+FLAT3MAP_GEN_ROR_247	299	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (hash1 == hashCode && key.equals(key1)) {	if (hash1 != hashCode && key.equals(key1)) {
+FLAT3MAP_GEN_ROR_248	299	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (hash1 == hashCode && key.equals(key1)) {	if (hash1 < hashCode && key.equals(key1)) {
+FLAT3MAP_GEN_ROR_249	299	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	if (hash1 == hashCode && key.equals(key1)) {	if (hash1 > hashCode && key.equals(key1)) {
+FLAT3MAP_GEN_COR_250	299	conditional-operator-replacement	COR	Flat3Map.put(Object,Object)	direct	if (hash1 == hashCode && key.equals(key1)) {	if (hash1 == hashCode || key.equals(key1)) {
+FLAT3MAP_GEN_COI_251	299	conditional-operator-insertion	COI	Flat3Map.put(Object,Object)	direct	if (hash1 == hashCode && key.equals(key1)) {	if (!(hash1 == hashCode && key.equals(key1))) {
+FLAT3MAP_GEN_CTC_252	299	condition-to-constant	CTC	Flat3Map.put(Object,Object)	direct	if (hash1 == hashCode && key.equals(key1)) {	if (true) {
+FLAT3MAP_GEN_CTC_253	299	condition-to-constant	CTC	Flat3Map.put(Object,Object)	direct	if (hash1 == hashCode && key.equals(key1)) {	if (false) {
+FLAT3MAP_GEN_ARP_254	299	argument-replacement	ARP	Flat3Map.put(Object,Object)	direct	if (hash1 == hashCode && key.equals(key1)) {	if (hash1 == hashCode && key.equals(key1 + 1)) {
+FLAT3MAP_GEN_ARP_255	299	argument-replacement	ARP	Flat3Map.put(Object,Object)	direct	if (hash1 == hashCode && key.equals(key1)) {	if (hash1 == hashCode && key.equals(key1 - 1)) {
+FLAT3MAP_GEN_SDL_256	311	statement-deletion	SDL	Flat3Map.put(Object,Object)	direct	convertToMap();	
+FLAT3MAP_GEN_SDL_257	312	statement-deletion	SDL	Flat3Map.put(Object,Object)	direct	delegateMap.put(key, value);	
+FLAT3MAP_GEN_STR_258	312	statement-replacement	STR	Flat3Map.put(Object,Object)	direct	delegateMap.put(key, value);	delegateMap.put(key, value); delegateMap.put(key, value);
+FLAT3MAP_GEN_ARP_259	312	argument-replacement	ARP	Flat3Map.put(Object,Object)	direct	delegateMap.put(key, value);	delegateMap.put(value, key);
+FLAT3MAP_GEN_MCR_260	312	method-call-replacement	MCR	Flat3Map.put(Object,Object)	direct	delegateMap.put(key, value);	delegateMap.putIfAbsent(key, value);
+FLAT3MAP_GEN_ROR_261	315	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	hash3 = (key == null ? 0 : key.hashCode());	hash3 = (key <= null ? 0 : key.hashCode());
+FLAT3MAP_GEN_ROR_262	315	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	hash3 = (key == null ? 0 : key.hashCode());	hash3 = (key >= null ? 0 : key.hashCode());
+FLAT3MAP_GEN_ROR_263	315	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	hash3 = (key == null ? 0 : key.hashCode());	hash3 = (key != null ? 0 : key.hashCode());
+FLAT3MAP_GEN_ROR_264	315	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	hash3 = (key == null ? 0 : key.hashCode());	hash3 = (key < null ? 0 : key.hashCode());
+FLAT3MAP_GEN_ROR_265	315	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	hash3 = (key == null ? 0 : key.hashCode());	hash3 = (key > null ? 0 : key.hashCode());
+FLAT3MAP_GEN_CRP_266	315	constant-replacement	CRP	Flat3Map.put(Object,Object)	direct	hash3 = (key == null ? 0 : key.hashCode());	hash3 = (key == null ? 1 : key.hashCode());
+FLAT3MAP_GEN_CRP_267	315	constant-replacement	CRP	Flat3Map.put(Object,Object)	direct	hash3 = (key == null ? 0 : key.hashCode());	hash3 = (key == null ? -1 : key.hashCode());
+FLAT3MAP_GEN_SDL_268	315	statement-deletion	SDL	Flat3Map.put(Object,Object)	direct	hash3 = (key == null ? 0 : key.hashCode());	
+FLAT3MAP_GEN_SDL_269	316	statement-deletion	SDL	Flat3Map.put(Object,Object)	direct	key3 = key;	
+FLAT3MAP_GEN_ROR_270	320	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	hash2 = (key == null ? 0 : key.hashCode());	hash2 = (key <= null ? 0 : key.hashCode());
+FLAT3MAP_GEN_ROR_271	320	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	hash2 = (key == null ? 0 : key.hashCode());	hash2 = (key >= null ? 0 : key.hashCode());
+FLAT3MAP_GEN_ROR_272	320	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	hash2 = (key == null ? 0 : key.hashCode());	hash2 = (key != null ? 0 : key.hashCode());
+FLAT3MAP_GEN_ROR_273	320	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	hash2 = (key == null ? 0 : key.hashCode());	hash2 = (key < null ? 0 : key.hashCode());
+FLAT3MAP_GEN_ROR_274	320	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	hash2 = (key == null ? 0 : key.hashCode());	hash2 = (key > null ? 0 : key.hashCode());
+FLAT3MAP_GEN_CRP_275	320	constant-replacement	CRP	Flat3Map.put(Object,Object)	direct	hash2 = (key == null ? 0 : key.hashCode());	hash2 = (key == null ? 1 : key.hashCode());
+FLAT3MAP_GEN_CRP_276	320	constant-replacement	CRP	Flat3Map.put(Object,Object)	direct	hash2 = (key == null ? 0 : key.hashCode());	hash2 = (key == null ? -1 : key.hashCode());
+FLAT3MAP_GEN_SDL_277	320	statement-deletion	SDL	Flat3Map.put(Object,Object)	direct	hash2 = (key == null ? 0 : key.hashCode());	
+FLAT3MAP_GEN_SDL_278	321	statement-deletion	SDL	Flat3Map.put(Object,Object)	direct	key2 = key;	
+FLAT3MAP_GEN_CRP_279	324	constant-replacement	CRP	Flat3Map.put(Object,Object)	direct	case 0:	case 1:
+FLAT3MAP_GEN_CRP_280	324	constant-replacement	CRP	Flat3Map.put(Object,Object)	direct	case 0:	case -1:
+FLAT3MAP_GEN_ROR_281	325	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	hash1 = (key == null ? 0 : key.hashCode());	hash1 = (key <= null ? 0 : key.hashCode());
+FLAT3MAP_GEN_ROR_282	325	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	hash1 = (key == null ? 0 : key.hashCode());	hash1 = (key >= null ? 0 : key.hashCode());
+FLAT3MAP_GEN_ROR_283	325	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	hash1 = (key == null ? 0 : key.hashCode());	hash1 = (key != null ? 0 : key.hashCode());
+FLAT3MAP_GEN_ROR_284	325	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	hash1 = (key == null ? 0 : key.hashCode());	hash1 = (key < null ? 0 : key.hashCode());
+FLAT3MAP_GEN_ROR_285	325	relational-operator-replacement	ROR	Flat3Map.put(Object,Object)	direct	hash1 = (key == null ? 0 : key.hashCode());	hash1 = (key > null ? 0 : key.hashCode());
+FLAT3MAP_GEN_CRP_286	325	constant-replacement	CRP	Flat3Map.put(Object,Object)	direct	hash1 = (key == null ? 0 : key.hashCode());	hash1 = (key == null ? 1 : key.hashCode());
+FLAT3MAP_GEN_CRP_287	325	constant-replacement	CRP	Flat3Map.put(Object,Object)	direct	hash1 = (key == null ? 0 : key.hashCode());	hash1 = (key == null ? -1 : key.hashCode());
+FLAT3MAP_GEN_SDL_288	325	statement-deletion	SDL	Flat3Map.put(Object,Object)	direct	hash1 = (key == null ? 0 : key.hashCode());	
+FLAT3MAP_GEN_SDL_289	326	statement-deletion	SDL	Flat3Map.put(Object,Object)	direct	key1 = key;	
+FLAT3MAP_GEN_SDL_290	330	statement-deletion	SDL	Flat3Map.put(Object,Object)	direct	size++;	
+FLAT3MAP_GEN_SDL_316	364	statement-deletion	SDL	Flat3Map.convertToMap()	indirect	delegateMap = createDelegateMap();	
+FLAT3MAP_GEN_CRP_317	366	constant-replacement	CRP	Flat3Map.convertToMap()	indirect	case 3:	case 0:
+FLAT3MAP_GEN_CRP_318	366	constant-replacement	CRP	Flat3Map.convertToMap()	indirect	case 3:	case 1:
+FLAT3MAP_GEN_CRP_319	366	constant-replacement	CRP	Flat3Map.convertToMap()	indirect	case 3:	case -1:
+FLAT3MAP_GEN_CRP_320	366	constant-replacement	CRP	Flat3Map.convertToMap()	indirect	case 3:	case 4:
+FLAT3MAP_GEN_CRP_321	366	constant-replacement	CRP	Flat3Map.convertToMap()	indirect	case 3:	case 2:
+FLAT3MAP_GEN_SDL_322	367	statement-deletion	SDL	Flat3Map.convertToMap()	indirect	delegateMap.put(key3, value3);	
+FLAT3MAP_GEN_STR_323	367	statement-replacement	STR	Flat3Map.convertToMap()	indirect	delegateMap.put(key3, value3);	delegateMap.put(key3, value3); delegateMap.put(key3, value3);
+FLAT3MAP_GEN_ARP_324	367	argument-replacement	ARP	Flat3Map.convertToMap()	indirect	delegateMap.put(key3, value3);	delegateMap.put(value3, key3);
+FLAT3MAP_GEN_MCR_325	367	method-call-replacement	MCR	Flat3Map.convertToMap()	indirect	delegateMap.put(key3, value3);	delegateMap.putIfAbsent(key3, value3);
+FLAT3MAP_GEN_CRP_326	368	constant-replacement	CRP	Flat3Map.convertToMap()	indirect	case 2:	case 0:
+FLAT3MAP_GEN_CRP_327	368	constant-replacement	CRP	Flat3Map.convertToMap()	indirect	case 2:	case 1:
+FLAT3MAP_GEN_CRP_328	368	constant-replacement	CRP	Flat3Map.convertToMap()	indirect	case 2:	case -1:
+FLAT3MAP_GEN_CRP_329	368	constant-replacement	CRP	Flat3Map.convertToMap()	indirect	case 2:	case 3:
+FLAT3MAP_GEN_SDL_330	369	statement-deletion	SDL	Flat3Map.convertToMap()	indirect	delegateMap.put(key2, value2);	
+FLAT3MAP_GEN_STR_331	369	statement-replacement	STR	Flat3Map.convertToMap()	indirect	delegateMap.put(key2, value2);	delegateMap.put(key2, value2); delegateMap.put(key2, value2);
+FLAT3MAP_GEN_ARP_332	369	argument-replacement	ARP	Flat3Map.convertToMap()	indirect	delegateMap.put(key2, value2);	delegateMap.put(value2, key2);
+FLAT3MAP_GEN_MCR_333	369	method-call-replacement	MCR	Flat3Map.convertToMap()	indirect	delegateMap.put(key2, value2);	delegateMap.putIfAbsent(key2, value2);
+FLAT3MAP_GEN_CRP_334	370	constant-replacement	CRP	Flat3Map.convertToMap()	indirect	case 1:	case 0:
+FLAT3MAP_GEN_CRP_335	370	constant-replacement	CRP	Flat3Map.convertToMap()	indirect	case 1:	case -1:
+FLAT3MAP_GEN_CRP_336	370	constant-replacement	CRP	Flat3Map.convertToMap()	indirect	case 1:	case 2:
+FLAT3MAP_GEN_SDL_337	371	statement-deletion	SDL	Flat3Map.convertToMap()	indirect	delegateMap.put(key1, value1);	
+FLAT3MAP_GEN_STR_338	371	statement-replacement	STR	Flat3Map.convertToMap()	indirect	delegateMap.put(key1, value1);	delegateMap.put(key1, value1); delegateMap.put(key1, value1);
+FLAT3MAP_GEN_ARP_339	371	argument-replacement	ARP	Flat3Map.convertToMap()	indirect	delegateMap.put(key1, value1);	delegateMap.put(value1, key1);
+FLAT3MAP_GEN_MCR_340	371	method-call-replacement	MCR	Flat3Map.convertToMap()	indirect	delegateMap.put(key1, value1);	delegateMap.putIfAbsent(key1, value1);
+FLAT3MAP_GEN_AOI_341	374	arithmetic-operator-insertion	AOI	Flat3Map.convertToMap()	indirect	size = 0;	size = 0 + 1;
+FLAT3MAP_GEN_AOI_342	374	arithmetic-operator-insertion	AOI	Flat3Map.convertToMap()	indirect	size = 0;	size = 0 - 1;
+FLAT3MAP_GEN_UOI_343	374	unary-operator-insertion	UOI	Flat3Map.convertToMap()	indirect	size = 0;	size = -(0);
+FLAT3MAP_GEN_ABS_344	374	absolute-value-insertion	ABS	Flat3Map.convertToMap()	indirect	size = 0;	size = -Math.abs(0);
+FLAT3MAP_GEN_CRP_345	374	constant-replacement	CRP	Flat3Map.convertToMap()	indirect	size = 0;	size = 1;
+FLAT3MAP_GEN_CRP_346	374	constant-replacement	CRP	Flat3Map.convertToMap()	indirect	size = 0;	size = -1;
+FLAT3MAP_GEN_SDL_347	374	statement-deletion	SDL	Flat3Map.convertToMap()	indirect	size = 0;	
+FLAT3MAP_GEN_CRP_348	375	constant-replacement	CRP	Flat3Map.convertToMap()	indirect	hash1 = hash2 = hash3 = 0;	hash1 = hash2 = hash3 = 1;
+FLAT3MAP_GEN_CRP_349	375	constant-replacement	CRP	Flat3Map.convertToMap()	indirect	hash1 = hash2 = hash3 = 0;	hash1 = hash2 = hash3 = -1;
+FLAT3MAP_GEN_SDL_350	375	statement-deletion	SDL	Flat3Map.convertToMap()	indirect	hash1 = hash2 = hash3 = 0;	
+FLAT3MAP_GEN_SDL_351	376	statement-deletion	SDL	Flat3Map.convertToMap()	indirect	key1 = key2 = key3 = null;	
+FLAT3MAP_GEN_SDL_352	377	statement-deletion	SDL	Flat3Map.convertToMap()	indirect	value1 = value2 = value3 = null;	
+FLAT3MAP_GEN_RVR_353	391	return-value-replacement	RVR	Flat3Map.createDelegateMap()	indirect	return new HashedMap();	return null;
+FLAT3MAP_GEN_RVR_354	402	return-value-replacement	RVR	Flat3Map.remove(Object)	direct	return delegateMap.remove(key);	return null;
+FLAT3MAP_GEN_ARP_355	402	argument-replacement	ARP	Flat3Map.remove(Object)	direct	return delegateMap.remove(key);	return delegateMap.remove(key + 1);
+FLAT3MAP_GEN_ARP_356	402	argument-replacement	ARP	Flat3Map.remove(Object)	direct	return delegateMap.remove(key);	return delegateMap.remove(key - 1);
+FLAT3MAP_GEN_MCR_357	402	method-call-replacement	MCR	Flat3Map.remove(Object)	direct	return delegateMap.remove(key);	return delegateMap.get(key);
+FLAT3MAP_GEN_RVR_421	691	return-value-replacement	RVR	Flat3Map.entrySet()	direct	return delegateMap.entrySet();	return null;
+FLAT3MAP_GEN_RVR_422	693	return-value-replacement	RVR	Flat3Map.entrySet()	direct	return new EntrySet(this);	return null;
+FLAT3MAP_GEN_UOI_423	708	unary-operator-insertion	UOI	Flat3Map.EntrySet.size()	indirect	return parent.size();	return -(parent.size());
+FLAT3MAP_GEN_ABS_424	708	absolute-value-insertion	ABS	Flat3Map.EntrySet.size()	indirect	return parent.size();	return -Math.abs(parent.size());
+FLAT3MAP_GEN_RVR_425	708	return-value-replacement	RVR	Flat3Map.EntrySet.size()	indirect	return parent.size();	return 0;
+FLAT3MAP_GEN_RVR_426	708	return-value-replacement	RVR	Flat3Map.EntrySet.size()	indirect	return parent.size();	return 1;
+FLAT3MAP_GEN_RVR_427	708	return-value-replacement	RVR	Flat3Map.EntrySet.size()	indirect	return parent.size();	return -1;
+FLAT3MAP_GEN_MCR_428	708	method-call-replacement	MCR	Flat3Map.EntrySet.size()	indirect	return parent.size();	return parent.hashCode();
+FLAT3MAP_GEN_SDL_429	712	statement-deletion	SDL	Flat3Map.EntrySet.clear()	indirect	parent.clear();	
+FLAT3MAP_GEN_STR_430	712	statement-replacement	STR	Flat3Map.EntrySet.clear()	indirect	parent.clear();	parent.clear(); parent.clear();
+FLAT3MAP_GEN_ROR_431	716	relational-operator-replacement	ROR	Flat3Map.EntrySet.remove(Object)	indirect	if (obj instanceof Map.Entry == false) {	if (obj instanceof Map.Entry <= false) {
+FLAT3MAP_GEN_ROR_432	716	relational-operator-replacement	ROR	Flat3Map.EntrySet.remove(Object)	indirect	if (obj instanceof Map.Entry == false) {	if (obj instanceof Map.Entry >= false) {
+FLAT3MAP_GEN_ROR_433	716	relational-operator-replacement	ROR	Flat3Map.EntrySet.remove(Object)	indirect	if (obj instanceof Map.Entry == false) {	if (obj instanceof Map.Entry != false) {
+FLAT3MAP_GEN_ROR_434	716	relational-operator-replacement	ROR	Flat3Map.EntrySet.remove(Object)	indirect	if (obj instanceof Map.Entry == false) {	if (obj instanceof Map.Entry < false) {
+FLAT3MAP_GEN_ROR_435	716	relational-operator-replacement	ROR	Flat3Map.EntrySet.remove(Object)	indirect	if (obj instanceof Map.Entry == false) {	if (obj instanceof Map.Entry > false) {
+FLAT3MAP_GEN_COI_436	716	conditional-operator-insertion	COI	Flat3Map.EntrySet.remove(Object)	indirect	if (obj instanceof Map.Entry == false) {	if (!(obj instanceof Map.Entry == false)) {
+FLAT3MAP_GEN_CTC_437	716	condition-to-constant	CTC	Flat3Map.EntrySet.remove(Object)	indirect	if (obj instanceof Map.Entry == false) {	if (true) {
+FLAT3MAP_GEN_CTC_438	716	condition-to-constant	CTC	Flat3Map.EntrySet.remove(Object)	indirect	if (obj instanceof Map.Entry == false) {	if (false) {
+FLAT3MAP_GEN_ARP_439	721	argument-replacement	ARP	Flat3Map.EntrySet.remove(Object)	indirect	boolean result = parent.containsKey(key);	boolean result = parent.containsKey(key + 1);
+FLAT3MAP_GEN_ARP_440	721	argument-replacement	ARP	Flat3Map.EntrySet.remove(Object)	indirect	boolean result = parent.containsKey(key);	boolean result = parent.containsKey(key - 1);
+FLAT3MAP_GEN_MCR_441	721	method-call-replacement	MCR	Flat3Map.EntrySet.remove(Object)	indirect	boolean result = parent.containsKey(key);	boolean result = parent.containsValue(key);
+FLAT3MAP_GEN_SDL_442	722	statement-deletion	SDL	Flat3Map.EntrySet.remove(Object)	indirect	parent.remove(key);	
+FLAT3MAP_GEN_STR_443	722	statement-replacement	STR	Flat3Map.EntrySet.remove(Object)	indirect	parent.remove(key);	parent.remove(key); parent.remove(key);
+FLAT3MAP_GEN_ARP_444	722	argument-replacement	ARP	Flat3Map.EntrySet.remove(Object)	indirect	parent.remove(key);	parent.remove(key + 1);
+FLAT3MAP_GEN_ARP_445	722	argument-replacement	ARP	Flat3Map.EntrySet.remove(Object)	indirect	parent.remove(key);	parent.remove(key - 1);
+FLAT3MAP_GEN_MCR_446	722	method-call-replacement	MCR	Flat3Map.EntrySet.remove(Object)	indirect	parent.remove(key);	parent.get(key);
+FLAT3MAP_GEN_RVR_447	723	return-value-replacement	RVR	Flat3Map.EntrySet.remove(Object)	indirect	return result;	return true;
+FLAT3MAP_GEN_RVR_448	723	return-value-replacement	RVR	Flat3Map.EntrySet.remove(Object)	indirect	return result;	return false;
+FLAT3MAP_GEN_ROR_449	727	relational-operator-replacement	ROR	Flat3Map.EntrySet.iterator()	direct	if (parent.delegateMap != null) {	if (parent.delegateMap <= null) {
+FLAT3MAP_GEN_ROR_450	727	relational-operator-replacement	ROR	Flat3Map.EntrySet.iterator()	direct	if (parent.delegateMap != null) {	if (parent.delegateMap >= null) {
+FLAT3MAP_GEN_ROR_451	727	relational-operator-replacement	ROR	Flat3Map.EntrySet.iterator()	direct	if (parent.delegateMap != null) {	if (parent.delegateMap == null) {
+FLAT3MAP_GEN_ROR_452	727	relational-operator-replacement	ROR	Flat3Map.EntrySet.iterator()	direct	if (parent.delegateMap != null) {	if (parent.delegateMap < null) {
+FLAT3MAP_GEN_ROR_453	727	relational-operator-replacement	ROR	Flat3Map.EntrySet.iterator()	direct	if (parent.delegateMap != null) {	if (parent.delegateMap > null) {
+FLAT3MAP_GEN_COI_454	727	conditional-operator-insertion	COI	Flat3Map.EntrySet.iterator()	direct	if (parent.delegateMap != null) {	if (!(parent.delegateMap != null)) {
+FLAT3MAP_GEN_CTC_455	727	condition-to-constant	CTC	Flat3Map.EntrySet.iterator()	direct	if (parent.delegateMap != null) {	if (true) {
+FLAT3MAP_GEN_CTC_456	727	condition-to-constant	CTC	Flat3Map.EntrySet.iterator()	direct	if (parent.delegateMap != null) {	if (false) {
+FLAT3MAP_GEN_RVR_457	728	return-value-replacement	RVR	Flat3Map.EntrySet.iterator()	direct	return parent.delegateMap.entrySet().iterator();	return null;
+FLAT3MAP_GEN_ROR_458	730	relational-operator-replacement	ROR	Flat3Map.EntrySet.iterator()	direct	if (parent.size() == 0) {	if (parent.size() <= 0) {
+FLAT3MAP_GEN_ROR_459	730	relational-operator-replacement	ROR	Flat3Map.EntrySet.iterator()	direct	if (parent.size() == 0) {	if (parent.size() >= 0) {
+FLAT3MAP_GEN_ROR_460	730	relational-operator-replacement	ROR	Flat3Map.EntrySet.iterator()	direct	if (parent.size() == 0) {	if (parent.size() != 0) {
+FLAT3MAP_GEN_ROR_461	730	relational-operator-replacement	ROR	Flat3Map.EntrySet.iterator()	direct	if (parent.size() == 0) {	if (parent.size() < 0) {
+FLAT3MAP_GEN_ROR_462	730	relational-operator-replacement	ROR	Flat3Map.EntrySet.iterator()	direct	if (parent.size() == 0) {	if (parent.size() > 0) {
+FLAT3MAP_GEN_COI_463	730	conditional-operator-insertion	COI	Flat3Map.EntrySet.iterator()	direct	if (parent.size() == 0) {	if (!(parent.size() == 0)) {
+FLAT3MAP_GEN_CRP_464	730	constant-replacement	CRP	Flat3Map.EntrySet.iterator()	direct	if (parent.size() == 0) {	if (parent.size() == 1) {
+FLAT3MAP_GEN_CRP_465	730	constant-replacement	CRP	Flat3Map.EntrySet.iterator()	direct	if (parent.size() == 0) {	if (parent.size() == -1) {
+FLAT3MAP_GEN_CTC_466	730	condition-to-constant	CTC	Flat3Map.EntrySet.iterator()	direct	if (parent.size() == 0) {	if (true) {
+FLAT3MAP_GEN_CTC_467	730	condition-to-constant	CTC	Flat3Map.EntrySet.iterator()	direct	if (parent.size() == 0) {	if (false) {
+FLAT3MAP_GEN_MCR_468	730	method-call-replacement	MCR	Flat3Map.EntrySet.iterator()	direct	if (parent.size() == 0) {	if (parent.hashCode() == 0) {
+FLAT3MAP_GEN_RVR_469	731	return-value-replacement	RVR	Flat3Map.EntrySet.iterator()	direct	return EmptyIterator.INSTANCE;	return null;
+FLAT3MAP_GEN_RVR_470	733	return-value-replacement	RVR	Flat3Map.EntrySet.iterator()	direct	return new EntrySetIterator(parent);	return null;
+FLAT3MAP_GEN_RVR_471	760	return-value-replacement	RVR	Flat3Map.EntrySetIterator.next()	direct	return this;	return null;
+FLAT3MAP_GEN_ROR_472	831	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&	return (key <= null ? other.getKey() == null : key.equals(other.getKey())) &&
+FLAT3MAP_GEN_ROR_473	831	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&	return (key >= null ? other.getKey() == null : key.equals(other.getKey())) &&
+FLAT3MAP_GEN_ROR_474	831	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&	return (key != null ? other.getKey() == null : key.equals(other.getKey())) &&
+FLAT3MAP_GEN_ROR_475	831	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&	return (key < null ? other.getKey() == null : key.equals(other.getKey())) &&
+FLAT3MAP_GEN_ROR_476	831	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&	return (key > null ? other.getKey() == null : key.equals(other.getKey())) &&
+FLAT3MAP_GEN_ROR_477	831	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&	return (key == null ? other.getKey() <= null : key.equals(other.getKey())) &&
+FLAT3MAP_GEN_ROR_478	831	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&	return (key == null ? other.getKey() >= null : key.equals(other.getKey())) &&
+FLAT3MAP_GEN_ROR_479	831	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&	return (key == null ? other.getKey() != null : key.equals(other.getKey())) &&
+FLAT3MAP_GEN_ROR_480	831	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&	return (key == null ? other.getKey() < null : key.equals(other.getKey())) &&
+FLAT3MAP_GEN_ROR_481	831	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&	return (key == null ? other.getKey() > null : key.equals(other.getKey())) &&
+FLAT3MAP_GEN_COR_482	831	conditional-operator-replacement	COR	Flat3Map.EntrySetIterator.equals(Object)	indirect	return (key == null ? other.getKey() == null : key.equals(other.getKey())) &&	return (key == null ? other.getKey() == null : key.equals(other.getKey())) ||
+FLAT3MAP_GEN_ROR_483	832	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	(value == null ? other.getValue() == null : value.equals(other.getValue()));	(value <= null ? other.getValue() == null : value.equals(other.getValue()));
+FLAT3MAP_GEN_ROR_484	832	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	(value == null ? other.getValue() == null : value.equals(other.getValue()));	(value >= null ? other.getValue() == null : value.equals(other.getValue()));
+FLAT3MAP_GEN_ROR_485	832	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	(value == null ? other.getValue() == null : value.equals(other.getValue()));	(value != null ? other.getValue() == null : value.equals(other.getValue()));
+FLAT3MAP_GEN_ROR_486	832	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	(value == null ? other.getValue() == null : value.equals(other.getValue()));	(value < null ? other.getValue() == null : value.equals(other.getValue()));
+FLAT3MAP_GEN_ROR_487	832	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	(value == null ? other.getValue() == null : value.equals(other.getValue()));	(value > null ? other.getValue() == null : value.equals(other.getValue()));
+FLAT3MAP_GEN_ROR_488	832	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	(value == null ? other.getValue() == null : value.equals(other.getValue()));	(value == null ? other.getValue() <= null : value.equals(other.getValue()));
+FLAT3MAP_GEN_ROR_489	832	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	(value == null ? other.getValue() == null : value.equals(other.getValue()));	(value == null ? other.getValue() >= null : value.equals(other.getValue()));
+FLAT3MAP_GEN_ROR_490	832	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	(value == null ? other.getValue() == null : value.equals(other.getValue()));	(value == null ? other.getValue() != null : value.equals(other.getValue()));
+FLAT3MAP_GEN_ROR_491	832	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	(value == null ? other.getValue() == null : value.equals(other.getValue()));	(value == null ? other.getValue() < null : value.equals(other.getValue()));
+FLAT3MAP_GEN_ROR_492	832	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.equals(Object)	indirect	(value == null ? other.getValue() == null : value.equals(other.getValue()));	(value == null ? other.getValue() > null : value.equals(other.getValue()));
+FLAT3MAP_GEN_SDL_493	832	statement-deletion	SDL	Flat3Map.EntrySetIterator.equals(Object)	indirect	(value == null ? other.getValue() == null : value.equals(other.getValue()));	
+FLAT3MAP_GEN_UOI_494	837	unary-operator-insertion	UOI	Flat3Map.EntrySetIterator.hashCode()	indirect	return 0;	return -(0);
+FLAT3MAP_GEN_ABS_495	837	absolute-value-insertion	ABS	Flat3Map.EntrySetIterator.hashCode()	indirect	return 0;	return -Math.abs(0);
+FLAT3MAP_GEN_CRP_496	837	constant-replacement	CRP	Flat3Map.EntrySetIterator.hashCode()	indirect	return 0;	return 1;
+FLAT3MAP_GEN_CRP_497	837	constant-replacement	CRP	Flat3Map.EntrySetIterator.hashCode()	indirect	return 0;	return -1;
+FLAT3MAP_GEN_ROR_498	841	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.hashCode()	indirect	return (key == null ? 0 : key.hashCode()) ^	return (key <= null ? 0 : key.hashCode()) ^
+FLAT3MAP_GEN_ROR_499	841	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.hashCode()	indirect	return (key == null ? 0 : key.hashCode()) ^	return (key >= null ? 0 : key.hashCode()) ^
+FLAT3MAP_GEN_ROR_500	841	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.hashCode()	indirect	return (key == null ? 0 : key.hashCode()) ^	return (key != null ? 0 : key.hashCode()) ^
+FLAT3MAP_GEN_ROR_501	841	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.hashCode()	indirect	return (key == null ? 0 : key.hashCode()) ^	return (key < null ? 0 : key.hashCode()) ^
+FLAT3MAP_GEN_ROR_502	841	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.hashCode()	indirect	return (key == null ? 0 : key.hashCode()) ^	return (key > null ? 0 : key.hashCode()) ^
+FLAT3MAP_GEN_CRP_503	841	constant-replacement	CRP	Flat3Map.EntrySetIterator.hashCode()	indirect	return (key == null ? 0 : key.hashCode()) ^	return (key == null ? 1 : key.hashCode()) ^
+FLAT3MAP_GEN_CRP_504	841	constant-replacement	CRP	Flat3Map.EntrySetIterator.hashCode()	indirect	return (key == null ? 0 : key.hashCode()) ^	return (key == null ? -1 : key.hashCode()) ^
+FLAT3MAP_GEN_ROR_505	842	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.hashCode()	indirect	(value == null ? 0 : value.hashCode());	(value <= null ? 0 : value.hashCode());
+FLAT3MAP_GEN_ROR_506	842	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.hashCode()	indirect	(value == null ? 0 : value.hashCode());	(value >= null ? 0 : value.hashCode());
+FLAT3MAP_GEN_ROR_507	842	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.hashCode()	indirect	(value == null ? 0 : value.hashCode());	(value != null ? 0 : value.hashCode());
+FLAT3MAP_GEN_ROR_508	842	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.hashCode()	indirect	(value == null ? 0 : value.hashCode());	(value < null ? 0 : value.hashCode());
+FLAT3MAP_GEN_ROR_509	842	relational-operator-replacement	ROR	Flat3Map.EntrySetIterator.hashCode()	indirect	(value == null ? 0 : value.hashCode());	(value > null ? 0 : value.hashCode());
+FLAT3MAP_GEN_CRP_510	842	constant-replacement	CRP	Flat3Map.EntrySetIterator.hashCode()	indirect	(value == null ? 0 : value.hashCode());	(value == null ? 1 : value.hashCode());
+FLAT3MAP_GEN_CRP_511	842	constant-replacement	CRP	Flat3Map.EntrySetIterator.hashCode()	indirect	(value == null ? 0 : value.hashCode());	(value == null ? -1 : value.hashCode());
+FLAT3MAP_GEN_SDL_512	842	statement-deletion	SDL	Flat3Map.EntrySetIterator.hashCode()	indirect	(value == null ? 0 : value.hashCode());	
+FLAT3MAP_GEN_ROR_576	1039	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (obj == this) {	if (obj <= this) {
+FLAT3MAP_GEN_ROR_577	1039	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (obj == this) {	if (obj >= this) {
+FLAT3MAP_GEN_ROR_578	1039	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (obj == this) {	if (obj != this) {
+FLAT3MAP_GEN_ROR_579	1039	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (obj == this) {	if (obj < this) {
+FLAT3MAP_GEN_ROR_580	1039	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (obj == this) {	if (obj > this) {
+FLAT3MAP_GEN_COI_581	1039	conditional-operator-insertion	COI	Flat3Map.equals(Object)	indirect	if (obj == this) {	if (!(obj == this)) {
+FLAT3MAP_GEN_CTC_582	1039	condition-to-constant	CTC	Flat3Map.equals(Object)	indirect	if (obj == this) {	if (true) {
+FLAT3MAP_GEN_CTC_583	1039	condition-to-constant	CTC	Flat3Map.equals(Object)	indirect	if (obj == this) {	if (false) {
+FLAT3MAP_GEN_RVR_584	1043	return-value-replacement	RVR	Flat3Map.equals(Object)	indirect	return delegateMap.equals(obj);	return true;
+FLAT3MAP_GEN_RVR_585	1043	return-value-replacement	RVR	Flat3Map.equals(Object)	indirect	return delegateMap.equals(obj);	return false;
+FLAT3MAP_GEN_ARP_586	1043	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	return delegateMap.equals(obj);	return delegateMap.equals(obj + 1);
+FLAT3MAP_GEN_ARP_587	1043	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	return delegateMap.equals(obj);	return delegateMap.equals(obj - 1);
+FLAT3MAP_GEN_ROR_588	1045	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (obj instanceof Map == false) {	if (obj instanceof Map <= false) {
+FLAT3MAP_GEN_ROR_589	1045	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (obj instanceof Map == false) {	if (obj instanceof Map >= false) {
+FLAT3MAP_GEN_ROR_590	1045	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (obj instanceof Map == false) {	if (obj instanceof Map != false) {
+FLAT3MAP_GEN_ROR_591	1045	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (obj instanceof Map == false) {	if (obj instanceof Map < false) {
+FLAT3MAP_GEN_ROR_592	1045	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (obj instanceof Map == false) {	if (obj instanceof Map > false) {
+FLAT3MAP_GEN_COI_593	1045	conditional-operator-insertion	COI	Flat3Map.equals(Object)	indirect	if (obj instanceof Map == false) {	if (!(obj instanceof Map == false)) {
+FLAT3MAP_GEN_CTC_594	1045	condition-to-constant	CTC	Flat3Map.equals(Object)	indirect	if (obj instanceof Map == false) {	if (true) {
+FLAT3MAP_GEN_CTC_595	1045	condition-to-constant	CTC	Flat3Map.equals(Object)	indirect	if (obj instanceof Map == false) {	if (false) {
+FLAT3MAP_GEN_ROR_596	1049	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (size != other.size()) {	if (size <= other.size()) {
+FLAT3MAP_GEN_ROR_597	1049	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (size != other.size()) {	if (size >= other.size()) {
+FLAT3MAP_GEN_ROR_598	1049	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (size != other.size()) {	if (size == other.size()) {
+FLAT3MAP_GEN_ROR_599	1049	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (size != other.size()) {	if (size < other.size()) {
+FLAT3MAP_GEN_ROR_600	1049	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (size != other.size()) {	if (size > other.size()) {
+FLAT3MAP_GEN_COI_601	1049	conditional-operator-insertion	COI	Flat3Map.equals(Object)	indirect	if (size != other.size()) {	if (!(size != other.size())) {
+FLAT3MAP_GEN_CTC_602	1049	condition-to-constant	CTC	Flat3Map.equals(Object)	indirect	if (size != other.size()) {	if (true) {
+FLAT3MAP_GEN_CTC_603	1049	condition-to-constant	CTC	Flat3Map.equals(Object)	indirect	if (size != other.size()) {	if (false) {
+FLAT3MAP_GEN_MCR_604	1049	method-call-replacement	MCR	Flat3Map.equals(Object)	indirect	if (size != other.size()) {	if (size != other.hashCode()) {
+FLAT3MAP_GEN_ROR_605	1056	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (other.containsKey(key3) == false) {	if (other.containsKey(key3) <= false) {
+FLAT3MAP_GEN_ROR_606	1056	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (other.containsKey(key3) == false) {	if (other.containsKey(key3) >= false) {
+FLAT3MAP_GEN_ROR_607	1056	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (other.containsKey(key3) == false) {	if (other.containsKey(key3) != false) {
+FLAT3MAP_GEN_ROR_608	1056	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (other.containsKey(key3) == false) {	if (other.containsKey(key3) < false) {
+FLAT3MAP_GEN_ROR_609	1056	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (other.containsKey(key3) == false) {	if (other.containsKey(key3) > false) {
+FLAT3MAP_GEN_COI_610	1056	conditional-operator-insertion	COI	Flat3Map.equals(Object)	indirect	if (other.containsKey(key3) == false) {	if (!(other.containsKey(key3) == false)) {
+FLAT3MAP_GEN_CTC_611	1056	condition-to-constant	CTC	Flat3Map.equals(Object)	indirect	if (other.containsKey(key3) == false) {	if (true) {
+FLAT3MAP_GEN_CTC_612	1056	condition-to-constant	CTC	Flat3Map.equals(Object)	indirect	if (other.containsKey(key3) == false) {	if (false) {
+FLAT3MAP_GEN_ARP_613	1056	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	if (other.containsKey(key3) == false) {	if (other.containsKey(key3 + 1) == false) {
+FLAT3MAP_GEN_ARP_614	1056	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	if (other.containsKey(key3) == false) {	if (other.containsKey(key3 - 1) == false) {
+FLAT3MAP_GEN_MCR_615	1056	method-call-replacement	MCR	Flat3Map.equals(Object)	indirect	if (other.containsKey(key3) == false) {	if (other.containsValue(key3) == false) {
+FLAT3MAP_GEN_SDL_616	1059	statement-deletion	SDL	Flat3Map.equals(Object)	indirect	otherValue = other.get(key3);	
+FLAT3MAP_GEN_ARP_617	1059	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	otherValue = other.get(key3);	otherValue = other.get(key3 + 1);
+FLAT3MAP_GEN_ARP_618	1059	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	otherValue = other.get(key3);	otherValue = other.get(key3 - 1);
+FLAT3MAP_GEN_MCR_619	1059	method-call-replacement	MCR	Flat3Map.equals(Object)	indirect	otherValue = other.get(key3);	otherValue = other.remove(key3);
+FLAT3MAP_GEN_ROR_620	1060	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {	if (value3 <= null ? otherValue != null : !value3.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_621	1060	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {	if (value3 >= null ? otherValue != null : !value3.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_622	1060	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {	if (value3 != null ? otherValue != null : !value3.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_623	1060	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {	if (value3 < null ? otherValue != null : !value3.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_624	1060	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {	if (value3 > null ? otherValue != null : !value3.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_625	1060	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {	if (value3 == null ? otherValue <= null : !value3.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_626	1060	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {	if (value3 == null ? otherValue >= null : !value3.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_627	1060	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {	if (value3 == null ? otherValue == null : !value3.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_628	1060	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {	if (value3 == null ? otherValue < null : !value3.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_629	1060	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {	if (value3 == null ? otherValue > null : !value3.equals(otherValue)) {
+FLAT3MAP_GEN_COI_630	1060	conditional-operator-insertion	COI	Flat3Map.equals(Object)	indirect	if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {	if (!(value3 == null ? otherValue != null : !value3.equals(otherValue))) {
+FLAT3MAP_GEN_CTC_631	1060	condition-to-constant	CTC	Flat3Map.equals(Object)	indirect	if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {	if (true) {
+FLAT3MAP_GEN_CTC_632	1060	condition-to-constant	CTC	Flat3Map.equals(Object)	indirect	if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {	if (false) {
+FLAT3MAP_GEN_ARP_633	1060	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {	if (value3 == null ? otherValue != null : !value3.equals(otherValue + 1)) {
+FLAT3MAP_GEN_ARP_634	1060	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	if (value3 == null ? otherValue != null : !value3.equals(otherValue)) {	if (value3 == null ? otherValue != null : !value3.equals(otherValue - 1)) {
+FLAT3MAP_GEN_ROR_635	1064	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (other.containsKey(key2) == false) {	if (other.containsKey(key2) <= false) {
+FLAT3MAP_GEN_ROR_636	1064	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (other.containsKey(key2) == false) {	if (other.containsKey(key2) >= false) {
+FLAT3MAP_GEN_ROR_637	1064	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (other.containsKey(key2) == false) {	if (other.containsKey(key2) != false) {
+FLAT3MAP_GEN_ROR_638	1064	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (other.containsKey(key2) == false) {	if (other.containsKey(key2) < false) {
+FLAT3MAP_GEN_ROR_639	1064	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (other.containsKey(key2) == false) {	if (other.containsKey(key2) > false) {
+FLAT3MAP_GEN_COI_640	1064	conditional-operator-insertion	COI	Flat3Map.equals(Object)	indirect	if (other.containsKey(key2) == false) {	if (!(other.containsKey(key2) == false)) {
+FLAT3MAP_GEN_CTC_641	1064	condition-to-constant	CTC	Flat3Map.equals(Object)	indirect	if (other.containsKey(key2) == false) {	if (true) {
+FLAT3MAP_GEN_CTC_642	1064	condition-to-constant	CTC	Flat3Map.equals(Object)	indirect	if (other.containsKey(key2) == false) {	if (false) {
+FLAT3MAP_GEN_ARP_643	1064	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	if (other.containsKey(key2) == false) {	if (other.containsKey(key2 + 1) == false) {
+FLAT3MAP_GEN_ARP_644	1064	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	if (other.containsKey(key2) == false) {	if (other.containsKey(key2 - 1) == false) {
+FLAT3MAP_GEN_MCR_645	1064	method-call-replacement	MCR	Flat3Map.equals(Object)	indirect	if (other.containsKey(key2) == false) {	if (other.containsValue(key2) == false) {
+FLAT3MAP_GEN_SDL_646	1067	statement-deletion	SDL	Flat3Map.equals(Object)	indirect	otherValue = other.get(key2);	
+FLAT3MAP_GEN_ARP_647	1067	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	otherValue = other.get(key2);	otherValue = other.get(key2 + 1);
+FLAT3MAP_GEN_ARP_648	1067	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	otherValue = other.get(key2);	otherValue = other.get(key2 - 1);
+FLAT3MAP_GEN_MCR_649	1067	method-call-replacement	MCR	Flat3Map.equals(Object)	indirect	otherValue = other.get(key2);	otherValue = other.remove(key2);
+FLAT3MAP_GEN_ROR_650	1068	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {	if (value2 <= null ? otherValue != null : !value2.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_651	1068	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {	if (value2 >= null ? otherValue != null : !value2.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_652	1068	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {	if (value2 != null ? otherValue != null : !value2.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_653	1068	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {	if (value2 < null ? otherValue != null : !value2.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_654	1068	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {	if (value2 > null ? otherValue != null : !value2.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_655	1068	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {	if (value2 == null ? otherValue <= null : !value2.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_656	1068	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {	if (value2 == null ? otherValue >= null : !value2.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_657	1068	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {	if (value2 == null ? otherValue == null : !value2.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_658	1068	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {	if (value2 == null ? otherValue < null : !value2.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_659	1068	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {	if (value2 == null ? otherValue > null : !value2.equals(otherValue)) {
+FLAT3MAP_GEN_COI_660	1068	conditional-operator-insertion	COI	Flat3Map.equals(Object)	indirect	if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {	if (!(value2 == null ? otherValue != null : !value2.equals(otherValue))) {
+FLAT3MAP_GEN_CTC_661	1068	condition-to-constant	CTC	Flat3Map.equals(Object)	indirect	if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {	if (true) {
+FLAT3MAP_GEN_CTC_662	1068	condition-to-constant	CTC	Flat3Map.equals(Object)	indirect	if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {	if (false) {
+FLAT3MAP_GEN_ARP_663	1068	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {	if (value2 == null ? otherValue != null : !value2.equals(otherValue + 1)) {
+FLAT3MAP_GEN_ARP_664	1068	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	if (value2 == null ? otherValue != null : !value2.equals(otherValue)) {	if (value2 == null ? otherValue != null : !value2.equals(otherValue - 1)) {
+FLAT3MAP_GEN_ROR_665	1072	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (other.containsKey(key1) == false) {	if (other.containsKey(key1) <= false) {
+FLAT3MAP_GEN_ROR_666	1072	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (other.containsKey(key1) == false) {	if (other.containsKey(key1) >= false) {
+FLAT3MAP_GEN_ROR_667	1072	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (other.containsKey(key1) == false) {	if (other.containsKey(key1) != false) {
+FLAT3MAP_GEN_ROR_668	1072	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (other.containsKey(key1) == false) {	if (other.containsKey(key1) < false) {
+FLAT3MAP_GEN_ROR_669	1072	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (other.containsKey(key1) == false) {	if (other.containsKey(key1) > false) {
+FLAT3MAP_GEN_COI_670	1072	conditional-operator-insertion	COI	Flat3Map.equals(Object)	indirect	if (other.containsKey(key1) == false) {	if (!(other.containsKey(key1) == false)) {
+FLAT3MAP_GEN_CTC_671	1072	condition-to-constant	CTC	Flat3Map.equals(Object)	indirect	if (other.containsKey(key1) == false) {	if (true) {
+FLAT3MAP_GEN_CTC_672	1072	condition-to-constant	CTC	Flat3Map.equals(Object)	indirect	if (other.containsKey(key1) == false) {	if (false) {
+FLAT3MAP_GEN_ARP_673	1072	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	if (other.containsKey(key1) == false) {	if (other.containsKey(key1 + 1) == false) {
+FLAT3MAP_GEN_ARP_674	1072	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	if (other.containsKey(key1) == false) {	if (other.containsKey(key1 - 1) == false) {
+FLAT3MAP_GEN_MCR_675	1072	method-call-replacement	MCR	Flat3Map.equals(Object)	indirect	if (other.containsKey(key1) == false) {	if (other.containsValue(key1) == false) {
+FLAT3MAP_GEN_SDL_676	1075	statement-deletion	SDL	Flat3Map.equals(Object)	indirect	otherValue = other.get(key1);	
+FLAT3MAP_GEN_ARP_677	1075	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	otherValue = other.get(key1);	otherValue = other.get(key1 + 1);
+FLAT3MAP_GEN_ARP_678	1075	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	otherValue = other.get(key1);	otherValue = other.get(key1 - 1);
+FLAT3MAP_GEN_MCR_679	1075	method-call-replacement	MCR	Flat3Map.equals(Object)	indirect	otherValue = other.get(key1);	otherValue = other.remove(key1);
+FLAT3MAP_GEN_ROR_680	1076	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {	if (value1 <= null ? otherValue != null : !value1.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_681	1076	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {	if (value1 >= null ? otherValue != null : !value1.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_682	1076	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {	if (value1 != null ? otherValue != null : !value1.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_683	1076	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {	if (value1 < null ? otherValue != null : !value1.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_684	1076	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {	if (value1 > null ? otherValue != null : !value1.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_685	1076	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {	if (value1 == null ? otherValue <= null : !value1.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_686	1076	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {	if (value1 == null ? otherValue >= null : !value1.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_687	1076	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {	if (value1 == null ? otherValue == null : !value1.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_688	1076	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {	if (value1 == null ? otherValue < null : !value1.equals(otherValue)) {
+FLAT3MAP_GEN_ROR_689	1076	relational-operator-replacement	ROR	Flat3Map.equals(Object)	indirect	if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {	if (value1 == null ? otherValue > null : !value1.equals(otherValue)) {
+FLAT3MAP_GEN_COI_690	1076	conditional-operator-insertion	COI	Flat3Map.equals(Object)	indirect	if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {	if (!(value1 == null ? otherValue != null : !value1.equals(otherValue))) {
+FLAT3MAP_GEN_CTC_691	1076	condition-to-constant	CTC	Flat3Map.equals(Object)	indirect	if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {	if (true) {
+FLAT3MAP_GEN_CTC_692	1076	condition-to-constant	CTC	Flat3Map.equals(Object)	indirect	if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {	if (false) {
+FLAT3MAP_GEN_ARP_693	1076	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {	if (value1 == null ? otherValue != null : !value1.equals(otherValue + 1)) {
+FLAT3MAP_GEN_ARP_694	1076	argument-replacement	ARP	Flat3Map.equals(Object)	indirect	if (value1 == null ? otherValue != null : !value1.equals(otherValue)) {	if (value1 == null ? otherValue != null : !value1.equals(otherValue - 1)) {
+FLAT3MAP_GEN_UOI_695	1091	unary-operator-insertion	UOI	Flat3Map.hashCode()	indirect	return delegateMap.hashCode();	return -(delegateMap.hashCode());
+FLAT3MAP_GEN_ABS_696	1091	absolute-value-insertion	ABS	Flat3Map.hashCode()	indirect	return delegateMap.hashCode();	return -Math.abs(delegateMap.hashCode());
+FLAT3MAP_GEN_RVR_697	1091	return-value-replacement	RVR	Flat3Map.hashCode()	indirect	return delegateMap.hashCode();	return 0;
+FLAT3MAP_GEN_RVR_698	1091	return-value-replacement	RVR	Flat3Map.hashCode()	indirect	return delegateMap.hashCode();	return 1;
+FLAT3MAP_GEN_RVR_699	1091	return-value-replacement	RVR	Flat3Map.hashCode()	indirect	return delegateMap.hashCode();	return -1;
+FLAT3MAP_GEN_CRP_700	1093	constant-replacement	CRP	Flat3Map.hashCode()	indirect	int total = 0;	int total = 1;
+FLAT3MAP_GEN_CRP_701	1093	constant-replacement	CRP	Flat3Map.hashCode()	indirect	int total = 0;	int total = -1;
+FLAT3MAP_GEN_ROR_702	1096	relational-operator-replacement	ROR	Flat3Map.hashCode()	indirect	total += (hash3 ^ (value3 == null ? 0 : value3.hashCode()));	total += (hash3 ^ (value3 <= null ? 0 : value3.hashCode()));
+FLAT3MAP_GEN_ROR_703	1096	relational-operator-replacement	ROR	Flat3Map.hashCode()	indirect	total += (hash3 ^ (value3 == null ? 0 : value3.hashCode()));	total += (hash3 ^ (value3 >= null ? 0 : value3.hashCode()));
+FLAT3MAP_GEN_ROR_704	1096	relational-operator-replacement	ROR	Flat3Map.hashCode()	indirect	total += (hash3 ^ (value3 == null ? 0 : value3.hashCode()));	total += (hash3 ^ (value3 != null ? 0 : value3.hashCode()));
+FLAT3MAP_GEN_ROR_705	1096	relational-operator-replacement	ROR	Flat3Map.hashCode()	indirect	total += (hash3 ^ (value3 == null ? 0 : value3.hashCode()));	total += (hash3 ^ (value3 < null ? 0 : value3.hashCode()));
+FLAT3MAP_GEN_ROR_706	1096	relational-operator-replacement	ROR	Flat3Map.hashCode()	indirect	total += (hash3 ^ (value3 == null ? 0 : value3.hashCode()));	total += (hash3 ^ (value3 > null ? 0 : value3.hashCode()));
+FLAT3MAP_GEN_CRP_707	1096	constant-replacement	CRP	Flat3Map.hashCode()	indirect	total += (hash3 ^ (value3 == null ? 0 : value3.hashCode()));	total += (hash3 ^ (value3 == null ? 1 : value3.hashCode()));
+FLAT3MAP_GEN_CRP_708	1096	constant-replacement	CRP	Flat3Map.hashCode()	indirect	total += (hash3 ^ (value3 == null ? 0 : value3.hashCode()));	total += (hash3 ^ (value3 == null ? -1 : value3.hashCode()));
+FLAT3MAP_GEN_SDL_709	1096	statement-deletion	SDL	Flat3Map.hashCode()	indirect	total += (hash3 ^ (value3 == null ? 0 : value3.hashCode()));	
+FLAT3MAP_GEN_ROR_710	1098	relational-operator-replacement	ROR	Flat3Map.hashCode()	indirect	total += (hash2 ^ (value2 == null ? 0 : value2.hashCode()));	total += (hash2 ^ (value2 <= null ? 0 : value2.hashCode()));
+FLAT3MAP_GEN_ROR_711	1098	relational-operator-replacement	ROR	Flat3Map.hashCode()	indirect	total += (hash2 ^ (value2 == null ? 0 : value2.hashCode()));	total += (hash2 ^ (value2 >= null ? 0 : value2.hashCode()));
+FLAT3MAP_GEN_ROR_712	1098	relational-operator-replacement	ROR	Flat3Map.hashCode()	indirect	total += (hash2 ^ (value2 == null ? 0 : value2.hashCode()));	total += (hash2 ^ (value2 != null ? 0 : value2.hashCode()));
+FLAT3MAP_GEN_ROR_713	1098	relational-operator-replacement	ROR	Flat3Map.hashCode()	indirect	total += (hash2 ^ (value2 == null ? 0 : value2.hashCode()));	total += (hash2 ^ (value2 < null ? 0 : value2.hashCode()));
+FLAT3MAP_GEN_ROR_714	1098	relational-operator-replacement	ROR	Flat3Map.hashCode()	indirect	total += (hash2 ^ (value2 == null ? 0 : value2.hashCode()));	total += (hash2 ^ (value2 > null ? 0 : value2.hashCode()));
+FLAT3MAP_GEN_CRP_715	1098	constant-replacement	CRP	Flat3Map.hashCode()	indirect	total += (hash2 ^ (value2 == null ? 0 : value2.hashCode()));	total += (hash2 ^ (value2 == null ? 1 : value2.hashCode()));
+FLAT3MAP_GEN_CRP_716	1098	constant-replacement	CRP	Flat3Map.hashCode()	indirect	total += (hash2 ^ (value2 == null ? 0 : value2.hashCode()));	total += (hash2 ^ (value2 == null ? -1 : value2.hashCode()));
+FLAT3MAP_GEN_SDL_717	1098	statement-deletion	SDL	Flat3Map.hashCode()	indirect	total += (hash2 ^ (value2 == null ? 0 : value2.hashCode()));	
+FLAT3MAP_GEN_ROR_718	1100	relational-operator-replacement	ROR	Flat3Map.hashCode()	indirect	total += (hash1 ^ (value1 == null ? 0 : value1.hashCode()));	total += (hash1 ^ (value1 <= null ? 0 : value1.hashCode()));
+FLAT3MAP_GEN_ROR_719	1100	relational-operator-replacement	ROR	Flat3Map.hashCode()	indirect	total += (hash1 ^ (value1 == null ? 0 : value1.hashCode()));	total += (hash1 ^ (value1 >= null ? 0 : value1.hashCode()));
+FLAT3MAP_GEN_ROR_720	1100	relational-operator-replacement	ROR	Flat3Map.hashCode()	indirect	total += (hash1 ^ (value1 == null ? 0 : value1.hashCode()));	total += (hash1 ^ (value1 != null ? 0 : value1.hashCode()));
+FLAT3MAP_GEN_ROR_721	1100	relational-operator-replacement	ROR	Flat3Map.hashCode()	indirect	total += (hash1 ^ (value1 == null ? 0 : value1.hashCode()));	total += (hash1 ^ (value1 < null ? 0 : value1.hashCode()));
+FLAT3MAP_GEN_ROR_722	1100	relational-operator-replacement	ROR	Flat3Map.hashCode()	indirect	total += (hash1 ^ (value1 == null ? 0 : value1.hashCode()));	total += (hash1 ^ (value1 > null ? 0 : value1.hashCode()));
+FLAT3MAP_GEN_CRP_723	1100	constant-replacement	CRP	Flat3Map.hashCode()	indirect	total += (hash1 ^ (value1 == null ? 0 : value1.hashCode()));	total += (hash1 ^ (value1 == null ? 1 : value1.hashCode()));
+FLAT3MAP_GEN_CRP_724	1100	constant-replacement	CRP	Flat3Map.hashCode()	indirect	total += (hash1 ^ (value1 == null ? 0 : value1.hashCode()));	total += (hash1 ^ (value1 == null ? -1 : value1.hashCode()));
+FLAT3MAP_GEN_SDL_725	1100	statement-deletion	SDL	Flat3Map.hashCode()	indirect	total += (hash1 ^ (value1 == null ? 0 : value1.hashCode()));	
+FLAT3MAP_GEN_UOI_726	1102	unary-operator-insertion	UOI	Flat3Map.hashCode()	indirect	return total;	return -(total);
+FLAT3MAP_GEN_ABS_727	1102	absolute-value-insertion	ABS	Flat3Map.hashCode()	indirect	return total;	return -Math.abs(total);
+FLAT3MAP_GEN_RVR_728	1102	return-value-replacement	RVR	Flat3Map.hashCode()	indirect	return total;	return 0;
+FLAT3MAP_GEN_RVR_729	1102	return-value-replacement	RVR	Flat3Map.hashCode()	indirect	return total;	return 1;
+FLAT3MAP_GEN_RVR_730	1102	return-value-replacement	RVR	Flat3Map.hashCode()	indirect	return total;	return -1;

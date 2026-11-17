@@ -1,0 +1,1200 @@
+/*
+ * GENERATED MUTATION SUITE — setuniquelist4
+ *
+ * Produced by OperatorMutantGenerator from:
+ *   /mnt/c/Codes/TestGen-for-Platform-Software/benchmarks/defects4j/work/Collections-21f/src/main/java/org/apache/commons/collections4/list/SetUniqueList.java
+ *
+ * DO NOT EDIT. Regenerate with benchmarks/defects4j/mutation.sh --regen setuniquelist4
+ * Each mutant is planted at the line in setuniquelist4.mutants.tsv, not by `in:`.
+ *
+ * Every operator in MutationOperator is applied to every line of the library
+ * that admits it, so this file is what the specification is measured against
+ * when nobody is choosing the faults. It is the counterpart of the
+ * hand-written set in mutations/setuniquelist4.mutants:
+ * that one asks whether the suite catches the faults we thought of, this one
+ * asks what fraction of all faults of each KIND it catches.
+ *
+ * `expect` is absent throughout: a generated mutant carries no prediction,
+ * and some of these are equivalent to the original and cannot be killed by
+ * anyone. The run measures; it does not check a declaration.
+ */
+
+mutant SETUNIQUELIST4_GEN_SDL_33 {
+    description: the statement is removed, in SetUniqueList.<init>(List,Set) at line 103
+    operator:    statement-deletion
+    in:          <init>
+    file:        SetUniqueList.java
+    find:        super(list);
+    replace:     
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_34 {
+    description: == becomes <=, in SetUniqueList.<init>(List,Set) at line 104
+    operator:    relational-operator-replacement
+    in:          <init>
+    file:        SetUniqueList.java
+    find:        if (set == null) {
+    replace:     if (set <= null) {
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_35 {
+    description: == becomes >=, in SetUniqueList.<init>(List,Set) at line 104
+    operator:    relational-operator-replacement
+    in:          <init>
+    file:        SetUniqueList.java
+    find:        if (set == null) {
+    replace:     if (set >= null) {
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_36 {
+    description: == becomes !=, in SetUniqueList.<init>(List,Set) at line 104
+    operator:    relational-operator-replacement
+    in:          <init>
+    file:        SetUniqueList.java
+    find:        if (set == null) {
+    replace:     if (set != null) {
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_37 {
+    description: == becomes <, in SetUniqueList.<init>(List,Set) at line 104
+    operator:    relational-operator-replacement
+    in:          <init>
+    file:        SetUniqueList.java
+    find:        if (set == null) {
+    replace:     if (set < null) {
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_38 {
+    description: == becomes >, in SetUniqueList.<init>(List,Set) at line 104
+    operator:    relational-operator-replacement
+    in:          <init>
+    file:        SetUniqueList.java
+    find:        if (set == null) {
+    replace:     if (set > null) {
+}
+
+mutant SETUNIQUELIST4_GEN_COI_39 {
+    description: the guard is negated, in SetUniqueList.<init>(List,Set) at line 104
+    operator:    conditional-operator-insertion
+    in:          <init>
+    file:        SetUniqueList.java
+    find:        if (set == null) {
+    replace:     if (!(set == null)) {
+}
+
+mutant SETUNIQUELIST4_GEN_CTC_40 {
+    description: the branch is always taken, in SetUniqueList.<init>(List,Set) at line 104
+    operator:    condition-to-constant
+    in:          <init>
+    file:        SetUniqueList.java
+    find:        if (set == null) {
+    replace:     if (true) {
+}
+
+mutant SETUNIQUELIST4_GEN_CTC_41 {
+    description: the branch is never taken, in SetUniqueList.<init>(List,Set) at line 104
+    operator:    condition-to-constant
+    in:          <init>
+    file:        SetUniqueList.java
+    find:        if (set == null) {
+    replace:     if (false) {
+}
+
+mutant SETUNIQUELIST4_GEN_SDL_42 {
+    description: the statement is removed, in SetUniqueList.<init>(List,Set) at line 105
+    operator:    statement-deletion
+    in:          <init>
+    file:        SetUniqueList.java
+    find:        throw new IllegalArgumentException("Set must not be null");
+    replace:     
+}
+
+mutant SETUNIQUELIST4_GEN_SDL_43 {
+    description: the statement is removed, in SetUniqueList.<init>(List,Set) at line 107
+    operator:    statement-deletion
+    in:          <init>
+    file:        SetUniqueList.java
+    find:        this.set = set;
+    replace:     
+}
+
+mutant SETUNIQUELIST4_GEN_RVR_44 {
+    description: the answer becomes null, in SetUniqueList.asSet() at line 117
+    operator:    return-value-replacement
+    in:          asSet
+    file:        SetUniqueList.java
+    find:        return UnmodifiableSet.unmodifiableSet(set);
+    replace:     return null;
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_45 {
+    description: the argument to unmodifiableSet() is shifted by + 1, in SetUniqueList.asSet() at line 117
+    operator:    argument-replacement
+    in:          asSet
+    file:        SetUniqueList.java
+    find:        return UnmodifiableSet.unmodifiableSet(set);
+    replace:     return UnmodifiableSet.unmodifiableSet(set + 1);
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_46 {
+    description: the argument to unmodifiableSet() is shifted by - 1, in SetUniqueList.asSet() at line 117
+    operator:    argument-replacement
+    in:          asSet
+    file:        SetUniqueList.java
+    find:        return UnmodifiableSet.unmodifiableSet(set);
+    replace:     return UnmodifiableSet.unmodifiableSet(set - 1);
+}
+
+mutant SETUNIQUELIST4_GEN_SDL_47 {
+    description: the statement is removed, in SetUniqueList.add(Object) at line 138
+    operator:    statement-deletion
+    in:          add
+    file:        SetUniqueList.java
+    find:        add(size(), object);
+    replace:     
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_48 {
+    description: != becomes <=, in SetUniqueList.add(Object) at line 141
+    operator:    relational-operator-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        return sizeBefore != size();
+    replace:     return sizeBefore <= size();
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_49 {
+    description: != becomes >=, in SetUniqueList.add(Object) at line 141
+    operator:    relational-operator-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        return sizeBefore != size();
+    replace:     return sizeBefore >= size();
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_50 {
+    description: != becomes ==, in SetUniqueList.add(Object) at line 141
+    operator:    relational-operator-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        return sizeBefore != size();
+    replace:     return sizeBefore == size();
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_51 {
+    description: != becomes <, in SetUniqueList.add(Object) at line 141
+    operator:    relational-operator-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        return sizeBefore != size();
+    replace:     return sizeBefore < size();
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_52 {
+    description: != becomes >, in SetUniqueList.add(Object) at line 141
+    operator:    relational-operator-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        return sizeBefore != size();
+    replace:     return sizeBefore > size();
+}
+
+mutant SETUNIQUELIST4_GEN_RVR_53 {
+    description: the answer is always true, in SetUniqueList.add(Object) at line 141
+    operator:    return-value-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        return sizeBefore != size();
+    replace:     return true;
+}
+
+mutant SETUNIQUELIST4_GEN_RVR_54 {
+    description: the answer is always false, in SetUniqueList.add(Object) at line 141
+    operator:    return-value-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        return sizeBefore != size();
+    replace:     return false;
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_55 {
+    description: == becomes <=, in SetUniqueList.add(int,Object) at line 160
+    operator:    relational-operator-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        if (set.contains(object) == false) {
+    replace:     if (set.contains(object) <= false) {
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_56 {
+    description: == becomes >=, in SetUniqueList.add(int,Object) at line 160
+    operator:    relational-operator-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        if (set.contains(object) == false) {
+    replace:     if (set.contains(object) >= false) {
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_57 {
+    description: == becomes !=, in SetUniqueList.add(int,Object) at line 160
+    operator:    relational-operator-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        if (set.contains(object) == false) {
+    replace:     if (set.contains(object) != false) {
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_58 {
+    description: == becomes <, in SetUniqueList.add(int,Object) at line 160
+    operator:    relational-operator-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        if (set.contains(object) == false) {
+    replace:     if (set.contains(object) < false) {
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_59 {
+    description: == becomes >, in SetUniqueList.add(int,Object) at line 160
+    operator:    relational-operator-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        if (set.contains(object) == false) {
+    replace:     if (set.contains(object) > false) {
+}
+
+mutant SETUNIQUELIST4_GEN_COI_60 {
+    description: the guard is negated, in SetUniqueList.add(int,Object) at line 160
+    operator:    conditional-operator-insertion
+    in:          add
+    file:        SetUniqueList.java
+    find:        if (set.contains(object) == false) {
+    replace:     if (!(set.contains(object) == false)) {
+}
+
+mutant SETUNIQUELIST4_GEN_CTC_61 {
+    description: the branch is always taken, in SetUniqueList.add(int,Object) at line 160
+    operator:    condition-to-constant
+    in:          add
+    file:        SetUniqueList.java
+    find:        if (set.contains(object) == false) {
+    replace:     if (true) {
+}
+
+mutant SETUNIQUELIST4_GEN_CTC_62 {
+    description: the branch is never taken, in SetUniqueList.add(int,Object) at line 160
+    operator:    condition-to-constant
+    in:          add
+    file:        SetUniqueList.java
+    find:        if (set.contains(object) == false) {
+    replace:     if (false) {
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_63 {
+    description: the argument to contains() is shifted by + 1, in SetUniqueList.add(int,Object) at line 160
+    operator:    argument-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        if (set.contains(object) == false) {
+    replace:     if (set.contains(object + 1) == false) {
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_64 {
+    description: the argument to contains() is shifted by - 1, in SetUniqueList.add(int,Object) at line 160
+    operator:    argument-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        if (set.contains(object) == false) {
+    replace:     if (set.contains(object - 1) == false) {
+}
+
+mutant SETUNIQUELIST4_GEN_SDL_65 {
+    description: the statement is removed, in SetUniqueList.add(int,Object) at line 161
+    operator:    statement-deletion
+    in:          add
+    file:        SetUniqueList.java
+    find:        super.add(index, object);
+    replace:     
+}
+
+mutant SETUNIQUELIST4_GEN_STR_66 {
+    description: the statement runs twice, in SetUniqueList.add(int,Object) at line 161
+    operator:    statement-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        super.add(index, object);
+    replace:     super.add(index, object); super.add(index, object);
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_67 {
+    description: the two arguments to add() are swapped, in SetUniqueList.add(int,Object) at line 161
+    operator:    argument-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        super.add(index, object);
+    replace:     super.add(object, index);
+}
+
+mutant SETUNIQUELIST4_GEN_MCR_68 {
+    description: .add( becomes .contains(, in SetUniqueList.add(int,Object) at line 161
+    operator:    method-call-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        super.add(index, object);
+    replace:     super.contains(index, object);
+}
+
+mutant SETUNIQUELIST4_GEN_SDL_69 {
+    description: the statement is removed, in SetUniqueList.add(int,Object) at line 162
+    operator:    statement-deletion
+    in:          add
+    file:        SetUniqueList.java
+    find:        set.add(object);
+    replace:     
+}
+
+mutant SETUNIQUELIST4_GEN_STR_70 {
+    description: the statement runs twice, in SetUniqueList.add(int,Object) at line 162
+    operator:    statement-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        set.add(object);
+    replace:     set.add(object); set.add(object);
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_71 {
+    description: the argument to add() is shifted by + 1, in SetUniqueList.add(int,Object) at line 162
+    operator:    argument-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        set.add(object);
+    replace:     set.add(object + 1);
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_72 {
+    description: the argument to add() is shifted by - 1, in SetUniqueList.add(int,Object) at line 162
+    operator:    argument-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        set.add(object);
+    replace:     set.add(object - 1);
+}
+
+mutant SETUNIQUELIST4_GEN_MCR_73 {
+    description: .add( becomes .contains(, in SetUniqueList.add(int,Object) at line 162
+    operator:    method-call-replacement
+    in:          add
+    file:        SetUniqueList.java
+    find:        set.add(object);
+    replace:     set.contains(object);
+}
+
+mutant SETUNIQUELIST4_GEN_SDL_76 {
+    description: the statement is removed, in SetUniqueList.addAll(int,Collection) at line 204
+    operator:    statement-deletion
+    in:          addAll
+    file:        SetUniqueList.java
+    find:        final List<E> temp = new ArrayList<E>();
+    replace:     
+}
+
+mutant SETUNIQUELIST4_GEN_COI_77 {
+    description: the guard is negated, in SetUniqueList.addAll(int,Collection) at line 206
+    operator:    conditional-operator-insertion
+    in:          addAll
+    file:        SetUniqueList.java
+    find:        if (set.add(e)) {
+    replace:     if (!(set.add(e))) {
+}
+
+mutant SETUNIQUELIST4_GEN_CTC_78 {
+    description: the branch is always taken, in SetUniqueList.addAll(int,Collection) at line 206
+    operator:    condition-to-constant
+    in:          addAll
+    file:        SetUniqueList.java
+    find:        if (set.add(e)) {
+    replace:     if (true) {
+}
+
+mutant SETUNIQUELIST4_GEN_CTC_79 {
+    description: the branch is never taken, in SetUniqueList.addAll(int,Collection) at line 206
+    operator:    condition-to-constant
+    in:          addAll
+    file:        SetUniqueList.java
+    find:        if (set.add(e)) {
+    replace:     if (false) {
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_80 {
+    description: the argument to add() is shifted by + 1, in SetUniqueList.addAll(int,Collection) at line 206
+    operator:    argument-replacement
+    in:          addAll
+    file:        SetUniqueList.java
+    find:        if (set.add(e)) {
+    replace:     if (set.add(e + 1)) {
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_81 {
+    description: the argument to add() is shifted by - 1, in SetUniqueList.addAll(int,Collection) at line 206
+    operator:    argument-replacement
+    in:          addAll
+    file:        SetUniqueList.java
+    find:        if (set.add(e)) {
+    replace:     if (set.add(e - 1)) {
+}
+
+mutant SETUNIQUELIST4_GEN_MCR_82 {
+    description: .add( becomes .contains(, in SetUniqueList.addAll(int,Collection) at line 206
+    operator:    method-call-replacement
+    in:          addAll
+    file:        SetUniqueList.java
+    find:        if (set.add(e)) {
+    replace:     if (set.contains(e)) {
+}
+
+mutant SETUNIQUELIST4_GEN_SDL_83 {
+    description: the statement is removed, in SetUniqueList.addAll(int,Collection) at line 207
+    operator:    statement-deletion
+    in:          addAll
+    file:        SetUniqueList.java
+    find:        temp.add(e);
+    replace:     
+}
+
+mutant SETUNIQUELIST4_GEN_STR_84 {
+    description: the statement runs twice, in SetUniqueList.addAll(int,Collection) at line 207
+    operator:    statement-replacement
+    in:          addAll
+    file:        SetUniqueList.java
+    find:        temp.add(e);
+    replace:     temp.add(e); temp.add(e);
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_85 {
+    description: the argument to add() is shifted by + 1, in SetUniqueList.addAll(int,Collection) at line 207
+    operator:    argument-replacement
+    in:          addAll
+    file:        SetUniqueList.java
+    find:        temp.add(e);
+    replace:     temp.add(e + 1);
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_86 {
+    description: the argument to add() is shifted by - 1, in SetUniqueList.addAll(int,Collection) at line 207
+    operator:    argument-replacement
+    in:          addAll
+    file:        SetUniqueList.java
+    find:        temp.add(e);
+    replace:     temp.add(e - 1);
+}
+
+mutant SETUNIQUELIST4_GEN_MCR_87 {
+    description: .add( becomes .contains(, in SetUniqueList.addAll(int,Collection) at line 207
+    operator:    method-call-replacement
+    in:          addAll
+    file:        SetUniqueList.java
+    find:        temp.add(e);
+    replace:     temp.contains(e);
+}
+
+mutant SETUNIQUELIST4_GEN_RVR_88 {
+    description: the answer is always true, in SetUniqueList.addAll(int,Collection) at line 210
+    operator:    return-value-replacement
+    in:          addAll
+    file:        SetUniqueList.java
+    find:        return super.addAll(index, temp);
+    replace:     return true;
+}
+
+mutant SETUNIQUELIST4_GEN_RVR_89 {
+    description: the answer is always false, in SetUniqueList.addAll(int,Collection) at line 210
+    operator:    return-value-replacement
+    in:          addAll
+    file:        SetUniqueList.java
+    find:        return super.addAll(index, temp);
+    replace:     return false;
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_90 {
+    description: the two arguments to addAll() are swapped, in SetUniqueList.addAll(int,Collection) at line 210
+    operator:    argument-replacement
+    in:          addAll
+    file:        SetUniqueList.java
+    find:        return super.addAll(index, temp);
+    replace:     return super.addAll(temp, index);
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_91 {
+    description: the two arguments to set() are swapped, in SetUniqueList.set(int,Object) at line 230
+    operator:    argument-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        final E removed = super.set(index, object);
+    replace:     final E removed = super.set(object, index);
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_92 {
+    description: != becomes <=, in SetUniqueList.set(int,Object) at line 232
+    operator:    relational-operator-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        if (pos != -1 && pos != index) {
+    replace:     if (pos <= -1 && pos != index) {
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_93 {
+    description: != becomes >=, in SetUniqueList.set(int,Object) at line 232
+    operator:    relational-operator-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        if (pos != -1 && pos != index) {
+    replace:     if (pos >= -1 && pos != index) {
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_94 {
+    description: != becomes ==, in SetUniqueList.set(int,Object) at line 232
+    operator:    relational-operator-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        if (pos != -1 && pos != index) {
+    replace:     if (pos == -1 && pos != index) {
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_95 {
+    description: != becomes <, in SetUniqueList.set(int,Object) at line 232
+    operator:    relational-operator-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        if (pos != -1 && pos != index) {
+    replace:     if (pos < -1 && pos != index) {
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_96 {
+    description: != becomes >, in SetUniqueList.set(int,Object) at line 232
+    operator:    relational-operator-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        if (pos != -1 && pos != index) {
+    replace:     if (pos > -1 && pos != index) {
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_97 {
+    description: != becomes <=, in SetUniqueList.set(int,Object) at line 232
+    operator:    relational-operator-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        if (pos != -1 && pos != index) {
+    replace:     if (pos != -1 && pos <= index) {
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_98 {
+    description: != becomes >=, in SetUniqueList.set(int,Object) at line 232
+    operator:    relational-operator-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        if (pos != -1 && pos != index) {
+    replace:     if (pos != -1 && pos >= index) {
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_99 {
+    description: != becomes ==, in SetUniqueList.set(int,Object) at line 232
+    operator:    relational-operator-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        if (pos != -1 && pos != index) {
+    replace:     if (pos != -1 && pos == index) {
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_100 {
+    description: != becomes <, in SetUniqueList.set(int,Object) at line 232
+    operator:    relational-operator-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        if (pos != -1 && pos != index) {
+    replace:     if (pos != -1 && pos < index) {
+}
+
+mutant SETUNIQUELIST4_GEN_ROR_101 {
+    description: != becomes >, in SetUniqueList.set(int,Object) at line 232
+    operator:    relational-operator-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        if (pos != -1 && pos != index) {
+    replace:     if (pos != -1 && pos > index) {
+}
+
+mutant SETUNIQUELIST4_GEN_COR_102 {
+    description: && becomes ||, in SetUniqueList.set(int,Object) at line 232
+    operator:    conditional-operator-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        if (pos != -1 && pos != index) {
+    replace:     if (pos != -1 || pos != index) {
+}
+
+mutant SETUNIQUELIST4_GEN_COI_103 {
+    description: the guard is negated, in SetUniqueList.set(int,Object) at line 232
+    operator:    conditional-operator-insertion
+    in:          set
+    file:        SetUniqueList.java
+    find:        if (pos != -1 && pos != index) {
+    replace:     if (!(pos != -1 && pos != index)) {
+}
+
+mutant SETUNIQUELIST4_GEN_CRP_104 {
+    description: the literal 1 becomes 0, in SetUniqueList.set(int,Object) at line 232
+    operator:    constant-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        if (pos != -1 && pos != index) {
+    replace:     if (pos != -0 && pos != index) {
+}
+
+mutant SETUNIQUELIST4_GEN_CRP_105 {
+    description: the literal 1 becomes -1, in SetUniqueList.set(int,Object) at line 232
+    operator:    constant-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        if (pos != -1 && pos != index) {
+    replace:     if (pos != --1 && pos != index) {
+}
+
+mutant SETUNIQUELIST4_GEN_CRP_106 {
+    description: the literal 1 becomes 2, in SetUniqueList.set(int,Object) at line 232
+    operator:    constant-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        if (pos != -1 && pos != index) {
+    replace:     if (pos != -2 && pos != index) {
+}
+
+mutant SETUNIQUELIST4_GEN_CTC_107 {
+    description: the branch is always taken, in SetUniqueList.set(int,Object) at line 232
+    operator:    condition-to-constant
+    in:          set
+    file:        SetUniqueList.java
+    find:        if (pos != -1 && pos != index) {
+    replace:     if (true) {
+}
+
+mutant SETUNIQUELIST4_GEN_CTC_108 {
+    description: the branch is never taken, in SetUniqueList.set(int,Object) at line 232
+    operator:    condition-to-constant
+    in:          set
+    file:        SetUniqueList.java
+    find:        if (pos != -1 && pos != index) {
+    replace:     if (false) {
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_109 {
+    description: the argument to remove() is shifted by + 1, in SetUniqueList.set(int,Object) at line 235
+    operator:    argument-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        super.remove(pos); // remove the duplicate by index
+    replace:     super.remove(pos + 1); // remove the duplicate by index
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_110 {
+    description: the argument to remove() is shifted by - 1, in SetUniqueList.set(int,Object) at line 235
+    operator:    argument-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        super.remove(pos); // remove the duplicate by index
+    replace:     super.remove(pos - 1); // remove the duplicate by index
+}
+
+mutant SETUNIQUELIST4_GEN_MCR_111 {
+    description: .remove( becomes .get(, in SetUniqueList.set(int,Object) at line 235
+    operator:    method-call-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        super.remove(pos); // remove the duplicate by index
+    replace:     super.get(pos); // remove the duplicate by index
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_112 {
+    description: the argument to remove() is shifted by + 1, in SetUniqueList.set(int,Object) at line 238
+    operator:    argument-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        set.remove(removed); // remove the item deleted by the set
+    replace:     set.remove(removed + 1); // remove the item deleted by the set
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_113 {
+    description: the argument to remove() is shifted by - 1, in SetUniqueList.set(int,Object) at line 238
+    operator:    argument-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        set.remove(removed); // remove the item deleted by the set
+    replace:     set.remove(removed - 1); // remove the item deleted by the set
+}
+
+mutant SETUNIQUELIST4_GEN_MCR_114 {
+    description: .remove( becomes .get(, in SetUniqueList.set(int,Object) at line 238
+    operator:    method-call-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        set.remove(removed); // remove the item deleted by the set
+    replace:     set.get(removed); // remove the item deleted by the set
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_115 {
+    description: the argument to add() is shifted by + 1, in SetUniqueList.set(int,Object) at line 239
+    operator:    argument-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        set.add(object); // add the new item to the unique set
+    replace:     set.add(object + 1); // add the new item to the unique set
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_116 {
+    description: the argument to add() is shifted by - 1, in SetUniqueList.set(int,Object) at line 239
+    operator:    argument-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        set.add(object); // add the new item to the unique set
+    replace:     set.add(object - 1); // add the new item to the unique set
+}
+
+mutant SETUNIQUELIST4_GEN_MCR_117 {
+    description: .add( becomes .contains(, in SetUniqueList.set(int,Object) at line 239
+    operator:    method-call-replacement
+    in:          set
+    file:        SetUniqueList.java
+    find:        set.add(object); // add the new item to the unique set
+    replace:     set.contains(object); // add the new item to the unique set
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_118 {
+    description: the argument to remove() is shifted by + 1, in SetUniqueList.remove(Object) at line 246
+    operator:    argument-replacement
+    in:          remove
+    file:        SetUniqueList.java
+    find:        final boolean result = set.remove(object);
+    replace:     final boolean result = set.remove(object + 1);
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_119 {
+    description: the argument to remove() is shifted by - 1, in SetUniqueList.remove(Object) at line 246
+    operator:    argument-replacement
+    in:          remove
+    file:        SetUniqueList.java
+    find:        final boolean result = set.remove(object);
+    replace:     final boolean result = set.remove(object - 1);
+}
+
+mutant SETUNIQUELIST4_GEN_MCR_120 {
+    description: .remove( becomes .get(, in SetUniqueList.remove(Object) at line 246
+    operator:    method-call-replacement
+    in:          remove
+    file:        SetUniqueList.java
+    find:        final boolean result = set.remove(object);
+    replace:     final boolean result = set.get(object);
+}
+
+mutant SETUNIQUELIST4_GEN_COI_121 {
+    description: the guard is negated, in SetUniqueList.remove(Object) at line 247
+    operator:    conditional-operator-insertion
+    in:          remove
+    file:        SetUniqueList.java
+    find:        if (result) {
+    replace:     if (!(result)) {
+}
+
+mutant SETUNIQUELIST4_GEN_CTC_122 {
+    description: the branch is always taken, in SetUniqueList.remove(Object) at line 247
+    operator:    condition-to-constant
+    in:          remove
+    file:        SetUniqueList.java
+    find:        if (result) {
+    replace:     if (true) {
+}
+
+mutant SETUNIQUELIST4_GEN_CTC_123 {
+    description: the branch is never taken, in SetUniqueList.remove(Object) at line 247
+    operator:    condition-to-constant
+    in:          remove
+    file:        SetUniqueList.java
+    find:        if (result) {
+    replace:     if (false) {
+}
+
+mutant SETUNIQUELIST4_GEN_SDL_124 {
+    description: the statement is removed, in SetUniqueList.remove(Object) at line 248
+    operator:    statement-deletion
+    in:          remove
+    file:        SetUniqueList.java
+    find:        super.remove(object);
+    replace:     
+}
+
+mutant SETUNIQUELIST4_GEN_STR_125 {
+    description: the statement runs twice, in SetUniqueList.remove(Object) at line 248
+    operator:    statement-replacement
+    in:          remove
+    file:        SetUniqueList.java
+    find:        super.remove(object);
+    replace:     super.remove(object); super.remove(object);
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_126 {
+    description: the argument to remove() is shifted by + 1, in SetUniqueList.remove(Object) at line 248
+    operator:    argument-replacement
+    in:          remove
+    file:        SetUniqueList.java
+    find:        super.remove(object);
+    replace:     super.remove(object + 1);
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_127 {
+    description: the argument to remove() is shifted by - 1, in SetUniqueList.remove(Object) at line 248
+    operator:    argument-replacement
+    in:          remove
+    file:        SetUniqueList.java
+    find:        super.remove(object);
+    replace:     super.remove(object - 1);
+}
+
+mutant SETUNIQUELIST4_GEN_MCR_128 {
+    description: .remove( becomes .get(, in SetUniqueList.remove(Object) at line 248
+    operator:    method-call-replacement
+    in:          remove
+    file:        SetUniqueList.java
+    find:        super.remove(object);
+    replace:     super.get(object);
+}
+
+mutant SETUNIQUELIST4_GEN_RVR_129 {
+    description: the answer is always true, in SetUniqueList.remove(Object) at line 250
+    operator:    return-value-replacement
+    in:          remove
+    file:        SetUniqueList.java
+    find:        return result;
+    replace:     return true;
+}
+
+mutant SETUNIQUELIST4_GEN_RVR_130 {
+    description: the answer is always false, in SetUniqueList.remove(Object) at line 250
+    operator:    return-value-replacement
+    in:          remove
+    file:        SetUniqueList.java
+    find:        return result;
+    replace:     return false;
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_131 {
+    description: the argument to remove() is shifted by + 1, in SetUniqueList.remove(int) at line 255
+    operator:    argument-replacement
+    in:          remove
+    file:        SetUniqueList.java
+    find:        final E result = super.remove(index);
+    replace:     final E result = super.remove(index + 1);
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_132 {
+    description: the argument to remove() is shifted by - 1, in SetUniqueList.remove(int) at line 255
+    operator:    argument-replacement
+    in:          remove
+    file:        SetUniqueList.java
+    find:        final E result = super.remove(index);
+    replace:     final E result = super.remove(index - 1);
+}
+
+mutant SETUNIQUELIST4_GEN_MCR_133 {
+    description: .remove( becomes .get(, in SetUniqueList.remove(int) at line 255
+    operator:    method-call-replacement
+    in:          remove
+    file:        SetUniqueList.java
+    find:        final E result = super.remove(index);
+    replace:     final E result = super.get(index);
+}
+
+mutant SETUNIQUELIST4_GEN_SDL_134 {
+    description: the statement is removed, in SetUniqueList.remove(int) at line 256
+    operator:    statement-deletion
+    in:          remove
+    file:        SetUniqueList.java
+    find:        set.remove(result);
+    replace:     
+}
+
+mutant SETUNIQUELIST4_GEN_STR_135 {
+    description: the statement runs twice, in SetUniqueList.remove(int) at line 256
+    operator:    statement-replacement
+    in:          remove
+    file:        SetUniqueList.java
+    find:        set.remove(result);
+    replace:     set.remove(result); set.remove(result);
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_136 {
+    description: the argument to remove() is shifted by + 1, in SetUniqueList.remove(int) at line 256
+    operator:    argument-replacement
+    in:          remove
+    file:        SetUniqueList.java
+    find:        set.remove(result);
+    replace:     set.remove(result + 1);
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_137 {
+    description: the argument to remove() is shifted by - 1, in SetUniqueList.remove(int) at line 256
+    operator:    argument-replacement
+    in:          remove
+    file:        SetUniqueList.java
+    find:        set.remove(result);
+    replace:     set.remove(result - 1);
+}
+
+mutant SETUNIQUELIST4_GEN_MCR_138 {
+    description: .remove( becomes .get(, in SetUniqueList.remove(int) at line 256
+    operator:    method-call-replacement
+    in:          remove
+    file:        SetUniqueList.java
+    find:        set.remove(result);
+    replace:     set.get(result);
+}
+
+mutant SETUNIQUELIST4_GEN_RVR_139 {
+    description: the answer becomes null, in SetUniqueList.remove(int) at line 257
+    operator:    return-value-replacement
+    in:          remove
+    file:        SetUniqueList.java
+    find:        return result;
+    replace:     return null;
+}
+
+mutant SETUNIQUELIST4_GEN_RVR_186 {
+    description: the answer is always true, in SetUniqueList.contains(Object) at line 300
+    operator:    return-value-replacement
+    in:          contains
+    file:        SetUniqueList.java
+    find:        return set.contains(object);
+    replace:     return true;
+}
+
+mutant SETUNIQUELIST4_GEN_RVR_187 {
+    description: the answer is always false, in SetUniqueList.contains(Object) at line 300
+    operator:    return-value-replacement
+    in:          contains
+    file:        SetUniqueList.java
+    find:        return set.contains(object);
+    replace:     return false;
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_188 {
+    description: the argument to contains() is shifted by + 1, in SetUniqueList.contains(Object) at line 300
+    operator:    argument-replacement
+    in:          contains
+    file:        SetUniqueList.java
+    find:        return set.contains(object);
+    replace:     return set.contains(object + 1);
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_189 {
+    description: the argument to contains() is shifted by - 1, in SetUniqueList.contains(Object) at line 300
+    operator:    argument-replacement
+    in:          contains
+    file:        SetUniqueList.java
+    find:        return set.contains(object);
+    replace:     return set.contains(object - 1);
+}
+
+mutant SETUNIQUELIST4_GEN_RVR_194 {
+    description: the answer becomes null, in SetUniqueList.iterator() at line 310
+    operator:    return-value-replacement
+    in:          iterator
+    file:        SetUniqueList.java
+    find:        return new SetListIterator<E>(super.iterator(), set);
+    replace:     return null;
+}
+
+mutant SETUNIQUELIST4_GEN_SDL_199 {
+    description: the statement is removed, in SetUniqueList.subList(int,int) at line 331
+    operator:    statement-deletion
+    in:          subList
+    file:        SetUniqueList.java
+    find:        final List<E> superSubList = super.subList(fromIndex, toIndex);
+    replace:     
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_200 {
+    description: the two arguments to subList() are swapped, in SetUniqueList.subList(int,int) at line 331
+    operator:    argument-replacement
+    in:          subList
+    file:        SetUniqueList.java
+    find:        final List<E> superSubList = super.subList(fromIndex, toIndex);
+    replace:     final List<E> superSubList = super.subList(toIndex, fromIndex);
+}
+
+mutant SETUNIQUELIST4_GEN_SDL_201 {
+    description: the statement is removed, in SetUniqueList.subList(int,int) at line 332
+    operator:    statement-deletion
+    in:          subList
+    file:        SetUniqueList.java
+    find:        final Set<E> subSet = createSetBasedOnList(set, superSubList);
+    replace:     
+}
+
+mutant SETUNIQUELIST4_GEN_RVR_202 {
+    description: the answer becomes null, in SetUniqueList.subList(int,int) at line 333
+    operator:    return-value-replacement
+    in:          subList
+    file:        SetUniqueList.java
+    find:        return ListUtils.unmodifiableList(new SetUniqueList<E>(superSubList, subSet));
+    replace:     return null;
+}
+
+mutant SETUNIQUELIST4_GEN_SDL_203 {
+    description: the statement is removed, in SetUniqueList.createSetBasedOnList(Set,List) at line 349
+    operator:    statement-deletion
+    in:          createSetBasedOnList
+    file:        SetUniqueList.java
+    find:        Set<E> subSet;
+    replace:     
+}
+
+mutant SETUNIQUELIST4_GEN_COI_204 {
+    description: the guard is negated, in SetUniqueList.createSetBasedOnList(Set,List) at line 350
+    operator:    conditional-operator-insertion
+    in:          createSetBasedOnList
+    file:        SetUniqueList.java
+    find:        if (set.getClass().equals(HashSet.class)) {
+    replace:     if (!(set.getClass().equals(HashSet.class))) {
+}
+
+mutant SETUNIQUELIST4_GEN_CTC_205 {
+    description: the branch is always taken, in SetUniqueList.createSetBasedOnList(Set,List) at line 350
+    operator:    condition-to-constant
+    in:          createSetBasedOnList
+    file:        SetUniqueList.java
+    find:        if (set.getClass().equals(HashSet.class)) {
+    replace:     if (true) {
+}
+
+mutant SETUNIQUELIST4_GEN_CTC_206 {
+    description: the branch is never taken, in SetUniqueList.createSetBasedOnList(Set,List) at line 350
+    operator:    condition-to-constant
+    in:          createSetBasedOnList
+    file:        SetUniqueList.java
+    find:        if (set.getClass().equals(HashSet.class)) {
+    replace:     if (false) {
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_207 {
+    description: the argument to equals() is shifted by + 1, in SetUniqueList.createSetBasedOnList(Set,List) at line 350
+    operator:    argument-replacement
+    in:          createSetBasedOnList
+    file:        SetUniqueList.java
+    find:        if (set.getClass().equals(HashSet.class)) {
+    replace:     if (set.getClass().equals(HashSet.class + 1)) {
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_208 {
+    description: the argument to equals() is shifted by - 1, in SetUniqueList.createSetBasedOnList(Set,List) at line 350
+    operator:    argument-replacement
+    in:          createSetBasedOnList
+    file:        SetUniqueList.java
+    find:        if (set.getClass().equals(HashSet.class)) {
+    replace:     if (set.getClass().equals(HashSet.class - 1)) {
+}
+
+mutant SETUNIQUELIST4_GEN_SDL_209 {
+    description: the statement is removed, in SetUniqueList.createSetBasedOnList(Set,List) at line 351
+    operator:    statement-deletion
+    in:          createSetBasedOnList
+    file:        SetUniqueList.java
+    find:        subSet = new HashSet<E>(list.size());
+    replace:     
+}
+
+mutant SETUNIQUELIST4_GEN_MCR_210 {
+    description: .size() becomes .hashCode(), in SetUniqueList.createSetBasedOnList(Set,List) at line 351
+    operator:    method-call-replacement
+    in:          createSetBasedOnList
+    file:        SetUniqueList.java
+    find:        subSet = new HashSet<E>(list.size());
+    replace:     subSet = new HashSet<E>(list.hashCode());
+}
+
+mutant SETUNIQUELIST4_GEN_SDL_211 {
+    description: the statement is removed, in SetUniqueList.createSetBasedOnList(Set,List) at line 354
+    operator:    statement-deletion
+    in:          createSetBasedOnList
+    file:        SetUniqueList.java
+    find:        subSet = set.getClass().newInstance();
+    replace:     
+}
+
+mutant SETUNIQUELIST4_GEN_SDL_212 {
+    description: the statement is removed, in SetUniqueList.createSetBasedOnList(Set,List) at line 361
+    operator:    statement-deletion
+    in:          createSetBasedOnList
+    file:        SetUniqueList.java
+    find:        subSet.addAll(list);
+    replace:     
+}
+
+mutant SETUNIQUELIST4_GEN_STR_213 {
+    description: the statement runs twice, in SetUniqueList.createSetBasedOnList(Set,List) at line 361
+    operator:    statement-replacement
+    in:          createSetBasedOnList
+    file:        SetUniqueList.java
+    find:        subSet.addAll(list);
+    replace:     subSet.addAll(list); subSet.addAll(list);
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_214 {
+    description: the argument to addAll() is shifted by + 1, in SetUniqueList.createSetBasedOnList(Set,List) at line 361
+    operator:    argument-replacement
+    in:          createSetBasedOnList
+    file:        SetUniqueList.java
+    find:        subSet.addAll(list);
+    replace:     subSet.addAll(list + 1);
+}
+
+mutant SETUNIQUELIST4_GEN_ARP_215 {
+    description: the argument to addAll() is shifted by - 1, in SetUniqueList.createSetBasedOnList(Set,List) at line 361
+    operator:    argument-replacement
+    in:          createSetBasedOnList
+    file:        SetUniqueList.java
+    find:        subSet.addAll(list);
+    replace:     subSet.addAll(list - 1);
+}
+
+mutant SETUNIQUELIST4_GEN_RVR_216 {
+    description: the answer becomes null, in SetUniqueList.createSetBasedOnList(Set,List) at line 362
+    operator:    return-value-replacement
+    in:          createSetBasedOnList
+    file:        SetUniqueList.java
+    find:        return subSet;
+    replace:     return null;
+}
+
+mutant SETUNIQUELIST4_GEN_SDL_217 {
+    description: the statement is removed, in SetUniqueList.SetListIterator.<init>(Iterator,Set) at line 375
+    operator:    statement-deletion
+    in:          <init>
+    file:        SetUniqueList.java
+    find:        super(it);
+    replace:     
+}
+
+mutant SETUNIQUELIST4_GEN_SDL_218 {
+    description: the statement is removed, in SetUniqueList.SetListIterator.next() at line 381
+    operator:    statement-deletion
+    in:          next
+    file:        SetUniqueList.java
+    find:        last = super.next();
+    replace:     
+}
+
+mutant SETUNIQUELIST4_GEN_RVR_219 {
+    description: the answer becomes null, in SetUniqueList.SetListIterator.next() at line 382
+    operator:    return-value-replacement
+    in:          next
+    file:        SetUniqueList.java
+    find:        return last;
+    replace:     return null;
+}
+

@@ -1,0 +1,132 @@
+id	status	sampled	detail
+SETUNIQUELIST4_GEN_SDL_33	INVALID	no	error: constructor AbstractSerializableListDecorator in class AbstractSerializableListDecorator<E#2> cannot be applied to given types;
+SETUNIQUELIST4_GEN_COI_39	VALID	yes	
+SETUNIQUELIST4_GEN_CTC_40	VALID	yes	
+SETUNIQUELIST4_GEN_CTC_41	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_34	INVALID	no	error: bad operand types for binary operator '<='
+SETUNIQUELIST4_GEN_ROR_35	INVALID	no	error: bad operand types for binary operator '>='
+SETUNIQUELIST4_GEN_ROR_36	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_37	INVALID	no	error: bad operand types for binary operator '<'
+SETUNIQUELIST4_GEN_ROR_38	INVALID	no	error: bad operand types for binary operator '>'
+SETUNIQUELIST4_GEN_SDL_42	VALID	yes	
+SETUNIQUELIST4_GEN_SDL_43	INVALID	no	error: variable set might not have been initialized
+SETUNIQUELIST4_GEN_ARP_45	INVALID	no	error: bad operand types for binary operator '+'
+SETUNIQUELIST4_GEN_ARP_46	INVALID	no	error: bad operand types for binary operator '-'
+SETUNIQUELIST4_GEN_RVR_44	VALID	yes	
+SETUNIQUELIST4_GEN_SDL_47	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_48	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_49	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_50	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_51	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_52	VALID	yes	
+SETUNIQUELIST4_GEN_RVR_53	VALID	yes	
+SETUNIQUELIST4_GEN_RVR_54	VALID	yes	
+SETUNIQUELIST4_GEN_ARP_63	INVALID	no	error: bad operand types for binary operator '+'
+SETUNIQUELIST4_GEN_ARP_64	INVALID	no	error: bad operand types for binary operator '-'
+SETUNIQUELIST4_GEN_COI_60	VALID	yes	
+SETUNIQUELIST4_GEN_CTC_61	VALID	yes	
+SETUNIQUELIST4_GEN_CTC_62	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_55	INVALID	no	error: bad operand types for binary operator '<='
+SETUNIQUELIST4_GEN_ROR_56	INVALID	no	error: bad operand types for binary operator '>='
+SETUNIQUELIST4_GEN_ROR_57	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_58	INVALID	no	error: bad operand types for binary operator '<'
+SETUNIQUELIST4_GEN_ROR_59	INVALID	no	error: bad operand types for binary operator '>'
+SETUNIQUELIST4_GEN_ARP_67	INVALID	no	error: incompatible types: E cannot be converted to int
+SETUNIQUELIST4_GEN_MCR_68	INVALID	no	error: method contains in class AbstractCollectionDecorator<E#2> cannot be applied to given types;
+SETUNIQUELIST4_GEN_SDL_65	VALID	yes	
+SETUNIQUELIST4_GEN_STR_66	VALID	yes	
+SETUNIQUELIST4_GEN_ARP_71	INVALID	no	error: bad operand types for binary operator '+'
+SETUNIQUELIST4_GEN_ARP_72	INVALID	no	error: bad operand types for binary operator '-'
+SETUNIQUELIST4_GEN_MCR_73	VALID	yes	
+SETUNIQUELIST4_GEN_SDL_69	VALID	yes	
+SETUNIQUELIST4_GEN_STR_70	VALID	yes	
+SETUNIQUELIST4_GEN_SDL_76	INVALID	no	error: cannot find symbol
+SETUNIQUELIST4_GEN_ARP_80	INVALID	no	error: bad operand types for binary operator '+'
+SETUNIQUELIST4_GEN_ARP_81	INVALID	no	error: bad operand types for binary operator '-'
+SETUNIQUELIST4_GEN_COI_77	VALID	yes	
+SETUNIQUELIST4_GEN_CTC_78	VALID	yes	
+SETUNIQUELIST4_GEN_CTC_79	VALID	yes	
+SETUNIQUELIST4_GEN_MCR_82	VALID	yes	
+SETUNIQUELIST4_GEN_ARP_85	INVALID	no	error: bad operand types for binary operator '+'
+SETUNIQUELIST4_GEN_ARP_86	INVALID	no	error: bad operand types for binary operator '-'
+SETUNIQUELIST4_GEN_MCR_87	VALID	yes	
+SETUNIQUELIST4_GEN_SDL_83	VALID	yes	
+SETUNIQUELIST4_GEN_STR_84	VALID	yes	
+SETUNIQUELIST4_GEN_ARP_90	INVALID	no	error: incompatible types: List<E> cannot be converted to int
+SETUNIQUELIST4_GEN_RVR_88	VALID	yes	
+SETUNIQUELIST4_GEN_RVR_89	VALID	yes	
+SETUNIQUELIST4_GEN_ARP_91	INVALID	no	error: incompatible types: E cannot be converted to int
+SETUNIQUELIST4_GEN_COI_103	VALID	yes	
+SETUNIQUELIST4_GEN_COR_102	VALID	yes	
+SETUNIQUELIST4_GEN_CRP_104	VALID	yes	
+SETUNIQUELIST4_GEN_CRP_105	INVALID	no	error: unexpected type
+SETUNIQUELIST4_GEN_CRP_106	VALID	yes	
+SETUNIQUELIST4_GEN_CTC_107	VALID	yes	
+SETUNIQUELIST4_GEN_CTC_108	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_100	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_101	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_92	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_93	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_94	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_95	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_96	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_97	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_98	VALID	yes	
+SETUNIQUELIST4_GEN_ROR_99	VALID	yes	
+SETUNIQUELIST4_GEN_ARP_109	VALID	yes	
+SETUNIQUELIST4_GEN_ARP_110	VALID	yes	
+SETUNIQUELIST4_GEN_MCR_111	VALID	yes	
+SETUNIQUELIST4_GEN_ARP_112	INVALID	no	error: bad operand types for binary operator '+'
+SETUNIQUELIST4_GEN_ARP_113	INVALID	no	error: bad operand types for binary operator '-'
+SETUNIQUELIST4_GEN_MCR_114	INVALID	no	error: cannot find symbol
+SETUNIQUELIST4_GEN_ARP_115	INVALID	no	error: bad operand types for binary operator '+'
+SETUNIQUELIST4_GEN_ARP_116	INVALID	no	error: bad operand types for binary operator '-'
+SETUNIQUELIST4_GEN_MCR_117	VALID	yes	
+SETUNIQUELIST4_GEN_ARP_118	INVALID	no	error: bad operand types for binary operator '+'
+SETUNIQUELIST4_GEN_ARP_119	INVALID	no	error: bad operand types for binary operator '-'
+SETUNIQUELIST4_GEN_MCR_120	INVALID	no	error: cannot find symbol
+SETUNIQUELIST4_GEN_COI_121	VALID	yes	
+SETUNIQUELIST4_GEN_CTC_122	VALID	yes	
+SETUNIQUELIST4_GEN_CTC_123	VALID	yes	
+SETUNIQUELIST4_GEN_ARP_126	INVALID	no	error: bad operand types for binary operator '+'
+SETUNIQUELIST4_GEN_ARP_127	INVALID	no	error: bad operand types for binary operator '-'
+SETUNIQUELIST4_GEN_MCR_128	INVALID	no	error: incompatible types: Object cannot be converted to int
+SETUNIQUELIST4_GEN_SDL_124	VALID	yes	
+SETUNIQUELIST4_GEN_STR_125	VALID	yes	
+SETUNIQUELIST4_GEN_RVR_129	VALID	yes	
+SETUNIQUELIST4_GEN_RVR_130	VALID	yes	
+SETUNIQUELIST4_GEN_ARP_131	VALID	yes	
+SETUNIQUELIST4_GEN_ARP_132	VALID	yes	
+SETUNIQUELIST4_GEN_MCR_133	VALID	yes	
+SETUNIQUELIST4_GEN_ARP_136	INVALID	no	error: bad operand types for binary operator '+'
+SETUNIQUELIST4_GEN_ARP_137	INVALID	no	error: bad operand types for binary operator '-'
+SETUNIQUELIST4_GEN_MCR_138	INVALID	no	error: cannot find symbol
+SETUNIQUELIST4_GEN_SDL_134	VALID	yes	
+SETUNIQUELIST4_GEN_STR_135	VALID	yes	
+SETUNIQUELIST4_GEN_RVR_139	VALID	yes	
+SETUNIQUELIST4_GEN_ARP_188	INVALID	no	error: bad operand types for binary operator '+'
+SETUNIQUELIST4_GEN_ARP_189	INVALID	no	error: bad operand types for binary operator '-'
+SETUNIQUELIST4_GEN_RVR_186	VALID	yes	
+SETUNIQUELIST4_GEN_RVR_187	VALID	yes	
+SETUNIQUELIST4_GEN_RVR_194	VALID	yes	
+SETUNIQUELIST4_GEN_ARP_200	VALID	yes	
+SETUNIQUELIST4_GEN_SDL_199	INVALID	no	error: cannot find symbol
+SETUNIQUELIST4_GEN_SDL_201	INVALID	no	error: cannot find symbol
+SETUNIQUELIST4_GEN_RVR_202	VALID	yes	
+SETUNIQUELIST4_GEN_SDL_203	INVALID	no	error: cannot find symbol
+SETUNIQUELIST4_GEN_ARP_207	INVALID	no	error: bad operand types for binary operator '+'
+SETUNIQUELIST4_GEN_ARP_208	INVALID	no	error: bad operand types for binary operator '-'
+SETUNIQUELIST4_GEN_COI_204	VALID	yes	
+SETUNIQUELIST4_GEN_CTC_205	VALID	yes	
+SETUNIQUELIST4_GEN_CTC_206	VALID	yes	
+SETUNIQUELIST4_GEN_MCR_210	VALID	yes	
+SETUNIQUELIST4_GEN_SDL_209	INVALID	no	error: variable subSet might not have been initialized
+SETUNIQUELIST4_GEN_SDL_211	INVALID	no	error: variable subSet might not have been initialized
+SETUNIQUELIST4_GEN_ARP_214	INVALID	no	error: bad operand types for binary operator '+'
+SETUNIQUELIST4_GEN_ARP_215	INVALID	no	error: bad operand types for binary operator '-'
+SETUNIQUELIST4_GEN_SDL_212	VALID	yes	
+SETUNIQUELIST4_GEN_STR_213	VALID	yes	
+SETUNIQUELIST4_GEN_RVR_216	VALID	yes	
+SETUNIQUELIST4_GEN_SDL_217	INVALID	no	error: constructor AbstractIteratorDecorator in class AbstractIteratorDecorator<E#2> cannot be applied to given types;
+SETUNIQUELIST4_GEN_SDL_218	VALID	yes	
+SETUNIQUELIST4_GEN_RVR_219	VALID	yes	

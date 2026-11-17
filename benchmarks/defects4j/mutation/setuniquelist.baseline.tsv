@@ -1,0 +1,23 @@
+tool	suite	status	test_classes	ms_run1	ms_run2	reason
+testgen-long	testgen-long	KEPT	1	199	145	
+testgen-all	testgen-all	KEPT	1	149	136	
+randoop	randoop-s1	KEPT	1	173	170	
+randoop	randoop-s10	KEPT	1	233	211	
+randoop	randoop-s2	KEPT	1	226	223	
+randoop	randoop-s3	KEPT	1	239	248	
+randoop	randoop-s4	KEPT	1	184	166	
+randoop	randoop-s5	KEPT	1	187	199	
+randoop	randoop-s6	KEPT	1	182	176	
+randoop	randoop-s7	KEPT	1	149	155	
+randoop	randoop-s8	KEPT	1	169	169	
+randoop	randoop-s9	KEPT	1	208	219	
+evosuite	evosuite-s1	KEPT	1	814	742	
+evosuite	evosuite-s10	KEPT	1	765	763	
+evosuite	evosuite-s2	KEPT	1	780	804	
+evosuite	evosuite-s3	KEPT	1	813	774	
+evosuite	evosuite-s4	KEPT	1	785	773	
+evosuite	evosuite-s5	KEPT	1	801	807	
+evosuite	evosuite-s6	KEPT	1	767	749	
+evosuite	evosuite-s7	KEPT	1	779	755	
+evosuite	evosuite-s8	KEPT	1	766	764	
+evosuite	evosuite-s9	KEPT	1	756	772	

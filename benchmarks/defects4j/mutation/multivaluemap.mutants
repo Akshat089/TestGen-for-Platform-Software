@@ -1,0 +1,1254 @@
+/*
+ * GENERATED MUTATION SUITE — multivaluemap
+ *
+ * Produced by OperatorMutantGenerator from:
+ *   /mnt/c/Codes/TestGen-for-Platform-Software/benchmarks/defects4j/work/Collections-4f/src/java/org/apache/commons/collections/map/MultiValueMap.java
+ *
+ * DO NOT EDIT. Regenerate with benchmarks/defects4j/mutation.sh --regen multivaluemap
+ * Each mutant is planted at the line in multivaluemap.mutants.tsv, not by `in:`.
+ *
+ * Every operator in MutationOperator is applied to every line of the library
+ * that admits it, so this file is what the specification is measured against
+ * when nobody is choosing the faults. It is the counterpart of the
+ * hand-written set in mutations/multivaluemap.mutants:
+ * that one asks whether the suite catches the faults we thought of, this one
+ * asks what fraction of all faults of each KIND it catches.
+ *
+ * `expect` is absent throughout: a generated mutant carries no prediction,
+ * and some of these are equivalent to the original and cannot be killed by
+ * anyone. The run measures; it does not check a declaration.
+ */
+
+mutant MULTIVALUEMAP_GEN_RVR_3 {
+    description: the answer becomes null, in MultiValueMap.decorate(Map) at line 77
+    operator:    return-value-replacement
+    in:          decorate
+    file:        MultiValueMap.java
+    find:        return new MultiValueMap(map, new ReflectionFactory(ArrayList.class));
+    replace:     return null;
+}
+
+mutant MULTIVALUEMAP_GEN_SDL_7 {
+    description: the statement is removed, in MultiValueMap.<init>(Map,Factory) at line 119
+    operator:    statement-deletion
+    in:          <init>
+    file:        MultiValueMap.java
+    find:        super(map);
+    replace:     
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_8 {
+    description: == becomes <=, in MultiValueMap.<init>(Map,Factory) at line 120
+    operator:    relational-operator-replacement
+    in:          <init>
+    file:        MultiValueMap.java
+    find:        if (collectionFactory == null) {
+    replace:     if (collectionFactory <= null) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_9 {
+    description: == becomes >=, in MultiValueMap.<init>(Map,Factory) at line 120
+    operator:    relational-operator-replacement
+    in:          <init>
+    file:        MultiValueMap.java
+    find:        if (collectionFactory == null) {
+    replace:     if (collectionFactory >= null) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_10 {
+    description: == becomes !=, in MultiValueMap.<init>(Map,Factory) at line 120
+    operator:    relational-operator-replacement
+    in:          <init>
+    file:        MultiValueMap.java
+    find:        if (collectionFactory == null) {
+    replace:     if (collectionFactory != null) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_11 {
+    description: == becomes <, in MultiValueMap.<init>(Map,Factory) at line 120
+    operator:    relational-operator-replacement
+    in:          <init>
+    file:        MultiValueMap.java
+    find:        if (collectionFactory == null) {
+    replace:     if (collectionFactory < null) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_12 {
+    description: == becomes >, in MultiValueMap.<init>(Map,Factory) at line 120
+    operator:    relational-operator-replacement
+    in:          <init>
+    file:        MultiValueMap.java
+    find:        if (collectionFactory == null) {
+    replace:     if (collectionFactory > null) {
+}
+
+mutant MULTIVALUEMAP_GEN_COI_13 {
+    description: the guard is negated, in MultiValueMap.<init>(Map,Factory) at line 120
+    operator:    conditional-operator-insertion
+    in:          <init>
+    file:        MultiValueMap.java
+    find:        if (collectionFactory == null) {
+    replace:     if (!(collectionFactory == null)) {
+}
+
+mutant MULTIVALUEMAP_GEN_CTC_14 {
+    description: the branch is always taken, in MultiValueMap.<init>(Map,Factory) at line 120
+    operator:    condition-to-constant
+    in:          <init>
+    file:        MultiValueMap.java
+    find:        if (collectionFactory == null) {
+    replace:     if (true) {
+}
+
+mutant MULTIVALUEMAP_GEN_CTC_15 {
+    description: the branch is never taken, in MultiValueMap.<init>(Map,Factory) at line 120
+    operator:    condition-to-constant
+    in:          <init>
+    file:        MultiValueMap.java
+    find:        if (collectionFactory == null) {
+    replace:     if (false) {
+}
+
+mutant MULTIVALUEMAP_GEN_SDL_16 {
+    description: the statement is removed, in MultiValueMap.<init>(Map,Factory) at line 121
+    operator:    statement-deletion
+    in:          <init>
+    file:        MultiValueMap.java
+    find:        throw new IllegalArgumentException("The factory must not be null");
+    replace:     
+}
+
+mutant MULTIVALUEMAP_GEN_SDL_17 {
+    description: the statement is removed, in MultiValueMap.<init>(Map,Factory) at line 123
+    operator:    statement-deletion
+    in:          <init>
+    file:        MultiValueMap.java
+    find:        this.collectionFactory = collectionFactory;
+    replace:     
+}
+
+mutant MULTIVALUEMAP_GEN_SDL_18 {
+    description: the statement is removed, in MultiValueMap.clear() at line 139
+    operator:    statement-deletion
+    in:          clear
+    file:        MultiValueMap.java
+    find:        getMap().clear();
+    replace:     
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_59 {
+    description: == becomes <=, in MultiValueMap.put(Object,Object) at line 207
+    operator:    relational-operator-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll == null) {
+    replace:     if (coll <= null) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_60 {
+    description: == becomes >=, in MultiValueMap.put(Object,Object) at line 207
+    operator:    relational-operator-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll == null) {
+    replace:     if (coll >= null) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_61 {
+    description: == becomes !=, in MultiValueMap.put(Object,Object) at line 207
+    operator:    relational-operator-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll == null) {
+    replace:     if (coll != null) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_62 {
+    description: == becomes <, in MultiValueMap.put(Object,Object) at line 207
+    operator:    relational-operator-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll == null) {
+    replace:     if (coll < null) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_63 {
+    description: == becomes >, in MultiValueMap.put(Object,Object) at line 207
+    operator:    relational-operator-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll == null) {
+    replace:     if (coll > null) {
+}
+
+mutant MULTIVALUEMAP_GEN_COI_64 {
+    description: the guard is negated, in MultiValueMap.put(Object,Object) at line 207
+    operator:    conditional-operator-insertion
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll == null) {
+    replace:     if (!(coll == null)) {
+}
+
+mutant MULTIVALUEMAP_GEN_CTC_65 {
+    description: the branch is always taken, in MultiValueMap.put(Object,Object) at line 207
+    operator:    condition-to-constant
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll == null) {
+    replace:     if (true) {
+}
+
+mutant MULTIVALUEMAP_GEN_CTC_66 {
+    description: the branch is never taken, in MultiValueMap.put(Object,Object) at line 207
+    operator:    condition-to-constant
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll == null) {
+    replace:     if (false) {
+}
+
+mutant MULTIVALUEMAP_GEN_AOR_67 {
+    description: - becomes +, in MultiValueMap.put(Object,Object) at line 208
+    operator:    arithmetic-operator-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        coll = createCollection(1);  // might produce a non-empty collection
+    replace:     coll = createCollection(1);  // might produce a non+empty collection
+}
+
+mutant MULTIVALUEMAP_GEN_AOR_68 {
+    description: - becomes *, in MultiValueMap.put(Object,Object) at line 208
+    operator:    arithmetic-operator-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        coll = createCollection(1);  // might produce a non-empty collection
+    replace:     coll = createCollection(1);  // might produce a non*empty collection
+}
+
+mutant MULTIVALUEMAP_GEN_AOR_69 {
+    description: - becomes /, in MultiValueMap.put(Object,Object) at line 208
+    operator:    arithmetic-operator-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        coll = createCollection(1);  // might produce a non-empty collection
+    replace:     coll = createCollection(1);  // might produce a non/empty collection
+}
+
+mutant MULTIVALUEMAP_GEN_AOR_70 {
+    description: - becomes %, in MultiValueMap.put(Object,Object) at line 208
+    operator:    arithmetic-operator-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        coll = createCollection(1);  // might produce a non-empty collection
+    replace:     coll = createCollection(1);  // might produce a non%empty collection
+}
+
+mutant MULTIVALUEMAP_GEN_CRP_71 {
+    description: the literal 1 becomes 0, in MultiValueMap.put(Object,Object) at line 208
+    operator:    constant-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        coll = createCollection(1);  // might produce a non-empty collection
+    replace:     coll = createCollection(0);  // might produce a non-empty collection
+}
+
+mutant MULTIVALUEMAP_GEN_CRP_72 {
+    description: the literal 1 becomes -1, in MultiValueMap.put(Object,Object) at line 208
+    operator:    constant-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        coll = createCollection(1);  // might produce a non-empty collection
+    replace:     coll = createCollection(-1);  // might produce a non-empty collection
+}
+
+mutant MULTIVALUEMAP_GEN_CRP_73 {
+    description: the literal 1 becomes 2, in MultiValueMap.put(Object,Object) at line 208
+    operator:    constant-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        coll = createCollection(1);  // might produce a non-empty collection
+    replace:     coll = createCollection(2);  // might produce a non-empty collection
+}
+
+mutant MULTIVALUEMAP_GEN_SDL_74 {
+    description: the statement is removed, in MultiValueMap.put(Object,Object) at line 209
+    operator:    statement-deletion
+    in:          put
+    file:        MultiValueMap.java
+    find:        coll.add(value);
+    replace:     
+}
+
+mutant MULTIVALUEMAP_GEN_STR_75 {
+    description: the statement runs twice, in MultiValueMap.put(Object,Object) at line 209
+    operator:    statement-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        coll.add(value);
+    replace:     coll.add(value); coll.add(value);
+}
+
+mutant MULTIVALUEMAP_GEN_ARP_76 {
+    description: the argument to add() is shifted by + 1, in MultiValueMap.put(Object,Object) at line 209
+    operator:    argument-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        coll.add(value);
+    replace:     coll.add(value + 1);
+}
+
+mutant MULTIVALUEMAP_GEN_ARP_77 {
+    description: the argument to add() is shifted by - 1, in MultiValueMap.put(Object,Object) at line 209
+    operator:    argument-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        coll.add(value);
+    replace:     coll.add(value - 1);
+}
+
+mutant MULTIVALUEMAP_GEN_MCR_78 {
+    description: .add( becomes .contains(, in MultiValueMap.put(Object,Object) at line 209
+    operator:    method-call-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        coll.add(value);
+    replace:     coll.contains(value);
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_79 {
+    description: > becomes <=, in MultiValueMap.put(Object,Object) at line 210
+    operator:    relational-operator-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll.size() > 0) {
+    replace:     if (coll.size() <= 0) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_80 {
+    description: > becomes >=, in MultiValueMap.put(Object,Object) at line 210
+    operator:    relational-operator-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll.size() > 0) {
+    replace:     if (coll.size() >= 0) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_81 {
+    description: > becomes ==, in MultiValueMap.put(Object,Object) at line 210
+    operator:    relational-operator-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll.size() > 0) {
+    replace:     if (coll.size() == 0) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_82 {
+    description: > becomes !=, in MultiValueMap.put(Object,Object) at line 210
+    operator:    relational-operator-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll.size() > 0) {
+    replace:     if (coll.size() != 0) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_83 {
+    description: > becomes <, in MultiValueMap.put(Object,Object) at line 210
+    operator:    relational-operator-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll.size() > 0) {
+    replace:     if (coll.size() < 0) {
+}
+
+mutant MULTIVALUEMAP_GEN_COI_84 {
+    description: the guard is negated, in MultiValueMap.put(Object,Object) at line 210
+    operator:    conditional-operator-insertion
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll.size() > 0) {
+    replace:     if (!(coll.size() > 0)) {
+}
+
+mutant MULTIVALUEMAP_GEN_CRP_85 {
+    description: the literal 0 becomes 1, in MultiValueMap.put(Object,Object) at line 210
+    operator:    constant-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll.size() > 0) {
+    replace:     if (coll.size() > 1) {
+}
+
+mutant MULTIVALUEMAP_GEN_CRP_86 {
+    description: the literal 0 becomes -1, in MultiValueMap.put(Object,Object) at line 210
+    operator:    constant-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll.size() > 0) {
+    replace:     if (coll.size() > -1) {
+}
+
+mutant MULTIVALUEMAP_GEN_CTC_87 {
+    description: the branch is always taken, in MultiValueMap.put(Object,Object) at line 210
+    operator:    condition-to-constant
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll.size() > 0) {
+    replace:     if (true) {
+}
+
+mutant MULTIVALUEMAP_GEN_CTC_88 {
+    description: the branch is never taken, in MultiValueMap.put(Object,Object) at line 210
+    operator:    condition-to-constant
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll.size() > 0) {
+    replace:     if (false) {
+}
+
+mutant MULTIVALUEMAP_GEN_MCR_89 {
+    description: .size() becomes .hashCode(), in MultiValueMap.put(Object,Object) at line 210
+    operator:    method-call-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        if (coll.size() > 0) {
+    replace:     if (coll.hashCode() > 0) {
+}
+
+mutant MULTIVALUEMAP_GEN_SDL_90 {
+    description: the statement is removed, in MultiValueMap.put(Object,Object) at line 212
+    operator:    statement-deletion
+    in:          put
+    file:        MultiValueMap.java
+    find:        getMap().put(key, coll);
+    replace:     
+}
+
+mutant MULTIVALUEMAP_GEN_ARP_91 {
+    description: the two arguments to put() are swapped, in MultiValueMap.put(Object,Object) at line 212
+    operator:    argument-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        getMap().put(key, coll);
+    replace:     getMap().put(coll, key);
+}
+
+mutant MULTIVALUEMAP_GEN_MCR_92 {
+    description: .put( becomes .putIfAbsent(, in MultiValueMap.put(Object,Object) at line 212
+    operator:    method-call-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        getMap().put(key, coll);
+    replace:     getMap().putIfAbsent(key, coll);
+}
+
+mutant MULTIVALUEMAP_GEN_SDL_93 {
+    description: the statement is removed, in MultiValueMap.put(Object,Object) at line 216
+    operator:    statement-deletion
+    in:          put
+    file:        MultiValueMap.java
+    find:        result = coll.add(value);
+    replace:     
+}
+
+mutant MULTIVALUEMAP_GEN_ARP_94 {
+    description: the argument to add() is shifted by + 1, in MultiValueMap.put(Object,Object) at line 216
+    operator:    argument-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        result = coll.add(value);
+    replace:     result = coll.add(value + 1);
+}
+
+mutant MULTIVALUEMAP_GEN_ARP_95 {
+    description: the argument to add() is shifted by - 1, in MultiValueMap.put(Object,Object) at line 216
+    operator:    argument-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        result = coll.add(value);
+    replace:     result = coll.add(value - 1);
+}
+
+mutant MULTIVALUEMAP_GEN_MCR_96 {
+    description: .add( becomes .contains(, in MultiValueMap.put(Object,Object) at line 216
+    operator:    method-call-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        result = coll.add(value);
+    replace:     result = coll.contains(value);
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_97 {
+    description: the answer becomes null, in MultiValueMap.put(Object,Object) at line 218
+    operator:    return-value-replacement
+    in:          put
+    file:        MultiValueMap.java
+    find:        return (result ? value : null);
+    replace:     return null;
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_103 {
+    description: != becomes <=, in MultiValueMap.values() at line 256
+    operator:    relational-operator-replacement
+    in:          values
+    file:        MultiValueMap.java
+    find:        return (vs != null ? vs : (values = new Values()));
+    replace:     return (vs <= null ? vs : (values = new Values()));
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_104 {
+    description: != becomes >=, in MultiValueMap.values() at line 256
+    operator:    relational-operator-replacement
+    in:          values
+    file:        MultiValueMap.java
+    find:        return (vs != null ? vs : (values = new Values()));
+    replace:     return (vs >= null ? vs : (values = new Values()));
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_105 {
+    description: != becomes ==, in MultiValueMap.values() at line 256
+    operator:    relational-operator-replacement
+    in:          values
+    file:        MultiValueMap.java
+    find:        return (vs != null ? vs : (values = new Values()));
+    replace:     return (vs == null ? vs : (values = new Values()));
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_106 {
+    description: != becomes <, in MultiValueMap.values() at line 256
+    operator:    relational-operator-replacement
+    in:          values
+    file:        MultiValueMap.java
+    find:        return (vs != null ? vs : (values = new Values()));
+    replace:     return (vs < null ? vs : (values = new Values()));
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_107 {
+    description: != becomes >, in MultiValueMap.values() at line 256
+    operator:    relational-operator-replacement
+    in:          values
+    file:        MultiValueMap.java
+    find:        return (vs != null ? vs : (values = new Values()));
+    replace:     return (vs > null ? vs : (values = new Values()));
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_108 {
+    description: the answer becomes null, in MultiValueMap.values() at line 256
+    operator:    return-value-replacement
+    in:          values
+    file:        MultiValueMap.java
+    find:        return (vs != null ? vs : (values = new Values()));
+    replace:     return null;
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_109 {
+    description: the answer is always true, in MultiValueMap.containsValue(Object,Object) at line 268
+    operator:    return-value-replacement
+    in:          containsValue
+    file:        MultiValueMap.java
+    find:        return false;
+    replace:     return true;
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_110 {
+    description: the answer is always true, in MultiValueMap.containsValue(Object,Object) at line 270
+    operator:    return-value-replacement
+    in:          containsValue
+    file:        MultiValueMap.java
+    find:        return coll.contains(value);
+    replace:     return true;
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_111 {
+    description: the answer is always false, in MultiValueMap.containsValue(Object,Object) at line 270
+    operator:    return-value-replacement
+    in:          containsValue
+    file:        MultiValueMap.java
+    find:        return coll.contains(value);
+    replace:     return false;
+}
+
+mutant MULTIVALUEMAP_GEN_ARP_112 {
+    description: the argument to contains() is shifted by + 1, in MultiValueMap.containsValue(Object,Object) at line 270
+    operator:    argument-replacement
+    in:          containsValue
+    file:        MultiValueMap.java
+    find:        return coll.contains(value);
+    replace:     return coll.contains(value + 1);
+}
+
+mutant MULTIVALUEMAP_GEN_ARP_113 {
+    description: the argument to contains() is shifted by - 1, in MultiValueMap.containsValue(Object,Object) at line 270
+    operator:    argument-replacement
+    in:          containsValue
+    file:        MultiValueMap.java
+    find:        return coll.contains(value);
+    replace:     return coll.contains(value - 1);
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_114 {
+    description: the answer becomes null, in MultiValueMap.getCollection(Object) at line 281
+    operator:    return-value-replacement
+    in:          getCollection
+    file:        MultiValueMap.java
+    find:        return (Collection) getMap().get(key);
+    replace:     return null;
+}
+
+mutant MULTIVALUEMAP_GEN_ARP_115 {
+    description: the argument to get() is shifted by + 1, in MultiValueMap.getCollection(Object) at line 281
+    operator:    argument-replacement
+    in:          getCollection
+    file:        MultiValueMap.java
+    find:        return (Collection) getMap().get(key);
+    replace:     return (Collection) getMap().get(key + 1);
+}
+
+mutant MULTIVALUEMAP_GEN_ARP_116 {
+    description: the argument to get() is shifted by - 1, in MultiValueMap.getCollection(Object) at line 281
+    operator:    argument-replacement
+    in:          getCollection
+    file:        MultiValueMap.java
+    find:        return (Collection) getMap().get(key);
+    replace:     return (Collection) getMap().get(key - 1);
+}
+
+mutant MULTIVALUEMAP_GEN_MCR_117 {
+    description: .get( becomes .remove(, in MultiValueMap.getCollection(Object) at line 281
+    operator:    method-call-replacement
+    in:          getCollection
+    file:        MultiValueMap.java
+    find:        return (Collection) getMap().get(key);
+    replace:     return (Collection) getMap().remove(key);
+}
+
+mutant MULTIVALUEMAP_GEN_UOI_118 {
+    description: the returned value is negated, in MultiValueMap.size(Object) at line 293
+    operator:    unary-operator-insertion
+    in:          size
+    file:        MultiValueMap.java
+    find:        return 0;
+    replace:     return -(0);
+}
+
+mutant MULTIVALUEMAP_GEN_ABS_119 {
+    description: the returned value is forced negative, in MultiValueMap.size(Object) at line 293
+    operator:    absolute-value-insertion
+    in:          size
+    file:        MultiValueMap.java
+    find:        return 0;
+    replace:     return -Math.abs(0);
+}
+
+mutant MULTIVALUEMAP_GEN_CRP_120 {
+    description: the literal 0 becomes 1, in MultiValueMap.size(Object) at line 293
+    operator:    constant-replacement
+    in:          size
+    file:        MultiValueMap.java
+    find:        return 0;
+    replace:     return 1;
+}
+
+mutant MULTIVALUEMAP_GEN_CRP_121 {
+    description: the literal 0 becomes -1, in MultiValueMap.size(Object) at line 293
+    operator:    constant-replacement
+    in:          size
+    file:        MultiValueMap.java
+    find:        return 0;
+    replace:     return -1;
+}
+
+mutant MULTIVALUEMAP_GEN_UOI_122 {
+    description: the returned value is negated, in MultiValueMap.size(Object) at line 295
+    operator:    unary-operator-insertion
+    in:          size
+    file:        MultiValueMap.java
+    find:        return coll.size();
+    replace:     return -(coll.size());
+}
+
+mutant MULTIVALUEMAP_GEN_ABS_123 {
+    description: the returned value is forced negative, in MultiValueMap.size(Object) at line 295
+    operator:    absolute-value-insertion
+    in:          size
+    file:        MultiValueMap.java
+    find:        return coll.size();
+    replace:     return -Math.abs(coll.size());
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_124 {
+    description: the answer becomes 0, in MultiValueMap.size(Object) at line 295
+    operator:    return-value-replacement
+    in:          size
+    file:        MultiValueMap.java
+    find:        return coll.size();
+    replace:     return 0;
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_125 {
+    description: the answer becomes 1, in MultiValueMap.size(Object) at line 295
+    operator:    return-value-replacement
+    in:          size
+    file:        MultiValueMap.java
+    find:        return coll.size();
+    replace:     return 1;
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_126 {
+    description: the answer becomes -1, in MultiValueMap.size(Object) at line 295
+    operator:    return-value-replacement
+    in:          size
+    file:        MultiValueMap.java
+    find:        return coll.size();
+    replace:     return -1;
+}
+
+mutant MULTIVALUEMAP_GEN_MCR_127 {
+    description: .size() becomes .hashCode(), in MultiValueMap.size(Object) at line 295
+    operator:    method-call-replacement
+    in:          size
+    file:        MultiValueMap.java
+    find:        return coll.size();
+    replace:     return coll.hashCode();
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_128 {
+    description: == becomes <=, in MultiValueMap.putAll(Object,Collection) at line 307
+    operator:    relational-operator-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        if (values == null || values.size() == 0) {
+    replace:     if (values <= null || values.size() == 0) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_129 {
+    description: == becomes >=, in MultiValueMap.putAll(Object,Collection) at line 307
+    operator:    relational-operator-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        if (values == null || values.size() == 0) {
+    replace:     if (values >= null || values.size() == 0) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_130 {
+    description: == becomes !=, in MultiValueMap.putAll(Object,Collection) at line 307
+    operator:    relational-operator-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        if (values == null || values.size() == 0) {
+    replace:     if (values != null || values.size() == 0) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_131 {
+    description: == becomes <, in MultiValueMap.putAll(Object,Collection) at line 307
+    operator:    relational-operator-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        if (values == null || values.size() == 0) {
+    replace:     if (values < null || values.size() == 0) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_132 {
+    description: == becomes >, in MultiValueMap.putAll(Object,Collection) at line 307
+    operator:    relational-operator-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        if (values == null || values.size() == 0) {
+    replace:     if (values > null || values.size() == 0) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_133 {
+    description: == becomes <=, in MultiValueMap.putAll(Object,Collection) at line 307
+    operator:    relational-operator-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        if (values == null || values.size() == 0) {
+    replace:     if (values == null || values.size() <= 0) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_134 {
+    description: == becomes >=, in MultiValueMap.putAll(Object,Collection) at line 307
+    operator:    relational-operator-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        if (values == null || values.size() == 0) {
+    replace:     if (values == null || values.size() >= 0) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_135 {
+    description: == becomes !=, in MultiValueMap.putAll(Object,Collection) at line 307
+    operator:    relational-operator-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        if (values == null || values.size() == 0) {
+    replace:     if (values == null || values.size() != 0) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_136 {
+    description: == becomes <, in MultiValueMap.putAll(Object,Collection) at line 307
+    operator:    relational-operator-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        if (values == null || values.size() == 0) {
+    replace:     if (values == null || values.size() < 0) {
+}
+
+mutant MULTIVALUEMAP_GEN_ROR_137 {
+    description: == becomes >, in MultiValueMap.putAll(Object,Collection) at line 307
+    operator:    relational-operator-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        if (values == null || values.size() == 0) {
+    replace:     if (values == null || values.size() > 0) {
+}
+
+mutant MULTIVALUEMAP_GEN_COR_138 {
+    description: || becomes &&, in MultiValueMap.putAll(Object,Collection) at line 307
+    operator:    conditional-operator-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        if (values == null || values.size() == 0) {
+    replace:     if (values == null && values.size() == 0) {
+}
+
+mutant MULTIVALUEMAP_GEN_COI_139 {
+    description: the guard is negated, in MultiValueMap.putAll(Object,Collection) at line 307
+    operator:    conditional-operator-insertion
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        if (values == null || values.size() == 0) {
+    replace:     if (!(values == null || values.size() == 0)) {
+}
+
+mutant MULTIVALUEMAP_GEN_CRP_140 {
+    description: the literal 0 becomes 1, in MultiValueMap.putAll(Object,Collection) at line 307
+    operator:    constant-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        if (values == null || values.size() == 0) {
+    replace:     if (values == null || values.size() == 1) {
+}
+
+mutant MULTIVALUEMAP_GEN_CRP_141 {
+    description: the literal 0 becomes -1, in MultiValueMap.putAll(Object,Collection) at line 307
+    operator:    constant-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        if (values == null || values.size() == 0) {
+    replace:     if (values == null || values.size() == -1) {
+}
+
+mutant MULTIVALUEMAP_GEN_CTC_142 {
+    description: the branch is always taken, in MultiValueMap.putAll(Object,Collection) at line 307
+    operator:    condition-to-constant
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        if (values == null || values.size() == 0) {
+    replace:     if (true) {
+}
+
+mutant MULTIVALUEMAP_GEN_CTC_143 {
+    description: the branch is never taken, in MultiValueMap.putAll(Object,Collection) at line 307
+    operator:    condition-to-constant
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        if (values == null || values.size() == 0) {
+    replace:     if (false) {
+}
+
+mutant MULTIVALUEMAP_GEN_MCR_144 {
+    description: .size() becomes .hashCode(), in MultiValueMap.putAll(Object,Collection) at line 307
+    operator:    method-call-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        if (values == null || values.size() == 0) {
+    replace:     if (values == null || values.hashCode() == 0) {
+}
+
+mutant MULTIVALUEMAP_GEN_AOR_145 {
+    description: - becomes +, in MultiValueMap.putAll(Object,Collection) at line 313
+    operator:    arithmetic-operator-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        coll = createCollection(values.size());  // might produce a non-empty collection
+    replace:     coll = createCollection(values.size());  // might produce a non+empty collection
+}
+
+mutant MULTIVALUEMAP_GEN_AOR_146 {
+    description: - becomes *, in MultiValueMap.putAll(Object,Collection) at line 313
+    operator:    arithmetic-operator-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        coll = createCollection(values.size());  // might produce a non-empty collection
+    replace:     coll = createCollection(values.size());  // might produce a non*empty collection
+}
+
+mutant MULTIVALUEMAP_GEN_AOR_147 {
+    description: - becomes /, in MultiValueMap.putAll(Object,Collection) at line 313
+    operator:    arithmetic-operator-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        coll = createCollection(values.size());  // might produce a non-empty collection
+    replace:     coll = createCollection(values.size());  // might produce a non/empty collection
+}
+
+mutant MULTIVALUEMAP_GEN_AOR_148 {
+    description: - becomes %, in MultiValueMap.putAll(Object,Collection) at line 313
+    operator:    arithmetic-operator-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        coll = createCollection(values.size());  // might produce a non-empty collection
+    replace:     coll = createCollection(values.size());  // might produce a non%empty collection
+}
+
+mutant MULTIVALUEMAP_GEN_MCR_149 {
+    description: .size() becomes .hashCode(), in MultiValueMap.putAll(Object,Collection) at line 313
+    operator:    method-call-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        coll = createCollection(values.size());  // might produce a non-empty collection
+    replace:     coll = createCollection(values.hashCode());  // might produce a non-empty collection
+}
+
+mutant MULTIVALUEMAP_GEN_SDL_150 {
+    description: the statement is removed, in MultiValueMap.putAll(Object,Collection) at line 314
+    operator:    statement-deletion
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        coll.addAll(values);
+    replace:     
+}
+
+mutant MULTIVALUEMAP_GEN_STR_151 {
+    description: the statement runs twice, in MultiValueMap.putAll(Object,Collection) at line 314
+    operator:    statement-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        coll.addAll(values);
+    replace:     coll.addAll(values); coll.addAll(values);
+}
+
+mutant MULTIVALUEMAP_GEN_ARP_152 {
+    description: the argument to addAll() is shifted by + 1, in MultiValueMap.putAll(Object,Collection) at line 314
+    operator:    argument-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        coll.addAll(values);
+    replace:     coll.addAll(values + 1);
+}
+
+mutant MULTIVALUEMAP_GEN_ARP_153 {
+    description: the argument to addAll() is shifted by - 1, in MultiValueMap.putAll(Object,Collection) at line 314
+    operator:    argument-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        coll.addAll(values);
+    replace:     coll.addAll(values - 1);
+}
+
+mutant MULTIVALUEMAP_GEN_SDL_154 {
+    description: the statement is removed, in MultiValueMap.putAll(Object,Collection) at line 321
+    operator:    statement-deletion
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        result = coll.addAll(values);
+    replace:     
+}
+
+mutant MULTIVALUEMAP_GEN_ARP_155 {
+    description: the argument to addAll() is shifted by + 1, in MultiValueMap.putAll(Object,Collection) at line 321
+    operator:    argument-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        result = coll.addAll(values);
+    replace:     result = coll.addAll(values + 1);
+}
+
+mutant MULTIVALUEMAP_GEN_ARP_156 {
+    description: the argument to addAll() is shifted by - 1, in MultiValueMap.putAll(Object,Collection) at line 321
+    operator:    argument-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        result = coll.addAll(values);
+    replace:     result = coll.addAll(values - 1);
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_157 {
+    description: the answer is always true, in MultiValueMap.putAll(Object,Collection) at line 323
+    operator:    return-value-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        return result;
+    replace:     return true;
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_158 {
+    description: the answer is always false, in MultiValueMap.putAll(Object,Collection) at line 323
+    operator:    return-value-replacement
+    in:          putAll
+    file:        MultiValueMap.java
+    find:        return result;
+    replace:     return false;
+}
+
+mutant MULTIVALUEMAP_GEN_CRP_165 {
+    description: the literal 0 becomes 1, in MultiValueMap.totalSize() at line 346
+    operator:    constant-replacement
+    in:          totalSize
+    file:        MultiValueMap.java
+    find:        int total = 0;
+    replace:     int total = 1;
+}
+
+mutant MULTIVALUEMAP_GEN_CRP_166 {
+    description: the literal 0 becomes -1, in MultiValueMap.totalSize() at line 346
+    operator:    constant-replacement
+    in:          totalSize
+    file:        MultiValueMap.java
+    find:        int total = 0;
+    replace:     int total = -1;
+}
+
+mutant MULTIVALUEMAP_GEN_SDL_167 {
+    description: the statement is removed, in MultiValueMap.totalSize() at line 350
+    operator:    statement-deletion
+    in:          totalSize
+    file:        MultiValueMap.java
+    find:        total += coll.size();
+    replace:     
+}
+
+mutant MULTIVALUEMAP_GEN_MCR_168 {
+    description: .size() becomes .hashCode(), in MultiValueMap.totalSize() at line 350
+    operator:    method-call-replacement
+    in:          totalSize
+    file:        MultiValueMap.java
+    find:        total += coll.size();
+    replace:     total += coll.hashCode();
+}
+
+mutant MULTIVALUEMAP_GEN_UOI_169 {
+    description: the returned value is negated, in MultiValueMap.totalSize() at line 352
+    operator:    unary-operator-insertion
+    in:          totalSize
+    file:        MultiValueMap.java
+    find:        return total;
+    replace:     return -(total);
+}
+
+mutant MULTIVALUEMAP_GEN_ABS_170 {
+    description: the returned value is forced negative, in MultiValueMap.totalSize() at line 352
+    operator:    absolute-value-insertion
+    in:          totalSize
+    file:        MultiValueMap.java
+    find:        return total;
+    replace:     return -Math.abs(total);
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_171 {
+    description: the answer becomes 0, in MultiValueMap.totalSize() at line 352
+    operator:    return-value-replacement
+    in:          totalSize
+    file:        MultiValueMap.java
+    find:        return total;
+    replace:     return 0;
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_172 {
+    description: the answer becomes 1, in MultiValueMap.totalSize() at line 352
+    operator:    return-value-replacement
+    in:          totalSize
+    file:        MultiValueMap.java
+    find:        return total;
+    replace:     return 1;
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_173 {
+    description: the answer becomes -1, in MultiValueMap.totalSize() at line 352
+    operator:    return-value-replacement
+    in:          totalSize
+    file:        MultiValueMap.java
+    find:        return total;
+    replace:     return -1;
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_174 {
+    description: the answer becomes null, in MultiValueMap.createCollection(int) at line 366
+    operator:    return-value-replacement
+    in:          createCollection
+    file:        MultiValueMap.java
+    find:        return (Collection) collectionFactory.create();
+    replace:     return null;
+}
+
+mutant MULTIVALUEMAP_GEN_SDL_175 {
+    description: the statement is removed, in MultiValueMap.Values.iterator() at line 377
+    operator:    statement-deletion
+    in:          iterator
+    file:        MultiValueMap.java
+    find:        chain.addIterator(new ValuesIterator(it.next()));
+    replace:     
+}
+
+mutant MULTIVALUEMAP_GEN_STR_176 {
+    description: the statement runs twice, in MultiValueMap.Values.iterator() at line 377
+    operator:    statement-replacement
+    in:          iterator
+    file:        MultiValueMap.java
+    find:        chain.addIterator(new ValuesIterator(it.next()));
+    replace:     chain.addIterator(new ValuesIterator(it.next())); chain.addIterator(new ValuesIterator(it.next()));
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_177 {
+    description: the answer becomes null, in MultiValueMap.Values.iterator() at line 379
+    operator:    return-value-replacement
+    in:          iterator
+    file:        MultiValueMap.java
+    find:        return chain;
+    replace:     return null;
+}
+
+mutant MULTIVALUEMAP_GEN_UOI_178 {
+    description: the returned value is negated, in MultiValueMap.Values.size() at line 383
+    operator:    unary-operator-insertion
+    in:          size
+    file:        MultiValueMap.java
+    find:        return totalSize();
+    replace:     return -(totalSize());
+}
+
+mutant MULTIVALUEMAP_GEN_ABS_179 {
+    description: the returned value is forced negative, in MultiValueMap.Values.size() at line 383
+    operator:    absolute-value-insertion
+    in:          size
+    file:        MultiValueMap.java
+    find:        return totalSize();
+    replace:     return -Math.abs(totalSize());
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_180 {
+    description: the answer becomes 0, in MultiValueMap.Values.size() at line 383
+    operator:    return-value-replacement
+    in:          size
+    file:        MultiValueMap.java
+    find:        return totalSize();
+    replace:     return 0;
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_181 {
+    description: the answer becomes 1, in MultiValueMap.Values.size() at line 383
+    operator:    return-value-replacement
+    in:          size
+    file:        MultiValueMap.java
+    find:        return totalSize();
+    replace:     return 1;
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_182 {
+    description: the answer becomes -1, in MultiValueMap.Values.size() at line 383
+    operator:    return-value-replacement
+    in:          size
+    file:        MultiValueMap.java
+    find:        return totalSize();
+    replace:     return -1;
+}
+
+mutant MULTIVALUEMAP_GEN_SDL_183 {
+    description: the statement is removed, in MultiValueMap.Values.clear() at line 387
+    operator:    statement-deletion
+    in:          clear
+    file:        MultiValueMap.java
+    find:        MultiValueMap.this.clear();
+    replace:     
+}
+
+mutant MULTIVALUEMAP_GEN_STR_184 {
+    description: the statement runs twice, in MultiValueMap.Values.clear() at line 387
+    operator:    statement-replacement
+    in:          clear
+    file:        MultiValueMap.java
+    find:        MultiValueMap.this.clear();
+    replace:     MultiValueMap.this.clear(); MultiValueMap.this.clear();
+}
+
+mutant MULTIVALUEMAP_GEN_SDL_188 {
+    description: the statement is removed, in MultiValueMap.ValuesIterator.<init>(Object) at line 400
+    operator:    statement-deletion
+    in:          <init>
+    file:        MultiValueMap.java
+    find:        this.key = key;
+    replace:     
+}
+
+mutant MULTIVALUEMAP_GEN_SDL_189 {
+    description: the statement is removed, in MultiValueMap.ValuesIterator.<init>(Object) at line 401
+    operator:    statement-deletion
+    in:          <init>
+    file:        MultiValueMap.java
+    find:        this.values = getCollection(key);
+    replace:     
+}
+
+mutant MULTIVALUEMAP_GEN_SDL_190 {
+    description: the statement is removed, in MultiValueMap.ValuesIterator.<init>(Object) at line 402
+    operator:    statement-deletion
+    in:          <init>
+    file:        MultiValueMap.java
+    find:        this.iterator = values.iterator();
+    replace:     
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_203 {
+    description: the answer is always true, in MultiValueMap.ValuesIterator.hasNext() at line 413
+    operator:    return-value-replacement
+    in:          hasNext
+    file:        MultiValueMap.java
+    find:        return iterator.hasNext();
+    replace:     return true;
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_204 {
+    description: the answer is always false, in MultiValueMap.ValuesIterator.hasNext() at line 413
+    operator:    return-value-replacement
+    in:          hasNext
+    file:        MultiValueMap.java
+    find:        return iterator.hasNext();
+    replace:     return false;
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_205 {
+    description: the answer becomes null, in MultiValueMap.ValuesIterator.next() at line 417
+    operator:    return-value-replacement
+    in:          next
+    file:        MultiValueMap.java
+    find:        return iterator.next();
+    replace:     return null;
+}
+
+mutant MULTIVALUEMAP_GEN_SDL_207 {
+    description: the statement is removed, in MultiValueMap.ReflectionFactory.<init>(Class) at line 428
+    operator:    statement-deletion
+    in:          <init>
+    file:        MultiValueMap.java
+    find:        this.clazz = clazz;
+    replace:     
+}
+
+mutant MULTIVALUEMAP_GEN_RVR_208 {
+    description: the answer becomes null, in MultiValueMap.ReflectionFactory.create() at line 433
+    operator:    return-value-replacement
+    in:          create
+    file:        MultiValueMap.java
+    find:        return clazz.newInstance();
+    replace:     return null;
+}
+
+mutant MULTIVALUEMAP_GEN_SDL_209 {
+    description: the statement is removed, in MultiValueMap.ReflectionFactory.create() at line 435
+    operator:    statement-deletion
+    in:          create
+    file:        MultiValueMap.java
+    find:        throw new FunctorException("Cannot instantiate class: " + clazz, ex);
+    replace:     
+}
+

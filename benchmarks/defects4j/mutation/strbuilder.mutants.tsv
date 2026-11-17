@@ -1,0 +1,310 @@
+id	line	operator	abbr	method	direct	find	replace
+STRBUILDER_GEN_CRP_1	75	constant-replacement	CRP	StrBuilder.<clinit>	indirect	static final int CAPACITY = 32;	static final int CAPACITY = 0;
+STRBUILDER_GEN_CRP_2	75	constant-replacement	CRP	StrBuilder.<clinit>	indirect	static final int CAPACITY = 32;	static final int CAPACITY = 1;
+STRBUILDER_GEN_CRP_3	75	constant-replacement	CRP	StrBuilder.<clinit>	indirect	static final int CAPACITY = 32;	static final int CAPACITY = -1;
+STRBUILDER_GEN_CRP_4	75	constant-replacement	CRP	StrBuilder.<clinit>	indirect	static final int CAPACITY = 32;	static final int CAPACITY = 33;
+STRBUILDER_GEN_CRP_5	75	constant-replacement	CRP	StrBuilder.<clinit>	indirect	static final int CAPACITY = 32;	static final int CAPACITY = 31;
+STRBUILDER_GEN_SDL_10	98	statement-deletion	SDL	StrBuilder.<init>()	direct	this(CAPACITY);	
+STRBUILDER_GEN_SDL_11	107	statement-deletion	SDL	StrBuilder.<init>(int)	direct	super();	
+STRBUILDER_GEN_ROR_12	108	relational-operator-replacement	ROR	StrBuilder.<init>(int)	direct	if (initialCapacity <= 0) {	if (initialCapacity >= 0) {
+STRBUILDER_GEN_ROR_13	108	relational-operator-replacement	ROR	StrBuilder.<init>(int)	direct	if (initialCapacity <= 0) {	if (initialCapacity == 0) {
+STRBUILDER_GEN_ROR_14	108	relational-operator-replacement	ROR	StrBuilder.<init>(int)	direct	if (initialCapacity <= 0) {	if (initialCapacity != 0) {
+STRBUILDER_GEN_ROR_15	108	relational-operator-replacement	ROR	StrBuilder.<init>(int)	direct	if (initialCapacity <= 0) {	if (initialCapacity < 0) {
+STRBUILDER_GEN_ROR_16	108	relational-operator-replacement	ROR	StrBuilder.<init>(int)	direct	if (initialCapacity <= 0) {	if (initialCapacity > 0) {
+STRBUILDER_GEN_COI_17	108	conditional-operator-insertion	COI	StrBuilder.<init>(int)	direct	if (initialCapacity <= 0) {	if (!(initialCapacity <= 0)) {
+STRBUILDER_GEN_CRP_18	108	constant-replacement	CRP	StrBuilder.<init>(int)	direct	if (initialCapacity <= 0) {	if (initialCapacity <= 1) {
+STRBUILDER_GEN_CRP_19	108	constant-replacement	CRP	StrBuilder.<init>(int)	direct	if (initialCapacity <= 0) {	if (initialCapacity <= -1) {
+STRBUILDER_GEN_CTC_20	108	condition-to-constant	CTC	StrBuilder.<init>(int)	direct	if (initialCapacity <= 0) {	if (true) {
+STRBUILDER_GEN_CTC_21	108	condition-to-constant	CTC	StrBuilder.<init>(int)	direct	if (initialCapacity <= 0) {	if (false) {
+STRBUILDER_GEN_SDL_22	109	statement-deletion	SDL	StrBuilder.<init>(int)	direct	initialCapacity = CAPACITY;	
+STRBUILDER_GEN_SDL_23	111	statement-deletion	SDL	StrBuilder.<init>(int)	direct	buffer = new char[initialCapacity];	
+STRBUILDER_GEN_RVR_42	158	return-value-replacement	RVR	StrBuilder.getNullText()	indirect	return nullText;	return null;
+STRBUILDER_GEN_UOI_61	182	unary-operator-insertion	UOI	StrBuilder.length()	direct	return size;	return -(size);
+STRBUILDER_GEN_ABS_62	182	absolute-value-insertion	ABS	StrBuilder.length()	direct	return size;	return -Math.abs(size);
+STRBUILDER_GEN_RVR_63	182	return-value-replacement	RVR	StrBuilder.length()	direct	return size;	return 0;
+STRBUILDER_GEN_RVR_64	182	return-value-replacement	RVR	StrBuilder.length()	direct	return size;	return 1;
+STRBUILDER_GEN_RVR_65	182	return-value-replacement	RVR	StrBuilder.length()	direct	return size;	return -1;
+STRBUILDER_GEN_ROR_66	194	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	if (length < 0) {	if (length <= 0) {
+STRBUILDER_GEN_ROR_67	194	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	if (length < 0) {	if (length >= 0) {
+STRBUILDER_GEN_ROR_68	194	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	if (length < 0) {	if (length == 0) {
+STRBUILDER_GEN_ROR_69	194	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	if (length < 0) {	if (length != 0) {
+STRBUILDER_GEN_ROR_70	194	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	if (length < 0) {	if (length > 0) {
+STRBUILDER_GEN_COI_71	194	conditional-operator-insertion	COI	StrBuilder.setLength(int)	direct	if (length < 0) {	if (!(length < 0)) {
+STRBUILDER_GEN_CRP_72	194	constant-replacement	CRP	StrBuilder.setLength(int)	direct	if (length < 0) {	if (length < 1) {
+STRBUILDER_GEN_CRP_73	194	constant-replacement	CRP	StrBuilder.setLength(int)	direct	if (length < 0) {	if (length < -1) {
+STRBUILDER_GEN_CTC_74	194	condition-to-constant	CTC	StrBuilder.setLength(int)	direct	if (length < 0) {	if (true) {
+STRBUILDER_GEN_CTC_75	194	condition-to-constant	CTC	StrBuilder.setLength(int)	direct	if (length < 0) {	if (false) {
+STRBUILDER_GEN_SDL_76	195	statement-deletion	SDL	StrBuilder.setLength(int)	direct	throw new StringIndexOutOfBoundsException(length);	
+STRBUILDER_GEN_ROR_77	197	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	if (length < size) {	if (length <= size) {
+STRBUILDER_GEN_ROR_78	197	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	if (length < size) {	if (length >= size) {
+STRBUILDER_GEN_ROR_79	197	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	if (length < size) {	if (length == size) {
+STRBUILDER_GEN_ROR_80	197	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	if (length < size) {	if (length != size) {
+STRBUILDER_GEN_ROR_81	197	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	if (length < size) {	if (length > size) {
+STRBUILDER_GEN_COI_82	197	conditional-operator-insertion	COI	StrBuilder.setLength(int)	direct	if (length < size) {	if (!(length < size)) {
+STRBUILDER_GEN_CTC_83	197	condition-to-constant	CTC	StrBuilder.setLength(int)	direct	if (length < size) {	if (true) {
+STRBUILDER_GEN_CTC_84	197	condition-to-constant	CTC	StrBuilder.setLength(int)	direct	if (length < size) {	if (false) {
+STRBUILDER_GEN_ROR_85	199	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	} else if (length > size) {	} else if (length <= size) {
+STRBUILDER_GEN_ROR_86	199	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	} else if (length > size) {	} else if (length >= size) {
+STRBUILDER_GEN_ROR_87	199	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	} else if (length > size) {	} else if (length == size) {
+STRBUILDER_GEN_ROR_88	199	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	} else if (length > size) {	} else if (length != size) {
+STRBUILDER_GEN_ROR_89	199	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	} else if (length > size) {	} else if (length < size) {
+STRBUILDER_GEN_SDL_90	200	statement-deletion	SDL	StrBuilder.setLength(int)	direct	ensureCapacity(length);	
+STRBUILDER_GEN_ROR_91	204	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	for (int i = oldEnd; i < newEnd; i++) {	for (int i = oldEnd; i <= newEnd; i++) {
+STRBUILDER_GEN_ROR_92	204	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	for (int i = oldEnd; i < newEnd; i++) {	for (int i = oldEnd; i >= newEnd; i++) {
+STRBUILDER_GEN_ROR_93	204	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	for (int i = oldEnd; i < newEnd; i++) {	for (int i = oldEnd; i == newEnd; i++) {
+STRBUILDER_GEN_ROR_94	204	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	for (int i = oldEnd; i < newEnd; i++) {	for (int i = oldEnd; i != newEnd; i++) {
+STRBUILDER_GEN_ROR_95	204	relational-operator-replacement	ROR	StrBuilder.setLength(int)	direct	for (int i = oldEnd; i < newEnd; i++) {	for (int i = oldEnd; i > newEnd; i++) {
+STRBUILDER_GEN_LBR_96	204	loop-bound-replacement	LBR	StrBuilder.setLength(int)	direct	for (int i = oldEnd; i < newEnd; i++) {	for (int i = oldEnd + 1; i < newEnd; i++) {
+STRBUILDER_GEN_LBR_97	204	loop-bound-replacement	LBR	StrBuilder.setLength(int)	direct	for (int i = oldEnd; i < newEnd; i++) {	for (int i = oldEnd - 1; i < newEnd; i++) {
+STRBUILDER_GEN_CRP_98	205	constant-replacement	CRP	StrBuilder.setLength(int)	direct	buffer[i] = '\0';	buffer[i] = '\1';
+STRBUILDER_GEN_CRP_99	205	constant-replacement	CRP	StrBuilder.setLength(int)	direct	buffer[i] = '\0';	buffer[i] = '\-1';
+STRBUILDER_GEN_SDL_100	205	statement-deletion	SDL	StrBuilder.setLength(int)	direct	buffer[i] = '\0';	
+STRBUILDER_GEN_ROR_106	228	relational-operator-replacement	ROR	StrBuilder.ensureCapacity(int)	indirect	if (capacity > buffer.length) {	if (capacity <= buffer.length) {
+STRBUILDER_GEN_ROR_107	228	relational-operator-replacement	ROR	StrBuilder.ensureCapacity(int)	indirect	if (capacity > buffer.length) {	if (capacity >= buffer.length) {
+STRBUILDER_GEN_ROR_108	228	relational-operator-replacement	ROR	StrBuilder.ensureCapacity(int)	indirect	if (capacity > buffer.length) {	if (capacity == buffer.length) {
+STRBUILDER_GEN_ROR_109	228	relational-operator-replacement	ROR	StrBuilder.ensureCapacity(int)	indirect	if (capacity > buffer.length) {	if (capacity != buffer.length) {
+STRBUILDER_GEN_ROR_110	228	relational-operator-replacement	ROR	StrBuilder.ensureCapacity(int)	indirect	if (capacity > buffer.length) {	if (capacity < buffer.length) {
+STRBUILDER_GEN_COI_111	228	conditional-operator-insertion	COI	StrBuilder.ensureCapacity(int)	indirect	if (capacity > buffer.length) {	if (!(capacity > buffer.length)) {
+STRBUILDER_GEN_CTC_112	228	condition-to-constant	CTC	StrBuilder.ensureCapacity(int)	indirect	if (capacity > buffer.length) {	if (true) {
+STRBUILDER_GEN_CTC_113	228	condition-to-constant	CTC	StrBuilder.ensureCapacity(int)	indirect	if (capacity > buffer.length) {	if (false) {
+STRBUILDER_GEN_SDL_114	230	statement-deletion	SDL	StrBuilder.ensureCapacity(int)	indirect	buffer = new char[capacity];	
+STRBUILDER_GEN_CRP_115	231	constant-replacement	CRP	StrBuilder.ensureCapacity(int)	indirect	System.arraycopy(old, 0, buffer, 0, size);	System.arraycopy(old, 1, buffer, 0, size);
+STRBUILDER_GEN_CRP_116	231	constant-replacement	CRP	StrBuilder.ensureCapacity(int)	indirect	System.arraycopy(old, 0, buffer, 0, size);	System.arraycopy(old, -1, buffer, 0, size);
+STRBUILDER_GEN_CRP_117	231	constant-replacement	CRP	StrBuilder.ensureCapacity(int)	indirect	System.arraycopy(old, 0, buffer, 0, size);	System.arraycopy(old, 0, buffer, 1, size);
+STRBUILDER_GEN_CRP_118	231	constant-replacement	CRP	StrBuilder.ensureCapacity(int)	indirect	System.arraycopy(old, 0, buffer, 0, size);	System.arraycopy(old, 0, buffer, -1, size);
+STRBUILDER_GEN_SDL_119	231	statement-deletion	SDL	StrBuilder.ensureCapacity(int)	indirect	System.arraycopy(old, 0, buffer, 0, size);	
+STRBUILDER_GEN_STR_120	231	statement-replacement	STR	StrBuilder.ensureCapacity(int)	indirect	System.arraycopy(old, 0, buffer, 0, size);	System.arraycopy(old, 0, buffer, 0, size); System.arraycopy(old, 0, buffer, 0, size);
+STRBUILDER_GEN_CRP_139	287	constant-replacement	CRP	StrBuilder.clear()	direct	size = 0;	size = 1;
+STRBUILDER_GEN_CRP_140	287	constant-replacement	CRP	StrBuilder.clear()	direct	size = 0;	size = -1;
+STRBUILDER_GEN_SDL_141	287	statement-deletion	SDL	StrBuilder.clear()	direct	size = 0;	
+STRBUILDER_GEN_ROR_303	441	relational-operator-replacement	ROR	StrBuilder.appendNull()	indirect	if (nullText == null)  {	if (nullText <= null)  {
+STRBUILDER_GEN_ROR_304	441	relational-operator-replacement	ROR	StrBuilder.appendNull()	indirect	if (nullText == null)  {	if (nullText >= null)  {
+STRBUILDER_GEN_ROR_305	441	relational-operator-replacement	ROR	StrBuilder.appendNull()	indirect	if (nullText == null)  {	if (nullText != null)  {
+STRBUILDER_GEN_ROR_306	441	relational-operator-replacement	ROR	StrBuilder.appendNull()	indirect	if (nullText == null)  {	if (nullText < null)  {
+STRBUILDER_GEN_ROR_307	441	relational-operator-replacement	ROR	StrBuilder.appendNull()	indirect	if (nullText == null)  {	if (nullText > null)  {
+STRBUILDER_GEN_COI_308	441	conditional-operator-insertion	COI	StrBuilder.appendNull()	indirect	if (nullText == null)  {	if (!(nullText == null)) {
+STRBUILDER_GEN_CTC_309	441	condition-to-constant	CTC	StrBuilder.appendNull()	indirect	if (nullText == null)  {	if (true) {
+STRBUILDER_GEN_CTC_310	441	condition-to-constant	CTC	StrBuilder.appendNull()	indirect	if (nullText == null)  {	if (false) {
+STRBUILDER_GEN_RVR_311	444	return-value-replacement	RVR	StrBuilder.appendNull()	indirect	return append(nullText);	return null;
+STRBUILDER_GEN_ROR_322	473	relational-operator-replacement	ROR	StrBuilder.append(String)	direct	if (strLen > 0) {	if (strLen <= 0) {
+STRBUILDER_GEN_ROR_323	473	relational-operator-replacement	ROR	StrBuilder.append(String)	direct	if (strLen > 0) {	if (strLen >= 0) {
+STRBUILDER_GEN_ROR_324	473	relational-operator-replacement	ROR	StrBuilder.append(String)	direct	if (strLen > 0) {	if (strLen == 0) {
+STRBUILDER_GEN_ROR_325	473	relational-operator-replacement	ROR	StrBuilder.append(String)	direct	if (strLen > 0) {	if (strLen != 0) {
+STRBUILDER_GEN_ROR_326	473	relational-operator-replacement	ROR	StrBuilder.append(String)	direct	if (strLen > 0) {	if (strLen < 0) {
+STRBUILDER_GEN_COI_327	473	conditional-operator-insertion	COI	StrBuilder.append(String)	direct	if (strLen > 0) {	if (!(strLen > 0)) {
+STRBUILDER_GEN_CRP_328	473	constant-replacement	CRP	StrBuilder.append(String)	direct	if (strLen > 0) {	if (strLen > 1) {
+STRBUILDER_GEN_CRP_329	473	constant-replacement	CRP	StrBuilder.append(String)	direct	if (strLen > 0) {	if (strLen > -1) {
+STRBUILDER_GEN_CTC_330	473	condition-to-constant	CTC	StrBuilder.append(String)	direct	if (strLen > 0) {	if (true) {
+STRBUILDER_GEN_CTC_331	473	condition-to-constant	CTC	StrBuilder.append(String)	direct	if (strLen > 0) {	if (false) {
+STRBUILDER_GEN_AOR_332	475	arithmetic-operator-replacement	AOR	StrBuilder.append(String)	direct	ensureCapacity(len + strLen);	ensureCapacity(len - strLen);
+STRBUILDER_GEN_AOR_333	475	arithmetic-operator-replacement	AOR	StrBuilder.append(String)	direct	ensureCapacity(len + strLen);	ensureCapacity(len * strLen);
+STRBUILDER_GEN_AOR_334	475	arithmetic-operator-replacement	AOR	StrBuilder.append(String)	direct	ensureCapacity(len + strLen);	ensureCapacity(len / strLen);
+STRBUILDER_GEN_AOR_335	475	arithmetic-operator-replacement	AOR	StrBuilder.append(String)	direct	ensureCapacity(len + strLen);	ensureCapacity(len % strLen);
+STRBUILDER_GEN_SDL_336	475	statement-deletion	SDL	StrBuilder.append(String)	direct	ensureCapacity(len + strLen);	
+STRBUILDER_GEN_CRP_337	476	constant-replacement	CRP	StrBuilder.append(String)	direct	str.getChars(0, strLen, buffer, len);	str.getChars(1, strLen, buffer, len);
+STRBUILDER_GEN_CRP_338	476	constant-replacement	CRP	StrBuilder.append(String)	direct	str.getChars(0, strLen, buffer, len);	str.getChars(-1, strLen, buffer, len);
+STRBUILDER_GEN_SDL_339	476	statement-deletion	SDL	StrBuilder.append(String)	direct	str.getChars(0, strLen, buffer, len);	
+STRBUILDER_GEN_STR_340	476	statement-replacement	STR	StrBuilder.append(String)	direct	str.getChars(0, strLen, buffer, len);	str.getChars(0, strLen, buffer, len); str.getChars(0, strLen, buffer, len);
+STRBUILDER_GEN_SDL_341	477	statement-deletion	SDL	StrBuilder.append(String)	direct	size += strLen;	
+STRBUILDER_GEN_CRP_656	884	constant-replacement	CRP	StrBuilder.appendFixedWidthPadRight(Object,int,char)	direct	str.getChars(0, width, buffer, size);	str.getChars(1, width, buffer, size);
+STRBUILDER_GEN_CRP_657	884	constant-replacement	CRP	StrBuilder.appendFixedWidthPadRight(Object,int,char)	direct	str.getChars(0, width, buffer, size);	str.getChars(-1, width, buffer, size);
+STRBUILDER_GEN_SDL_658	884	statement-deletion	SDL	StrBuilder.appendFixedWidthPadRight(Object,int,char)	direct	str.getChars(0, width, buffer, size);	
+STRBUILDER_GEN_STR_659	884	statement-replacement	STR	StrBuilder.appendFixedWidthPadRight(Object,int,char)	direct	str.getChars(0, width, buffer, size);	str.getChars(0, width, buffer, size); str.getChars(0, width, buffer, size);
+STRBUILDER_GEN_CRP_660	887	constant-replacement	CRP	StrBuilder.appendFixedWidthPadRight(Object,int,char)	direct	str.getChars(0, strLen, buffer, size);	str.getChars(1, strLen, buffer, size);
+STRBUILDER_GEN_CRP_661	887	constant-replacement	CRP	StrBuilder.appendFixedWidthPadRight(Object,int,char)	direct	str.getChars(0, strLen, buffer, size);	str.getChars(-1, strLen, buffer, size);
+STRBUILDER_GEN_SDL_662	887	statement-deletion	SDL	StrBuilder.appendFixedWidthPadRight(Object,int,char)	direct	str.getChars(0, strLen, buffer, size);	
+STRBUILDER_GEN_STR_663	887	statement-replacement	STR	StrBuilder.appendFixedWidthPadRight(Object,int,char)	direct	str.getChars(0, strLen, buffer, size);	str.getChars(0, strLen, buffer, size); str.getChars(0, strLen, buffer, size);
+STRBUILDER_GEN_AOR_664	889	arithmetic-operator-replacement	AOR	StrBuilder.appendFixedWidthPadRight(Object,int,char)	direct	buffer[size + strLen + i] = padChar;	buffer[size - strLen + i] = padChar;
+STRBUILDER_GEN_AOR_665	889	arithmetic-operator-replacement	AOR	StrBuilder.appendFixedWidthPadRight(Object,int,char)	direct	buffer[size + strLen + i] = padChar;	buffer[size * strLen + i] = padChar;
+STRBUILDER_GEN_AOR_666	889	arithmetic-operator-replacement	AOR	StrBuilder.appendFixedWidthPadRight(Object,int,char)	direct	buffer[size + strLen + i] = padChar;	buffer[size / strLen + i] = padChar;
+STRBUILDER_GEN_AOR_667	889	arithmetic-operator-replacement	AOR	StrBuilder.appendFixedWidthPadRight(Object,int,char)	direct	buffer[size + strLen + i] = padChar;	buffer[size % strLen + i] = padChar;
+STRBUILDER_GEN_AOR_668	889	arithmetic-operator-replacement	AOR	StrBuilder.appendFixedWidthPadRight(Object,int,char)	direct	buffer[size + strLen + i] = padChar;	buffer[size + strLen - i] = padChar;
+STRBUILDER_GEN_AOR_669	889	arithmetic-operator-replacement	AOR	StrBuilder.appendFixedWidthPadRight(Object,int,char)	direct	buffer[size + strLen + i] = padChar;	buffer[size + strLen * i] = padChar;
+STRBUILDER_GEN_AOR_670	889	arithmetic-operator-replacement	AOR	StrBuilder.appendFixedWidthPadRight(Object,int,char)	direct	buffer[size + strLen + i] = padChar;	buffer[size + strLen / i] = padChar;
+STRBUILDER_GEN_AOR_671	889	arithmetic-operator-replacement	AOR	StrBuilder.appendFixedWidthPadRight(Object,int,char)	direct	buffer[size + strLen + i] = padChar;	buffer[size + strLen % i] = padChar;
+STRBUILDER_GEN_SDL_672	889	statement-deletion	SDL	StrBuilder.appendFixedWidthPadRight(Object,int,char)	direct	buffer[size + strLen + i] = padChar;	
+STRBUILDER_GEN_AOR_861	1114	arithmetic-operator-replacement	AOR	StrBuilder.deleteImpl(int,int,int)	indirect	System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex);	System.arraycopy(buffer, endIndex, buffer, startIndex, size + endIndex);
+STRBUILDER_GEN_AOR_862	1114	arithmetic-operator-replacement	AOR	StrBuilder.deleteImpl(int,int,int)	indirect	System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex);	System.arraycopy(buffer, endIndex, buffer, startIndex, size * endIndex);
+STRBUILDER_GEN_AOR_863	1114	arithmetic-operator-replacement	AOR	StrBuilder.deleteImpl(int,int,int)	indirect	System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex);	System.arraycopy(buffer, endIndex, buffer, startIndex, size / endIndex);
+STRBUILDER_GEN_AOR_864	1114	arithmetic-operator-replacement	AOR	StrBuilder.deleteImpl(int,int,int)	indirect	System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex);	System.arraycopy(buffer, endIndex, buffer, startIndex, size % endIndex);
+STRBUILDER_GEN_SDL_865	1114	statement-deletion	SDL	StrBuilder.deleteImpl(int,int,int)	indirect	System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex);	
+STRBUILDER_GEN_STR_866	1114	statement-replacement	STR	StrBuilder.deleteImpl(int,int,int)	indirect	System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex);	System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex); System.arraycopy(buffer, endIndex, buffer, startIndex, size - endIndex);
+STRBUILDER_GEN_SDL_867	1115	statement-deletion	SDL	StrBuilder.deleteImpl(int,int,int)	indirect	size -= len;	
+STRBUILDER_GEN_ROR_918	1184	relational-operator-replacement	ROR	StrBuilder.deleteAll(String)	direct	int len = (str == null ? 0 : str.length());	int len = (str <= null ? 0 : str.length());
+STRBUILDER_GEN_ROR_919	1184	relational-operator-replacement	ROR	StrBuilder.deleteAll(String)	direct	int len = (str == null ? 0 : str.length());	int len = (str >= null ? 0 : str.length());
+STRBUILDER_GEN_ROR_920	1184	relational-operator-replacement	ROR	StrBuilder.deleteAll(String)	direct	int len = (str == null ? 0 : str.length());	int len = (str != null ? 0 : str.length());
+STRBUILDER_GEN_ROR_921	1184	relational-operator-replacement	ROR	StrBuilder.deleteAll(String)	direct	int len = (str == null ? 0 : str.length());	int len = (str < null ? 0 : str.length());
+STRBUILDER_GEN_ROR_922	1184	relational-operator-replacement	ROR	StrBuilder.deleteAll(String)	direct	int len = (str == null ? 0 : str.length());	int len = (str > null ? 0 : str.length());
+STRBUILDER_GEN_CRP_923	1184	constant-replacement	CRP	StrBuilder.deleteAll(String)	direct	int len = (str == null ? 0 : str.length());	int len = (str == null ? 1 : str.length());
+STRBUILDER_GEN_CRP_924	1184	constant-replacement	CRP	StrBuilder.deleteAll(String)	direct	int len = (str == null ? 0 : str.length());	int len = (str == null ? -1 : str.length());
+STRBUILDER_GEN_CRP_925	1186	constant-replacement	CRP	StrBuilder.deleteAll(String)	direct	int index = indexOf(str, 0);	int index = indexOf(str, 1);
+STRBUILDER_GEN_CRP_926	1186	constant-replacement	CRP	StrBuilder.deleteAll(String)	direct	int index = indexOf(str, 0);	int index = indexOf(str, -1);
+STRBUILDER_GEN_ROR_927	1187	relational-operator-replacement	ROR	StrBuilder.deleteAll(String)	direct	while (index >= 0) {	while (index <= 0) {
+STRBUILDER_GEN_ROR_928	1187	relational-operator-replacement	ROR	StrBuilder.deleteAll(String)	direct	while (index >= 0) {	while (index == 0) {
+STRBUILDER_GEN_ROR_929	1187	relational-operator-replacement	ROR	StrBuilder.deleteAll(String)	direct	while (index >= 0) {	while (index != 0) {
+STRBUILDER_GEN_ROR_930	1187	relational-operator-replacement	ROR	StrBuilder.deleteAll(String)	direct	while (index >= 0) {	while (index < 0) {
+STRBUILDER_GEN_ROR_931	1187	relational-operator-replacement	ROR	StrBuilder.deleteAll(String)	direct	while (index >= 0) {	while (index > 0) {
+STRBUILDER_GEN_COI_932	1187	conditional-operator-insertion	COI	StrBuilder.deleteAll(String)	direct	while (index >= 0) {	while (!(index >= 0)) {
+STRBUILDER_GEN_CRP_933	1187	constant-replacement	CRP	StrBuilder.deleteAll(String)	direct	while (index >= 0) {	while (index >= 1) {
+STRBUILDER_GEN_CRP_934	1187	constant-replacement	CRP	StrBuilder.deleteAll(String)	direct	while (index >= 0) {	while (index >= -1) {
+STRBUILDER_GEN_AOR_935	1188	arithmetic-operator-replacement	AOR	StrBuilder.deleteAll(String)	direct	deleteImpl(index, index + len, len);	deleteImpl(index, index - len, len);
+STRBUILDER_GEN_AOR_936	1188	arithmetic-operator-replacement	AOR	StrBuilder.deleteAll(String)	direct	deleteImpl(index, index + len, len);	deleteImpl(index, index * len, len);
+STRBUILDER_GEN_AOR_937	1188	arithmetic-operator-replacement	AOR	StrBuilder.deleteAll(String)	direct	deleteImpl(index, index + len, len);	deleteImpl(index, index / len, len);
+STRBUILDER_GEN_AOR_938	1188	arithmetic-operator-replacement	AOR	StrBuilder.deleteAll(String)	direct	deleteImpl(index, index + len, len);	deleteImpl(index, index % len, len);
+STRBUILDER_GEN_SDL_939	1188	statement-deletion	SDL	StrBuilder.deleteAll(String)	direct	deleteImpl(index, index + len, len);	
+STRBUILDER_GEN_AOI_940	1189	arithmetic-operator-insertion	AOI	StrBuilder.deleteAll(String)	direct	index = indexOf(str, index);	index = indexOf(str, index) + 1;
+STRBUILDER_GEN_AOI_941	1189	arithmetic-operator-insertion	AOI	StrBuilder.deleteAll(String)	direct	index = indexOf(str, index);	index = indexOf(str, index) - 1;
+STRBUILDER_GEN_SDL_942	1189	statement-deletion	SDL	StrBuilder.deleteAll(String)	direct	index = indexOf(str, index);	
+STRBUILDER_GEN_ROR_943	1205	relational-operator-replacement	ROR	StrBuilder.deleteFirst(String)	direct	if (index >= 0) {	if (index <= 0) {
+STRBUILDER_GEN_ROR_944	1205	relational-operator-replacement	ROR	StrBuilder.deleteFirst(String)	direct	if (index >= 0) {	if (index == 0) {
+STRBUILDER_GEN_ROR_945	1205	relational-operator-replacement	ROR	StrBuilder.deleteFirst(String)	direct	if (index >= 0) {	if (index != 0) {
+STRBUILDER_GEN_ROR_946	1205	relational-operator-replacement	ROR	StrBuilder.deleteFirst(String)	direct	if (index >= 0) {	if (index < 0) {
+STRBUILDER_GEN_ROR_947	1205	relational-operator-replacement	ROR	StrBuilder.deleteFirst(String)	direct	if (index >= 0) {	if (index > 0) {
+STRBUILDER_GEN_COI_948	1205	conditional-operator-insertion	COI	StrBuilder.deleteFirst(String)	direct	if (index >= 0) {	if (!(index >= 0)) {
+STRBUILDER_GEN_CRP_949	1205	constant-replacement	CRP	StrBuilder.deleteFirst(String)	direct	if (index >= 0) {	if (index >= 1) {
+STRBUILDER_GEN_CRP_950	1205	constant-replacement	CRP	StrBuilder.deleteFirst(String)	direct	if (index >= 0) {	if (index >= -1) {
+STRBUILDER_GEN_CTC_951	1205	condition-to-constant	CTC	StrBuilder.deleteFirst(String)	direct	if (index >= 0) {	if (true) {
+STRBUILDER_GEN_CTC_952	1205	condition-to-constant	CTC	StrBuilder.deleteFirst(String)	direct	if (index >= 0) {	if (false) {
+STRBUILDER_GEN_ROR_1399	1688	relational-operator-replacement	ROR	StrBuilder.contains(String)	direct	return indexOf(str, 0) >= 0;	return indexOf(str, 0) <= 0;
+STRBUILDER_GEN_ROR_1400	1688	relational-operator-replacement	ROR	StrBuilder.contains(String)	direct	return indexOf(str, 0) >= 0;	return indexOf(str, 0) == 0;
+STRBUILDER_GEN_ROR_1401	1688	relational-operator-replacement	ROR	StrBuilder.contains(String)	direct	return indexOf(str, 0) >= 0;	return indexOf(str, 0) != 0;
+STRBUILDER_GEN_ROR_1402	1688	relational-operator-replacement	ROR	StrBuilder.contains(String)	direct	return indexOf(str, 0) >= 0;	return indexOf(str, 0) < 0;
+STRBUILDER_GEN_ROR_1403	1688	relational-operator-replacement	ROR	StrBuilder.contains(String)	direct	return indexOf(str, 0) >= 0;	return indexOf(str, 0) > 0;
+STRBUILDER_GEN_CRP_1404	1688	constant-replacement	CRP	StrBuilder.contains(String)	direct	return indexOf(str, 0) >= 0;	return indexOf(str, 1) >= 0;
+STRBUILDER_GEN_CRP_1405	1688	constant-replacement	CRP	StrBuilder.contains(String)	direct	return indexOf(str, 0) >= 0;	return indexOf(str, -1) >= 0;
+STRBUILDER_GEN_CRP_1406	1688	constant-replacement	CRP	StrBuilder.contains(String)	direct	return indexOf(str, 0) >= 0;	return indexOf(str, 0) >= 1;
+STRBUILDER_GEN_CRP_1407	1688	constant-replacement	CRP	StrBuilder.contains(String)	direct	return indexOf(str, 0) >= 0;	return indexOf(str, 0) >= -1;
+STRBUILDER_GEN_RVR_1408	1688	return-value-replacement	RVR	StrBuilder.contains(String)	direct	return indexOf(str, 0) >= 0;	return true;
+STRBUILDER_GEN_RVR_1409	1688	return-value-replacement	RVR	StrBuilder.contains(String)	direct	return indexOf(str, 0) >= 0;	return false;
+STRBUILDER_GEN_ROR_1426	1725	relational-operator-replacement	ROR	StrBuilder.indexOf(char,int)	indirect	startIndex = (startIndex < 0 ? 0 : startIndex);	startIndex = (startIndex <= 0 ? 0 : startIndex);
+STRBUILDER_GEN_ROR_1427	1725	relational-operator-replacement	ROR	StrBuilder.indexOf(char,int)	indirect	startIndex = (startIndex < 0 ? 0 : startIndex);	startIndex = (startIndex >= 0 ? 0 : startIndex);
+STRBUILDER_GEN_ROR_1428	1725	relational-operator-replacement	ROR	StrBuilder.indexOf(char,int)	indirect	startIndex = (startIndex < 0 ? 0 : startIndex);	startIndex = (startIndex == 0 ? 0 : startIndex);
+STRBUILDER_GEN_ROR_1429	1725	relational-operator-replacement	ROR	StrBuilder.indexOf(char,int)	indirect	startIndex = (startIndex < 0 ? 0 : startIndex);	startIndex = (startIndex != 0 ? 0 : startIndex);
+STRBUILDER_GEN_ROR_1430	1725	relational-operator-replacement	ROR	StrBuilder.indexOf(char,int)	indirect	startIndex = (startIndex < 0 ? 0 : startIndex);	startIndex = (startIndex > 0 ? 0 : startIndex);
+STRBUILDER_GEN_CRP_1431	1725	constant-replacement	CRP	StrBuilder.indexOf(char,int)	indirect	startIndex = (startIndex < 0 ? 0 : startIndex);	startIndex = (startIndex < 1 ? 0 : startIndex);
+STRBUILDER_GEN_CRP_1432	1725	constant-replacement	CRP	StrBuilder.indexOf(char,int)	indirect	startIndex = (startIndex < 0 ? 0 : startIndex);	startIndex = (startIndex < -1 ? 0 : startIndex);
+STRBUILDER_GEN_CRP_1433	1725	constant-replacement	CRP	StrBuilder.indexOf(char,int)	indirect	startIndex = (startIndex < 0 ? 0 : startIndex);	startIndex = (startIndex < 0 ? 1 : startIndex);
+STRBUILDER_GEN_CRP_1434	1725	constant-replacement	CRP	StrBuilder.indexOf(char,int)	indirect	startIndex = (startIndex < 0 ? 0 : startIndex);	startIndex = (startIndex < 0 ? -1 : startIndex);
+STRBUILDER_GEN_SDL_1435	1725	statement-deletion	SDL	StrBuilder.indexOf(char,int)	indirect	startIndex = (startIndex < 0 ? 0 : startIndex);	
+STRBUILDER_GEN_ROR_1436	1726	relational-operator-replacement	ROR	StrBuilder.indexOf(char,int)	indirect	if (startIndex >= size) {	if (startIndex <= size) {
+STRBUILDER_GEN_ROR_1437	1726	relational-operator-replacement	ROR	StrBuilder.indexOf(char,int)	indirect	if (startIndex >= size) {	if (startIndex == size) {
+STRBUILDER_GEN_ROR_1438	1726	relational-operator-replacement	ROR	StrBuilder.indexOf(char,int)	indirect	if (startIndex >= size) {	if (startIndex != size) {
+STRBUILDER_GEN_ROR_1439	1726	relational-operator-replacement	ROR	StrBuilder.indexOf(char,int)	indirect	if (startIndex >= size) {	if (startIndex < size) {
+STRBUILDER_GEN_ROR_1440	1726	relational-operator-replacement	ROR	StrBuilder.indexOf(char,int)	indirect	if (startIndex >= size) {	if (startIndex > size) {
+STRBUILDER_GEN_COI_1441	1726	conditional-operator-insertion	COI	StrBuilder.indexOf(char,int)	indirect	if (startIndex >= size) {	if (!(startIndex >= size)) {
+STRBUILDER_GEN_CTC_1442	1726	condition-to-constant	CTC	StrBuilder.indexOf(char,int)	indirect	if (startIndex >= size) {	if (true) {
+STRBUILDER_GEN_CTC_1443	1726	condition-to-constant	CTC	StrBuilder.indexOf(char,int)	indirect	if (startIndex >= size) {	if (false) {
+STRBUILDER_GEN_ROR_1444	1730	relational-operator-replacement	ROR	StrBuilder.indexOf(char,int)	indirect	for (int i = startIndex; i < size; i++) {	for (int i = startIndex; i <= size; i++) {
+STRBUILDER_GEN_ROR_1445	1730	relational-operator-replacement	ROR	StrBuilder.indexOf(char,int)	indirect	for (int i = startIndex; i < size; i++) {	for (int i = startIndex; i >= size; i++) {
+STRBUILDER_GEN_ROR_1446	1730	relational-operator-replacement	ROR	StrBuilder.indexOf(char,int)	indirect	for (int i = startIndex; i < size; i++) {	for (int i = startIndex; i == size; i++) {
+STRBUILDER_GEN_ROR_1447	1730	relational-operator-replacement	ROR	StrBuilder.indexOf(char,int)	indirect	for (int i = startIndex; i < size; i++) {	for (int i = startIndex; i != size; i++) {
+STRBUILDER_GEN_ROR_1448	1730	relational-operator-replacement	ROR	StrBuilder.indexOf(char,int)	indirect	for (int i = startIndex; i < size; i++) {	for (int i = startIndex; i > size; i++) {
+STRBUILDER_GEN_LBR_1449	1730	loop-bound-replacement	LBR	StrBuilder.indexOf(char,int)	indirect	for (int i = startIndex; i < size; i++) {	for (int i = startIndex + 1; i < size; i++) {
+STRBUILDER_GEN_LBR_1450	1730	loop-bound-replacement	LBR	StrBuilder.indexOf(char,int)	indirect	for (int i = startIndex; i < size; i++) {	for (int i = startIndex - 1; i < size; i++) {
+STRBUILDER_GEN_UOI_1451	1732	unary-operator-insertion	UOI	StrBuilder.indexOf(char,int)	indirect	return i;	return -(i);
+STRBUILDER_GEN_ABS_1452	1732	absolute-value-insertion	ABS	StrBuilder.indexOf(char,int)	indirect	return i;	return -Math.abs(i);
+STRBUILDER_GEN_RVR_1453	1732	return-value-replacement	RVR	StrBuilder.indexOf(char,int)	indirect	return i;	return 0;
+STRBUILDER_GEN_RVR_1454	1732	return-value-replacement	RVR	StrBuilder.indexOf(char,int)	indirect	return i;	return 1;
+STRBUILDER_GEN_RVR_1455	1732	return-value-replacement	RVR	StrBuilder.indexOf(char,int)	indirect	return i;	return -1;
+STRBUILDER_GEN_CRP_1456	1747	constant-replacement	CRP	StrBuilder.indexOf(String)	direct	return indexOf(str, 0);	return indexOf(str, 1);
+STRBUILDER_GEN_CRP_1457	1747	constant-replacement	CRP	StrBuilder.indexOf(String)	direct	return indexOf(str, 0);	return indexOf(str, -1);
+STRBUILDER_GEN_RVR_1458	1747	return-value-replacement	RVR	StrBuilder.indexOf(String)	direct	return indexOf(str, 0);	return 0;
+STRBUILDER_GEN_RVR_1459	1747	return-value-replacement	RVR	StrBuilder.indexOf(String)	direct	return indexOf(str, 0);	return 1;
+STRBUILDER_GEN_RVR_1460	1747	return-value-replacement	RVR	StrBuilder.indexOf(String)	direct	return indexOf(str, 0);	return -1;
+STRBUILDER_GEN_ROR_1461	1762	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (str == null || startIndex >= size) {	if (str == null || startIndex <= size) {
+STRBUILDER_GEN_ROR_1462	1762	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (str == null || startIndex >= size) {	if (str == null || startIndex == size) {
+STRBUILDER_GEN_ROR_1463	1762	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (str == null || startIndex >= size) {	if (str == null || startIndex != size) {
+STRBUILDER_GEN_ROR_1464	1762	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (str == null || startIndex >= size) {	if (str == null || startIndex < size) {
+STRBUILDER_GEN_ROR_1465	1762	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (str == null || startIndex >= size) {	if (str == null || startIndex > size) {
+STRBUILDER_GEN_ROR_1466	1762	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (str == null || startIndex >= size) {	if (str <= null || startIndex >= size) {
+STRBUILDER_GEN_ROR_1467	1762	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (str == null || startIndex >= size) {	if (str >= null || startIndex >= size) {
+STRBUILDER_GEN_ROR_1468	1762	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (str == null || startIndex >= size) {	if (str != null || startIndex >= size) {
+STRBUILDER_GEN_ROR_1469	1762	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (str == null || startIndex >= size) {	if (str < null || startIndex >= size) {
+STRBUILDER_GEN_ROR_1470	1762	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (str == null || startIndex >= size) {	if (str > null || startIndex >= size) {
+STRBUILDER_GEN_COR_1471	1762	conditional-operator-replacement	COR	StrBuilder.indexOf(String,int)	indirect	if (str == null || startIndex >= size) {	if (str == null && startIndex >= size) {
+STRBUILDER_GEN_COI_1472	1762	conditional-operator-insertion	COI	StrBuilder.indexOf(String,int)	indirect	if (str == null || startIndex >= size) {	if (!(str == null || startIndex >= size)) {
+STRBUILDER_GEN_CTC_1473	1762	condition-to-constant	CTC	StrBuilder.indexOf(String,int)	indirect	if (str == null || startIndex >= size) {	if (true) {
+STRBUILDER_GEN_CTC_1474	1762	condition-to-constant	CTC	StrBuilder.indexOf(String,int)	indirect	if (str == null || startIndex >= size) {	if (false) {
+STRBUILDER_GEN_ROR_1475	1766	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (strLen == 1) {	if (strLen <= 1) {
+STRBUILDER_GEN_ROR_1476	1766	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (strLen == 1) {	if (strLen >= 1) {
+STRBUILDER_GEN_ROR_1477	1766	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (strLen == 1) {	if (strLen != 1) {
+STRBUILDER_GEN_ROR_1478	1766	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (strLen == 1) {	if (strLen < 1) {
+STRBUILDER_GEN_ROR_1479	1766	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (strLen == 1) {	if (strLen > 1) {
+STRBUILDER_GEN_COI_1480	1766	conditional-operator-insertion	COI	StrBuilder.indexOf(String,int)	indirect	if (strLen == 1) {	if (!(strLen == 1)) {
+STRBUILDER_GEN_CRP_1481	1766	constant-replacement	CRP	StrBuilder.indexOf(String,int)	indirect	if (strLen == 1) {	if (strLen == 0) {
+STRBUILDER_GEN_CRP_1482	1766	constant-replacement	CRP	StrBuilder.indexOf(String,int)	indirect	if (strLen == 1) {	if (strLen == -1) {
+STRBUILDER_GEN_CRP_1483	1766	constant-replacement	CRP	StrBuilder.indexOf(String,int)	indirect	if (strLen == 1) {	if (strLen == 2) {
+STRBUILDER_GEN_CTC_1484	1766	condition-to-constant	CTC	StrBuilder.indexOf(String,int)	indirect	if (strLen == 1) {	if (true) {
+STRBUILDER_GEN_CTC_1485	1766	condition-to-constant	CTC	StrBuilder.indexOf(String,int)	indirect	if (strLen == 1) {	if (false) {
+STRBUILDER_GEN_CRP_1486	1767	constant-replacement	CRP	StrBuilder.indexOf(String,int)	indirect	return indexOf(str.charAt(0), startIndex);	return indexOf(str.charAt(1), startIndex);
+STRBUILDER_GEN_CRP_1487	1767	constant-replacement	CRP	StrBuilder.indexOf(String,int)	indirect	return indexOf(str.charAt(0), startIndex);	return indexOf(str.charAt(-1), startIndex);
+STRBUILDER_GEN_RVR_1488	1767	return-value-replacement	RVR	StrBuilder.indexOf(String,int)	indirect	return indexOf(str.charAt(0), startIndex);	return 0;
+STRBUILDER_GEN_RVR_1489	1767	return-value-replacement	RVR	StrBuilder.indexOf(String,int)	indirect	return indexOf(str.charAt(0), startIndex);	return 1;
+STRBUILDER_GEN_RVR_1490	1767	return-value-replacement	RVR	StrBuilder.indexOf(String,int)	indirect	return indexOf(str.charAt(0), startIndex);	return -1;
+STRBUILDER_GEN_ARP_1491	1767	argument-replacement	ARP	StrBuilder.indexOf(String,int)	indirect	return indexOf(str.charAt(0), startIndex);	return indexOf(str.charAt(0 + 1), startIndex);
+STRBUILDER_GEN_ARP_1492	1767	argument-replacement	ARP	StrBuilder.indexOf(String,int)	indirect	return indexOf(str.charAt(0), startIndex);	return indexOf(str.charAt(0 - 1), startIndex);
+STRBUILDER_GEN_ROR_1493	1769	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (strLen == 0) {	if (strLen <= 0) {
+STRBUILDER_GEN_ROR_1494	1769	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (strLen == 0) {	if (strLen >= 0) {
+STRBUILDER_GEN_ROR_1495	1769	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (strLen == 0) {	if (strLen != 0) {
+STRBUILDER_GEN_ROR_1496	1769	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (strLen == 0) {	if (strLen < 0) {
+STRBUILDER_GEN_ROR_1497	1769	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (strLen == 0) {	if (strLen > 0) {
+STRBUILDER_GEN_COI_1498	1769	conditional-operator-insertion	COI	StrBuilder.indexOf(String,int)	indirect	if (strLen == 0) {	if (!(strLen == 0)) {
+STRBUILDER_GEN_CRP_1499	1769	constant-replacement	CRP	StrBuilder.indexOf(String,int)	indirect	if (strLen == 0) {	if (strLen == 1) {
+STRBUILDER_GEN_CRP_1500	1769	constant-replacement	CRP	StrBuilder.indexOf(String,int)	indirect	if (strLen == 0) {	if (strLen == -1) {
+STRBUILDER_GEN_CTC_1501	1769	condition-to-constant	CTC	StrBuilder.indexOf(String,int)	indirect	if (strLen == 0) {	if (true) {
+STRBUILDER_GEN_CTC_1502	1769	condition-to-constant	CTC	StrBuilder.indexOf(String,int)	indirect	if (strLen == 0) {	if (false) {
+STRBUILDER_GEN_UOI_1503	1770	unary-operator-insertion	UOI	StrBuilder.indexOf(String,int)	indirect	return startIndex;	return -(startIndex);
+STRBUILDER_GEN_ABS_1504	1770	absolute-value-insertion	ABS	StrBuilder.indexOf(String,int)	indirect	return startIndex;	return -Math.abs(startIndex);
+STRBUILDER_GEN_RVR_1505	1770	return-value-replacement	RVR	StrBuilder.indexOf(String,int)	indirect	return startIndex;	return 0;
+STRBUILDER_GEN_RVR_1506	1770	return-value-replacement	RVR	StrBuilder.indexOf(String,int)	indirect	return startIndex;	return 1;
+STRBUILDER_GEN_RVR_1507	1770	return-value-replacement	RVR	StrBuilder.indexOf(String,int)	indirect	return startIndex;	return -1;
+STRBUILDER_GEN_ROR_1508	1772	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (strLen > size) {	if (strLen <= size) {
+STRBUILDER_GEN_ROR_1509	1772	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (strLen > size) {	if (strLen >= size) {
+STRBUILDER_GEN_ROR_1510	1772	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (strLen > size) {	if (strLen == size) {
+STRBUILDER_GEN_ROR_1511	1772	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (strLen > size) {	if (strLen != size) {
+STRBUILDER_GEN_ROR_1512	1772	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (strLen > size) {	if (strLen < size) {
+STRBUILDER_GEN_COI_1513	1772	conditional-operator-insertion	COI	StrBuilder.indexOf(String,int)	indirect	if (strLen > size) {	if (!(strLen > size)) {
+STRBUILDER_GEN_CTC_1514	1772	condition-to-constant	CTC	StrBuilder.indexOf(String,int)	indirect	if (strLen > size) {	if (true) {
+STRBUILDER_GEN_CTC_1515	1772	condition-to-constant	CTC	StrBuilder.indexOf(String,int)	indirect	if (strLen > size) {	if (false) {
+STRBUILDER_GEN_AOR_1516	1776	arithmetic-operator-replacement	AOR	StrBuilder.indexOf(String,int)	indirect	int len = size - strLen + 1;	int len = size - strLen - 1;
+STRBUILDER_GEN_AOR_1517	1776	arithmetic-operator-replacement	AOR	StrBuilder.indexOf(String,int)	indirect	int len = size - strLen + 1;	int len = size - strLen * 1;
+STRBUILDER_GEN_AOR_1518	1776	arithmetic-operator-replacement	AOR	StrBuilder.indexOf(String,int)	indirect	int len = size - strLen + 1;	int len = size - strLen / 1;
+STRBUILDER_GEN_AOR_1519	1776	arithmetic-operator-replacement	AOR	StrBuilder.indexOf(String,int)	indirect	int len = size - strLen + 1;	int len = size - strLen % 1;
+STRBUILDER_GEN_AOR_1520	1776	arithmetic-operator-replacement	AOR	StrBuilder.indexOf(String,int)	indirect	int len = size - strLen + 1;	int len = size + strLen + 1;
+STRBUILDER_GEN_AOR_1521	1776	arithmetic-operator-replacement	AOR	StrBuilder.indexOf(String,int)	indirect	int len = size - strLen + 1;	int len = size * strLen + 1;
+STRBUILDER_GEN_AOR_1522	1776	arithmetic-operator-replacement	AOR	StrBuilder.indexOf(String,int)	indirect	int len = size - strLen + 1;	int len = size / strLen + 1;
+STRBUILDER_GEN_AOR_1523	1776	arithmetic-operator-replacement	AOR	StrBuilder.indexOf(String,int)	indirect	int len = size - strLen + 1;	int len = size % strLen + 1;
+STRBUILDER_GEN_CRP_1524	1776	constant-replacement	CRP	StrBuilder.indexOf(String,int)	indirect	int len = size - strLen + 1;	int len = size - strLen + 0;
+STRBUILDER_GEN_CRP_1525	1776	constant-replacement	CRP	StrBuilder.indexOf(String,int)	indirect	int len = size - strLen + 1;	int len = size - strLen + -1;
+STRBUILDER_GEN_CRP_1526	1776	constant-replacement	CRP	StrBuilder.indexOf(String,int)	indirect	int len = size - strLen + 1;	int len = size - strLen + 2;
+STRBUILDER_GEN_ROR_1527	1778	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	for (int i = startIndex; i < len; i++) {	for (int i = startIndex; i <= len; i++) {
+STRBUILDER_GEN_ROR_1528	1778	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	for (int i = startIndex; i < len; i++) {	for (int i = startIndex; i >= len; i++) {
+STRBUILDER_GEN_ROR_1529	1778	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	for (int i = startIndex; i < len; i++) {	for (int i = startIndex; i == len; i++) {
+STRBUILDER_GEN_ROR_1530	1778	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	for (int i = startIndex; i < len; i++) {	for (int i = startIndex; i != len; i++) {
+STRBUILDER_GEN_ROR_1531	1778	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	for (int i = startIndex; i < len; i++) {	for (int i = startIndex; i > len; i++) {
+STRBUILDER_GEN_LBR_1532	1778	loop-bound-replacement	LBR	StrBuilder.indexOf(String,int)	indirect	for (int i = startIndex; i < len; i++) {	for (int i = startIndex + 1; i < len; i++) {
+STRBUILDER_GEN_LBR_1533	1778	loop-bound-replacement	LBR	StrBuilder.indexOf(String,int)	indirect	for (int i = startIndex; i < len; i++) {	for (int i = startIndex - 1; i < len; i++) {
+STRBUILDER_GEN_ROR_1534	1779	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	for (int j = 0; j < strLen; j++) {	for (int j = 0; j <= strLen; j++) {
+STRBUILDER_GEN_ROR_1535	1779	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	for (int j = 0; j < strLen; j++) {	for (int j = 0; j >= strLen; j++) {
+STRBUILDER_GEN_ROR_1536	1779	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	for (int j = 0; j < strLen; j++) {	for (int j = 0; j == strLen; j++) {
+STRBUILDER_GEN_ROR_1537	1779	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	for (int j = 0; j < strLen; j++) {	for (int j = 0; j != strLen; j++) {
+STRBUILDER_GEN_ROR_1538	1779	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	for (int j = 0; j < strLen; j++) {	for (int j = 0; j > strLen; j++) {
+STRBUILDER_GEN_CRP_1539	1779	constant-replacement	CRP	StrBuilder.indexOf(String,int)	indirect	for (int j = 0; j < strLen; j++) {	for (int j = 1; j < strLen; j++) {
+STRBUILDER_GEN_CRP_1540	1779	constant-replacement	CRP	StrBuilder.indexOf(String,int)	indirect	for (int j = 0; j < strLen; j++) {	for (int j = -1; j < strLen; j++) {
+STRBUILDER_GEN_LBR_1541	1779	loop-bound-replacement	LBR	StrBuilder.indexOf(String,int)	indirect	for (int j = 0; j < strLen; j++) {	for (int j = 0 + 1; j < strLen; j++) {
+STRBUILDER_GEN_LBR_1542	1779	loop-bound-replacement	LBR	StrBuilder.indexOf(String,int)	indirect	for (int j = 0; j < strLen; j++) {	for (int j = 0 - 1; j < strLen; j++) {
+STRBUILDER_GEN_AOR_1543	1780	arithmetic-operator-replacement	AOR	StrBuilder.indexOf(String,int)	indirect	if (str.charAt(j) != thisBuf[i + j]) {	if (str.charAt(j) != thisBuf[i - j]) {
+STRBUILDER_GEN_AOR_1544	1780	arithmetic-operator-replacement	AOR	StrBuilder.indexOf(String,int)	indirect	if (str.charAt(j) != thisBuf[i + j]) {	if (str.charAt(j) != thisBuf[i * j]) {
+STRBUILDER_GEN_AOR_1545	1780	arithmetic-operator-replacement	AOR	StrBuilder.indexOf(String,int)	indirect	if (str.charAt(j) != thisBuf[i + j]) {	if (str.charAt(j) != thisBuf[i / j]) {
+STRBUILDER_GEN_AOR_1546	1780	arithmetic-operator-replacement	AOR	StrBuilder.indexOf(String,int)	indirect	if (str.charAt(j) != thisBuf[i + j]) {	if (str.charAt(j) != thisBuf[i % j]) {
+STRBUILDER_GEN_ROR_1547	1780	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (str.charAt(j) != thisBuf[i + j]) {	if (str.charAt(j) <= thisBuf[i + j]) {
+STRBUILDER_GEN_ROR_1548	1780	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (str.charAt(j) != thisBuf[i + j]) {	if (str.charAt(j) >= thisBuf[i + j]) {
+STRBUILDER_GEN_ROR_1549	1780	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (str.charAt(j) != thisBuf[i + j]) {	if (str.charAt(j) == thisBuf[i + j]) {
+STRBUILDER_GEN_ROR_1550	1780	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (str.charAt(j) != thisBuf[i + j]) {	if (str.charAt(j) < thisBuf[i + j]) {
+STRBUILDER_GEN_ROR_1551	1780	relational-operator-replacement	ROR	StrBuilder.indexOf(String,int)	indirect	if (str.charAt(j) != thisBuf[i + j]) {	if (str.charAt(j) > thisBuf[i + j]) {
+STRBUILDER_GEN_COI_1552	1780	conditional-operator-insertion	COI	StrBuilder.indexOf(String,int)	indirect	if (str.charAt(j) != thisBuf[i + j]) {	if (!(str.charAt(j) != thisBuf[i + j])) {
+STRBUILDER_GEN_CTC_1553	1780	condition-to-constant	CTC	StrBuilder.indexOf(String,int)	indirect	if (str.charAt(j) != thisBuf[i + j]) {	if (true) {
+STRBUILDER_GEN_CTC_1554	1780	condition-to-constant	CTC	StrBuilder.indexOf(String,int)	indirect	if (str.charAt(j) != thisBuf[i + j]) {	if (false) {
+STRBUILDER_GEN_ARP_1555	1780	argument-replacement	ARP	StrBuilder.indexOf(String,int)	indirect	if (str.charAt(j) != thisBuf[i + j]) {	if (str.charAt(j + 1) != thisBuf[i + j]) {
+STRBUILDER_GEN_ARP_1556	1780	argument-replacement	ARP	StrBuilder.indexOf(String,int)	indirect	if (str.charAt(j) != thisBuf[i + j]) {	if (str.charAt(j - 1) != thisBuf[i + j]) {
+STRBUILDER_GEN_SDL_1557	1781	statement-deletion	SDL	StrBuilder.indexOf(String,int)	indirect	continue outer;	
