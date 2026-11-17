@@ -17,3 +17,8 @@ java -cp "$CP" in.ac.iiitb.plproject.mutation.GeneratedSuiteRunner stack queue
 mvn -o install -DskipTests
 cd pl-platform-testing
 java -cp "target/pl-platform-testing-1.0.0.jar:../genatc-mutation/target/lib/*"      in.ac.iiitb.plproject.atc.GenatcMain stack
+
+
+ls ~/defects4j/framework/lib/test_generation/generation/   # Randoop + EvoSuite jars must be there
+sed -n 1,30p fair/fair.sh                                    # read its options
+./fair/fair.sh flat3map  

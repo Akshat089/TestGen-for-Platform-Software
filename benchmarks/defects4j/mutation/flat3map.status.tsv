@@ -1,25 +1,25 @@
 id	status	sampled	detail
 FLAT3MAP_GEN_SDL_12	VALID	yes	
-FLAT3MAP_GEN_COI_19	VALID	yes	
-FLAT3MAP_GEN_CTC_20	VALID	yes	
-FLAT3MAP_GEN_CTC_21	VALID	yes	
 FLAT3MAP_GEN_ROR_14	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_15	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_16	VALID	yes	
 FLAT3MAP_GEN_ROR_17	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_18	INVALID	no	error: bad operand types for binary operator '>'
+FLAT3MAP_GEN_COI_19	VALID	yes	
+FLAT3MAP_GEN_CTC_20	VALID	yes	
+FLAT3MAP_GEN_CTC_21	VALID	yes	
+FLAT3MAP_GEN_RVR_22	VALID	yes	
 FLAT3MAP_GEN_ARP_23	INVALID	no	error: bad operand types for binary operator '+'
 FLAT3MAP_GEN_ARP_24	INVALID	no	error: bad operand types for binary operator '-'
-FLAT3MAP_GEN_MCR_25	VALID	yes	
-FLAT3MAP_GEN_RVR_22	VALID	no	
-FLAT3MAP_GEN_COI_31	VALID	yes	
-FLAT3MAP_GEN_CTC_32	VALID	no	
-FLAT3MAP_GEN_CTC_33	VALID	no	
+FLAT3MAP_GEN_MCR_25	VALID	no	
 FLAT3MAP_GEN_ROR_26	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_27	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_28	VALID	yes	
 FLAT3MAP_GEN_ROR_29	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_30	INVALID	no	error: bad operand types for binary operator '>'
+FLAT3MAP_GEN_COI_31	VALID	no	
+FLAT3MAP_GEN_CTC_32	VALID	no	
+FLAT3MAP_GEN_CTC_33	VALID	yes	
 FLAT3MAP_GEN_ROR_34	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_35	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_36	VALID	yes	
@@ -38,59 +38,59 @@ FLAT3MAP_GEN_ROR_48	VALID	yes
 FLAT3MAP_GEN_ROR_49	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_50	INVALID	no	error: bad operand types for binary operator '>'
 FLAT3MAP_GEN_SDL_51	VALID	yes	
-FLAT3MAP_GEN_COI_57	VALID	yes	
-FLAT3MAP_GEN_CRP_58	VALID	yes	
-FLAT3MAP_GEN_CRP_59	VALID	yes	
-FLAT3MAP_GEN_CTC_60	VALID	yes	
-FLAT3MAP_GEN_CTC_61	VALID	yes	
 FLAT3MAP_GEN_ROR_52	VALID	yes	
 FLAT3MAP_GEN_ROR_53	VALID	yes	
 FLAT3MAP_GEN_ROR_54	VALID	yes	
 FLAT3MAP_GEN_ROR_55	VALID	yes	
 FLAT3MAP_GEN_ROR_56	VALID	yes	
-FLAT3MAP_GEN_ARP_69	INVALID	no	error: bad operand types for binary operator '+'
-FLAT3MAP_GEN_ARP_70	INVALID	no	error: bad operand types for binary operator '-'
-FLAT3MAP_GEN_COR_67	VALID	yes	
+FLAT3MAP_GEN_COI_57	VALID	yes	
+FLAT3MAP_GEN_CRP_58	VALID	yes	
+FLAT3MAP_GEN_CRP_59	VALID	yes	
+FLAT3MAP_GEN_CTC_60	VALID	yes	
+FLAT3MAP_GEN_CTC_61	VALID	yes	
 FLAT3MAP_GEN_ROR_62	VALID	yes	
 FLAT3MAP_GEN_ROR_63	VALID	yes	
 FLAT3MAP_GEN_ROR_64	VALID	yes	
 FLAT3MAP_GEN_ROR_65	VALID	yes	
 FLAT3MAP_GEN_ROR_66	VALID	yes	
+FLAT3MAP_GEN_COR_67	VALID	yes	
 FLAT3MAP_GEN_SDL_68	VALID	yes	
-FLAT3MAP_GEN_ARP_78	INVALID	no	error: bad operand types for binary operator '+'
-FLAT3MAP_GEN_ARP_79	INVALID	no	error: bad operand types for binary operator '-'
-FLAT3MAP_GEN_COR_76	VALID	yes	
+FLAT3MAP_GEN_ARP_69	INVALID	no	error: bad operand types for binary operator '+'
+FLAT3MAP_GEN_ARP_70	INVALID	no	error: bad operand types for binary operator '-'
 FLAT3MAP_GEN_ROR_71	VALID	yes	
 FLAT3MAP_GEN_ROR_72	VALID	yes	
 FLAT3MAP_GEN_ROR_73	VALID	yes	
 FLAT3MAP_GEN_ROR_74	VALID	yes	
 FLAT3MAP_GEN_ROR_75	VALID	yes	
+FLAT3MAP_GEN_COR_76	VALID	yes	
 FLAT3MAP_GEN_SDL_77	VALID	yes	
-FLAT3MAP_GEN_ARP_87	INVALID	no	error: bad operand types for binary operator '+'
-FLAT3MAP_GEN_ARP_88	INVALID	no	error: bad operand types for binary operator '-'
-FLAT3MAP_GEN_COR_85	VALID	yes	
+FLAT3MAP_GEN_ARP_78	INVALID	no	error: bad operand types for binary operator '+'
+FLAT3MAP_GEN_ARP_79	INVALID	no	error: bad operand types for binary operator '-'
 FLAT3MAP_GEN_ROR_80	VALID	yes	
 FLAT3MAP_GEN_ROR_81	VALID	yes	
 FLAT3MAP_GEN_ROR_82	VALID	yes	
 FLAT3MAP_GEN_ROR_83	VALID	yes	
 FLAT3MAP_GEN_ROR_84	VALID	yes	
+FLAT3MAP_GEN_COR_85	VALID	yes	
 FLAT3MAP_GEN_SDL_86	VALID	yes	
+FLAT3MAP_GEN_ARP_87	INVALID	no	error: bad operand types for binary operator '+'
+FLAT3MAP_GEN_ARP_88	INVALID	no	error: bad operand types for binary operator '-'
+FLAT3MAP_GEN_UOI_89	VALID	yes	
 FLAT3MAP_GEN_ABS_90	VALID	yes	
-FLAT3MAP_GEN_MCR_94	VALID	yes	
 FLAT3MAP_GEN_RVR_91	VALID	yes	
 FLAT3MAP_GEN_RVR_92	VALID	yes	
 FLAT3MAP_GEN_RVR_93	VALID	no	
-FLAT3MAP_GEN_UOI_89	VALID	yes	
+FLAT3MAP_GEN_MCR_94	VALID	yes	
+FLAT3MAP_GEN_UOI_95	VALID	yes	
 FLAT3MAP_GEN_ABS_96	VALID	yes	
 FLAT3MAP_GEN_RVR_97	VALID	yes	
-FLAT3MAP_GEN_RVR_98	VALID	yes	
-FLAT3MAP_GEN_RVR_99	VALID	no	
-FLAT3MAP_GEN_UOI_95	VALID	yes	
+FLAT3MAP_GEN_RVR_98	VALID	no	
+FLAT3MAP_GEN_RVR_99	VALID	yes	
+FLAT3MAP_GEN_RVR_109	VALID	yes	
+FLAT3MAP_GEN_RVR_110	VALID	yes	
 FLAT3MAP_GEN_ARP_111	INVALID	no	error: bad operand types for binary operator '+'
 FLAT3MAP_GEN_ARP_112	INVALID	no	error: bad operand types for binary operator '-'
 FLAT3MAP_GEN_MCR_113	VALID	yes	
-FLAT3MAP_GEN_RVR_109	VALID	yes	
-FLAT3MAP_GEN_RVR_110	VALID	yes	
 FLAT3MAP_GEN_ROR_114	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_115	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_116	VALID	yes	
@@ -109,126 +109,126 @@ FLAT3MAP_GEN_ROR_128	VALID	yes
 FLAT3MAP_GEN_ROR_129	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_130	INVALID	no	error: bad operand types for binary operator '>'
 FLAT3MAP_GEN_SDL_131	VALID	yes	
-FLAT3MAP_GEN_ARP_139	INVALID	no	error: bad operand types for binary operator '+'
-FLAT3MAP_GEN_ARP_140	INVALID	no	error: bad operand types for binary operator '-'
-FLAT3MAP_GEN_COR_137	VALID	yes	
 FLAT3MAP_GEN_ROR_132	VALID	yes	
 FLAT3MAP_GEN_ROR_133	VALID	yes	
 FLAT3MAP_GEN_ROR_134	VALID	yes	
 FLAT3MAP_GEN_ROR_135	VALID	yes	
 FLAT3MAP_GEN_ROR_136	VALID	yes	
+FLAT3MAP_GEN_COR_137	VALID	yes	
 FLAT3MAP_GEN_SDL_138	VALID	yes	
-FLAT3MAP_GEN_ARP_148	INVALID	no	error: bad operand types for binary operator '+'
-FLAT3MAP_GEN_ARP_149	INVALID	no	error: bad operand types for binary operator '-'
-FLAT3MAP_GEN_COR_146	VALID	yes	
+FLAT3MAP_GEN_ARP_139	INVALID	no	error: bad operand types for binary operator '+'
+FLAT3MAP_GEN_ARP_140	INVALID	no	error: bad operand types for binary operator '-'
 FLAT3MAP_GEN_ROR_141	VALID	yes	
 FLAT3MAP_GEN_ROR_142	VALID	yes	
 FLAT3MAP_GEN_ROR_143	VALID	yes	
 FLAT3MAP_GEN_ROR_144	VALID	yes	
 FLAT3MAP_GEN_ROR_145	VALID	yes	
+FLAT3MAP_GEN_COR_146	VALID	yes	
 FLAT3MAP_GEN_SDL_147	VALID	yes	
-FLAT3MAP_GEN_ARP_157	INVALID	no	error: bad operand types for binary operator '+'
-FLAT3MAP_GEN_ARP_158	INVALID	no	error: bad operand types for binary operator '-'
-FLAT3MAP_GEN_COR_155	VALID	yes	
+FLAT3MAP_GEN_ARP_148	INVALID	no	error: bad operand types for binary operator '+'
+FLAT3MAP_GEN_ARP_149	INVALID	no	error: bad operand types for binary operator '-'
 FLAT3MAP_GEN_ROR_150	VALID	yes	
 FLAT3MAP_GEN_ROR_151	VALID	yes	
 FLAT3MAP_GEN_ROR_152	VALID	yes	
 FLAT3MAP_GEN_ROR_153	VALID	yes	
 FLAT3MAP_GEN_ROR_154	VALID	yes	
+FLAT3MAP_GEN_COR_155	VALID	yes	
 FLAT3MAP_GEN_SDL_156	VALID	yes	
+FLAT3MAP_GEN_ARP_157	INVALID	no	error: bad operand types for binary operator '+'
+FLAT3MAP_GEN_ARP_158	INVALID	no	error: bad operand types for binary operator '-'
 FLAT3MAP_GEN_RVR_159	VALID	yes	
+FLAT3MAP_GEN_RVR_196	VALID	yes	
 FLAT3MAP_GEN_ARP_197	VALID	yes	
 FLAT3MAP_GEN_MCR_198	VALID	yes	
-FLAT3MAP_GEN_RVR_196	VALID	yes	
-FLAT3MAP_GEN_COI_204	VALID	yes	
-FLAT3MAP_GEN_CTC_205	VALID	yes	
-FLAT3MAP_GEN_CTC_206	VALID	yes	
 FLAT3MAP_GEN_ROR_199	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_200	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_201	VALID	yes	
 FLAT3MAP_GEN_ROR_202	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_203	INVALID	no	error: bad operand types for binary operator '>'
-FLAT3MAP_GEN_COI_212	VALID	yes	
-FLAT3MAP_GEN_CTC_213	VALID	yes	
-FLAT3MAP_GEN_CTC_214	VALID	yes	
+FLAT3MAP_GEN_COI_204	VALID	yes	
+FLAT3MAP_GEN_CTC_205	VALID	yes	
+FLAT3MAP_GEN_CTC_206	VALID	yes	
 FLAT3MAP_GEN_ROR_207	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_208	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_209	VALID	yes	
 FLAT3MAP_GEN_ROR_210	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_211	INVALID	no	error: bad operand types for binary operator '>'
-FLAT3MAP_GEN_COI_220	VALID	yes	
-FLAT3MAP_GEN_CTC_221	VALID	yes	
-FLAT3MAP_GEN_CTC_222	VALID	yes	
+FLAT3MAP_GEN_COI_212	VALID	yes	
+FLAT3MAP_GEN_CTC_213	VALID	yes	
+FLAT3MAP_GEN_CTC_214	VALID	yes	
 FLAT3MAP_GEN_ROR_215	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_216	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_217	VALID	yes	
 FLAT3MAP_GEN_ROR_218	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_219	INVALID	no	error: bad operand types for binary operator '>'
-FLAT3MAP_GEN_ARP_232	INVALID	no	error: bad operand types for binary operator '+'
-FLAT3MAP_GEN_ARP_233	INVALID	no	error: bad operand types for binary operator '-'
-FLAT3MAP_GEN_COI_229	VALID	yes	
-FLAT3MAP_GEN_COR_228	VALID	yes	
-FLAT3MAP_GEN_CTC_230	VALID	yes	
-FLAT3MAP_GEN_CTC_231	VALID	yes	
+FLAT3MAP_GEN_COI_220	VALID	yes	
+FLAT3MAP_GEN_CTC_221	VALID	yes	
+FLAT3MAP_GEN_CTC_222	VALID	yes	
 FLAT3MAP_GEN_ROR_223	VALID	yes	
 FLAT3MAP_GEN_ROR_224	VALID	yes	
 FLAT3MAP_GEN_ROR_225	VALID	yes	
 FLAT3MAP_GEN_ROR_226	VALID	yes	
 FLAT3MAP_GEN_ROR_227	VALID	yes	
-FLAT3MAP_GEN_ARP_243	INVALID	no	error: bad operand types for binary operator '+'
-FLAT3MAP_GEN_ARP_244	INVALID	no	error: bad operand types for binary operator '-'
-FLAT3MAP_GEN_COI_240	VALID	no	
-FLAT3MAP_GEN_COR_239	VALID	yes	
-FLAT3MAP_GEN_CTC_241	VALID	yes	
-FLAT3MAP_GEN_CTC_242	VALID	yes	
-FLAT3MAP_GEN_ROR_234	VALID	yes	
+FLAT3MAP_GEN_COR_228	VALID	yes	
+FLAT3MAP_GEN_COI_229	VALID	yes	
+FLAT3MAP_GEN_CTC_230	VALID	yes	
+FLAT3MAP_GEN_CTC_231	VALID	yes	
+FLAT3MAP_GEN_ARP_232	INVALID	no	error: bad operand types for binary operator '+'
+FLAT3MAP_GEN_ARP_233	INVALID	no	error: bad operand types for binary operator '-'
+FLAT3MAP_GEN_ROR_234	VALID	no	
 FLAT3MAP_GEN_ROR_235	VALID	yes	
 FLAT3MAP_GEN_ROR_236	VALID	yes	
 FLAT3MAP_GEN_ROR_237	VALID	yes	
-FLAT3MAP_GEN_ROR_238	VALID	no	
-FLAT3MAP_GEN_ARP_254	INVALID	no	error: bad operand types for binary operator '+'
-FLAT3MAP_GEN_ARP_255	INVALID	no	error: bad operand types for binary operator '-'
-FLAT3MAP_GEN_COI_251	VALID	yes	
-FLAT3MAP_GEN_COR_250	VALID	yes	
-FLAT3MAP_GEN_CTC_252	VALID	yes	
-FLAT3MAP_GEN_CTC_253	VALID	yes	
+FLAT3MAP_GEN_ROR_238	VALID	yes	
+FLAT3MAP_GEN_COR_239	VALID	yes	
+FLAT3MAP_GEN_COI_240	VALID	yes	
+FLAT3MAP_GEN_CTC_241	VALID	yes	
+FLAT3MAP_GEN_CTC_242	VALID	no	
+FLAT3MAP_GEN_ARP_243	INVALID	no	error: bad operand types for binary operator '+'
+FLAT3MAP_GEN_ARP_244	INVALID	no	error: bad operand types for binary operator '-'
 FLAT3MAP_GEN_ROR_245	VALID	yes	
 FLAT3MAP_GEN_ROR_246	VALID	yes	
 FLAT3MAP_GEN_ROR_247	VALID	yes	
 FLAT3MAP_GEN_ROR_248	VALID	yes	
 FLAT3MAP_GEN_ROR_249	VALID	yes	
+FLAT3MAP_GEN_COR_250	VALID	yes	
+FLAT3MAP_GEN_COI_251	VALID	yes	
+FLAT3MAP_GEN_CTC_252	VALID	yes	
+FLAT3MAP_GEN_CTC_253	VALID	yes	
+FLAT3MAP_GEN_ARP_254	INVALID	no	error: bad operand types for binary operator '+'
+FLAT3MAP_GEN_ARP_255	INVALID	no	error: bad operand types for binary operator '-'
 FLAT3MAP_GEN_SDL_256	VALID	yes	
-FLAT3MAP_GEN_ARP_259	VALID	yes	
-FLAT3MAP_GEN_MCR_260	VALID	yes	
 FLAT3MAP_GEN_SDL_257	VALID	yes	
 FLAT3MAP_GEN_STR_258	VALID	yes	
-FLAT3MAP_GEN_CRP_266	VALID	yes	
-FLAT3MAP_GEN_CRP_267	VALID	yes	
+FLAT3MAP_GEN_ARP_259	VALID	yes	
+FLAT3MAP_GEN_MCR_260	VALID	yes	
 FLAT3MAP_GEN_ROR_261	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_262	INVALID	no	error: bad operand types for binary operator '>='
-FLAT3MAP_GEN_ROR_263	VALID	no	
+FLAT3MAP_GEN_ROR_263	VALID	yes	
 FLAT3MAP_GEN_ROR_264	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_265	INVALID	no	error: bad operand types for binary operator '>'
+FLAT3MAP_GEN_CRP_266	VALID	yes	
+FLAT3MAP_GEN_CRP_267	VALID	no	
 FLAT3MAP_GEN_SDL_268	VALID	yes	
 FLAT3MAP_GEN_SDL_269	VALID	yes	
-FLAT3MAP_GEN_CRP_275	VALID	yes	
-FLAT3MAP_GEN_CRP_276	VALID	yes	
 FLAT3MAP_GEN_ROR_270	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_271	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_272	VALID	yes	
 FLAT3MAP_GEN_ROR_273	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_274	INVALID	no	error: bad operand types for binary operator '>'
+FLAT3MAP_GEN_CRP_275	VALID	yes	
+FLAT3MAP_GEN_CRP_276	VALID	yes	
 FLAT3MAP_GEN_SDL_277	VALID	yes	
 FLAT3MAP_GEN_SDL_278	VALID	yes	
 FLAT3MAP_GEN_CRP_279	INVALID	no	error: duplicate case label
 FLAT3MAP_GEN_CRP_280	VALID	yes	
-FLAT3MAP_GEN_CRP_286	VALID	yes	
-FLAT3MAP_GEN_CRP_287	VALID	yes	
 FLAT3MAP_GEN_ROR_281	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_282	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_283	VALID	yes	
 FLAT3MAP_GEN_ROR_284	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_285	INVALID	no	error: bad operand types for binary operator '>'
+FLAT3MAP_GEN_CRP_286	VALID	yes	
+FLAT3MAP_GEN_CRP_287	VALID	yes	
 FLAT3MAP_GEN_SDL_288	VALID	yes	
 FLAT3MAP_GEN_SDL_289	VALID	yes	
 FLAT3MAP_GEN_SDL_290	VALID	yes	
@@ -238,104 +238,104 @@ FLAT3MAP_GEN_CRP_318	INVALID	no	error: duplicate case label
 FLAT3MAP_GEN_CRP_319	VALID	yes	
 FLAT3MAP_GEN_CRP_320	VALID	yes	
 FLAT3MAP_GEN_CRP_321	INVALID	no	error: duplicate case label
-FLAT3MAP_GEN_ARP_324	VALID	yes	
-FLAT3MAP_GEN_MCR_325	VALID	yes	
 FLAT3MAP_GEN_SDL_322	VALID	yes	
 FLAT3MAP_GEN_STR_323	VALID	yes	
+FLAT3MAP_GEN_ARP_324	VALID	yes	
+FLAT3MAP_GEN_MCR_325	VALID	yes	
 FLAT3MAP_GEN_CRP_326	VALID	no	
 FLAT3MAP_GEN_CRP_327	INVALID	no	error: duplicate case label
 FLAT3MAP_GEN_CRP_328	VALID	yes	
 FLAT3MAP_GEN_CRP_329	INVALID	no	error: duplicate case label
-FLAT3MAP_GEN_ARP_332	VALID	yes	
-FLAT3MAP_GEN_MCR_333	VALID	yes	
-FLAT3MAP_GEN_SDL_330	VALID	no	
+FLAT3MAP_GEN_SDL_330	VALID	yes	
 FLAT3MAP_GEN_STR_331	VALID	yes	
+FLAT3MAP_GEN_ARP_332	VALID	no	
+FLAT3MAP_GEN_MCR_333	VALID	yes	
 FLAT3MAP_GEN_CRP_334	VALID	yes	
 FLAT3MAP_GEN_CRP_335	VALID	yes	
 FLAT3MAP_GEN_CRP_336	INVALID	no	error: duplicate case label
-FLAT3MAP_GEN_ARP_339	VALID	yes	
-FLAT3MAP_GEN_MCR_340	VALID	yes	
 FLAT3MAP_GEN_SDL_337	VALID	yes	
 FLAT3MAP_GEN_STR_338	VALID	yes	
-FLAT3MAP_GEN_ABS_344	VALID	yes	
+FLAT3MAP_GEN_ARP_339	VALID	yes	
+FLAT3MAP_GEN_MCR_340	VALID	yes	
 FLAT3MAP_GEN_AOI_341	VALID	yes	
 FLAT3MAP_GEN_AOI_342	VALID	yes	
+FLAT3MAP_GEN_UOI_343	TCE	no	byte-identical class files
+FLAT3MAP_GEN_ABS_344	VALID	yes	
 FLAT3MAP_GEN_CRP_345	VALID	yes	
 FLAT3MAP_GEN_CRP_346	VALID	no	
 FLAT3MAP_GEN_SDL_347	VALID	yes	
-FLAT3MAP_GEN_UOI_343	TCE	no	byte-identical class files
 FLAT3MAP_GEN_CRP_348	VALID	yes	
 FLAT3MAP_GEN_CRP_349	VALID	yes	
 FLAT3MAP_GEN_SDL_350	VALID	yes	
 FLAT3MAP_GEN_SDL_351	VALID	yes	
 FLAT3MAP_GEN_SDL_352	VALID	yes	
 FLAT3MAP_GEN_RVR_353	VALID	no	
+FLAT3MAP_GEN_RVR_354	VALID	yes	
 FLAT3MAP_GEN_ARP_355	INVALID	no	error: bad operand types for binary operator '+'
 FLAT3MAP_GEN_ARP_356	INVALID	no	error: bad operand types for binary operator '-'
 FLAT3MAP_GEN_MCR_357	VALID	yes	
-FLAT3MAP_GEN_RVR_354	VALID	yes	
 FLAT3MAP_GEN_RVR_421	VALID	yes	
 FLAT3MAP_GEN_RVR_422	VALID	yes	
+FLAT3MAP_GEN_UOI_423	VALID	yes	
 FLAT3MAP_GEN_ABS_424	VALID	yes	
-FLAT3MAP_GEN_MCR_428	VALID	yes	
 FLAT3MAP_GEN_RVR_425	VALID	yes	
 FLAT3MAP_GEN_RVR_426	VALID	yes	
 FLAT3MAP_GEN_RVR_427	VALID	yes	
-FLAT3MAP_GEN_UOI_423	VALID	yes	
+FLAT3MAP_GEN_MCR_428	VALID	yes	
 FLAT3MAP_GEN_SDL_429	VALID	yes	
 FLAT3MAP_GEN_STR_430	VALID	yes	
-FLAT3MAP_GEN_COI_436	VALID	yes	
-FLAT3MAP_GEN_CTC_437	VALID	yes	
-FLAT3MAP_GEN_CTC_438	VALID	yes	
 FLAT3MAP_GEN_ROR_431	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_432	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_433	VALID	yes	
 FLAT3MAP_GEN_ROR_434	INVALID	no	error: illegal start of type
 FLAT3MAP_GEN_ROR_435	INVALID	no	error: bad operand types for binary operator '>'
+FLAT3MAP_GEN_COI_436	VALID	yes	
+FLAT3MAP_GEN_CTC_437	VALID	yes	
+FLAT3MAP_GEN_CTC_438	VALID	yes	
 FLAT3MAP_GEN_ARP_439	INVALID	no	error: bad operand types for binary operator '+'
 FLAT3MAP_GEN_ARP_440	INVALID	no	error: bad operand types for binary operator '-'
 FLAT3MAP_GEN_MCR_441	VALID	yes	
+FLAT3MAP_GEN_SDL_442	VALID	yes	
+FLAT3MAP_GEN_STR_443	VALID	yes	
 FLAT3MAP_GEN_ARP_444	INVALID	no	error: bad operand types for binary operator '+'
 FLAT3MAP_GEN_ARP_445	INVALID	no	error: bad operand types for binary operator '-'
 FLAT3MAP_GEN_MCR_446	VALID	yes	
-FLAT3MAP_GEN_SDL_442	VALID	yes	
-FLAT3MAP_GEN_STR_443	VALID	yes	
 FLAT3MAP_GEN_RVR_447	VALID	no	
 FLAT3MAP_GEN_RVR_448	VALID	yes	
-FLAT3MAP_GEN_COI_454	VALID	yes	
-FLAT3MAP_GEN_CTC_455	VALID	yes	
-FLAT3MAP_GEN_CTC_456	VALID	yes	
 FLAT3MAP_GEN_ROR_449	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_450	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_451	VALID	yes	
 FLAT3MAP_GEN_ROR_452	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_453	INVALID	no	error: bad operand types for binary operator '>'
+FLAT3MAP_GEN_COI_454	VALID	yes	
+FLAT3MAP_GEN_CTC_455	VALID	yes	
+FLAT3MAP_GEN_CTC_456	VALID	yes	
 FLAT3MAP_GEN_RVR_457	VALID	yes	
+FLAT3MAP_GEN_ROR_458	VALID	yes	
+FLAT3MAP_GEN_ROR_459	VALID	yes	
+FLAT3MAP_GEN_ROR_460	VALID	yes	
+FLAT3MAP_GEN_ROR_461	VALID	yes	
+FLAT3MAP_GEN_ROR_462	VALID	yes	
 FLAT3MAP_GEN_COI_463	VALID	yes	
 FLAT3MAP_GEN_CRP_464	VALID	yes	
 FLAT3MAP_GEN_CRP_465	VALID	yes	
 FLAT3MAP_GEN_CTC_466	VALID	yes	
 FLAT3MAP_GEN_CTC_467	VALID	yes	
 FLAT3MAP_GEN_MCR_468	VALID	yes	
-FLAT3MAP_GEN_ROR_458	VALID	yes	
-FLAT3MAP_GEN_ROR_459	VALID	yes	
-FLAT3MAP_GEN_ROR_460	VALID	yes	
-FLAT3MAP_GEN_ROR_461	VALID	yes	
-FLAT3MAP_GEN_ROR_462	VALID	yes	
 FLAT3MAP_GEN_RVR_469	VALID	yes	
 FLAT3MAP_GEN_RVR_470	VALID	yes	
 FLAT3MAP_GEN_RVR_471	VALID	no	
-FLAT3MAP_GEN_COR_482	VALID	no	
 FLAT3MAP_GEN_ROR_472	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_473	INVALID	no	error: bad operand types for binary operator '>='
-FLAT3MAP_GEN_ROR_474	VALID	yes	
+FLAT3MAP_GEN_ROR_474	VALID	no	
 FLAT3MAP_GEN_ROR_475	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_476	INVALID	no	error: bad operand types for binary operator '>'
 FLAT3MAP_GEN_ROR_477	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_478	INVALID	no	error: bad operand types for binary operator '>='
-FLAT3MAP_GEN_ROR_479	VALID	no	
+FLAT3MAP_GEN_ROR_479	VALID	yes	
 FLAT3MAP_GEN_ROR_480	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_481	INVALID	no	error: bad operand types for binary operator '>'
+FLAT3MAP_GEN_COR_482	VALID	no	
 FLAT3MAP_GEN_ROR_483	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_484	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_485	VALID	yes	
@@ -347,74 +347,69 @@ FLAT3MAP_GEN_ROR_490	VALID	yes
 FLAT3MAP_GEN_ROR_491	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_492	INVALID	no	error: bad operand types for binary operator '>'
 FLAT3MAP_GEN_SDL_493	INVALID	no	error: illegal start of expression
+FLAT3MAP_GEN_UOI_494	TCE	no	byte-identical class files
 FLAT3MAP_GEN_ABS_495	VALID	yes	
 FLAT3MAP_GEN_CRP_496	VALID	yes	
 FLAT3MAP_GEN_CRP_497	VALID	no	
-FLAT3MAP_GEN_UOI_494	TCE	no	byte-identical class files
-FLAT3MAP_GEN_CRP_503	VALID	yes	
-FLAT3MAP_GEN_CRP_504	VALID	yes	
 FLAT3MAP_GEN_ROR_498	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_499	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_500	VALID	yes	
 FLAT3MAP_GEN_ROR_501	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_502	INVALID	no	error: bad operand types for binary operator '>'
-FLAT3MAP_GEN_CRP_510	VALID	yes	
-FLAT3MAP_GEN_CRP_511	VALID	yes	
+FLAT3MAP_GEN_CRP_503	VALID	yes	
+FLAT3MAP_GEN_CRP_504	VALID	yes	
 FLAT3MAP_GEN_ROR_505	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_506	INVALID	no	error: bad operand types for binary operator '>='
-FLAT3MAP_GEN_ROR_507	VALID	no	
+FLAT3MAP_GEN_ROR_507	VALID	yes	
 FLAT3MAP_GEN_ROR_508	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_509	INVALID	no	error: bad operand types for binary operator '>'
+FLAT3MAP_GEN_CRP_510	VALID	yes	
+FLAT3MAP_GEN_CRP_511	VALID	no	
 FLAT3MAP_GEN_SDL_512	INVALID	no	error: illegal start of expression
-FLAT3MAP_GEN_COI_581	VALID	yes	
-FLAT3MAP_GEN_CTC_582	VALID	yes	
-FLAT3MAP_GEN_CTC_583	VALID	yes	
 FLAT3MAP_GEN_ROR_576	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_577	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_578	VALID	yes	
 FLAT3MAP_GEN_ROR_579	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_580	INVALID	no	error: bad operand types for binary operator '>'
-FLAT3MAP_GEN_ARP_586	INVALID	no	error: bad operand types for binary operator '+'
-FLAT3MAP_GEN_ARP_587	INVALID	no	error: bad operand types for binary operator '-'
+FLAT3MAP_GEN_COI_581	VALID	yes	
+FLAT3MAP_GEN_CTC_582	VALID	yes	
+FLAT3MAP_GEN_CTC_583	VALID	yes	
 FLAT3MAP_GEN_RVR_584	VALID	yes	
 FLAT3MAP_GEN_RVR_585	VALID	yes	
-FLAT3MAP_GEN_COI_593	VALID	yes	
-FLAT3MAP_GEN_CTC_594	VALID	yes	
-FLAT3MAP_GEN_CTC_595	VALID	yes	
+FLAT3MAP_GEN_ARP_586	INVALID	no	error: bad operand types for binary operator '+'
+FLAT3MAP_GEN_ARP_587	INVALID	no	error: bad operand types for binary operator '-'
 FLAT3MAP_GEN_ROR_588	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_589	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_590	VALID	yes	
 FLAT3MAP_GEN_ROR_591	INVALID	no	error: illegal start of type
 FLAT3MAP_GEN_ROR_592	INVALID	no	error: bad operand types for binary operator '>'
-FLAT3MAP_GEN_COI_601	VALID	yes	
-FLAT3MAP_GEN_CTC_602	VALID	yes	
-FLAT3MAP_GEN_CTC_603	VALID	yes	
-FLAT3MAP_GEN_MCR_604	VALID	yes	
+FLAT3MAP_GEN_COI_593	VALID	yes	
+FLAT3MAP_GEN_CTC_594	VALID	yes	
+FLAT3MAP_GEN_CTC_595	VALID	yes	
 FLAT3MAP_GEN_ROR_596	VALID	yes	
 FLAT3MAP_GEN_ROR_597	VALID	yes	
 FLAT3MAP_GEN_ROR_598	VALID	yes	
 FLAT3MAP_GEN_ROR_599	VALID	yes	
 FLAT3MAP_GEN_ROR_600	VALID	yes	
-FLAT3MAP_GEN_ARP_613	INVALID	no	error: bad operand types for binary operator '+'
-FLAT3MAP_GEN_ARP_614	INVALID	no	error: bad operand types for binary operator '-'
-FLAT3MAP_GEN_COI_610	VALID	no	
-FLAT3MAP_GEN_CTC_611	VALID	yes	
-FLAT3MAP_GEN_CTC_612	VALID	yes	
-FLAT3MAP_GEN_MCR_615	VALID	yes	
+FLAT3MAP_GEN_COI_601	VALID	yes	
+FLAT3MAP_GEN_CTC_602	VALID	yes	
+FLAT3MAP_GEN_CTC_603	VALID	yes	
+FLAT3MAP_GEN_MCR_604	VALID	yes	
 FLAT3MAP_GEN_ROR_605	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_606	INVALID	no	error: bad operand types for binary operator '>='
-FLAT3MAP_GEN_ROR_607	VALID	yes	
+FLAT3MAP_GEN_ROR_607	VALID	no	
 FLAT3MAP_GEN_ROR_608	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_609	INVALID	no	error: bad operand types for binary operator '>'
+FLAT3MAP_GEN_COI_610	VALID	yes	
+FLAT3MAP_GEN_CTC_611	VALID	yes	
+FLAT3MAP_GEN_CTC_612	VALID	yes	
+FLAT3MAP_GEN_ARP_613	INVALID	no	error: bad operand types for binary operator '+'
+FLAT3MAP_GEN_ARP_614	INVALID	no	error: bad operand types for binary operator '-'
+FLAT3MAP_GEN_MCR_615	VALID	yes	
+FLAT3MAP_GEN_SDL_616	VALID	yes	
 FLAT3MAP_GEN_ARP_617	INVALID	no	error: bad operand types for binary operator '+'
 FLAT3MAP_GEN_ARP_618	INVALID	no	error: bad operand types for binary operator '-'
 FLAT3MAP_GEN_MCR_619	VALID	yes	
-FLAT3MAP_GEN_SDL_616	VALID	yes	
-FLAT3MAP_GEN_ARP_633	INVALID	no	error: bad operand types for binary operator '+'
-FLAT3MAP_GEN_ARP_634	INVALID	no	error: bad operand types for binary operator '-'
-FLAT3MAP_GEN_COI_630	VALID	yes	
-FLAT3MAP_GEN_CTC_631	VALID	yes	
-FLAT3MAP_GEN_CTC_632	VALID	yes	
 FLAT3MAP_GEN_ROR_620	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_621	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_622	VALID	yes	
@@ -425,26 +420,26 @@ FLAT3MAP_GEN_ROR_626	INVALID	no	error: bad operand types for binary operator '>=
 FLAT3MAP_GEN_ROR_627	VALID	yes	
 FLAT3MAP_GEN_ROR_628	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_629	INVALID	no	error: bad operand types for binary operator '>'
-FLAT3MAP_GEN_ARP_643	INVALID	no	error: bad operand types for binary operator '+'
-FLAT3MAP_GEN_ARP_644	INVALID	no	error: bad operand types for binary operator '-'
-FLAT3MAP_GEN_COI_640	VALID	yes	
-FLAT3MAP_GEN_CTC_641	VALID	yes	
-FLAT3MAP_GEN_CTC_642	VALID	yes	
-FLAT3MAP_GEN_MCR_645	VALID	yes	
+FLAT3MAP_GEN_COI_630	VALID	yes	
+FLAT3MAP_GEN_CTC_631	VALID	yes	
+FLAT3MAP_GEN_CTC_632	VALID	yes	
+FLAT3MAP_GEN_ARP_633	INVALID	no	error: bad operand types for binary operator '+'
+FLAT3MAP_GEN_ARP_634	INVALID	no	error: bad operand types for binary operator '-'
 FLAT3MAP_GEN_ROR_635	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_636	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_637	VALID	yes	
 FLAT3MAP_GEN_ROR_638	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_639	INVALID	no	error: bad operand types for binary operator '>'
+FLAT3MAP_GEN_COI_640	VALID	yes	
+FLAT3MAP_GEN_CTC_641	VALID	yes	
+FLAT3MAP_GEN_CTC_642	VALID	yes	
+FLAT3MAP_GEN_ARP_643	INVALID	no	error: bad operand types for binary operator '+'
+FLAT3MAP_GEN_ARP_644	INVALID	no	error: bad operand types for binary operator '-'
+FLAT3MAP_GEN_MCR_645	VALID	yes	
+FLAT3MAP_GEN_SDL_646	VALID	yes	
 FLAT3MAP_GEN_ARP_647	INVALID	no	error: bad operand types for binary operator '+'
 FLAT3MAP_GEN_ARP_648	INVALID	no	error: bad operand types for binary operator '-'
 FLAT3MAP_GEN_MCR_649	VALID	yes	
-FLAT3MAP_GEN_SDL_646	VALID	yes	
-FLAT3MAP_GEN_ARP_663	INVALID	no	error: bad operand types for binary operator '+'
-FLAT3MAP_GEN_ARP_664	INVALID	no	error: bad operand types for binary operator '-'
-FLAT3MAP_GEN_COI_660	VALID	yes	
-FLAT3MAP_GEN_CTC_661	VALID	yes	
-FLAT3MAP_GEN_CTC_662	VALID	yes	
 FLAT3MAP_GEN_ROR_650	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_651	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_652	VALID	yes	
@@ -455,26 +450,26 @@ FLAT3MAP_GEN_ROR_656	INVALID	no	error: bad operand types for binary operator '>=
 FLAT3MAP_GEN_ROR_657	VALID	yes	
 FLAT3MAP_GEN_ROR_658	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_659	INVALID	no	error: bad operand types for binary operator '>'
-FLAT3MAP_GEN_ARP_673	INVALID	no	error: bad operand types for binary operator '+'
-FLAT3MAP_GEN_ARP_674	INVALID	no	error: bad operand types for binary operator '-'
-FLAT3MAP_GEN_COI_670	VALID	yes	
-FLAT3MAP_GEN_CTC_671	VALID	yes	
-FLAT3MAP_GEN_CTC_672	VALID	yes	
-FLAT3MAP_GEN_MCR_675	VALID	yes	
+FLAT3MAP_GEN_COI_660	VALID	yes	
+FLAT3MAP_GEN_CTC_661	VALID	yes	
+FLAT3MAP_GEN_CTC_662	VALID	yes	
+FLAT3MAP_GEN_ARP_663	INVALID	no	error: bad operand types for binary operator '+'
+FLAT3MAP_GEN_ARP_664	INVALID	no	error: bad operand types for binary operator '-'
 FLAT3MAP_GEN_ROR_665	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_666	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_667	VALID	yes	
 FLAT3MAP_GEN_ROR_668	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_669	INVALID	no	error: bad operand types for binary operator '>'
+FLAT3MAP_GEN_COI_670	VALID	yes	
+FLAT3MAP_GEN_CTC_671	VALID	yes	
+FLAT3MAP_GEN_CTC_672	VALID	yes	
+FLAT3MAP_GEN_ARP_673	INVALID	no	error: bad operand types for binary operator '+'
+FLAT3MAP_GEN_ARP_674	INVALID	no	error: bad operand types for binary operator '-'
+FLAT3MAP_GEN_MCR_675	VALID	yes	
+FLAT3MAP_GEN_SDL_676	VALID	yes	
 FLAT3MAP_GEN_ARP_677	INVALID	no	error: bad operand types for binary operator '+'
 FLAT3MAP_GEN_ARP_678	INVALID	no	error: bad operand types for binary operator '-'
 FLAT3MAP_GEN_MCR_679	VALID	yes	
-FLAT3MAP_GEN_SDL_676	VALID	yes	
-FLAT3MAP_GEN_ARP_693	INVALID	no	error: bad operand types for binary operator '+'
-FLAT3MAP_GEN_ARP_694	INVALID	no	error: bad operand types for binary operator '-'
-FLAT3MAP_GEN_COI_690	VALID	yes	
-FLAT3MAP_GEN_CTC_691	VALID	yes	
-FLAT3MAP_GEN_CTC_692	VALID	yes	
 FLAT3MAP_GEN_ROR_680	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_681	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_682	VALID	yes	
@@ -485,39 +480,44 @@ FLAT3MAP_GEN_ROR_686	INVALID	no	error: bad operand types for binary operator '>=
 FLAT3MAP_GEN_ROR_687	VALID	yes	
 FLAT3MAP_GEN_ROR_688	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_689	INVALID	no	error: bad operand types for binary operator '>'
+FLAT3MAP_GEN_COI_690	VALID	yes	
+FLAT3MAP_GEN_CTC_691	VALID	yes	
+FLAT3MAP_GEN_CTC_692	VALID	yes	
+FLAT3MAP_GEN_ARP_693	INVALID	no	error: bad operand types for binary operator '+'
+FLAT3MAP_GEN_ARP_694	INVALID	no	error: bad operand types for binary operator '-'
+FLAT3MAP_GEN_UOI_695	VALID	yes	
 FLAT3MAP_GEN_ABS_696	VALID	yes	
 FLAT3MAP_GEN_RVR_697	VALID	yes	
 FLAT3MAP_GEN_RVR_698	VALID	yes	
 FLAT3MAP_GEN_RVR_699	VALID	yes	
-FLAT3MAP_GEN_UOI_695	VALID	yes	
 FLAT3MAP_GEN_CRP_700	VALID	yes	
 FLAT3MAP_GEN_CRP_701	VALID	yes	
-FLAT3MAP_GEN_CRP_707	VALID	yes	
-FLAT3MAP_GEN_CRP_708	VALID	yes	
 FLAT3MAP_GEN_ROR_702	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_703	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_704	VALID	yes	
 FLAT3MAP_GEN_ROR_705	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_706	INVALID	no	error: bad operand types for binary operator '>'
+FLAT3MAP_GEN_CRP_707	VALID	yes	
+FLAT3MAP_GEN_CRP_708	VALID	yes	
 FLAT3MAP_GEN_SDL_709	VALID	yes	
-FLAT3MAP_GEN_CRP_715	VALID	yes	
-FLAT3MAP_GEN_CRP_716	VALID	yes	
 FLAT3MAP_GEN_ROR_710	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_711	INVALID	no	error: bad operand types for binary operator '>='
 FLAT3MAP_GEN_ROR_712	VALID	yes	
 FLAT3MAP_GEN_ROR_713	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_714	INVALID	no	error: bad operand types for binary operator '>'
+FLAT3MAP_GEN_CRP_715	VALID	yes	
+FLAT3MAP_GEN_CRP_716	VALID	yes	
 FLAT3MAP_GEN_SDL_717	VALID	yes	
-FLAT3MAP_GEN_CRP_723	VALID	yes	
-FLAT3MAP_GEN_CRP_724	VALID	yes	
 FLAT3MAP_GEN_ROR_718	INVALID	no	error: bad operand types for binary operator '<='
 FLAT3MAP_GEN_ROR_719	INVALID	no	error: bad operand types for binary operator '>='
-FLAT3MAP_GEN_ROR_720	VALID	no	
+FLAT3MAP_GEN_ROR_720	VALID	yes	
 FLAT3MAP_GEN_ROR_721	INVALID	no	error: bad operand types for binary operator '<'
 FLAT3MAP_GEN_ROR_722	INVALID	no	error: bad operand types for binary operator '>'
+FLAT3MAP_GEN_CRP_723	VALID	yes	
+FLAT3MAP_GEN_CRP_724	VALID	no	
 FLAT3MAP_GEN_SDL_725	VALID	yes	
+FLAT3MAP_GEN_UOI_726	VALID	yes	
 FLAT3MAP_GEN_ABS_727	VALID	yes	
 FLAT3MAP_GEN_RVR_728	VALID	yes	
 FLAT3MAP_GEN_RVR_729	VALID	yes	
 FLAT3MAP_GEN_RVR_730	VALID	yes	
-FLAT3MAP_GEN_UOI_726	VALID	yes	

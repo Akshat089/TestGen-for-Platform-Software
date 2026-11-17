@@ -1,0 +1,464 @@
+tool	class	mutant	reason
+TestGen, long string only	flat3map	FLAT3MAP_GEN_ARP_339	regression-only check
+TestGen, long string only	flat3map	FLAT3MAP_GEN_MCR_113	regression-only check
+TestGen, long string only	flat3map	FLAT3MAP_GEN_ROR_143	regression-only check
+TestGen, long string only	flat3map	FLAT3MAP_GEN_ROR_144	regression-only check
+TestGen, long string only	flat3map	FLAT3MAP_GEN_ROR_145	regression-only check
+TestGen, long string only	flat3map	FLAT3MAP_GEN_ROR_152	regression-only check
+TestGen, long string only	flat3map	FLAT3MAP_GEN_ROR_153	regression-only check
+TestGen, long string only	flat3map	FLAT3MAP_GEN_ROR_154	regression-only check
+TestGen, long string only	flat3map	FLAT3MAP_GEN_RVR_109	regression-only check
+TestGen, long string only	flat3map	FLAT3MAP_GEN_RVR_110	regression-only check
+TestGen, long string only	flat3map	FLAT3MAP_GEN_RVR_159	regression-only check
+TestGen, long string only	flat3map	FLAT3MAP_GEN_SDL_147	regression-only check
+TestGen, long string only	flat3map	FLAT3MAP_GEN_SDL_156	regression-only check
+TestGen, + short strings	flat3map	FLAT3MAP_GEN_ARP_339	regression-only check
+TestGen, + short strings	flat3map	FLAT3MAP_GEN_MCR_113	regression-only check
+TestGen, + short strings	flat3map	FLAT3MAP_GEN_ROR_143	regression-only check
+TestGen, + short strings	flat3map	FLAT3MAP_GEN_ROR_144	regression-only check
+TestGen, + short strings	flat3map	FLAT3MAP_GEN_ROR_145	regression-only check
+TestGen, + short strings	flat3map	FLAT3MAP_GEN_ROR_152	regression-only check
+TestGen, + short strings	flat3map	FLAT3MAP_GEN_ROR_153	regression-only check
+TestGen, + short strings	flat3map	FLAT3MAP_GEN_ROR_154	regression-only check
+TestGen, + short strings	flat3map	FLAT3MAP_GEN_RVR_109	regression-only check
+TestGen, + short strings	flat3map	FLAT3MAP_GEN_RVR_110	regression-only check
+TestGen, + short strings	flat3map	FLAT3MAP_GEN_RVR_159	regression-only check
+TestGen, + short strings	flat3map	FLAT3MAP_GEN_SDL_147	regression-only check
+TestGen, + short strings	flat3map	FLAT3MAP_GEN_SDL_156	regression-only check
+Randoop	flat3map	FLAT3MAP_GEN_ABS_424	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_COI_220	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_COI_251	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_COI_436	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_COI_454	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_COI_463	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_COI_581	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_COI_593	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_COI_601	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_CRP_280	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_CRP_464	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_CTC_221	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_CTC_252	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_CTC_438	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_CTC_455	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_CTC_466	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_CTC_582	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_CTC_594	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_CTC_595	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_CTC_602	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_CTC_603	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_MCR_428	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_ROR_217	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_ROR_272	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_ROR_433	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_ROR_451	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_ROR_459	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_ROR_460	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_ROR_462	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_ROR_578	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_ROR_590	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_ROR_596	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_ROR_597	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_ROR_598	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_ROR_599	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_ROR_600	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_RVR_159	regression-only check
+Randoop	flat3map	FLAT3MAP_GEN_RVR_422	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_RVR_425	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_RVR_426	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_RVR_427	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_RVR_469	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_RVR_470	no adapter call
+Randoop	flat3map	FLAT3MAP_GEN_UOI_423	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ABS_424	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ABS_90	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ABS_96	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_AOI_341	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_AOI_342	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ARP_197	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ARP_259	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ARP_324	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ARP_339	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_19	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_204	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_212	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_220	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_229	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_251	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_436	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_454	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_463	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_57	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_581	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_593	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_601	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_630	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_640	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_660	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_670	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_690	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COR_137	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COR_146	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COR_155	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COR_228	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COR_239	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COR_250	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COR_67	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COR_76	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COR_85	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CRP_280	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CRP_317	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CRP_319	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CRP_320	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CRP_328	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CRP_334	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CRP_345	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CRP_464	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CRP_58	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_20	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_205	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_21	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_213	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_214	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_221	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_222	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_230	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_241	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_252	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_253	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_437	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_438	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_455	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_466	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_582	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_583	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_594	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_595	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_602	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_603	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_61	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_611	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_631	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_632	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_641	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_661	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_671	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_672	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_691	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_692	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_113	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_357	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_428	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_441	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_446	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_468	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_604	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_615	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_619	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_645	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_649	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_675	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_679	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_94	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_116	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_122	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_128	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_134	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_135	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_136	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_141	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_143	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_144	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_145	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_150	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_152	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_153	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_154	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_16	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_201	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_209	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_217	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_236	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_237	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_245	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_247	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_248	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_249	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_272	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_28	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_283	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_36	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_42	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_433	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_451	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_459	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_460	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_462	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_48	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_485	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_490	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_52	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_54	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_56	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_578	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_590	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_596	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_597	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_598	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_599	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_600	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_622	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_627	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_637	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_64	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_65	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_652	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_657	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_66	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_667	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_682	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_687	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_71	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_73	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_74	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_75	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_80	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_82	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_83	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_84	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_110	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_159	regression-only check
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_196	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_354	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_421	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_422	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_425	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_426	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_427	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_448	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_457	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_469	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_470	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_584	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_585	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_91	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_92	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_97	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_119	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_125	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_131	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_138	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_147	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_156	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_256	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_257	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_268	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_269	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_277	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_278	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_288	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_289	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_290	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_316	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_322	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_337	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_347	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_39	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_429	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_442	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_45	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_51	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_616	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_646	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_676	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_68	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_77	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_86	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_UOI_423	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_UOI_89	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_UOI_95	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ABS_424	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ABS_90	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_AOI_341	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_AOI_342	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ARP_197	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ARP_259	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ARP_324	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ARP_339	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COI_204	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COI_212	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COI_220	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COI_229	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COI_251	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COI_436	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COI_454	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COI_463	invalid call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COI_581	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COI_593	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COI_601	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COI_630	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COI_640	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COI_660	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COI_670	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COI_690	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COR_137	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COR_146	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COR_155	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COR_228	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COR_239	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COR_250	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COR_67	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COR_76	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_COR_85	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CRP_280	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CRP_317	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CRP_319	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CRP_320	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CRP_328	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CRP_334	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CRP_345	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CRP_464	invalid call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_205	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_21	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_213	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_214	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_221	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_222	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_230	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_241	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_252	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_253	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_437	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_438	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_455	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_466	invalid call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_582	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_583	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_594	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_595	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_602	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_603	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_611	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_631	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_632	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_641	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_661	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_671	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_672	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_691	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_CTC_692	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_113	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_357	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_428	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_441	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_446	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_468	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_604	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_615	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_619	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_645	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_649	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_675	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_679	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_94	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_116	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_122	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_128	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_134	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_135	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_136	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_141	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_143	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_144	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_145	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_150	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_152	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_153	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_154	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_201	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_209	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_217	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_236	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_237	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_245	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_247	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_248	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_249	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_272	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_36	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_42	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_433	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_451	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_459	invalid call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_460	invalid call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_462	invalid call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_48	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_485	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_490	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_578	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_590	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_596	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_597	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_598	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_599	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_600	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_622	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_627	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_637	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_64	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_65	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_652	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_657	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_66	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_667	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_682	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_687	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_71	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_73	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_74	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_75	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_80	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_110	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_159	invalid call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_196	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_354	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_421	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_422	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_425	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_426	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_427	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_448	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_457	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_469	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_470	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_584	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_585	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_91	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_92	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_119	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_125	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_131	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_138	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_147	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_156	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_256	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_257	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_268	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_269	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_277	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_278	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_316	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_322	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_337	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_347	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_39	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_429	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_442	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_45	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_51	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_616	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_646	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_676	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_68	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_77	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_UOI_423	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_UOI_89	no adapter call

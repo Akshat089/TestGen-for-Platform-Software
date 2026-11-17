@@ -5999,3 +5999,25 @@ FLAT3MAP_GEN_AOI_342	evosuite-s4	evosuite	KILLED	EXCEPTION	1648	30	org.apache.co
 FLAT3MAP_GEN_AOI_342	evosuite-s6	evosuite	KILLED	EXCEPTION	1578	30	org.apache.commons.collections.map.Flat3Map_ESTest: java.lang.AssertionError
 FLAT3MAP_GEN_AOI_342	evosuite-s7	evosuite	KILLED	EXCEPTION	1468	30	org.apache.commons.collections.map.Flat3Map_ESTest: expected:<0> but was:<-1>
 FLAT3MAP_GEN_AOI_342	evosuite-s9	evosuite	KILLED	EXCEPTION	1460	30	org.apache.commons.collections.map.Flat3Map_ESTest: java.lang.AssertionError
+FLAT3MAP_GEN_CTC_33	testgen-all	testgen-all	SURVIVED		627	30	
+FLAT3MAP_GEN_CTC_33	testgen-long	testgen-long	SURVIVED		703	30	
+FLAT3MAP_GEN_ROR_238	testgen-all	testgen-all	SURVIVED		759	30	
+FLAT3MAP_GEN_ROR_238	testgen-long	testgen-long	SURVIVED		845	30	
+FLAT3MAP_GEN_ROR_720	testgen-long	testgen-long	SURVIVED		845	30	
+FLAT3MAP_GEN_RVR_22	testgen-long	testgen-long	KILLED	POST	855	30	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest: POST put: M.get(key) == value
+FLAT3MAP_GEN_ROR_720	testgen-all	testgen-all	SURVIVED		856	30	
+FLAT3MAP_GEN_COI_240	testgen-long	testgen-long	KILLED	POST	868	30	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest: POST put: oldVal == null
+FLAT3MAP_GEN_COI_240	testgen-all	testgen-all	KILLED	POST	905	30	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest: POST put: oldVal == null
+FLAT3MAP_GEN_RVR_22	testgen-all	testgen-all	KILLED	POST	931	30	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest: POST put: M.get(key) == value
+FLAT3MAP_GEN_COI_610	testgen-long	testgen-long	SURVIVED		933	30	
+FLAT3MAP_GEN_COI_610	testgen-all	testgen-all	SURVIVED		964	30	
+FLAT3MAP_GEN_RVR_99	testgen-all	testgen-all	KILLED	POST	548	30	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest: POST put: size == \old(size) + 1
+FLAT3MAP_GEN_RVR_99	testgen-long	testgen-long	KILLED	POST	604	30	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest: POST put: size == \old(size) + 1
+FLAT3MAP_GEN_ROR_507	testgen-long	testgen-long	SURVIVED		548	30	
+FLAT3MAP_GEN_ROR_263	testgen-long	testgen-long	KILLED	POST	495	30	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest: POST put: M.get(key) == value
+FLAT3MAP_GEN_ROR_507	testgen-all	testgen-all	SURVIVED		519	30	
+FLAT3MAP_GEN_SDL_330	testgen-long	testgen-long	KILLED	POST	508	30	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest: POST put: size == \old(size) + 1
+FLAT3MAP_GEN_ROR_479	testgen-long	testgen-long	SURVIVED		479	30	
+FLAT3MAP_GEN_ROR_479	testgen-all	testgen-all	SURVIVED		455	30	
+FLAT3MAP_GEN_ROR_263	testgen-all	testgen-all	KILLED	POST	589	30	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest: POST put: M.get(key) == value
+FLAT3MAP_GEN_SDL_330	testgen-all	testgen-all	KILLED	POST	579	30	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest: POST put: size == \old(size) + 1
