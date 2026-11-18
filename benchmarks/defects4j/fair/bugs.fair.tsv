@@ -1,1 +1,382 @@
 bug	tool	suite	tests	kept	result	test	call	message
+Collections-1	testgen-long	testgen-long	1	0	NO_TESTS			no test left after the baseline check
+Collections-1	testgen-all	testgen-all	3	1	NOT_DETECTED			
+Collections-1	randoop	randoop-s1	35	7	NOT_DETECTED			
+Collections-1	randoop	randoop-s2	35	7	NOT_DETECTED			
+Collections-1	randoop	randoop-s3	35	7	NOT_DETECTED			
+Collections-1	randoop	randoop-s4	35	7	NOT_DETECTED			
+Collections-1	randoop	randoop-s5	35	7	NOT_DETECTED			
+Collections-1	randoop	randoop-s6	35	7	NOT_DETECTED			
+Collections-1	randoop	randoop-s7	35	7	NOT_DETECTED			
+Collections-1	randoop	randoop-s8	35	7	NOT_DETECTED			
+Collections-1	randoop	randoop-s9	35	7	NOT_DETECTED			
+Collections-1	randoop	randoop-s10	35	7	NOT_DETECTED			
+Collections-1	evosuite-default	evosuite-default-s1	16	2	NOT_DETECTED			
+Collections-1	evosuite-default	evosuite-default-s2	13	7	NOT_DETECTED			
+Collections-1	evosuite-default	evosuite-default-s3	15	5	NOT_DETECTED			
+Collections-1	evosuite-default	evosuite-default-s4	14	3	NOT_DETECTED			
+Collections-1	evosuite-default	evosuite-default-s5	13	5	NOT_DETECTED			
+Collections-1	evosuite-default	evosuite-default-s6	15	8	NOT_DETECTED			
+Collections-1	evosuite-default	evosuite-default-s7	13	3	NOT_DETECTED			
+Collections-1	evosuite-default	evosuite-default-s8	14	4	NOT_DETECTED			
+Collections-1	evosuite-default	evosuite-default-s9	14	5	NOT_DETECTED			
+Collections-1	evosuite-default	evosuite-default-s10	14	3	NOT_DETECTED			
+Collections-1	evosuite-blackbox	evosuite-blackbox-s1	11	5	NOT_DETECTED			
+Collections-1	evosuite-blackbox	evosuite-blackbox-s2	12	5	NOT_DETECTED			
+Collections-1	evosuite-blackbox	evosuite-blackbox-s3	14	4	NOT_DETECTED			
+Collections-1	evosuite-blackbox	evosuite-blackbox-s4	13	1	NOT_DETECTED			
+Collections-1	evosuite-blackbox	evosuite-blackbox-s5	19	2	NOT_DETECTED			
+Collections-1	evosuite-blackbox	evosuite-blackbox-s6	11	3	NOT_DETECTED			
+Collections-1	evosuite-blackbox	evosuite-blackbox-s7	12	3	NOT_DETECTED			
+Collections-1	evosuite-blackbox	evosuite-blackbox-s8	12	2	NOT_DETECTED			
+Collections-1	evosuite-blackbox	evosuite-blackbox-s9	11	3	NOT_DETECTED			
+Collections-1	evosuite-blackbox	evosuite-blackbox-s10	13	4	NOT_DETECTED			
+Collections-15	testgen-all	testgen-all	4	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setNewElement	4	POST set: L.contains(e)
+Collections-15	randoop	randoop-s1	103	6	NOT_DETECTED			
+Collections-15	randoop	randoop-s2	153	10	NOT_DETECTED			
+Collections-15	randoop	randoop-s3	83	6	NOT_DETECTED			
+Collections-15	randoop	randoop-s4	92	6	NOT_DETECTED			
+Collections-15	randoop	randoop-s5	137	8	NOT_DETECTED			
+Collections-15	randoop	randoop-s6	186	9	NOT_DETECTED			
+Collections-15	randoop	randoop-s7	147	7	NOT_DETECTED			
+Collections-15	randoop	randoop-s8	102	8	NOT_DETECTED			
+Collections-15	randoop	randoop-s9	127	7	NOT_DETECTED			
+Collections-15	randoop	randoop-s10	100	6	NOT_DETECTED			
+Collections-15	evosuite-default	evosuite-default-s1	34	14	NOT_DETECTED			
+Collections-15	evosuite-default	evosuite-default-s2	35	7	NOT_DETECTED			
+Collections-15	evosuite-default	evosuite-default-s3	29	9	NOT_DETECTED			
+Collections-15	evosuite-default	evosuite-default-s4	35	12	NOT_DETECTED			
+Collections-15	evosuite-default	evosuite-default-s5	31	6	NOT_DETECTED			
+Collections-15	evosuite-default	evosuite-default-s6	33	4	NOT_DETECTED			
+Collections-15	evosuite-default	evosuite-default-s7	31	9	NOT_DETECTED			
+Collections-15	evosuite-default	evosuite-default-s8	34	13	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test27	2	POST set: L.contains(e)
+Collections-15	evosuite-default	evosuite-default-s9	33	13	NOT_DETECTED			
+Collections-15	evosuite-default	evosuite-default-s10	31	13	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test21	2	POST set: L.contains(e)
+Collections-15	evosuite-blackbox	evosuite-blackbox-s1	34	14	NOT_DETECTED			
+Collections-15	evosuite-blackbox	evosuite-blackbox-s2	33	11	NOT_DETECTED			
+Collections-15	evosuite-blackbox	evosuite-blackbox-s3	32	11	NOT_DETECTED			
+Collections-15	evosuite-blackbox	evosuite-blackbox-s4	34	11	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test25	2	POST set: L.contains(e)
+Collections-15	evosuite-blackbox	evosuite-blackbox-s5	34	10	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test19	2	POST set: L.contains(e)
+Collections-15	evosuite-blackbox	evosuite-blackbox-s6	34	12	NOT_DETECTED			
+Collections-15	evosuite-blackbox	evosuite-blackbox-s7	35	10	NOT_DETECTED			
+Collections-15	evosuite-blackbox	evosuite-blackbox-s8	34	13	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test26	2	POST set: L.contains(e)
+Collections-15	evosuite-blackbox	evosuite-blackbox-s9	32	11	NOT_DETECTED			
+Collections-15	evosuite-blackbox	evosuite-blackbox-s10	34	15	NOT_DETECTED			
+Collections-16	testgen-all	testgen-all	4	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randoop	randoop-s1	104	6	NOT_DETECTED			
+Collections-16	randoop	randoop-s2	155	10	NOT_DETECTED			
+Collections-16	randoop	randoop-s3	85	6	NOT_DETECTED			
+Collections-16	randoop	randoop-s4	93	6	NOT_DETECTED			
+Collections-16	randoop	randoop-s5	139	8	NOT_DETECTED			
+Collections-16	randoop	randoop-s6	206	9	NOT_DETECTED			
+Collections-16	randoop	randoop-s7	164	7	NOT_DETECTED			
+Collections-16	randoop	randoop-s8	113	8	NOT_DETECTED			
+Collections-16	randoop	randoop-s9	128	7	NOT_DETECTED			
+Collections-16	randoop	randoop-s10	97	6	NOT_DETECTED			
+Collections-16	evosuite-default	evosuite-default-s1	34	14	NOT_DETECTED			
+Collections-16	evosuite-default	evosuite-default-s2	35	7	NOT_DETECTED			
+Collections-16	evosuite-default	evosuite-default-s3	28	9	NOT_DETECTED			
+Collections-16	evosuite-default	evosuite-default-s4	36	12	NOT_DETECTED			
+Collections-16	evosuite-default	evosuite-default-s5	31	9	NOT_DETECTED			
+Collections-16	evosuite-default	evosuite-default-s6	33	4	NOT_DETECTED			
+Collections-16	evosuite-default	evosuite-default-s7	31	8	NOT_DETECTED			
+Collections-16	evosuite-default	evosuite-default-s8	34	13	NOT_DETECTED			
+Collections-16	evosuite-default	evosuite-default-s9	35	12	NOT_DETECTED			
+Collections-16	evosuite-default	evosuite-default-s10	34	13	NOT_DETECTED			
+Collections-16	evosuite-blackbox	evosuite-blackbox-s1	33	13	NOT_DETECTED			
+Collections-16	evosuite-blackbox	evosuite-blackbox-s2	33	11	NOT_DETECTED			
+Collections-16	evosuite-blackbox	evosuite-blackbox-s3	32	10	NOT_DETECTED			
+Collections-16	evosuite-blackbox	evosuite-blackbox-s4	34	8	NOT_DETECTED			
+Collections-16	evosuite-blackbox	evosuite-blackbox-s5	31	14	NOT_DETECTED			
+Collections-16	evosuite-blackbox	evosuite-blackbox-s6	34	5	NOT_DETECTED			
+Collections-16	evosuite-blackbox	evosuite-blackbox-s7	34	10	NOT_DETECTED			
+Collections-16	evosuite-blackbox	evosuite-blackbox-s8	33	14	NOT_DETECTED			
+Collections-16	evosuite-blackbox	evosuite-blackbox-s9	34	11	NOT_DETECTED			
+Collections-16	evosuite-blackbox	evosuite-blackbox-s10	32	13	NOT_DETECTED			
+Collections-19	testgen-long	testgen-long	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	11	POST setExisting: L.contains(e)
+Collections-19	testgen-all	testgen-all	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	11	POST setExisting: L.contains(e)
+Collections-19	randoop	randoop-s1	601	11	NOT_DETECTED			
+Collections-19	randoop	randoop-s2	601	11	NOT_DETECTED			
+Collections-19	randoop	randoop-s3	601	11	NOT_DETECTED			
+Collections-19	randoop	randoop-s4	601	11	NOT_DETECTED			
+Collections-19	randoop	randoop-s5	601	11	NOT_DETECTED			
+Collections-19	randoop	randoop-s6	601	11	NOT_DETECTED			
+Collections-19	randoop	randoop-s7	601	11	NOT_DETECTED			
+Collections-19	randoop	randoop-s8	601	11	NOT_DETECTED			
+Collections-19	randoop	randoop-s9	601	11	NOT_DETECTED			
+Collections-19	randoop	randoop-s10	601	11	NOT_DETECTED			
+Collections-19	evosuite-default	evosuite-default-s1	36	12	NOT_DETECTED			
+Collections-19	evosuite-default	evosuite-default-s2	34	9	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test30	2	POST setExisting: L.contains(e)
+Collections-19	evosuite-default	evosuite-default-s3	33	13	NOT_DETECTED			
+Collections-19	evosuite-default	evosuite-default-s4	31	8	NOT_DETECTED			
+Collections-19	evosuite-default	evosuite-default-s5	35	14	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test32	2	POST setExisting: L.contains(e)
+Collections-19	evosuite-default	evosuite-default-s6	33	11	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test30	2	POST setExisting: L.contains(e)
+Collections-19	evosuite-default	evosuite-default-s7	36	11	NOT_DETECTED			
+Collections-19	evosuite-default	evosuite-default-s8	32	7	NOT_DETECTED			
+Collections-19	evosuite-default	evosuite-default-s9	28	12	NOT_DETECTED			
+Collections-19	evosuite-default	evosuite-default-s10	32	15	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test27	2	POST setExisting: L.contains(e)
+Collections-19	evosuite-blackbox	evosuite-blackbox-s1	30	15	NOT_DETECTED			
+Collections-19	evosuite-blackbox	evosuite-blackbox-s2	32	13	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test25	2	POST setExisting: L.contains(e)
+Collections-19	evosuite-blackbox	evosuite-blackbox-s3	29	11	NOT_DETECTED			
+Collections-19	evosuite-blackbox	evosuite-blackbox-s4	27	8	NOT_DETECTED			
+Collections-19	evosuite-blackbox	evosuite-blackbox-s5	30	15	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test25	2	POST setExisting: L.contains(e)
+Collections-19	evosuite-blackbox	evosuite-blackbox-s6	35	10	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test30	2	POST setExisting: L.contains(e)
+Collections-19	evosuite-blackbox	evosuite-blackbox-s7	33	8	NOT_DETECTED			
+Collections-19	evosuite-blackbox	evosuite-blackbox-s8	33	10	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test26	2	POST setExisting: L.contains(e)
+Collections-19	evosuite-blackbox	evosuite-blackbox-s9	34	8	NOT_DETECTED			
+Collections-19	evosuite-blackbox	evosuite-blackbox-s10	33	15	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test25	2	POST setExisting: L.contains(e)
+Collections-20	testgen-long	testgen-long	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	testgen-all	testgen-all	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randoop	randoop-s1	43	6	NOT_DETECTED			
+Collections-20	randoop	randoop-s2	45	6	NOT_DETECTED			
+Collections-20	randoop	randoop-s3	45	6	NOT_DETECTED			
+Collections-20	randoop	randoop-s4	44	6	NOT_DETECTED			
+Collections-20	randoop	randoop-s5	45	6	NOT_DETECTED			
+Collections-20	randoop	randoop-s6	44	6	NOT_DETECTED			
+Collections-20	randoop	randoop-s7	43	6	NOT_DETECTED			
+Collections-20	randoop	randoop-s8	45	6	NOT_DETECTED			
+Collections-20	randoop	randoop-s9	43	6	NOT_DETECTED			
+Collections-20	randoop	randoop-s10	47	6	NOT_DETECTED			
+Collections-20	evosuite-default	evosuite-default-s1	14	7	NOT_DETECTED			
+Collections-20	evosuite-default	evosuite-default-s2	19	10	NOT_DETECTED			
+Collections-20	evosuite-default	evosuite-default-s3	13	5	NOT_DETECTED			
+Collections-20	evosuite-default	evosuite-default-s4	15	9	NOT_DETECTED			
+Collections-20	evosuite-default	evosuite-default-s5	13	6	NOT_DETECTED			
+Collections-20	evosuite-default	evosuite-default-s6	13	6	NOT_DETECTED			
+Collections-20	evosuite-default	evosuite-default-s7	15	8	NOT_DETECTED			
+Collections-20	evosuite-default	evosuite-default-s8	17	11	NOT_DETECTED			
+Collections-20	evosuite-default	evosuite-default-s9	16	7	NOT_DETECTED			
+Collections-20	evosuite-default	evosuite-default-s10	15	8	NOT_DETECTED			
+Collections-20	evosuite-blackbox	evosuite-blackbox-s1	17	9	NOT_DETECTED			
+Collections-20	evosuite-blackbox	evosuite-blackbox-s2	15	8	NOT_DETECTED			
+Collections-20	evosuite-blackbox	evosuite-blackbox-s3	18	9	NOT_DETECTED			
+Collections-20	evosuite-blackbox	evosuite-blackbox-s4	20	11	NOT_DETECTED			
+Collections-20	evosuite-blackbox	evosuite-blackbox-s5	22	11	NOT_DETECTED			
+Collections-20	evosuite-blackbox	evosuite-blackbox-s6	16	9	NOT_DETECTED			
+Collections-20	evosuite-blackbox	evosuite-blackbox-s7	22	12	NOT_DETECTED			
+Collections-20	evosuite-blackbox	evosuite-blackbox-s8	19	10	NOT_DETECTED			
+Collections-20	evosuite-blackbox	evosuite-blackbox-s9	24	12	NOT_DETECTED			
+Collections-20	evosuite-blackbox	evosuite-blackbox-s10	19	9	NOT_DETECTED			
+Collections-21	testgen-long	testgen-long	1	1	NOT_DETECTED			
+Collections-21	testgen-all	testgen-all	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randoop	randoop-s1	604	11	NOT_DETECTED			
+Collections-21	randoop	randoop-s2	602	11	NOT_DETECTED			
+Collections-21	randoop	randoop-s3	602	11	NOT_DETECTED			
+Collections-21	randoop	randoop-s4	602	11	NOT_DETECTED			
+Collections-21	randoop	randoop-s5	604	11	NOT_DETECTED			
+Collections-21	randoop	randoop-s6	602	11	NOT_DETECTED			
+Collections-21	randoop	randoop-s7	602	11	NOT_DETECTED			
+Collections-21	randoop	randoop-s8	606	11	NOT_DETECTED			
+Collections-21	randoop	randoop-s9	601	11	NOT_DETECTED			
+Collections-21	randoop	randoop-s10	603	11	NOT_DETECTED			
+Collections-21	evosuite-default	evosuite-default-s1	35	11	NOT_DETECTED			
+Collections-21	evosuite-default	evosuite-default-s2	37	11	NOT_DETECTED			
+Collections-21	evosuite-default	evosuite-default-s3	39	7	NOT_DETECTED			
+Collections-21	evosuite-default	evosuite-default-s4	39	9	NOT_DETECTED			
+Collections-21	evosuite-default	evosuite-default-s5	29	9	NOT_DETECTED			
+Collections-21	evosuite-default	evosuite-default-s6	34	10	NOT_DETECTED			
+Collections-21	evosuite-default	evosuite-default-s7	32	14	NOT_DETECTED			
+Collections-21	evosuite-default	evosuite-default-s8	31	8	NOT_DETECTED			
+Collections-21	evosuite-default	evosuite-default-s9	31	11	NOT_DETECTED			
+Collections-21	evosuite-default	evosuite-default-s10	44	12	NOT_DETECTED			
+Collections-21	evosuite-blackbox	evosuite-blackbox-s1	46	8	NOT_DETECTED			
+Collections-21	evosuite-blackbox	evosuite-blackbox-s2	38	17	NOT_DETECTED			
+Collections-21	evosuite-blackbox	evosuite-blackbox-s3	36	7	NOT_DETECTED			
+Collections-21	evosuite-blackbox	evosuite-blackbox-s4	34	14	NOT_DETECTED			
+Collections-21	evosuite-blackbox	evosuite-blackbox-s5	34	15	NOT_DETECTED			
+Collections-21	evosuite-blackbox	evosuite-blackbox-s6	35	14	NOT_DETECTED			
+Collections-21	evosuite-blackbox	evosuite-blackbox-s7	31	14	NOT_DETECTED			
+Collections-21	evosuite-blackbox	evosuite-blackbox-s8	41	14	NOT_DETECTED			
+Collections-21	evosuite-blackbox	evosuite-blackbox-s9	33	12	NOT_DETECTED			
+Collections-21	evosuite-blackbox	evosuite-blackbox-s10	48	13	NOT_DETECTED			
+Collections-22	testgen-long	testgen-long	1	1	NOT_DETECTED			
+Collections-22	testgen-all	testgen-all	2	2	NOT_DETECTED			
+Collections-22	randoop	randoop-s1	735	43	NOT_DETECTED			
+Collections-22	randoop	randoop-s2	699	43	NOT_DETECTED			
+Collections-22	randoop	randoop-s3	699	43	NOT_DETECTED			
+Collections-22	randoop	randoop-s4	699	43	NOT_DETECTED			
+Collections-22	randoop	randoop-s5	699	43	NOT_DETECTED			
+Collections-22	randoop	randoop-s6	699	43	NOT_DETECTED			
+Collections-22	randoop	randoop-s7	699	43	NOT_DETECTED			
+Collections-22	randoop	randoop-s8	699	43	NOT_DETECTED			
+Collections-22	randoop	randoop-s9	699	43	NOT_DETECTED			
+Collections-22	randoop	randoop-s10	735	43	NOT_DETECTED			
+Collections-22	evosuite-default	evosuite-default-s1	18	9	NOT_DETECTED			
+Collections-22	evosuite-default	evosuite-default-s2	27	8	NOT_DETECTED			
+Collections-22	evosuite-default	evosuite-default-s3	20	5	NOT_DETECTED			
+Collections-22	evosuite-default	evosuite-default-s4	18	5	NOT_DETECTED			
+Collections-22	evosuite-default	evosuite-default-s5	17	10	NOT_DETECTED			
+Collections-22	evosuite-default	evosuite-default-s6	18	5	NOT_DETECTED			
+Collections-22	evosuite-default	evosuite-default-s7	18	5	NOT_DETECTED			
+Collections-22	evosuite-default	evosuite-default-s8	20	9	NOT_DETECTED			
+Collections-22	evosuite-default	evosuite-default-s9	18	6	NOT_DETECTED			
+Collections-22	evosuite-default	evosuite-default-s10	19	9	NOT_DETECTED			
+Collections-22	evosuite-blackbox	evosuite-blackbox-s1	19	9	NOT_DETECTED			
+Collections-22	evosuite-blackbox	evosuite-blackbox-s2	29	9	NOT_DETECTED			
+Collections-22	evosuite-blackbox	evosuite-blackbox-s3	20	5	NOT_DETECTED			
+Collections-22	evosuite-blackbox	evosuite-blackbox-s4	15	6	NOT_DETECTED			
+Collections-22	evosuite-blackbox	evosuite-blackbox-s5	20	11	NOT_DETECTED			
+Collections-22	evosuite-blackbox	evosuite-blackbox-s6	18	10	NOT_DETECTED			
+Collections-22	evosuite-blackbox	evosuite-blackbox-s7	19	9	NOT_DETECTED			
+Collections-22	evosuite-blackbox	evosuite-blackbox-s8	18	9	NOT_DETECTED			
+Collections-22	evosuite-blackbox	evosuite-blackbox-s9	18	4	NOT_DETECTED			
+Collections-22	evosuite-blackbox	evosuite-blackbox-s10	20	6	NOT_DETECTED			
+Collections-4	testgen-long	testgen-long	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	testgen-all	testgen-all	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randoop	randoop-s1	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test02	1	POST put: r == value
+Collections-4	randoop	randoop-s2	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test08	1	POST putAllPair: changed == true
+Collections-4	randoop	randoop-s3	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test11	1	POST putAllPair: changed == true
+Collections-4	randoop	randoop-s4	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test03	1	POST put: r == value
+Collections-4	randoop	randoop-s5	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test04	1	POST put: r == value
+Collections-4	randoop	randoop-s6	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test01	1	POST put: r == value
+Collections-4	randoop	randoop-s7	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test04	1	POST put: r == value
+Collections-4	randoop	randoop-s8	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test03	1	POST putAllPair: changed == true
+Collections-4	randoop	randoop-s9	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test04	1	POST putAllPair: changed == true
+Collections-4	randoop	randoop-s10	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test04	1	POST putAllPair: changed == true
+Collections-4	evosuite-default	evosuite-default-s1	11	4	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test08	1	POST put: r == value
+Collections-4	evosuite-default	evosuite-default-s2	11	5	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test09	1	POST put: r == value
+Collections-4	evosuite-default	evosuite-default-s3	15	5	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test07	1	POST put: r == value
+Collections-4	evosuite-default	evosuite-default-s4	15	6	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test07	1	POST putAllPair: changed == true
+Collections-4	evosuite-default	evosuite-default-s5	13	3	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test10	1	POST put: r == value
+Collections-4	evosuite-default	evosuite-default-s6	14	4	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test12	1	POST put: r == value
+Collections-4	evosuite-default	evosuite-default-s7	11	3	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test07	1	POST put: r == value
+Collections-4	evosuite-default	evosuite-default-s8	13	4	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test06	1	POST put: r == value
+Collections-4	evosuite-default	evosuite-default-s9	16	5	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test07	1	POST put: r == value
+Collections-4	evosuite-default	evosuite-default-s10	10	3	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test7	1	POST put: r == value
+Collections-4	evosuite-blackbox	evosuite-blackbox-s1	14	3	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test08	1	POST put: r == value
+Collections-4	evosuite-blackbox	evosuite-blackbox-s2	14	7	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test07	1	POST put: r == value
+Collections-4	evosuite-blackbox	evosuite-blackbox-s3	12	4	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test02	1	POST put: r == value
+Collections-4	evosuite-blackbox	evosuite-blackbox-s4	18	2	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test10	1	POST put: r == value
+Collections-4	evosuite-blackbox	evosuite-blackbox-s5	17	3	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test10	1	POST put: r == value
+Collections-4	evosuite-blackbox	evosuite-blackbox-s6	15	4	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test07	1	POST put: r == value
+Collections-4	evosuite-blackbox	evosuite-blackbox-s7	13	3	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test05	1	POST put: r == value
+Collections-4	evosuite-blackbox	evosuite-blackbox-s8	15	3	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test07	1	POST put: r == value
+Collections-4	evosuite-blackbox	evosuite-blackbox-s9	16	6	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test07	1	POST putAllPair: changed == true
+Collections-4	evosuite-blackbox	evosuite-blackbox-s10	16	6	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test09	1	POST put: r == value
+Collections-5	testgen-all	testgen-all	4	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randoop	randoop-s1	105	6	NOT_DETECTED			
+Collections-5	randoop	randoop-s2	155	10	NOT_DETECTED			
+Collections-5	randoop	randoop-s3	84	6	NOT_DETECTED			
+Collections-5	randoop	randoop-s4	93	6	NOT_DETECTED			
+Collections-5	randoop	randoop-s5	192	12	NOT_DETECTED			
+Collections-5	randoop	randoop-s6	193	9	NOT_DETECTED			
+Collections-5	randoop	randoop-s7	156	7	NOT_DETECTED			
+Collections-5	randoop	randoop-s8	109	8	NOT_DETECTED			
+Collections-5	randoop	randoop-s9	128	7	NOT_DETECTED			
+Collections-5	randoop	randoop-s10	102	7	NOT_DETECTED			
+Collections-5	evosuite-default	evosuite-default-s1	34	14	NOT_DETECTED			
+Collections-5	evosuite-default	evosuite-default-s2	35	8	NOT_DETECTED			
+Collections-5	evosuite-default	evosuite-default-s3	31	8	NOT_DETECTED			
+Collections-5	evosuite-default	evosuite-default-s4	35	13	NOT_DETECTED			
+Collections-5	evosuite-default	evosuite-default-s5	31	7	NOT_DETECTED			
+Collections-5	evosuite-default	evosuite-default-s6	33	5	NOT_DETECTED			
+Collections-5	evosuite-default	evosuite-default-s7	30	10	NOT_DETECTED			
+Collections-5	evosuite-default	evosuite-default-s8	32	13	NOT_DETECTED			
+Collections-5	evosuite-default	evosuite-default-s9	32	11	NOT_DETECTED			
+Collections-5	evosuite-default	evosuite-default-s10	31	11	NOT_DETECTED			
+Collections-5	evosuite-blackbox	evosuite-blackbox-s1	34	13	NOT_DETECTED			
+Collections-5	evosuite-blackbox	evosuite-blackbox-s2	33	12	NOT_DETECTED			
+Collections-5	evosuite-blackbox	evosuite-blackbox-s3	36	15	NOT_DETECTED			
+Collections-5	evosuite-blackbox	evosuite-blackbox-s4	34	9	NOT_DETECTED			
+Collections-5	evosuite-blackbox	evosuite-blackbox-s5	34	10	NOT_DETECTED			
+Collections-5	evosuite-blackbox	evosuite-blackbox-s6	34	5	NOT_DETECTED			
+Collections-5	evosuite-blackbox	evosuite-blackbox-s7	34	12	NOT_DETECTED			
+Collections-5	evosuite-blackbox	evosuite-blackbox-s8	34	14	NOT_DETECTED			
+Collections-5	evosuite-blackbox	evosuite-blackbox-s9	31	12	NOT_DETECTED			
+Collections-5	evosuite-blackbox	evosuite-blackbox-s10	32	13	NOT_DETECTED			
+Collections-6	testgen-long	testgen-long	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	POST remove: removedVal == stored
+Collections-6	testgen-all	testgen-all	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#removeInFlatMode	3	POST remove: removedVal == stored
+Collections-6	randoop	randoop-s1	35	7	NOT_DETECTED			
+Collections-6	randoop	randoop-s2	35	7	NOT_DETECTED			
+Collections-6	randoop	randoop-s3	35	7	NOT_DETECTED			
+Collections-6	randoop	randoop-s4	35	7	NOT_DETECTED			
+Collections-6	randoop	randoop-s5	35	7	NOT_DETECTED			
+Collections-6	randoop	randoop-s6	35	7	NOT_DETECTED			
+Collections-6	randoop	randoop-s7	35	7	NOT_DETECTED			
+Collections-6	randoop	randoop-s8	35	7	NOT_DETECTED			
+Collections-6	randoop	randoop-s9	35	7	NOT_DETECTED			
+Collections-6	randoop	randoop-s10	35	7	NOT_DETECTED			
+Collections-6	evosuite-default	evosuite-default-s1	15	3	NOT_DETECTED			
+Collections-6	evosuite-default	evosuite-default-s2	14	7	NOT_DETECTED			
+Collections-6	evosuite-default	evosuite-default-s3	14	5	NOT_DETECTED			
+Collections-6	evosuite-default	evosuite-default-s4	14	4	NOT_DETECTED			
+Collections-6	evosuite-default	evosuite-default-s5	13	7	NOT_DETECTED			
+Collections-6	evosuite-default	evosuite-default-s6	14	7	NOT_DETECTED			
+Collections-6	evosuite-default	evosuite-default-s7	16	4	NOT_DETECTED			
+Collections-6	evosuite-default	evosuite-default-s8	14	5	NOT_DETECTED			
+Collections-6	evosuite-default	evosuite-default-s9	14	5	NOT_DETECTED			
+Collections-6	evosuite-default	evosuite-default-s10	14	2	NOT_DETECTED			
+Collections-6	evosuite-blackbox	evosuite-blackbox-s1	11	3	NOT_DETECTED			
+Collections-6	evosuite-blackbox	evosuite-blackbox-s2	11	4	NOT_DETECTED			
+Collections-6	evosuite-blackbox	evosuite-blackbox-s3	15	4	NOT_DETECTED			
+Collections-6	evosuite-blackbox	evosuite-blackbox-s4	11	2	NOT_DETECTED			
+Collections-6	evosuite-blackbox	evosuite-blackbox-s5	18	2	NOT_DETECTED			
+Collections-6	evosuite-blackbox	evosuite-blackbox-s6	12	4	NOT_DETECTED			
+Collections-6	evosuite-blackbox	evosuite-blackbox-s7	15	2	NOT_DETECTED			
+Collections-6	evosuite-blackbox	evosuite-blackbox-s8	10	2	NOT_DETECTED			
+Collections-6	evosuite-blackbox	evosuite-blackbox-s9	12	3	NOT_DETECTED			
+Collections-6	evosuite-blackbox	evosuite-blackbox-s10	11	4	NOT_DETECTED			
+Lang-59	testgen-long	testgen-long	1	1	NOT_DETECTED			
+Lang-59	testgen-all	testgen-all	4	4	NOT_DETECTED			
+Lang-59	randoop	randoop-s1	94	55	NOT_DETECTED			
+Lang-59	randoop	randoop-s2	90	52	NOT_DETECTED			
+Lang-59	randoop	randoop-s3	90	52	NOT_DETECTED			
+Lang-59	randoop	randoop-s4	94	55	NOT_DETECTED			
+Lang-59	randoop	randoop-s5	90	52	NOT_DETECTED			
+Lang-59	randoop	randoop-s6	90	52	NOT_DETECTED			
+Lang-59	randoop	randoop-s7	90	52	NOT_DETECTED			
+Lang-59	randoop	randoop-s8	94	55	NOT_DETECTED			
+Lang-59	randoop	randoop-s9	90	52	NOT_DETECTED			
+Lang-59	randoop	randoop-s10	90	52	NOT_DETECTED			
+Lang-59	evosuite-default	evosuite-default-s1	13	4	NOT_DETECTED			
+Lang-59	evosuite-default	evosuite-default-s2	16	7	NOT_DETECTED			
+Lang-59	evosuite-default	evosuite-default-s3	17	7	NOT_DETECTED			
+Lang-59	evosuite-default	evosuite-default-s4	16	6	NOT_DETECTED			
+Lang-59	evosuite-default	evosuite-default-s5	17	6	NOT_DETECTED			
+Lang-59	evosuite-default	evosuite-default-s6	15	6	NOT_DETECTED			
+Lang-59	evosuite-default	evosuite-default-s7	14	7	NOT_DETECTED			
+Lang-59	evosuite-default	evosuite-default-s8	16	9	NOT_DETECTED			
+Lang-59	evosuite-default	evosuite-default-s9	17	5	NOT_DETECTED			
+Lang-59	evosuite-default	evosuite-default-s10	16	6	NOT_DETECTED			
+Lang-59	evosuite-blackbox	evosuite-blackbox-s1	18	6	NOT_DETECTED			
+Lang-59	evosuite-blackbox	evosuite-blackbox-s2	17	4	NOT_DETECTED			
+Lang-59	evosuite-blackbox	evosuite-blackbox-s3	16	5	NOT_DETECTED			
+Lang-59	evosuite-blackbox	evosuite-blackbox-s4	15	7	NOT_DETECTED			
+Lang-59	evosuite-blackbox	evosuite-blackbox-s5	16	5	NOT_DETECTED			
+Lang-59	evosuite-blackbox	evosuite-blackbox-s6	21	5	NOT_DETECTED			
+Lang-59	evosuite-blackbox	evosuite-blackbox-s7	16	6	NOT_DETECTED			
+Lang-59	evosuite-blackbox	evosuite-blackbox-s8	16	9	NOT_DETECTED			
+Lang-59	evosuite-blackbox	evosuite-blackbox-s9	17	6	NOT_DETECTED			
+Lang-59	evosuite-blackbox	evosuite-blackbox-s10	18	5	NOT_DETECTED			
+Lang-61	testgen-long	testgen-long	1	1	NOT_DETECTED			
+Lang-61	testgen-all	testgen-all	4	4	NOT_DETECTED			
+Lang-61	randoop	randoop-s1	94	55	NOT_DETECTED			
+Lang-61	randoop	randoop-s2	90	52	NOT_DETECTED			
+Lang-61	randoop	randoop-s3	90	52	NOT_DETECTED			
+Lang-61	randoop	randoop-s4	94	55	NOT_DETECTED			
+Lang-61	randoop	randoop-s5	90	52	NOT_DETECTED			
+Lang-61	randoop	randoop-s6	90	52	NOT_DETECTED			
+Lang-61	randoop	randoop-s7	90	52	NOT_DETECTED			
+Lang-61	randoop	randoop-s8	94	55	NOT_DETECTED			
+Lang-61	randoop	randoop-s9	90	52	NOT_DETECTED			
+Lang-61	randoop	randoop-s10	90	52	NOT_DETECTED			
+Lang-61	evosuite-default	evosuite-default-s1	17	7	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test16	2	POST indexOf: pos == content.indexOf(s)
+Lang-61	evosuite-default	evosuite-default-s2	18	6	NOT_DETECTED			
+Lang-61	evosuite-default	evosuite-default-s3	15	5	NOT_DETECTED			
+Lang-61	evosuite-default	evosuite-default-s4	17	8	NOT_DETECTED			
+Lang-61	evosuite-default	evosuite-default-s5	19	5	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test18	2	POST indexOf: pos == content.indexOf(s)
+Lang-61	evosuite-default	evosuite-default-s6	18	9	NOT_DETECTED			
+Lang-61	evosuite-default	evosuite-default-s7	15	6	NOT_DETECTED			
+Lang-61	evosuite-default	evosuite-default-s8	15	8	NOT_DETECTED			
+Lang-61	evosuite-default	evosuite-default-s9	17	3	NOT_DETECTED			
+Lang-61	evosuite-default	evosuite-default-s10	16	5	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test08	2	POST contains: present == content.contains(s)
+Lang-61	evosuite-blackbox	evosuite-blackbox-s1	22	5	NOT_DETECTED			
+Lang-61	evosuite-blackbox	evosuite-blackbox-s2	20	8	NOT_DETECTED			
+Lang-61	evosuite-blackbox	evosuite-blackbox-s3	15	8	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test08	3	POST indexOf: pos == content.indexOf(s)
+Lang-61	evosuite-blackbox	evosuite-blackbox-s4	17	3	NOT_DETECTED			
+Lang-61	evosuite-blackbox	evosuite-blackbox-s5	16	6	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test09	2	POST contains: present == content.contains(s)
+Lang-61	evosuite-blackbox	evosuite-blackbox-s6	17	7	NOT_DETECTED			
+Lang-61	evosuite-blackbox	evosuite-blackbox-s7	19	9	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test10	2	POST contains: present == content.contains(s)
+Lang-61	evosuite-blackbox	evosuite-blackbox-s8	18	10	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test12	3	POST indexOf: pos == content.indexOf(s)
+Lang-61	evosuite-blackbox	evosuite-blackbox-s9	15	7	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test11	3	POST indexOf: pos == content.indexOf(s)
+Lang-61	evosuite-blackbox	evosuite-blackbox-s10	14	6	NOT_DETECTED			

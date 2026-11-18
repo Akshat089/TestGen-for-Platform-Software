@@ -1,30 +1,130 @@
 tool	class	mutant	reason
-TestGen, long string only	flat3map	FLAT3MAP_GEN_ARP_339	regression-only check
-TestGen, long string only	flat3map	FLAT3MAP_GEN_MCR_113	regression-only check
-TestGen, long string only	flat3map	FLAT3MAP_GEN_ROR_143	regression-only check
-TestGen, long string only	flat3map	FLAT3MAP_GEN_ROR_144	regression-only check
-TestGen, long string only	flat3map	FLAT3MAP_GEN_ROR_145	regression-only check
-TestGen, long string only	flat3map	FLAT3MAP_GEN_ROR_152	regression-only check
-TestGen, long string only	flat3map	FLAT3MAP_GEN_ROR_153	regression-only check
-TestGen, long string only	flat3map	FLAT3MAP_GEN_ROR_154	regression-only check
-TestGen, long string only	flat3map	FLAT3MAP_GEN_RVR_109	regression-only check
-TestGen, long string only	flat3map	FLAT3MAP_GEN_RVR_110	regression-only check
-TestGen, long string only	flat3map	FLAT3MAP_GEN_RVR_159	regression-only check
-TestGen, long string only	flat3map	FLAT3MAP_GEN_SDL_147	regression-only check
-TestGen, long string only	flat3map	FLAT3MAP_GEN_SDL_156	regression-only check
-TestGen, + short strings	flat3map	FLAT3MAP_GEN_ARP_339	regression-only check
-TestGen, + short strings	flat3map	FLAT3MAP_GEN_MCR_113	regression-only check
-TestGen, + short strings	flat3map	FLAT3MAP_GEN_ROR_143	regression-only check
-TestGen, + short strings	flat3map	FLAT3MAP_GEN_ROR_144	regression-only check
-TestGen, + short strings	flat3map	FLAT3MAP_GEN_ROR_145	regression-only check
-TestGen, + short strings	flat3map	FLAT3MAP_GEN_ROR_152	regression-only check
-TestGen, + short strings	flat3map	FLAT3MAP_GEN_ROR_153	regression-only check
-TestGen, + short strings	flat3map	FLAT3MAP_GEN_ROR_154	regression-only check
-TestGen, + short strings	flat3map	FLAT3MAP_GEN_RVR_109	regression-only check
-TestGen, + short strings	flat3map	FLAT3MAP_GEN_RVR_110	regression-only check
-TestGen, + short strings	flat3map	FLAT3MAP_GEN_RVR_159	regression-only check
-TestGen, + short strings	flat3map	FLAT3MAP_GEN_SDL_147	regression-only check
-TestGen, + short strings	flat3map	FLAT3MAP_GEN_SDL_156	regression-only check
+TestGen, long string only	setuniquelist	SETUNIQUELIST_GEN_COI_39	regression-only check
+TestGen, long string only	setuniquelist	SETUNIQUELIST_GEN_CTC_40	regression-only check
+TestGen, long string only	setuniquelist	SETUNIQUELIST_GEN_ROR_36	regression-only check
+TestGen, long string only	setuniquelist4	SETUNIQUELIST4_GEN_COI_39	regression-only check
+TestGen, long string only	setuniquelist4	SETUNIQUELIST4_GEN_CTC_40	regression-only check
+TestGen, long string only	setuniquelist4	SETUNIQUELIST4_GEN_ROR_36	regression-only check
+TestGen, long string only	multivaluemap	MULTIVALUEMAP_GEN_COI_13	regression-only check
+TestGen, long string only	multivaluemap	MULTIVALUEMAP_GEN_CTC_14	regression-only check
+TestGen, long string only	multivaluemap	MULTIVALUEMAP_GEN_MCR_117	regression-only check
+TestGen, long string only	multivaluemap	MULTIVALUEMAP_GEN_ROR_10	regression-only check
+TestGen, long string only	listorderedmap4	LISTORDEREDMAP4_GEN_SDL_13	regression-only check
+TestGen, long string only	strbuilder	STRBUILDER_GEN_CRP_3	regression-only check
+TestGen, + short strings	setuniquelist	SETUNIQUELIST_GEN_COI_39	regression-only check
+TestGen, + short strings	setuniquelist	SETUNIQUELIST_GEN_CTC_40	regression-only check
+TestGen, + short strings	setuniquelist	SETUNIQUELIST_GEN_ROR_36	regression-only check
+TestGen, + short strings	setuniquelist4	SETUNIQUELIST4_GEN_COI_39	regression-only check
+TestGen, + short strings	setuniquelist4	SETUNIQUELIST4_GEN_CTC_40	regression-only check
+TestGen, + short strings	setuniquelist4	SETUNIQUELIST4_GEN_ROR_36	regression-only check
+TestGen, + short strings	multivaluemap	MULTIVALUEMAP_GEN_COI_13	regression-only check
+TestGen, + short strings	multivaluemap	MULTIVALUEMAP_GEN_CTC_14	regression-only check
+TestGen, + short strings	multivaluemap	MULTIVALUEMAP_GEN_MCR_117	regression-only check
+TestGen, + short strings	multivaluemap	MULTIVALUEMAP_GEN_ROR_10	regression-only check
+TestGen, + short strings	listorderedmap4	LISTORDEREDMAP4_GEN_SDL_13	regression-only check
+TestGen, + short strings	strbuilder	STRBUILDER_GEN_CRP_3	regression-only check
+Randoop	setuniquelist	SETUNIQUELIST_GEN_ARP_109	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_ARP_110	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_ARP_136	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_ARP_137	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_ARP_205	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_COI_103	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_COI_126	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_COI_39	regression-only check
+Randoop	setuniquelist	SETUNIQUELIST_GEN_COI_77	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_COR_102	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_CRP_104	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_CRP_106	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_CTC_107	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_CTC_108	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_CTC_127	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_CTC_128	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_CTC_210	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_CTC_40	regression-only check
+Randoop	setuniquelist	SETUNIQUELIST_GEN_CTC_41	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_CTC_61	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_CTC_78	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_CTC_79	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_MCR_111	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_MCR_138	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_MCR_82	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_MCR_87	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_ROR_100	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_ROR_36	regression-only check
+Randoop	setuniquelist	SETUNIQUELIST_GEN_ROR_48	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_ROR_92	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_ROR_93	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_ROR_94	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_ROR_95	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_ROR_97	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_ROR_99	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_RVR_134	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_RVR_135	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_RVR_144	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_RVR_199	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_RVR_207	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_RVR_221	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_RVR_224	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_RVR_53	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_RVR_88	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_RVR_89	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_SDL_129	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_SDL_139	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_SDL_223	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_SDL_42	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_SDL_83	no adapter call
+Randoop	setuniquelist	SETUNIQUELIST_GEN_STR_84	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_ARP_110	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_ARP_131	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_ARP_132	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_ARP_200	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_COI_103	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_COI_121	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_COI_39	regression-only check
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_COI_77	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_COR_102	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_CRP_104	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_CRP_106	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_CTC_107	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_CTC_108	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_CTC_122	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_CTC_123	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_CTC_205	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_CTC_40	regression-only check
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_CTC_41	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_CTC_61	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_CTC_78	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_CTC_79	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_MCR_111	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_MCR_117	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_MCR_133	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_MCR_82	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_MCR_87	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_ROR_100	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_ROR_36	regression-only check
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_ROR_48	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_ROR_92	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_ROR_93	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_ROR_94	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_ROR_95	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_ROR_97	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_ROR_98	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_ROR_99	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_RVR_129	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_RVR_130	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_RVR_139	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_RVR_194	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_RVR_202	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_RVR_216	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_RVR_219	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_RVR_53	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_RVR_88	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_RVR_89	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_SDL_124	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_SDL_218	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_SDL_42	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_SDL_83	no adapter call
+Randoop	setuniquelist4	SETUNIQUELIST4_GEN_STR_84	no adapter call
 Randoop	flat3map	FLAT3MAP_GEN_ABS_424	no adapter call
 Randoop	flat3map	FLAT3MAP_GEN_COI_220	no adapter call
 Randoop	flat3map	FLAT3MAP_GEN_COI_251	no adapter call
@@ -61,7 +161,6 @@ Randoop	flat3map	FLAT3MAP_GEN_ROR_597	no adapter call
 Randoop	flat3map	FLAT3MAP_GEN_ROR_598	no adapter call
 Randoop	flat3map	FLAT3MAP_GEN_ROR_599	no adapter call
 Randoop	flat3map	FLAT3MAP_GEN_ROR_600	no adapter call
-Randoop	flat3map	FLAT3MAP_GEN_RVR_159	regression-only check
 Randoop	flat3map	FLAT3MAP_GEN_RVR_422	no adapter call
 Randoop	flat3map	FLAT3MAP_GEN_RVR_425	no adapter call
 Randoop	flat3map	FLAT3MAP_GEN_RVR_426	no adapter call
@@ -69,25 +168,486 @@ Randoop	flat3map	FLAT3MAP_GEN_RVR_427	no adapter call
 Randoop	flat3map	FLAT3MAP_GEN_RVR_469	no adapter call
 Randoop	flat3map	FLAT3MAP_GEN_RVR_470	no adapter call
 Randoop	flat3map	FLAT3MAP_GEN_UOI_423	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_ABS_179	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_COI_13	regression-only check
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_COR_138	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_CRP_120	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_CRP_121	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_CRP_140	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_CRP_141	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_CTC_14	regression-only check
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_CTC_143	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_CTC_15	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_MCR_117	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_MCR_89	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_MCR_96	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_ROR_10	regression-only check
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_ROR_105	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_ROR_136	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_RVR_108	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_RVR_109	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_RVR_177	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_RVR_180	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_RVR_182	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_RVR_203	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_RVR_204	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_RVR_205	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_SDL_16	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_SDL_175	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_SDL_18	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_SDL_93	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_STR_176	no adapter call
+Randoop	multivaluemap	MULTIVALUEMAP_GEN_UOI_178	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_131	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_132	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_174	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_176	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_177	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_225	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_232	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_233	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_238	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_412	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_5	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_543	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_544	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_571	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_572	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_573	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_581	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_585	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_6	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_7	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_707	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_708	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_710	no adapter call
+Randoop	treelist	TREELIST_GEN_AOR_8	no adapter call
+Randoop	treelist	TREELIST_GEN_ARP_601	no adapter call
+Randoop	treelist	TREELIST_GEN_ARP_648	no adapter call
+Randoop	treelist	TREELIST_GEN_ARP_687	no adapter call
+Randoop	treelist	TREELIST_GEN_ARP_688	no adapter call
+Randoop	treelist	TREELIST_GEN_ARP_85	no adapter call
+Randoop	treelist	TREELIST_GEN_ARP_93	no adapter call
+Randoop	treelist	TREELIST_GEN_COI_248	no adapter call
+Randoop	treelist	TREELIST_GEN_COI_259	no adapter call
+Randoop	treelist	TREELIST_GEN_COI_281	no adapter call
+Randoop	treelist	TREELIST_GEN_COI_323	no adapter call
+Randoop	treelist	TREELIST_GEN_COI_367	no adapter call
+Randoop	treelist	TREELIST_GEN_COI_673	no adapter call
+Randoop	treelist	TREELIST_GEN_COI_702	no adapter call
+Randoop	treelist	TREELIST_GEN_COR_247	no adapter call
+Randoop	treelist	TREELIST_GEN_COR_385	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_10	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_11	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_12	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_152	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_184	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_24	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_324	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_325	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_47	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_482	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_498	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_540	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_557	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_711	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_712	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_713	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_743	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_763	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_765	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_77	no adapter call
+Randoop	treelist	TREELIST_GEN_CRP_98	no adapter call
+Randoop	treelist	TREELIST_GEN_CTC_114	no adapter call
+Randoop	treelist	TREELIST_GEN_CTC_160	no adapter call
+Randoop	treelist	TREELIST_GEN_CTC_172	no adapter call
+Randoop	treelist	TREELIST_GEN_CTC_206	no adapter call
+Randoop	treelist	TREELIST_GEN_CTC_260	no adapter call
+Randoop	treelist	TREELIST_GEN_CTC_261	no adapter call
+Randoop	treelist	TREELIST_GEN_CTC_273	no adapter call
+Randoop	treelist	TREELIST_GEN_CTC_311	no adapter call
+Randoop	treelist	TREELIST_GEN_CTC_353	no adapter call
+Randoop	treelist	TREELIST_GEN_CTC_370	no adapter call
+Randoop	treelist	TREELIST_GEN_CTC_387	no adapter call
+Randoop	treelist	TREELIST_GEN_CTC_388	no adapter call
+Randoop	treelist	TREELIST_GEN_CTC_518	no adapter call
+Randoop	treelist	TREELIST_GEN_MCR_715	no adapter call
+Randoop	treelist	TREELIST_GEN_MCR_86	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_104	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_136	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_147	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_148	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_150	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_179	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_216	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_244	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_255	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_268	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_278	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_306	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_318	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_319	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_320	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_339	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_348	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_362	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_365	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_382	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_414	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_485	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_537	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_604	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_611	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_665	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_666	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_667	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_668	no adapter call
+Randoop	treelist	TREELIST_GEN_ROR_737	no adapter call
+Randoop	treelist	TREELIST_GEN_RVR_226	no adapter call
+Randoop	treelist	TREELIST_GEN_RVR_227	no adapter call
+Randoop	treelist	TREELIST_GEN_RVR_228	no adapter call
+Randoop	treelist	TREELIST_GEN_RVR_251	no adapter call
+Randoop	treelist	TREELIST_GEN_RVR_262	no adapter call
+Randoop	treelist	TREELIST_GEN_RVR_274	no adapter call
+Randoop	treelist	TREELIST_GEN_RVR_303	no adapter call
+Randoop	treelist	TREELIST_GEN_RVR_372	no adapter call
+Randoop	treelist	TREELIST_GEN_RVR_50	no adapter call
+Randoop	treelist	TREELIST_GEN_RVR_52	no adapter call
+Randoop	treelist	TREELIST_GEN_RVR_567	no adapter call
+Randoop	treelist	TREELIST_GEN_RVR_569	no adapter call
+Randoop	treelist	TREELIST_GEN_RVR_596	no adapter call
+Randoop	treelist	TREELIST_GEN_RVR_700	no adapter call
+Randoop	treelist	TREELIST_GEN_RVR_701	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_100	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_115	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_123	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_125	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_128	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_14	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_229	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_240	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_287	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_300	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_316	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_328	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_425	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_493	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_594	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_598	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_607	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_614	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_615	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_640	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_650	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_654	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_677	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_690	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_691	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_714	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_716	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_760	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_762	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_766	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_767	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_87	no adapter call
+Randoop	treelist	TREELIST_GEN_SDL_97	no adapter call
+Randoop	treelist	TREELIST_GEN_STR_748	no adapter call
+Randoop	treelist	TREELIST_GEN_UOI_574	no adapter call
+Randoop	treelist	TREELIST_GEN_UOI_703	no adapter call
+Randoop	listorderedmap4	LISTORDEREDMAP4_GEN_MCR_350	no adapter call
+Randoop	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_113	no adapter call
+Randoop	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_155	no adapter call
+Randoop	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_160	no adapter call
+Randoop	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_272	no adapter call
+Randoop	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_336	no adapter call
+Randoop	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_339	no adapter call
+Randoop	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_349	no adapter call
+Randoop	listorderedmap4	LISTORDEREDMAP4_GEN_SDL_13	regression-only check
+Randoop	listorderedmap4	LISTORDEREDMAP4_GEN_SDL_14	no adapter call
+Randoop	listorderedmap4	LISTORDEREDMAP4_GEN_SDL_338	no adapter call
+Randoop	listorderedmap4	LISTORDEREDMAP4_GEN_STR_119	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ABS_1452	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ABS_1504	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOI_940	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_1516	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_1517	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_1518	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_1519	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_1520	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_1521	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_1523	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_1543	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_1544	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_1545	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_1546	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_332	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_333	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_334	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_335	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_665	regression-only check
+Randoop	strbuilder	STRBUILDER_GEN_AOR_861	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_862	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_863	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_864	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_935	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_936	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_937	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_AOR_938	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ARP_1491	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ARP_1492	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ARP_1555	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ARP_1556	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_COI_1441	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_COI_1472	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_COI_1480	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_COI_1498	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_COI_1513	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_COI_1552	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_COI_17	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_COI_308	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_COI_82	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_COI_932	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_COI_948	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_COR_1471	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_1	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_115	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_117	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_1404	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_1406	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_1407	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_1432	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_1434	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_1456	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_1481	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_1486	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_1487	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_1524	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_1525	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_1539	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_1540	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_19	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_2	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_3	regression-only check
+Randoop	strbuilder	STRBUILDER_GEN_CRP_328	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_4	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_5	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_656	regression-only check
+Randoop	strbuilder	STRBUILDER_GEN_CRP_73	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_925	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_933	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_934	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_950	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CRP_98	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CTC_112	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CTC_1442	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CTC_1473	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CTC_1474	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CTC_1484	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CTC_1501	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CTC_1514	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CTC_1553	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CTC_1554	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CTC_21	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CTC_309	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CTC_310	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CTC_75	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CTC_83	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CTC_84	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_CTC_951	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_LBR_1449	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_LBR_1450	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_LBR_1532	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_LBR_1533	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_LBR_1541	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_LBR_1542	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_LBR_97	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_109	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_12	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_13	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1399	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_14	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1401	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1402	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1403	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1427	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1428	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1429	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1430	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1436	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1438	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1439	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1444	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1445	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1446	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1448	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1461	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1462	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1463	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1464	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1465	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1468	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1475	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1476	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1477	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1478	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1479	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1494	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1495	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1497	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_15	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1508	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1509	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1510	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1511	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1512	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1528	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1529	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1531	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1534	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1535	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1536	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1538	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1547	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1548	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1549	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1550	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_1551	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_16	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_305	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_69	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_70	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_78	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_79	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_80	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_81	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_85	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_87	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_89	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_91	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_920	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_927	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_929	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_930	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_931	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_943	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_945	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_ROR_946	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_RVR_1408	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_RVR_1409	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_RVR_1453	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_RVR_1454	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_RVR_1455	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_RVR_1458	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_RVR_1459	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_RVR_1460	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_RVR_1488	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_RVR_1489	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_RVR_1490	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_RVR_1505	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_RVR_1506	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_RVR_1507	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_RVR_311	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_RVR_42	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_SDL_119	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_SDL_141	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_SDL_1435	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_SDL_1557	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_SDL_22	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_SDL_336	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_SDL_658	regression-only check
+Randoop	strbuilder	STRBUILDER_GEN_SDL_662	regression-only check
+Randoop	strbuilder	STRBUILDER_GEN_SDL_672	regression-only check
+Randoop	strbuilder	STRBUILDER_GEN_SDL_76	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_SDL_865	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_SDL_867	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_SDL_90	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_SDL_939	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_SDL_942	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_STR_866	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_UOI_1451	no adapter call
+Randoop	strbuilder	STRBUILDER_GEN_UOI_1503	no adapter call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_ARP_109	no adapter call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_ARP_110	no adapter call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_ARP_205	invalid call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_COI_209	no adapter call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_COI_39	regression-only check
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_COI_77	invalid call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_CTC_108	no adapter call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_CTC_127	no adapter call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_CTC_211	no adapter call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_CTC_40	regression-only check
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_CTC_41	no adapter call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_CTC_61	invalid call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_CTC_78	invalid call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_CTC_79	invalid call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_MCR_111	no adapter call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_MCR_82	invalid call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_MCR_87	invalid call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_ROR_100	no adapter call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_ROR_101	no adapter call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_ROR_36	regression-only check
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_ROR_48	invalid call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_ROR_95	no adapter call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_RVR_134	no adapter call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_RVR_199	no adapter call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_RVR_207	invalid call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_RVR_221	invalid call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_RVR_224	no adapter call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_RVR_53	invalid call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_RVR_88	invalid call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_RVR_89	invalid call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_SDL_223	no adapter call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_SDL_42	no adapter call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_SDL_83	invalid call
+EvoSuite, default criteria	setuniquelist	SETUNIQUELIST_GEN_STR_84	invalid call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_ARP_109	no adapter call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_ARP_110	invalid call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_ARP_200	no adapter call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_COI_39	regression-only check
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_COI_77	invalid call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_CTC_108	invalid call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_CTC_122	no adapter call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_CTC_40	regression-only check
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_CTC_41	no adapter call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_CTC_61	invalid call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_CTC_78	invalid call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_CTC_79	invalid call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_MCR_111	invalid call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_MCR_82	invalid call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_MCR_87	invalid call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_ROR_100	no adapter call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_ROR_101	invalid call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_ROR_36	regression-only check
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_ROR_48	invalid call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_ROR_95	invalid call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_RVR_129	no adapter call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_RVR_194	no adapter call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_RVR_202	no adapter call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_RVR_216	no adapter call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_RVR_219	no adapter call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_RVR_53	invalid call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_RVR_88	invalid call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_RVR_89	invalid call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_SDL_218	no adapter call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_SDL_42	no adapter call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_SDL_83	invalid call
+EvoSuite, default criteria	setuniquelist4	SETUNIQUELIST4_GEN_STR_84	invalid call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ABS_424	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ABS_90	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ABS_96	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_AOI_341	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_AOI_342	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ARP_197	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ARP_259	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ARP_324	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ARP_339	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_19	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_204	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_212	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_220	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_229	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_251	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_436	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_454	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_463	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_57	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_454	invalid call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_463	invalid call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_581	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_593	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_COI_601	no adapter call
@@ -112,9 +672,7 @@ EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CRP_320	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CRP_328	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CRP_334	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CRP_345	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CRP_464	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CRP_58	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_20	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CRP_464	invalid call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_205	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_21	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_213	no adapter call
@@ -127,15 +685,14 @@ EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_252	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_253	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_437	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_438	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_455	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_466	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_455	invalid call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_466	invalid call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_582	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_583	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_594	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_595	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_602	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_603	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_61	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_611	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_631	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_CTC_632	no adapter call
@@ -150,7 +707,7 @@ EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_357	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_428	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_441	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_446	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_468	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_468	invalid call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_604	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_615	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_MCR_619	no adapter call
@@ -170,10 +727,9 @@ EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_143	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_144	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_145	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_150	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_152	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_153	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_154	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_16	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_152	regression-only check
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_153	regression-only check
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_154	regression-only check
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_201	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_209	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_217	no adapter call
@@ -184,21 +740,16 @@ EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_247	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_248	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_249	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_272	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_28	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_283	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_36	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_42	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_433	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_451	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_459	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_460	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_462	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_451	invalid call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_459	invalid call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_460	invalid call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_462	invalid call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_48	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_485	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_490	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_52	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_54	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_56	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_578	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_590	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_596	no adapter call
@@ -222,42 +773,34 @@ EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_73	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_74	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_75	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_80	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_82	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_83	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_ROR_84	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_110	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_159	regression-only check
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_196	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_354	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_421	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_422	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_422	invalid call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_425	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_426	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_427	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_448	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_457	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_469	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_470	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_470	invalid call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_584	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_585	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_91	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_92	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_RVR_97	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_119	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_125	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_131	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_138	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_147	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_156	no adapter call
+EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_156	regression-only check
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_256	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_257	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_268	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_269	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_277	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_278	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_288	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_289	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_290	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_316	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_322	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_337	no adapter call
@@ -272,10 +815,340 @@ EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_646	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_676	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_68	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_77	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_SDL_86	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_UOI_423	no adapter call
 EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_UOI_89	no adapter call
-EvoSuite, default criteria	flat3map	FLAT3MAP_GEN_UOI_95	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_ABS_179	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_COI_13	regression-only check
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_COR_138	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_CRP_120	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_CRP_121	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_CRP_140	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_CTC_14	regression-only check
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_CTC_143	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_CTC_15	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_CTC_65	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_MCR_144	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_MCR_96	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_ROR_10	regression-only check
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_ROR_105	invalid call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_RVR_108	invalid call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_RVR_109	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_RVR_110	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_RVR_177	invalid call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_RVR_180	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_RVR_182	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_RVR_203	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_RVR_204	invalid call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_RVR_205	invalid call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_SDL_154	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_SDL_16	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_SDL_93	no adapter call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_STR_176	invalid call
+EvoSuite, default criteria	multivaluemap	MULTIVALUEMAP_GEN_UOI_178	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_AOR_176	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_AOR_232	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_AOR_233	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_AOR_238	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_AOR_392	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_AOR_412	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_AOR_543	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_AOR_544	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_AOR_571	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_AOR_572	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_AOR_573	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_AOR_581	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_AOR_585	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_ARP_408	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_ARP_601	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_ARP_687	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_ARP_688	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_COI_259	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_COI_281	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_COI_367	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_COI_434	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_COR_247	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_COR_385	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CRP_152	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CRP_184	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CRP_24	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CRP_325	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CRP_47	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CRP_482	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CRP_498	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CRP_540	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CRP_557	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CRP_743	invalid call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CRP_77	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CRP_98	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CTC_114	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CTC_260	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CTC_261	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CTC_353	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CTC_370	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CTC_387	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CTC_518	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_CTC_662	invalid call
+EvoSuite, default criteria	treelist	TREELIST_GEN_ROR_148	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_ROR_179	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_ROR_244	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_ROR_255	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_ROR_278	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_ROR_339	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_ROR_348	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_ROR_362	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_ROR_365	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_ROR_414	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_ROR_429	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_ROR_485	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_ROR_604	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_ROR_667	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_RVR_226	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_RVR_227	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_RVR_228	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_RVR_262	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_RVR_274	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_RVR_303	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_RVR_372	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_RVR_567	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_RVR_569	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_RVR_596	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_RVR_700	invalid call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_100	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_115	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_125	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_128	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_14	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_229	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_240	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_287	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_300	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_316	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_328	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_374	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_425	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_493	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_509	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_594	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_598	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_607	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_654	invalid call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_677	invalid call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_690	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_716	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_760	regression-only check
+EvoSuite, default criteria	treelist	TREELIST_GEN_SDL_767	no adapter call
+EvoSuite, default criteria	treelist	TREELIST_GEN_UOI_574	no adapter call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_ARP_225	invalid call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_ARP_226	invalid call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_COI_233	invalid call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_CTC_109	no adapter call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_CTC_214	no adapter call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_CTC_234	no adapter call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_CTC_235	invalid call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_MCR_112	invalid call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_MCR_227	no adapter call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_MCR_350	no adapter call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_ROR_228	no adapter call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_ROR_229	invalid call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_ROR_230	invalid call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_ROR_232	invalid call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_113	invalid call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_155	no adapter call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_160	no adapter call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_272	no adapter call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_336	no adapter call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_339	no adapter call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_349	no adapter call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_SDL_13	regression-only check
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_SDL_14	no adapter call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_SDL_223	no adapter call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_SDL_236	invalid call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_SDL_338	no adapter call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_STR_15	no adapter call
+EvoSuite, default criteria	listorderedmap4	LISTORDEREDMAP4_GEN_STR_224	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ABS_1452	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ABS_1504	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_AOI_940	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_AOR_666	regression-only check
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_AOR_667	regression-only check
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_AOR_861	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_AOR_862	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_AOR_863	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_AOR_864	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_AOR_935	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ARP_1491	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ARP_1492	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_COI_1441	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_COI_17	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_COI_308	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_COI_71	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_COI_82	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_COI_932	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_COI_948	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_COR_1471	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_1	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_117	regression-only check
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_1432	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_1434	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_1486	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_1487	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_18	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_19	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_2	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_3	regression-only check
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_328	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_4	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_5	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_660	regression-only check
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_72	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_73	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_925	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_933	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_934	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_949	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_950	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CRP_98	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CTC_112	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CTC_1442	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CTC_1474	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CTC_20	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CTC_21	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CTC_309	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CTC_310	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CTC_74	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CTC_75	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CTC_83	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CTC_84	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CTC_951	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_CTC_952	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_LBR_1449	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_LBR_1450	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_LBR_97	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_109	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_12	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_13	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_14	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_1427	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_1428	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_1430	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_1436	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_1438	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_1439	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_1445	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_1446	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_1448	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_1465	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_1476	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_1479	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_15	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_1551	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_16	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_305	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_66	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_67	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_68	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_69	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_70	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_78	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_79	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_80	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_81	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_85	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_87	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_89	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_91	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_920	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_927	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_929	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_930	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_931	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_943	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_945	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_946	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_ROR_947	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_RVR_1453	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_RVR_1454	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_RVR_1455	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_RVR_1488	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_RVR_1489	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_RVR_1490	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_RVR_1505	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_RVR_1506	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_RVR_311	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_RVR_42	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_SDL_119	regression-only check
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_SDL_1435	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_SDL_22	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_SDL_662	regression-only check
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_SDL_672	regression-only check
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_SDL_76	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_SDL_865	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_SDL_867	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_SDL_90	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_SDL_942	no adapter call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_UOI_1451	invalid call
+EvoSuite, default criteria	strbuilder	STRBUILDER_GEN_UOI_1503	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_ARP_109	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_ARP_110	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_ARP_205	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_COI_209	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_COI_39	regression-only check
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_COI_77	invalid call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_CTC_108	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_CTC_127	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_CTC_211	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_CTC_40	regression-only check
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_CTC_41	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_CTC_61	invalid call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_CTC_78	invalid call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_CTC_79	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_MCR_111	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_MCR_82	invalid call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_MCR_87	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_ROR_100	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_ROR_101	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_ROR_36	regression-only check
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_ROR_48	invalid call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_ROR_95	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_RVR_134	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_RVR_199	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_RVR_207	invalid call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_RVR_221	invalid call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_RVR_224	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_RVR_53	invalid call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_RVR_88	invalid call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_RVR_89	invalid call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_SDL_223	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_SDL_42	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_SDL_83	no adapter call
+EvoSuite, black-box criteria	setuniquelist	SETUNIQUELIST_GEN_STR_84	no adapter call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_ARP_109	no adapter call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_ARP_200	no adapter call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_COI_39	regression-only check
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_COI_77	invalid call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_CTC_122	no adapter call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_CTC_40	regression-only check
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_CTC_41	no adapter call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_CTC_61	invalid call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_CTC_78	invalid call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_CTC_79	invalid call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_MCR_82	invalid call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_MCR_87	invalid call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_ROR_100	no adapter call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_ROR_36	regression-only check
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_ROR_48	invalid call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_RVR_129	no adapter call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_RVR_194	no adapter call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_RVR_202	invalid call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_RVR_216	invalid call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_RVR_219	no adapter call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_RVR_53	invalid call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_RVR_88	invalid call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_RVR_89	invalid call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_SDL_218	no adapter call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_SDL_42	no adapter call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_SDL_83	invalid call
+EvoSuite, black-box criteria	setuniquelist4	SETUNIQUELIST4_GEN_STR_84	invalid call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ABS_424	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ABS_90	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_AOI_341	no adapter call
@@ -351,7 +1224,7 @@ EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_357	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_428	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_441	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_446	no adapter call
-EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_468	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_468	invalid call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_604	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_615	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_MCR_619	no adapter call
@@ -371,9 +1244,9 @@ EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_143	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_144	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_145	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_150	no adapter call
-EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_152	no adapter call
-EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_153	no adapter call
-EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_154	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_152	regression-only check
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_153	regression-only check
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_154	regression-only check
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_201	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_209	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_217	no adapter call
@@ -418,7 +1291,6 @@ EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_74	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_75	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_ROR_80	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_110	no adapter call
-EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_159	invalid call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_196	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_354	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_RVR_421	no adapter call
@@ -439,7 +1311,7 @@ EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_125	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_131	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_138	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_147	no adapter call
-EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_156	no adapter call
+EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_156	regression-only check
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_256	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_257	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_268	no adapter call
@@ -462,3 +1334,249 @@ EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_68	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_SDL_77	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_UOI_423	no adapter call
 EvoSuite, black-box criteria	flat3map	FLAT3MAP_GEN_UOI_89	no adapter call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_ABS_179	no adapter call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_COI_13	regression-only check
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_COR_138	no adapter call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_CRP_120	no adapter call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_CRP_121	no adapter call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_CRP_140	no adapter call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_CTC_14	regression-only check
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_CTC_143	no adapter call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_CTC_15	no adapter call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_CTC_65	no adapter call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_MCR_144	no adapter call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_MCR_96	no adapter call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_ROR_10	regression-only check
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_ROR_105	invalid call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_RVR_108	invalid call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_RVR_109	no adapter call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_RVR_110	no adapter call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_RVR_177	invalid call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_RVR_180	no adapter call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_RVR_182	no adapter call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_RVR_203	invalid call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_RVR_204	invalid call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_RVR_205	invalid call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_SDL_154	no adapter call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_SDL_16	no adapter call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_SDL_93	no adapter call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_STR_176	invalid call
+EvoSuite, black-box criteria	multivaluemap	MULTIVALUEMAP_GEN_UOI_178	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_AOR_176	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_AOR_232	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_AOR_233	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_AOR_238	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_AOR_392	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_AOR_412	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_AOR_543	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_AOR_544	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_AOR_571	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_AOR_572	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_AOR_573	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_AOR_581	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_AOR_585	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_AOR_710	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_ARP_408	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_ARP_601	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_ARP_687	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_ARP_688	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_COI_259	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_COI_281	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_COI_367	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_COI_434	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_COR_247	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_COR_385	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CRP_152	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CRP_184	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CRP_24	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CRP_325	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CRP_47	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CRP_482	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CRP_498	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CRP_540	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CRP_557	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CRP_743	invalid call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CRP_77	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CRP_98	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CTC_114	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CTC_260	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CTC_261	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CTC_370	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CTC_387	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CTC_518	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_CTC_662	invalid call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_ROR_148	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_ROR_179	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_ROR_244	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_ROR_255	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_ROR_278	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_ROR_339	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_ROR_362	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_ROR_365	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_ROR_414	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_ROR_429	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_ROR_485	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_ROR_604	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_ROR_667	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_RVR_226	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_RVR_227	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_RVR_228	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_RVR_262	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_RVR_274	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_RVR_303	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_RVR_372	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_RVR_567	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_RVR_569	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_RVR_596	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_RVR_700	invalid call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_100	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_115	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_125	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_128	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_14	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_229	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_240	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_287	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_300	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_316	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_328	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_374	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_425	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_493	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_509	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_594	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_598	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_607	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_654	invalid call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_677	invalid call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_690	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_716	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_760	regression-only check
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_SDL_767	no adapter call
+EvoSuite, black-box criteria	treelist	TREELIST_GEN_UOI_574	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_ARP_225	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_ARP_226	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_COI_233	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_CTC_109	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_CTC_214	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_CTC_234	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_CTC_235	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_MCR_227	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_MCR_350	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_ROR_228	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_ROR_229	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_ROR_230	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_ROR_232	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_113	invalid call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_155	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_160	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_272	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_336	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_339	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_RVR_349	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_SDL_13	regression-only check
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_SDL_14	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_SDL_223	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_SDL_236	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_SDL_338	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_STR_15	no adapter call
+EvoSuite, black-box criteria	listorderedmap4	LISTORDEREDMAP4_GEN_STR_224	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ABS_1452	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ABS_1504	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_AOI_940	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_AOR_666	regression-only check
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_AOR_667	regression-only check
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_AOR_861	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_AOR_862	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_AOR_863	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_AOR_864	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_AOR_935	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_COI_17	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_COI_308	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_COI_71	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_COI_82	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_COI_948	invalid call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_COR_1471	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_1	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_117	regression-only check
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_1432	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_1434	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_18	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_19	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_2	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_3	regression-only check
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_4	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_5	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_657	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_660	regression-only check
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_72	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_73	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_925	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_933	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_949	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_950	invalid call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CRP_98	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CTC_112	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CTC_1474	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CTC_20	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CTC_21	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CTC_309	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CTC_310	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CTC_74	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CTC_75	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CTC_83	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CTC_84	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CTC_951	invalid call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_CTC_952	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_LBR_97	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_109	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_12	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_13	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_14	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_1427	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_1428	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_1430	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_1465	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_1476	invalid call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_1479	invalid call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_15	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_1551	regression-only check
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_16	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_305	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_66	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_67	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_68	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_69	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_70	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_78	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_79	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_80	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_81	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_85	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_87	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_89	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_91	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_920	invalid call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_931	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_943	invalid call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_945	invalid call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_946	invalid call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_ROR_947	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_RVR_1453	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_RVR_1488	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_RVR_1505	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_RVR_1506	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_RVR_311	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_RVR_42	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_SDL_119	regression-only check
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_SDL_1435	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_SDL_22	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_SDL_662	regression-only check
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_SDL_672	regression-only check
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_SDL_76	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_SDL_865	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_SDL_867	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_SDL_90	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_SDL_942	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_UOI_1451	no adapter call
+EvoSuite, black-box criteria	strbuilder	STRBUILDER_GEN_UOI_1503	no adapter call

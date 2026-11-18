@@ -147,6 +147,7 @@ public final class MonitorGen {
         final List<String> imports = new ArrayList<String>();
         final List<Field> fields = new ArrayList<Field>();
         final List<Method> methods = new ArrayList<Method>();
+        final List<String> nested = new ArrayList<String>();   // nested classes, source text unchanged
         boolean hasReset;
     }
 
@@ -163,7 +164,10 @@ public final class MonitorGen {
         for (Tree t : cu.getTypeDecls()) {
             if (!(t instanceof ClassTree) || !((ClassTree) t).getSimpleName().contentEquals("Helper")) continue;
             for (Tree member : ((ClassTree) t).getMembers()) {
-                if (member instanceof VariableTree) {
+                if (member instanceof ClassTree) {
+                    // copied unchanged into the monitor: generated tests may name them (they are off-API, see StripOracles)
+                    a.nested.add(text(src, pos, cu, member));
+                } else if (member instanceof VariableTree) {
                     VariableTree v = (VariableTree) member;
                     if (!v.getModifiers().getFlags().containsAll(Arrays.asList(Modifier.PUBLIC, Modifier.STATIC))) continue;
                     Field f = new Field();
@@ -210,6 +214,10 @@ public final class MonitorGen {
         for (Field f : a.fields) {
             sb.append("    public static ").append(f.isFinal ? "final " : "").append(f.type).append(' ').append(f.name)
               .append(f.isFinal ? " = HelperImpl." + f.name : "").append(";\n");
+        }
+        if (!a.nested.isEmpty()) {
+            sb.append("\n    // the adapter's nested classes, copied unchanged\n");
+            for (String n : a.nested) sb.append("    ").append(n).append("\n\n");
         }
         sb.append("\n    static {\n        HelperImpl.reset();\n        pull();\n        fairmon.FairLog.reset();\n    }\n\n");
         sb.append("    /** Copies the adapter's state fields into this class (after every call). */\n");

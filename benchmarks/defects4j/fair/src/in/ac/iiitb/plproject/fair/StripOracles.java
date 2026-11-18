@@ -10,6 +10,7 @@ import com.sun.source.tree.LambdaExpressionTree;
 import com.sun.source.tree.MemberSelectTree;
 import com.sun.source.tree.MethodInvocationTree;
 import com.sun.source.tree.MethodTree;
+import com.sun.source.tree.NewClassTree;
 import com.sun.source.tree.StatementTree;
 import com.sun.source.tree.Tree;
 import com.sun.source.util.JavacTask;
@@ -60,6 +61,10 @@ import java.util.stream.Stream;
  *       next adapter call. Randoop is already restricted to the adapter by its options;
  *       EvoSuite cannot be, because it calls methods of the objects it gets (e.g. the
  *       adapter's public state fields).</li>
+ *   <li>the same marker before a statement that constructs or calls one of the adapter's
+ *       nested classes (e.g. the package-private {@code Helper.Fresh}): that is not an
+ *       adapter operation either. The monitored Helper carries these classes unchanged
+ *       (MonitorGen), so such tests still compile.</li>
  * </ul>
  * Scaffolding and other classes without {@code @Test} are copied unchanged. Prints one line:
  * {@code files tests assertions_removed calls_kept_from_assertions offapi_markers}.
@@ -224,6 +229,11 @@ public final class StripOracles {
                     if (found[0] == null && !allowed(getCurrentPath())) found[0] = describe(getCurrentPath());
                     return super.visitMethodInvocation(mi, v);
                 }
+                @Override public Void visitNewClass(NewClassTree nc, Void v) {
+                    // constructing one of the adapter's nested classes (e.g. Helper.Fresh) is off-API too
+                    if (found[0] == null && adapterNested(owner(getCurrentPath()))) found[0] = describe(getCurrentPath());
+                    return super.visitNewClass(nc, v);
+                }
             }.scan(stmt, null);
             if (found[0] == null) return null;
             return "fairmon.FairLog.offApi(\"" + found[0].replace("\\", "\\\\").replace("\"", "\\\"") + "\"); ";
@@ -234,9 +244,19 @@ public final class StripOracles {
             return owner != null && owner.getQualifiedName().contentEquals(adapter);
         }
 
+        /** A class nested (at any depth) in the adapter, such as Helper.Fresh. */
+        private boolean adapterNested(TypeElement t) {
+            if (t == null) return false;
+            for (Element e = t.getEnclosingElement(); e instanceof TypeElement; e = e.getEnclosingElement()) {
+                if (((TypeElement) e).getQualifiedName().contentEquals(adapter)) return true;
+            }
+            return false;
+        }
+
         private boolean allowed(TreePath p) {
             TypeElement owner = owner(p);
             if (owner == null) return true;   // could not resolve: never happens for compiling code
+            if (adapterNested(owner)) return false;   // calling a method of an adapter nested class: off-API
             String n = owner.getQualifiedName().toString();
             if (n.equals(adapter)) return true;
             if (n.startsWith("org.junit.") || n.startsWith("junit.") || n.startsWith("org.evosuite.")

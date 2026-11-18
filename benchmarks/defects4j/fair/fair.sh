@@ -260,6 +260,18 @@ testgen_long() {   # $1 bug, $2 spec, $3 key or "" -> the long-string-only TestG
   [[ -f "$f" ]] && echo "$f"
 }
 
+testgen_copy() {   # $1 scope (class key or bug), $2 suite, $3 TestGen's test file -> a COPY without its PRE assertions
+  # TestGen checks each precondition with assertTrue("PRE ...") BEFORE the call, so on a mutant that assertion would end
+  # the test before the call reaches the monitor. The monitor checks the same PRE clauses, so the copy drops them (one
+  # line each) and every call is judged by the monitor, as for Randoop/EvoSuite. The original file is never changed.
+  local dst="$FW/testgen/$1/$2/${PKG//.//}/$(basename "$3")"
+  mkdir -p "$(dirname "$dst")"
+  grep -vE '^[[:space:]]*assertTrue\("PRE ' "$3" > "$dst"
+  # read by FairDriver (next to the sources): the removed PRE assertions count as assertions_removed
+  echo "files 1 assertions_removed $(grep -cE '^[[:space:]]*assertTrue\("PRE ' "$3") offapi_markers 0 from $3" > "$(dirname "$dst")/strip.txt"
+  echo "$dst"
+}
+
 common_props() {   # $1 work dir
   cat <<EOF
 runtimeCp=$RUNTIME_CP
@@ -281,7 +293,7 @@ for key in "${sel_classes[@]}"; do
   [[ -f "$srcs" ]] || { echo "fair.sh: no $srcs: run ./run.sh $bug first" >&2; exit 1; }
   [[ -f "$D4J_DIR/mutation/$key.status.tsv" ]] || { echo "fair.sh: no mutation/$key.status.tsv: run ./mutation.sh $key first" >&2; exit 1; }
   target=$(grep "/$cls\$" "$srcs" | head -1)
-  K="$FW/classes/$key"; BW="$FW/bugs/$bug"; mkdir -p "$K"
+  K="$FW/classes/$key"; BW="$FW/bugs/$bug"; mkdir -p "$K"; SCOPE="$key"
 
   # the same mutants, planted and compiled by D4jMutationRun itself (no suite: it only plants and compiles)
   if [[ ! -f "$K/plant-out/$key.status.tsv" ]]; then
@@ -316,9 +328,9 @@ EOF
   suites="$K/suites.tsv"; : > "$suites"
   if has_tool testgen; then
     long=$(testgen_long "$bug" "$spec" "$key") || true
-    [[ -n "$long" ]] && printf 'testgen-long\ttestgen-long\t%s\n' "$long" >> "$suites"
+    [[ -n "$long" ]] && printf 'testgen-long\ttestgen-long\t%s\n' "$(testgen_copy "$SCOPE" testgen-long "$long")" >> "$suites"
     all="$D4J_DIR/outputs/$bug/fixed/${PKG//.//}/GeneratedATCsTest.java"
-    [[ -f "$all" ]] && printf 'testgen-all\ttestgen-all\t%s\n' "$all" >> "$suites"
+    [[ -f "$all" ]] && printf 'testgen-all\ttestgen-all\t%s\n' "$(testgen_copy "$SCOPE" testgen-all "$all")" >> "$suites"
     if ls "$MUT_WORK/$key/family-src"/*.java > /dev/null 2>&1; then
       printf 'testgen-family\ttestgen-family\t%s\n' "$MUT_WORK/$key/family-src" >> "$suites"
     fi
@@ -338,15 +350,15 @@ done
 # ── 4. the 12 real bugs ──
 for bug in "${sel_bugs[@]}"; do
   read -r lib spec <<< "$(library_of "$bug")"
-  BW="$FW/bugs/$bug"
+  BW="$FW/bugs/$bug"; SCOPE="$bug"
   [[ -f "$BW/bug.rows.tsv" ]] && (( ! redo_bugs )) && { echo "== $bug: already run (--redo-bugs to run again)"; continue; }
   echo "================ bug $bug ================"
   suites="$BW/suites.tsv"; : > "$suites"
   if has_tool testgen; then
     long=$(testgen_long "$bug" "$spec" "$(key_of_bug "$bug" || true)") || true
-    [[ -n "$long" ]] && printf 'testgen-long\ttestgen-long\t%s\n' "$long" >> "$suites"
+    [[ -n "$long" ]] && printf 'testgen-long\ttestgen-long\t%s\n' "$(testgen_copy "$SCOPE" testgen-long "$long")" >> "$suites"
     all="$D4J_DIR/outputs/$bug/fixed/${PKG//.//}/GeneratedATCsTest.java"
-    [[ -f "$all" ]] && printf 'testgen-all\ttestgen-all\t%s\n' "$all" >> "$suites"
+    [[ -f "$all" ]] && printf 'testgen-all\ttestgen-all\t%s\n' "$(testgen_copy "$SCOPE" testgen-all "$all")" >> "$suites"
   fi
   suite_lines "$bug" >> "$suites"
   { echo "mode=bug"; echo "scope=$bug"; echo "suites=$suites"; echo "monitor=$BW/monitor-f"
@@ -360,7 +372,7 @@ done
 
 # ── 5. collect validity and bug rows into fair/, build the report ──
 {
-  printf 'scope\ttool\tsuite\tstatus\ttests\tinvalid_first_call\tpct_invalid\tinvalid_any_call\tno_call\tfalse_alarms\tflaky\tnot_run\tnot_fresh\tkept\tcalls_median\tcalls_max\tassertions_removed\toffapi_markers\treason\n'
+  printf 'scope\ttool\tsuite\tstatus\ttests\tinvalid_first_call\tpct_invalid\tinvalid_any_call\tno_call\tfalse_alarms\tflaky\tnot_run\tnot_fresh\tkept\tcalls_median\tcalls_max\tassertions_removed\toffapi_markers\tcalls_by_op\treason\n'
   for k in "$FW"/classes/*/validity.tsv; do [[ -f "$k" ]] && cat "$k"; done
   for k in "$FW"/bugs/*/validity.tsv; do [[ -f "$k" ]] && cat "$k"; done
 } > "$HERE/validity.tsv"

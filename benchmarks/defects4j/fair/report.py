@@ -4,12 +4,11 @@
     python3 fair/report.py fair/
 
 Reads (never writes) the native results: mutation/<key>.status.tsv (which mutants are scored),
-mutation/<key>.rows.tsv (native kills, for table 6) and mutation/REPORT.md (native scores,
-copied as they are for table 4).
+mutation/<key>.rows.tsv (native kills, for table 6) and, through git, the committed
+mutation/<key>.status.tsv and mutation/<key>.rows.tsv (table 4: native vs fair on the shared mutants).
 """
 import csv
 import os
-import re
 import statistics
 import sys
 from collections import defaultdict
@@ -55,13 +54,6 @@ def pspread(xs):
     return f"{statistics.median(xs):.1f}% ({min(xs):.1f}–{max(xs):.1f})"
 
 
-def lookup(table, label):
-    """A row of a report table by its label, ignoring the number of seeds (a dropped suite makes it 8 or 9)."""
-    pat = re.escape(label).replace("of\\ 10\\ seeds", "of\\ \\d+\\ seeds").replace("of 10 seeds", "of \\d+ seeds")
-    for k, v in table.items():
-        if re.fullmatch(pat, k):
-            return v
-    return None
 
 
 def spread(xs, fmt=str):
@@ -105,7 +97,9 @@ def main(fair):
       "API and oracle): [../mutation/REPORT.md](../mutation/REPORT.md).\n")
     w("Every tool tests the adapter, every call is checked against the same `.spec` by the same monitor, "
       "Randoop's and EvoSuite's own assertions are removed, and the mutants are the ones scored in "
-      "`mutation/REPORT.md`. Killed = some kept test reaches a contract failure on a valid call, or times out.\n")
+      "`mutation/REPORT.md`. Killed = some kept test reaches a contract failure on a valid call, or a precondition "
+      "failure on a call that was valid on the fixed version (PRE divergence), or times out. Validity is decided on "
+      "the fixed version only.\n")
     missing = [k for k, _, _ in CLASSES if not rows[k]]
     if missing:
         w(f"**Incomplete:** no fair rows yet for {', '.join(missing)}. Totals below cover only "
@@ -195,6 +189,44 @@ def main(fair):
     w("")
     w("The same check on the bugs' fixed versions is in `validity.tsv` (scope = bug).\n")
 
+    # ── 1b. invalid calls per adapter operation ──
+    w("### Invalid calls per adapter operation\n")
+    w("From the first baseline run on each class's fixed version, over every test the suite ran (kept or not). "
+      "*Calls* = every call the tool's tests made to the operation (Randoop/EvoSuite: total over the seeds). "
+      "*% invalid* = calls the monitor flagged: a false precondition, a state field the test wrote, or a direct "
+      "library / adapter-nested-class call before it. Each call is judged on its own, also after an earlier invalid "
+      "call. Per suite: column `calls_by_op` of `validity.tsv` (`op=calls/invalid`).\n")
+    op_tools = [("TestGen long", lambda s: s == "testgen-long"), ("TestGen + short", lambda s: s == "testgen-all"),
+                ("Randoop", lambda s: s.startswith("randoop-")),
+                ("EvoSuite default", lambda s: s.startswith("evosuite-default-")),
+                ("EvoSuite black-box", lambda s: s.startswith("evosuite-blackbox-"))]
+    w("| Class | Operation | " + " | ".join(f"{t} calls | {t} % invalid" for t, _ in op_tools) + " |")
+    w("| --- | --- | " + " | ".join("--- | ---" for _ in op_tools) + " |")
+    any_ops = False
+    for key, label, ver in CLASSES:
+        counts = defaultdict(lambda: defaultdict(lambda: [0, 0]))   # op -> tool -> [calls, invalid]
+        for r in vrows:
+            if r["scope"] != key or not r.get("calls_by_op"):
+                continue
+            t = next((t for t, f in op_tools if f(r["suite"])), None)
+            if t is None:
+                continue
+            for item in r["calls_by_op"].split(";"):
+                op, v = item.split("=")
+                c, i = v.split("/")
+                counts[op][t][0] += int(c)
+                counts[op][t][1] += int(i)
+        for op in sorted(counts):
+            any_ops = True
+            cells = [label, f"`{op}`"]
+            for t, _ in op_tools:
+                c, i = counts[op][t] if t in counts[op] else (0, 0)
+                cells += [str(c) if t in counts[op] else "–", pct(i, c) if c else "–"]
+            w("| " + " | ".join(cells) + " |")
+    if not any_ops:
+        w("| _no per-operation counts yet_ |" + " |" * (1 + 2 * len(op_tools)))
+    w("")
+
     # ── 2. fair mutation score ──
     keys = done
     w("## 2. Fair mutation score\n")
@@ -241,53 +273,62 @@ def main(fair):
             w(f"| {label} ({ver}) | {len(scored[key])} | {len(observable[key])} |")
     w("")
 
-    # ── 4. native vs fair ──
-    w("## 4. Native vs fair\n")
-    native = parse_native(os.path.join(mut, "REPORT.md"))
-    w("Native numbers are copied from `mutation/REPORT.md` (each tool's own API and oracle), not recomputed. "
-      "Both EvoSuite settings are compared with the one native EvoSuite run.\n")
-    fair_all = {l[0]: l for l in tool_lines(keys)}
-    nat_all = native.get("all", {})
-    pairs = [("TestGen, long string only", "TestGen, long string only"),
-             ("TestGen, + short strings", "TestGen, + short strings"),
-             ("Randoop, median of 10 seeds (min–max)", "Randoop, median of 10 seeds (min–max)"),
-             ("Randoop, any of 10 seeds", "Randoop, any of 10 seeds"),
-             ("EvoSuite, median of 10 seeds (min–max)", "EvoSuite, default criteria, median of 10 seeds (min–max)"),
-             ("EvoSuite, median of 10 seeds (min–max)", "EvoSuite, black-box criteria, median of 10 seeds (min–max)"),
-             ("EvoSuite, any of 10 seeds", "EvoSuite, default criteria, any of 10 seeds"),
-             ("EvoSuite, any of 10 seeds", "EvoSuite, black-box criteria, any of 10 seeds")]
-    w("### All classes\n")
-    w("| Tool (native → fair) | Native score | Fair score |")
-    w("| --- | --- | --- |")
-    for nat, fr in pairs:
-        nv, fl = lookup(nat_all, nat), lookup(fair_all, fr)
-        if nv is not None or fl is not None:
-            nv = nv or "–"
-            fv = fl[3] if fl else "–"
-            w(f"| {nat} → {fr} | {nv} | {fv} |")
-    w("")
-    gap_lines(w, nat_all, fair_all)
-    w("### Per class (median for Randoop/EvoSuite)\n")
-    w("| Class | TestGen long native / fair | TestGen + short native / fair | Randoop native / fair | EvoSuite native / fair default / fair black-box |")
-    w("| --- | --- | --- | --- | --- |")
+    # ── 4. native vs fair, per class, on the mutants both samples score ──
+    w("## 4. Native vs fair (per class, shared mutants only)\n")
+    w("Per class, only the mutants scored both in the committed native sample "
+      "(`git HEAD:benchmarks/defects4j/mutation/<key>.status.tsv`) and in the current sample the fair run uses "
+      "(`mutation/<key>.status.tsv`). Native kills are recomputed on those mutants from the committed native rows "
+      "(`git HEAD:…/mutation/<key>.rows.tsv`), fair kills from `<key>.fair.rows.tsv`. Classes are never pooled. "
+      "Randoop/EvoSuite: median of the seeds. The one native EvoSuite run is set against both fair EvoSuite "
+      "settings.\n")
+    w("| Class | Shared mutants | TestGen long native / fair | TestGen + short native / fair | "
+      "Randoop native / fair | EvoSuite native / fair default / fair black-box | "
+      "Gap EvoSuite − TestGen + short, native / fair default / fair black-box (points) |")
+    w("| --- | --- | --- | --- | --- | --- | --- |")
     for key, label, ver in CLASSES:
         if key not in keys:
             continue
-        nat = native.get(key, {})
-        n = len(scored[key])
-        fl = lambda s: pct(suite_kills(key, s), n) if s in suites_of[key] else "–"
-        fm = lambda t: (f"{med([100.0 * suite_kills(key, f'{t}-s{s}') / n for s in SEEDS if f'{t}-s{s}' in suites_of[key]]):.1f}%"
-                        if any(f"{t}-s{s}" in suites_of[key] for s in SEEDS) and n else "–")
-        w(f"| {label} ({ver}) | {nat.get('TestGen, long string only', '–')} / {fl('testgen-long')} | "
-          f"{nat.get('TestGen, + short strings', '–')} / {fl('testgen-all')} | "
-          f"{first_pct(lookup(nat, 'Randoop, median of 10 seeds (min–max)'))} / {fm('randoop')} | "
-          f"{first_pct(lookup(nat, 'EvoSuite, median of 10 seeds (min–max)'))} / {fm('evosuite-default')} / {fm('evosuite-blackbox')} |")
+        head_status = git_tsv(d4j, f"mutation/{key}.status.tsv")
+        head_ids = {r["id"] for r in head_status if r["status"] == "VALID" and r["sampled"] == "yes"}
+        shared = head_ids & set(scored[key])
+        n = len(shared)
+        nat_k = defaultdict(set)   # native suite -> killed shared mutants (every native suite has a key)
+        for r in git_tsv(d4j, f"mutation/{key}.rows.tsv"):
+            nat_k[r["suite"]]
+            if r["outcome"] == "KILLED" and r["id"] in shared:
+                nat_k[r["suite"]].add(r["id"])
+
+        def score(k):
+            return 100.0 * k / n if n else None
+
+        def nat_single(s):
+            return score(len(nat_k[s]))
+
+        def nat_med(tool):
+            xs = [score(len(v)) for s, v in nat_k.items() if s.startswith(tool + "-s")]
+            return statistics.median(xs) if xs and n else None
+
+        def fair_single(s):
+            return score(len(killed[(key, s)] & shared)) if s in suites_of[key] else None
+
+        def fair_med(tool):
+            xs = [score(len(killed[(key, f"{tool}-s{sd}")] & shared)) for sd in SEEDS if f"{tool}-s{sd}" in suites_of[key]]
+            return statistics.median(xs) if xs and n else None
+
+        f1 = lambda x: "–" if x is None else f"{x:.1f}%"
+        g = lambda a, b: "–" if a is None or b is None else f"{a - b:+.1f}"
+        tg_n, tg_f = nat_single("testgen-all"), fair_single("testgen-all")
+        ev_n, ev_d, ev_b = nat_med("evosuite"), fair_med("evosuite-default"), fair_med("evosuite-blackbox")
+        w(f"| {label} ({ver}) | {n} | {f1(nat_single('testgen-long'))} / {f1(fair_single('testgen-long'))} | "
+          f"{f1(tg_n)} / {f1(tg_f)} | {f1(nat_med('randoop'))} / {f1(fair_med('randoop'))} | "
+          f"{f1(ev_n)} / {f1(ev_d)} / {f1(ev_b)} | {g(ev_n, tg_n)} / {g(ev_d, tg_f)} / {g(ev_b, tg_f)} |")
     w("")
 
     # ── 5. real bugs ──
     w("## 5. Fair real-bug detection (12 bugs)\n")
     w("Suites generated on the fixed version, kept tests only, run on the buggy version under the monitor "
-      "(adapter compiled against the buggy classes). Detected = a contract failure on a valid call. "
+      "(adapter compiled against the buggy classes). Detected = a contract failure on a valid call, or a "
+      "precondition failure on a call that was valid on the fixed version (PRE divergence). "
       "Randoop/EvoSuite: number of the 10 seeds that detect it.\n")
     if not bugs:
         w("_No bug results yet._\n")
@@ -385,55 +426,22 @@ def main(fair):
         f.write("\n".join(out))
 
 
-def gap_lines(w, nat, fair_all):
-    """TestGen (+ short strings) vs EvoSuite median: native gap and fair gap, in points."""
-    def num(s):
-        m = re.match(r"\s*([0-9.]+)%", s or "")
-        return float(m.group(1)) if m else None
-    tg_n = num(nat.get("TestGen, + short strings"))
-    ev_n = num(lookup(nat, "EvoSuite, median of 10 seeds (min–max)"))
-    tg_f = num((fair_all.get("TestGen, + short strings") or (0, 0, 0, ""))[3])
-    rows = []
-    for lab in ("EvoSuite, default criteria, median of 10 seeds (min–max)",
-                "EvoSuite, black-box criteria, median of 10 seeds (min–max)"):
-        ev_f = num((lookup(fair_all, lab) or (0, 0, 0, ""))[3])
-        if None not in (tg_n, ev_n, tg_f, ev_f):
-            rows.append((lab.split(",")[1].strip(), ev_n - tg_n, ev_f - tg_f))
-    if rows:
-        w("| Gap: EvoSuite median minus TestGen + short strings | Native (points) | Fair (points) |")
-        w("| --- | --- | --- |")
-        for lab, a, b in rows:
-            w(f"| EvoSuite {lab} | {a:+.1f} | {b:+.1f} |")
-        w("")
 
 
-def first_pct(s):
-    m = re.search(r"([0-9.]+%)", s or "")
-    return m.group(1) if m else "–"
+def git_tsv(d4j, rel):
+    """A TSV file of benchmarks/defects4j as committed at git HEAD ([] if it is not committed)."""
+    import io
+    import subprocess
+    try:
+        text = subprocess.run(["git", "-C", d4j, "show", f"HEAD:./{rel}"], check=True,
+                              capture_output=True, text=True).stdout
+    except subprocess.CalledProcessError:
+        return []
+    return list(csv.DictReader(io.StringIO(text), delimiter="\t", quoting=csv.QUOTE_NONE))
 
 
-def parse_native(path):
-    """{'all': {tool: score}, key: {tool: score}} from mutation/REPORT.md, as written there."""
-    res = {}
-    if not os.path.exists(path):
-        return res
-    section = None
-    keys = {f"(`{k}`)": k for k, _, _ in CLASSES}
-    for line in open(path, encoding="utf-8"):
-        line = line.rstrip("\n")
-        if line.startswith("## All classes"):
-            section = "all"
-        elif line.startswith("### Only mutants") or line.startswith("### Per class"):
-            section = None
-        elif line.startswith("### "):
-            section = next((v for k, v in keys.items() if k in line), None)
-        elif line.startswith("## "):
-            section = None
-        elif section and line.startswith("| ") and not line.startswith("| Tool") and not line.startswith("| ---"):
-            cells = [c.strip() for c in line.strip("|").split("|")]
-            if len(cells) == 4:
-                res.setdefault(section, {})[cells[0]] = cells[3]
-    return res
+
+
 
 
 def read_tsv_csv(path):

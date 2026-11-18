@@ -35,6 +35,8 @@ import java.util.Set;
  *   fair.skip     optional: file with test ids not to run (a baseline run resuming after a hang)
  *   fair.out      file the per-test outcomes are written to
  *   fair.stop     true: stop at the first killing test (mutant runs)
+ *   fair.ref      optional (mutant / buggy runs): file with, per kept test, "id TAB invalid_at TAB calls"
+ *                 from the fixed version (invalid_at -1 = no invalid call there)
  * </pre>
  *
  * <p>Outcome of one test, from its log only (a try/catch in the test cannot hide anything):
@@ -44,19 +46,26 @@ import java.util.Set;
  *       call k, nothing from call k on counts;</li>
  *   <li>before that, a postcondition is false, or the library throws, at call k:
  *       FAIL (a contract failure);</li>
+ *   <li>PRE divergence (only with {@code fair.ref}): a precondition is false at call k on
+ *       this (mutant or buggy) version, but call k was valid on the fixed version (same test,
+ *       same call index, k within the calls the test made there): PREDIV, a kill. Validity
+ *       is decided on the fixed version only;</li>
  *   <li>JUnit's per-test time limit: TIMEOUT.</li>
  * </ul>
  * Output lines (tab-separated):
  * <pre>
  *   START  id
- *   TEST   id  outcome  calls  invalid_at  fail_at  fresh  junit  obs  message
+ *   TEST   id  outcome  calls  invalid_at  fail_at  fresh  junit  obs  message  ops
  *   CLASSFAIL  class  message
  * </pre>
- * {@code outcome} is FAIL, TIMEOUT, NOCALL (no adapter call), INVALID1 (invalid from the
+ * {@code outcome} is FAIL, PREDIV, TIMEOUT, NOCALL (no adapter call), INVALID1 (invalid from the
  * first call) or PASS (possibly invalid from a later call, see {@code invalid_at}).
  * {@code fresh} is yes when the adapter was reset after its last call before this
  * test's first call. {@code obs} lists a short hash of every call's observation (what it
  * returned or threw, and the plain state fields after it), for the report's reasons.
+ * {@code ops} lists, per adapter operation, {@code op:calls:invalid}: every call the test made
+ * to it, and how many of those the monitor flagged (a false precondition, a state field the
+ * test wrote, or a direct library call before it), whether or not an earlier call was invalid.
  */
 public final class FairRunner extends Runner {
 
@@ -96,6 +105,14 @@ public final class FairRunner extends Runner {
         String skipFile = System.getProperty("fair.skip");
         final Set<String> skip = skipFile == null ? new HashSet<String>() : new HashSet<String>(readLines(skipFile));
         final boolean stop = Boolean.getBoolean("fair.stop");
+        final java.util.Map<String, int[]> ref = new java.util.HashMap<String, int[]>();   // id -> {invalid_at, calls} on fixed
+        String refFile = System.getProperty("fair.ref");
+        if (refFile != null) {
+            for (String l : readLines(refFile)) {
+                String[] f = l.split("\t");
+                ref.put(f[0], new int[] { Integer.parseInt(f[1]), Integer.parseInt(f[2]) });
+            }
+        }
         final PrintWriter out = new PrintWriter(new OutputStreamWriter(
                 new FileOutputStream(System.getProperty("fair.out"), true), StandardCharsets.UTF_8));
         final String[] kill = new String[1];
@@ -153,11 +170,12 @@ public final class FairRunner extends Runner {
 
                     @Override public void testFinished(Description d) {
                         Outcome o = new Outcome();
+                        o.ref = ref.get(current);
                         account(FairLog.drain(), callsSinceReset, o);
                         boolean junitTimeout = failure != null
                                 && failure.getClass().getName().equals("org.junit.runners.model.TestTimedOutException");
                         String outcome;
-                        if (o.failAt > 0) outcome = "FAIL";
+                        if (o.failAt > 0) outcome = o.preDivergence ? "PREDIV" : "FAIL";
                         else if (junitTimeout) outcome = "TIMEOUT";
                         else if (o.calls == 0) outcome = "NOCALL";
                         else if (o.invalidAt == 1) outcome = "INVALID1";
@@ -167,9 +185,9 @@ public final class FairRunner extends Runner {
                         if (junit.length() > 160) junit = junit.substring(0, 160);
                         out.println("TEST\t" + current + "\t" + outcome + "\t" + o.calls + "\t" + o.invalidAt + "\t"
                                 + o.failAt + "\t" + (o.fresh ? "yes" : "no") + "\t" + junit + "\t"
-                                + String.join(",", o.obs) + "\t" + oneLine(o.message));
+                                + String.join(",", o.obs) + "\t" + oneLine(o.message) + "\t" + o.ops());
                         out.flush();
-                        if ((outcome.equals("FAIL") || outcome.equals("TIMEOUT")) && kill[0] == null) {
+                        if ((outcome.equals("FAIL") || outcome.equals("PREDIV") || outcome.equals("TIMEOUT")) && kill[0] == null) {
                             kill[0] = current + " " + outcome + " at call " + Math.max(o.failAt, 0) + ": " + o.message;
                             if (stop) inner.pleaseStop();
                         }
@@ -195,8 +213,27 @@ public final class FairRunner extends Runner {
         int calls, invalidAt = -1, failAt = -1;
         boolean fresh = true, sawCall;
         boolean pendingOffApi;
+        int[] ref;              // {invalid_at, calls} of this test on the fixed version, or null (baseline runs)
+        boolean preDivergence;  // failAt is a PRE false on a call that was valid on the fixed version
         String message = "";
         final List<String> obs = new ArrayList<String>();
+        final java.util.Map<String, int[]> perOp = new java.util.LinkedHashMap<String, int[]>();   // op -> {calls, invalid}
+        String op;
+        int flaggedCall;   // the last call counted as invalid in perOp
+
+        /** Counts the current call as invalid in perOp (once per call). */
+        void flag() {
+            if (op != null && flaggedCall != calls) { perOp.get(op)[1]++; flaggedCall = calls; }
+        }
+
+        String ops() {
+            StringBuilder sb = new StringBuilder();
+            for (java.util.Map.Entry<String, int[]> e : perOp.entrySet()) {
+                if (sb.length() > 0) sb.append(',');
+                sb.append(e.getKey()).append(':').append(e.getValue()[0]).append(':').append(e.getValue()[1]);
+            }
+            return sb.toString();
+        }
     }
 
     /** Walks one test's events in order. With {@code o == null} it only updates the reset counter. */
@@ -209,7 +246,10 @@ public final class FairRunner extends Runner {
                 if (o != null) {
                     if (!o.sawCall) { o.fresh = callsSinceReset[0] == 0; o.sawCall = true; }
                     o.calls++;
-                    if (o.pendingOffApi) { invalid(o, "OFFAPI before this call"); o.pendingOffApi = false; }
+                    o.op = f.length > 1 ? f[1] : "?";
+                    if (!o.perOp.containsKey(o.op)) o.perOp.put(o.op, new int[2]);
+                    o.perOp.get(o.op)[0]++;
+                    if (o.pendingOffApi) { invalid(o, "OFFAPI before this call"); o.flag(); o.pendingOffApi = false; }
                 }
                 callsSinceReset[0]++;
                 continue;
@@ -221,7 +261,19 @@ public final class FairRunner extends Runner {
                     o.pendingOffApi = true;
                     break;
                 case "PRE":
+                    o.flag();
+                    if (o.ref != null && o.invalidAt < 0 && o.failAt < 0 && o.calls > 0 && o.calls <= o.ref[1]
+                            && (o.ref[0] < 0 || o.calls < o.ref[0])) {
+                        // valid on the fixed version, invalid here: the version under test changed the state
+                        o.failAt = o.calls;
+                        o.preDivergence = true;
+                        o.message = "PRE_DIVERGENCE " + detail;
+                    } else {
+                        invalid(o, kind + " " + detail);
+                    }
+                    break;
                 case "TAMPER":
+                    o.flag();
                     invalid(o, kind + " " + detail);
                     break;
                 case "PREX":

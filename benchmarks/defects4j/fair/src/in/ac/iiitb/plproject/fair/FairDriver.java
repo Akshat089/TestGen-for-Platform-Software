@@ -87,11 +87,12 @@ public final class FairDriver {
         final String tool, name;
         final List<String> sources = new ArrayList<String>();
         final List<String> classes = new ArrayList<String>();
-        Path classDir, classesFile, keepFile;
+        Path classDir, classesFile, keepFile, refFile;
         String status = "KEPT", reason = "";
         String assertionsRemoved = "", offApiMarkers = "";
         int tests, invalid1, invalidAny, noCall, falseAlarms, flaky, notRun, notFresh, kept;
         final List<Integer> calls = new ArrayList<Integer>();
+        final Map<String, int[]> ops = new java.util.TreeMap<String, int[]>();   // op -> {calls, invalid}, run 1
         Map<String, String[]> reference = new LinkedHashMap<String, String[]>();   // kept test -> TEST fields (run 1)
         final List<String> details = new ArrayList<String>();
         Suite(String tool, String name) { this.tool = tool; this.name = name; }
@@ -156,6 +157,14 @@ public final class FairDriver {
                 s.tests++;
                 int calls = Integer.parseInt(a[3]);
                 s.calls.add(calls);
+                if (a.length > 10 && !a[10].isEmpty()) {
+                    for (String op : a[10].split(",")) {
+                        String[] q = op.split(":");
+                        int[] c = s.ops.computeIfAbsent(q[0], k -> new int[2]);
+                        c[0] += Integer.parseInt(q[1]);
+                        c[1] += Integer.parseInt(q[2]);
+                    }
+                }
                 if (a[2].equals("INVALID1")) s.invalid1++;
                 if (!a[4].equals("-1")) s.invalidAny++;
                 if (a[6].equals("no") && calls > 0) s.notFresh++;
@@ -172,11 +181,19 @@ public final class FairDriver {
         s.kept = kept.size();
         s.keepFile = work.resolve("suites").resolve(s.name + ".keep");
         Files.write(s.keepFile, String.join("\n", kept).getBytes(StandardCharsets.UTF_8));
+        // PRE divergence rule: validity is decided on the fixed version; the runner gets each kept test's
+        // invalid_at and number of calls there
+        StringBuilder ref = new StringBuilder();
+        for (Map.Entry<String, String[]> e : s.reference.entrySet()) {
+            ref.append(e.getKey()).append('\t').append(e.getValue()[4]).append('\t').append(e.getValue()[3]).append('\n');
+        }
+        s.refFile = work.resolve("suites").resolve(s.name + ".ref");
+        Files.write(s.refFile, ref.toString().getBytes(StandardCharsets.UTF_8));
         if (kept.isEmpty()) { s.status = "NO_TESTS"; s.reason = "no test left after the baseline check"; }
     }
 
     private static boolean isKill(String outcome) {
-        return outcome.equals("FAIL") || outcome.equals("TIMEOUT");
+        return outcome.equals("FAIL") || outcome.equals("PREDIV") || outcome.equals("TIMEOUT");
     }
 
     private static String signature(String[] t) {
@@ -323,7 +340,8 @@ public final class FairDriver {
     /** outcome TAB kind TAB test TAB call. */
     private String verdict(Result r, Suite s) {
         if (r.kill != null) {
-            return "KILLED\t" + (r.kill[2].equals("FAIL") ? "CONTRACT" : "TIMEOUT") + "\t" + r.kill[1] + "\t" + r.kill[5];
+            String kind = r.kill[2].equals("FAIL") ? "CONTRACT" : r.kill[2].equals("PREDIV") ? "PRE_DIVERGENCE" : "TIMEOUT";
+            return "KILLED\t" + kind + "\t" + r.kill[1] + "\t" + r.kill[5];
         }
         if (r.timedOut) return "KILLED\tTIMEOUT\t" + (r.hung == null ? "" : r.hung) + "\t";
         int missing = 0;
@@ -382,7 +400,8 @@ public final class FairDriver {
                 Files.createDirectories(out.getParent());
                 Files.deleteIfExists(out);
                 Result r = runJvm(buggyCp, s, s.keepFile, null, out, true);
-                if (r.kill != null && r.kill[2].equals("FAIL")) {
+                if (r.kill != null && (r.kill[2].equals("FAIL") || r.kill[2].equals("PREDIV"))) {
+                    // a PRE divergence is labelled by its message (PRE_DIVERGENCE ...)
                     return pre + "DETECTED\t" + r.kill[1] + "\t" + r.kill[5] + "\t" + clip(r.kill.length > 9 ? r.kill[9] : "");
                 }
                 if (r.kill != null || r.timedOut) return pre + "TIMEOUT\t" + (r.kill != null ? r.kill[1] : "") + "\t\t";
@@ -412,6 +431,7 @@ public final class FairDriver {
                 "-Dfair.classes=" + s.classesFile, "-Dfair.out=" + out, "-Dfair.stop=" + stop));
         if (keep != null) cmd.add("-Dfair.keep=" + keep);
         if (skip != null) cmd.add("-Dfair.skip=" + skip);
+        if (keep != null && s.refFile != null) cmd.add("-Dfair.ref=" + s.refFile);   // mutant / buggy runs only
         cmd.addAll(Arrays.asList("-cp", libCp + ":" + s.classDir + ":" + runtimeCp + ":" + mutationCp + ":" + fairmonCp,
                 MutantTestMain.class.getName(), "fairmon.FairEntry"));
         ProcessBuilder pb = new ProcessBuilder(cmd);
@@ -463,6 +483,8 @@ public final class FairDriver {
               .append('\t').append(s.flaky).append('\t').append(s.notRun).append('\t').append(s.notFresh)
               .append('\t').append(s.kept).append('\t').append(median).append('\t').append(max)
               .append('\t').append(s.assertionsRemoved).append('\t').append(s.offApiMarkers)
+              .append('\t').append(s.ops.entrySet().stream().map(e -> e.getKey() + "=" + e.getValue()[0] + "/" + e.getValue()[1])
+                                   .collect(Collectors.joining(";")))
               .append('\t').append(clip(s.reason)).append('\n');
             Path d = work.resolve("baseline-tests");
             Files.createDirectories(d);
