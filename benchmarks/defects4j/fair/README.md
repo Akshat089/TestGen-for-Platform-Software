@@ -123,3 +123,45 @@ For a mutant some native suite of a tool kills but no fair suite of that tool ki
 - **EvoSuite's suites are regenerated against the adapter.** They are not the native ones, so a native vs fair change mixes two effects: the target (adapter vs class) and the oracle (contract vs regression assertions). Table 6 helps to separate them.
 - **"Contract-observable" (table 3) depends on the generated tests.** A mutant no suite of any tool kills may still be observable by some other in-contract sequence.
 - **Marking direct library calls is static.** A call is marked by its declaring class. Calls on `String`, `Object`, boxed numbers, `Math`, JUnit, EvoSuite's runtime and `PrintStream` are allowed. Constructing or calling a class nested in the adapter is always marked.
+
+## Tools added later: RandPre, the 180 s budget, TestGen's running time
+
+In the report's text the setting above is called **same-oracle** (files, folders and code keep the name *fair*).
+
+- **RandPre** (`src/.../fair/RandPre.java`, tools `randpre`, `randpre-pool`, `randpre-timed`, `randpre-pool-timed`): a random baseline with exactly TestGen's information. It takes TestGen's own test strings (`specs/<Spec>.tests`; the first, long string alone → suite `randpre…-long-s<seed>`, and all strings → `randpre…-all-s<seed>`), the same adapter and the same contract. For each string it starts from `Helper.reset()` on the real, monitored adapter (the bug's fixed version) and, call by call in order:
+  - draws argument values at random from TestGen's solver domain: int/Integer in [-1000, 1000], String `"s"+k` with k in [-1000, 1000] (interned, as the literal in the written test), boolean;
+  - **pool** variants: each argument is, with probability ½, taken instead from the distinct values seen earlier *in the same string* (the arguments of the calls already made and their non-null int/String/boolean return values) of the same type, when there is one;
+  - keeps the first draw whose precondition holds on the current real state. The precondition is evaluated with the monitor's own Java for it (`monitor-src/contracts.tsv`: the same clauses, in order, `Objects.equals` for objects). Then the call is made through the monitored adapter, and the monitor must log no PRE failure for it (RandPre stops with an error if the two disagree; it never did);
+  - budget: 1000 draws per call; **timed** variants instead give the whole string the wall-clock time TestGen took for it (`timing.tsv`, run 1, `total_ms`), with no limit per call;
+  - a string whose precondition no draw meets within the budget is **rejected** (as TestGen's INCORRECT_SEQUENCE); a kept call that throws rejects the string (as TestGen's LIBRARY_EXCEPTION).
+  The kept values go into TestGen's own abstract test case (`TestGen.getATC`, `rewriteATC`) and are printed by TestGen's `JUnitPrinter`: the same JUnit form as TestGen's suites (Helper.reset(), fixed values, PRE and POST `assertTrue` from the contract). They then go through exactly the same PRE-stripping copy (`pre_strip`, shared with `testgen_copy`), baseline check and monitor. Generation log: `randpre.tsv` (one row per version, tool, seed, long/all and string: status, the call it stopped at, draws per call, time).
+- **Budget 180 s** (tools `randoop-b180`, `evosuite-default-b180`, `evosuite-blackbox-b180`): the same commands as `randoop`, `evosuite-default`, `evosuite-blackbox`, with BUDGET=180 (EvoSuite: 90 s search + 90 s assertions); suites `<tool>-b180-s<seed>`. The 60 s suites are kept.
+- **Separate files per run.** A run of these tools must not include an original tool. Its validity and bug rows go to `$MUT_WORK/fair/{classes,bugs}/*/validity.<tools>.tsv` and `bug.rows.<tools>.tsv`; `fair.sh` appends them after the original rows when it collects `validity.tsv` and `bugs.fair.tsv` (a suite in several runs keeps its latest row). Mutant rows are appended to `<key>.fair.rows.tsv` as before. Tables 1–6 of the report are computed over the original suites only; sections 7–14 cover the new ones.
+- **TestGen's running time** (`src/.../atc/FairTiming.java`; it only calls `GenatcMain.generate` and lives in TestGen's `atc` package only to build a registry entry, as `runner/.../D4jMain` does):
+  - `fair.sh --timing --classes none --timing-runs "1 2"`: on every bug's fixed version, each test string generated **alone** from a one-string `.tests` in `$MUT_WORK/fair/timing/`, twice → `timing.tsv`: genCTC rounds, SPF runs, TestGen's own SPF time (`spf_ms`), total wall time on the monotonic clock (`total_ms`) and on the system clock (`wall_ms`).
+  - `fair.sh --depth-timing`: our 14 libraries, prefixes of 4, 8, 12, 16, 20 and 24 calls of the one string in `specs/<Lib>.tests` (ticketservice: 23 calls, so its last prefix is 23), each from a temporary `.tests` in `$MUT_WORK/fair/depth/` through `LibraryRegistry.variantOf` → `../../../depth_timing.tsv` (repository root). Nothing under `specs/` is written.
+  - **Clock caveat.** TestGen measures SPF time with `System.currentTimeMillis()`. On this machine (WSL2) the system clock is stepped by about 3 s from time to time, so a step inside a round inflates `spf_ms` (it can exceed `total_ms`). `wall_ms − total_ms` shows the step; the report also gives *SPF, corrected* = `spf_ms − max(0, wall_ms − total_ms)`. `total_ms` is on the monotonic clock and is not affected.
+
+## Reproducing
+
+Machine: AMD Ryzen 7 5800H (8 cores, 16 threads), 6.7 GiB RAM visible to WSL2, Ubuntu 24.04.1 LTS on WSL2 (kernel 6.18.58.1-microsoft-standard-WSL2). OpenJDK 11.0.33 (`JAVA11_HOME=/usr/lib/jvm/java-11-openjdk-amd64`); Python 3.12.3 (standard library only).
+
+Tools: Defects4J v3.0.1-7-g8c16da82, with the jars it ships in `framework/lib/test_generation/generation/`: Randoop 4.3.4 (`randoop-current.jar`, `replacecall-current.jar`), EvoSuite 1.1.0 (`evosuite-current.jar`; runtime `evosuite-standalone-runtime-1.1.0.jar`). TestGen as built from this repository (`mvn -q install -DskipTests`), with SPF from `~/.genatc-spf` (jpf-core 3bedf0b, jpf-symbc f70927c, z3 through `com.microsoft.z3.jar`) and its defaults: depth limit 300, 60 s per round, integers in [-1000, 1000]. JUnit 4.13.1, Hamcrest 1.3.
+
+Settings: seeds 1–10 for every seeded tool; BUDGET 60 s per class and run (and 180 s for the `-b180` tools); THREADS = 12 (cores − 4), GEN_JOBS = 4, TIMEOUT 30 s per (mutant, suite) JVM, `-Xmx512m`, TZ=America/Los_Angeles; the scored mutants are `../mutation/<key>.status.tsv` (seed-1 sample, cap 300). RandPre: 1000 draws per call, or TestGen's time per string from `timing.tsv` run 1.
+
+EvoSuite black-box configuration: `-criterion METHOD:METHODNOEXCEPTION:OUTPUT:EXCEPTION -Dalgorithm=MOSA`; both EvoSuite settings also use `-Dsearch_budget=BUDGET/2 -Dassertion_timeout=BUDGET/2 -Dstopping_condition=MaxTime -Djunit_check=false -Dfilter_assertions=false -Dtest_comments=false -Dreset_static_fields=true -mem 1500 -Dshow_progress=false`, with `-class in.ac.iiitb.plproject.atc.generated.Helper -projectCP <fixed classes>:<adapter>`. Randoop: Defects4J's `randoop.config` options, `--testclass=…Helper --time-limit=BUDGET --randomseed=<seed> --junit-before-each=<Helper.reset()> --omit-methods=…Helper.reset() --omit-field=<each state field>` (see `gen_one` in `fair.sh` for the full command).
+
+Commands, in the order they were run (from `benchmarks/defects4j`, after `setup.sh`, `checkout.sh`, `run.sh` and `mutation.sh`):
+
+```bash
+./fair/fair.sh                                                     # the first run: testgen, randoop, evosuite-default, evosuite-blackbox
+./fair/fair.sh --timing --classes none --timing-runs "1 2"         # TestGen's time per string -> fair/timing.tsv
+./fair/fair.sh --depth-timing --timing-runs 1                      # 14 libraries, prefixes -> depth_timing.tsv (repo root)
+./fair/fair.sh --depth-timing --libs "stack orderservice" --timing-runs 2   # second run, for the determinism check
+./fair/fair.sh --tools "randpre randpre-pool randpre-timed randpre-pool-timed"
+./fair/fair.sh --tools "randoop-b180 evosuite-default-b180 evosuite-blackbox-b180"
+./fair/fair.sh --report                                            # rebuild REPORT.md only
+```
+
+Long runs were started as `setsid nohup <command> >> <log> 2>&1 < /dev/null &`. Run the timing alone: the timed RandPre variants and TestGen's times both depend on machine load.

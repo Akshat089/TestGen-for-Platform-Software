@@ -1,0 +1,85 @@
+scope	class	spec	string	calls	run	status	rounds	spf_runs	spf_ms	total_ms	wall_ms	detail
+Collections-6	flat3map	Flat3Map	Flat3MapDryRun	16	1	GENERATED	14	15	17733	15064	17993	
+Collections-6	flat3map	Flat3Map	RemoveInFlatMode	4	1	GENERATED	3	4	3079	3097	3098	
+Collections-6	flat3map	Flat3Map	SetValueInFlatMode	6	1	GENERATED	5	6	4704	4720	4721	
+Collections-6	flat3map	Flat3Map	Flat3MapDryRun	16	2	GENERATED	14	15	13772	14048	14049	
+Collections-6	flat3map	Flat3Map	RemoveInFlatMode	4	2	GENERATED	3	4	3054	3071	3072	
+Collections-6	flat3map	Flat3Map	SetValueInFlatMode	6	2	GENERATED	5	6	7574	4665	7598	
+Collections-1	-	Flat3Map	Flat3MapDryRun	16	1	GENERATED	14	15	17848	18068	18068	
+Collections-1	-	Flat3Map	RemoveInFlatMode	4	1	GENERATED	3	4	3414	3426	3426	
+Collections-1	-	Flat3Map	SetValueInFlatMode	6	1	GENERATED	5	6	9307	6391	9321	
+Collections-5	-	SetUniqueList	SetUniqueListDryRun	16	1	INCORRECT_SEQUENCE	10	11	9348	9549	9549	INCORRECT SEQUENCE: call 9 (indexOf): L.contains(e)
+Collections-5	-	SetUniqueList	SetNewElement	5	1	GENERATED	4	5	3697	3714	3714	
+Collections-5	-	SetUniqueList	SetElementInPlace	5	1	GENERATED	4	5	3420	3431	3432	
+Collections-5	-	SetUniqueList	AddAllInFront	4	1	GENERATED	3	4	3284	3297	3297	
+Collections-5	-	SetUniqueList	SubListOfPrefix	4	1	GENERATED	3	4	3375	3384	3385	
+Collections-15	-	SetUniqueList	SetUniqueListDryRun	16	1	INCORRECT_SEQUENCE	13	14	15175	12460	15393	INCORRECT SEQUENCE: call 12 (removeElement): L.contains(e)
+Collections-15	-	SetUniqueList	SetNewElement	5	1	GENERATED	4	5	3332	3351	3352	
+Collections-15	-	SetUniqueList	SetElementInPlace	5	1	GENERATED	4	5	3308	3316	3316	
+Collections-15	-	SetUniqueList	AddAllInFront	4	1	GENERATED	3	4	2983	2992	2993	
+Collections-15	-	SetUniqueList	SubListOfPrefix	4	1	GENERATED	3	4	2736	2745	2746	
+Collections-16	-	SetUniqueList	SetUniqueListDryRun	16	1	INCORRECT_SEQUENCE	13	14	12012	12193	12194	INCORRECT SEQUENCE: call 12 (removeElement): L.contains(e)
+Collections-16	-	SetUniqueList	SetNewElement	5	1	GENERATED	4	5	6526	3616	6549	
+Collections-16	-	SetUniqueList	SetElementInPlace	5	1	GENERATED	4	5	3623	3629	3630	
+Collections-16	-	SetUniqueList	AddAllInFront	4	1	GENERATED	3	4	2571	2577	2578	
+Collections-16	-	SetUniqueList	SubListOfPrefix	4	1	GENERATED	3	4	2854	2861	2862	
+Collections-19	setuniquelist	SetUniqueList	SetUniqueListDryRun	16	1	GENERATED	15	16	13264	13464	13464	
+Collections-19	setuniquelist	SetUniqueList	SetNewElement	5	1	GENERATED	4	5	4193	4211	4212	
+Collections-19	setuniquelist	SetUniqueList	SetElementInPlace	5	1	GENERATED	4	5	7257	4303	7271	
+Collections-19	setuniquelist	SetUniqueList	AddAllInFront	4	1	GENERATED	3	4	3664	3675	3676	
+Collections-19	setuniquelist	SetUniqueList	SubListOfPrefix	4	1	GENERATED	3	4	3371	3380	3380	
+Collections-21	setuniquelist4	SetUniqueList4	SetUniqueListDryRun	16	1	GENERATED	15	16	16334	16561	16561	
+Collections-21	setuniquelist4	SetUniqueList4	SubListIsUnmodifiable	6	1	GENERATED	5	6	5078	5090	5091	
+Lang-59	strbuilder	StrBuilder	StrBuilderDryRun	17	1	GENERATED	15	16	21490	18774	21668	
+Lang-59	strbuilder	StrBuilder	PadRightInSmallBuffer	4	1	GENERATED	3	4	3741	3753	3753	
+Lang-59	strbuilder	StrBuilder	SearchAfterClear	7	1	GENERATED	5	6	5711	5719	5720	
+Lang-59	strbuilder	StrBuilder	SearchAfterDelete	6	1	GENERATED	5	6	9095	6173	9104	
+Lang-61	-	StrBuilder	StrBuilderDryRun	17	1	GENERATED	15	16	17763	17922	17923	
+Lang-61	-	StrBuilder	PadRightInSmallBuffer	4	1	GENERATED	3	4	3782	3791	3792	
+Lang-61	-	StrBuilder	SearchAfterClear	7	1	GENERATED	5	6	5990	5998	5998	
+Lang-61	-	StrBuilder	SearchAfterDelete	6	1	GENERATED	5	6	8496	5572	8504	
+Collections-22	listorderedmap4	ListOrderedMap4	ListOrderedMapDryRun	16	1	GENERATED	14	15	14855	15086	15087	
+Collections-22	listorderedmap4	ListOrderedMap4	PutAllOverNullValues	4	1	GENERATED	3	4	3431	3443	3444	
+Collections-20	treelist	TreeList	TreeListDryRun	16	1	GENERATED	7	8	7234	7411	7411	
+Collections-20	treelist	TreeList	RemoveAfterPrevious	11	1	GENERATED	5	6	7927	5018	7953	
+Collections-4	multivaluemap	MultiValueMap	MultiValueMapDryRun	16	1	GENERATED	13	14	12791	13022	13022	
+Collections-4	multivaluemap	MultiValueMap	FirstPutOfAKey	3	1	GENERATED	2	3	2253	2264	2264	
+Collections-1	-	Flat3Map	Flat3MapDryRun	16	2	GENERATED	14	15	13891	14093	14093	
+Collections-1	-	Flat3Map	RemoveInFlatMode	4	2	GENERATED	3	4	6067	3152	6082	
+Collections-1	-	Flat3Map	SetValueInFlatMode	6	2	GENERATED	5	6	5424	5438	5438	
+Collections-5	-	SetUniqueList	SetUniqueListDryRun	16	2	INCORRECT_SEQUENCE	10	11	10836	11019	11020	INCORRECT SEQUENCE: call 9 (indexOf): L.contains(e)
+Collections-5	-	SetUniqueList	SetNewElement	5	2	GENERATED	4	5	3870	3890	3891	
+Collections-5	-	SetUniqueList	SetElementInPlace	5	2	GENERATED	4	5	3822	3834	3835	
+Collections-5	-	SetUniqueList	AddAllInFront	4	2	GENERATED	3	4	3182	3195	3195	
+Collections-5	-	SetUniqueList	SubListOfPrefix	4	2	GENERATED	3	4	6010	3090	6018	
+Collections-15	-	SetUniqueList	SetUniqueListDryRun	16	2	INCORRECT_SEQUENCE	13	14	15871	16144	16144	INCORRECT SEQUENCE: call 12 (removeElement): L.contains(e)
+Collections-15	-	SetUniqueList	SetNewElement	5	2	GENERATED	4	5	4603	4626	4627	
+Collections-15	-	SetUniqueList	SetElementInPlace	5	2	GENERATED	4	5	4016	4029	4030	
+Collections-15	-	SetUniqueList	AddAllInFront	4	2	GENERATED	3	4	2986	2997	2998	
+Collections-15	-	SetUniqueList	SubListOfPrefix	4	2	GENERATED	3	4	2970	2977	2978	
+Collections-16	-	SetUniqueList	SetUniqueListDryRun	16	2	INCORRECT_SEQUENCE	13	14	17188	14465	17404	INCORRECT SEQUENCE: call 12 (removeElement): L.contains(e)
+Collections-16	-	SetUniqueList	SetNewElement	5	2	GENERATED	4	5	3772	3793	3794	
+Collections-16	-	SetUniqueList	SetElementInPlace	5	2	GENERATED	4	5	4253	4267	4268	
+Collections-16	-	SetUniqueList	AddAllInFront	4	2	GENERATED	3	4	3496	3511	3511	
+Collections-16	-	SetUniqueList	SubListOfPrefix	4	2	GENERATED	3	4	3426	3434	3435	
+Collections-19	setuniquelist	SetUniqueList	SetUniqueListDryRun	16	2	GENERATED	15	16	14066	14291	14292	
+Collections-19	setuniquelist	SetUniqueList	SetNewElement	5	2	GENERATED	4	5	8644	4347	8663	
+Collections-19	setuniquelist	SetUniqueList	SetElementInPlace	5	2	GENERATED	4	5	3986	3997	3997	
+Collections-19	setuniquelist	SetUniqueList	AddAllInFront	4	2	GENERATED	3	4	2984	2994	2994	
+Collections-19	setuniquelist	SetUniqueList	SubListOfPrefix	4	2	GENERATED	3	4	2811	2817	2817	
+Collections-21	setuniquelist4	SetUniqueList4	SetUniqueListDryRun	16	2	GENERATED	15	16	17003	17198	17199	
+Collections-21	setuniquelist4	SetUniqueList4	SubListIsUnmodifiable	6	2	GENERATED	5	6	8305	5394	8322	
+Lang-59	strbuilder	StrBuilder	StrBuilderDryRun	17	2	GENERATED	15	16	18932	19109	19110	
+Lang-59	strbuilder	StrBuilder	PadRightInSmallBuffer	4	2	GENERATED	3	4	3527	3540	3540	
+Lang-59	strbuilder	StrBuilder	SearchAfterClear	7	2	GENERATED	5	6	5437	5448	5448	
+Lang-59	strbuilder	StrBuilder	SearchAfterDelete	6	2	GENERATED	5	6	8118	5194	8127	
+Lang-61	-	StrBuilder	StrBuilderDryRun	17	2	GENERATED	15	16	16714	16873	16874	
+Lang-61	-	StrBuilder	PadRightInSmallBuffer	4	2	GENERATED	3	4	3484	3493	3493	
+Lang-61	-	StrBuilder	SearchAfterClear	7	2	GENERATED	5	6	5464	5474	5474	
+Lang-61	-	StrBuilder	SearchAfterDelete	6	2	GENERATED	5	6	8382	5461	8391	
+Collections-22	listorderedmap4	ListOrderedMap4	ListOrderedMapDryRun	16	2	GENERATED	14	15	14394	14567	14567	
+Collections-22	listorderedmap4	ListOrderedMap4	PutAllOverNullValues	4	2	GENERATED	3	4	3141	3153	3153	
+Collections-20	treelist	TreeList	TreeListDryRun	16	2	GENERATED	7	8	6752	6906	6907	
+Collections-20	treelist	TreeList	RemoveAfterPrevious	11	2	GENERATED	5	6	4235	4253	4253	
+Collections-4	multivaluemap	MultiValueMap	MultiValueMapDryRun	16	2	GENERATED	13	14	11457	11625	11626	
+Collections-4	multivaluemap	MultiValueMap	FirstPutOfAKey	3	2	GENERATED	2	3	2331	2339	2340	

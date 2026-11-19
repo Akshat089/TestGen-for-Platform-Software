@@ -380,3 +380,1323 @@ Lang-61	evosuite-blackbox	evosuite-blackbox-s7	19	9	DETECTED	in.ac.iiitb.plproje
 Lang-61	evosuite-blackbox	evosuite-blackbox-s8	18	10	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test12	3	POST indexOf: pos == content.indexOf(s)
 Lang-61	evosuite-blackbox	evosuite-blackbox-s9	15	7	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test11	3	POST indexOf: pos == content.indexOf(s)
 Lang-61	evosuite-blackbox	evosuite-blackbox-s10	14	6	NOT_DETECTED			
+Collections-1	randpre-long	randpre-long-s1	0	0	NO_TESTS			no source files
+Collections-1	randpre-all	randpre-all-s1	0	0	NO_TESTS			no source files
+Collections-1	randpre-long	randpre-long-s2	0	0	NO_TESTS			no source files
+Collections-1	randpre-all	randpre-all-s2	0	0	NO_TESTS			no source files
+Collections-1	randpre-long	randpre-long-s3	0	0	NO_TESTS			no source files
+Collections-1	randpre-all	randpre-all-s3	0	0	NO_TESTS			no source files
+Collections-1	randpre-long	randpre-long-s4	0	0	NO_TESTS			no source files
+Collections-1	randpre-all	randpre-all-s4	0	0	NO_TESTS			no source files
+Collections-1	randpre-long	randpre-long-s5	0	0	NO_TESTS			no source files
+Collections-1	randpre-all	randpre-all-s5	0	0	NO_TESTS			no source files
+Collections-1	randpre-long	randpre-long-s6	0	0	NO_TESTS			no source files
+Collections-1	randpre-all	randpre-all-s6	0	0	NO_TESTS			no source files
+Collections-1	randpre-long	randpre-long-s7	0	0	NO_TESTS			no source files
+Collections-1	randpre-all	randpre-all-s7	0	0	NO_TESTS			no source files
+Collections-1	randpre-long	randpre-long-s8	0	0	NO_TESTS			no source files
+Collections-1	randpre-all	randpre-all-s8	0	0	NO_TESTS			no source files
+Collections-1	randpre-long	randpre-long-s9	0	0	NO_TESTS			no source files
+Collections-1	randpre-all	randpre-all-s9	0	0	NO_TESTS			no source files
+Collections-1	randpre-long	randpre-long-s10	0	0	NO_TESTS			no source files
+Collections-1	randpre-all	randpre-all-s10	0	0	NO_TESTS			no source files
+Collections-1	randpre-pool-long	randpre-pool-long-s1	1	1	NOT_DETECTED			
+Collections-1	randpre-pool-all	randpre-pool-all-s1	3	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setValueInFlatMode	4	POST setValue: M.get(other) == otherValue
+Collections-1	randpre-pool-long	randpre-pool-long-s2	1	1	NOT_DETECTED			
+Collections-1	randpre-pool-all	randpre-pool-all-s2	3	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setValueInFlatMode	4	POST setValue: M.get(other) == otherValue
+Collections-1	randpre-pool-long	randpre-pool-long-s3	1	1	NOT_DETECTED			
+Collections-1	randpre-pool-all	randpre-pool-all-s3	3	2	NOT_DETECTED			
+Collections-1	randpre-pool-long	randpre-pool-long-s4	1	0	NO_TESTS			no test left after the baseline check
+Collections-1	randpre-pool-all	randpre-pool-all-s4	3	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setValueInFlatMode	4	POST setValue: M.get(other) == otherValue
+Collections-1	randpre-pool-long	randpre-pool-long-s5	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	5	POST setValue: M.get(other) == otherValue
+Collections-1	randpre-pool-all	randpre-pool-all-s5	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setValueInFlatMode	4	POST setValue: M.get(other) == otherValue
+Collections-1	randpre-pool-long	randpre-pool-long-s6	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	PRE_DIVERGENCE remove: M.get(key) == stored
+Collections-1	randpre-pool-all	randpre-pool-all-s6	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	PRE_DIVERGENCE remove: M.get(key) == stored
+Collections-1	randpre-pool-long	randpre-pool-long-s7	1	0	NO_TESTS			no test left after the baseline check
+Collections-1	randpre-pool-all	randpre-pool-all-s7	3	1	NOT_DETECTED			
+Collections-1	randpre-pool-long	randpre-pool-long-s8	1	0	NO_TESTS			no test left after the baseline check
+Collections-1	randpre-pool-all	randpre-pool-all-s8	3	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setValueInFlatMode	4	POST setValue: M.get(other) == otherValue
+Collections-1	randpre-pool-long	randpre-pool-long-s9	1	0	NO_TESTS			no test left after the baseline check
+Collections-1	randpre-pool-all	randpre-pool-all-s9	3	2	NOT_DETECTED			
+Collections-1	randpre-pool-long	randpre-pool-long-s10	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	5	POST setValue: M.get(other) == otherValue
+Collections-1	randpre-pool-all	randpre-pool-all-s10	3	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setValueInFlatMode	4	POST setValue: M.get(other) == otherValue
+Collections-1	randpre-timed-long	randpre-timed-long-s1	0	0	NO_TESTS			no source files
+Collections-1	randpre-timed-all	randpre-timed-all-s1	1	1	NOT_DETECTED			
+Collections-1	randpre-timed-long	randpre-timed-long-s2	0	0	NO_TESTS			no source files
+Collections-1	randpre-timed-all	randpre-timed-all-s2	1	1	NOT_DETECTED			
+Collections-1	randpre-timed-long	randpre-timed-long-s3	0	0	NO_TESTS			no source files
+Collections-1	randpre-timed-all	randpre-timed-all-s3	1	0	NO_TESTS			no test left after the baseline check
+Collections-1	randpre-timed-long	randpre-timed-long-s4	0	0	NO_TESTS			no source files
+Collections-1	randpre-timed-all	randpre-timed-all-s4	1	1	NOT_DETECTED			
+Collections-1	randpre-timed-long	randpre-timed-long-s5	0	0	NO_TESTS			no source files
+Collections-1	randpre-timed-all	randpre-timed-all-s5	1	0	NO_TESTS			no test left after the baseline check
+Collections-1	randpre-timed-long	randpre-timed-long-s6	0	0	NO_TESTS			no source files
+Collections-1	randpre-timed-all	randpre-timed-all-s6	1	1	NOT_DETECTED			
+Collections-1	randpre-timed-long	randpre-timed-long-s7	0	0	NO_TESTS			no source files
+Collections-1	randpre-timed-all	randpre-timed-all-s7	1	0	NO_TESTS			no test left after the baseline check
+Collections-1	randpre-timed-long	randpre-timed-long-s8	0	0	NO_TESTS			no source files
+Collections-1	randpre-timed-all	randpre-timed-all-s8	1	0	NO_TESTS			no test left after the baseline check
+Collections-1	randpre-timed-long	randpre-timed-long-s9	0	0	NO_TESTS			no source files
+Collections-1	randpre-timed-all	randpre-timed-all-s9	1	1	NOT_DETECTED			
+Collections-1	randpre-timed-long	randpre-timed-long-s10	0	0	NO_TESTS			no source files
+Collections-1	randpre-timed-all	randpre-timed-all-s10	1	1	NOT_DETECTED			
+Collections-1	randpre-pool-timed-long	randpre-pool-timed-long-s1	1	1	NOT_DETECTED			
+Collections-1	randpre-pool-timed-all	randpre-pool-timed-all-s1	3	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setValueInFlatMode	4	POST setValue: M.get(other) == otherValue
+Collections-1	randpre-pool-timed-long	randpre-pool-timed-long-s2	1	1	NOT_DETECTED			
+Collections-1	randpre-pool-timed-all	randpre-pool-timed-all-s2	3	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setValueInFlatMode	4	POST setValue: M.get(other) == otherValue
+Collections-1	randpre-pool-timed-long	randpre-pool-timed-long-s3	1	1	NOT_DETECTED			
+Collections-1	randpre-pool-timed-all	randpre-pool-timed-all-s3	3	2	NOT_DETECTED			
+Collections-1	randpre-pool-timed-long	randpre-pool-timed-long-s4	1	0	NO_TESTS			no test left after the baseline check
+Collections-1	randpre-pool-timed-all	randpre-pool-timed-all-s4	3	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setValueInFlatMode	4	POST setValue: M.get(other) == otherValue
+Collections-1	randpre-pool-timed-long	randpre-pool-timed-long-s5	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	5	POST setValue: M.get(other) == otherValue
+Collections-1	randpre-pool-timed-all	randpre-pool-timed-all-s5	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setValueInFlatMode	4	POST setValue: M.get(other) == otherValue
+Collections-1	randpre-pool-timed-long	randpre-pool-timed-long-s6	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	PRE_DIVERGENCE remove: M.get(key) == stored
+Collections-1	randpre-pool-timed-all	randpre-pool-timed-all-s6	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	PRE_DIVERGENCE remove: M.get(key) == stored
+Collections-1	randpre-pool-timed-long	randpre-pool-timed-long-s7	1	0	NO_TESTS			no test left after the baseline check
+Collections-1	randpre-pool-timed-all	randpre-pool-timed-all-s7	3	1	NOT_DETECTED			
+Collections-1	randpre-pool-timed-long	randpre-pool-timed-long-s8	1	0	NO_TESTS			no test left after the baseline check
+Collections-1	randpre-pool-timed-all	randpre-pool-timed-all-s8	3	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setValueInFlatMode	4	POST setValue: M.get(other) == otherValue
+Collections-1	randpre-pool-timed-long	randpre-pool-timed-long-s9	1	0	NO_TESTS			no test left after the baseline check
+Collections-1	randpre-pool-timed-all	randpre-pool-timed-all-s9	3	2	NOT_DETECTED			
+Collections-1	randpre-pool-timed-long	randpre-pool-timed-long-s10	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	5	POST setValue: M.get(other) == otherValue
+Collections-1	randpre-pool-timed-all	randpre-pool-timed-all-s10	3	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setValueInFlatMode	4	POST setValue: M.get(other) == otherValue
+Collections-5	randpre-long	randpre-long-s1	0	0	NO_TESTS			no source files
+Collections-5	randpre-all	randpre-all-s1	0	0	NO_TESTS			no source files
+Collections-5	randpre-long	randpre-long-s2	0	0	NO_TESTS			no source files
+Collections-5	randpre-all	randpre-all-s2	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-long	randpre-long-s3	0	0	NO_TESTS			no source files
+Collections-5	randpre-all	randpre-all-s3	0	0	NO_TESTS			no source files
+Collections-5	randpre-long	randpre-long-s4	0	0	NO_TESTS			no source files
+Collections-5	randpre-all	randpre-all-s4	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-long	randpre-long-s5	0	0	NO_TESTS			no source files
+Collections-5	randpre-all	randpre-all-s5	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-long	randpre-long-s6	0	0	NO_TESTS			no source files
+Collections-5	randpre-all	randpre-all-s6	2	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-long	randpre-long-s7	0	0	NO_TESTS			no source files
+Collections-5	randpre-all	randpre-all-s7	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-long	randpre-long-s8	0	0	NO_TESTS			no source files
+Collections-5	randpre-all	randpre-all-s8	2	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-long	randpre-long-s9	0	0	NO_TESTS			no source files
+Collections-5	randpre-all	randpre-all-s9	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-long	randpre-long-s10	0	0	NO_TESTS			no source files
+Collections-5	randpre-all	randpre-all-s10	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-long	randpre-pool-long-s1	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-all	randpre-pool-all-s1	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-long	randpre-pool-long-s2	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-all	randpre-pool-all-s2	2	1	NOT_DETECTED			
+Collections-5	randpre-pool-long	randpre-pool-long-s3	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-all	randpre-pool-all-s3	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-long	randpre-pool-long-s4	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-all	randpre-pool-all-s4	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-long	randpre-pool-long-s5	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-all	randpre-pool-all-s5	2	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-pool-long	randpre-pool-long-s6	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-all	randpre-pool-all-s6	2	1	NOT_DETECTED			
+Collections-5	randpre-pool-long	randpre-pool-long-s7	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-all	randpre-pool-all-s7	2	1	NOT_DETECTED			
+Collections-5	randpre-pool-long	randpre-pool-long-s8	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-all	randpre-pool-all-s8	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-long	randpre-pool-long-s9	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-all	randpre-pool-all-s9	2	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-long	randpre-pool-long-s10	0	0	NO_TESTS			no source files
+Collections-5	randpre-pool-all	randpre-pool-all-s10	2	1	NOT_DETECTED			
+Collections-5	randpre-timed-long	randpre-timed-long-s1	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-timed-all	randpre-timed-all-s1	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-timed-long	randpre-timed-long-s2	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-timed-all	randpre-timed-all-s2	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-timed-long	randpre-timed-long-s3	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-timed-all	randpre-timed-all-s3	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-timed-long	randpre-timed-long-s4	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-timed-all	randpre-timed-all-s4	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-timed-long	randpre-timed-long-s5	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-timed-all	randpre-timed-all-s5	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-timed-long	randpre-timed-long-s6	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-timed-all	randpre-timed-all-s6	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-timed-long	randpre-timed-long-s7	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-timed-all	randpre-timed-all-s7	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-timed-long	randpre-timed-long-s8	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-timed-all	randpre-timed-all-s8	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-timed-long	randpre-timed-long-s9	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-timed-all	randpre-timed-all-s9	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-timed-long	randpre-timed-long-s10	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-timed-all	randpre-timed-all-s10	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-pool-timed-long	randpre-pool-timed-long-s1	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-timed-all	randpre-pool-timed-all-s1	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-pool-timed-long	randpre-pool-timed-long-s2	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-timed-all	randpre-pool-timed-all-s2	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-pool-timed-long	randpre-pool-timed-long-s3	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-timed-all	randpre-pool-timed-all-s3	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-pool-timed-long	randpre-pool-timed-long-s4	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-timed-all	randpre-pool-timed-all-s4	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-pool-timed-long	randpre-pool-timed-long-s5	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-timed-all	randpre-pool-timed-all-s5	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-pool-timed-long	randpre-pool-timed-long-s6	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-timed-all	randpre-pool-timed-all-s6	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-pool-timed-long	randpre-pool-timed-long-s7	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-timed-all	randpre-pool-timed-all-s7	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-pool-timed-long	randpre-pool-timed-long-s8	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-timed-all	randpre-pool-timed-all-s8	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-pool-timed-long	randpre-pool-timed-long-s9	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-timed-all	randpre-pool-timed-all-s9	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-5	randpre-pool-timed-long	randpre-pool-timed-long-s10	1	0	NO_TESTS			no test left after the baseline check
+Collections-5	randpre-pool-timed-all	randpre-pool-timed-all-s10	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#addAllInFront	2	POST addAllAt: L.get(index) == a
+Collections-6	randpre-long	randpre-long-s1	0	0	NO_TESTS			no source files
+Collections-6	randpre-all	randpre-all-s1	0	0	NO_TESTS			no source files
+Collections-6	randpre-long	randpre-long-s2	0	0	NO_TESTS			no source files
+Collections-6	randpre-all	randpre-all-s2	0	0	NO_TESTS			no source files
+Collections-6	randpre-long	randpre-long-s3	0	0	NO_TESTS			no source files
+Collections-6	randpre-all	randpre-all-s3	0	0	NO_TESTS			no source files
+Collections-6	randpre-long	randpre-long-s4	0	0	NO_TESTS			no source files
+Collections-6	randpre-all	randpre-all-s4	0	0	NO_TESTS			no source files
+Collections-6	randpre-long	randpre-long-s5	0	0	NO_TESTS			no source files
+Collections-6	randpre-all	randpre-all-s5	0	0	NO_TESTS			no source files
+Collections-6	randpre-long	randpre-long-s6	0	0	NO_TESTS			no source files
+Collections-6	randpre-all	randpre-all-s6	0	0	NO_TESTS			no source files
+Collections-6	randpre-long	randpre-long-s7	0	0	NO_TESTS			no source files
+Collections-6	randpre-all	randpre-all-s7	0	0	NO_TESTS			no source files
+Collections-6	randpre-long	randpre-long-s8	0	0	NO_TESTS			no source files
+Collections-6	randpre-all	randpre-all-s8	0	0	NO_TESTS			no source files
+Collections-6	randpre-long	randpre-long-s9	0	0	NO_TESTS			no source files
+Collections-6	randpre-all	randpre-all-s9	0	0	NO_TESTS			no source files
+Collections-6	randpre-long	randpre-long-s10	0	0	NO_TESTS			no source files
+Collections-6	randpre-all	randpre-all-s10	0	0	NO_TESTS			no source files
+Collections-6	randpre-pool-long	randpre-pool-long-s1	1	1	NOT_DETECTED			
+Collections-6	randpre-pool-all	randpre-pool-all-s1	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#removeInFlatMode	3	POST remove: removedVal == stored
+Collections-6	randpre-pool-long	randpre-pool-long-s2	1	1	NOT_DETECTED			
+Collections-6	randpre-pool-all	randpre-pool-all-s2	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#removeInFlatMode	3	POST remove: removedVal == stored
+Collections-6	randpre-pool-long	randpre-pool-long-s3	1	1	NOT_DETECTED			
+Collections-6	randpre-pool-all	randpre-pool-all-s3	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#removeInFlatMode	3	POST remove: removedVal == stored
+Collections-6	randpre-pool-long	randpre-pool-long-s4	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	POST remove: removedVal == stored
+Collections-6	randpre-pool-all	randpre-pool-all-s4	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	POST remove: removedVal == stored
+Collections-6	randpre-pool-long	randpre-pool-long-s5	1	1	NOT_DETECTED			
+Collections-6	randpre-pool-all	randpre-pool-all-s5	3	3	NOT_DETECTED			
+Collections-6	randpre-pool-long	randpre-pool-long-s6	1	1	NOT_DETECTED			
+Collections-6	randpre-pool-all	randpre-pool-all-s6	3	3	NOT_DETECTED			
+Collections-6	randpre-pool-long	randpre-pool-long-s7	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	POST remove: removedVal == stored
+Collections-6	randpre-pool-all	randpre-pool-all-s7	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#removeInFlatMode	3	POST remove: removedVal == stored
+Collections-6	randpre-pool-long	randpre-pool-long-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	POST remove: removedVal == stored
+Collections-6	randpre-pool-all	randpre-pool-all-s8	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	POST remove: removedVal == stored
+Collections-6	randpre-pool-long	randpre-pool-long-s9	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	POST remove: removedVal == stored
+Collections-6	randpre-pool-all	randpre-pool-all-s9	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	POST remove: removedVal == stored
+Collections-6	randpre-pool-long	randpre-pool-long-s10	1	1	NOT_DETECTED			
+Collections-6	randpre-pool-all	randpre-pool-all-s10	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#removeInFlatMode	3	POST remove: removedVal == stored
+Collections-6	randpre-timed-long	randpre-timed-long-s1	0	0	NO_TESTS			no source files
+Collections-6	randpre-timed-all	randpre-timed-all-s1	1	1	NOT_DETECTED			
+Collections-6	randpre-timed-long	randpre-timed-long-s2	0	0	NO_TESTS			no source files
+Collections-6	randpre-timed-all	randpre-timed-all-s2	1	1	NOT_DETECTED			
+Collections-6	randpre-timed-long	randpre-timed-long-s3	0	0	NO_TESTS			no source files
+Collections-6	randpre-timed-all	randpre-timed-all-s3	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#removeInFlatMode	3	POST remove: removedVal == stored
+Collections-6	randpre-timed-long	randpre-timed-long-s4	0	0	NO_TESTS			no source files
+Collections-6	randpre-timed-all	randpre-timed-all-s4	1	1	NOT_DETECTED			
+Collections-6	randpre-timed-long	randpre-timed-long-s5	0	0	NO_TESTS			no source files
+Collections-6	randpre-timed-all	randpre-timed-all-s5	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#removeInFlatMode	3	POST remove: removedVal == stored
+Collections-6	randpre-timed-long	randpre-timed-long-s6	0	0	NO_TESTS			no source files
+Collections-6	randpre-timed-all	randpre-timed-all-s6	1	1	NOT_DETECTED			
+Collections-6	randpre-timed-long	randpre-timed-long-s7	0	0	NO_TESTS			no source files
+Collections-6	randpre-timed-all	randpre-timed-all-s7	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#removeInFlatMode	3	POST remove: removedVal == stored
+Collections-6	randpre-timed-long	randpre-timed-long-s8	0	0	NO_TESTS			no source files
+Collections-6	randpre-timed-all	randpre-timed-all-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#removeInFlatMode	3	POST remove: removedVal == stored
+Collections-6	randpre-timed-long	randpre-timed-long-s9	0	0	NO_TESTS			no source files
+Collections-6	randpre-timed-all	randpre-timed-all-s9	1	1	NOT_DETECTED			
+Collections-6	randpre-timed-long	randpre-timed-long-s10	0	0	NO_TESTS			no source files
+Collections-6	randpre-timed-all	randpre-timed-all-s10	1	1	NOT_DETECTED			
+Collections-6	randpre-pool-timed-long	randpre-pool-timed-long-s1	1	1	NOT_DETECTED			
+Collections-6	randpre-pool-timed-all	randpre-pool-timed-all-s1	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#removeInFlatMode	3	POST remove: removedVal == stored
+Collections-6	randpre-pool-timed-long	randpre-pool-timed-long-s2	1	1	NOT_DETECTED			
+Collections-6	randpre-pool-timed-all	randpre-pool-timed-all-s2	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#removeInFlatMode	3	POST remove: removedVal == stored
+Collections-6	randpre-pool-timed-long	randpre-pool-timed-long-s3	1	1	NOT_DETECTED			
+Collections-6	randpre-pool-timed-all	randpre-pool-timed-all-s3	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#removeInFlatMode	3	POST remove: removedVal == stored
+Collections-6	randpre-pool-timed-long	randpre-pool-timed-long-s4	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	POST remove: removedVal == stored
+Collections-6	randpre-pool-timed-all	randpre-pool-timed-all-s4	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	POST remove: removedVal == stored
+Collections-6	randpre-pool-timed-long	randpre-pool-timed-long-s5	1	1	NOT_DETECTED			
+Collections-6	randpre-pool-timed-all	randpre-pool-timed-all-s5	3	3	NOT_DETECTED			
+Collections-6	randpre-pool-timed-long	randpre-pool-timed-long-s6	1	1	NOT_DETECTED			
+Collections-6	randpre-pool-timed-all	randpre-pool-timed-all-s6	3	3	NOT_DETECTED			
+Collections-6	randpre-pool-timed-long	randpre-pool-timed-long-s7	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	POST remove: removedVal == stored
+Collections-6	randpre-pool-timed-all	randpre-pool-timed-all-s7	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#removeInFlatMode	3	POST remove: removedVal == stored
+Collections-6	randpre-pool-timed-long	randpre-pool-timed-long-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	POST remove: removedVal == stored
+Collections-6	randpre-pool-timed-all	randpre-pool-timed-all-s8	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	POST remove: removedVal == stored
+Collections-6	randpre-pool-timed-long	randpre-pool-timed-long-s9	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	POST remove: removedVal == stored
+Collections-6	randpre-pool-timed-all	randpre-pool-timed-all-s9	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#flat3MapDryRun	6	POST remove: removedVal == stored
+Collections-6	randpre-pool-timed-long	randpre-pool-timed-long-s10	1	1	NOT_DETECTED			
+Collections-6	randpre-pool-timed-all	randpre-pool-timed-all-s10	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#removeInFlatMode	3	POST remove: removedVal == stored
+Collections-15	randpre-long	randpre-long-s1	0	0	NO_TESTS			no source files
+Collections-15	randpre-all	randpre-all-s1	0	0	NO_TESTS			no source files
+Collections-15	randpre-long	randpre-long-s2	0	0	NO_TESTS			no source files
+Collections-15	randpre-all	randpre-all-s2	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setNewElement	4	POST set: L.contains(e)
+Collections-15	randpre-long	randpre-long-s3	0	0	NO_TESTS			no source files
+Collections-15	randpre-all	randpre-all-s3	0	0	NO_TESTS			no source files
+Collections-15	randpre-long	randpre-long-s4	0	0	NO_TESTS			no source files
+Collections-15	randpre-all	randpre-all-s4	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setNewElement	4	POST set: L.contains(e)
+Collections-15	randpre-long	randpre-long-s5	0	0	NO_TESTS			no source files
+Collections-15	randpre-all	randpre-all-s5	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setNewElement	4	POST set: L.contains(e)
+Collections-15	randpre-long	randpre-long-s6	0	0	NO_TESTS			no source files
+Collections-15	randpre-all	randpre-all-s6	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setNewElement	4	POST set: L.contains(e)
+Collections-15	randpre-long	randpre-long-s7	0	0	NO_TESTS			no source files
+Collections-15	randpre-all	randpre-all-s7	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setNewElement	4	POST set: L.contains(e)
+Collections-15	randpre-long	randpre-long-s8	0	0	NO_TESTS			no source files
+Collections-15	randpre-all	randpre-all-s8	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setNewElement	4	POST set: L.contains(e)
+Collections-15	randpre-long	randpre-long-s9	0	0	NO_TESTS			no source files
+Collections-15	randpre-all	randpre-all-s9	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setNewElement	4	POST set: L.contains(e)
+Collections-15	randpre-long	randpre-long-s10	0	0	NO_TESTS			no source files
+Collections-15	randpre-all	randpre-all-s10	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setNewElement	4	POST set: L.contains(e)
+Collections-15	randpre-pool-long	randpre-pool-long-s1	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-all	randpre-pool-all-s1	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-long	randpre-pool-long-s2	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-all	randpre-pool-all-s2	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-long	randpre-pool-long-s3	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-all	randpre-pool-all-s3	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-long	randpre-pool-long-s4	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-all	randpre-pool-all-s4	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-long	randpre-pool-long-s5	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-all	randpre-pool-all-s5	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-long	randpre-pool-long-s6	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-all	randpre-pool-all-s6	2	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-long	randpre-pool-long-s7	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-all	randpre-pool-all-s7	2	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-long	randpre-pool-long-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-all	randpre-pool-all-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-long	randpre-pool-long-s9	1	0	NO_TESTS			no test left after the baseline check
+Collections-15	randpre-pool-all	randpre-pool-all-s9	2	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setNewElement	4	POST set: L.contains(e)
+Collections-15	randpre-pool-long	randpre-pool-long-s10	0	0	NO_TESTS			no source files
+Collections-15	randpre-pool-all	randpre-pool-all-s10	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setNewElement	4	POST set: L.contains(e)
+Collections-15	randpre-timed-long	randpre-timed-long-s1	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-timed-all	randpre-timed-all-s1	5	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-timed-long	randpre-timed-long-s2	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-timed-all	randpre-timed-all-s2	5	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-timed-long	randpre-timed-long-s3	1	0	NO_TESTS			no test left after the baseline check
+Collections-15	randpre-timed-all	randpre-timed-all-s3	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setNewElement	4	POST set: L.contains(e)
+Collections-15	randpre-timed-long	randpre-timed-long-s4	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-timed-all	randpre-timed-all-s4	5	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-timed-long	randpre-timed-long-s5	1	0	NO_TESTS			no test left after the baseline check
+Collections-15	randpre-timed-all	randpre-timed-all-s5	5	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setNewElement	4	POST set: L.contains(e)
+Collections-15	randpre-timed-long	randpre-timed-long-s6	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-timed-all	randpre-timed-all-s6	5	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-timed-long	randpre-timed-long-s7	1	0	NO_TESTS			no test left after the baseline check
+Collections-15	randpre-timed-all	randpre-timed-all-s7	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setNewElement	4	POST set: L.contains(e)
+Collections-15	randpre-timed-long	randpre-timed-long-s8	1	0	NO_TESTS			no test left after the baseline check
+Collections-15	randpre-timed-all	randpre-timed-all-s8	5	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setNewElement	4	POST set: L.contains(e)
+Collections-15	randpre-timed-long	randpre-timed-long-s9	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-timed-all	randpre-timed-all-s9	5	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-timed-long	randpre-timed-long-s10	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-timed-all	randpre-timed-all-s10	5	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-long	randpre-pool-timed-long-s1	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-all	randpre-pool-timed-all-s1	5	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-long	randpre-pool-timed-long-s2	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-all	randpre-pool-timed-all-s2	5	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-long	randpre-pool-timed-long-s3	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-all	randpre-pool-timed-all-s3	5	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-long	randpre-pool-timed-long-s4	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-all	randpre-pool-timed-all-s4	5	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-long	randpre-pool-timed-long-s5	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-all	randpre-pool-timed-all-s5	5	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-long	randpre-pool-timed-long-s6	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-all	randpre-pool-timed-all-s6	5	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-long	randpre-pool-timed-long-s7	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-all	randpre-pool-timed-all-s7	5	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-long	randpre-pool-timed-long-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-all	randpre-pool-timed-all-s8	5	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-long	randpre-pool-timed-long-s9	1	0	NO_TESTS			no test left after the baseline check
+Collections-15	randpre-pool-timed-all	randpre-pool-timed-all-s9	5	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setNewElement	4	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-long	randpre-pool-timed-long-s10	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-15	randpre-pool-timed-all	randpre-pool-timed-all-s10	5	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	6	POST set: L.contains(e)
+Collections-16	randpre-long	randpre-long-s1	0	0	NO_TESTS			no source files
+Collections-16	randpre-all	randpre-all-s1	0	0	NO_TESTS			no source files
+Collections-16	randpre-long	randpre-long-s2	0	0	NO_TESTS			no source files
+Collections-16	randpre-all	randpre-all-s2	1	1	NOT_DETECTED			
+Collections-16	randpre-long	randpre-long-s3	0	0	NO_TESTS			no source files
+Collections-16	randpre-all	randpre-all-s3	0	0	NO_TESTS			no source files
+Collections-16	randpre-long	randpre-long-s4	0	0	NO_TESTS			no source files
+Collections-16	randpre-all	randpre-all-s4	1	1	NOT_DETECTED			
+Collections-16	randpre-long	randpre-long-s5	0	0	NO_TESTS			no source files
+Collections-16	randpre-all	randpre-all-s5	1	1	NOT_DETECTED			
+Collections-16	randpre-long	randpre-long-s6	0	0	NO_TESTS			no source files
+Collections-16	randpre-all	randpre-all-s6	2	2	NOT_DETECTED			
+Collections-16	randpre-long	randpre-long-s7	0	0	NO_TESTS			no source files
+Collections-16	randpre-all	randpre-all-s7	1	1	NOT_DETECTED			
+Collections-16	randpre-long	randpre-long-s8	0	0	NO_TESTS			no source files
+Collections-16	randpre-all	randpre-all-s8	2	2	NOT_DETECTED			
+Collections-16	randpre-long	randpre-long-s9	0	0	NO_TESTS			no source files
+Collections-16	randpre-all	randpre-all-s9	1	1	NOT_DETECTED			
+Collections-16	randpre-long	randpre-long-s10	0	0	NO_TESTS			no source files
+Collections-16	randpre-all	randpre-all-s10	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-long	randpre-pool-long-s1	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-all	randpre-pool-all-s1	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-long	randpre-pool-long-s2	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-all	randpre-pool-all-s2	2	2	NOT_DETECTED			
+Collections-16	randpre-pool-long	randpre-pool-long-s3	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-all	randpre-pool-all-s3	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-long	randpre-pool-long-s4	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-all	randpre-pool-all-s4	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-long	randpre-pool-long-s5	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-all	randpre-pool-all-s5	2	2	NOT_DETECTED			
+Collections-16	randpre-pool-long	randpre-pool-long-s6	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-all	randpre-pool-all-s6	2	1	NOT_DETECTED			
+Collections-16	randpre-pool-long	randpre-pool-long-s7	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-all	randpre-pool-all-s7	2	1	NOT_DETECTED			
+Collections-16	randpre-pool-long	randpre-pool-long-s8	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-all	randpre-pool-all-s8	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-long	randpre-pool-long-s9	1	0	NO_TESTS			no test left after the baseline check
+Collections-16	randpre-pool-all	randpre-pool-all-s9	2	1	NOT_DETECTED			
+Collections-16	randpre-pool-long	randpre-pool-long-s10	0	0	NO_TESTS			no source files
+Collections-16	randpre-pool-all	randpre-pool-all-s10	2	2	NOT_DETECTED			
+Collections-16	randpre-timed-long	randpre-timed-long-s1	1	1	NOT_DETECTED			
+Collections-16	randpre-timed-all	randpre-timed-all-s1	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-timed-long	randpre-timed-long-s2	1	1	NOT_DETECTED			
+Collections-16	randpre-timed-all	randpre-timed-all-s2	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-timed-long	randpre-timed-long-s3	1	0	NO_TESTS			no test left after the baseline check
+Collections-16	randpre-timed-all	randpre-timed-all-s3	5	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-timed-long	randpre-timed-long-s4	1	1	NOT_DETECTED			
+Collections-16	randpre-timed-all	randpre-timed-all-s4	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-timed-long	randpre-timed-long-s5	1	0	NO_TESTS			no test left after the baseline check
+Collections-16	randpre-timed-all	randpre-timed-all-s5	5	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-timed-long	randpre-timed-long-s6	1	1	NOT_DETECTED			
+Collections-16	randpre-timed-all	randpre-timed-all-s6	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-timed-long	randpre-timed-long-s7	1	0	NO_TESTS			no test left after the baseline check
+Collections-16	randpre-timed-all	randpre-timed-all-s7	5	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-timed-long	randpre-timed-long-s8	1	0	NO_TESTS			no test left after the baseline check
+Collections-16	randpre-timed-all	randpre-timed-all-s8	5	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-timed-long	randpre-timed-long-s9	1	1	NOT_DETECTED			
+Collections-16	randpre-timed-all	randpre-timed-all-s9	5	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-timed-long	randpre-timed-long-s10	1	1	NOT_DETECTED			
+Collections-16	randpre-timed-all	randpre-timed-all-s10	5	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-pool-timed-long	randpre-pool-timed-long-s1	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-timed-all	randpre-pool-timed-all-s1	5	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-pool-timed-long	randpre-pool-timed-long-s2	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-timed-all	randpre-pool-timed-all-s2	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-pool-timed-long	randpre-pool-timed-long-s3	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-timed-all	randpre-pool-timed-all-s3	5	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-pool-timed-long	randpre-pool-timed-long-s4	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-timed-all	randpre-pool-timed-all-s4	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-pool-timed-long	randpre-pool-timed-long-s5	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-timed-all	randpre-pool-timed-all-s5	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-pool-timed-long	randpre-pool-timed-long-s6	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-timed-all	randpre-pool-timed-all-s6	5	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-pool-timed-long	randpre-pool-timed-long-s7	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-timed-all	randpre-pool-timed-all-s7	5	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-pool-timed-long	randpre-pool-timed-long-s8	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-timed-all	randpre-pool-timed-all-s8	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-pool-timed-long	randpre-pool-timed-long-s9	1	0	NO_TESTS			no test left after the baseline check
+Collections-16	randpre-pool-timed-all	randpre-pool-timed-all-s9	5	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-16	randpre-pool-timed-long	randpre-pool-timed-long-s10	1	1	NOT_DETECTED			
+Collections-16	randpre-pool-timed-all	randpre-pool-timed-all-s10	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListOfPrefix	3	POST subList: subTrackedSize == subSize
+Collections-19	randpre-long	randpre-long-s1	0	0	NO_TESTS			no source files
+Collections-19	randpre-all	randpre-all-s1	0	0	NO_TESTS			no source files
+Collections-19	randpre-long	randpre-long-s2	0	0	NO_TESTS			no source files
+Collections-19	randpre-all	randpre-all-s2	1	1	NOT_DETECTED			
+Collections-19	randpre-long	randpre-long-s3	0	0	NO_TESTS			no source files
+Collections-19	randpre-all	randpre-all-s3	0	0	NO_TESTS			no source files
+Collections-19	randpre-long	randpre-long-s4	0	0	NO_TESTS			no source files
+Collections-19	randpre-all	randpre-all-s4	1	1	NOT_DETECTED			
+Collections-19	randpre-long	randpre-long-s5	0	0	NO_TESTS			no source files
+Collections-19	randpre-all	randpre-all-s5	1	1	NOT_DETECTED			
+Collections-19	randpre-long	randpre-long-s6	0	0	NO_TESTS			no source files
+Collections-19	randpre-all	randpre-all-s6	2	2	NOT_DETECTED			
+Collections-19	randpre-long	randpre-long-s7	0	0	NO_TESTS			no source files
+Collections-19	randpre-all	randpre-all-s7	1	1	NOT_DETECTED			
+Collections-19	randpre-long	randpre-long-s8	0	0	NO_TESTS			no source files
+Collections-19	randpre-all	randpre-all-s8	2	2	NOT_DETECTED			
+Collections-19	randpre-long	randpre-long-s9	0	0	NO_TESTS			no source files
+Collections-19	randpre-all	randpre-all-s9	1	1	NOT_DETECTED			
+Collections-19	randpre-long	randpre-long-s10	0	0	NO_TESTS			no source files
+Collections-19	randpre-all	randpre-all-s10	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-long	randpre-pool-long-s1	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-all	randpre-pool-all-s1	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-long	randpre-pool-long-s2	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-all	randpre-pool-all-s2	2	2	NOT_DETECTED			
+Collections-19	randpre-pool-long	randpre-pool-long-s3	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-all	randpre-pool-all-s3	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-long	randpre-pool-long-s4	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-all	randpre-pool-all-s4	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-long	randpre-pool-long-s5	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-all	randpre-pool-all-s5	2	2	NOT_DETECTED			
+Collections-19	randpre-pool-long	randpre-pool-long-s6	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-all	randpre-pool-all-s6	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setElementInPlace	3	POST setExisting: L.contains(e)
+Collections-19	randpre-pool-long	randpre-pool-long-s7	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-all	randpre-pool-all-s7	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setElementInPlace	3	POST setExisting: L.contains(e)
+Collections-19	randpre-pool-long	randpre-pool-long-s8	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-all	randpre-pool-all-s8	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-long	randpre-pool-long-s9	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	11	POST setExisting: L.contains(e)
+Collections-19	randpre-pool-all	randpre-pool-all-s9	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	11	POST setExisting: L.contains(e)
+Collections-19	randpre-pool-long	randpre-pool-long-s10	0	0	NO_TESTS			no source files
+Collections-19	randpre-pool-all	randpre-pool-all-s10	2	2	NOT_DETECTED			
+Collections-19	randpre-timed-long	randpre-timed-long-s1	1	1	NOT_DETECTED			
+Collections-19	randpre-timed-all	randpre-timed-all-s1	5	5	NOT_DETECTED			
+Collections-19	randpre-timed-long	randpre-timed-long-s2	1	1	NOT_DETECTED			
+Collections-19	randpre-timed-all	randpre-timed-all-s2	5	5	NOT_DETECTED			
+Collections-19	randpre-timed-long	randpre-timed-long-s3	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	11	POST setExisting: L.contains(e)
+Collections-19	randpre-timed-all	randpre-timed-all-s3	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	11	POST setExisting: L.contains(e)
+Collections-19	randpre-timed-long	randpre-timed-long-s4	1	1	NOT_DETECTED			
+Collections-19	randpre-timed-all	randpre-timed-all-s4	5	5	NOT_DETECTED			
+Collections-19	randpre-timed-long	randpre-timed-long-s5	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	11	POST setExisting: L.contains(e)
+Collections-19	randpre-timed-all	randpre-timed-all-s5	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	11	POST setExisting: L.contains(e)
+Collections-19	randpre-timed-long	randpre-timed-long-s6	1	1	NOT_DETECTED			
+Collections-19	randpre-timed-all	randpre-timed-all-s6	5	5	NOT_DETECTED			
+Collections-19	randpre-timed-long	randpre-timed-long-s7	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	11	POST setExisting: L.contains(e)
+Collections-19	randpre-timed-all	randpre-timed-all-s7	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	11	POST setExisting: L.contains(e)
+Collections-19	randpre-timed-long	randpre-timed-long-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	11	POST setExisting: L.contains(e)
+Collections-19	randpre-timed-all	randpre-timed-all-s8	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	11	POST setExisting: L.contains(e)
+Collections-19	randpre-timed-long	randpre-timed-long-s9	1	1	NOT_DETECTED			
+Collections-19	randpre-timed-all	randpre-timed-all-s9	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setElementInPlace	3	POST setExisting: L.contains(e)
+Collections-19	randpre-timed-long	randpre-timed-long-s10	1	1	NOT_DETECTED			
+Collections-19	randpre-timed-all	randpre-timed-all-s10	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setElementInPlace	3	POST setExisting: L.contains(e)
+Collections-19	randpre-pool-timed-long	randpre-pool-timed-long-s1	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-timed-all	randpre-pool-timed-all-s1	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setElementInPlace	3	POST setExisting: L.contains(e)
+Collections-19	randpre-pool-timed-long	randpre-pool-timed-long-s2	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-timed-all	randpre-pool-timed-all-s2	5	5	NOT_DETECTED			
+Collections-19	randpre-pool-timed-long	randpre-pool-timed-long-s3	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-timed-all	randpre-pool-timed-all-s3	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setElementInPlace	3	POST setExisting: L.contains(e)
+Collections-19	randpre-pool-timed-long	randpre-pool-timed-long-s4	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-timed-all	randpre-pool-timed-all-s4	5	5	NOT_DETECTED			
+Collections-19	randpre-pool-timed-long	randpre-pool-timed-long-s5	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-timed-all	randpre-pool-timed-all-s5	5	5	NOT_DETECTED			
+Collections-19	randpre-pool-timed-long	randpre-pool-timed-long-s6	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-timed-all	randpre-pool-timed-all-s6	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setElementInPlace	3	POST setExisting: L.contains(e)
+Collections-19	randpre-pool-timed-long	randpre-pool-timed-long-s7	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-timed-all	randpre-pool-timed-all-s7	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setElementInPlace	3	POST setExisting: L.contains(e)
+Collections-19	randpre-pool-timed-long	randpre-pool-timed-long-s8	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-timed-all	randpre-pool-timed-all-s8	5	5	NOT_DETECTED			
+Collections-19	randpre-pool-timed-long	randpre-pool-timed-long-s9	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	11	POST setExisting: L.contains(e)
+Collections-19	randpre-pool-timed-all	randpre-pool-timed-all-s9	5	5	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#setUniqueListDryRun	11	POST setExisting: L.contains(e)
+Collections-19	randpre-pool-timed-long	randpre-pool-timed-long-s10	1	1	NOT_DETECTED			
+Collections-19	randpre-pool-timed-all	randpre-pool-timed-all-s10	5	5	NOT_DETECTED			
+Collections-21	randpre-long	randpre-long-s1	0	0	NO_TESTS			no source files
+Collections-21	randpre-all	randpre-all-s1	0	0	NO_TESTS			no source files
+Collections-21	randpre-long	randpre-long-s2	0	0	NO_TESTS			no source files
+Collections-21	randpre-all	randpre-all-s2	0	0	NO_TESTS			no source files
+Collections-21	randpre-long	randpre-long-s3	0	0	NO_TESTS			no source files
+Collections-21	randpre-all	randpre-all-s3	0	0	NO_TESTS			no source files
+Collections-21	randpre-long	randpre-long-s4	0	0	NO_TESTS			no source files
+Collections-21	randpre-all	randpre-all-s4	0	0	NO_TESTS			no source files
+Collections-21	randpre-long	randpre-long-s5	0	0	NO_TESTS			no source files
+Collections-21	randpre-all	randpre-all-s5	0	0	NO_TESTS			no source files
+Collections-21	randpre-long	randpre-long-s6	0	0	NO_TESTS			no source files
+Collections-21	randpre-all	randpre-all-s6	0	0	NO_TESTS			no source files
+Collections-21	randpre-long	randpre-long-s7	0	0	NO_TESTS			no source files
+Collections-21	randpre-all	randpre-all-s7	0	0	NO_TESTS			no source files
+Collections-21	randpre-long	randpre-long-s8	0	0	NO_TESTS			no source files
+Collections-21	randpre-all	randpre-all-s8	0	0	NO_TESTS			no source files
+Collections-21	randpre-long	randpre-long-s9	0	0	NO_TESTS			no source files
+Collections-21	randpre-all	randpre-all-s9	0	0	NO_TESTS			no source files
+Collections-21	randpre-long	randpre-long-s10	0	0	NO_TESTS			no source files
+Collections-21	randpre-all	randpre-all-s10	0	0	NO_TESTS			no source files
+Collections-21	randpre-pool-long	randpre-pool-long-s1	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-all	randpre-pool-all-s1	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-long	randpre-pool-long-s2	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-all	randpre-pool-all-s2	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-long	randpre-pool-long-s3	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-all	randpre-pool-all-s3	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-long	randpre-pool-long-s4	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-all	randpre-pool-all-s4	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-long	randpre-pool-long-s5	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-all	randpre-pool-all-s5	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-long	randpre-pool-long-s6	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-all	randpre-pool-all-s6	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-long	randpre-pool-long-s7	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-all	randpre-pool-all-s7	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-long	randpre-pool-long-s8	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-all	randpre-pool-all-s8	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-long	randpre-pool-long-s9	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-all	randpre-pool-all-s9	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-long	randpre-pool-long-s10	0	0	NO_TESTS			no source files
+Collections-21	randpre-pool-all	randpre-pool-all-s10	0	0	NO_TESTS			no source files
+Collections-21	randpre-timed-long	randpre-timed-long-s1	1	1	NOT_DETECTED			
+Collections-21	randpre-timed-all	randpre-timed-all-s1	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-timed-long	randpre-timed-long-s2	1	1	NOT_DETECTED			
+Collections-21	randpre-timed-all	randpre-timed-all-s2	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-timed-long	randpre-timed-long-s3	1	1	NOT_DETECTED			
+Collections-21	randpre-timed-all	randpre-timed-all-s3	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-timed-long	randpre-timed-long-s4	1	1	NOT_DETECTED			
+Collections-21	randpre-timed-all	randpre-timed-all-s4	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-timed-long	randpre-timed-long-s5	1	1	NOT_DETECTED			
+Collections-21	randpre-timed-all	randpre-timed-all-s5	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-timed-long	randpre-timed-long-s6	1	1	NOT_DETECTED			
+Collections-21	randpre-timed-all	randpre-timed-all-s6	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-timed-long	randpre-timed-long-s7	1	1	NOT_DETECTED			
+Collections-21	randpre-timed-all	randpre-timed-all-s7	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-timed-long	randpre-timed-long-s8	1	1	NOT_DETECTED			
+Collections-21	randpre-timed-all	randpre-timed-all-s8	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-timed-long	randpre-timed-long-s9	1	1	NOT_DETECTED			
+Collections-21	randpre-timed-all	randpre-timed-all-s9	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-timed-long	randpre-timed-long-s10	1	1	NOT_DETECTED			
+Collections-21	randpre-timed-all	randpre-timed-all-s10	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-pool-timed-long	randpre-pool-timed-long-s1	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-timed-all	randpre-pool-timed-all-s1	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-pool-timed-long	randpre-pool-timed-long-s2	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-timed-all	randpre-pool-timed-all-s2	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-pool-timed-long	randpre-pool-timed-long-s3	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-timed-all	randpre-pool-timed-all-s3	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-pool-timed-long	randpre-pool-timed-long-s4	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-timed-all	randpre-pool-timed-all-s4	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-pool-timed-long	randpre-pool-timed-long-s5	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-timed-all	randpre-pool-timed-all-s5	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-pool-timed-long	randpre-pool-timed-long-s6	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-timed-all	randpre-pool-timed-all-s6	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-pool-timed-long	randpre-pool-timed-long-s7	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-timed-all	randpre-pool-timed-all-s7	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-pool-timed-long	randpre-pool-timed-long-s8	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-timed-all	randpre-pool-timed-all-s8	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-pool-timed-long	randpre-pool-timed-long-s9	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-timed-all	randpre-pool-timed-all-s9	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Collections-21	randpre-pool-timed-long	randpre-pool-timed-long-s10	1	1	NOT_DETECTED			
+Collections-21	randpre-pool-timed-all	randpre-pool-timed-all-s10	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#subListIsUnmodifiable	5	POST subRemoveAt: changed == false
+Lang-59	randpre-long	randpre-long-s1	1	1	NOT_DETECTED			
+Lang-59	randpre-all	randpre-all-s1	4	4	NOT_DETECTED			
+Lang-59	randpre-long	randpre-long-s2	0	0	NO_TESTS			no source files
+Lang-59	randpre-all	randpre-all-s2	2	2	NOT_DETECTED			
+Lang-59	randpre-long	randpre-long-s3	1	1	NOT_DETECTED			
+Lang-59	randpre-all	randpre-all-s3	3	3	NOT_DETECTED			
+Lang-59	randpre-long	randpre-long-s4	1	1	NOT_DETECTED			
+Lang-59	randpre-all	randpre-all-s4	4	4	NOT_DETECTED			
+Lang-59	randpre-long	randpre-long-s5	0	0	NO_TESTS			no source files
+Lang-59	randpre-all	randpre-all-s5	1	1	NOT_DETECTED			
+Lang-59	randpre-long	randpre-long-s6	0	0	NO_TESTS			no source files
+Lang-59	randpre-all	randpre-all-s6	1	1	NOT_DETECTED			
+Lang-59	randpre-long	randpre-long-s7	0	0	NO_TESTS			no source files
+Lang-59	randpre-all	randpre-all-s7	1	1	NOT_DETECTED			
+Lang-59	randpre-long	randpre-long-s8	0	0	NO_TESTS			no source files
+Lang-59	randpre-all	randpre-all-s8	3	3	NOT_DETECTED			
+Lang-59	randpre-long	randpre-long-s9	0	0	NO_TESTS			no source files
+Lang-59	randpre-all	randpre-all-s9	1	1	NOT_DETECTED			
+Lang-59	randpre-long	randpre-long-s10	1	1	NOT_DETECTED			
+Lang-59	randpre-all	randpre-all-s10	3	3	NOT_DETECTED			
+Lang-59	randpre-pool-long	randpre-pool-long-s1	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-all	randpre-pool-all-s1	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-long	randpre-pool-long-s2	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-all	randpre-pool-all-s2	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-long	randpre-pool-long-s3	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-all	randpre-pool-all-s3	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-long	randpre-pool-long-s4	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-all	randpre-pool-all-s4	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-long	randpre-pool-long-s5	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-all	randpre-pool-all-s5	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-long	randpre-pool-long-s6	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-all	randpre-pool-all-s6	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-long	randpre-pool-long-s7	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-all	randpre-pool-all-s7	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-long	randpre-pool-long-s8	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-all	randpre-pool-all-s8	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-long	randpre-pool-long-s9	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-all	randpre-pool-all-s9	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-long	randpre-pool-long-s10	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-all	randpre-pool-all-s10	4	4	NOT_DETECTED			
+Lang-59	randpre-timed-long	randpre-timed-long-s1	1	1	NOT_DETECTED			
+Lang-59	randpre-timed-all	randpre-timed-all-s1	4	4	NOT_DETECTED			
+Lang-59	randpre-timed-long	randpre-timed-long-s2	1	1	NOT_DETECTED			
+Lang-59	randpre-timed-all	randpre-timed-all-s2	4	4	NOT_DETECTED			
+Lang-59	randpre-timed-long	randpre-timed-long-s3	1	1	NOT_DETECTED			
+Lang-59	randpre-timed-all	randpre-timed-all-s3	4	4	NOT_DETECTED			
+Lang-59	randpre-timed-long	randpre-timed-long-s4	1	1	NOT_DETECTED			
+Lang-59	randpre-timed-all	randpre-timed-all-s4	4	4	NOT_DETECTED			
+Lang-59	randpre-timed-long	randpre-timed-long-s5	1	1	NOT_DETECTED			
+Lang-59	randpre-timed-all	randpre-timed-all-s5	4	4	NOT_DETECTED			
+Lang-59	randpre-timed-long	randpre-timed-long-s6	1	1	NOT_DETECTED			
+Lang-59	randpre-timed-all	randpre-timed-all-s6	4	4	NOT_DETECTED			
+Lang-59	randpre-timed-long	randpre-timed-long-s7	1	1	NOT_DETECTED			
+Lang-59	randpre-timed-all	randpre-timed-all-s7	4	4	NOT_DETECTED			
+Lang-59	randpre-timed-long	randpre-timed-long-s8	1	1	NOT_DETECTED			
+Lang-59	randpre-timed-all	randpre-timed-all-s8	4	4	NOT_DETECTED			
+Lang-59	randpre-timed-long	randpre-timed-long-s9	1	1	NOT_DETECTED			
+Lang-59	randpre-timed-all	randpre-timed-all-s9	4	4	NOT_DETECTED			
+Lang-59	randpre-timed-long	randpre-timed-long-s10	1	1	NOT_DETECTED			
+Lang-59	randpre-timed-all	randpre-timed-all-s10	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-timed-long	randpre-pool-timed-long-s1	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-timed-all	randpre-pool-timed-all-s1	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-timed-long	randpre-pool-timed-long-s2	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-timed-all	randpre-pool-timed-all-s2	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-timed-long	randpre-pool-timed-long-s3	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-timed-all	randpre-pool-timed-all-s3	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-timed-long	randpre-pool-timed-long-s4	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-timed-all	randpre-pool-timed-all-s4	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-timed-long	randpre-pool-timed-long-s5	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-timed-all	randpre-pool-timed-all-s5	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-timed-long	randpre-pool-timed-long-s6	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-timed-all	randpre-pool-timed-all-s6	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-timed-long	randpre-pool-timed-long-s7	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-timed-all	randpre-pool-timed-all-s7	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-timed-long	randpre-pool-timed-long-s8	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-timed-all	randpre-pool-timed-all-s8	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-timed-long	randpre-pool-timed-long-s9	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-timed-all	randpre-pool-timed-all-s9	4	4	NOT_DETECTED			
+Lang-59	randpre-pool-timed-long	randpre-pool-timed-long-s10	1	1	NOT_DETECTED			
+Lang-59	randpre-pool-timed-all	randpre-pool-timed-all-s10	4	4	NOT_DETECTED			
+Lang-61	randpre-long	randpre-long-s1	1	1	NOT_DETECTED			
+Lang-61	randpre-all	randpre-all-s1	4	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#searchAfterDelete	5	POST indexOf: pos == content.indexOf(s)
+Lang-61	randpre-long	randpre-long-s2	0	0	NO_TESTS			no source files
+Lang-61	randpre-all	randpre-all-s2	2	2	NOT_DETECTED			
+Lang-61	randpre-long	randpre-long-s3	1	1	NOT_DETECTED			
+Lang-61	randpre-all	randpre-all-s3	3	3	NOT_DETECTED			
+Lang-61	randpre-long	randpre-long-s4	1	1	NOT_DETECTED			
+Lang-61	randpre-all	randpre-all-s4	4	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#searchAfterDelete	5	POST indexOf: pos == content.indexOf(s)
+Lang-61	randpre-long	randpre-long-s5	0	0	NO_TESTS			no source files
+Lang-61	randpre-all	randpre-all-s5	1	1	NOT_DETECTED			
+Lang-61	randpre-long	randpre-long-s6	0	0	NO_TESTS			no source files
+Lang-61	randpre-all	randpre-all-s6	1	1	NOT_DETECTED			
+Lang-61	randpre-long	randpre-long-s7	0	0	NO_TESTS			no source files
+Lang-61	randpre-all	randpre-all-s7	1	1	NOT_DETECTED			
+Lang-61	randpre-long	randpre-long-s8	0	0	NO_TESTS			no source files
+Lang-61	randpre-all	randpre-all-s8	3	3	NOT_DETECTED			
+Lang-61	randpre-long	randpre-long-s9	0	0	NO_TESTS			no source files
+Lang-61	randpre-all	randpre-all-s9	1	1	NOT_DETECTED			
+Lang-61	randpre-long	randpre-long-s10	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#strBuilderDryRun	8	THROW deleteFirst: java.lang.ArrayIndexOutOfBoundsException: arraycopy: length -4 is negative
+Lang-61	randpre-all	randpre-all-s10	3	3	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#strBuilderDryRun	8	THROW deleteFirst: java.lang.ArrayIndexOutOfBoundsException: arraycopy: length -4 is negative
+Lang-61	randpre-pool-long	randpre-pool-long-s1	1	1	NOT_DETECTED			
+Lang-61	randpre-pool-all	randpre-pool-all-s1	4	4	NOT_DETECTED			
+Lang-61	randpre-pool-long	randpre-pool-long-s2	1	1	NOT_DETECTED			
+Lang-61	randpre-pool-all	randpre-pool-all-s2	4	4	NOT_DETECTED			
+Lang-61	randpre-pool-long	randpre-pool-long-s3	1	1	NOT_DETECTED			
+Lang-61	randpre-pool-all	randpre-pool-all-s3	4	4	NOT_DETECTED			
+Lang-61	randpre-pool-long	randpre-pool-long-s4	1	1	NOT_DETECTED			
+Lang-61	randpre-pool-all	randpre-pool-all-s4	4	4	NOT_DETECTED			
+Lang-61	randpre-pool-long	randpre-pool-long-s5	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#strBuilderDryRun	12	POST indexOf: pos == content.indexOf(s)
+Lang-61	randpre-pool-all	randpre-pool-all-s5	4	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#strBuilderDryRun	12	POST indexOf: pos == content.indexOf(s)
+Lang-61	randpre-pool-long	randpre-pool-long-s6	1	1	NOT_DETECTED			
+Lang-61	randpre-pool-all	randpre-pool-all-s6	4	4	NOT_DETECTED			
+Lang-61	randpre-pool-long	randpre-pool-long-s7	1	1	NOT_DETECTED			
+Lang-61	randpre-pool-all	randpre-pool-all-s7	4	4	NOT_DETECTED			
+Lang-61	randpre-pool-long	randpre-pool-long-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#strBuilderDryRun	12	POST indexOf: pos == content.indexOf(s)
+Lang-61	randpre-pool-all	randpre-pool-all-s8	4	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#strBuilderDryRun	12	POST indexOf: pos == content.indexOf(s)
+Lang-61	randpre-pool-long	randpre-pool-long-s9	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#strBuilderDryRun	12	POST indexOf: pos == content.indexOf(s)
+Lang-61	randpre-pool-all	randpre-pool-all-s9	4	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#strBuilderDryRun	12	POST indexOf: pos == content.indexOf(s)
+Lang-61	randpre-pool-long	randpre-pool-long-s10	1	1	NOT_DETECTED			
+Lang-61	randpre-pool-all	randpre-pool-all-s10	4	4	NOT_DETECTED			
+Lang-61	randpre-timed-long	randpre-timed-long-s1	1	1	NOT_DETECTED			
+Lang-61	randpre-timed-all	randpre-timed-all-s1	4	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#searchAfterDelete	5	POST indexOf: pos == content.indexOf(s)
+Lang-61	randpre-timed-long	randpre-timed-long-s2	1	1	NOT_DETECTED			
+Lang-61	randpre-timed-all	randpre-timed-all-s2	4	4	NOT_DETECTED			
+Lang-61	randpre-timed-long	randpre-timed-long-s3	1	1	NOT_DETECTED			
+Lang-61	randpre-timed-all	randpre-timed-all-s3	4	4	NOT_DETECTED			
+Lang-61	randpre-timed-long	randpre-timed-long-s4	1	1	NOT_DETECTED			
+Lang-61	randpre-timed-all	randpre-timed-all-s4	4	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#searchAfterDelete	5	POST indexOf: pos == content.indexOf(s)
+Lang-61	randpre-timed-long	randpre-timed-long-s5	1	1	NOT_DETECTED			
+Lang-61	randpre-timed-all	randpre-timed-all-s5	4	4	NOT_DETECTED			
+Lang-61	randpre-timed-long	randpre-timed-long-s6	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#strBuilderDryRun	12	POST indexOf: pos == content.indexOf(s)
+Lang-61	randpre-timed-all	randpre-timed-all-s6	4	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#searchAfterDelete	5	POST indexOf: pos == content.indexOf(s)
+Lang-61	randpre-timed-long	randpre-timed-long-s7	1	1	NOT_DETECTED			
+Lang-61	randpre-timed-all	randpre-timed-all-s7	4	4	NOT_DETECTED			
+Lang-61	randpre-timed-long	randpre-timed-long-s8	1	1	NOT_DETECTED			
+Lang-61	randpre-timed-all	randpre-timed-all-s8	4	4	NOT_DETECTED			
+Lang-61	randpre-timed-long	randpre-timed-long-s9	1	1	NOT_DETECTED			
+Lang-61	randpre-timed-all	randpre-timed-all-s9	4	4	NOT_DETECTED			
+Lang-61	randpre-timed-long	randpre-timed-long-s10	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#strBuilderDryRun	8	THROW deleteFirst: java.lang.ArrayIndexOutOfBoundsException: arraycopy: length -4 is negative
+Lang-61	randpre-timed-all	randpre-timed-all-s10	4	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#strBuilderDryRun	8	THROW deleteFirst: java.lang.ArrayIndexOutOfBoundsException: arraycopy: length -4 is negative
+Lang-61	randpre-pool-timed-long	randpre-pool-timed-long-s1	1	1	NOT_DETECTED			
+Lang-61	randpre-pool-timed-all	randpre-pool-timed-all-s1	4	4	NOT_DETECTED			
+Lang-61	randpre-pool-timed-long	randpre-pool-timed-long-s2	1	1	NOT_DETECTED			
+Lang-61	randpre-pool-timed-all	randpre-pool-timed-all-s2	4	4	NOT_DETECTED			
+Lang-61	randpre-pool-timed-long	randpre-pool-timed-long-s3	1	1	NOT_DETECTED			
+Lang-61	randpre-pool-timed-all	randpre-pool-timed-all-s3	4	4	NOT_DETECTED			
+Lang-61	randpre-pool-timed-long	randpre-pool-timed-long-s4	1	1	NOT_DETECTED			
+Lang-61	randpre-pool-timed-all	randpre-pool-timed-all-s4	4	4	NOT_DETECTED			
+Lang-61	randpre-pool-timed-long	randpre-pool-timed-long-s5	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#strBuilderDryRun	12	POST indexOf: pos == content.indexOf(s)
+Lang-61	randpre-pool-timed-all	randpre-pool-timed-all-s5	4	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#strBuilderDryRun	12	POST indexOf: pos == content.indexOf(s)
+Lang-61	randpre-pool-timed-long	randpre-pool-timed-long-s6	1	1	NOT_DETECTED			
+Lang-61	randpre-pool-timed-all	randpre-pool-timed-all-s6	4	4	NOT_DETECTED			
+Lang-61	randpre-pool-timed-long	randpre-pool-timed-long-s7	1	1	NOT_DETECTED			
+Lang-61	randpre-pool-timed-all	randpre-pool-timed-all-s7	4	4	NOT_DETECTED			
+Lang-61	randpre-pool-timed-long	randpre-pool-timed-long-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#strBuilderDryRun	12	POST indexOf: pos == content.indexOf(s)
+Lang-61	randpre-pool-timed-all	randpre-pool-timed-all-s8	4	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#strBuilderDryRun	12	POST indexOf: pos == content.indexOf(s)
+Lang-61	randpre-pool-timed-long	randpre-pool-timed-long-s9	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#strBuilderDryRun	12	POST indexOf: pos == content.indexOf(s)
+Lang-61	randpre-pool-timed-all	randpre-pool-timed-all-s9	4	4	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#strBuilderDryRun	12	POST indexOf: pos == content.indexOf(s)
+Lang-61	randpre-pool-timed-long	randpre-pool-timed-long-s10	1	1	NOT_DETECTED			
+Lang-61	randpre-pool-timed-all	randpre-pool-timed-all-s10	4	4	NOT_DETECTED			
+Collections-22	randpre-long	randpre-long-s1	0	0	NO_TESTS			no source files
+Collections-22	randpre-all	randpre-all-s1	0	0	NO_TESTS			no source files
+Collections-22	randpre-long	randpre-long-s2	0	0	NO_TESTS			no source files
+Collections-22	randpre-all	randpre-all-s2	0	0	NO_TESTS			no source files
+Collections-22	randpre-long	randpre-long-s3	0	0	NO_TESTS			no source files
+Collections-22	randpre-all	randpre-all-s3	0	0	NO_TESTS			no source files
+Collections-22	randpre-long	randpre-long-s4	0	0	NO_TESTS			no source files
+Collections-22	randpre-all	randpre-all-s4	0	0	NO_TESTS			no source files
+Collections-22	randpre-long	randpre-long-s5	0	0	NO_TESTS			no source files
+Collections-22	randpre-all	randpre-all-s5	0	0	NO_TESTS			no source files
+Collections-22	randpre-long	randpre-long-s6	0	0	NO_TESTS			no source files
+Collections-22	randpre-all	randpre-all-s6	0	0	NO_TESTS			no source files
+Collections-22	randpre-long	randpre-long-s7	0	0	NO_TESTS			no source files
+Collections-22	randpre-all	randpre-all-s7	0	0	NO_TESTS			no source files
+Collections-22	randpre-long	randpre-long-s8	0	0	NO_TESTS			no source files
+Collections-22	randpre-all	randpre-all-s8	0	0	NO_TESTS			no source files
+Collections-22	randpre-long	randpre-long-s9	0	0	NO_TESTS			no source files
+Collections-22	randpre-all	randpre-all-s9	0	0	NO_TESTS			no source files
+Collections-22	randpre-long	randpre-long-s10	0	0	NO_TESTS			no source files
+Collections-22	randpre-all	randpre-all-s10	0	0	NO_TESTS			no source files
+Collections-22	randpre-pool-long	randpre-pool-long-s1	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-all	randpre-pool-all-s1	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-long	randpre-pool-long-s2	0	0	NO_TESTS			no source files
+Collections-22	randpre-pool-all	randpre-pool-all-s2	0	0	NO_TESTS			no source files
+Collections-22	randpre-pool-long	randpre-pool-long-s3	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-all	randpre-pool-all-s3	2	2	NOT_DETECTED			
+Collections-22	randpre-pool-long	randpre-pool-long-s4	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#listOrderedMapDryRun	8	POST putAllExistingAt: M.indexOf(k2) == M.indexOf(k1) + 1
+Collections-22	randpre-pool-all	randpre-pool-all-s4	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#listOrderedMapDryRun	8	POST putAllExistingAt: M.indexOf(k2) == M.indexOf(k1) + 1
+Collections-22	randpre-pool-long	randpre-pool-long-s5	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-all	randpre-pool-all-s5	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-long	randpre-pool-long-s6	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-all	randpre-pool-all-s6	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-long	randpre-pool-long-s7	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-all	randpre-pool-all-s7	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-long	randpre-pool-long-s8	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-all	randpre-pool-all-s8	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-long	randpre-pool-long-s9	0	0	NO_TESTS			no source files
+Collections-22	randpre-pool-all	randpre-pool-all-s9	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-long	randpre-pool-long-s10	0	0	NO_TESTS			no source files
+Collections-22	randpre-pool-all	randpre-pool-all-s10	0	0	NO_TESTS			no source files
+Collections-22	randpre-timed-long	randpre-timed-long-s1	0	0	NO_TESTS			no source files
+Collections-22	randpre-timed-all	randpre-timed-all-s1	0	0	NO_TESTS			no source files
+Collections-22	randpre-timed-long	randpre-timed-long-s2	0	0	NO_TESTS			no source files
+Collections-22	randpre-timed-all	randpre-timed-all-s2	0	0	NO_TESTS			no source files
+Collections-22	randpre-timed-long	randpre-timed-long-s3	0	0	NO_TESTS			no source files
+Collections-22	randpre-timed-all	randpre-timed-all-s3	0	0	NO_TESTS			no source files
+Collections-22	randpre-timed-long	randpre-timed-long-s4	0	0	NO_TESTS			no source files
+Collections-22	randpre-timed-all	randpre-timed-all-s4	0	0	NO_TESTS			no source files
+Collections-22	randpre-timed-long	randpre-timed-long-s5	0	0	NO_TESTS			no source files
+Collections-22	randpre-timed-all	randpre-timed-all-s5	0	0	NO_TESTS			no source files
+Collections-22	randpre-timed-long	randpre-timed-long-s6	0	0	NO_TESTS			no source files
+Collections-22	randpre-timed-all	randpre-timed-all-s6	0	0	NO_TESTS			no source files
+Collections-22	randpre-timed-long	randpre-timed-long-s7	0	0	NO_TESTS			no source files
+Collections-22	randpre-timed-all	randpre-timed-all-s7	0	0	NO_TESTS			no source files
+Collections-22	randpre-timed-long	randpre-timed-long-s8	1	1	NOT_DETECTED			
+Collections-22	randpre-timed-all	randpre-timed-all-s8	1	1	NOT_DETECTED			
+Collections-22	randpre-timed-long	randpre-timed-long-s9	0	0	NO_TESTS			no source files
+Collections-22	randpre-timed-all	randpre-timed-all-s9	0	0	NO_TESTS			no source files
+Collections-22	randpre-timed-long	randpre-timed-long-s10	0	0	NO_TESTS			no source files
+Collections-22	randpre-timed-all	randpre-timed-all-s10	0	0	NO_TESTS			no source files
+Collections-22	randpre-pool-timed-long	randpre-pool-timed-long-s1	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-timed-all	randpre-pool-timed-all-s1	2	2	NOT_DETECTED			
+Collections-22	randpre-pool-timed-long	randpre-pool-timed-long-s2	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-timed-all	randpre-pool-timed-all-s2	2	2	NOT_DETECTED			
+Collections-22	randpre-pool-timed-long	randpre-pool-timed-long-s3	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-timed-all	randpre-pool-timed-all-s3	2	2	NOT_DETECTED			
+Collections-22	randpre-pool-timed-long	randpre-pool-timed-long-s4	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#listOrderedMapDryRun	8	POST putAllExistingAt: M.indexOf(k2) == M.indexOf(k1) + 1
+Collections-22	randpre-pool-timed-all	randpre-pool-timed-all-s4	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#listOrderedMapDryRun	8	POST putAllExistingAt: M.indexOf(k2) == M.indexOf(k1) + 1
+Collections-22	randpre-pool-timed-long	randpre-pool-timed-long-s5	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-timed-all	randpre-pool-timed-all-s5	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#putAllOverNullValues	3	THROW putAllExistingAt: java.lang.IndexOutOfBoundsException: Index: 2, Size: 1
+Collections-22	randpre-pool-timed-long	randpre-pool-timed-long-s6	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-timed-all	randpre-pool-timed-all-s6	2	2	NOT_DETECTED			
+Collections-22	randpre-pool-timed-long	randpre-pool-timed-long-s7	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-timed-all	randpre-pool-timed-all-s7	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#putAllOverNullValues	3	THROW putAllExistingAt: java.lang.IndexOutOfBoundsException: Index: 2, Size: 1
+Collections-22	randpre-pool-timed-long	randpre-pool-timed-long-s8	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-timed-all	randpre-pool-timed-all-s8	2	2	NOT_DETECTED			
+Collections-22	randpre-pool-timed-long	randpre-pool-timed-long-s9	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-timed-all	randpre-pool-timed-all-s9	2	2	NOT_DETECTED			
+Collections-22	randpre-pool-timed-long	randpre-pool-timed-long-s10	1	1	NOT_DETECTED			
+Collections-22	randpre-pool-timed-all	randpre-pool-timed-all-s10	2	2	NOT_DETECTED			
+Collections-20	randpre-long	randpre-long-s1	0	0	NO_TESTS			no source files
+Collections-20	randpre-all	randpre-all-s1	1	1	NOT_DETECTED			
+Collections-20	randpre-long	randpre-long-s2	0	0	NO_TESTS			no source files
+Collections-20	randpre-all	randpre-all-s2	0	0	NO_TESTS			no source files
+Collections-20	randpre-long	randpre-long-s3	0	0	NO_TESTS			no source files
+Collections-20	randpre-all	randpre-all-s3	1	1	NOT_DETECTED			
+Collections-20	randpre-long	randpre-long-s4	1	1	NOT_DETECTED			
+Collections-20	randpre-all	randpre-all-s4	2	2	NOT_DETECTED			
+Collections-20	randpre-long	randpre-long-s5	1	1	NOT_DETECTED			
+Collections-20	randpre-all	randpre-all-s5	2	2	NOT_DETECTED			
+Collections-20	randpre-long	randpre-long-s6	0	0	NO_TESTS			no source files
+Collections-20	randpre-all	randpre-all-s6	1	1	NOT_DETECTED			
+Collections-20	randpre-long	randpre-long-s7	0	0	NO_TESTS			no source files
+Collections-20	randpre-all	randpre-all-s7	0	0	NO_TESTS			no source files
+Collections-20	randpre-long	randpre-long-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-all	randpre-all-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-long	randpre-long-s9	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-all	randpre-all-s9	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-long	randpre-long-s10	1	1	NOT_DETECTED			
+Collections-20	randpre-all	randpre-all-s10	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#removeAfterPrevious	10	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-long	randpre-pool-long-s1	0	0	NO_TESTS			no source files
+Collections-20	randpre-pool-all	randpre-pool-all-s1	0	0	NO_TESTS			no source files
+Collections-20	randpre-pool-long	randpre-pool-long-s2	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-all	randpre-pool-all-s2	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-long	randpre-pool-long-s3	0	0	NO_TESTS			no source files
+Collections-20	randpre-pool-all	randpre-pool-all-s3	1	1	NOT_DETECTED			
+Collections-20	randpre-pool-long	randpre-pool-long-s4	1	1	NOT_DETECTED			
+Collections-20	randpre-pool-all	randpre-pool-all-s4	2	2	NOT_DETECTED			
+Collections-20	randpre-pool-long	randpre-pool-long-s5	1	1	NOT_DETECTED			
+Collections-20	randpre-pool-all	randpre-pool-all-s5	2	2	NOT_DETECTED			
+Collections-20	randpre-pool-long	randpre-pool-long-s6	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-all	randpre-pool-all-s6	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-long	randpre-pool-long-s7	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-all	randpre-pool-all-s7	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-long	randpre-pool-long-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-all	randpre-pool-all-s8	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-long	randpre-pool-long-s9	0	0	NO_TESTS			no source files
+Collections-20	randpre-pool-all	randpre-pool-all-s9	1	1	NOT_DETECTED			
+Collections-20	randpre-pool-long	randpre-pool-long-s10	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-all	randpre-pool-all-s10	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-timed-long	randpre-timed-long-s1	0	0	NO_TESTS			no source files
+Collections-20	randpre-timed-all	randpre-timed-all-s1	1	1	NOT_DETECTED			
+Collections-20	randpre-timed-long	randpre-timed-long-s2	0	0	NO_TESTS			no source files
+Collections-20	randpre-timed-all	randpre-timed-all-s2	0	0	NO_TESTS			no source files
+Collections-20	randpre-timed-long	randpre-timed-long-s3	0	0	NO_TESTS			no source files
+Collections-20	randpre-timed-all	randpre-timed-all-s3	1	1	NOT_DETECTED			
+Collections-20	randpre-timed-long	randpre-timed-long-s4	1	1	NOT_DETECTED			
+Collections-20	randpre-timed-all	randpre-timed-all-s4	2	2	NOT_DETECTED			
+Collections-20	randpre-timed-long	randpre-timed-long-s5	1	1	NOT_DETECTED			
+Collections-20	randpre-timed-all	randpre-timed-all-s5	2	2	NOT_DETECTED			
+Collections-20	randpre-timed-long	randpre-timed-long-s6	0	0	NO_TESTS			no source files
+Collections-20	randpre-timed-all	randpre-timed-all-s6	1	1	NOT_DETECTED			
+Collections-20	randpre-timed-long	randpre-timed-long-s7	0	0	NO_TESTS			no source files
+Collections-20	randpre-timed-all	randpre-timed-all-s7	0	0	NO_TESTS			no source files
+Collections-20	randpre-timed-long	randpre-timed-long-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-timed-all	randpre-timed-all-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-timed-long	randpre-timed-long-s9	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-timed-all	randpre-timed-all-s9	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-timed-long	randpre-timed-long-s10	1	1	NOT_DETECTED			
+Collections-20	randpre-timed-all	randpre-timed-all-s10	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#removeAfterPrevious	10	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-timed-long	randpre-pool-timed-long-s1	0	0	NO_TESTS			no source files
+Collections-20	randpre-pool-timed-all	randpre-pool-timed-all-s1	0	0	NO_TESTS			no source files
+Collections-20	randpre-pool-timed-long	randpre-pool-timed-long-s2	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-timed-all	randpre-pool-timed-all-s2	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-timed-long	randpre-pool-timed-long-s3	0	0	NO_TESTS			no source files
+Collections-20	randpre-pool-timed-all	randpre-pool-timed-all-s3	1	1	NOT_DETECTED			
+Collections-20	randpre-pool-timed-long	randpre-pool-timed-long-s4	1	1	NOT_DETECTED			
+Collections-20	randpre-pool-timed-all	randpre-pool-timed-all-s4	2	2	NOT_DETECTED			
+Collections-20	randpre-pool-timed-long	randpre-pool-timed-long-s5	1	1	NOT_DETECTED			
+Collections-20	randpre-pool-timed-all	randpre-pool-timed-all-s5	2	2	NOT_DETECTED			
+Collections-20	randpre-pool-timed-long	randpre-pool-timed-long-s6	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-timed-all	randpre-pool-timed-all-s6	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-timed-long	randpre-pool-timed-long-s7	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-timed-all	randpre-pool-timed-all-s7	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-timed-long	randpre-pool-timed-long-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-timed-all	randpre-pool-timed-all-s8	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-timed-long	randpre-pool-timed-long-s9	0	0	NO_TESTS			no source files
+Collections-20	randpre-pool-timed-all	randpre-pool-timed-all-s9	1	1	NOT_DETECTED			
+Collections-20	randpre-pool-timed-long	randpre-pool-timed-long-s10	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-20	randpre-pool-timed-all	randpre-pool-timed-all-s10	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#treeListDryRun	11	POST iterPrevious: elem == L.get(itNextIndex)
+Collections-4	randpre-long	randpre-long-s1	0	0	NO_TESTS			no source files
+Collections-4	randpre-all	randpre-all-s1	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#firstPutOfAKey	1	POST put: r == value
+Collections-4	randpre-long	randpre-long-s2	0	0	NO_TESTS			no source files
+Collections-4	randpre-all	randpre-all-s2	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#firstPutOfAKey	1	POST put: r == value
+Collections-4	randpre-long	randpre-long-s3	0	0	NO_TESTS			no source files
+Collections-4	randpre-all	randpre-all-s3	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#firstPutOfAKey	1	POST put: r == value
+Collections-4	randpre-long	randpre-long-s4	0	0	NO_TESTS			no source files
+Collections-4	randpre-all	randpre-all-s4	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#firstPutOfAKey	1	POST put: r == value
+Collections-4	randpre-long	randpre-long-s5	0	0	NO_TESTS			no source files
+Collections-4	randpre-all	randpre-all-s5	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#firstPutOfAKey	1	POST put: r == value
+Collections-4	randpre-long	randpre-long-s6	0	0	NO_TESTS			no source files
+Collections-4	randpre-all	randpre-all-s6	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#firstPutOfAKey	1	POST put: r == value
+Collections-4	randpre-long	randpre-long-s7	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-all	randpre-all-s7	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-long	randpre-long-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-all	randpre-all-s8	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-long	randpre-long-s9	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-all	randpre-all-s9	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-long	randpre-long-s10	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-all	randpre-all-s10	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-long	randpre-pool-long-s1	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-all	randpre-pool-all-s1	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-long	randpre-pool-long-s2	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-all	randpre-pool-all-s2	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-long	randpre-pool-long-s3	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-all	randpre-pool-all-s3	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-long	randpre-pool-long-s4	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-all	randpre-pool-all-s4	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-long	randpre-pool-long-s5	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-all	randpre-pool-all-s5	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-long	randpre-pool-long-s6	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-all	randpre-pool-all-s6	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-long	randpre-pool-long-s7	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-all	randpre-pool-all-s7	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-long	randpre-pool-long-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-all	randpre-pool-all-s8	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-long	randpre-pool-long-s9	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-all	randpre-pool-all-s9	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-long	randpre-pool-long-s10	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-all	randpre-pool-all-s10	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-long	randpre-timed-long-s1	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-all	randpre-timed-all-s1	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-long	randpre-timed-long-s2	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-all	randpre-timed-all-s2	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-long	randpre-timed-long-s3	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-all	randpre-timed-all-s3	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-long	randpre-timed-long-s4	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-all	randpre-timed-all-s4	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-long	randpre-timed-long-s5	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-all	randpre-timed-all-s5	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-long	randpre-timed-long-s6	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-all	randpre-timed-all-s6	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-long	randpre-timed-long-s7	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-all	randpre-timed-all-s7	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-long	randpre-timed-long-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-all	randpre-timed-all-s8	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-long	randpre-timed-long-s9	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-all	randpre-timed-all-s9	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-long	randpre-timed-long-s10	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-timed-all	randpre-timed-all-s10	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-long	randpre-pool-timed-long-s1	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-all	randpre-pool-timed-all-s1	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-long	randpre-pool-timed-long-s2	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-all	randpre-pool-timed-all-s2	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-long	randpre-pool-timed-long-s3	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-all	randpre-pool-timed-all-s3	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-long	randpre-pool-timed-long-s4	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-all	randpre-pool-timed-all-s4	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-long	randpre-pool-timed-long-s5	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-all	randpre-pool-timed-all-s5	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-long	randpre-pool-timed-long-s6	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-all	randpre-pool-timed-all-s6	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-long	randpre-pool-timed-long-s7	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-all	randpre-pool-timed-all-s7	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-long	randpre-pool-timed-long-s8	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-all	randpre-pool-timed-all-s8	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-long	randpre-pool-timed-long-s9	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-all	randpre-pool-timed-all-s9	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-long	randpre-pool-timed-long-s10	1	1	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-4	randpre-pool-timed-all	randpre-pool-timed-all-s10	2	2	DETECTED	in.ac.iiitb.plproject.atc.generated.GeneratedATCsTest#multiValueMapDryRun	1	POST put: r == value
+Collections-1	randoop-b180	randoop-b180-s1	35	7	NOT_DETECTED			
+Collections-1	randoop-b180	randoop-b180-s2	35	7	NOT_DETECTED			
+Collections-1	randoop-b180	randoop-b180-s3	35	7	NOT_DETECTED			
+Collections-1	randoop-b180	randoop-b180-s4	35	7	NOT_DETECTED			
+Collections-1	randoop-b180	randoop-b180-s5	35	7	NOT_DETECTED			
+Collections-1	randoop-b180	randoop-b180-s6	35	7	NOT_DETECTED			
+Collections-1	randoop-b180	randoop-b180-s7	35	7	NOT_DETECTED			
+Collections-1	randoop-b180	randoop-b180-s8	35	7	NOT_DETECTED			
+Collections-1	randoop-b180	randoop-b180-s9	35	7	NOT_DETECTED			
+Collections-1	randoop-b180	randoop-b180-s10	35	7	NOT_DETECTED			
+Collections-1	evosuite-default-b180	evosuite-default-b180-s1	16	3	NOT_DETECTED			
+Collections-1	evosuite-default-b180	evosuite-default-b180-s2	13	6	NOT_DETECTED			
+Collections-1	evosuite-default-b180	evosuite-default-b180-s3	18	6	NOT_DETECTED			
+Collections-1	evosuite-default-b180	evosuite-default-b180-s4	14	3	NOT_DETECTED			
+Collections-1	evosuite-default-b180	evosuite-default-b180-s5	13	7	NOT_DETECTED			
+Collections-1	evosuite-default-b180	evosuite-default-b180-s6	15	8	NOT_DETECTED			
+Collections-1	evosuite-default-b180	evosuite-default-b180-s7	13	4	NOT_DETECTED			
+Collections-1	evosuite-default-b180	evosuite-default-b180-s8	14	5	NOT_DETECTED			
+Collections-1	evosuite-default-b180	evosuite-default-b180-s9	17	4	NOT_DETECTED			
+Collections-1	evosuite-default-b180	evosuite-default-b180-s10	14	3	NOT_DETECTED			
+Collections-1	evosuite-blackbox-b180	evosuite-blackbox-b180-s1	13	4	NOT_DETECTED			
+Collections-1	evosuite-blackbox-b180	evosuite-blackbox-b180-s2	16	5	NOT_DETECTED			
+Collections-1	evosuite-blackbox-b180	evosuite-blackbox-b180-s3	15	4	NOT_DETECTED			
+Collections-1	evosuite-blackbox-b180	evosuite-blackbox-b180-s4	15	4	NOT_DETECTED			
+Collections-1	evosuite-blackbox-b180	evosuite-blackbox-b180-s5	19	2	NOT_DETECTED			
+Collections-1	evosuite-blackbox-b180	evosuite-blackbox-b180-s6	13	3	NOT_DETECTED			
+Collections-1	evosuite-blackbox-b180	evosuite-blackbox-b180-s7	14	3	NOT_DETECTED			
+Collections-1	evosuite-blackbox-b180	evosuite-blackbox-b180-s8	13	2	NOT_DETECTED			
+Collections-1	evosuite-blackbox-b180	evosuite-blackbox-b180-s9	16	4	NOT_DETECTED			
+Collections-1	evosuite-blackbox-b180	evosuite-blackbox-b180-s10	14	3	NOT_DETECTED			
+Collections-5	randoop-b180	randoop-b180-s1	198	10	NOT_DETECTED			
+Collections-5	randoop-b180	randoop-b180-s2	300	14	NOT_DETECTED			
+Collections-5	randoop-b180	randoop-b180-s3	166	9	NOT_DETECTED			
+Collections-5	randoop-b180	randoop-b180-s4	188	9	NOT_DETECTED			
+Collections-5	randoop-b180	randoop-b180-s5	349	14	NOT_DETECTED			
+Collections-5	randoop-b180	randoop-b180-s6	381	13	NOT_DETECTED			
+Collections-5	randoop-b180	randoop-b180-s7	379	10	NOT_DETECTED			
+Collections-5	randoop-b180	randoop-b180-s8	207	9	NOT_DETECTED			
+Collections-5	randoop-b180	randoop-b180-s9	241	12	NOT_DETECTED			
+Collections-5	randoop-b180	randoop-b180-s10	239	12	NOT_DETECTED			
+Collections-5	evosuite-default-b180	evosuite-default-b180-s1	35	13	NOT_DETECTED			
+Collections-5	evosuite-default-b180	evosuite-default-b180-s2	38	7	NOT_DETECTED			
+Collections-5	evosuite-default-b180	evosuite-default-b180-s3	33	9	NOT_DETECTED			
+Collections-5	evosuite-default-b180	evosuite-default-b180-s4	40	13	NOT_DETECTED			
+Collections-5	evosuite-default-b180	evosuite-default-b180-s5	31	8	NOT_DETECTED			
+Collections-5	evosuite-default-b180	evosuite-default-b180-s6	34	6	NOT_DETECTED			
+Collections-5	evosuite-default-b180	evosuite-default-b180-s7	34	10	NOT_DETECTED			
+Collections-5	evosuite-default-b180	evosuite-default-b180-s8	35	13	NOT_DETECTED			
+Collections-5	evosuite-default-b180	evosuite-default-b180-s9	37	11	NOT_DETECTED			
+Collections-5	evosuite-default-b180	evosuite-default-b180-s10	36	10	NOT_DETECTED			
+Collections-5	evosuite-blackbox-b180	evosuite-blackbox-b180-s1	35	16	NOT_DETECTED			
+Collections-5	evosuite-blackbox-b180	evosuite-blackbox-b180-s2	30	9	NOT_DETECTED			
+Collections-5	evosuite-blackbox-b180	evosuite-blackbox-b180-s3	40	13	NOT_DETECTED			
+Collections-5	evosuite-blackbox-b180	evosuite-blackbox-b180-s4	38	15	NOT_DETECTED			
+Collections-5	evosuite-blackbox-b180	evosuite-blackbox-b180-s5	36	13	NOT_DETECTED			
+Collections-5	evosuite-blackbox-b180	evosuite-blackbox-b180-s6	34	11	NOT_DETECTED			
+Collections-5	evosuite-blackbox-b180	evosuite-blackbox-b180-s7	42	12	NOT_DETECTED			
+Collections-5	evosuite-blackbox-b180	evosuite-blackbox-b180-s8	34	14	NOT_DETECTED			
+Collections-5	evosuite-blackbox-b180	evosuite-blackbox-b180-s9	35	12	NOT_DETECTED			
+Collections-5	evosuite-blackbox-b180	evosuite-blackbox-b180-s10	35	14	NOT_DETECTED			
+Collections-6	randoop-b180	randoop-b180-s1	35	7	NOT_DETECTED			
+Collections-6	randoop-b180	randoop-b180-s2	35	7	NOT_DETECTED			
+Collections-6	randoop-b180	randoop-b180-s3	35	7	NOT_DETECTED			
+Collections-6	randoop-b180	randoop-b180-s4	35	7	NOT_DETECTED			
+Collections-6	randoop-b180	randoop-b180-s5	35	7	NOT_DETECTED			
+Collections-6	randoop-b180	randoop-b180-s6	35	7	NOT_DETECTED			
+Collections-6	randoop-b180	randoop-b180-s7	35	7	NOT_DETECTED			
+Collections-6	randoop-b180	randoop-b180-s8	35	7	NOT_DETECTED			
+Collections-6	randoop-b180	randoop-b180-s9	35	7	NOT_DETECTED			
+Collections-6	randoop-b180	randoop-b180-s10	35	7	NOT_DETECTED			
+Collections-6	evosuite-default-b180	evosuite-default-b180-s1	15	3	NOT_DETECTED			
+Collections-6	evosuite-default-b180	evosuite-default-b180-s2	14	8	NOT_DETECTED			
+Collections-6	evosuite-default-b180	evosuite-default-b180-s3	17	5	NOT_DETECTED			
+Collections-6	evosuite-default-b180	evosuite-default-b180-s4	14	4	NOT_DETECTED			
+Collections-6	evosuite-default-b180	evosuite-default-b180-s5	13	7	NOT_DETECTED			
+Collections-6	evosuite-default-b180	evosuite-default-b180-s6	14	7	NOT_DETECTED			
+Collections-6	evosuite-default-b180	evosuite-default-b180-s7	18	3	NOT_DETECTED			
+Collections-6	evosuite-default-b180	evosuite-default-b180-s8	14	5	NOT_DETECTED			
+Collections-6	evosuite-default-b180	evosuite-default-b180-s9	14	4	NOT_DETECTED			
+Collections-6	evosuite-default-b180	evosuite-default-b180-s10	14	3	NOT_DETECTED			
+Collections-6	evosuite-blackbox-b180	evosuite-blackbox-b180-s1	13	5	NOT_DETECTED			
+Collections-6	evosuite-blackbox-b180	evosuite-blackbox-b180-s2	15	4	NOT_DETECTED			
+Collections-6	evosuite-blackbox-b180	evosuite-blackbox-b180-s3	16	4	NOT_DETECTED			
+Collections-6	evosuite-blackbox-b180	evosuite-blackbox-b180-s4	16	4	NOT_DETECTED			
+Collections-6	evosuite-blackbox-b180	evosuite-blackbox-b180-s5	18	2	NOT_DETECTED			
+Collections-6	evosuite-blackbox-b180	evosuite-blackbox-b180-s6	11	5	NOT_DETECTED			
+Collections-6	evosuite-blackbox-b180	evosuite-blackbox-b180-s7	15	2	NOT_DETECTED			
+Collections-6	evosuite-blackbox-b180	evosuite-blackbox-b180-s8	14	2	NOT_DETECTED			
+Collections-6	evosuite-blackbox-b180	evosuite-blackbox-b180-s9	17	3	NOT_DETECTED			
+Collections-6	evosuite-blackbox-b180	evosuite-blackbox-b180-s10	14	4	NOT_DETECTED			
+Collections-15	randoop-b180	randoop-b180-s1	198	10	NOT_DETECTED			
+Collections-15	randoop-b180	randoop-b180-s2	299	14	NOT_DETECTED			
+Collections-15	randoop-b180	randoop-b180-s3	165	9	NOT_DETECTED			
+Collections-15	randoop-b180	randoop-b180-s4	188	9	NOT_DETECTED			
+Collections-15	randoop-b180	randoop-b180-s5	258	8	NOT_DETECTED			
+Collections-15	randoop-b180	randoop-b180-s6	372	13	NOT_DETECTED			
+Collections-15	randoop-b180	randoop-b180-s7	374	10	NOT_DETECTED			
+Collections-15	randoop-b180	randoop-b180-s8	207	9	NOT_DETECTED			
+Collections-15	randoop-b180	randoop-b180-s9	238	12	NOT_DETECTED			
+Collections-15	randoop-b180	randoop-b180-s10	231	12	NOT_DETECTED			
+Collections-15	evosuite-default-b180	evosuite-default-b180-s1	36	13	NOT_DETECTED			
+Collections-15	evosuite-default-b180	evosuite-default-b180-s2	39	7	NOT_DETECTED			
+Collections-15	evosuite-default-b180	evosuite-default-b180-s3	38	11	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test33	3	POST set: L.contains(e)
+Collections-15	evosuite-default-b180	evosuite-default-b180-s4	42	12	NOT_DETECTED			
+Collections-15	evosuite-default-b180	evosuite-default-b180-s5	40	10	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test36	2	POST set: L.contains(e)
+Collections-15	evosuite-default-b180	evosuite-default-b180-s6	34	5	NOT_DETECTED			
+Collections-15	evosuite-default-b180	evosuite-default-b180-s7	36	11	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test30	2	POST set: L.contains(e)
+Collections-15	evosuite-default-b180	evosuite-default-b180-s8	34	12	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test27	2	POST set: L.contains(e)
+Collections-15	evosuite-default-b180	evosuite-default-b180-s9	41	11	NOT_DETECTED			
+Collections-15	evosuite-default-b180	evosuite-default-b180-s10	34	14	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test19	2	POST set: L.contains(e)
+Collections-15	evosuite-blackbox-b180	evosuite-blackbox-b180-s1	35	14	NOT_DETECTED			
+Collections-15	evosuite-blackbox-b180	evosuite-blackbox-b180-s2	32	10	NOT_DETECTED			
+Collections-15	evosuite-blackbox-b180	evosuite-blackbox-b180-s3	35	10	NOT_DETECTED			
+Collections-15	evosuite-blackbox-b180	evosuite-blackbox-b180-s4	35	13	NOT_DETECTED			
+Collections-15	evosuite-blackbox-b180	evosuite-blackbox-b180-s5	38	15	NOT_DETECTED			
+Collections-15	evosuite-blackbox-b180	evosuite-blackbox-b180-s6	36	8	NOT_DETECTED			
+Collections-15	evosuite-blackbox-b180	evosuite-blackbox-b180-s7	34	10	NOT_DETECTED			
+Collections-15	evosuite-blackbox-b180	evosuite-blackbox-b180-s8	38	12	NOT_DETECTED			
+Collections-15	evosuite-blackbox-b180	evosuite-blackbox-b180-s9	44	10	NOT_DETECTED			
+Collections-15	evosuite-blackbox-b180	evosuite-blackbox-b180-s10	39	9	NOT_DETECTED			
+Collections-16	randoop-b180	randoop-b180-s1	197	10	NOT_DETECTED			
+Collections-16	randoop-b180	randoop-b180-s2	299	14	NOT_DETECTED			
+Collections-16	randoop-b180	randoop-b180-s3	166	9	NOT_DETECTED			
+Collections-16	randoop-b180	randoop-b180-s4	185	9	NOT_DETECTED			
+Collections-16	randoop-b180	randoop-b180-s5	261	8	NOT_DETECTED			
+Collections-16	randoop-b180	randoop-b180-s6	374	13	NOT_DETECTED			
+Collections-16	randoop-b180	randoop-b180-s7	378	10	NOT_DETECTED			
+Collections-16	randoop-b180	randoop-b180-s8	207	9	NOT_DETECTED			
+Collections-16	randoop-b180	randoop-b180-s9	237	12	NOT_DETECTED			
+Collections-16	randoop-b180	randoop-b180-s10	231	12	NOT_DETECTED			
+Collections-16	evosuite-default-b180	evosuite-default-b180-s1	36	13	NOT_DETECTED			
+Collections-16	evosuite-default-b180	evosuite-default-b180-s2	38	7	NOT_DETECTED			
+Collections-16	evosuite-default-b180	evosuite-default-b180-s3	40	11	NOT_DETECTED			
+Collections-16	evosuite-default-b180	evosuite-default-b180-s4	39	13	NOT_DETECTED			
+Collections-16	evosuite-default-b180	evosuite-default-b180-s5	40	9	NOT_DETECTED			
+Collections-16	evosuite-default-b180	evosuite-default-b180-s6	34	5	NOT_DETECTED			
+Collections-16	evosuite-default-b180	evosuite-default-b180-s7	34	12	NOT_DETECTED			
+Collections-16	evosuite-default-b180	evosuite-default-b180-s8	34	12	NOT_DETECTED			
+Collections-16	evosuite-default-b180	evosuite-default-b180-s9	43	13	NOT_DETECTED			
+Collections-16	evosuite-default-b180	evosuite-default-b180-s10	34	15	NOT_DETECTED			
+Collections-16	evosuite-blackbox-b180	evosuite-blackbox-b180-s1	35	14	NOT_DETECTED			
+Collections-16	evosuite-blackbox-b180	evosuite-blackbox-b180-s2	31	10	NOT_DETECTED			
+Collections-16	evosuite-blackbox-b180	evosuite-blackbox-b180-s3	36	10	NOT_DETECTED			
+Collections-16	evosuite-blackbox-b180	evosuite-blackbox-b180-s4	35	13	NOT_DETECTED			
+Collections-16	evosuite-blackbox-b180	evosuite-blackbox-b180-s5	37	13	NOT_DETECTED			
+Collections-16	evosuite-blackbox-b180	evosuite-blackbox-b180-s6	39	10	NOT_DETECTED			
+Collections-16	evosuite-blackbox-b180	evosuite-blackbox-b180-s7	37	11	NOT_DETECTED			
+Collections-16	evosuite-blackbox-b180	evosuite-blackbox-b180-s8	36	13	NOT_DETECTED			
+Collections-16	evosuite-blackbox-b180	evosuite-blackbox-b180-s9	44	10	NOT_DETECTED			
+Collections-16	evosuite-blackbox-b180	evosuite-blackbox-b180-s10	38	9	NOT_DETECTED			
+Collections-19	randoop-b180	randoop-b180-s1	601	11	NOT_DETECTED			
+Collections-19	randoop-b180	randoop-b180-s2	601	11	NOT_DETECTED			
+Collections-19	randoop-b180	randoop-b180-s3	601	11	NOT_DETECTED			
+Collections-19	randoop-b180	randoop-b180-s4	601	11	NOT_DETECTED			
+Collections-19	randoop-b180	randoop-b180-s5	601	11	NOT_DETECTED			
+Collections-19	randoop-b180	randoop-b180-s6	601	11	NOT_DETECTED			
+Collections-19	randoop-b180	randoop-b180-s7	601	11	NOT_DETECTED			
+Collections-19	randoop-b180	randoop-b180-s8	601	11	NOT_DETECTED			
+Collections-19	randoop-b180	randoop-b180-s9	601	11	NOT_DETECTED			
+Collections-19	randoop-b180	randoop-b180-s10	601	11	NOT_DETECTED			
+Collections-19	evosuite-default-b180	evosuite-default-b180-s1	43	12	NOT_DETECTED			
+Collections-19	evosuite-default-b180	evosuite-default-b180-s2	42	10	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test38	2	POST setExisting: L.contains(e)
+Collections-19	evosuite-default-b180	evosuite-default-b180-s3	35	13	NOT_DETECTED			
+Collections-19	evosuite-default-b180	evosuite-default-b180-s4	41	9	NOT_DETECTED			
+Collections-19	evosuite-default-b180	evosuite-default-b180-s5	39	14	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test35	2	POST setExisting: L.contains(e)
+Collections-19	evosuite-default-b180	evosuite-default-b180-s6	33	10	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test30	2	POST setExisting: L.contains(e)
+Collections-19	evosuite-default-b180	evosuite-default-b180-s7	37	11	NOT_DETECTED			
+Collections-19	evosuite-default-b180	evosuite-default-b180-s8	34	7	NOT_DETECTED			
+Collections-19	evosuite-default-b180	evosuite-default-b180-s9	33	10	NOT_DETECTED			
+Collections-19	evosuite-default-b180	evosuite-default-b180-s10	35	15	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test30	2	POST setExisting: L.contains(e)
+Collections-19	evosuite-blackbox-b180	evosuite-blackbox-b180-s1	33	16	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test27	2	POST setExisting: L.contains(e)
+Collections-19	evosuite-blackbox-b180	evosuite-blackbox-b180-s2	31	12	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test25	2	POST setExisting: L.contains(e)
+Collections-19	evosuite-blackbox-b180	evosuite-blackbox-b180-s3	36	14	NOT_DETECTED			
+Collections-19	evosuite-blackbox-b180	evosuite-blackbox-b180-s4	30	5	NOT_DETECTED			
+Collections-19	evosuite-blackbox-b180	evosuite-blackbox-b180-s5	31	14	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test25	2	POST setExisting: L.contains(e)
+Collections-19	evosuite-blackbox-b180	evosuite-blackbox-b180-s6	34	9	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test29	2	POST setExisting: L.contains(e)
+Collections-19	evosuite-blackbox-b180	evosuite-blackbox-b180-s7	41	12	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test33	2	POST setExisting: L.contains(e)
+Collections-19	evosuite-blackbox-b180	evosuite-blackbox-b180-s8	37	9	NOT_DETECTED			
+Collections-19	evosuite-blackbox-b180	evosuite-blackbox-b180-s9	34	11	NOT_DETECTED			
+Collections-19	evosuite-blackbox-b180	evosuite-blackbox-b180-s10	35	15	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test28	2	POST setExisting: L.contains(e)
+Collections-21	randoop-b180	randoop-b180-s1	604	11	NOT_DETECTED			
+Collections-21	randoop-b180	randoop-b180-s2	602	11	NOT_DETECTED			
+Collections-21	randoop-b180	randoop-b180-s3	602	11	NOT_DETECTED			
+Collections-21	randoop-b180	randoop-b180-s4	602	11	NOT_DETECTED			
+Collections-21	randoop-b180	randoop-b180-s5	604	11	NOT_DETECTED			
+Collections-21	randoop-b180	randoop-b180-s6	602	11	NOT_DETECTED			
+Collections-21	randoop-b180	randoop-b180-s7	602	11	NOT_DETECTED			
+Collections-21	randoop-b180	randoop-b180-s8	606	11	NOT_DETECTED			
+Collections-21	randoop-b180	randoop-b180-s9	601	11	NOT_DETECTED			
+Collections-21	randoop-b180	randoop-b180-s10	603	11	NOT_DETECTED			
+Collections-21	evosuite-default-b180	evosuite-default-b180-s1	48	12	NOT_DETECTED			
+Collections-21	evosuite-default-b180	evosuite-default-b180-s2	48	14	NOT_DETECTED			
+Collections-21	evosuite-default-b180	evosuite-default-b180-s3	47	9	NOT_DETECTED			
+Collections-21	evosuite-default-b180	evosuite-default-b180-s4	44	11	NOT_DETECTED			
+Collections-21	evosuite-default-b180	evosuite-default-b180-s5	41	8	NOT_DETECTED			
+Collections-21	evosuite-default-b180	evosuite-default-b180-s6	48	10	NOT_DETECTED			
+Collections-21	evosuite-default-b180	evosuite-default-b180-s7	35	9	NOT_DETECTED			
+Collections-21	evosuite-default-b180	evosuite-default-b180-s8	45	9	NOT_DETECTED			
+Collections-21	evosuite-default-b180	evosuite-default-b180-s9	44	12	NOT_DETECTED			
+Collections-21	evosuite-default-b180	evosuite-default-b180-s10	47	10	NOT_DETECTED			
+Collections-21	evosuite-blackbox-b180	evosuite-blackbox-b180-s1	45	6	NOT_DETECTED			
+Collections-21	evosuite-blackbox-b180	evosuite-blackbox-b180-s2	39	11	NOT_DETECTED			
+Collections-21	evosuite-blackbox-b180	evosuite-blackbox-b180-s3	40	9	NOT_DETECTED			
+Collections-21	evosuite-blackbox-b180	evosuite-blackbox-b180-s4	48	14	NOT_DETECTED			
+Collections-21	evosuite-blackbox-b180	evosuite-blackbox-b180-s5	44	11	NOT_DETECTED			
+Collections-21	evosuite-blackbox-b180	evosuite-blackbox-b180-s6	48	16	NOT_DETECTED			
+Collections-21	evosuite-blackbox-b180	evosuite-blackbox-b180-s7	36	13	NOT_DETECTED			
+Collections-21	evosuite-blackbox-b180	evosuite-blackbox-b180-s8	47	13	NOT_DETECTED			
+Collections-21	evosuite-blackbox-b180	evosuite-blackbox-b180-s9	47	15	NOT_DETECTED			
+Collections-21	evosuite-blackbox-b180	evosuite-blackbox-b180-s10	46	14	NOT_DETECTED			
+Lang-59	randoop-b180	randoop-b180-s1	94	55	NOT_DETECTED			
+Lang-59	randoop-b180	randoop-b180-s2	90	52	NOT_DETECTED			
+Lang-59	randoop-b180	randoop-b180-s3	90	52	NOT_DETECTED			
+Lang-59	randoop-b180	randoop-b180-s4	94	55	NOT_DETECTED			
+Lang-59	randoop-b180	randoop-b180-s5	90	52	NOT_DETECTED			
+Lang-59	randoop-b180	randoop-b180-s6	90	52	NOT_DETECTED			
+Lang-59	randoop-b180	randoop-b180-s7	90	52	NOT_DETECTED			
+Lang-59	randoop-b180	randoop-b180-s8	94	55	NOT_DETECTED			
+Lang-59	randoop-b180	randoop-b180-s9	90	52	NOT_DETECTED			
+Lang-59	randoop-b180	randoop-b180-s10	90	52	NOT_DETECTED			
+Lang-59	evosuite-default-b180	evosuite-default-b180-s1	14	4	NOT_DETECTED			
+Lang-59	evosuite-default-b180	evosuite-default-b180-s2	18	6	NOT_DETECTED			
+Lang-59	evosuite-default-b180	evosuite-default-b180-s3	18	6	NOT_DETECTED			
+Lang-59	evosuite-default-b180	evosuite-default-b180-s4	16	5	NOT_DETECTED			
+Lang-59	evosuite-default-b180	evosuite-default-b180-s5	20	6	NOT_DETECTED			
+Lang-59	evosuite-default-b180	evosuite-default-b180-s6	17	5	NOT_DETECTED			
+Lang-59	evosuite-default-b180	evosuite-default-b180-s7	19	6	NOT_DETECTED			
+Lang-59	evosuite-default-b180	evosuite-default-b180-s8	17	8	NOT_DETECTED			
+Lang-59	evosuite-default-b180	evosuite-default-b180-s9	19	4	NOT_DETECTED			
+Lang-59	evosuite-default-b180	evosuite-default-b180-s10	17	5	NOT_DETECTED			
+Lang-59	evosuite-blackbox-b180	evosuite-blackbox-b180-s1	23	4	NOT_DETECTED			
+Lang-59	evosuite-blackbox-b180	evosuite-blackbox-b180-s2	23	8	NOT_DETECTED			
+Lang-59	evosuite-blackbox-b180	evosuite-blackbox-b180-s3	23	7	NOT_DETECTED			
+Lang-59	evosuite-blackbox-b180	evosuite-blackbox-b180-s4	26	10	NOT_DETECTED			
+Lang-59	evosuite-blackbox-b180	evosuite-blackbox-b180-s5	16	5	NOT_DETECTED			
+Lang-59	evosuite-blackbox-b180	evosuite-blackbox-b180-s6	19	6	NOT_DETECTED			
+Lang-59	evosuite-blackbox-b180	evosuite-blackbox-b180-s7	17	7	NOT_DETECTED			
+Lang-59	evosuite-blackbox-b180	evosuite-blackbox-b180-s8	18	9	NOT_DETECTED			
+Lang-59	evosuite-blackbox-b180	evosuite-blackbox-b180-s9	17	8	NOT_DETECTED			
+Lang-59	evosuite-blackbox-b180	evosuite-blackbox-b180-s10	26	5	NOT_DETECTED			
+Lang-61	randoop-b180	randoop-b180-s1	94	55	NOT_DETECTED			
+Lang-61	randoop-b180	randoop-b180-s2	90	52	NOT_DETECTED			
+Lang-61	randoop-b180	randoop-b180-s3	90	52	NOT_DETECTED			
+Lang-61	randoop-b180	randoop-b180-s4	94	55	NOT_DETECTED			
+Lang-61	randoop-b180	randoop-b180-s5	90	52	NOT_DETECTED			
+Lang-61	randoop-b180	randoop-b180-s6	90	52	NOT_DETECTED			
+Lang-61	randoop-b180	randoop-b180-s7	90	52	NOT_DETECTED			
+Lang-61	randoop-b180	randoop-b180-s8	94	55	NOT_DETECTED			
+Lang-61	randoop-b180	randoop-b180-s9	90	52	NOT_DETECTED			
+Lang-61	randoop-b180	randoop-b180-s10	90	52	NOT_DETECTED			
+Lang-61	evosuite-default-b180	evosuite-default-b180-s1	15	6	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test14	2	POST indexOf: pos == content.indexOf(s)
+Lang-61	evosuite-default-b180	evosuite-default-b180-s2	19	8	NOT_DETECTED			
+Lang-61	evosuite-default-b180	evosuite-default-b180-s3	17	5	NOT_DETECTED			
+Lang-61	evosuite-default-b180	evosuite-default-b180-s4	18	8	NOT_DETECTED			
+Lang-61	evosuite-default-b180	evosuite-default-b180-s5	21	6	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test20	2	POST indexOf: pos == content.indexOf(s)
+Lang-61	evosuite-default-b180	evosuite-default-b180-s6	18	8	NOT_DETECTED			
+Lang-61	evosuite-default-b180	evosuite-default-b180-s7	16	6	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test15	3	POST indexOf: pos == content.indexOf(s)
+Lang-61	evosuite-default-b180	evosuite-default-b180-s8	18	10	NOT_DETECTED			
+Lang-61	evosuite-default-b180	evosuite-default-b180-s9	19	4	NOT_DETECTED			
+Lang-61	evosuite-default-b180	evosuite-default-b180-s10	17	6	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test08	2	POST contains: present == content.contains(s)
+Lang-61	evosuite-blackbox-b180	evosuite-blackbox-b180-s1	29	5	NOT_DETECTED			
+Lang-61	evosuite-blackbox-b180	evosuite-blackbox-b180-s2	25	6	NOT_DETECTED			
+Lang-61	evosuite-blackbox-b180	evosuite-blackbox-b180-s3	22	6	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test16	3	POST indexOf: pos == content.indexOf(s)
+Lang-61	evosuite-blackbox-b180	evosuite-blackbox-b180-s4	24	7	NOT_DETECTED			
+Lang-61	evosuite-blackbox-b180	evosuite-blackbox-b180-s5	20	7	NOT_DETECTED			
+Lang-61	evosuite-blackbox-b180	evosuite-blackbox-b180-s6	22	7	NOT_DETECTED			
+Lang-61	evosuite-blackbox-b180	evosuite-blackbox-b180-s7	21	10	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test18	3	POST indexOf: pos == content.indexOf(s)
+Lang-61	evosuite-blackbox-b180	evosuite-blackbox-b180-s8	29	9	NOT_DETECTED			
+Lang-61	evosuite-blackbox-b180	evosuite-blackbox-b180-s9	19	7	NOT_DETECTED			
+Lang-61	evosuite-blackbox-b180	evosuite-blackbox-b180-s10	24	8	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test16	2	POST contains: present == content.contains(s)
+Collections-22	randoop-b180	randoop-b180-s1	735	43	NOT_DETECTED			
+Collections-22	randoop-b180	randoop-b180-s2	699	43	NOT_DETECTED			
+Collections-22	randoop-b180	randoop-b180-s3	699	43	NOT_DETECTED			
+Collections-22	randoop-b180	randoop-b180-s4	699	43	NOT_DETECTED			
+Collections-22	randoop-b180	randoop-b180-s5	699	43	NOT_DETECTED			
+Collections-22	randoop-b180	randoop-b180-s6	699	43	NOT_DETECTED			
+Collections-22	randoop-b180	randoop-b180-s7	699	43	NOT_DETECTED			
+Collections-22	randoop-b180	randoop-b180-s8	699	43	NOT_DETECTED			
+Collections-22	randoop-b180	randoop-b180-s9	699	43	NOT_DETECTED			
+Collections-22	randoop-b180	randoop-b180-s10	735	43	NOT_DETECTED			
+Collections-22	evosuite-default-b180	evosuite-default-b180-s1	21	8	NOT_DETECTED			
+Collections-22	evosuite-default-b180	evosuite-default-b180-s2	27	9	NOT_DETECTED			
+Collections-22	evosuite-default-b180	evosuite-default-b180-s3	22	5	NOT_DETECTED			
+Collections-22	evosuite-default-b180	evosuite-default-b180-s4	19	6	NOT_DETECTED			
+Collections-22	evosuite-default-b180	evosuite-default-b180-s5	18	9	NOT_DETECTED			
+Collections-22	evosuite-default-b180	evosuite-default-b180-s6	19	5	NOT_DETECTED			
+Collections-22	evosuite-default-b180	evosuite-default-b180-s7	18	5	NOT_DETECTED			
+Collections-22	evosuite-default-b180	evosuite-default-b180-s8	20	8	NOT_DETECTED			
+Collections-22	evosuite-default-b180	evosuite-default-b180-s9	23	6	NOT_DETECTED			
+Collections-22	evosuite-default-b180	evosuite-default-b180-s10	20	8	NOT_DETECTED			
+Collections-22	evosuite-blackbox-b180	evosuite-blackbox-b180-s1	16	5	NOT_DETECTED			
+Collections-22	evosuite-blackbox-b180	evosuite-blackbox-b180-s2	29	10	NOT_DETECTED			
+Collections-22	evosuite-blackbox-b180	evosuite-blackbox-b180-s3	25	4	NOT_DETECTED			
+Collections-22	evosuite-blackbox-b180	evosuite-blackbox-b180-s4	25	10	NOT_DETECTED			
+Collections-22	evosuite-blackbox-b180	evosuite-blackbox-b180-s5	20	8	NOT_DETECTED			
+Collections-22	evosuite-blackbox-b180	evosuite-blackbox-b180-s6	20	11	NOT_DETECTED			
+Collections-22	evosuite-blackbox-b180	evosuite-blackbox-b180-s7	23	8	NOT_DETECTED			
+Collections-22	evosuite-blackbox-b180	evosuite-blackbox-b180-s8	20	9	NOT_DETECTED			
+Collections-22	evosuite-blackbox-b180	evosuite-blackbox-b180-s9	25	6	NOT_DETECTED			
+Collections-22	evosuite-blackbox-b180	evosuite-blackbox-b180-s10	24	11	NOT_DETECTED			
+Collections-20	randoop-b180	randoop-b180-s1	43	6	NOT_DETECTED			
+Collections-20	randoop-b180	randoop-b180-s2	45	6	NOT_DETECTED			
+Collections-20	randoop-b180	randoop-b180-s3	45	6	NOT_DETECTED			
+Collections-20	randoop-b180	randoop-b180-s4	44	6	NOT_DETECTED			
+Collections-20	randoop-b180	randoop-b180-s5	45	6	NOT_DETECTED			
+Collections-20	randoop-b180	randoop-b180-s6	44	6	NOT_DETECTED			
+Collections-20	randoop-b180	randoop-b180-s7	43	6	NOT_DETECTED			
+Collections-20	randoop-b180	randoop-b180-s8	45	6	NOT_DETECTED			
+Collections-20	randoop-b180	randoop-b180-s9	43	6	NOT_DETECTED			
+Collections-20	randoop-b180	randoop-b180-s10	47	6	NOT_DETECTED			
+Collections-20	evosuite-default-b180	evosuite-default-b180-s1	15	7	NOT_DETECTED			
+Collections-20	evosuite-default-b180	evosuite-default-b180-s2	20	10	NOT_DETECTED			
+Collections-20	evosuite-default-b180	evosuite-default-b180-s3	18	8	NOT_DETECTED			
+Collections-20	evosuite-default-b180	evosuite-default-b180-s4	23	13	NOT_DETECTED			
+Collections-20	evosuite-default-b180	evosuite-default-b180-s5	17	10	NOT_DETECTED			
+Collections-20	evosuite-default-b180	evosuite-default-b180-s6	16	8	NOT_DETECTED			
+Collections-20	evosuite-default-b180	evosuite-default-b180-s7	21	14	NOT_DETECTED			
+Collections-20	evosuite-default-b180	evosuite-default-b180-s8	20	12	NOT_DETECTED			
+Collections-20	evosuite-default-b180	evosuite-default-b180-s9	22	9	NOT_DETECTED			
+Collections-20	evosuite-default-b180	evosuite-default-b180-s10	18	10	NOT_DETECTED			
+Collections-20	evosuite-blackbox-b180	evosuite-blackbox-b180-s1	21	11	NOT_DETECTED			
+Collections-20	evosuite-blackbox-b180	evosuite-blackbox-b180-s2	16	9	NOT_DETECTED			
+Collections-20	evosuite-blackbox-b180	evosuite-blackbox-b180-s3	25	13	NOT_DETECTED			
+Collections-20	evosuite-blackbox-b180	evosuite-blackbox-b180-s4	21	11	NOT_DETECTED			
+Collections-20	evosuite-blackbox-b180	evosuite-blackbox-b180-s5	24	11	NOT_DETECTED			
+Collections-20	evosuite-blackbox-b180	evosuite-blackbox-b180-s6	17	10	NOT_DETECTED			
+Collections-20	evosuite-blackbox-b180	evosuite-blackbox-b180-s7	23	11	NOT_DETECTED			
+Collections-20	evosuite-blackbox-b180	evosuite-blackbox-b180-s8	21	12	NOT_DETECTED			
+Collections-20	evosuite-blackbox-b180	evosuite-blackbox-b180-s9	25	12	NOT_DETECTED			
+Collections-20	evosuite-blackbox-b180	evosuite-blackbox-b180-s10	20	12	NOT_DETECTED			
+Collections-4	randoop-b180	randoop-b180-s1	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test02	1	POST put: r == value
+Collections-4	randoop-b180	randoop-b180-s2	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test08	1	POST putAllPair: changed == true
+Collections-4	randoop-b180	randoop-b180-s3	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test11	1	POST putAllPair: changed == true
+Collections-4	randoop-b180	randoop-b180-s4	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test03	1	POST put: r == value
+Collections-4	randoop-b180	randoop-b180-s5	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test04	1	POST put: r == value
+Collections-4	randoop-b180	randoop-b180-s6	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test01	1	POST put: r == value
+Collections-4	randoop-b180	randoop-b180-s7	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test04	1	POST put: r == value
+Collections-4	randoop-b180	randoop-b180-s8	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test03	1	POST putAllPair: changed == true
+Collections-4	randoop-b180	randoop-b180-s9	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test04	1	POST putAllPair: changed == true
+Collections-4	randoop-b180	randoop-b180-s10	23	9	DETECTED	in.ac.iiitb.plproject.atc.generated.RegressionTest0#test04	1	POST putAllPair: changed == true
+Collections-4	evosuite-default-b180	evosuite-default-b180-s1	19	4	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test18	1	POST putAllPair: changed == true
+Collections-4	evosuite-default-b180	evosuite-default-b180-s2	16	5	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test14	1	POST put: r == value
+Collections-4	evosuite-default-b180	evosuite-default-b180-s3	18	6	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test07	1	POST put: r == value
+Collections-4	evosuite-default-b180	evosuite-default-b180-s4	19	4	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test18	1	POST putAllPair: changed == true
+Collections-4	evosuite-default-b180	evosuite-default-b180-s5	15	3	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test12	1	POST put: r == value
+Collections-4	evosuite-default-b180	evosuite-default-b180-s6	19	3	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test17	1	POST put: r == value
+Collections-4	evosuite-default-b180	evosuite-default-b180-s7	18	3	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test06	1	POST put: r == value
+Collections-4	evosuite-default-b180	evosuite-default-b180-s8	20	5	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test19	1	POST put: r == value
+Collections-4	evosuite-default-b180	evosuite-default-b180-s9	17	5	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test07	1	POST put: r == value
+Collections-4	evosuite-default-b180	evosuite-default-b180-s10	17	4	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test11	1	POST put: r == value
+Collections-4	evosuite-blackbox-b180	evosuite-blackbox-b180-s1	20	3	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test14	1	POST put: r == value
+Collections-4	evosuite-blackbox-b180	evosuite-blackbox-b180-s2	22	4	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test10	1	POST putAllPair: changed == true
+Collections-4	evosuite-blackbox-b180	evosuite-blackbox-b180-s3	21	3	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test10	1	POST put: r == value
+Collections-4	evosuite-blackbox-b180	evosuite-blackbox-b180-s4	23	3	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test16	1	POST put: r == value
+Collections-4	evosuite-blackbox-b180	evosuite-blackbox-b180-s5	21	2	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test15	1	POST put: r == value
+Collections-4	evosuite-blackbox-b180	evosuite-blackbox-b180-s6	20	4	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test10	1	POST put: r == value
+Collections-4	evosuite-blackbox-b180	evosuite-blackbox-b180-s7	19	3	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test12	1	POST put: r == value
+Collections-4	evosuite-blackbox-b180	evosuite-blackbox-b180-s8	20	5	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test06	1	POST put: r == value
+Collections-4	evosuite-blackbox-b180	evosuite-blackbox-b180-s9	21	5	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test09	1	POST put: r == value
+Collections-4	evosuite-blackbox-b180	evosuite-blackbox-b180-s10	18	4	DETECTED	in.ac.iiitb.plproject.atc.generated.Helper_ESTest#test06	1	POST put: r == value

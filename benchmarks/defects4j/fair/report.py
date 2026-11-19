@@ -9,6 +9,7 @@ mutation/<key>.status.tsv and mutation/<key>.rows.tsv (table 4: native vs fair o
 """
 import csv
 import os
+import re
 import statistics
 import sys
 from collections import defaultdict
@@ -29,6 +30,18 @@ SINGLE = [("testgen-long", "TestGen, long string only"),
 SEEDED = [("randoop", "Randoop"),
           ("evosuite-default", "EvoSuite, default criteria"),
           ("evosuite-blackbox", "EvoSuite, black-box criteria")]
+
+
+def seed_of(tool):
+    """Matches exactly the suites <tool>-s<seed> (not randoop-b180-s1 for tool randoop)."""
+    rx = re.compile("^" + re.escape(tool) + r"-s\d+$")
+    return lambda s: bool(rx.match(s))
+
+
+# The suites of the first fair run. Tables 1-6 are computed over these only, so the tools added later
+# (RandPre, budget 180 s) never change them; they have their own sections (7-12).
+ORIG_SUITES = (lambda s: s in ("testgen-long", "testgen-all", "testgen-family")
+               or any(seed_of(t)(s) for t, _ in SEEDED))
 
 
 def read_tsv(path):
@@ -197,9 +210,9 @@ def main(fair):
       "library / adapter-nested-class call before it. Each call is judged on its own, also after an earlier invalid "
       "call. Per suite: column `calls_by_op` of `validity.tsv` (`op=calls/invalid`).\n")
     op_tools = [("TestGen long", lambda s: s == "testgen-long"), ("TestGen + short", lambda s: s == "testgen-all"),
-                ("Randoop", lambda s: s.startswith("randoop-")),
-                ("EvoSuite default", lambda s: s.startswith("evosuite-default-")),
-                ("EvoSuite black-box", lambda s: s.startswith("evosuite-blackbox-"))]
+                ("Randoop", seed_of("randoop")),
+                ("EvoSuite default", seed_of("evosuite-default")),
+                ("EvoSuite black-box", seed_of("evosuite-blackbox"))]
     w("| Class | Operation | " + " | ".join(f"{t} calls | {t} % invalid" for t, _ in op_tools) + " |")
     w("| --- | --- | " + " | ".join("--- | ---" for _ in op_tools) + " |")
     any_ops = False
@@ -258,7 +271,8 @@ def main(fair):
     for key in keys:
         o = set()
         for s in suites_of[key]:
-            o |= killed[(key, s)]
+            if ORIG_SUITES(s):
+                o |= killed[(key, s)]
         observable[key] = o & set(scored[key])
     n_obs = sum(len(v) for v in observable.values())
     w("## 3. Fair mutation score over the contract-observable mutants\n")
@@ -382,9 +396,9 @@ def main(fair):
       "from calling the class in ways the adapter does not).\n")
     groups = [("TestGen, long string only", ["testgen-long"], lambda s: s == "testgen-long"),
               ("TestGen, + short strings", ["testgen-all"], lambda s: s == "testgen-all"),
-              ("Randoop", ["randoop"], lambda s: s.startswith("randoop-")),
-              ("EvoSuite, default criteria", ["evosuite"], lambda s: s.startswith("evosuite-default-")),
-              ("EvoSuite, black-box criteria", ["evosuite"], lambda s: s.startswith("evosuite-blackbox-"))]
+              ("Randoop", ["randoop"], seed_of("randoop")),
+              ("EvoSuite, default criteria", ["evosuite"], seed_of("evosuite-default")),
+              ("EvoSuite, black-box criteria", ["evosuite"], seed_of("evosuite-blackbox"))]
     w("| Tool | Killed natively | Killed fairly | Lost | regression-only check | invalid call | no adapter call |")
     w("| --- | --- | --- | --- | --- | --- | --- |")
     lost_rows = []
@@ -422,10 +436,596 @@ def main(fair):
         for r in lost_rows:
             f.write("\t".join(r) + "\n")
 
+    extra_sections(w, fair, d4j, keys, scored, killed, suites_of, bugs)
+
     with open(os.path.join(fair, "REPORT.md"), "w", encoding="utf-8") as f:
-        f.write("\n".join(out))
+        f.write("\n".join(same_oracle_words(l) for l in out))
 
 
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Sections 7-14: the tools added after the first run (RandPre, budget 180 s), statistics, running time.
+# ─────────────────────────────────────────────────────────────────────────────
+
+ALL_SEEDED = SEEDED + [
+    ("randoop-b180", "Randoop, 180 s"),
+    ("evosuite-default-b180", "EvoSuite default, 180 s"),
+    ("evosuite-blackbox-b180", "EvoSuite black-box, 180 s"),
+    ("randpre-long", "RandPre, long string"),
+    ("randpre-all", "RandPre, all strings"),
+    ("randpre-pool-long", "RandPre-pool, long string"),
+    ("randpre-pool-all", "RandPre-pool, all strings"),
+    ("randpre-timed-long", "RandPre, TestGen's time, long string"),
+    ("randpre-timed-all", "RandPre, TestGen's time, all strings"),
+    ("randpre-pool-timed-long", "RandPre-pool, TestGen's time, long string"),
+    ("randpre-pool-timed-all", "RandPre-pool, TestGen's time, all strings"),
+]
+LABEL = dict(ALL_SEEDED + SINGLE)
+NO_TESTGEN_BUG = "Collections-1"   # its fixed version still contains Collections-6: no valid TestGen test
+
+
+def a12(xs, ys):
+    """Vargha-Delaney A12: P(X > Y) + 0.5 P(X = Y)."""
+    if not xs or not ys:
+        return None
+    gt = sum(1 for x in xs for y in ys if x > y)
+    eq = sum(1 for x in xs for y in ys if x == y)
+    return (gt + 0.5 * eq) / (len(xs) * len(ys))
+
+
+def a12_word(a):
+    """Vargha & Delaney's thresholds on |A12 - 0.5|: negligible < .06 <= small < .14 <= medium < .21 <= large."""
+    if a is None:
+        return ""
+    d = abs(a - 0.5)
+    return "negligible" if d < 0.06 else "small" if d < 0.14 else "medium" if d < 0.21 else "large"
+
+
+def mann_whitney(xs, ys):
+    """Two-sided Mann-Whitney U test, exact: the permutation distribution of the rank sum of xs given the
+    pooled mid-ranks (so ties are handled exactly). Returns (U of xs, p)."""
+    n1, n2 = len(xs), len(ys)
+    if n1 == 0 or n2 == 0:
+        return None, None
+    pooled = sorted(xs + ys)
+    rank2 = {}   # value -> 2 * mid-rank (an integer)
+    i = 0
+    while i < len(pooled):
+        j = i
+        while j < len(pooled) and pooled[j] == pooled[i]:
+            j += 1
+        rank2[pooled[i]] = (i + 1) + j   # 2 * (i+1 + j)/2
+        i = j
+    r = [rank2[v] for v in pooled]
+    w_obs = sum(rank2[x] for x in xs)
+    u = w_obs / 2.0 - n1 * (n1 + 1) / 2.0
+    # dp[k][s] = number of subsets of size k of the pooled ranks with doubled rank sum s
+    total = sum(r)
+    dp = [defaultdict(int) for _ in range(n1 + 1)]
+    dp[0][0] = 1
+    for x in r:
+        for k in range(min(n1, len(r)) - 1, -1, -1):
+            for sm, c in list(dp[k].items()):
+                dp[k + 1][sm + x] += c
+    mean2 = n1 * total / (n1 + n2)
+    dev = abs(w_obs - mean2)
+    allc = sum(dp[n1].values())
+    extreme = sum(c for sm, c in dp[n1].items() if abs(sm - mean2) >= dev - 1e-9)
+    return u, min(1.0, extreme / allc)
+
+
+def fmt_p(p):
+    if p is None:
+        return "–"
+    return "<0.001" if p < 0.001 else f"{p:.3f}"
+
+
+def quart(xs):
+    """(Q1, median, Q3), inclusive method."""
+    if len(xs) == 1:
+        return xs[0], xs[0], xs[0]
+    q = statistics.quantiles(xs, n=4, method="inclusive")
+    return q[0], q[1], q[2]
+
+
+def extra_sections(w, fair, d4j, keys, scored, killed, suites_of, bugs):
+    seeds_int = [int(s) for s in SEEDS]
+
+    def per_seed(tool, key):
+        """{seed: mutation score %} of tool on one class, for the seeds that have rows."""
+        n = len(scored[key])
+        return {sd: 100.0 * len(killed[(key, f"{tool}-s{sd}")] & set(scored[key])) / n
+                for sd in seeds_int if f"{tool}-s{sd}" in suites_of[key] and n}
+
+    def per_seed_all(tool):
+        """{seed: overall score %}, only for seeds that have rows on every class."""
+        n = sum(len(scored[k]) for k in keys)
+        out = {}
+        for sd in seeds_int:
+            if all(f"{tool}-s{sd}" in suites_of[k] for k in keys) and keys:
+                out[sd] = 100.0 * sum(len(killed[(k, f"{tool}-s{sd}")] & set(scored[k])) for k in keys) / n
+        return out
+
+    def any_seed(tool, key_list):
+        n = sum(len(scored[k]) for k in key_list)
+        if not any(f"{tool}-s{sd}" in suites_of[k] for k in key_list for sd in seeds_int):
+            return None
+        u = 0
+        for k in key_list:
+            un = set()
+            for sd in seeds_int:
+                un |= killed[(k, f"{tool}-s{sd}")]
+            u += len(un & set(scored[k]))
+        return 100.0 * u / n if n else None
+
+    def single(suite, key_list):
+        n = sum(len(scored[k]) for k in key_list)
+        if not all(suite in suites_of[k] for k in key_list) or not n:
+            return None
+        return 100.0 * sum(len(killed[(k, suite)] & set(scored[k])) for k in key_list) / n
+
+    def dist(xs):
+        """median [IQR] (min–max) of percentages."""
+        if not xs:
+            return "–"
+        q1, m, q3 = quart(sorted(xs))
+        return f"{m:.1f}% [{q1:.1f}–{q3:.1f}] ({min(xs):.1f}–{max(xs):.1f})"
+
+    f1 = lambda x: "–" if x is None else f"{x:.1f}%"
+    present = [t for t, _ in ALL_SEEDED if any(f"{t}-s{sd}" in suites_of[k] for k in keys for sd in seeds_int)]
+
+    # bugs: per (bug, suite) result, over the 11 bugs with a valid TestGen test
+    bres = defaultdict(dict)
+    for r in bugs:
+        bres[r["bug"]][r["suite"]] = r["result"]
+    bug_order = [r["bug"] for r in read_tsv_csv(os.path.join(d4j, "bugs.csv"))]
+    bugs11 = [b for b in bug_order if b != NO_TESTGEN_BUG]
+
+    def bug_seeds(tool):
+        """{seed: bugs detected of the 11}, for seeds that have a row on every one of the 11 bugs."""
+        out = {}
+        for sd in seeds_int:
+            s = f"{tool}-s{sd}"
+            if bugs11 and all(s in bres[b] for b in bugs11):
+                out[sd] = sum(1 for b in bugs11 if bres[b][s] == "DETECTED")
+        return out
+
+    def bug_any(tool):
+        if not any(f"{tool}-s{sd}" in bres[b] for b in bugs11 for sd in seeds_int):
+            return None
+        return sum(1 for b in bugs11 if any(bres[b].get(f"{tool}-s{sd}") == "DETECTED" for sd in seeds_int))
+
+    def bug_single(suite):
+        return sum(1 for b in bugs11 if bres[b].get(suite) == "DETECTED")
+
+    def bspread(xs):
+        if not xs:
+            return "–"
+        q1, m, q3 = quart(sorted(xs))
+        g = lambda v: str(int(v)) if v == int(v) else f"{v:.1f}"
+        return f"{g(m)} [{g(q1)}–{g(q3)}] ({min(xs)}–{max(xs)})"
+
+    w("---\n")
+    w("Sections 7–14 add the tools run after the first same-oracle run (RandPre, and Randoop/EvoSuite with a "
+      "180 s budget), statistics over the seeds, and TestGen's running time. Sections 1–6 keep their numbers (only the setting once called `fair` is now called same-oracle in the text; files and code keep `fair`): they "
+      "are computed over the first run's suites only. **Real bugs are counted out of 11, not 12, in these "
+      "sections:** Collections-1 has no valid TestGen test (its fixed version still contains Collections-6, so "
+      "every TestGen string that reaches the bug fails there and is dropped as a false alarm); it is left out "
+      "for every tool. No tool detects Collections-1 in any setting, so no total loses a detection.\n")
+
+    # ── 7. who sees what ──
+    w("## 7. Who sees what\n")
+    w("What each tool is given to generate its tests. *Code* = the implementation's code guides generation "
+      "(coverage of instrumented bytecode). *Contract* = the `.spec` is used while generating (not only to judge). "
+      "*Adapter API* = the operations it calls are the adapter's, as TestGen's. *Test strings* = TestGen's "
+      "`.tests` call sequences. In the same-oracle setting every tool's tests are judged by the same contract "
+      "monitor afterwards; this table is about generation.\n")
+    w("| Tool (setting) | Code | Contract | Adapter API | Test strings | Oracle |")
+    w("| --- | --- | --- | --- | --- | --- |")
+    w("| TestGen (all settings) | no (the library is only called, never read) | yes (PRE solved by SPF) | yes | yes | contract |")
+    w("| Randoop (native) | no (public signatures, by reflection) | no | no: the Commons class | no | recorded values |")
+    w("| EvoSuite (native) | yes (branch/line coverage of the Commons class) | no | no: the Commons class | no | recorded values |")
+    w("| Randoop (same-oracle, 60 s / 180 s) | no | no | yes | no | contract monitor |")
+    w("| EvoSuite default (same-oracle, 60 s / 180 s) | yes (coverage of the adapter) | no | yes | no | contract monitor |")
+    w("| EvoSuite black-box (same-oracle, 60 s / 180 s) | no (method/output/exception criteria only) | no | yes | no | contract monitor |")
+    w("| RandPre, RandPre-pool (same-information) | no | yes (PRE checked on the real state, by the monitor's code) | yes | yes | contract monitor |")
+    w("")
+
+    # ── 8. cross-setting table ──
+    head_ids = {}
+    shared = {}
+    for k in keys:
+        hs = git_tsv(d4j, f"mutation/{k}.status.tsv")
+        head_ids[k] = {r["id"] for r in hs if r["status"] == "VALID" and r["sampled"] == "yes"}
+        shared[k] = head_ids[k] & set(scored[k])
+    n_sh = sum(len(v) for v in shared.values())
+    nat = defaultdict(set)   # (key, native suite) -> killed shared
+    for k in keys:
+        for r in git_tsv(d4j, f"mutation/{k}.rows.tsv"):
+            nat[(k, r["suite"])]
+            if r["outcome"] == "KILLED" and r["id"] in shared[k]:
+                nat[(k, r["suite"])].add(r["id"])
+
+    def nat_seed_med(prefix):
+        xs = []
+        for sd in seeds_int:
+            if all((k, f"{prefix}-s{sd}") in nat for k in keys):
+                xs.append(100.0 * sum(len(nat[(k, f"{prefix}-s{sd}")]) for k in keys) / n_sh)
+        return statistics.median(xs) if xs else None
+
+    def nat_single(s):
+        if not all((k, s) in nat for k in keys):
+            return None
+        return 100.0 * sum(len(nat[(k, s)]) for k in keys) / n_sh
+
+    def fair_seed_med(tool):
+        xs = []
+        for sd in seeds_int:
+            if all(f"{tool}-s{sd}" in suites_of[k] for k in keys):
+                xs.append(100.0 * sum(len(killed[(k, f"{tool}-s{sd}")] & shared[k]) for k in keys) / n_sh)
+        return statistics.median(xs) if xs else None
+
+    def fair_single(s):
+        if not all(s in suites_of[k] for k in keys):
+            return None
+        return 100.0 * sum(len(killed[(k, s)] & shared[k]) for k in keys) / n_sh
+
+    native_bugs = native_bug_table(d4j)
+
+    def nbug(col):
+        v = [native_bugs[b][col] for b in bugs11 if b in native_bugs]
+        return v
+
+    def bug_cell_seeded(tool):
+        xs = list(bug_seeds(tool).values())
+        if not xs:
+            return "–"
+        m = statistics.median(xs)
+        return f"{int(m) if m == int(m) else m} / {bug_any(tool)}"
+
+    w("## 8. Cross-setting summary\n")
+    w(f"Median mutation score over the mutants scored in every sample ({n_sh} shared mutants: scored in the "
+      "committed native sample and in the current one, as in table 4; here added over the classes), and real "
+      "bugs detected **of 11** (Collections-1 left out, see above). Seeded tools: median of the 10 seeds; bugs "
+      "*median per run / in any of the 10 seeds*. TestGen is deterministic: one run.\n")
+    w("- **native**: each tool on its own API with its own oracle (`../mutation/`, `../COMPARISON.md`);")
+    w("- **same-oracle**: every tool on the adapter, judged by the contract monitor, 60 s (tables 1–6);")
+    w("- **same-information**: RandPre is given exactly TestGen's input (strings, contract, adapter) and draws "
+      "values at random instead of solving;")
+    w("- **same-access**: only the tools that, like TestGen, do not read the code (Randoop, EvoSuite "
+      "black-box), same-oracle;")
+    w("- **budget 180 s**: same-oracle, the three generators with three times the budget.\n")
+    w("| Tool | native | same-oracle (60 s) | same-information | same-access | budget 180 s | real bugs (of 11): native | same-oracle | budget 180 s |")
+    w("| --- | --- | --- | --- | --- | --- | --- | --- | --- |")
+    for suite, label, nsuite in (("testgen-long", "TestGen, long string", "testgen-long"),
+                                 ("testgen-all", "TestGen, + short strings", "testgen-all")):
+        fs = fair_single(suite)
+        nb = sum(1 for b in bugs11 if native_bugs.get(b, {}).get(nsuite) == "yes")
+        w(f"| {label} | {f1(nat_single(nsuite))} | {f1(fs)} | {f1(fs)} | {f1(fs)} | – | {nb} | {bug_single(suite)} | – |")
+    for tool, label, ntool, access in (("randoop", "Randoop", "randoop", True),
+                                       ("evosuite-default", "EvoSuite, default criteria", "evosuite", False),
+                                       ("evosuite-blackbox", "EvoSuite, black-box criteria", None, True)):
+        nb = "–"
+        if ntool:
+            ks = [native_bugs[b][ntool] for b in bugs11 if b in native_bugs]
+            nb = f"{sum(ks) / 10:.1f} / {sum(1 for k in ks if k > 0)}"
+        fm = fair_seed_med(tool)
+        w(f"| {label} | {f1(nat_seed_med(ntool)) if ntool else '–'} | {f1(fm)} | – | {f1(fm) if access else '–'} | "
+          f"{f1(fair_seed_med(tool + '-b180'))} | {nb} | {bug_cell_seeded(tool)} | {bug_cell_seeded(tool + '-b180')} |")
+    for tool in ("randpre-long", "randpre-all", "randpre-pool-long", "randpre-pool-all",
+                 "randpre-timed-long", "randpre-timed-all", "randpre-pool-timed-long", "randpre-pool-timed-all"):
+        if tool not in present:
+            continue
+        w(f"| {LABEL[tool]} | – | – | {f1(fair_seed_med(tool))} | – | – | – | {bug_cell_seeded(tool)} | – |")
+    w("")
+    w("Native bugs for Randoop/EvoSuite: *mean detections per run / in any of the 10 seeds* (the native per-seed "
+      "results are summarised in `../COMPARISON.md`; its per-run figures are means, not medians). Native EvoSuite "
+      "was run once, with its default criteria; there is no native black-box run.\n")
+
+    # ── 9. per-tool statistics ──
+    w("## 9. Statistics per seeded tool (same-oracle)\n")
+    w("Mutation score over the seeds: *median [IQR] (min–max)*; *any* = killed by at least one of the seeds. "
+      "IQR = first to third quartile (inclusive method). Overall = kills added over the 7 classes for each seed.\n")
+    w("### Overall\n")
+    w("| Tool | Seeds | Mutation score, median [IQR] (min–max) | Any of the seeds | Real bugs of 11, median [IQR] (min–max) | Bugs, any of the seeds |")
+    w("| --- | --- | --- | --- | --- | --- |")
+    for s, label in SINGLE[:2]:
+        w(f"| {label} | 1 (deterministic) | {f1(single(s, keys))} | – | {bug_single(s)} | – |")
+    for t in present:
+        xs = list(per_seed_all(t).values())
+        bs = list(bug_seeds(t).values())
+        ba = bug_any(t)
+        w(f"| {LABEL[t]} | {len(xs)} | {dist(xs)} | {f1(any_seed(t, keys))} | {bspread(bs)} | {'–' if ba is None else ba} |")
+    w("")
+    w("### Per class: median [IQR] (min–max) of the seeds; any of the seeds\n")
+    w("| Tool | " + " | ".join(lbl for k, lbl, _ in CLASSES if k in keys) + " |")
+    w("| --- | " + " | ".join("---" for k in keys) + " |")
+    for s, label in SINGLE[:2]:
+        w(f"| {label} | " + " | ".join(f1(single(s, [k])) for k in keys) + " |")
+    for t in present:
+        cells = []
+        for k in keys:
+            xs = list(per_seed(t, k).values())
+            cells.append(f"{dist(xs)}; any {f1(any_seed(t, [k]))}" if xs else "–")
+        w(f"| {LABEL[t]} | " + " | ".join(cells) + " |")
+    w("")
+    w("### Real bugs per tool (seeds detecting, of 10)\n")
+    w("| Bug | " + " | ".join(LABEL[t] for t in present if t not in dict(SEEDED)) + " |")
+    w("| --- | " + " | ".join("---" for t in present if t not in dict(SEEDED)) + " |")
+    for b in bug_order:
+        cells = []
+        for t in present:
+            if t in dict(SEEDED):
+                continue
+            runs = [bres[b].get(f"{t}-s{sd}") for sd in seeds_int if f"{t}-s{sd}" in bres[b]]
+            cells.append(f"{sum(1 for x in runs if x == 'DETECTED')}/{len(runs)}" if runs else "–")
+        w(f"| {b}{' (left out of the totals)' if b == NO_TESTGEN_BUG else ''} | " + " | ".join(cells) + " |")
+    w("")
+    w("The first run's tools are in table 5.\n")
+
+    # ── 10. TestGen vs each seeded tool: A12 ──
+    w("## 10. TestGen against each seeded tool: Vargha–Delaney A12\n")
+    w("TestGen is deterministic, so its one score is set against each tool's distribution over the seeds: "
+      "A12 = P(TestGen > tool) + ½ P(TestGen = tool) over the seeds. 1 = TestGen beats every seed, 0.5 = no "
+      "difference, 0 = every seed beats TestGen. Magnitude (Vargha & Delaney): negligible < 0.06 ≤ small < 0.14 ≤ "
+      "medium < 0.21 ≤ large, on |A12 − 0.5|. No p-value: one TestGen run gives no variance to test against.\n")
+    w("| Tool | TestGen | Overall | " + " | ".join(lbl for k, lbl, _ in CLASSES if k in keys) + " | Real bugs |")
+    w("| --- | --- | --- | " + " | ".join("---" for k in keys) + " | --- |")
+    for t in present:
+        for s, sl in (("testgen-long", "long"), ("testgen-all", "+ short")):
+            xs = list(per_seed_all(t).values())
+            tg = single(s, keys)
+            cells = [f"{a12([tg], xs):.2f}" if xs and tg is not None else "–"]
+            for k in keys:
+                ys = list(per_seed(t, k).values())
+                tk = single(s, [k])
+                cells.append(f"{a12([tk], ys):.2f}" if ys and tk is not None else "–")
+            bs = list(bug_seeds(t).values())
+            cells.append(f"{a12([bug_single(s)], bs):.2f}" if bs else "–")
+            w(f"| {LABEL[t]} | {sl} | " + " | ".join(cells) + " |")
+    w("")
+
+    # ── 11. RandPre vs TestGen per class ──
+    rp = [t for t in present if t.startswith("randpre")]
+    w("## 11. Same-information: RandPre against TestGen, per class\n")
+    w("RandPre gets exactly TestGen's input: the same test strings (the long one alone, and all of them), the "
+      "same adapter and the same contract. For each call of a string, in order, on the real adapter, it draws "
+      "argument values at random (TestGen's solver domain: ints in [-1000, 1000], Strings \"s\"+k with k in "
+      "[-1000, 1000], booleans) and keeps the first draw whose precondition holds on the current real state, as "
+      "the monitor checks it; then it makes the call. *Pool*: each argument comes, with probability ½, from the "
+      "values seen earlier in the same string (earlier arguments and non-null return values of the same type), "
+      "like Randoop's value pool. Budget: 1000 draws per call, or (*TestGen's time*) the wall-clock time TestGen "
+      "took for that string (`timing.tsv`, run 1) for the whole string. A string whose precondition no draw "
+      "satisfies within the budget is rejected, as TestGen rejects one; if the kept call throws, it is rejected as "
+      "TestGen's LIBRARY_EXCEPTION. The tests are written in TestGen's JUnit form by TestGen's own printer and "
+      "go through the same PRE-stripping and monitor as TestGen's suites. 10 seeds.\n")
+    if not rp:
+        w("_No RandPre rows yet._\n")
+    else:
+        w("Cell: RandPre's median score (min–max) over the seeds, and A12 of TestGen (same strings: long against "
+          "long, + short against all) against RandPre's seeds. A12 > 0.5: TestGen is better.\n")
+        w("| Class | Mutants | TestGen long | TestGen + short | " + " | ".join(LABEL[t] for t in rp) + " |")
+        w("| --- | --- | --- | --- | " + " | ".join("---" for t in rp) + " |")
+        rows_k = [(k, lbl) for k, lbl, _ in CLASSES if k in keys] + [("__all__", "**All classes**")]
+        for k, lbl in rows_k:
+            ks = keys if k == "__all__" else [k]
+            n = sum(len(scored[x]) for x in ks)
+            tl, ta = single("testgen-long", ks), single("testgen-all", ks)
+            cells = [lbl, str(n), f1(tl), f1(ta)]
+            for t in rp:
+                xs = list(per_seed_all(t).values()) if k == "__all__" else list(per_seed(t, k).values())
+                ref = tl if t.endswith("-long") else ta
+                if not xs:
+                    cells.append("–")
+                    continue
+                a = a12([ref], xs) if ref is not None else None
+                cells.append(f"{statistics.median(xs):.1f}% ({min(xs):.1f}–{max(xs):.1f}); A12 "
+                             f"{'–' if a is None else f'{a:.2f}'}")
+            w("| " + " | ".join(cells) + " |")
+        w("")
+        gen = read_tsv(os.path.join(fair, "randpre.tsv"))
+        if gen:
+            w("### RandPre's strings: generated or rejected\n")
+            w("Over the class versions (the 7 mutated versions), all seeds, all-strings suites: strings generated / "
+              "tried. Per string, with the draws each call needed: `randpre.tsv`. A call with no argument (e.g. "
+              "TreeList's `iterNext`) depends only on the values already chosen: once an earlier draw made its "
+              "precondition false (`iterStart(size)`), no draw can help, and the string is rejected when the budget "
+              "runs out. TestGen has the same blind spot (it fixes each call's values without lookahead; it rejects "
+              "SetUniqueList's long string on Collections-5/15/16 that way), but chooses the same values every time.\n")
+            ver = {v: k for k, _, v in CLASSES}
+            w("| Class | " + " | ".join(t for t in sorted({r["tool"] for r in gen})) + " |")
+            tools_g = sorted({r["tool"] for r in gen})
+            w("| --- | " + " | ".join("---" for _ in tools_g) + " |")
+            for k, lbl, v in CLASSES:
+                cells = []
+                for t in tools_g:
+                    rs = [r for r in gen if r["bug"] + "f" == v and r["tool"] == t and r["which"] == "all"]
+                    if not rs:
+                        cells.append("–")
+                        continue
+                    g = sum(1 for r in rs if r["status"] == "GENERATED")
+                    cells.append(f"{g}/{len(rs)}")
+                w(f"| {lbl} | " + " | ".join(cells) + " |")
+            w("")
+            rej = defaultdict(int)
+            for r in gen:
+                if r["which"] == "all" and r["status"] != "GENERATED":
+                    rej[(r["tool"], r["at_call"].split(" ")[0].split(":")[-1])] += 1
+            if rej:
+                w("Where the rejected strings stopped (operation whose precondition no draw met, or that threw), "
+                  "over all versions and seeds (all-strings suites): " +
+                  "; ".join(f"{t} `{op}` {c}" for (t, op), c in sorted(rej.items())) + ".\n")
+
+    # ── 12. seeded tools against each other ──
+    pairs = [("randpre-all", "evosuite-default"), ("randpre-all", "evosuite-blackbox"), ("randpre-all", "randoop"),
+             ("randpre-pool-all", "evosuite-default"), ("randpre-pool-all", "evosuite-blackbox"),
+             ("randpre-pool-all", "randoop"),
+             ("randpre-long", "randpre-pool-long"), ("randpre-all", "randpre-pool-all"),
+             ("randpre-all", "randpre-timed-all"), ("randpre-pool-all", "randpre-pool-timed-all"),
+             ("randpre-timed-all", "randpre-pool-timed-all"),
+             ("evosuite-default", "evosuite-blackbox"), ("evosuite-blackbox", "randoop")]
+    pairs = [(a, b) for a, b in pairs if a in present and b in present]
+    w("## 12. Seeded tools against each other: Mann–Whitney U and A12\n")
+    w("Over the 10 seeds' mutation scores: U of the first tool, two-sided p of the exact Mann–Whitney test "
+      "(permutation distribution of the rank sum, ties handled exactly), and A12 = P(first > second) + ½ "
+      "P(equal). No correction for multiple tests; read p with that in mind.\n")
+    if pairs:
+        w("| First | Second | Scope | Medians | U | p | A12 | Magnitude |")
+        w("| --- | --- | --- | --- | --- | --- | --- | --- |")
+        for a_t, b_t in pairs:
+            for k, lbl in [("__all__", "all classes")] + [(k, lbl) for k, lbl, _ in CLASSES if k in keys]:
+                xs = list(per_seed_all(a_t).values()) if k == "__all__" else list(per_seed(a_t, k).values())
+                ys = list(per_seed_all(b_t).values()) if k == "__all__" else list(per_seed(b_t, k).values())
+                if not xs or not ys:
+                    continue
+                u, p = mann_whitney(xs, ys)
+                a = a12(xs, ys)
+                w(f"| {LABEL[a_t]} | {LABEL[b_t]} | {lbl} | {statistics.median(xs):.1f}% vs {statistics.median(ys):.1f}% | "
+                  f"{u:g} | {fmt_p(p)} | {a:.2f} | {a12_word(a)} |")
+            xs, ys = list(bug_seeds(a_t).values()), list(bug_seeds(b_t).values())
+            if xs and ys:
+                u, p = mann_whitney(xs, ys)
+                a = a12(xs, ys)
+                w(f"| {LABEL[a_t]} | {LABEL[b_t]} | real bugs (of 11) | {statistics.median(xs):g} vs {statistics.median(ys):g} | "
+                  f"{u:g} | {fmt_p(p)} | {a:.2f} | {a12_word(a)} |")
+        w("")
+    else:
+        w("_Not enough seeded tools yet._\n")
+
+    # ── 13. budget sensitivity ──
+    w("## 13. Budget sensitivity: 60 s against 180 s (same-oracle)\n")
+    bud = [t for t, _ in SEEDED if t in present and t + "-b180" in present]
+    if not bud:
+        w("_No 180 s rows yet._\n")
+    else:
+        w("The same generators, configuration and seeds, with BUDGET=180 instead of 60 (EvoSuite: 90 s search + "
+          "90 s assertions). Median (min–max) over the seeds; MWU p and A12 of 180 s against 60 s.\n")
+        w("| Tool | Scope | 60 s | 180 s | p | A12 (180 vs 60) | Any of the seeds, 60 s / 180 s |")
+        w("| --- | --- | --- | --- | --- | --- | --- |")
+        for t in bud:
+            for k, lbl in [("__all__", "all classes")] + [(k, lbl) for k, lbl, _ in CLASSES if k in keys]:
+                ks = keys if k == "__all__" else [k]
+                xs = list(per_seed_all(t).values()) if k == "__all__" else list(per_seed(t, k).values())
+                ys = list(per_seed_all(t + "-b180").values()) if k == "__all__" else list(per_seed(t + "-b180", k).values())
+                if not xs or not ys:
+                    continue
+                _, p = mann_whitney(ys, xs)
+                a = a12(ys, xs)
+                w(f"| {LABEL[t]} | {lbl} | {statistics.median(xs):.1f}% ({min(xs):.1f}–{max(xs):.1f}) | "
+                  f"{statistics.median(ys):.1f}% ({min(ys):.1f}–{max(ys):.1f}) | {fmt_p(p)} | {a:.2f} | "
+                  f"{f1(any_seed(t, ks))} / {f1(any_seed(t + '-b180', ks))} |")
+            xs, ys = list(bug_seeds(t).values()), list(bug_seeds(t + "-b180").values())
+            if xs and ys:
+                _, p = mann_whitney(ys, xs)
+                w(f"| {LABEL[t]} | real bugs (of 11) | {bspread(xs)} | {bspread(ys)} | {fmt_p(p)} | {a12(ys, xs):.2f} | "
+                  f"{bug_any(t)} / {bug_any(t + '-b180')} |")
+        w("")
+
+    # ── 14. TestGen's running time ──
+    w("## 14. TestGen's running time\n")
+    tim = read_tsv(os.path.join(fair, "timing.tsv"))
+    if not tim:
+        w("_No timing yet (`fair.sh --timing`)._\n")
+    else:
+        w("Each test string generated alone on the bug's fixed version (`FairTiming`, which calls "
+          "`GenatcMain.generate`: IR, every genCTC round with its SPF run, printing the JUnit class). *Total* = "
+          "wall time on the monotonic clock. *SPF* = TestGen's own SPF time (the engine time of every round, "
+          "measured by TestGen on the system clock). On this machine (WSL2) the system clock is sometimes "
+          "stepped by a few seconds; *SPF, corrected* removes the step seen in the same run (`wall_ms − "
+          "total_ms`), so it is never above *Total*. Rounds = genCTC rounds that turned inputs concrete; SPF runs "
+          "= symex calls. Run 1 is reported; run 2 (if any) is the same generation again, to show the spread.\n")
+
+        def corr(r):
+            spf, tot, wall = int(r["spf_ms"]), int(r["total_ms"]), int(r.get("wall_ms") or r["total_ms"])
+            return max(0, spf - max(0, wall - tot))
+
+        runs = sorted({r["run"] for r in tim})
+        w("### Per class (the 7 mutated versions)\n")
+        w("| Class (version) | Strings | Calls | Rounds | SPF runs | SPF (s) | SPF, corrected (s) | Total (s) | Long string total (s) | Total, run 2 (s) |")
+        w("| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |")
+        for k, lbl, v in CLASSES:
+            rs = [r for r in tim if r["scope"] + "f" == v and r["run"] == "1"]
+            if not rs:
+                continue
+            r2 = [r for r in tim if r["scope"] + "f" == v and r["run"] == "2"]
+            sec = lambda ms: f"{ms / 1000:.1f}"
+            w(f"| {lbl} ({v}) | {len(rs)} | {sum(int(r['calls']) for r in rs)} | {sum(int(r['rounds']) for r in rs)} | "
+              f"{sum(int(r['spf_runs']) for r in rs)} | {sec(sum(int(r['spf_ms']) for r in rs))} | "
+              f"{sec(sum(corr(r) for r in rs))} | {sec(sum(int(r['total_ms']) for r in rs))} | "
+              f"{sec(int(rs[0]['total_ms']))} | {sec(sum(int(r['total_ms']) for r in r2)) if r2 else '–'} |")
+        w("")
+        w("### Per test string (every bug's fixed version, run 1)\n")
+        w("| Version | String | Calls | Status | Rounds | SPF runs | SPF (ms) | SPF, corrected (ms) | Total (ms) | ms per call |")
+        w("| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |")
+        for r in tim:
+            if r["run"] != "1":
+                continue
+            w(f"| {r['scope']} | {r['string']} | {r['calls']} | {r['status']} | {r['rounds']} | {r['spf_runs']} | "
+              f"{r['spf_ms']} | {corr(r)} | {r['total_ms']} | {int(r['total_ms']) // max(1, int(r['calls']))} |")
+        w("")
+    dt = read_tsv(os.path.join(os.path.dirname(os.path.dirname(d4j)), "depth_timing.tsv"))
+    w("### Depth: our 14 libraries, prefixes of the 24-call string\n")
+    if not dt:
+        w("_No depth timing yet (`fair.sh --depth-timing`)._\n")
+    else:
+        w("From `depth_timing.tsv` (repository root): for each library, TestGen on the prefixes of 4, 8, 12, 16, "
+          "20 and 24 calls of the one test string in `specs/<Lib>.tests`, each from a temporary `.tests` file in a "
+          "scratch folder (outside the repository) through `LibraryRegistry.variantOf`. Cell: total seconds "
+          "(SPF, corrected, seconds; rounds); a status other than GENERATED is named. ticketservice's string has "
+          "23 calls, so its last prefix is 23.\n")
+        dcorr = lambda r: max(0, int(r["spf_ms"]) - max(0, int(r.get("wall_ms") or r["total_ms"]) - int(r["total_ms"])))
+        col = lambda n: 24 if n == 23 else n   # ticketservice's whole string (23 calls) goes in the 24 column
+        lens = sorted({col(int(r["prefix"])) for r in dt if r["run"] == "1"})
+        w("| Library | " + " | ".join(str(n) for n in lens) + " |")
+        w("| --- | " + " | ".join("---" for _ in lens) + " |")
+        libs = []
+        for r in dt:
+            if r["library"] not in libs:
+                libs.append(r["library"])
+        for lib in libs:
+            cells = []
+            for n in lens:
+                rs = [r for r in dt if r["library"] == lib and col(int(r["prefix"])) == n and r["run"] == "1"]
+                if not rs:
+                    cells.append("–")
+                    continue
+                r = rs[0]
+                st = "" if r["status"] == "GENERATED" else f" {r['status']}"
+                mark = " [23 calls]" if int(r["prefix"]) != n else ""
+                cells.append(f"{int(r['total_ms']) / 1000:.1f} ({dcorr(r) / 1000:.1f}; {r['rounds']}){st}{mark}")
+            w(f"| {lib} | " + " | ".join(cells) + " |")
+        w("")
+
+
+def native_bug_table(d4j):
+    """The per-bug table of ../COMPARISON.md (committed): bug -> {testgen-long, testgen-all: yes/no,
+    randoop, evosuite: seeds detecting, of 10}."""
+    out = {}
+    path = os.path.join(d4j, "COMPARISON.md")
+    if not os.path.exists(path):
+        return out
+    for line in open(path, encoding="utf-8"):
+        c = [x.strip() for x in line.strip().strip("|").split("|")]
+        if len(c) == 6 and re.match(r"^(Collections|Lang)-\d+$", c[0]):
+            num = lambda s: int(re.match(r"\**(\d+)/10", s).group(1))
+            out[c[0]] = {"testgen-long": "yes" if "✅" in c[2] else "no",
+                         "testgen-all": "yes" if "✅" in c[3] else "no",
+                         "randoop": num(c[4]), "evosuite": num(c[5])}
+    return out
+
+
+def same_oracle_words(line):
+    """In the report's text the setting is called "same-oracle", not "fair". Only words are changed: file
+    names, paths and anything in backticks or a link target (fair/, fair.sh, *.fair.rows.tsv) keep their names."""
+    parts = re.split(r"(`[^`]*`|\]\([^)]*\))", line)
+    for i in range(0, len(parts), 2):
+        t = parts[i]
+        t = re.sub(r"(?<![\w./-])fairly(?![\w./-])", "under the same oracle", t)
+        t = re.sub(r"(?<![\w./-])Fair(?![\w./-])", "Same-oracle", t)
+        t = re.sub(r"(?<![\w./-])fair(?![\w./-])", "same-oracle", t)
+        parts[i] = t
+    return "".join(parts)
 
 
 def git_tsv(d4j, rel):
